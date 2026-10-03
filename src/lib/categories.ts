@@ -1,0 +1,39 @@
+import type { Categorie } from '@/types/logiciel';
+
+export const CATEGORIE_EMOJI: Record<Categorie, string> = {
+  caisse: '💳',
+  reservation: '📅',
+  livraison: '🛵',
+  compta: '🧾',
+  autre: '🔧',
+  'finance-compta': '💰',
+  'rh-paie': '👥',
+  marketing: '📈',
+  'vente-crm': '🤝',
+  communication: '💬',
+  productivite: '⚡',
+  ecommerce: '🛒',
+  'assurance-sante': '🏥',
+  'dev-tools': '💻',
+  design: '🎨',
+  notes: '📝',
+};
+
+export const CATEGORIE_LABEL: Record<Categorie, string> = {
+  caisse: 'Caisse',
+  reservation: 'Réservation',
+  livraison: 'Livraison',
+  compta: 'Comptabilité',
+  autre: 'Autre',
+  'finance-compta': 'Finance & Compta',
+  'rh-paie': 'RH & Paie',
+  marketing: 'Marketing',
+  'vente-crm': 'Vente & CRM',
+  communication: 'Communication',
+  productivite: 'Productivité',
+  ecommerce: 'E-commerce',
+  'assurance-sante': 'Assurance & Santé',
+  'dev-tools': 'Dev Tools',
+  design: 'Design',
+  notes: 'Notes',
+};

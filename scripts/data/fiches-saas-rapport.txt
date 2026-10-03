@@ -1,0 +1,76 @@
+63 fiches lues.
+✓ notion : 3/3 alternatives, prix à partir de 9,50 €/mois/utilisateur
+✓ microsoft-teams-essentials : 2/2 alternatives, prix non lu
+  ✗ monday-com : « Budibase » écarté (licence non libre ou non reconnue)
+✓ monday-com : 2/3 alternatives, prix à partir de 9 €/mois/utilisateur
+✓ dropbox-plus : 4/4 alternatives, prix 11,99 €/mois
+✓ loom : 2/2 alternatives, prix non lu
+✓ calendly : 5/5 alternatives, prix non lu
+  ✗ zapier : « Automatisch » écarté (licence non libre ou non reconnue)
+✓ zapier : 2/3 alternatives, prix non lu
+✓ dashlane : 1/1 alternatives, prix non lu
+✓ chatgpt : 5/5 alternatives, prix non lu
+✓ wordpress : 0/0 alternatives, prix non lu
+✓ mailerlite : 5/5 alternatives, prix non lu
+✓ linktree : 3/3 alternatives, prix non lu
+✓ lemlist : 1/1 alternatives, prix non lu
+✓ systeme-io : 0/0 alternatives, prix non lu
+✓ freshdesk : 5/5 alternatives, prix à partir de 17 €/mois/utilisateur
+✓ slack-pro : 5/5 alternatives, prix à partir de 8,25 €/mois/utilisateur
+✓ zoom-pro : 3/3 alternatives, prix non lu
+✓ clickup : 2/2 alternatives, prix non lu
+✓ icloud-plus : 3/3 alternatives, prix à partir de 0,99 €/mois
+✓ miro : 5/5 alternatives, prix non lu
+✓ typeform : 4/4 alternatives, prix non lu
+  ✗ make : « Automatisch » écarté (licence non libre ou non reconnue)
+✓ make : 2/3 alternatives, prix non lu
+✓ bitwarden : 5/5 alternatives, prix non lu
+✓ shopify : 5/5 alternatives, prix 36 €/mois
+✓ webflow : 5/5 alternatives, prix non lu
+✓ klaviyo : 2/2 alternatives, prix non lu
+✓ hootsuite : 5/5 alternatives, prix non lu
+✓ waalaxy : 5/5 alternatives, prix à partir de 19 €/mois/utilisateur
+✓ pipedrive : 5/5 alternatives, prix à partir de 14 €/mois/utilisateur
+✓ zendesk : 5/5 alternatives, prix à partir de 55 €/mois/utilisateur
+✓ indy : 2/2 alternatives, prix non lu
+✓ google-workspace-business-starter : 2/2 alternatives, prix à partir de 6,80 €/mois/utilisateur
+✓ trello : 4/4 alternatives, prix non lu
+✓ airtable : 5/5 alternatives, prix non lu
+  ✗ evernote : « Joplin » écarté (licence non libre ou non reconnue)
+✓ evernote : 2/3 alternatives, prix non lu
+✓ figma : 4/4 alternatives, prix non lu
+✓ jotform : 0/0 alternatives, prix non lu
+! n8n-cloud : prix « à partir de 20 €/mois (facturation annuelle) » retiré (format non reconnu)
+  ✗ n8n-cloud : « Automatisch » écarté (licence non libre ou non reconnue)
+✓ n8n-cloud : 2/3 alternatives, prix non lu
+  ✗ grammarly : « Outils d'écriture d'Apple » écarté (site injoignable)
+✓ grammarly : 4/5 alternatives, prix gratuit (plans payants à partir de 12 €/mois)
+✓ wix : 4/4 alternatives, prix non lu
+  ✗ mailchimp : « Notifuse » écarté (licence non libre ou non reconnue)
+✓ mailchimp : 4/5 alternatives, prix non lu
+✓ semrush : 0/0 alternatives, prix à partir de 134 €/mois
+✓ buffer : 5/5 alternatives, prix non lu
+✓ livestorm : 1/1 alternatives, prix non lu
+✓ salesforce : 0/0 alternatives, prix à partir de 25 €/mois/utilisateur
+✓ intercom : 5/5 alternatives, prix non lu
+✓ finary : 0/0 alternatives, prix non lu
+↷ microsoft-365-personal ignorée : doublon (slug ou domaine déjà présent)
+✓ asana : 5/5 alternatives, prix non lu
+✓ google-drive : 0/0 alternatives, prix gratuit (plans payants à partir de 1,99 €/mois)
+✓ todoist : 4/4 alternatives, prix non lu
+✓ canva : 4/4 alternatives, prix non lu
+✓ tally : 2/2 alternatives, prix non lu
+✓ 1password : 3/3 alternatives, prix non lu
+  ✗ deepl-pro : « OmegaT » écarté (dépôt introuvable)
+✓ deepl-pro : 1/2 alternatives, prix à partir de 7,49 €/mois/utilisateur
+✓ squarespace : 5/5 alternatives, prix à partir de 17 €/mois
+  ✗ brevo : « Notifuse » écarté (licence non libre ou non reconnue)
+✓ brevo : 4/5 alternatives, prix non lu
+✓ ahrefs : 0/0 alternatives, prix non lu
+✓ agorapulse : 2/2 alternatives, prix à partir de 99 €/mois/utilisateur
+✓ weglot : 0/0 alternatives, prix à partir de 15 €/mois
+✓ zoho-crm : 5/5 alternatives, prix non lu
+✓ crisp : 5/5 alternatives, prix gratuit (plans payants à partir de 45 €/mois)
+✓ docusign : 3/3 alternatives, prix non lu
+
+62 fiches prêtes sur 63.

@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+/* Design système repris de canivibecodeit.com (MIT) — voir THIRD_PARTY_NOTICES.md */
+:root,
+[data-theme='dark'] {
+  --bg: #0b0d0b;
+  --surface: #131613;
+  --surface-2: #1a1e1a;
+  --border: #262b26;
+  --fg: #e8e6e0;
+  --muted: #9aa29a;
+  --primary: #33e667;
+  --on-primary: #06170b;
+  --kinda: #ffb000;
+  --on-kinda: #1a1200;
+  --no: #ff4444;
+  --on-no: #1a0505;
+  --ticker: #33e667;
+  --ticker-dim: #4f8a63;
+  --ticker-label: #6fe08f;
+  --ticker-bg: #0a140e;
+  --ticker-cell: #10211a;
+  --ticker-cell-border: #1e4230;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --bg: #f7f8f9;
+  --surface: #ffffff;
+  --surface-2: #eef0f2;
+  --border: #d8dbe1;
+  --fg: #15181d;
+  --muted: #5b6370;
+  --primary: #0b7c39;
+  --on-primary: #ffffff;
+  --kinda: #f5b300;
+  --on-kinda: #241800;
+  --no: #e03131;
+  --on-no: #ffffff;
+  --ticker: #0e9c47;
+  --ticker-dim: #4a6b5e;
+  --ticker-label: #1f6e3d;
+  --ticker-bg: #e8f3ec;
+  --ticker-cell: #f6fbf8;
+  --ticker-cell-border: #bfdccb;
+  color-scheme: light;
+}
+
+/* La palette Tailwind déjà utilisée partout (slate-*, white, stone-50,
+   primary, secondary) est remappée sur les variables du thème : les composants
+   existants suivent le thème sans être réécrits. */
+@theme inline {
+  --color-white: var(--surface);
+  --color-stone-50: var(--bg);
+  --color-slate-50: var(--surface-2);
+  --color-slate-100: var(--surface-2);
+  --color-slate-200: var(--border);
+  --color-slate-300: var(--border);
+  --color-slate-400: var(--muted);
+  --color-slate-500: var(--muted);
+  --color-slate-600: var(--muted);
+  --color-slate-700: var(--fg);
+  --color-slate-800: var(--fg);
+  --color-slate-900: var(--fg);
+  --color-primary: var(--primary);
+  --color-primary-ink: var(--on-primary);
+  --color-secondary: var(--primary);
+  --color-kinda: var(--kinda);
+  --color-on-kinda: var(--on-kinda);
+  --color-no: var(--no);
+  --color-on-no: var(--on-no);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  font-family: var(--font-sans), ui-monospace, monospace;
+  background: var(--bg);
+  color: var(--fg);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Icône de la bascule : soleil en sombre (aller vers le clair), lune en clair. */
+.theme-icon-light {
+  display: none;
+}
+[data-theme='light'] .theme-icon-dark {
+  display: none;
+}
+[data-theme='light'] .theme-icon-light {
+  display: inline;
+}
+
+/* ---------- bandeau + odomètre ---------- */
+.ticker {
+  --digit-h: clamp(36px, 5.6vw, 56px);
+  background: var(--ticker-bg);
+  border-block: 1px solid var(--ticker-cell-border);
+}
+.tape {
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--ticker-cell-border);
+  color: var(--ticker-dim);
+  font-size: 12px;
+  padding: 6px 0;
+}
+.tape-track {
+  display: inline-flex;
+  animation: tape var(--tape-dur, 40s) linear infinite;
+}
+.tape-track span {
+  padding-right: 2ch;
+}
+@keyframes tape {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.odometer {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.odometer .digit {
+  display: inline-block;
+  width: calc(var(--digit-h) * 0.64);
+  height: var(--digit-h);
+  overflow: hidden;
+  background: var(--ticker-cell);
+  border: 1px solid var(--ticker-cell-border);
+  border-radius: 6px;
+}
+.odometer .reel {
+  display: flex;
+  flex-direction: column;
+  animation: roll 1.4s var(--ease-out) backwards;
+}
+.odometer .reel span {
+  height: var(--digit-h);
+  line-height: var(--digit-h);
+  text-align: center;
+  font-weight: 700;
+  font-size: calc(var(--digit-h) * 0.7);
+  color: var(--ticker);
+}
+.odometer .sym {
+  font-weight: 700;
+  font-size: calc(var(--digit-h) * 0.7);
+  color: var(--ticker-dim);
+}
+@keyframes roll {
+  from {
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tape-track,
+  .odometer .reel {
+    animation: none;
+  }
+}
