@@ -1,0 +1,253 @@
+[
+  {
+    "slug": "doctolib",
+    "nom": "Doctolib",
+    "domaine": "doctolib.fr",
+    "categorie": "assurance-sante",
+    "secteur": "saas",
+    "description": "Plateforme française de prise de rendez-vous en ligne et logiciel de gestion de cabinet (agenda, téléconsultation) pour les professionnels de santé.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Un agenda en ligne se recode ; des données de santé non. En France, l'hébergement de données de santé à caractère personnel impose un hébergeur certifié HDS, et la téléconsultation ajoute la sécurité des échanges et le secret médical. Pour un professionnel de santé, développer son propre outil serait prendre le risque d'une fuite de données de patients. Ce que vous pouvez faire seul : un agenda pour une activité non médicale.",
+    "ce_que_vous_perdez": [
+      "L'hébergement certifié des données de santé",
+      "La prise de rendez-vous visible par les patients de la plateforme",
+      "La téléconsultation sécurisée",
+      "Le logiciel de gestion de cabinet"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "planity",
+    "nom": "Planity",
+    "domaine": "planity.com",
+    "categorie": "autre",
+    "secteur": "saas",
+    "description": "Plateforme française de réservation en ligne de rendez-vous chez les coiffeurs, barbiers, instituts et professionnels du bien-être, avec un logiciel de gestion pour les salons (Planity Pro).",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "L'agenda en ligne, les confirmations et les rappels se recodent. Ce que vous payez à Planity, c'est surtout d'être trouvé par les clients de la plateforme, ce qu'un outil maison ne fera pas. Pour un salon avec une clientèle fidèle qui réserve directement, une solution simple suffit ; pour attirer de nouveaux clients, gardez la visibilité.",
+    "ce_que_vous_perdez": [
+      "La visibilité auprès des clients de la plateforme",
+      "Les rappels par SMS déjà intégrés",
+      "Le logiciel de gestion pensé pour les salons",
+      "La prise de rendez-vous sans appel téléphonique"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un agenda de rendez-vous en ligne pour un petit salon, sans prétendre remplacer Planity ni attirer de nouveaux clients.\n\nPile : Next.js, TypeScript, SQLite. Données chez moi, secrets dans .env, aucune télémétrie.\n\nÀ faire :\n- Catalogue de prestations (nom, durée, prix TTC) et équipe avec horaires et congés.\n- Page de réservation publique : choix de la prestation, du créneau et du professionnel, sans compte client ; empêche les doubles réservations.\n- Confirmation et rappel par e-mail (SMTP configurable), avec lien d'annulation ou de déplacement.\n- Agenda du salon par jour et par semaine, blocage de créneaux, liste d'attente.\n- Fichier client avec consentement RGPD, export et suppression sur demande ; protection anti-spam.\n- Tests sur la détection des conflits de créneaux ; README avec les limites.\n\nHors périmètre : rappels par SMS (prestataire payant), paiement en ligne, visibilité sur une place de marché.",
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "swile",
+    "nom": "Swile",
+    "domaine": "swile.co",
+    "categorie": "rh-paie",
+    "secteur": "saas",
+    "description": "Carte d'avantages salariés française : titres-restaurant dématérialisés, titres cadeaux et voyages professionnels, avec une application pour suivre son budget.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Les titres-restaurant relèvent d'un cadre légal : émission, fonds des salariés à sécuriser, réseau de commerçants qui les acceptent. Aucune entreprise n'a intérêt à bâtir cela en interne. Ce que vous pouvez construire, c'est un tableau de suivi de vos avantages ; l'émission de la carte reste à un émetteur agréé.",
+    "ce_que_vous_perdez": [
+      "L'émission et la sécurisation des fonds des titres",
+      "Le réseau de commerçants qui acceptent la carte",
+      "L'application mobile et le suivi du budget",
+      "La gestion administrative côté employeur"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "shine",
+    "nom": "Shine",
+    "domaine": "shine.fr",
+    "categorie": "finance-compta",
+    "secteur": "saas",
+    "description": "Compte professionnel en ligne français pour indépendants et petites entreprises, établissement de paiement agréé selon son site, avec facturation électronique et cartes.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Un compte professionnel est un service financier réglementé : un établissement agréé détient les fonds, émet les cartes et surveille la fraude. Aucun outil interne ne peut remplacer cela. Un suivi des dépenses importé en CSV reste possible ; l'argent, lui, reste chez un établissement agréé.",
+    "ce_que_vous_perdez": [
+      "Le compte et les cartes, sous la supervision d'un régulateur",
+      "Les virements instantanés et le dépôt d'espèces",
+      "La facturation électronique intégrée",
+      "La comptabilité automatisée reliée aux paiements"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "dougs",
+    "nom": "Dougs",
+    "domaine": "dougs.fr",
+    "categorie": "finance-compta",
+    "secteur": "saas",
+    "description": "Cabinet d'expertise comptable en ligne pour indépendants et PME (comptabilité, déclarations, paie, création d'entreprise), avec une application de suivi en temps réel. Forfaits à partir de 79 € par mois HT.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Dougs n'est pas qu'un logiciel : c'est un cabinet d'expertise comptable, profession réglementée, qui engage sa responsabilité sur vos comptes et vos déclarations. On peut tenir un tableau de recettes et de dépenses, mais pas signer un bilan ni déclarer à votre place. Gardez le comptable ; construisez le suivi autour.",
+    "ce_que_vous_perdez": [
+      "L'expert-comptable qui signe vos comptes",
+      "Les déclarations fiscales et sociales faites pour vous",
+      "La plateforme agréée de facturation électronique (selon l'éditeur)",
+      "La paie et la création d'entreprise"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "agicap",
+    "nom": "Agicap",
+    "domaine": "agicap.com",
+    "categorie": "finance-compta",
+    "secteur": "saas",
+    "description": "Plateforme française de gestion et de prévision de trésorerie pour PME : centralisation des comptes bancaires, prévisions, rapprochement et catégorisation automatiques.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Un prévisionnel de trésorerie à partir d'exports CSV de la banque (encaissements et décaissements attendus, solde projeté) se construit sans difficulté. Ce que vous perdez : la connexion automatique aux banques, la catégorisation et les intégrations aux logiciels comptables. Pour une petite structure avec une seule banque, remplaçable ; pour plusieurs comptes, gardez l'outil.",
+    "ce_que_vous_perdez": [
+      "La connexion automatique aux comptes bancaires",
+      "La catégorisation et le rapprochement automatiques",
+      "Les intégrations aux logiciels comptables",
+      "Les prévisions sur plusieurs horizons"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un outil de prévision de trésorerie pour une petite entreprise, sans prétendre remplacer Agicap ni faire de comptabilité officielle.\n\nPile : Next.js, TypeScript, SQLite. Données chez moi, secrets dans .env, aucune télémétrie.\n\nÀ faire :\n- Import de relevés CSV que j'exporte moi-même de ma banque, avec détection des doublons.\n- Catégorisation des écritures par règles que je définis, et correction manuelle.\n- Encaissements et décaissements prévus (factures clients à recevoir, charges récurrentes), avec date et montant.\n- Courbe du solde projeté sur 3, 6 et 12 mois, avec alerte si le solde passe sous un seuil que je fixe.\n- Scénarios simples : et si un gros client paie avec 30 jours de retard ?\n- Export CSV ; mono-utilisateur ; tests sur le calcul du solde projeté ; README avec les limites.\n\nHors périmètre : connexion bancaire en direct, rapprochement automatique, comptabilité. N'affirme jamais que les chiffres sont comptablement exacts.",
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "spendesk",
+    "nom": "Spendesk",
+    "domaine": "spendesk.com",
+    "categorie": "finance-compta",
+    "secteur": "saas",
+    "description": "Plateforme européenne de gestion des dépenses : cartes de paiement d'entreprise, notes de frais, factures fournisseurs, achats et budgets.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Les cartes de paiement et les virements fournisseurs sont des services financiers réglementés, reliés à des banques. Les workflows de validation des achats se recodent, mais ils ne servent à rien sans les cartes et les intégrations comptables. Pour une petite équipe, un tableur et une carte bancaire classique suffisent ; au-delà, c'est un outil d'éditeur.",
+    "ce_que_vous_perdez": [
+      "Les cartes de paiement d'entreprise avec contrôles",
+      "La collecte automatique des justificatifs",
+      "Les intégrations avec les logiciels comptables",
+      "La validation des achats avant la dépense"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "stripe",
+    "nom": "Stripe",
+    "domaine": "stripe.com",
+    "categorie": "finance-compta",
+    "secteur": "saas",
+    "description": "Plateforme de paiement en ligne : encaissement par carte, abonnements, factures et virements. Frais en Europe annoncés à 1,5 % + 0,25 € pour les cartes européennes standard, sans frais d'installation ni frais mensuels.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Accepter des paiements par carte, c'est manipuler des données bancaires (norme PCI DSS), appliquer l'authentification forte exigée en Europe et gérer fraudes et litiges. Ce n'est pas un module qu'on écrit : même les petits sites passent par un prestataire. Utilisez Stripe ou un équivalent ; développez le reste (panier, commandes) autour.",
+    "ce_que_vous_perdez": [
+      "La conformité aux règles de sécurité des paiements",
+      "L'authentification forte des clients",
+      "La gestion des fraudes et des litiges",
+      "Les abonnements, factures et virements intégrés"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "supabase",
+    "nom": "Supabase",
+    "domaine": "supabase.com",
+    "categorie": "dev-tools",
+    "secteur": "saas",
+    "description": "Base de données Postgres hébergée avec authentification, stockage de fichiers et API, open source et auto-hébergeable. Formule gratuite avec projets mis en pause après une semaine d'inactivité.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Pour un petit projet, une base SQLite ou Postgres avec une authentification simple suffit et vous garde la maîtrise de vos données. Ce que Supabase apporte : l'authentification clé en main (connexion par e-mail, réseaux sociaux), les règles d'accès par ligne, le stockage de fichiers et les sauvegardes gérées. Un outil maison convient tant que vous gérez bien les mots de passe et les sauvegardes.",
+    "ce_que_vous_perdez": [
+      "L'authentification clé en main",
+      "Les règles d'accès ligne par ligne",
+      "Le stockage de fichiers et les sauvegardes gérées",
+      "Les mises à jour de sécurité de la base"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un petit backend auto-hébergé pour une application web, sans prétendre remplacer Supabase.\n\nPile : Node, TypeScript, SQLite (ou Postgres si je le précise), hébergé sur mon petit serveur.\n\nÀ faire :\n- Authentification par e-mail et mot de passe : mots de passe hachés (argon2), sessions par cookie sécurisé, réinitialisation par e-mail.\n- API REST sur mes tables avec règles d'accès par utilisateur (chacun ne lit et n'écrit que ses lignes).\n- Stockage de fichiers sur disque avec limites de taille et de type.\n- Sauvegarde quotidienne de la base et procédure de restauration testée.\n- Journal des connexions, limitation du nombre de tentatives.\n- Tests sur les règles d'accès ; README avec la procédure de mise à jour.\n\nHors périmètre : authentification par réseaux sociaux, temps réel, fonctions serverless.",
+    "alternatives": [
+      {
+        "nom": "PocketBase",
+        "url": "https://github.com/pocketbase/pocketbase",
+        "type": "open-source",
+        "description": "Backend libre (MIT) en un seul exécutable : base SQLite, authentification, stockage de fichiers et API."
+      },
+      {
+        "nom": "Supabase auto-hébergé",
+        "url": "https://github.com/supabase/supabase",
+        "type": "open-source",
+        "description": "Le même produit en open source (Apache-2.0), installable avec Docker sur votre propre serveur."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "vercel",
+    "nom": "Vercel",
+    "domaine": "vercel.com",
+    "categorie": "dev-tools",
+    "secteur": "saas",
+    "description": "Plateforme d'hébergement et de déploiement d'applications web (Next.js notamment), avec déploiement à chaque commit. Formule Hobby gratuite pour les projets personnels non commerciaux.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Héberger une application sur son propre serveur avec Docker, un proxy et un script de déploiement est faisable. Ce que Vercel apporte : le déploiement à chaque commit, les environnements de prévisualisation, le réseau de diffusion mondial et le HTTPS sans effort. À vous de décider si ces gains valent l'abonnement. La formule gratuite est limitée aux projets personnels non commerciaux.",
+    "ce_que_vous_perdez": [
+      "Le déploiement automatique à chaque commit",
+      "Les environnements de prévisualisation",
+      "Le réseau de diffusion mondial",
+      "Le HTTPS et les certificats gérés"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un déploiement auto-hébergé pour une application Next.js, sans prétendre remplacer Vercel.\n\nPile : un petit serveur Linux, Docker, un proxy inverse avec HTTPS automatique (Caddy), GitHub Actions.\n\nÀ faire :\n- Dockerfile de production et fichier de composition ; variables d'environnement hors du dépôt.\n- Déploiement automatique à chaque envoi sur la branche principale, avec reprise à l'ancienne version en cas d'échec.\n- Un environnement de prévisualisation par branche, avec adresse temporaire.\n- Surveillance simple (état du site, espace disque) et alerte par e-mail.\n- Sauvegarde des données et procédure de restauration testée.\n- README avec la procédure de mise à jour du serveur.\n\nHors périmètre : réseau de diffusion mondial, fonctions serverless.",
+    "alternatives": [
+      {
+        "nom": "Coolify",
+        "url": "https://github.com/coollabsio/coolify",
+        "type": "open-source",
+        "description": "Plateforme libre (Apache-2.0) à installer sur votre serveur pour déployer applications et bases de données, alternative auto-hébergée aux plateformes d'hébergement gérées."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "sentry",
+    "nom": "Sentry",
+    "domaine": "sentry.io",
+    "categorie": "dev-tools",
+    "secteur": "saas",
+    "description": "Suivi des erreurs et des performances des applications : regroupe les erreurs, alerte l'équipe et conserve le contexte. Formule gratuite pour un seul développeur.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Un petit service qui reçoit les erreurs de votre application, les regroupe par type et vous envoie un e-mail se construit simplement. Sentry ajoute la lecture des traces d'erreur du navigateur à partir des fichiers sources, le suivi des performances et les rejeux de session. Pour un seul projet, remplaçable ; pour plusieurs applications et équipes, gardez l'outil.",
+    "ce_que_vous_perdez": [
+      "La reconstitution des erreurs du navigateur depuis le code source",
+      "Le suivi des performances",
+      "Les rejeux de session",
+      "Les intégrations avec les outils de développement"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un petit collecteur d'erreurs pour mes applications web, sans prétendre remplacer Sentry.\n\nPile : Node, TypeScript, SQLite, un script JavaScript à inclure dans mes applications.\n\nÀ faire :\n- Un script qui capte les erreurs non gérées (navigateur et serveur) et les envoie à mon collecteur avec la page, le navigateur et l'heure.\n- Regroupement des erreurs identiques par empreinte, compteur d'occurrences, première et dernière apparition.\n- Interface listant les erreurs, avec statut (nouvelle, vue, résolue) et trace.\n- Alerte par e-mail pour une nouvelle erreur (SMTP configurable), limitée pour éviter le déluge.\n- Aucune donnée personnelle collectée par défaut (adresses IP non conservées) ; durée de conservation réglable.\n- Tests sur le regroupement ; README avec les limites.\n\nHors périmètre : suivi des performances, rejeux de session, cartes de sources.",
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  }
+]
