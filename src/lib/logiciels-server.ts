@@ -48,6 +48,22 @@ export async function getVoteCounts(logicielId: string): Promise<VoteCounts> {
   return { remplace: row?.remplace ?? 0, pasRemplacable: row?.pas_remplacable ?? 0 };
 }
 
+// Nombre de retours publiés « je l'ai construit » par fiche, en une seule lecture (la
+// RLS ne laisse lire que les retours publiés). Une erreur donne simplement « aucun ».
+export async function getNbConstruits(): Promise<Record<string, number>> {
+  if (isBuildWithoutSupabase()) return {};
+  try {
+    const { data, error } = await getSupabaseServer().from('retours').select('logiciel_slug').eq('type', 'construit').limit(5000);
+    if (error) throw error;
+    const nb: Record<string, number> = {};
+    for (const r of data as { logiciel_slug: string }[]) nb[r.logiciel_slug] = (nb[r.logiciel_slug] ?? 0) + 1;
+    return nb;
+  } catch (e) {
+    console.error('getNbConstruits:', e);
+    return {};
+  }
+}
+
 export interface Retour {
   id: string;
   type: 'construit' | 'casse';

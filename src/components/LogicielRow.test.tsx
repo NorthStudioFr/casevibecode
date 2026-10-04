@@ -48,4 +48,11 @@ describe('LogicielRow', () => {
     expect(screen.getAllByText('29 €/mois').length).toBeGreaterThan(0);
     expect(screen.getByLabelText('3 votes')).toBeInTheDocument();
   });
+
+  it('affiche le nombre de personnes qui ont remplacé l\'outil', () => {
+    const { rerender } = render(<LogicielRow logiciel={logiciel} verdict="YES" totalVotes={0} rang={1} />);
+    expect(screen.getByLabelText('0 personne a remplacé cet outil')).toBeInTheDocument();
+    rerender(<LogicielRow logiciel={logiciel} verdict="YES" totalVotes={0} nbConstruits={3} rang={1} />);
+    expect(screen.getByLabelText('3 personnes ont remplacé cet outil')).toBeInTheDocument();
+  });
 });

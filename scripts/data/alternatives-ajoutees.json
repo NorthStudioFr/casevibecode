@@ -1,0 +1,191 @@
+{
+ "agicap": [
+  "https://github.com/actualbudget/actual",
+  "https://github.com/firefly-iii/firefly-iii",
+  "https://github.com/beancount/fava"
+ ],
+ "algolia": [
+  "https://github.com/manticoresoftware/manticoresearch",
+  "https://github.com/oramasearch/orama",
+  "https://github.com/CloudCannon/pagefind"
+ ],
+ "axonaut": [
+  "https://github.com/odoo/odoo"
+ ],
+ "bear": [
+  "https://github.com/streetwriters/notesnook",
+  "https://github.com/siyuan-note/siyuan"
+ ],
+ "beehiiv": [
+  "https://github.com/TryGhost/Ghost",
+  "https://github.com/pentacent/keila",
+  "https://github.com/mautic/mautic"
+ ],
+ "bitly": [
+  "https://github.com/thedevs-network/kutt"
+ ],
+ "bubble": [
+  "https://github.com/nocobase/nocobase"
+ ],
+ "cal-com": [
+  "https://github.com/alextselegidis/easyappointments",
+  "https://github.com/lukevella/rallly"
+ ],
+ "clickup": [
+  "https://github.com/opf/openproject"
+ ],
+ "dashlane": [
+  "https://github.com/dani-garcia/vaultwarden",
+  "https://github.com/passbolt/passbolt_api"
+ ],
+ "docker": [
+  "https://github.com/rancher-sandbox/rancher-desktop"
+ ],
+ "eurecia": [
+  "https://github.com/frappe/hrms",
+  "https://github.com/orangehrm/orangehrm",
+  "https://github.com/odoo/odoo"
+ ],
+ "finary": [
+  "https://github.com/actualbudget/actual",
+  "https://github.com/firefly-iii/firefly-iii",
+  "https://github.com/ghostfolio/ghostfolio"
+ ],
+ "firebase": [
+  "https://github.com/supabase/supabase",
+  "https://github.com/appwrite/appwrite"
+ ],
+ "framer": [
+  "https://github.com/webstudio-is/webstudio",
+  "https://github.com/withastro/astro",
+  "https://github.com/gohugoio/hugo"
+ ],
+ "ghost": [
+  "https://github.com/writefreely/writefreely",
+  "https://github.com/gohugoio/hugo"
+ ],
+ "github": [
+  "https://github.com/gogs/gogs",
+  "https://github.com/theonedev/onedev"
+ ],
+ "gitlab": [
+  "https://github.com/gogs/gogs",
+  "https://github.com/theonedev/onedev"
+ ],
+ "harvest": [
+  "https://github.com/solidtime-io/solidtime",
+  "https://github.com/ActivityWatch/activitywatch"
+ ],
+ "heroku": [
+  "https://github.com/caprover/caprover"
+ ],
+ "hubspot": [
+  "https://github.com/twentyhq/twenty"
+ ],
+ "jotform": [
+  "https://github.com/JhumanJ/OpnForm",
+  "https://github.com/heyform/heyform",
+  "https://tally.so"
+ ],
+ "kit": [
+  "https://github.com/TryGhost/Ghost",
+  "https://github.com/mautic/mautic"
+ ],
+ "linear": [
+  "https://github.com/opf/openproject",
+  "https://github.com/leantime/leantime"
+ ],
+ "loom": [
+  "https://github.com/alyssaxuu/screenity"
+ ],
+ "make": [
+  "https://github.com/huginn/huginn"
+ ],
+ "mistral-le-chat": [
+  "https://github.com/ggml-org/llama.cpp",
+  "https://github.com/janhq/jan"
+ ],
+ "mixpanel": [
+  "https://github.com/matomo-org/matomo",
+  "https://github.com/plausible/analytics"
+ ],
+ "monday-com": [
+  "https://github.com/opf/openproject"
+ ],
+ "n8n-cloud": [
+  "https://github.com/huginn/huginn"
+ ],
+ "netlify": [
+  "https://github.com/caprover/caprover",
+  "https://github.com/dokku/dokku"
+ ],
+ "ngrok": [
+  "https://github.com/cloudflare/cloudflared",
+  "https://github.com/rapiz1/rathole"
+ ],
+ "obsidian": [
+  "https://github.com/siyuan-note/siyuan",
+  "https://github.com/streetwriters/notesnook"
+ ],
+ "planity": [
+  "https://github.com/alextselegidis/easyappointments",
+  "https://github.com/calcom/cal.com",
+  "https://github.com/lukevella/rallly"
+ ],
+ "plausible": [
+  "https://github.com/matomo-org/matomo"
+ ],
+ "postman": [
+  "https://github.com/Kong/insomnia"
+ ],
+ "retool": [
+  "https://github.com/nocobase/nocobase"
+ ],
+ "sellsy": [
+  "https://github.com/odoo/odoo"
+ ],
+ "sentry": [
+  "https://github.com/errbit/errbit",
+  "https://github.com/highlight/highlight",
+  "https://github.com/bugsink/bugsink"
+ ],
+ "substack": [
+  "https://github.com/writefreely/writefreely"
+ ],
+ "supabase": [
+  "https://github.com/appwrite/appwrite"
+ ],
+ "surveymonkey": [
+  "https://github.com/JhumanJ/OpnForm",
+  "https://github.com/heyform/heyform"
+ ],
+ "systeme-io": [
+  "https://github.com/mautic/mautic",
+  "https://github.com/TryGhost/Ghost",
+  "https://github.com/medusajs/medusa"
+ ],
+ "tailscale": [
+  "https://github.com/netbirdio/netbird",
+  "https://github.com/slackhq/nebula"
+ ],
+ "toggl-track": [
+  "https://github.com/solidtime-io/solidtime",
+  "https://github.com/ActivityWatch/activitywatch"
+ ],
+ "uptimerobot": [
+  "https://github.com/TwiN/gatus",
+  "https://github.com/bluewave-labs/Checkmate"
+ ],
+ "vercel": [
+  "https://github.com/caprover/caprover",
+  "https://github.com/dokku/dokku"
+ ],
+ "wordpress": [
+  "https://github.com/TryGhost/Ghost",
+  "https://github.com/gohugoio/hugo",
+  "https://github.com/withastro/astro"
+ ],
+ "zapier": [
+  "https://github.com/huginn/huginn"
+ ]
+}

@@ -79,8 +79,20 @@ export function LogicielGrid({ logiciels }: { logiciels: LogicielAvecVerdict[] }
         </p>
       ) : (
         <div className="mt-4 border-t border-slate-200">
+          <div
+            aria-hidden="true"
+            className="hidden grid-cols-[2.5rem_minmax(0,1fr)_9rem_11rem_11rem_4rem_5rem] gap-x-3 border-b border-slate-200 px-2 py-2 text-xs uppercase tracking-wider text-slate-500 md:grid"
+          >
+            <span>#</span>
+            <span>{t.grid.colApp}</span>
+            <span>{t.grid.colCategory}</span>
+            <span>{t.grid.colPrice}</span>
+            <span>{t.grid.colVerdict}</span>
+            <span className="text-right">{t.grid.colVotes}</span>
+            <span className="text-right">{t.grid.colBuilt}</span>
+          </div>
           {filtered.map((l, i) => (
-            <LogicielRow key={l.id} logiciel={l} verdict={l.displayVerdict} totalVotes={l.totalVotes} rang={i + 1} />
+            <LogicielRow key={l.id} logiciel={l} verdict={l.displayVerdict} totalVotes={l.totalVotes} nbConstruits={l.nbConstruits} rang={i + 1} />
           ))}
         </div>
       )}

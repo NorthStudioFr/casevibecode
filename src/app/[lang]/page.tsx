@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { alternatesFor, langOf } from '@/lib/i18n/config';
 import { getDict } from '@/lib/i18n/dictionaries';
-import { getLogiciels, getVoteCounts } from '@/lib/logiciels-server';
+import { getLogiciels, getNbConstruits, getVoteCounts } from '@/lib/logiciels-server';
 import { computeVerdictDisplay } from '@/lib/verdict';
 import type { LogicielAvecVerdict } from '@/types/logiciel';
 import { LogicielGrid } from '@/components/LogicielGrid';
@@ -29,11 +29,12 @@ export default async function Page({ params }: { params?: Promise<{ lang?: strin
   // editor verdict. This is N+1 work (getVoteCounts = one RPC per fiche);
   // amortized by the page's revalidation window. Revisit (one grouped query)
   // if the catalogue grows significantly.
+  const construits = await getNbConstruits();
   const logiciels: LogicielAvecVerdict[] = await Promise.all(
     fiches.map(async (l) => {
       const counts = await getVoteCounts(l.id);
       const display = computeVerdictDisplay(l.verdictEditeur, counts);
-      return { ...l, displayVerdict: display.verdict, totalVotes: display.totalVotes };
+      return { ...l, displayVerdict: display.verdict, totalVotes: display.totalVotes, nbConstruits: construits[l.slug] ?? 0 };
     })
   );
 

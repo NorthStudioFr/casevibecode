@@ -1,0 +1,746 @@
+{
+ "agicap": [
+  {
+   "nom": "Actual Budget",
+   "url": "https://github.com/actualbudget/actual",
+   "type": "open-source",
+   "description": "Logiciel de budget et de suivi de comptes (MIT), auto-hébergeable ; pas de prévision de trésorerie d'entreprise.",
+   "en": "Budgeting and account tracking software (MIT), self-hostable; no business cash flow forecasting."
+  },
+  {
+   "nom": "Firefly III",
+   "url": "https://github.com/firefly-iii/firefly-iii",
+   "type": "open-source",
+   "description": "Gestionnaire de finances personnelles auto-hébergé (AGPL) : comptes, budgets, catégories et règles.",
+   "en": "Self-hosted personal finance manager (AGPL): accounts, budgets, categories and rules."
+  },
+  {
+   "nom": "Fava",
+   "url": "https://github.com/beancount/fava",
+   "type": "open-source",
+   "description": "Interface web de comptabilité en partie double en texte brut avec Beancount (MIT), pour qui aime les chiffres sous contrôle.",
+   "en": "Web interface for plain-text double-entry accounting with Beancount (MIT), for people who like to keep numbers under control."
+  }
+ ],
+ "algolia": [
+  {
+   "nom": "Manticore Search",
+   "url": "https://github.com/manticoresoftware/manticoresearch",
+   "type": "open-source",
+   "description": "Moteur de recherche plein texte auto-hébergeable (GPL-3.0), compatible avec le format de requêtes d'Elasticsearch.",
+   "en": "Self-hostable full-text search engine (GPL-3.0), with an Elasticsearch-compatible query format."
+  },
+  {
+   "nom": "Orama",
+   "url": "https://github.com/oramasearch/orama",
+   "type": "open-source",
+   "description": "Moteur de recherche en JavaScript (Apache-2.0) qui tourne dans le navigateur ou sur votre serveur.",
+   "en": "JavaScript search engine (Apache-2.0) that runs in the browser or on your server."
+  },
+  {
+   "nom": "Pagefind",
+   "url": "https://github.com/CloudCannon/pagefind",
+   "type": "open-source",
+   "description": "Recherche statique pour sites (MIT) : un index généré au moment du build, sans serveur.",
+   "en": "Static search for websites (MIT): an index generated at build time, with no server."
+  }
+ ],
+ "axonaut": [
+  {
+   "nom": "Odoo Community",
+   "url": "https://github.com/odoo/odoo",
+   "type": "open-source",
+   "description": "ERP et CRM modulaire auto-hébergeable (édition communautaire libre) : ventes, facturation, stocks, RH.",
+   "en": "Modular self-hostable ERP and CRM (free community edition): sales, invoicing, inventory, HR."
+  }
+ ],
+ "bear": [
+  {
+   "nom": "Notesnook",
+   "url": "https://github.com/streetwriters/notesnook",
+   "type": "open-source",
+   "description": "Application de notes chiffrée de bout en bout (GPL-3.0), avec synchronisation et option d'auto-hébergement.",
+   "en": "End-to-end encrypted note-taking app (GPL-3.0), with sync and a self-hosting option."
+  },
+  {
+   "nom": "SiYuan",
+   "url": "https://github.com/siyuan-note/siyuan",
+   "type": "open-source",
+   "description": "Gestion de connaissances en blocs, auto-hébergeable (AGPL), avec liens entre notes et synchronisation.",
+   "en": "Block-based knowledge management, self-hostable (AGPL), with links between notes and sync."
+  }
+ ],
+ "beehiiv": [
+  {
+   "nom": "Ghost",
+   "url": "https://github.com/TryGhost/Ghost",
+   "type": "open-source",
+   "description": "Publication, newsletters et abonnements payants, sans commission sur vos revenus (MIT).",
+   "en": "Publishing, newsletters and paid subscriptions, with no commission on your revenue (MIT)."
+  },
+  {
+   "nom": "Keila",
+   "url": "https://github.com/pentacent/keila",
+   "type": "open-source",
+   "description": "Outil de newsletters open source (AGPL) auto-hébergeable, avec éditeur et statistiques d'envoi.",
+   "en": "Open-source newsletter tool (AGPL), self-hostable, with an editor and sending statistics."
+  },
+  {
+   "nom": "Mautic",
+   "url": "https://github.com/mautic/mautic",
+   "type": "open-source",
+   "description": "Automatisation marketing open source (e-mails, formulaires, segments, parcours), auto-hébergeable.",
+   "en": "Open-source marketing automation (emails, forms, segments, journeys), self-hostable."
+  }
+ ],
+ "bitly": [
+  {
+   "nom": "Kutt",
+   "url": "https://github.com/thedevs-network/kutt",
+   "type": "open-source",
+   "description": "Raccourcisseur de liens auto-hébergeable (MIT) avec domaines personnalisés et statistiques.",
+   "en": "Self-hostable link shortener (MIT) with custom domains and statistics."
+  }
+ ],
+ "bubble": [
+  {
+   "nom": "NocoBase",
+   "url": "https://github.com/nocobase/nocobase",
+   "type": "open-source",
+   "description": "Plateforme sans code extensible pour applications métier (licence Apache-2.0 pour le cœur), auto-hébergeable.",
+   "en": "Extensible no-code platform for business applications (Apache-2.0 core), self-hostable."
+  }
+ ],
+ "cal-com": [
+  {
+   "nom": "Easy!Appointments",
+   "url": "https://github.com/alextselegidis/easyappointments",
+   "type": "open-source",
+   "description": "Planificateur de rendez-vous auto-hébergé (GPL-3.0) : prestataires, services, agenda en ligne.",
+   "en": "Self-hosted appointment scheduler (GPL-3.0): providers, services, online booking."
+  },
+  {
+   "nom": "Rallly",
+   "url": "https://github.com/lukevella/rallly",
+   "type": "open-source",
+   "description": "Sondage de dates pour trouver un créneau commun (AGPL), auto-hébergeable.",
+   "en": "Date polls to find a common slot (AGPL), self-hostable."
+  }
+ ],
+ "clickup": [
+  {
+   "nom": "OpenProject",
+   "url": "https://github.com/opf/openproject",
+   "type": "open-source",
+   "description": "Gestion de projet open source (GPL-3.0) : tâches, diagrammes de Gantt, suivi du temps, auto-hébergeable.",
+   "en": "Open-source project management (GPL-3.0): tasks, Gantt charts, time tracking, self-hostable."
+  }
+ ],
+ "dashlane": [
+  {
+   "nom": "Vaultwarden",
+   "url": "https://github.com/dani-garcia/vaultwarden",
+   "type": "open-source",
+   "description": "Serveur de gestionnaire de mots de passe léger (AGPL), compatible avec les clients Bitwarden, auto-hébergeable.",
+   "en": "Lightweight password manager server (AGPL), compatible with Bitwarden clients, self-hostable."
+  },
+  {
+   "nom": "Passbolt",
+   "url": "https://github.com/passbolt/passbolt_api",
+   "type": "open-source",
+   "description": "Gestionnaire de mots de passe open source pour équipes (AGPL), auto-hébergeable.",
+   "en": "Open-source password manager for teams (AGPL), self-hostable."
+  }
+ ],
+ "docker": [
+  {
+   "nom": "Rancher Desktop",
+   "url": "https://github.com/rancher-sandbox/rancher-desktop",
+   "type": "open-source",
+   "description": "Conteneurs et Kubernetes sur poste (Apache-2.0), avec interface graphique, alternative à Docker Desktop.",
+   "en": "Containers and Kubernetes on the desktop (Apache-2.0), with a graphical interface, an alternative to Docker Desktop."
+  }
+ ],
+ "eurecia": [
+  {
+   "nom": "Frappe HR",
+   "url": "https://github.com/frappe/hrms",
+   "type": "open-source",
+   "description": "Gestion des ressources humaines open source (GPL-3.0) : congés, présences, paie, recrutement.",
+   "en": "Open-source human resources management (GPL-3.0): leave, attendance, payroll, recruitment."
+  },
+  {
+   "nom": "OrangeHRM",
+   "url": "https://github.com/orangehrm/orangehrm",
+   "type": "open-source",
+   "description": "Gestion des ressources humaines libre (GPL-3.0) : dossiers du personnel, congés, évaluations.",
+   "en": "Free human resources management (GPL-3.0): employee records, leave, reviews."
+  },
+  {
+   "nom": "Odoo Community",
+   "url": "https://github.com/odoo/odoo",
+   "type": "open-source",
+   "description": "ERP et CRM modulaire auto-hébergeable (édition communautaire libre) : ventes, facturation, stocks, RH.",
+   "en": "Modular self-hostable ERP and CRM (free community edition): sales, invoicing, inventory, HR."
+  }
+ ],
+ "evernote": [
+  {
+   "nom": "SiYuan",
+   "url": "https://github.com/siyuan-note/siyuan",
+   "type": "open-source",
+   "description": "Gestion de connaissances en blocs, auto-hébergeable (AGPL), avec liens entre notes et synchronisation.",
+   "en": "Block-based knowledge management, self-hostable (AGPL), with links between notes and sync."
+  }
+ ],
+ "finary": [
+  {
+   "nom": "Actual Budget",
+   "url": "https://github.com/actualbudget/actual",
+   "type": "open-source",
+   "description": "Logiciel de budget et de suivi de comptes (MIT), auto-hébergeable ; pas de prévision de trésorerie d'entreprise.",
+   "en": "Budgeting and account tracking software (MIT), self-hostable; no business cash flow forecasting."
+  },
+  {
+   "nom": "Firefly III",
+   "url": "https://github.com/firefly-iii/firefly-iii",
+   "type": "open-source",
+   "description": "Gestionnaire de finances personnelles auto-hébergé (AGPL) : comptes, budgets, catégories et règles.",
+   "en": "Self-hosted personal finance manager (AGPL): accounts, budgets, categories and rules."
+  },
+  {
+   "nom": "Ghostfolio",
+   "url": "https://github.com/ghostfolio/ghostfolio",
+   "type": "open-source",
+   "description": "Suivi de patrimoine et de portefeuille auto-hébergé (AGPL) : actions, ETF, cryptos.",
+   "en": "Self-hosted wealth and portfolio tracker (AGPL): stocks, ETFs, crypto."
+  }
+ ],
+ "firebase": [
+  {
+   "nom": "Supabase auto-hébergé",
+   "url": "https://github.com/supabase/supabase",
+   "type": "open-source",
+   "description": "Base PostgreSQL, authentification et stockage (Apache-2.0), auto-hébergeables.",
+   "en": "PostgreSQL database, authentication and storage (Apache-2.0), self-hostable."
+  },
+  {
+   "nom": "Appwrite",
+   "url": "https://github.com/appwrite/appwrite",
+   "type": "open-source",
+   "description": "Backend auto-hébergeable (BSD-3) : base de données, authentification, stockage et fonctions.",
+   "en": "Self-hostable backend (BSD-3): database, authentication, storage and functions."
+  }
+ ],
+ "framer": [
+  {
+   "nom": "Webstudio",
+   "url": "https://github.com/webstudio-is/webstudio",
+   "type": "open-source",
+   "description": "Constructeur de sites visuel open source (AGPL), auto-hébergeable.",
+   "en": "Open-source visual website builder (AGPL), self-hostable."
+  },
+  {
+   "nom": "Astro",
+   "url": "https://github.com/withastro/astro",
+   "type": "open-source",
+   "description": "Framework de sites rapides (MIT), pour qui préfère le code à l'éditeur visuel.",
+   "en": "Framework for fast websites (MIT), for those who prefer code to a visual editor."
+  },
+  {
+   "nom": "Hugo",
+   "url": "https://github.com/gohugoio/hugo",
+   "type": "open-source",
+   "description": "Générateur de sites statiques très rapide (Apache-2.0), contenu en fichiers texte.",
+   "en": "Very fast static site generator (Apache-2.0), content in text files."
+  }
+ ],
+ "ghost": [
+  {
+   "nom": "WriteFreely",
+   "url": "https://github.com/writefreely/writefreely",
+   "type": "open-source",
+   "description": "Plateforme d'écriture minimaliste auto-hébergeable (AGPL), sans abonnement payant intégré.",
+   "en": "Minimalist self-hostable writing platform (AGPL), with no built-in paid subscriptions."
+  },
+  {
+   "nom": "Hugo",
+   "url": "https://github.com/gohugoio/hugo",
+   "type": "open-source",
+   "description": "Générateur de sites statiques très rapide (Apache-2.0), contenu en fichiers texte.",
+   "en": "Very fast static site generator (Apache-2.0), content in text files."
+  }
+ ],
+ "github": [
+  {
+   "nom": "Gogs",
+   "url": "https://github.com/gogs/gogs",
+   "type": "open-source",
+   "description": "Service Git auto-hébergé très léger (MIT) : dépôts, tickets, demandes de fusion.",
+   "en": "Very lightweight self-hosted Git service (MIT): repositories, issues, pull requests."
+  },
+  {
+   "nom": "OneDev",
+   "url": "https://github.com/theonedev/onedev",
+   "type": "open-source",
+   "description": "Forge Git auto-hébergée avec CI/CD intégrée (MIT) : dépôts, tickets, demandes de fusion.",
+   "en": "Self-hosted Git forge with built-in CI/CD (MIT): repositories, issues, pull requests."
+  }
+ ],
+ "gitlab": [
+  {
+   "nom": "Gogs",
+   "url": "https://github.com/gogs/gogs",
+   "type": "open-source",
+   "description": "Service Git auto-hébergé très léger (MIT) : dépôts, tickets, demandes de fusion.",
+   "en": "Very lightweight self-hosted Git service (MIT): repositories, issues, pull requests."
+  },
+  {
+   "nom": "OneDev",
+   "url": "https://github.com/theonedev/onedev",
+   "type": "open-source",
+   "description": "Forge Git auto-hébergée avec CI/CD intégrée (MIT) : dépôts, tickets, demandes de fusion.",
+   "en": "Self-hosted Git forge with built-in CI/CD (MIT): repositories, issues, pull requests."
+  }
+ ],
+ "harvest": [
+  {
+   "nom": "solidtime",
+   "url": "https://github.com/solidtime-io/solidtime",
+   "type": "open-source",
+   "description": "Suivi du temps open source (AGPL) pour indépendants et équipes, avec facturation par projet.",
+   "en": "Open-source time tracking (AGPL) for freelancers and teams, with per-project billing."
+  },
+  {
+   "nom": "ActivityWatch",
+   "url": "https://github.com/ActivityWatch/activitywatch",
+   "type": "open-source",
+   "description": "Suivi automatique du temps passé sur l'ordinateur (MPL-2.0), données gardées en local.",
+   "en": "Automatic tracking of time spent on the computer (MPL-2.0), data kept locally."
+  }
+ ],
+ "heroku": [
+  {
+   "nom": "CapRover",
+   "url": "https://github.com/caprover/caprover",
+   "type": "open-source",
+   "description": "Plateforme de déploiement sur votre serveur (Apache-2.0) : applications, bases et HTTPS en quelques clics.",
+   "en": "Deployment platform on your server (Apache-2.0): apps, databases and HTTPS in a few clicks."
+  }
+ ],
+ "hubspot": [
+  {
+   "nom": "Twenty",
+   "url": "https://github.com/twentyhq/twenty",
+   "type": "open-source",
+   "description": "CRM open source moderne (AGPL), auto-hébergeable : contacts, entreprises, pipeline.",
+   "en": "Modern open-source CRM (AGPL), self-hostable: contacts, companies, pipeline."
+  }
+ ],
+ "jotform": [
+  {
+   "nom": "OpnForm",
+   "url": "https://github.com/JhumanJ/OpnForm",
+   "type": "open-source",
+   "description": "Créateur de formulaires open source (AGPL), auto-hébergeable.",
+   "en": "Open-source form builder (AGPL), self-hostable."
+  },
+  {
+   "nom": "HeyForm",
+   "url": "https://github.com/heyform/heyform",
+   "type": "open-source",
+   "description": "Créateur de formulaires conversationnels open source (AGPL).",
+   "en": "Open-source conversational form builder (AGPL)."
+  },
+  {
+   "nom": "Tally",
+   "url": "https://tally.so",
+   "type": "gratuit",
+   "description": "Créateur de formulaires gratuit, formulaires et réponses illimités.",
+   "en": "Free form builder with unlimited forms and responses."
+  }
+ ],
+ "kit": [
+  {
+   "nom": "Ghost",
+   "url": "https://github.com/TryGhost/Ghost",
+   "type": "open-source",
+   "description": "Publication, newsletters et abonnements payants, sans commission sur vos revenus (MIT).",
+   "en": "Publishing, newsletters and paid subscriptions, with no commission on your revenue (MIT)."
+  },
+  {
+   "nom": "Mautic",
+   "url": "https://github.com/mautic/mautic",
+   "type": "open-source",
+   "description": "Automatisation marketing open source (e-mails, formulaires, segments, parcours), auto-hébergeable.",
+   "en": "Open-source marketing automation (emails, forms, segments, journeys), self-hostable."
+  }
+ ],
+ "linear": [
+  {
+   "nom": "OpenProject",
+   "url": "https://github.com/opf/openproject",
+   "type": "open-source",
+   "description": "Gestion de projet open source (GPL-3.0) : tâches, diagrammes de Gantt, suivi du temps, auto-hébergeable.",
+   "en": "Open-source project management (GPL-3.0): tasks, Gantt charts, time tracking, self-hostable."
+  },
+  {
+   "nom": "Leantime",
+   "url": "https://github.com/leantime/leantime",
+   "type": "open-source",
+   "description": "Gestion de projet open source (AGPL) pour petites équipes, auto-hébergeable.",
+   "en": "Open-source project management (AGPL) for small teams, self-hostable."
+  }
+ ],
+ "loom": [
+  {
+   "nom": "Screenity",
+   "url": "https://github.com/alyssaxuu/screenity",
+   "type": "open-source",
+   "description": "Enregistreur d'écran gratuit (GPL-3.0) en extension de navigateur, sans filigrane.",
+   "en": "Free screen recorder (GPL-3.0) as a browser extension, no watermark."
+  }
+ ],
+ "make": [
+  {
+   "nom": "Huginn",
+   "url": "https://github.com/huginn/huginn",
+   "type": "open-source",
+   "description": "Agents d'automatisation auto-hébergés (MIT) : surveiller le web et déclencher des actions.",
+   "en": "Self-hosted automation agents (MIT): watch the web and trigger actions."
+  }
+ ],
+ "mistral-le-chat": [
+  {
+   "nom": "llama.cpp",
+   "url": "https://github.com/ggml-org/llama.cpp",
+   "type": "open-source",
+   "description": "Exécution de modèles de langage sur votre machine (MIT), pour les plus à l'aise en ligne de commande.",
+   "en": "Running language models on your machine (MIT), for those comfortable with the command line."
+  },
+  {
+   "nom": "Jan",
+   "url": "https://github.com/janhq/jan",
+   "type": "open-source",
+   "description": "Application de bureau pour discuter avec des modèles d'IA locaux (Apache-2.0), hors ligne.",
+   "en": "Desktop app to chat with local AI models (Apache-2.0), offline."
+  }
+ ],
+ "mixpanel": [
+  {
+   "nom": "Matomo",
+   "url": "https://github.com/matomo-org/matomo",
+   "type": "open-source",
+   "description": "Statistiques web complètes auto-hébergeables (GPL-3.0), alternative à Google Analytics.",
+   "en": "Full self-hostable web analytics (GPL-3.0), an alternative to Google Analytics."
+  },
+  {
+   "nom": "Plausible Community Edition",
+   "url": "https://github.com/plausible/analytics",
+   "type": "open-source",
+   "description": "Statistiques web légères sans cookies (AGPL), version auto-hébergeable.",
+   "en": "Lightweight cookie-free web analytics (AGPL), self-hostable version."
+  }
+ ],
+ "monday-com": [
+  {
+   "nom": "OpenProject",
+   "url": "https://github.com/opf/openproject",
+   "type": "open-source",
+   "description": "Gestion de projet open source (GPL-3.0) : tâches, diagrammes de Gantt, suivi du temps, auto-hébergeable.",
+   "en": "Open-source project management (GPL-3.0): tasks, Gantt charts, time tracking, self-hostable."
+  }
+ ],
+ "n8n-cloud": [
+  {
+   "nom": "Huginn",
+   "url": "https://github.com/huginn/huginn",
+   "type": "open-source",
+   "description": "Agents d'automatisation auto-hébergés (MIT) : surveiller le web et déclencher des actions.",
+   "en": "Self-hosted automation agents (MIT): watch the web and trigger actions."
+  }
+ ],
+ "netlify": [
+  {
+   "nom": "CapRover",
+   "url": "https://github.com/caprover/caprover",
+   "type": "open-source",
+   "description": "Plateforme de déploiement sur votre serveur (Apache-2.0) : applications, bases et HTTPS en quelques clics.",
+   "en": "Deployment platform on your server (Apache-2.0): apps, databases and HTTPS in a few clicks."
+  },
+  {
+   "nom": "Dokku",
+   "url": "https://github.com/dokku/dokku",
+   "type": "open-source",
+   "description": "Mini-PaaS sur un seul serveur (MIT) : git push pour déployer.",
+   "en": "Mini-PaaS on a single server (MIT): git push to deploy."
+  }
+ ],
+ "ngrok": [
+  {
+   "nom": "cloudflared",
+   "url": "https://github.com/cloudflare/cloudflared",
+   "type": "open-source",
+   "description": "Tunnel vers votre machine locale (Apache-2.0), avec le service gratuit de Cloudflare.",
+   "en": "Tunnel to your local machine (Apache-2.0), using Cloudflare's free service."
+  },
+  {
+   "nom": "rathole",
+   "url": "https://github.com/rapiz1/rathole",
+   "type": "open-source",
+   "description": "Tunnel inversé léger et rapide (Apache-2.0) à héberger sur un petit serveur.",
+   "en": "Lightweight, fast reverse tunnel (Apache-2.0) to host on a small server."
+  }
+ ],
+ "obsidian": [
+  {
+   "nom": "SiYuan",
+   "url": "https://github.com/siyuan-note/siyuan",
+   "type": "open-source",
+   "description": "Gestion de connaissances en blocs, auto-hébergeable (AGPL), avec liens entre notes et synchronisation.",
+   "en": "Block-based knowledge management, self-hostable (AGPL), with links between notes and sync."
+  },
+  {
+   "nom": "Notesnook",
+   "url": "https://github.com/streetwriters/notesnook",
+   "type": "open-source",
+   "description": "Application de notes chiffrée de bout en bout (GPL-3.0), avec synchronisation et option d'auto-hébergement.",
+   "en": "End-to-end encrypted note-taking app (GPL-3.0), with sync and a self-hosting option."
+  }
+ ],
+ "planity": [
+  {
+   "nom": "Easy!Appointments",
+   "url": "https://github.com/alextselegidis/easyappointments",
+   "type": "open-source",
+   "description": "Planificateur de rendez-vous auto-hébergé (GPL-3.0) : prestataires, services, agenda en ligne.",
+   "en": "Self-hosted appointment scheduler (GPL-3.0): providers, services, online booking."
+  },
+  {
+   "nom": "Cal.com",
+   "url": "https://github.com/calcom/cal.com",
+   "type": "open-source",
+   "description": "Pages de réservation et connexion aux agendas (MIT), auto-hébergeable.",
+   "en": "Booking pages and calendar connections (MIT), self-hostable."
+  },
+  {
+   "nom": "Rallly",
+   "url": "https://github.com/lukevella/rallly",
+   "type": "open-source",
+   "description": "Sondage de dates pour trouver un créneau commun (AGPL), auto-hébergeable.",
+   "en": "Date polls to find a common slot (AGPL), self-hostable."
+  }
+ ],
+ "plausible": [
+  {
+   "nom": "Matomo",
+   "url": "https://github.com/matomo-org/matomo",
+   "type": "open-source",
+   "description": "Statistiques web complètes auto-hébergeables (GPL-3.0), alternative à Google Analytics.",
+   "en": "Full self-hostable web analytics (GPL-3.0), an alternative to Google Analytics."
+  }
+ ],
+ "postman": [
+  {
+   "nom": "Insomnia",
+   "url": "https://github.com/Kong/insomnia",
+   "type": "open-source",
+   "description": "Client d'API pour tester des requêtes (Apache-2.0), alternative à Postman.",
+   "en": "API client for testing requests (Apache-2.0), an alternative to Postman."
+  }
+ ],
+ "retool": [
+  {
+   "nom": "NocoBase",
+   "url": "https://github.com/nocobase/nocobase",
+   "type": "open-source",
+   "description": "Plateforme sans code extensible pour applications métier (licence Apache-2.0 pour le cœur), auto-hébergeable.",
+   "en": "Extensible no-code platform for business applications (Apache-2.0 core), self-hostable."
+  }
+ ],
+ "sellsy": [
+  {
+   "nom": "Odoo Community",
+   "url": "https://github.com/odoo/odoo",
+   "type": "open-source",
+   "description": "ERP et CRM modulaire auto-hébergeable (édition communautaire libre) : ventes, facturation, stocks, RH.",
+   "en": "Modular self-hostable ERP and CRM (free community edition): sales, invoicing, inventory, HR."
+  }
+ ],
+ "sentry": [
+  {
+   "nom": "Errbit",
+   "url": "https://github.com/errbit/errbit",
+   "type": "open-source",
+   "description": "Collecteur d'erreurs auto-hébergé (MIT), compatible avec les clients de Airbrake.",
+   "en": "Self-hosted error collector (MIT), compatible with Airbrake clients."
+  },
+  {
+   "nom": "Highlight",
+   "url": "https://github.com/highlight/highlight",
+   "type": "open-source",
+   "description": "Suivi d'erreurs, logs et replays de sessions (Apache-2.0), auto-hébergeable.",
+   "en": "Error tracking, logs and session replays (Apache-2.0), self-hostable."
+  },
+  {
+   "nom": "Bugsink",
+   "url": "https://github.com/bugsink/bugsink",
+   "type": "open-source",
+   "description": "Suivi d'erreurs auto-hébergé simple (MIT), compatible avec le protocole de Sentry.",
+   "en": "Simple self-hosted error tracking (MIT), compatible with the Sentry protocol."
+  }
+ ],
+ "substack": [
+  {
+   "nom": "WriteFreely",
+   "url": "https://github.com/writefreely/writefreely",
+   "type": "open-source",
+   "description": "Plateforme d'écriture minimaliste auto-hébergeable (AGPL), sans abonnement payant intégré.",
+   "en": "Minimalist self-hostable writing platform (AGPL), with no built-in paid subscriptions."
+  }
+ ],
+ "supabase": [
+  {
+   "nom": "Appwrite",
+   "url": "https://github.com/appwrite/appwrite",
+   "type": "open-source",
+   "description": "Backend auto-hébergeable (BSD-3) : base de données, authentification, stockage et fonctions.",
+   "en": "Self-hostable backend (BSD-3): database, authentication, storage and functions."
+  }
+ ],
+ "surveymonkey": [
+  {
+   "nom": "OpnForm",
+   "url": "https://github.com/JhumanJ/OpnForm",
+   "type": "open-source",
+   "description": "Créateur de formulaires open source (AGPL), auto-hébergeable.",
+   "en": "Open-source form builder (AGPL), self-hostable."
+  },
+  {
+   "nom": "HeyForm",
+   "url": "https://github.com/heyform/heyform",
+   "type": "open-source",
+   "description": "Créateur de formulaires conversationnels open source (AGPL).",
+   "en": "Open-source conversational form builder (AGPL)."
+  }
+ ],
+ "systeme-io": [
+  {
+   "nom": "Mautic",
+   "url": "https://github.com/mautic/mautic",
+   "type": "open-source",
+   "description": "Automatisation marketing open source (e-mails, formulaires, segments, parcours), auto-hébergeable.",
+   "en": "Open-source marketing automation (emails, forms, segments, journeys), self-hostable."
+  },
+  {
+   "nom": "Ghost",
+   "url": "https://github.com/TryGhost/Ghost",
+   "type": "open-source",
+   "description": "Publication, newsletters et abonnements payants, sans commission sur vos revenus (MIT).",
+   "en": "Publishing, newsletters and paid subscriptions, with no commission on your revenue (MIT)."
+  },
+  {
+   "nom": "Medusa",
+   "url": "https://github.com/medusajs/medusa",
+   "type": "open-source",
+   "description": "Moteur de boutique en ligne sur mesure (MIT), pour construire sa propre vente en ligne.",
+   "en": "Custom online store engine (MIT), to build your own online shop."
+  }
+ ],
+ "tailscale": [
+  {
+   "nom": "NetBird",
+   "url": "https://github.com/netbirdio/netbird",
+   "type": "open-source",
+   "description": "Réseau privé maillé basé sur WireGuard, auto-hébergeable (BSD-3 / AGPL).",
+   "en": "WireGuard-based mesh private network, self-hostable (BSD-3 / AGPL)."
+  },
+  {
+   "nom": "Nebula",
+   "url": "https://github.com/slackhq/nebula",
+   "type": "open-source",
+   "description": "Réseau privé maillé évolutif (MIT), créé par Slack.",
+   "en": "Scalable mesh private network (MIT), created by Slack."
+  }
+ ],
+ "toggl-track": [
+  {
+   "nom": "solidtime",
+   "url": "https://github.com/solidtime-io/solidtime",
+   "type": "open-source",
+   "description": "Suivi du temps open source (AGPL) pour indépendants et équipes, avec facturation par projet.",
+   "en": "Open-source time tracking (AGPL) for freelancers and teams, with per-project billing."
+  },
+  {
+   "nom": "ActivityWatch",
+   "url": "https://github.com/ActivityWatch/activitywatch",
+   "type": "open-source",
+   "description": "Suivi automatique du temps passé sur l'ordinateur (MPL-2.0), données gardées en local.",
+   "en": "Automatic tracking of time spent on the computer (MPL-2.0), data kept locally."
+  }
+ ],
+ "uptimerobot": [
+  {
+   "nom": "Gatus",
+   "url": "https://github.com/TwiN/gatus",
+   "type": "open-source",
+   "description": "Page d'état et surveillance configurée en fichier texte (Apache-2.0).",
+   "en": "Status page and monitoring configured in a text file (Apache-2.0)."
+  },
+  {
+   "nom": "Checkmate",
+   "url": "https://github.com/bluewave-labs/Checkmate",
+   "type": "open-source",
+   "description": "Surveillance de disponibilité et d'infrastructure auto-hébergée (AGPL).",
+   "en": "Self-hosted uptime and infrastructure monitoring (AGPL)."
+  }
+ ],
+ "vercel": [
+  {
+   "nom": "CapRover",
+   "url": "https://github.com/caprover/caprover",
+   "type": "open-source",
+   "description": "Plateforme de déploiement sur votre serveur (Apache-2.0) : applications, bases et HTTPS en quelques clics.",
+   "en": "Deployment platform on your server (Apache-2.0): apps, databases and HTTPS in a few clicks."
+  },
+  {
+   "nom": "Dokku",
+   "url": "https://github.com/dokku/dokku",
+   "type": "open-source",
+   "description": "Mini-PaaS sur un seul serveur (MIT) : git push pour déployer.",
+   "en": "Mini-PaaS on a single server (MIT): git push to deploy."
+  }
+ ],
+ "wordpress": [
+  {
+   "nom": "Ghost",
+   "url": "https://github.com/TryGhost/Ghost",
+   "type": "open-source",
+   "description": "Publication, newsletters et abonnements payants, sans commission sur vos revenus (MIT).",
+   "en": "Publishing, newsletters and paid subscriptions, with no commission on your revenue (MIT)."
+  },
+  {
+   "nom": "Hugo",
+   "url": "https://github.com/gohugoio/hugo",
+   "type": "open-source",
+   "description": "Générateur de sites statiques très rapide (Apache-2.0), contenu en fichiers texte.",
+   "en": "Very fast static site generator (Apache-2.0), content in text files."
+  },
+  {
+   "nom": "Astro",
+   "url": "https://github.com/withastro/astro",
+   "type": "open-source",
+   "description": "Framework de sites rapides (MIT), pour qui préfère le code à l'éditeur visuel.",
+   "en": "Framework for fast websites (MIT), for those who prefer code to a visual editor."
+  }
+ ],
+ "zapier": [
+  {
+   "nom": "Huginn",
+   "url": "https://github.com/huginn/huginn",
+   "type": "open-source",
+   "description": "Agents d'automatisation auto-hébergés (MIT) : surveiller le web et déclencher des actions.",
+   "en": "Self-hosted automation agents (MIT): watch the web and trigger actions."
+  }
+ ]
+}

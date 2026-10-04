@@ -60,7 +60,12 @@
    "Integrations with accounting software",
    "Forecasts over several horizons"
   ],
-  "prompt": "Build me a cash-flow forecasting tool for a small business, without claiming to replace Agicap or do official accounting.\n\nStack: Next.js, TypeScript, SQLite. Data at my place, secrets in .env, no telemetry.\n\nTo do:\n- Import of CSV statements that I export myself from my bank, with duplicate detection.\n- Categorisation of entries by rules I define, and manual correction.\n- Expected receipts and payments (customer invoices to collect, recurring costs), with date and amount.\n- Projected balance curve over 3, 6 and 12 months, with an alert if the balance falls below a threshold I set.\n- Simple scenarios: what if a big customer pays 30 days late?\n- CSV export; single user; tests on the projected balance calculation; README with the limits.\n\nOut of scope: live bank connection, automatic reconciliation, accounting. Never state that the figures are accounting-accurate."
+  "prompt": "Build me a cash-flow forecasting tool for a small business, without claiming to replace Agicap or do official accounting.\n\nStack: Next.js, TypeScript, SQLite. Data at my place, secrets in .env, no telemetry.\n\nTo do:\n- Import of CSV statements that I export myself from my bank, with duplicate detection.\n- Categorisation of entries by rules I define, and manual correction.\n- Expected receipts and payments (customer invoices to collect, recurring costs), with date and amount.\n- Projected balance curve over 3, 6 and 12 months, with an alert if the balance falls below a threshold I set.\n- Simple scenarios: what if a big customer pays 30 days late?\n- CSV export; single user; tests on the projected balance calculation; README with the limits.\n\nOut of scope: live bank connection, automatic reconciliation, accounting. Never state that the figures are accounting-accurate.",
+  "alternatives": [
+   "Budgeting and account tracking software (MIT), self-hostable; no business cash flow forecasting.",
+   "Self-hosted personal finance manager (AGPL): accounts, budgets, categories and rules.",
+   "Web interface for plain-text double-entry accounting with Beancount (MIT), for people who like to keep numbers under control."
+  ]
  },
  "agorapulse": {
   "description": "Social media management: publishing, unified inbox, listening, reports and return-on-investment tracking.",
@@ -205,7 +210,8 @@
   ],
   "alternatives": [
    "Free management suite: customers, quotes, invoices, calendar and payment tracking, developed in France.",
-   "Free ERP combining CRM, quotes, invoicing and project tracking; heavier to set up."
+   "Free ERP combining CRM, quotes, invoicing and project tracking; heavier to set up.",
+   "Modular self-hostable ERP and CRM (free community edition): sales, invoicing, inventory, HR."
   ],
   "prompt": "Build me a small sales management tool for a freelancer or very small business, without claiming to replace Axonaut or do official accounting.\n\nStack: Next.js, TypeScript, SQLite. Data at my place, secrets in .env, no telemetry.\n\nTo do:\n- Customers and prospects: record, history of exchanges, sales follow-up stage (new, quote sent, won, lost).\n- Quote then invoice from the quote, as PDF: continuous numbering with no gaps, mandatory mentions, VAT per line, deposit and balance.\n- Invoices are never deleted or edited: a mistake is corrected with a credit note.\n- Payment tracking and reminder by email (configurable SMTP).\n- Expense claims: entry with photo of the receipt, approval status.\n- CSV export of customers and invoices for my accountant; simple backup.\n- Tests on numbering and totals; README with the limits.\n\nOut of scope: accounting, bank reconciliation, VAT returns, and the transmission of invoices through an approved platform that electronic invoicing reform will eventually require (timetable to be checked). Never state that the documents comply with that reform."
  },
@@ -219,7 +225,9 @@
    "Extra themes and exports"
   ],
   "alternatives": [
-   "Free note-taking (AGPL-3.0) in local files, with links between notes and a daily journal."
+   "Free note-taking (AGPL-3.0) in local files, with links between notes and a daily journal.",
+   "End-to-end encrypted note-taking app (GPL-3.0), with sync and a self-hosting option.",
+   "Block-based knowledge management, self-hostable (AGPL), with links between notes and sync."
   ],
   "prompt": "Build me a simple Markdown notes app, on all my devices, to replace Bear.\n\nStack: installable web app (PWA), Node or Next.js, SQLite.\n\nTo do:\n- Markdown editor with preview; notes with nested tags (#project/idea) created by typing the #.\n- Fast full-text search, pinned notes, trash with restore.\n- Works offline (service worker) and syncs on reconnection without losing a note.\n- Export of one note or all as Markdown, PDF and HTML.\n- Simple authentication, daily backup; tests on sync; README with the limits.\n\nOut of scope: text recognition in images, collaborative sharing."
  },
@@ -458,7 +466,8 @@
   ],
   "alternatives": [
    "Tasks, documents, goals, dashboards and planning in one community app; automations are more limited there.",
-   "Active open-source project and ticket tracking platform."
+   "Active open-source project and ticket tracking platform.",
+   "Open-source project management (GPL-3.0): tasks, Gantt charts, time tracking, self-hostable."
   ],
   "prompt": "Build me a task management tool for a small team, to replace ClickUp.\n\nStack: Next.js, TypeScript, Tailwind, PostgreSQL with Drizzle, Docker Compose.\n\nTo do:\n- Organisations, projects, members, issues with labels, cycles and milestones.\n- List, kanban and simple timeline views, on a single issue model.\n- Comments, mentions, assignments, watchers, full activity log.\n- Owner, member and viewer roles, with a test for each change.\n- Search, CSV import and export, email notifications, daily backup.\n- Simple Markdown documents and goals linked to issues.\n- Local launch in one command, demo data, health checks, migrations, administrator recovery command.\n- Secrets in .env, no telemetry, tests, README.\n\nOut of scope: hundreds of integrations, enterprise portfolio planning, SSO, native mobile apps."
  },
@@ -574,7 +583,9 @@
    "Independent security audits, sharing and support."
   ],
   "alternatives": [
-   "Open-source local password manager; covers the essentials of a vault without being a Dashlane clone."
+   "Open-source local password manager; covers the essentials of a vault without being a Dashlane clone.",
+   "Lightweight password manager server (AGPL), compatible with Bitwarden clients, self-hostable.",
+   "Open-source password manager for teams (AGPL), self-hostable."
   ],
   "prompt": "Build me a personal password vault, command line, to replace Dashlane. It does not fill in forms automatically.\n\nStack: Node CLI.\n\nTo do:\n- Commands: `vault add <name>`, `vault get <name>`, `vault list`, `vault gen`. `get` copies the secret to the clipboard (clipboardy) and clears it after 20 seconds.\n- A single encrypted file ~/.vault/store.age, encrypted with the age tool (calling the command-line binary) from a passphrase requested each time and never written to disk.\n- Each entry: name, username, password, URL, notes, update date. All as JSON inside the encrypted file, decrypted only in memory.\n- `vault gen`: random 24-character password via crypto.randomBytes, with an option for a 4-word passphrase (diceware).\n- `vault backup`: dated encrypted copy in ~/.vault/backups/, which I will sync with the tool of my choice.\n- 100% local: no account, no telemetry, no network call.\n\nOut of scope: autofill, passkeys, leak alerts, sharing. Do not invent any cryptography: use age as is.\n\nREADME: say that KeePassXC or Bitwarden is the reasonable choice for most people, and that a forgotten passphrase means a lost vault."
  },
@@ -776,7 +787,12 @@
    "Recruitment and review modules",
    "The support of a vendor established for twenty years"
   ],
-  "prompt": "Build me a leave, time-tracking and expense-claim tool for a small business, without claiming to replace Eurécia or do payroll.\n\nStack: Next.js, TypeScript, SQLite. Data at my place, secrets in .env, no telemetry.\n\nTo do:\n- Employees with a role (employee, manager, HR) and sign-in by password or magic link.\n- Leave and absence requests with approval, team calendar, balances per type of leave that I configure.\n- Working-time entry per day or per week, monthly summary.\n- Expense claims: amount, photo of the receipt, approval status.\n- CSV export of hours and absences for my accountant.\n- Employee data: role-based access, change log, deletion on request.\n- Tests on leave balances; README with the limits.\n\nOut of scope: payroll calculation, DSN, recruitment. Never state that the counts comply with the law."
+  "prompt": "Build me a leave, time-tracking and expense-claim tool for a small business, without claiming to replace Eurécia or do payroll.\n\nStack: Next.js, TypeScript, SQLite. Data at my place, secrets in .env, no telemetry.\n\nTo do:\n- Employees with a role (employee, manager, HR) and sign-in by password or magic link.\n- Leave and absence requests with approval, team calendar, balances per type of leave that I configure.\n- Working-time entry per day or per week, monthly summary.\n- Expense claims: amount, photo of the receipt, approval status.\n- CSV export of hours and absences for my accountant.\n- Employee data: role-based access, change log, deletion on request.\n- Tests on leave balances; README with the limits.\n\nOut of scope: payroll calculation, DSN, recruitment. Never state that the counts comply with the law.",
+  "alternatives": [
+   "Open-source human resources management (GPL-3.0): leave, attendance, payroll, recruitment.",
+   "Free human resources management (GPL-3.0): employee records, leave, reviews.",
+   "Modular self-hostable ERP and CRM (free community edition): sales, invoicing, inventory, HR."
+  ]
  },
  "eventsoft": {
   "description": "French software (vendor Intrapole) for event and resource planning: staff, vehicles, equipment, with DPAE, employment contracts and payroll export. Aimed in particular at caterers and event service providers.",
@@ -873,7 +889,12 @@
    "The community and comparison with other users.",
    "Someone who fixes the connector the day your bank changes its API."
   ],
-  "prompt": "Build me a local net-worth tracker. Single user, on my machine, no account, no cloud, no telemetry.\n\nStack: Next.js, TypeScript, Tailwind, SQLite (better-sqlite3, simple SQL migrations in /db), Recharts. No ORM, no authentication library.\n\nData model:\n- accounts: name, institution, type (cash, broker, retirement, crypto, property, loan), currency\n- positions: account, symbol (optional), quantity, manual value (optional), cost basis (optional)\n- quotes: symbol, date, close, currency\n- snapshots: date, total value, detail as JSON\n\nTo do:\n1. CRUD for accounts and positions; valued by symbol, or with a manual value for property and cash.\n2. CSV import at /import: paste or upload a file, map the columns (symbol, quantity, cost basis), choose the account, preview before confirming.\n3. A quote refresh route: crypto through CoinGecko, stocks and ETFs through a single configurable HTTP endpoint. Cached in the quotes table; never a network call when displaying a page.\n4. `npm run snapshot`: recalculates net worth and stores a row. Document running it daily by cron.\n5. Dashboard: net worth, evolution curve, allocation ring by asset type, positions table with value, weight and gain against cost basis.\n6. Multi-currency: base currency in .env, exchange rates fetched in the same task, everything converted for display.\n\nOut of scope: linking bank or broker accounts, PSD2 aggregators, collecting credentials, mobile apps, multi-user, tax return.\n\nVariables in .env.example: BASE_CURRENCY, COINGECKO_API_KEY, QUOTE_API_URL, QUOTE_API_KEY, FX_API_URL. Sample data: three fictional accounts and eight positions. README under thirty lines."
+  "prompt": "Build me a local net-worth tracker. Single user, on my machine, no account, no cloud, no telemetry.\n\nStack: Next.js, TypeScript, Tailwind, SQLite (better-sqlite3, simple SQL migrations in /db), Recharts. No ORM, no authentication library.\n\nData model:\n- accounts: name, institution, type (cash, broker, retirement, crypto, property, loan), currency\n- positions: account, symbol (optional), quantity, manual value (optional), cost basis (optional)\n- quotes: symbol, date, close, currency\n- snapshots: date, total value, detail as JSON\n\nTo do:\n1. CRUD for accounts and positions; valued by symbol, or with a manual value for property and cash.\n2. CSV import at /import: paste or upload a file, map the columns (symbol, quantity, cost basis), choose the account, preview before confirming.\n3. A quote refresh route: crypto through CoinGecko, stocks and ETFs through a single configurable HTTP endpoint. Cached in the quotes table; never a network call when displaying a page.\n4. `npm run snapshot`: recalculates net worth and stores a row. Document running it daily by cron.\n5. Dashboard: net worth, evolution curve, allocation ring by asset type, positions table with value, weight and gain against cost basis.\n6. Multi-currency: base currency in .env, exchange rates fetched in the same task, everything converted for display.\n\nOut of scope: linking bank or broker accounts, PSD2 aggregators, collecting credentials, mobile apps, multi-user, tax return.\n\nVariables in .env.example: BASE_CURRENCY, COINGECKO_API_KEY, QUOTE_API_URL, QUOTE_API_KEY, FX_API_URL. Sample data: three fictional accounts and eight positions. README under thirty lines.",
+  "alternatives": [
+   "Budgeting and account tracking software (MIT), self-hostable; no business cash flow forecasting.",
+   "Self-hosted personal finance manager (AGPL): accounts, budgets, categories and rules.",
+   "Self-hosted wealth and portfolio tracker (AGPL): stocks, ETFs, crypto."
+  ]
  },
  "foodmeup": {
   "description": "Recipe management, profitability calculation and recipe cards for food trades.",
@@ -900,7 +921,12 @@
    "Hosting and HTTPS with no setup",
    "The built-in CMS"
   ],
-  "prompt": "Build me a showcase site that a non-technical person can edit, without claiming to replace Framer.\n\nStack: Next.js, TypeScript, content in Markdown and JSON files in the repository, hosted on my server or on a static host.\n\nTo do:\n- Pages made of reusable sections (header, text and image, gallery, real testimonials only, contact form).\n- Blog in Markdown with optimised images, SEO tags and sitemap.\n- Contact form with spam protection and sending by email (configurable SMTP).\n- A simple password-protected editing interface to change the texts and images, without touching code.\n- Consent banner if audience measurement is added; fonts hosted on the site.\n- Page-generation tests; README with the publishing procedure.\n\nOut of scope: drag-and-drop visual editor, advanced animations."
+  "prompt": "Build me a showcase site that a non-technical person can edit, without claiming to replace Framer.\n\nStack: Next.js, TypeScript, content in Markdown and JSON files in the repository, hosted on my server or on a static host.\n\nTo do:\n- Pages made of reusable sections (header, text and image, gallery, real testimonials only, contact form).\n- Blog in Markdown with optimised images, SEO tags and sitemap.\n- Contact form with spam protection and sending by email (configurable SMTP).\n- A simple password-protected editing interface to change the texts and images, without touching code.\n- Consent banner if audience measurement is added; fonts hosted on the site.\n- Page-generation tests; README with the publishing procedure.\n\nOut of scope: drag-and-drop visual editor, advanced animations.",
+  "alternatives": [
+   "Open-source visual website builder (AGPL), self-hostable.",
+   "Framework for fast websites (MIT), for those who prefer code to a visual editor.",
+   "Very fast static site generator (Apache-2.0), content in text files."
+  ]
  },
  "freshdesk": {
   "description": "Customer support software: emails and web forms become tickets, with priorities, owners and a help centre.",
@@ -1082,7 +1108,8 @@
   ],
   "alternatives": [
    "Free management suite: customers, quotes, invoices, calendar and payment tracking, developed in France.",
-   "Free ERP with CRM, quotes and invoicing; heavier to set up."
+   "Free ERP with CRM, quotes and invoicing; heavier to set up.",
+   "Modern open-source CRM (AGPL), self-hostable: contacts, companies, pipeline."
   ],
   "prompt": "Build me a simple CRM for a small sales team, without claiming to replace HubSpot or do marketing automation.\n\nStack: Next.js, TypeScript, SQLite. Data at my place, secrets in .env, no telemetry.\n\nTo do:\n- Contacts and companies: record, history of exchanges, notes and attachments.\n- Pipeline in columns (new, contacted, quote, won, lost), drag and drop, expected value and closing date.\n- Follow-up reminders by email (configurable SMTP) and a “to do today” view.\n- Contact form embeddable in my site: each submission creates a contact.\n- CSV import and export; several users with roles.\n- GDPR: consent noted on each contact, export and deletion of a contact on request.\n- Tests on the pipeline; README with the limits.\n\nOut of scope: bulk email campaigns, marketing automation, scoring, third-party integrations."
  },
@@ -1206,7 +1233,12 @@
    "The app builder.",
    "Integrations, templates and compliance options."
   ],
-  "prompt": "Build me a personal form builder to replace Jotform.\n\nStack: Node, Express, better-sqlite3. Two surfaces: an administration reachable on localhost only, and public pages /f/<slug> for anyone with the link.\n\nTo do:\n- Forms are stored as JSON in SQLite. Fields: text, email, long text, choice, checkbox, date and file upload (uploads/ folder, 10 MB maximum).\n- Server-side validation of required fields and email format, thank-you message per form, honeypot field and per-IP rate limit.\n- Each submission is recorded with the timestamp and the form version. On the admin side: a table per form with CSV export.\n- A plain-text summary email for each response (SMTP in .env).\n- Only the public pages are exposed; no accounts, no telemetry.\n\nOut of scope: payments, PDF generation, approval workflows, widget catalogue.\n\nREADME: placing the public part behind a reverse proxy, location of uploaded files."
+  "prompt": "Build me a personal form builder to replace Jotform.\n\nStack: Node, Express, better-sqlite3. Two surfaces: an administration reachable on localhost only, and public pages /f/<slug> for anyone with the link.\n\nTo do:\n- Forms are stored as JSON in SQLite. Fields: text, email, long text, choice, checkbox, date and file upload (uploads/ folder, 10 MB maximum).\n- Server-side validation of required fields and email format, thank-you message per form, honeypot field and per-IP rate limit.\n- Each submission is recorded with the timestamp and the form version. On the admin side: a table per form with CSV export.\n- A plain-text summary email for each response (SMTP in .env).\n- Only the public pages are exposed; no accounts, no telemetry.\n\nOut of scope: payments, PDF generation, approval workflows, widget catalogue.\n\nREADME: placing the public part behind a reverse proxy, location of uploaded files.",
+  "alternatives": [
+   "Open-source form builder (AGPL), self-hostable.",
+   "Open-source conversational form builder (AGPL).",
+   "Free form builder with unlimited forms and responses."
+  ]
  },
  "just-eat-pro": {
   "description": "Meal delivery marketplace; its extranet lets restaurateurs manage orders and menus.",
@@ -1424,7 +1456,8 @@
   ],
   "alternatives": [
    "Alternative to Loom with your own storage and your own server to manage.",
-   "Excellent open-source recording engine; hosting and sharing are still yours to build."
+   "Excellent open-source recording engine; hosting and sharing are still yours to build.",
+   "Free screen recorder (GPL-3.0) as a browser extension, no watermark."
   ],
   "prompt": "Build me a screen recording and link sharing tool, to replace Loom on macOS.\n\nTwo parts: a local command and a small server on my VPS.\n\nTo do:\n- `rec start` and `rec stop` around ffmpeg's avfoundation capture (screen + microphone), file saved to ~/Recordings/YYYY-MM-DD-HHMM.mp4. No camera bubble.\n- On stop: conversion to web-friendly H.264, local transcription with whisper.cpp, then upload of the video and text to the server by rsync over SSH.\n- The server (Node, Express, better-sqlite3, behind my reverse proxy) serves each video at an unguessable /v/<random id> URL: player, title, date, transcript below with in-page search.\n- `rec stop` prints the URL and copies it to the clipboard. Goal: under a minute between stopping and having the link for a 2-minute video.\n- The list of all videos stays private (local or VPN). Shared pages are only reachable by their link.\n- No accounts, no telemetry.\n\nOut of scope: statistics, comments, editing, team library.\n\nREADME: macOS permissions (screen recording, microphone), finding the right ffmpeg device, deploying the server."
  },
@@ -1493,7 +1526,8 @@
   ],
   "alternatives": [
    "Visual workflow builder with hundreds of connectors, installable with a single Docker command.",
-   "The most complete substitute, free to self-host under the Sustainable Use licence (source available, not a free licence)."
+   "The most complete substitute, free to self-host under the Sustainable Use licence (source available, not a free licence).",
+   "Self-hosted automation agents (MIT): watch the web and trigger actions."
   ],
   "prompt": "Build me a code-oriented scenario runner to replace Make, for the handful of scenarios I use.\n\nStack: a Node project, SQLite (better-sqlite3), Express, node-cron.\n\nTo do:\n- A scenario is a file in scenarios/ that exports a trigger (cron expression or webhook route) and an ordered list of steps. Each step is an async function that receives the output of the previous one.\n- The runner chains the steps, retries a failed step 3 times with increasing delay, then stops and records the step name and the error.\n- Each run is logged in SQLite: scenario, start and end, JSON input and output of each step, status. This history is my debugging tool, take care over it.\n- A minimal dashboard on localhost:4880: list of scenarios with the status of the last run; a click shows each step's data.\n- Webhooks arrive on the same Express app, with signature verification. Keys are in .env.\n- Two example scenarios: Stripe payment webhook to a Google Sheets row and a Telegram message; an RSS article summarised by an LLM then sent by email.\n- Localhost only, a single user, no telemetry.\n\nOut of scope: visual editor, module catalogue.\n\nREADME: adding a scenario, .env keys, and state that self-hosted n8n is the fallback if maintenance becomes painful."
  },
@@ -1664,7 +1698,8 @@
   ],
   "alternatives": [
    "Airtable-style tables, forms, kanban and automations, to host with Docker.",
-   "Open-source project and ticket tracking platform."
+   "Open-source project and ticket tracking platform.",
+   "Open-source project management (GPL-3.0): tasks, Gantt charts, time tracking, self-hostable."
   ],
   "prompt": "Build me a project tracking tool for a small team, to replace monday.com.\n\nStack: Next.js, TypeScript, Tailwind, PostgreSQL with Drizzle, Docker Compose.\n\nTo do:\n- Organisations, projects, members, issues with labels, cycles and milestones.\n- Three views (list, kanban, simple timeline) built on a single issue model.\n- Comments, mentions, assignments, watchers and full activity log.\n- Owner, member, viewer roles, with a test for each change.\n- Search, CSV import and export, email notifications, daily database backup.\n- Local launch in one command, sample data, health checks, migrations, administrator recovery command.\n- Secrets in .env, no telemetry, README with architecture and backup.\n\nOut of scope: hundreds of integrations, enterprise portfolio planning, SSO, native mobile apps."
  },
@@ -1680,7 +1715,8 @@
   ],
   "alternatives": [
    "Open-source automation tool (MIT licence), deployable with a single Docker container, with a smaller catalogue of integrations than n8n.",
-   "The same workflow engine self-hosted, free but under n8n's Sustainable Use licence, which is not a free licence."
+   "The same workflow engine self-hosted, free but under n8n's Sustainable Use licence, which is not a free licence.",
+   "Self-hosted automation agents (MIT): watch the web and trigger actions."
   ],
   "prompt": "Install n8n self-hosted for me, to replace n8n Cloud.\n\nDo not rebuild the tool, it is open source: install it properly on my VPS.\n\nTo do:\n- Docker Compose with the official image, SQLite storage (enough for personal use), a named volume for /home/node/.n8n, automatic restart.\n- n8n only listens on 127.0.0.1 and is published by my reverse proxy on a subdomain over HTTPS. n8n's user management protects the editor.\n- Set N8N_ENCRYPTION_KEY in .env and ask me to back it up separately. Without it, all saved credentials become unusable: say so clearly.\n- WEBHOOK_URL pointing to the public subdomain, so external services can call my workflows.\n- A nightly backup: export of workflows and credentials through the n8n CLI, copy of the volume into backups/YYYY-MM-DD/, 14 days kept.\n- An update script that pins a precise version, backs up first, then restarts. Never a blind :latest.\n- Two test workflows imported: an RSS summary by email, and a webhook alert to Telegram.\n\nOut of scope: multi-user and high availability. It is a single person's automation box.\n\nREADME: creating the owner account, restore test, update procedure. Running it is precisely what the subscription did for me."
  },
@@ -1711,7 +1747,9 @@
    "Regular updates and the community"
   ],
   "alternatives": [
-   "Free note-taking (AGPL-3.0) in local files, with links between notes and a daily journal."
+   "Free note-taking (AGPL-3.0) in local files, with links between notes and a daily journal.",
+   "Block-based knowledge management, self-hostable (AGPL), with links between notes and sync.",
+   "End-to-end encrypted note-taking app (GPL-3.0), with sync and a self-hosting option."
   ],
   "prompt": "Build me a Markdown notes app for my personal use, without claiming to replace Obsidian.\n\nStack: installable web app (PWA), Node or Next.js, notes stored as .md files in a folder on my server.\n\nTo do:\n- Markdown editor with preview, note creation and renaming, folders.\n- Links between notes with the [[note name]] syntax, list of notes that point to the open note.\n- Tags and fast full-text search.\n- Daily notes created in one click.\n- Export of the whole folder as an archive; the files stay readable without the app.\n- Simple authentication, daily backup; tests on link parsing; README with the limits.\n\nOut of scope: extensions, graph view, end-to-end encrypted sync."
  },
@@ -1901,7 +1939,12 @@
    "Management software designed for salons",
    "Booking appointments without a phone call"
   ],
-  "prompt": "Build me an online appointment diary for a small salon, without claiming to replace Planity or attract new customers.\n\nStack: Next.js, TypeScript, SQLite. Data at my place, secrets in .env, no telemetry.\n\nTo do:\n- Catalogue of services (name, duration, price incl. VAT) and team with hours and leave.\n- Public booking page: choice of service, slot and professional, no customer account; prevents double bookings.\n- Confirmation and reminder by email (configurable SMTP), with a cancel or reschedule link.\n- Salon diary by day and by week, slot blocking, waiting list.\n- Customer file with GDPR consent, export and deletion on request; spam protection.\n- Tests on slot-conflict detection; README with the limits.\n\nOut of scope: SMS reminders (paid provider), online payment, visibility on a marketplace."
+  "prompt": "Build me an online appointment diary for a small salon, without claiming to replace Planity or attract new customers.\n\nStack: Next.js, TypeScript, SQLite. Data at my place, secrets in .env, no telemetry.\n\nTo do:\n- Catalogue of services (name, duration, price incl. VAT) and team with hours and leave.\n- Public booking page: choice of service, slot and professional, no customer account; prevents double bookings.\n- Confirmation and reminder by email (configurable SMTP), with a cancel or reschedule link.\n- Salon diary by day and by week, slot blocking, waiting list.\n- Customer file with GDPR consent, export and deletion on request; spam protection.\n- Tests on slot-conflict detection; README with the limits.\n\nOut of scope: SMS reminders (paid provider), online payment, visibility on a marketplace.",
+  "alternatives": [
+   "Self-hosted appointment scheduler (GPL-3.0): providers, services, online booking.",
+   "Booking pages and calendar connections (MIT), self-hostable.",
+   "Date polls to find a common slot (AGPL), self-hostable."
+  ]
  },
  "pongo": {
   "description": "Loyalty, customer marketing, Google review collection and local SEO, on one screen, for restaurants.",
@@ -2058,7 +2101,8 @@
   ],
   "alternatives": [
    "Free management suite: customers, quotes, invoices, calendar and payment tracking, developed in France.",
-   "Free ERP combining CRM, quotes, invoicing and project tracking; heavier to set up."
+   "Free ERP combining CRM, quotes, invoicing and project tracking; heavier to set up.",
+   "Modular self-hostable ERP and CRM (free community edition): sales, invoicing, inventory, HR."
   ],
   "prompt": "Build me a small sales management tool for a freelancer or very small business, without claiming to replace Sellsy or do official accounting.\n\nStack: Next.js, TypeScript, SQLite. Data at my place, secrets in .env, no telemetry.\n\nTo do:\n- Customers and prospects: record, history of exchanges, sales follow-up stage (new, quote sent, won, lost).\n- Quote then invoice from the quote, as PDF: continuous numbering with no gaps, mandatory mentions, VAT per line, deposit and balance.\n- Invoices are never deleted or edited: a mistake is corrected with a credit note.\n- Payment tracking and reminder by email (configurable SMTP).\n- Signing of the quote by the customer: unique link, tick box, date and timestamp kept.\n- CSV export of customers and invoices for my accountant; simple backup.\n- Tests on numbering and totals; README with the limits.\n\nOut of scope: accounting, bank reconciliation, VAT returns, and the transmission of invoices through an approved platform that electronic invoicing reform will eventually require (timetable to be checked). Never state that the documents comply with that reform."
  },
@@ -2093,7 +2137,12 @@
    "Session replays",
    "Integrations with development tools"
   ],
-  "prompt": "Build me a small error collector for my web applications, without claiming to replace Sentry.\n\nStack: Node, TypeScript, SQLite, a JavaScript script to include in my applications.\n\nTo do:\n- A script that captures unhandled errors (browser and server) and sends them to my collector with the page, browser and time.\n- Grouping of identical errors by fingerprint, occurrence counter, first and last seen.\n- Interface listing the errors, with status (new, seen, resolved) and trace.\n- Email alert for a new error (configurable SMTP), limited to avoid a flood.\n- No personal data collected by default (IP addresses not kept); configurable retention period.\n- Tests on grouping; README with the limits.\n\nOut of scope: performance monitoring, session replays, source maps."
+  "prompt": "Build me a small error collector for my web applications, without claiming to replace Sentry.\n\nStack: Node, TypeScript, SQLite, a JavaScript script to include in my applications.\n\nTo do:\n- A script that captures unhandled errors (browser and server) and sends them to my collector with the page, browser and time.\n- Grouping of identical errors by fingerprint, occurrence counter, first and last seen.\n- Interface listing the errors, with status (new, seen, resolved) and trace.\n- Email alert for a new error (configurable SMTP), limited to avoid a flood.\n- No personal data collected by default (IP addresses not kept); configurable retention period.\n- Tests on grouping; README with the limits.\n\nOut of scope: performance monitoring, session replays, source maps.",
+  "alternatives": [
+   "Self-hosted error collector (MIT), compatible with Airbrake clients.",
+   "Error tracking, logs and session replays (Apache-2.0), self-hostable.",
+   "Simple self-hosted error tracking (MIT), compatible with the Sentry protocol."
+  ]
  },
  "sequoiasoft": {
   "description": "Software suite for managing hotels, outdoor accommodation and wellness centres.",
@@ -2309,7 +2358,8 @@
   ],
   "alternatives": [
    "Free backend (MIT) in a single executable: SQLite database, authentication, file storage and API.",
-   "The same product as open source (Apache-2.0), installable with Docker on your own server."
+   "The same product as open source (Apache-2.0), installable with Docker on your own server.",
+   "Self-hostable backend (BSD-3): database, authentication, storage and functions."
   ],
   "prompt": "Build me a small self-hosted backend for a web application, without claiming to replace Supabase.\n\nStack: Node, TypeScript, SQLite (or Postgres if I specify), hosted on my small server.\n\nTo do:\n- Authentication by email and password: hashed passwords (argon2), sessions by secure cookie, reset by email.\n- REST API on my tables with per-user access rules (each person reads and writes only their own rows).\n- File storage on disk with size and type limits.\n- Daily database backup and a tested restore procedure.\n- Login log, limit on the number of attempts.\n- Tests on the access rules; README with the update procedure.\n\nOut of scope: social-network authentication, real time, serverless functions."
  },
@@ -2333,7 +2383,12 @@
    "Webinars, blog and extras included in the subscription.",
    "A single contact when payment fails on launch day."
   ],
-  "prompt": "Build me a sales funnel and course platform for a single operator, to replace Systeme.io.\n\nStack: Next.js (App Router), TypeScript, Tailwind, SQLite (better-sqlite3, SQL migrations in ./migrations), Stripe Checkout and webhooks, Resend for emails. No authentication provider: magic link by email for buyers, an administrator password in .env.\n\nTo do:\n1. Funnel pages in MDX in ./content/pages (slug, title, hook, button, optional priceId), rendered on the server.\n2. Sign-up form to /api/optin. Contacts in SQLite (email, name, tags, source page, creation date, unsubscribe date). Optional double opt-in.\n3. Email engine: broadcasts and sequences (JSON files in ./content/sequences: delay, subject, MDX body). A worker (node-cron, every minute) sends due steps and logs everything. Every email has a one-click unsubscribe link and List-Unsubscribe headers.\n4. Payment: /api/checkout creates the Stripe session. The webhook grants access to the course on purchase and removes it on refund.\n5. A /learn area: modules and lessons in MDX, protected by the purchased access, video by embed URL, progress tracking.\n6. Affiliation: /r/CODE sets a 60-day cookie, the sale is attributed through the webhook, commissions are listed with a “pending” status. No payouts.\n7. /admin administration: contacts with search, broadcast editor with test send, sales, commissions, CSV exports.\n\nOut of scope: drag-and-drop editors, webinars, blog, VAT management, affiliate payouts, external analytics.\n\nSecrets in .env. Demo data (two contacts, one course, one sequence). README with the Stripe CLI command to test webhooks and deployment on a VPS."
+  "prompt": "Build me a sales funnel and course platform for a single operator, to replace Systeme.io.\n\nStack: Next.js (App Router), TypeScript, Tailwind, SQLite (better-sqlite3, SQL migrations in ./migrations), Stripe Checkout and webhooks, Resend for emails. No authentication provider: magic link by email for buyers, an administrator password in .env.\n\nTo do:\n1. Funnel pages in MDX in ./content/pages (slug, title, hook, button, optional priceId), rendered on the server.\n2. Sign-up form to /api/optin. Contacts in SQLite (email, name, tags, source page, creation date, unsubscribe date). Optional double opt-in.\n3. Email engine: broadcasts and sequences (JSON files in ./content/sequences: delay, subject, MDX body). A worker (node-cron, every minute) sends due steps and logs everything. Every email has a one-click unsubscribe link and List-Unsubscribe headers.\n4. Payment: /api/checkout creates the Stripe session. The webhook grants access to the course on purchase and removes it on refund.\n5. A /learn area: modules and lessons in MDX, protected by the purchased access, video by embed URL, progress tracking.\n6. Affiliation: /r/CODE sets a 60-day cookie, the sale is attributed through the webhook, commissions are listed with a “pending” status. No payouts.\n7. /admin administration: contacts with search, broadcast editor with test send, sales, commissions, CSV exports.\n\nOut of scope: drag-and-drop editors, webinars, blog, VAT management, affiliate payouts, external analytics.\n\nSecrets in .env. Demo data (two contacts, one course, one sequence). README with the Stripe CLI command to test webhooks and deployment on a VPS.",
+  "alternatives": [
+   "Open-source marketing automation (emails, forms, segments, journeys), self-hostable.",
+   "Publishing, newsletters and paid subscriptions, with no commission on your revenue (MIT).",
+   "Custom online store engine (MIT), to build your own online shop."
+  ]
  },
  "tabesto": {
   "description": "Ordering kiosks, table tablets and integrated touchscreen till for fast food and table service.",
@@ -2638,7 +2693,9 @@
    "HTTPS and managed certificates"
   ],
   "alternatives": [
-   "Free platform (Apache-2.0) to install on your server to deploy applications and databases, a self-hosted alternative to managed hosting platforms."
+   "Free platform (Apache-2.0) to install on your server to deploy applications and databases, a self-hosted alternative to managed hosting platforms.",
+   "Deployment platform on your server (Apache-2.0): apps, databases and HTTPS in a few clicks.",
+   "Mini-PaaS on a single server (MIT): git push to deploy."
   ],
   "prompt": "Build me a self-hosted deployment for a Next.js application, without claiming to replace Vercel.\n\nStack: a small Linux server, Docker, a reverse proxy with automatic HTTPS (Caddy), GitHub Actions.\n\nTo do:\n- Production Dockerfile and compose file; environment variables kept out of the repository.\n- Automatic deployment on every push to the main branch, with fallback to the previous version on failure.\n- One preview environment per branch, with a temporary address.\n- Simple monitoring (site status, disk space) and email alert.\n- Data backup and a tested restore procedure.\n- README with the server update procedure.\n\nOut of scope: worldwide delivery network, serverless functions."
  },
@@ -2720,7 +2777,12 @@
    "The option of handing the site to any developer.",
    "Security updates handled by others."
   ],
-  "prompt": "Build me a self-hosted personal CMS for a single author, to replace WordPress. Empty folder, no cloud service, no telemetry.\n\nStack: Node 22, TypeScript, Fastify, SQLite (better-sqlite3, file ./data/cms.db), Eta server-side templates, markdown-it (with code highlighting and HTML sanitising). No client framework.\n\nTo do:\n- Posts and pages: title, slug, Markdown body, excerpt, tags, status (draft, scheduled, published), publication date.\n- Administration at /admin: one cookie session, a single administrator, password hash in .env. Editor with live preview, saving as draft, publishing, deletion with confirmation.\n- Image upload (resized with sharp) with a button that pastes the Markdown into the post.\n- Public routes: paginated home, /posts/:slug, /:slug, /tags/:tag. Feed /feed.xml, /sitemap.xml, OpenGraph tags.\n- Full-text search (FTS5). Scheduled posts appear on time, without cron.\n- Import of a folder of Markdown files with YAML frontmatter, to load a converted WordPress export.\n- `npm run backup`: dated archive of the database and files.\n\nOut of scope: extensions, themes, comments, multi-user, e-commerce, block editor.\n\nREADME: installation, generating the password hash, running behind Caddy with TLS. A sample-data script (three posts, one page)."
+  "prompt": "Build me a self-hosted personal CMS for a single author, to replace WordPress. Empty folder, no cloud service, no telemetry.\n\nStack: Node 22, TypeScript, Fastify, SQLite (better-sqlite3, file ./data/cms.db), Eta server-side templates, markdown-it (with code highlighting and HTML sanitising). No client framework.\n\nTo do:\n- Posts and pages: title, slug, Markdown body, excerpt, tags, status (draft, scheduled, published), publication date.\n- Administration at /admin: one cookie session, a single administrator, password hash in .env. Editor with live preview, saving as draft, publishing, deletion with confirmation.\n- Image upload (resized with sharp) with a button that pastes the Markdown into the post.\n- Public routes: paginated home, /posts/:slug, /:slug, /tags/:tag. Feed /feed.xml, /sitemap.xml, OpenGraph tags.\n- Full-text search (FTS5). Scheduled posts appear on time, without cron.\n- Import of a folder of Markdown files with YAML frontmatter, to load a converted WordPress export.\n- `npm run backup`: dated archive of the database and files.\n\nOut of scope: extensions, themes, comments, multi-user, e-commerce, block editor.\n\nREADME: installation, generating the password hash, running behind Caddy with TLS. A sample-data script (three posts, one page).",
+  "alternatives": [
+   "Publishing, newsletters and paid subscriptions, with no commission on your revenue (MIT).",
+   "Very fast static site generator (Apache-2.0), content in text files.",
+   "Framework for fast websites (MIT), for those who prefer code to a visual editor."
+  ]
  },
  "yavin": {
   "description": "Takings and payment tracking solution by terminal, with features designed for restaurateurs.",
@@ -2758,7 +2820,8 @@
   ],
   "alternatives": [
    "MIT-licensed community edition, self-hostable with Docker, with no task counter.",
-   "Very complete self-hostable automation tool under a “fair-code” licence, not open source in the strict sense."
+   "Very complete self-hostable automation tool under a “fair-code” licence, not open source in the strict sense.",
+   "Self-hosted automation agents (MIT): watch the web and trigger actions."
   ],
   "prompt": "Build me a small personal automation runner to replace Zapier, limited to the few flows I really use.\n\nStack: a single Node process on my VPS. Express for incoming webhooks, node-cron for scheduled tasks.\n\nTo do:\n- A flow = a JS file in pipelines/ that exports its trigger (cron expression or webhook path) and an async run(payload) function.\n- The steps are code: fetch() calls to the APIs I want, keys in .env. Adding an integration means writing about twenty lines.\n- Each run is logged in SQLite: flow, payload, status, duration, error. On failure, 3 retries with increasing wait (p-retry).\n- A /runs page, reachable locally, with the last 100 runs, the detail of the payload or error, and a button to rerun.\n- After the last failure, send me a notification on an ntfy topic defined in .env.\n- Each webhook URL contains a secret token specific to the flow; everything else is rejected.\n- Two examples: a daily 8 am cron flow (weather, then ntfy) and a webhook flow (POST received, row added to a CSV).\n\nOut of scope: visual interface, connector catalogue, third-party OAuth (token APIs only). Each service that requires OAuth costs an afternoon, to be written in the README.\n\nREADME: systemd unit, adding a flow, .env variables."
  },
@@ -2866,7 +2929,9 @@
   ],
   "prompt": "Set up a self-hosted Git server to replace GitHub for my private repositories.\n\nDo not develop a forge: deploy Forgejo (or Gitea) on my VPS.\n\nTo do:\n- A docker-compose.yml with the official image, SQLite storage to start with, data volume in ./forgejo-data, automatic restart.\n- Caddy in front, for automatic HTTPS on a subdomain that I give you; SSH for git on a dedicated port.\n- Close sign-ups after my account is created, enable two-factor authentication, expose nothing else.\n- A runner for Actions (compatible with GitHub Actions syntax) on the same machine, with a resource limit.\n- A migration of my repositories from GitHub with the built-in migration tool, issues and pull requests included.\n- A nightly backup encrypted with age (repositories and database), copied off the server; write restore.sh and make me run a restore test.\n\nOut of scope: developer social network, Copilot, dependency security scanning.\n\nREADME: launch, account creation, update, restore, and a reminder that I am now responsible for availability and security updates.",
   "alternatives": [
-   "Lightweight Git forge (MIT), self-hostable: repositories, pull requests, issues, built-in CI."
+   "Lightweight Git forge (MIT), self-hostable: repositories, pull requests, issues, built-in CI.",
+   "Very lightweight self-hosted Git service (MIT): repositories, issues, pull requests.",
+   "Self-hosted Git forge with built-in CI/CD (MIT): repositories, issues, pull requests."
   ]
  },
  "postman": {
@@ -2881,7 +2946,8 @@
   "prompt": "Build me a small local HTTP request client to replace Postman in my solo use.\n\nStack: local web app (Node, Express, plain JavaScript), collections stored as JSON files in a folder versioned by git.\n\nTo do:\n- Create requests (method, URL, headers, JSON or form body), organise them into collections and folders.\n- Environment variables (dev, prod) with {{variable}} substitution, secrets read from .env and never written to the files.\n- Response display: status, duration, size, headers, formatted body, copy as curl.\n- Simple assertions on the response (status, JSON field equal to) runnable across a whole collection, with a summary.\n- Import of a Postman collection (v2.1 format) and of an OpenAPI file.\n- History of the last 100 requests; localhost only, no account or telemetry.\n\nOut of scope: team sync, scheduled monitoring, hosted mock servers.\n\nREADME: launch, collection format, and a reminder that Bruno or Hoppscotch already do this if I prefer to maintain nothing.",
   "alternatives": [
    "Free API client (MIT) whose collections are plain files in your git repository, usable without an account.",
-   "Free API client (MIT) in the browser, self-hostable, with collections and environment variables."
+   "Free API client (MIT) in the browser, self-hostable, with collections and environment variables.",
+   "API client for testing requests (Apache-2.0), an alternative to Postman."
   ]
  },
  "netlify": {
@@ -2895,7 +2961,9 @@
   ],
   "prompt": "Build me a self-hosted static site deployment to replace Netlify.\n\nStack: a small Linux server, Caddy, a small Node service to receive webhooks, GitHub Actions or Forgejo.\n\nTo do:\n- Each site lives in /srv/sites/<name>/; Caddy serves the current folder through a symbolic link, automatic HTTPS, one subdomain per site.\n- On every push to the main branch, CI builds the site and uploads the result by rsync into a new dated folder; the symbolic link only switches if the upload succeeded, which allows a rollback in one command.\n- One preview per branch at <branch>.<name>.mydomain, removed when the branch is closed.\n- A forms endpoint: POST received, honeypot anti-spam, email sent through configurable SMTP.\n- Simple monitoring (site online, disk space) with email alert.\n\nOut of scope: worldwide delivery network, serverless functions, A/B tests.\n\nREADME: adding a site, rollback, DNS and server configuration.",
   "alternatives": [
-   "Free platform (Apache-2.0) to install on your server to deploy sites, applications and databases."
+   "Free platform (Apache-2.0) to install on your server to deploy sites, applications and databases.",
+   "Deployment platform on your server (Apache-2.0): apps, databases and HTTPS in a few clicks.",
+   "Mini-PaaS on a single server (MIT): git push to deploy."
   ]
  },
  "firebase": {
@@ -2909,7 +2977,9 @@
   ],
   "prompt": "Build me a small self-hosted backend for a web application, to replace Firebase.\n\nStack: Node, TypeScript, SQLite, hosted on my small server.\n\nTo do:\n- Authentication by email and password (argon2), sessions by secure cookie, reset by email.\n- REST API on my collections with per-user access rules, validated by a schema.\n- Subscription to real-time changes through Server-Sent Events.\n- File storage on disk with size and type limits.\n- Daily database backup and a tested restore procedure.\n- Tests on the access rules; README with the update procedure.\n\nOut of scope: push notifications, offline on mobile, serverless functions, social-network authentication.",
   "alternatives": [
-   "Free backend (MIT) in a single executable: SQLite database, authentication, file storage, API and real time."
+   "Free backend (MIT) in a single executable: SQLite database, authentication, file storage, API and real time.",
+   "PostgreSQL database, authentication and storage (Apache-2.0), self-hostable.",
+   "Self-hostable backend (BSD-3): database, authentication, storage and functions."
   ]
  },
  "clerk": {
@@ -2956,7 +3026,10 @@
   ],
   "prompt": "Build me a search engine for my site, to replace Algolia, for a catalogue of a few thousand items.\n\nStack: Node, SQLite with FTS5 (better-sqlite3), a small Express API, a search component in plain JavaScript.\n\nTo do:\n- Indexing from a JSON file or a table: searchable fields and filter fields declared in a configuration file.\n- Tolerant search: prefixes, accents ignored, relevance ranking (bm25) with weight per field, tolerance for simple typos.\n- Faceted filters with counts, sorting, pagination, highlighting of matched terms.\n- Response in under 50 ms on 10,000 items, measured by a test.\n- Incremental reindexing when an item changes; endpoint protected by token.\n- Log of searches with no result, with no personal data.\n\nOut of scope: semantic search, personalisation, worldwide replication.\n\nREADME: indexing, field configuration, and a reminder that Typesense does this with more polish if volume grows.",
   "alternatives": [
-   "Fast free search engine (GPL-3.0), typo-tolerant, self-hostable."
+   "Fast free search engine (GPL-3.0), typo-tolerant, self-hostable.",
+   "Self-hostable full-text search engine (GPL-3.0), with an Elasticsearch-compatible query format.",
+   "JavaScript search engine (Apache-2.0) that runs in the browser or on your server.",
+   "Static search for websites (MIT): an index generated at build time, with no server."
   ]
  },
  "linear": {
@@ -2970,7 +3043,9 @@
   ],
   "prompt": "Build me an issue tracker for a small development team, to replace Linear.\n\nStack: Next.js, TypeScript, Tailwind, PostgreSQL with Drizzle, Docker Compose.\n\nTo do:\n- Teams, projects, issues with readable identifiers (ABC-123), priorities, labels, owners and cycles.\n- List and kanban views, saved views with filters, instant search.\n- Keyboard shortcuts to create, assign, change status and open an issue, with a command palette (cmd+K).\n- GitHub link: a branch or pull request that mentions ABC-123 attaches to the issue, and merging it closes it (webhook).\n- Comments, mentions, activity log, email notifications.\n- Interface updates without reloading the page.\n- Local launch in one command, secrets in .env, no telemetry, tests, README.\n\nOut of scope: multi-team roadmaps, integrations other than GitHub, mobile apps.",
   "alternatives": [
-   "Free issue and project management (AGPL-3.0), self-hostable, with cycles and kanban views."
+   "Free issue and project management (AGPL-3.0), self-hostable, with cycles and kanban views.",
+   "Open-source project management (GPL-3.0): tasks, Gantt charts, time tracking, self-hostable.",
+   "Open-source project management (AGPL) for small teams, self-hostable."
   ]
  },
  "cloudflare": {
@@ -2994,7 +3069,9 @@
   ],
   "prompt": "Set up a self-hosted mesh private network for my devices, to replace Tailscale.\n\nDo not develop a VPN: deploy Headscale (a free coordination server, compatible with Tailscale clients) on my VPS.\n\nTo do:\n- A docker-compose.yml with Headscale's official image, Caddy in front for HTTPS on a subdomain that I give you.\n- One namespace per use (personal, servers), single-use, time-limited pre-auth keys.\n- The official Tailscale clients pointed at my server (--login-server), on my computer, my phone and two test servers.\n- Minimal access rules (ACL): my devices talk to everything, servers only talk to each other.\n- A built-in DERP relay server enabled, for networks that block direct connections.\n- A nightly encrypted backup of Headscale's database, a tested restore script, and a pinned-version update procedure.\n\nOut of scope: enterprise SSO, flow logs, just-in-time access.\n\nREADME: adding a device, revocation, restore, and a reminder that if my VPS goes down, already-established connections keep going but no device can open new ones.",
   "alternatives": [
-   "Free coordination server (BSD-3-Clause) compatible with Tailscale clients, to host yourself."
+   "Free coordination server (BSD-3-Clause) compatible with Tailscale clients, to host yourself.",
+   "WireGuard-based mesh private network, self-hostable (BSD-3 / AGPL).",
+   "Scalable mesh private network (MIT), created by Slack."
   ]
  },
  "ngrok": {
@@ -3008,7 +3085,9 @@
   ],
   "prompt": "Set up a self-hosted tunnel to expose my local applications, to replace ngrok.\n\nDo not develop a tunnel: deploy frp (frps server on my VPS, frpc client on my machine).\n\nTo do:\n- frps on my VPS behind Caddy, with an authentication token in .env, a wildcard *.dev.mydomain subdomain and automatic HTTPS.\n- A frpc.toml file with an example per service (port 3000 → app.dev.mydomain) and an `expose <port> <name>` script that opens it in one command.\n- A small request inspector on localhost (Node): list of received requests with headers and body, button to replay a request, useful for webhooks.\n- Rate limit and optional allowed-address list, tunnels closed by default when I am not working.\n- Connection log.\n\nOut of scope: API gateway, Kubernetes ingress, visitor authentication.\n\nREADME: server installation, wildcard DNS, using the script, and a reminder that anything exposed is public.",
   "alternatives": [
-   "Fast reverse proxy (Apache-2.0) to expose a local service behind a NAT or firewall."
+   "Fast reverse proxy (Apache-2.0) to expose a local service behind a NAT or firewall.",
+   "Tunnel to your local machine (Apache-2.0), using Cloudflare's free service.",
+   "Lightweight, fast reverse tunnel (Apache-2.0) to host on a small server."
   ]
  },
  "proton-vpn": {
@@ -3033,7 +3112,8 @@
   "prompt": "Build me a cookie-free audience measurement for my sites, to replace Plausible.\n\nStack: Node, Express, SQLite (better-sqlite3), a script of about 1 KB to include in my pages, a dashboard on my server.\n\nTo do:\n- The script sends the page viewed, the referrer and the screen width through a POST endpoint; no cookie, no local storage, no persistent identifier.\n- The visitor is counted anonymously with a daily fingerprint (salted hash, salt renewed every day); neither the IP address nor the full user agent is kept.\n- Country inferred from the IP address by a local database (then the address is forgotten), browser and device inferred from the user agent.\n- Basic bot filtering (list of known agents, requests with no plausible referrer).\n- Dashboard: visitors and pageviews per day, top pages, referrers, countries, devices, simple goals (target page reached).\n- Several sites on the same installation; dashboard protected by password; CSV export.\n- Configurable retention period; tests on counting and filtering.\n\nOut of scope: funnels, Search Console integration, per-device measurement across several days.\n\nREADME: installation, including the script, explaining what is collected, and a reminder that Plausible or Umami also self-host.",
   "alternatives": [
    "Free audience measurement (MIT), cookie-free, self-hostable, with a simple dashboard.",
-   "The same product in a free community edition (AGPL-3.0), to install on your own server."
+   "The same product in a free community edition (AGPL-3.0), to install on your own server.",
+   "Full self-hostable web analytics (GPL-3.0), an alternative to Google Analytics."
   ]
  },
  "posthog": {
@@ -3057,7 +3137,9 @@
   ],
   "prompt": "Build me a newsletter tool for a creator, to replace Kit.\n\nStack: Next.js, TypeScript, PostgreSQL with Drizzle, sending through Amazon SES.\n\nTo do:\n- Sign-up pages with double opt-in, tags, custom fields, timestamped consent kept (GDPR).\n- Subscriber import and export, deletion on request.\n- Broadcast editor in Markdown, HTML and text preview.\n- Sequences: a series of emails with delays, triggered by a sign-up or a tag, which stops on unsubscribe.\n- Queued sending with rate limits, retries, handling of bounces and complaints.\n- A resources page protected by a magic link, to give content in exchange for signing up.\n- One-click unsubscribe, List-Unsubscribe headers; SPF/DKIM/DMARC tips in the README.\n- Secrets in .env, no telemetry, tests, backups.\n\nOut of scope: selling digital products, paid subscriptions, creator recommendations, visual automations.",
   "alternatives": [
-   "Free newsletter and mailing-list manager (AGPL-3.0), fast, with API."
+   "Free newsletter and mailing-list manager (AGPL-3.0), fast, with API.",
+   "Publishing, newsletters and paid subscriptions, with no commission on your revenue (MIT).",
+   "Open-source marketing automation (emails, forms, segments, journeys), self-hostable."
   ]
  },
  "beehiiv": {
@@ -3070,7 +3152,10 @@
    "Deliverability"
   ],
   "alternatives": [
-   "Free newsletter and mailing-list manager (AGPL-3.0), fast, with API."
+   "Free newsletter and mailing-list manager (AGPL-3.0), fast, with API.",
+   "Publishing, newsletters and paid subscriptions, with no commission on your revenue (MIT).",
+   "Open-source newsletter tool (AGPL), self-hostable, with an editor and sending statistics.",
+   "Open-source marketing automation (emails, forms, segments, journeys), self-hostable."
   ]
  },
  "toggl-track": {
@@ -3084,7 +3169,9 @@
   ],
   "prompt": "Build me a time tracker for a freelancer, to replace Toggl Track.\n\nStack: installable web app (PWA), Node, Express, SQLite.\n\nTo do:\n- Clients, projects and tasks; one big button starts and stops a timer, the timer survives closing the tab.\n- Manual entry and correction of entries, tags, hourly rate per project, “billable” checkbox.\n- Reports by day, week, client and project, with totals of hours and amounts; CSV export.\n- A button to turn the billable entries of a period into invoice lines (CSV) for my invoicing tool.\n- Reminder if a timer has been running for more than 4 hours.\n- Single user, simple authentication, daily backup, no telemetry.\n- Tests on totals calculation; README with the limits.\n\nOut of scope: teams, timesheet approval, integrations, native mobile app.",
   "alternatives": [
-   "Free time tracking (AGPL-3.0), self-hostable, with clients, projects, rates and reports."
+   "Free time tracking (AGPL-3.0), self-hostable, with clients, projects, rates and reports.",
+   "Open-source time tracking (AGPL) for freelancers and teams, with per-project billing.",
+   "Automatic tracking of time spent on the computer (MPL-2.0), data kept locally."
   ]
  },
  "harvest": {
@@ -3098,7 +3185,9 @@
   ],
   "prompt": "Build me a time tracking and invoicing tool for a freelancer, to replace Harvest.\n\nStack: Next.js, TypeScript, SQLite. Data at my place, secrets in .env, no telemetry.\n\nTo do:\n- Clients, projects, timer, manual entry, hourly rate per project, re-billable expenses with receipt.\n- Creating an invoice from the unbilled hours and expenses of a period, with editable lines.\n- Invoice and quote as PDF: continuous numbering with no gaps, mandatory mentions, VAT per line, deposit. To be validated by my accountant.\n- Invoices are never deleted or edited: a mistake is corrected with a credit note.\n- Payment tracking and reminder by email (configurable SMTP); Stripe payment link as an option, in test mode to start with.\n- CSV export of invoices for my accountant; simple backup.\n- Tests on numbering and totals; README with the limits.\n\nOut of scope: teams, timesheet approval, accounting, and the transmission of invoices through an approved platform that electronic invoicing reform will eventually require (timetable to be checked). Never state that the documents comply with that reform.",
   "alternatives": [
-   "Free time tracking (AGPL-3.0), self-hostable, with clients, projects, rates and exports for invoicing."
+   "Free time tracking (AGPL-3.0), self-hostable, with clients, projects, rates and exports for invoicing.",
+   "Open-source time tracking (AGPL) for freelancers and teams, with per-project billing.",
+   "Automatic tracking of time spent on the computer (MPL-2.0), data kept locally."
   ]
  },
  "lemon-squeezy": {
@@ -3148,7 +3237,9 @@
   ],
   "prompt": "Set up self-hosted Ghost to replace Ghost(Pro) for my blog and newsletter.\n\nDo not build a platform: deploy the open-source Ghost software.\n\nTo do:\n- A docker-compose.yml with Ghost and MySQL, volumes in ./data, automatic restart.\n- Caddy in front, automatic HTTPS on my domain.\n- Email sending through a transactional service that I will give you (keys in .env, never in the repository), with SPF, DKIM and DMARC checked.\n- Stripe connected for paid subscriptions, in test mode first.\n- A nightly encrypted backup of the database and content, copied off the server; write restore.sh and have me run a restore test.\n- Migration of my content and subscribers from Ghost(Pro) by export/import.\n\nOut of scope: custom theme, advanced analytics.\n\nREADME: launch, update, restore, and a reminder that I am responsible for security updates and deliverability.",
   "alternatives": [
-   "The same software (MIT), installed on your server: publishing, newsletters and paid subscriptions."
+   "The same software (MIT), installed on your server: publishing, newsletters and paid subscriptions.",
+   "Minimalist self-hostable writing platform (AGPL), with no built-in paid subscriptions.",
+   "Very fast static site generator (Apache-2.0), content in text files."
   ]
  },
  "substack": {
@@ -3162,7 +3253,8 @@
   "prompt": "Set up a self-hosted paid newsletter to replace Substack.\n\nDo not build a platform: deploy Ghost, which handles publishing, subscribers and paid subscriptions.\n\nTo do:\n- A docker-compose.yml with Ghost and MySQL, volumes in ./data, automatic restart.\n- Caddy in front, automatic HTTPS on my domain.\n- Email sending through a transactional service that I will give you (keys in .env), with SPF, DKIM and DMARC checked.\n- Stripe connected for paid subscriptions, in test mode first.\n- Import of my subscribers and articles from the Substack export.\n- A nightly encrypted backup copied off the server, with restore.sh and a restore test.\n\nOut of scope: recommendations between authors, mobile reading app.\n\nREADME: launch, import, update, restore, and a reminder that I lose Substack's discovery effect.",
   "alternatives": [
    "Publishing, newsletters and paid subscriptions, with no commission on your revenue (MIT).",
-   "Self-hosted newsletter manager (AGPL); sending goes through an email service of your choice."
+   "Self-hosted newsletter manager (AGPL); sending goes through an email service of your choice.",
+   "Minimalist self-hostable writing platform (AGPL), with no built-in paid subscriptions."
   ]
  },
  "twilio": {
@@ -3202,7 +3294,8 @@
   "prompt": "Set up a self-hosted deployment platform to replace Heroku on my VPS.\n\nDo not build a platform: install Coolify (or Dokku if you judge it better suited to my case).\n\nTo do:\n- Installation on my Ubuntu VPS, with access restricted by SSH key and a firewall allowing only 22, 80 and 443.\n- Deployment of a first application from my Git repository, with automatic HTTPS on my domain.\n- A PostgreSQL database with a nightly encrypted backup copied off the server; write restore.sh and have me run a restore test.\n- Environment variables managed in the tool, never in the repository.\n- Migration of my application and its database from Heroku.\n\nOut of scope: autoscaling, multiple servers.\n\nREADME: deployment, restore, update, and a reminder that I am now responsible for the server's security patches.",
   "alternatives": [
    "Self-hosted deployment platform (Apache-2.0): applications, databases and HTTPS from a Git repository.",
-   "Mini-PaaS on a single server (MIT): git push to deploy, in the spirit of Heroku."
+   "Mini-PaaS on a single server (MIT): git push to deploy, in the spirit of Heroku.",
+   "Deployment platform on your server (Apache-2.0): apps, databases and HTTPS in a few clicks."
   ]
  },
  "docker": {
@@ -3216,7 +3309,8 @@
   "prompt": "Replace Docker Desktop with a free solution on my machine.\n\nDo not build anything: install and configure Podman (Linux) or Colima (Mac) depending on my machine.\n\nTo do:\n- Installation and configuration, with a docker alias to the new command if useful.\n- A test of my existing docker-compose.yml files (podman compose or docker compose with Colima) and a list of what does not work identically.\n- A verification script that starts my projects and reports differences.\n- The steps to log in to a private registry.\n\nOut of scope: cloud builds, graphical interface.\n\nREADME: installation, daily use, known differences with Docker Desktop.",
   "alternatives": [
    "Daemonless container engine (Apache-2.0), compatible with most Docker commands.",
-   "Containers on Mac and Linux from the command line (MIT), Docker-compatible."
+   "Containers on Mac and Linux from the command line (MIT), Docker-compatible.",
+   "Containers and Kubernetes on the desktop (Apache-2.0), with a graphical interface, an alternative to Docker Desktop."
   ]
  },
  "ovhcloud": {
@@ -3263,7 +3357,9 @@
    "Usage included in the plan with no machine to maintain"
   ],
   "alternatives": [
-   "Tool for running open-weight language models on your own machine (MIT), with an API compatible with common clients."
+   "Tool for running open-weight language models on your own machine (MIT), with an API compatible with common clients.",
+   "Running language models on your machine (MIT), for those comfortable with the command line.",
+   "Desktop app to chat with local AI models (Apache-2.0), offline."
   ],
   "prompt": "Set up a local AI assistant to replace a paid chatbot for my everyday needs.\n\nDo not build a model or an interface: install Ollama and use an open-weight model suited to my machine.\n\nTo do:\n- Installation of Ollama on my machine and the choice of a model that fits my RAM (tell me which one and why).\n- A simple script to start a conversation in the terminal and to summarize or rewrite a file.\n- Access limited to my machine (do not expose the port on the network).\n- An honest comparison on 5 of my real tasks: where it is enough, where it is not.\n\nOut of scope: web search, image generation, fine-tuning.\n\nREADME: installation, model change, and a reminder of the quality gap with large hosted models."
  },
@@ -3290,7 +3386,8 @@
   ],
   "alternatives": [
    "Open-source platform for building internal tools and applications with a visual editor (Apache-2.0), self-hostable.",
-   "Open-source low-code platform for internal tools (AGPL), self-hostable."
+   "Open-source low-code platform for internal tools (AGPL), self-hostable.",
+   "Extensible no-code platform for business applications (Apache-2.0 core), self-hostable."
   ],
   "prompt": "Rebuild my Bubble application as code that I own.\n\nDo not copy Bubble: reproduce only what my app does today. I will describe its pages, data and workflows.\n\nTo do:\n- A simple stack I can maintain (Next.js and a PostgreSQL database such as Supabase), with accounts and permissions.\n- The data model deduced from my Bubble database, and an import script from a CSV export.\n- The pages and the workflows I list, one by one, with tests.\n- Deployment on a free or inexpensive host, secrets in environment variables.\n\nOut of scope: Bubble plugins, visual editor.\n\nREADME: launch, data import, deployment, and a reminder that I am now responsible for security and updates."
  },
@@ -3328,7 +3425,8 @@
   ],
   "alternatives": [
    "Self-hosted URL shortener (MIT) with click statistics and an API.",
-   "Simple self-hosted URL shortener (MIT), lighter than Shlink."
+   "Simple self-hosted URL shortener (MIT), lighter than Shlink.",
+   "Self-hostable link shortener (MIT) with custom domains and statistics."
   ],
   "prompt": "Set up a self-hosted link shortener to replace Bitly, on my own domain.\n\nDo not build a shortener: deploy Shlink.\n\nTo do:\n- A docker-compose.yml with Shlink and PostgreSQL, volumes in ./data, automatic restart.\n- Caddy in front, automatic HTTPS on a short domain that I will give you.\n- The API key generated and kept in .env, never in the repository.\n- A simple script to create a link from the command line and list click statistics.\n- Import of my existing Bitly links (CSV export), keeping the same short codes where possible.\n- A nightly encrypted backup of the database, copied off the server, with restore.sh and a restore test.\n\nOut of scope: link-in-bio pages, QR code design.\n\nREADME: launch, link creation, import, restore, and a reminder that if the server goes down, every short link goes down."
  },
@@ -3341,7 +3439,9 @@
    "Checks from several locations around the world"
   ],
   "alternatives": [
-   "Self-hosted monitoring tool (MIT): HTTP, TCP and ping checks, multi-channel notifications and status pages."
+   "Self-hosted monitoring tool (MIT): HTTP, TCP and ping checks, multi-channel notifications and status pages.",
+   "Status page and monitoring configured in a text file (Apache-2.0).",
+   "Self-hosted uptime and infrastructure monitoring (AGPL)."
   ],
   "prompt": "Set up self-hosted availability monitoring to replace UptimeRobot.\n\nDo not build a tool: deploy Uptime Kuma.\n\nTo do:\n- A docker-compose.yml with Uptime Kuma, volume in ./data, automatic restart.\n- Caddy in front, automatic HTTPS on a domain that I will give you, with authentication enabled.\n- The monitors for the sites and services that I list, with checks every 60 seconds.\n- Alert notifications by email or Telegram that I choose, with a test alert.\n- A public status page if I ask for one.\n- A backup of the data volume, copied off the server.\n\nOut of scope: multi-region checks.\n\nREADME: launch, adding a monitor, update, and a reminder that this must run on a different machine than the sites it watches."
  },
@@ -3355,7 +3455,9 @@
    "Export and integrations ready to use"
   ],
   "alternatives": [
-   "Free form builder with unlimited forms and submissions, no limit on questions."
+   "Free form builder with unlimited forms and submissions, no limit on questions.",
+   "Open-source form builder (AGPL), self-hostable.",
+   "Open-source conversational form builder (AGPL)."
   ],
   "prompt": "Build a simple survey app to replace SurveyMonkey for my customer surveys.\n\nDo not copy SurveyMonkey: only what I need. I will give you the questions.\n\nTo do:\n- A Next.js page with the form (text, single choice, multiple choice, rating), mobile-friendly.\n- Answers stored in Supabase, one table, no personal data unless I ask for it; a clear notice if I do.\n- A private results page protected by login: counts per answer, a chart per question, a CSV export.\n- Protection against spam (honeypot and rate limit).\n- Deployment on a free host, secrets in environment variables.\n\nOut of scope: respondent panels, cross-tabulation, templates.\n\nREADME: creating a survey, reading results, deployment, and what I must say to respondents about their data (GDPR)."
  },
@@ -3370,7 +3472,8 @@
   ],
   "alternatives": [
    "Open-source platform for building internal tools with a visual editor (Apache-2.0), self-hostable.",
-   "Open-source low-code platform for internal tools (AGPL), self-hostable."
+   "Open-source low-code platform for internal tools (AGPL), self-hostable.",
+   "Extensible no-code platform for business applications (Apache-2.0 core), self-hostable."
   ],
   "prompt": "Build an internal admin panel to replace Retool for my small team.\n\nDo not copy Retool: only the screens I list. I will describe the data and who can do what.\n\nTo do:\n- A Next.js app with login and roles (admin, read-only), on top of my existing PostgreSQL database.\n- The screens I list: table with search and filters, detail and edit form, a few key figures.\n- Every write action recorded in a log table (who, what, when).\n- Access to the database through a restricted role, never the main one.\n- Deployment behind login on an inexpensive host, secrets in environment variables.\n\nOut of scope: visual editor, workflows, mobile apps.\n\nREADME: adding a screen, managing roles, deployment, and a reminder that I am responsible for the panel's security."
  },
@@ -3397,7 +3500,9 @@
    "Hosting, backups and updates handled by the vendor"
   ],
   "alternatives": [
-   "Lightweight Git forge (MIT), self-hostable: repositories, merge requests, issues, built-in CI."
+   "Lightweight Git forge (MIT), self-hostable: repositories, merge requests, issues, built-in CI.",
+   "Very lightweight self-hosted Git service (MIT): repositories, issues, pull requests.",
+   "Self-hosted Git forge with built-in CI/CD (MIT): repositories, issues, pull requests."
   ],
   "prompt": "Set up a self-hosted Git server to replace GitLab for my private repositories.\n\nDo not build a forge: deploy Gitea on my VPS.\n\nTo do:\n- A docker-compose.yml with the official image, SQLite storage to start, data volume in ./gitea-data, automatic restart.\n- Caddy in front for automatic HTTPS on a subdomain that I will give you; SSH for git on a dedicated port.\n- Registration closed after my account is created, two-factor authentication enabled, nothing else exposed.\n- A runner for the CI on the same machine, with a resource limit.\n- Migration of my repositories from GitLab with the built-in migration tool, issues and merge requests included.\n- A nightly encrypted backup with age (repositories and database), copied off the server; write restore.sh and have me run a restore test.\n\nOut of scope: security scanning, package registry, compliance.\n\nREADME: launch, account creation, update, restore, and a reminder that I am now responsible for availability and security updates."
  },
@@ -3448,7 +3553,9 @@
    "The simplest setup, with no server"
   ],
   "alternatives": [
-   "The same open-source software (MIT), installed on your server: booking pages, calendar connections and reminders."
+   "The same open-source software (MIT), installed on your server: booking pages, calendar connections and reminders.",
+   "Self-hosted appointment scheduler (GPL-3.0): providers, services, online booking.",
+   "Date polls to find a common slot (AGPL), self-hostable."
   ],
   "prompt": "Set up self-hosted Cal.com to replace the hosted subscription for my booking pages.\n\nDo not build a scheduler: deploy the open-source Cal.com.\n\nTo do:\n- A docker-compose.yml with Cal.com and PostgreSQL, volumes in ./data, automatic restart.\n- Caddy in front, automatic HTTPS on a subdomain that I will give you.\n- Connection to my calendar (Google or Microsoft) with the minimum permissions, keys in .env, never in the repository.\n- Email sending for confirmations and reminders through a transactional service that I will give you.\n- Registration closed after my account is created.\n- A nightly encrypted backup of the database, copied off the server, with restore.sh and a restore test.\n\nOut of scope: team features, payments, workflows.\n\nREADME: launch, calendar connection, update, restore, and a reminder that I am now responsible for updates and for the reliability of bookings."
  },
@@ -3462,7 +3569,9 @@
    "Advanced segmentation and reports"
   ],
   "alternatives": [
-   "Privacy-friendly web analytics, self-hostable (MIT): pages, referrers, custom events, no cookies."
+   "Privacy-friendly web analytics, self-hostable (MIT): pages, referrers, custom events, no cookies.",
+   "Full self-hostable web analytics (GPL-3.0), an alternative to Google Analytics.",
+   "Lightweight cookie-free web analytics (AGPL), self-hostable version."
   ],
   "prompt": "Set up self-hosted web analytics to replace Mixpanel for my site.\n\nDo not build an analytics tool: deploy Umami.\n\nTo do:\n- A docker-compose.yml with Umami and PostgreSQL, volumes in ./data, automatic restart.\n- Caddy in front, automatic HTTPS on a subdomain that I will give you.\n- The tracking snippet added to my site, loaded asynchronously, with custom events for the 3 actions that I list (sign-up, purchase, download).\n- Registration closed after my account is created.\n- A nightly encrypted backup of the database, copied off the server, with restore.sh and a restore test.\n\nOut of scope: funnels, cohorts, session replays.\n\nREADME: launch, adding a site, adding an event, update, restore, and a reminder of what I no longer measure."
  }

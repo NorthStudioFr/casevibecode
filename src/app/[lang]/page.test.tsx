@@ -8,6 +8,7 @@ const getVoteCountsMock = vi.fn();
 vi.mock('@/lib/logiciels-server', () => ({
   getLogiciels: getLogicielsMock,
   getVoteCounts: getVoteCountsMock,
+  getNbConstruits: vi.fn().mockResolvedValue({}),
 }));
 
 vi.mock('@/lib/newsletter-client', () => ({

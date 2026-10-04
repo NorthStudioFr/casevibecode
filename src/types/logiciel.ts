@@ -43,4 +43,5 @@ export type NouveauLogiciel = Omit<Logiciel, 'id' | 'dateAjout' | 'dateMaj'>;
 
 // Les fiches CHR n'ont pas à répéter `secteur` : il vaut 'chr' par défaut.
 export type NouveauLogicielInput = Omit<NouveauLogiciel, 'secteur'> & { secteur?: Secteur };
-export type LogicielAvecVerdict = Logiciel & { displayVerdict: VerdictEditeur; totalVotes: number };
+// nbConstruits : retours publiés « je l'ai construit » (personnes qui disent l'avoir remplacé).
+export type LogicielAvecVerdict = Logiciel & { displayVerdict: VerdictEditeur; totalVotes: number; nbConstruits?: number };
