@@ -1,0 +1,51 @@
+[
+ {
+  "slug": "shopify",
+  "prix": "à partir de 36 €/mois",
+  "source": "https://www.shopify.com/fr/tarifs",
+  "note": "Formule Basic, facturation mensuelle (27 € par mois en facturation annuelle)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "n8n-cloud",
+  "prix": "à partir de 20 €/mois",
+  "source": "https://n8n.io/pricing/",
+  "note": "Formule Starter, facturée à l'année, 2 500 exécutions",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "qonto",
+  "prix": "à partir de 9 €/mois",
+  "source": "https://qonto.com/fr/tarifs",
+  "note": "Formule Basic, 9 € HT par mois facturés à l'année",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "dougs",
+  "prix": "à partir de 79 €/mois",
+  "source": "https://www.dougs.fr",
+  "note": "Pack Liberté, 79 € HT par mois",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "notion",
+  "prix": "à partir de 9,50 €/mois/utilisateur",
+  "source": "https://www.notion.com/fr/pricing",
+  "note": "Formule Plus, par membre",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "pipedrive",
+  "prix": "à partir de 14 €/mois/utilisateur",
+  "source": "https://www.pipedrive.com/fr/pricing",
+  "note": "Formule Lite, facturation mensuelle",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "waalaxy",
+  "prix": "à partir de 19 €/mois/utilisateur",
+  "source": "https://www.waalaxy.com/fr/pricing",
+  "note": "Formule Pro",
+  "lu_le": "2026-10-04"
+ }
+]

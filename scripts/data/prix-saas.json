@@ -1,0 +1,39 @@
+{
+ "corrections": [
+  {
+   "slug": "shopify",
+   "prix": "à partir de 36 €/mois",
+   "prix_mensuel": 36
+  },
+  {
+   "slug": "n8n-cloud",
+   "prix": "à partir de 20 €/mois",
+   "prix_mensuel": 20
+  },
+  {
+   "slug": "qonto",
+   "prix": "à partir de 9 €/mois",
+   "prix_mensuel": 9
+  },
+  {
+   "slug": "dougs",
+   "prix": "à partir de 79 €/mois",
+   "prix_mensuel": 79
+  },
+  {
+   "slug": "notion",
+   "prix": "à partir de 9,50 €/mois/utilisateur",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "pipedrive",
+   "prix": "à partir de 14 €/mois/utilisateur",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "waalaxy",
+   "prix": "à partir de 19 €/mois/utilisateur",
+   "prix_mensuel": null
+  }
+ ]
+}

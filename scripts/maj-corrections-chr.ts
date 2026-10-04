@@ -12,6 +12,9 @@ import { CATEGORIE_LABEL } from '../src/lib/categories';
 import { colonnesInterdites, diffCorrection, type Correction } from './lib/corrections-chr';
 
 const apply = process.argv.includes('--apply');
+// Les fiches « outils du quotidien » se corrigent avec --secteur=saas (chr par défaut).
+const secteur = process.argv.find((a) => a.startsWith('--secteur='))?.slice('--secteur='.length) ?? 'chr';
+if (secteur !== 'chr' && secteur !== 'saas') throw new Error('--secteur doit valoir chr ou saas');
 const fichier = process.argv.slice(2).find((a) => !a.startsWith('--')) ?? 'scripts/data/corrections-chr.json';
 const { retirer = [], corrections = [] } = JSON.parse(readFileSync(fichier, 'utf8')) as { retirer?: string[]; corrections?: Correction[] };
 
@@ -30,7 +33,7 @@ async function main() {
   for (const s of slugs) {
     const l = lignes.get(s);
     if (!l) throw new Error(`${s} : absent de la base`);
-    if (l.secteur !== 'chr') throw new Error(`${s} : secteur ≠ chr, refus`);
+    if (l.secteur !== secteur) throw new Error(`${s} : secteur ≠ ${secteur}, refus`);
   }
 
   const aAppliquer = corrections
