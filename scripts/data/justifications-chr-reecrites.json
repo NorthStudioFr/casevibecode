@@ -1,0 +1,192 @@
+{
+ "corrections": [
+  {
+   "slug": "5stelle",
+   "justification_editeur": "Un PMS cloud gère les arrivées, la facturation et les réservations pendant que les chambres se vendent en parallèle sur d'autres canaux : une erreur de synchronisation, c'est une chambre vendue deux fois. Un tableau de bord ou des e-mails d'arrivée se construisent autour de 5stelle ; le cœur du PMS, non."
+  },
+  {
+   "slug": "caves-explorer",
+   "justification_editeur": "Caves Explorer gère la cave : stocks, suivi financier, traçabilité par puce NFC pour retrouver une bouteille. La gestion de stock et les indicateurs se recodent. La puce NFC ajoute du matériel, mais reste une option, pas un verrou. Un restaurateur peut commencer avec des étiquettes QR code et une base simple."
+  },
+  {
+   "slug": "cloudbeds",
+   "justification_editeur": "Cloudbeds réunit PMS, paiements et distribution sur les canaux en ligne : trois domaines où un défaut se paie en argent réel (chambres vendues deux fois, paiements mal rapprochés). Ce n'est pas un projet qu'un hôtel mène en interne. Gardez l'outil et construisez autour (rapports, messages aux clients) si besoin."
+  },
+  {
+   "slug": "customer-alliance",
+   "justification_editeur": "Customer Alliance centralise avis et enquêtes pour les hôtels. L'enquête de satisfaction par e-mail se construit sans difficulté. La collecte et la comparaison des avis des plateformes, avec un accès qui change selon chacune, est le travail récurrent. Pour un seul établissement, une enquête maison et un suivi manuel des avis suffisent souvent."
+  },
+  {
+   "slug": "elloha",
+   "justification_editeur": "Elloha est un channel manager : il pousse en continu vos tarifs et vos disponibilités vers les sites de réservation et en récupère les réservations. Son moteur de réservation s'ajoute au tout. La difficulté n'est pas l'écran, c'est de rester compatible avec les connexions de chaque canal et de ne jamais décaler un stock de chambres. Une solution maison ne tient pas ce rôle."
+  },
+  {
+   "slug": "eviivo",
+   "justification_editeur": "Eviivo gère les réservations, les paiements et les canaux d'hébergements indépendants. Les paiements sont un domaine réglementé et la synchronisation des canaux ne tolère pas l'approximation : une erreur coûte une chambre ou un remboursement. Pour un gîte ou un petit hôtel, un outil spécialisé reste plus sûr qu'un développement interne."
+  },
+  {
+   "slug": "expedia-partner-central",
+   "justification_editeur": "Expedia Partner Central est l'extranet par lequel vous gérez vos disponibilités, vos tarifs et vos paiements sur Expedia et Hotels.com. Sa valeur n'est pas l'écran : c'est l'accès à la clientèle de ces sites. Le remplacer par un outil maison ne ferait pas venir un seul client de plus. Pilotez-le plutôt via un channel manager."
+  },
+  {
+   "slug": "family-hotel",
+   "justification_editeur": "Family Hotel couvre les réservations et la facturation d'hôtels, d'hôtelleries et de campings en mode cloud. Un camping ajoute des emplacements, des durées de séjour et des taxes à calculer sans erreur. C'est un travail de précision et de maintenance, pas un projet d'un week-end. Gardez le PMS, personnalisez autour."
+  },
+  {
+   "slug": "id-menu",
+   "justification_editeur": "Une carte en QR code sans commande ni paiement est un projet très accessible. À partir de 25 €/mois, le calcul économique est modeste mais positif. Le point qui compte est la mise à jour : si le patron doit modifier un prix sans toucher au code, il faut prévoir un moyen simple. Une carte en QR code a des obligations de contenu : prix TTC service compris, information sur les 14 allergènes (décret 2015-447), origine des viandes. L'arrêté du 27 mars 1987 exige aussi un affichage des prix visible depuis l'extérieur : un QR code ne le remplace pas, gardez une carte affichée."
+  },
+  {
+   "slug": "ke-booking",
+   "justification_editeur": "KE-booking combine planning, moteur de réservation et channel manager. Le risque est le double réservation : si un canal n'est pas mis à jour à temps, la chambre est vendue deux fois. Un outil maison devrait donc garantir la synchronisation permanente avec chaque plateforme, ce que seul un éditeur spécialisé maintient."
+  },
+  {
+   "slug": "koust",
+   "justification_editeur": "Un suivi de stock avec seuils et alertes se recode facilement. Koust y ajoute les achats, les ventes et le coût matière, avec un catalogue fournisseurs et des prix négociés intégrés : c'est cette partie qui reste difficile à reproduire seul. À vous de voir si votre établissement a besoin de ce catalogue ou d'une simple liste de produits."
+  },
+  {
+   "slug": "malou",
+   "justification_editeur": "Malou centralise la visibilité locale, les avis et la présence en ligne d'un restaurant. L'écran se reproduit ; le travail de fond est de suivre sans cesse les changements des fiches locales et des réseaux sociaux auxquels l'outil est connecté. Un outil interne obligerait à surveiller chaque plateforme soi-même. Pour un seul établissement, une solution simple de suivi manuel peut suffire."
+  },
+  {
+   "slug": "marketman",
+   "justification_editeur": "MarketMan relie stocks, fournisseurs, recettes et coûts. Le suivi de stock se recode ; maintenir à jour les fournisseurs et les prix, et les relier aux recettes, est le vrai travail récurrent. Pour un petit établissement avec peu de fournisseurs, un outil maison tient. Au-delà, l'abonnement se justifie."
+  },
+  {
+   "slug": "medialog",
+   "justification_editeur": "Medialog est un PMS ancien de l'hôtellerie indépendante française, utilisable en cloud ou installé sur place. Son ancienneté est précisément ce qui rend son remplacement délicat : des années de réglages, de factures et de données de clients à reprendre sans rien perdre. Pour changer, comparez plutôt un PMS plus récent qu'un développement interne."
+  },
+  {
+   "slug": "misterbooking",
+   "justification_editeur": "Misterbooking est un PMS cloud français avec moteur de réservation et distribution, destiné aux hôtels indépendants et aux groupes. La distribution est le point sensible : un décalage de stock entre le PMS et les canaux provoque du surbooking. Cette synchronisation en temps réel est maintenue par l'éditeur, pas par un petit développement interne."
+  },
+  {
+   "slug": "onetip",
+   "justification_editeur": "Onetip permet de laisser un pourboire par QR code dans l'hôtellerie, la restauration et les commerces. Le QR code est la partie facile ; encaisser le pourboire par carte puis le redistribuer aux équipes est la partie délicate, car manipuler de l'argent destiné à des tiers peut relever des règles des services de paiement. À faire valider par un juriste avant de bâtir quoi que ce soit."
+  },
+  {
+   "slug": "onrush",
+   "justification_editeur": "Onrush se concentre sur le food cost : mercuriale, fiches techniques et marges. Le calcul de marge est accessible en interne. La mercuriale, c'est-à-dire des prix fournisseurs tenus à jour, est ce qui ne se reproduit pas sans effort constant. Si vos fournisseurs sont peu nombreux, saisissez les prix vous-même."
+  },
+  {
+   "slug": "overfull",
+   "justification_editeur": "Overfull est un logiciel bordelais de réservations et de CRM pour restaurants. La réservation en ligne, le plan de salle et le fichier client se recodent. Ce qui justifie l'abonnement pour un indépendant, c'est la maintenance dans la durée : sécurité, e-mails délivrés, évolutions. Si vous avez un développeur de confiance, remplaçable ; sinon, gardez-le."
+  },
+  {
+   "slug": "roomraccoon",
+   "justification_editeur": "RoomRaccoon se présente comme un PMS tout-en-un pour hôtels indépendants, gîtes et chambres d'hôtes, simple à prendre en main. Cette simplicité d'usage cache le travail de fond : disponibilités en temps réel, facturation, connexions aux canaux. Un petit établissement n'a pas intérêt à porter cela lui-même."
+  },
+  {
+   "slug": "rungismarket",
+   "justification_editeur": "RungisMarket donne accès en ligne à plusieurs milliers de références de grossistes du marché de Rungis. Ce que vous payez, c'est le catalogue, les prix négociés avec les grossistes et la logistique de livraison de produits frais. Une interface de commande maison ne remplace rien de cela. Utilisez la plateforme pour acheter, et construisez en interne vos propres outils de suivi des achats."
+  },
+  {
+   "slug": "thais-soft",
+   "justification_editeur": "Thaïs-Soft est un logiciel de gestion hôtelière en mode SaaS pour hôtels indépendants et résidences de tourisme. Les résidences ajoutent des séjours longs, des tarifs variables et une facturation plus complexe qu'à l'hôtel. Une erreur de calcul ou de synchronisation se voit tout de suite chez le client. Mieux vaut un éditeur qui suit le métier qu'un outil interne."
+  },
+  {
+   "slug": "tip-go",
+   "justification_editeur": "Tip&Go permet de verser un pourboire numérique aux équipes de l'hôtellerie et de la restauration. L'interface est simple, mais la répartition de l'argent vers des salariés précis pose un problème de conformité : détention des fonds, traçabilité, traitement de chaque versement. À examiner avec un juriste avant de se lancer."
+  },
+  {
+   "slug": "tipjaar",
+   "justification_editeur": "TiPJAAR collecte le pourboire par carte bancaire et le répartit de façon transparente. La transparence est justement la difficulté : suivre chaque versement jusqu'au bon salarié, avec une trace fiable, relève de la gestion de fonds de tiers et peut tomber sous la réglementation des services de paiement. Pas un projet à tenter sans avis juridique."
+  },
+  {
+   "slug": "tipsi",
+   "justification_editeur": "Tipsi permet aux clients de verser un pourboire dématérialisé par QR code. Comme pour les autres applications de pourboire, le QR code se fabrique en une heure ; le paiement, puis la répartition entre les membres de l'équipe, engagent la conformité de qui détient l'argent. Un outil interne devrait régler ce point avant l'interface."
+  },
+  {
+   "slug": "yokitup",
+   "justification_editeur": "Yokitup couvre stocks, commandes fournisseurs, inventaires et coûts matière. L'inventaire sur téléphone et le calcul de coût sont abordables en interne. La gestion fournisseurs à grande échelle l'est moins. Un établissement indépendant peut s'en passer ; un groupe en tire un vrai gain."
+  },
+  {
+   "slug": "airkitchen",
+   "justification_editeur": "Un logiciel d'encaissement doit, en France, être certifié NF525 ou couvert par une attestation de conformité (article 286 du code général des impôts) : une caisse maison n'a ni l'un ni l'autre, avec une amende de 7 500 € par système non conforme. AirKitchen est une caisse tactile pour la restauration et les métiers de bouche, y compris hôtels et campings : l'encaissement, les tickets et les clôtures doivent rester infalsifiables. Prenez l'éditeur ; réservez le sur-mesure aux à-côtés (menu, réservation)."
+  },
+  {
+   "slug": "fudger",
+   "justification_editeur": "Un logiciel d'encaissement doit, en France, être certifié NF525 ou couvert par une attestation de conformité (article 286 du code général des impôts) : une caisse maison n'a ni l'un ni l'autre, avec une amende de 7 500 € par système non conforme. Fudger propose caisse et pilotage pour restaurants indépendants. Le tableau de bord peut s'imiter ; la caisse, non. Pour piloter, importez les ventes en CSV dans votre propre outil."
+  },
+  {
+   "slug": "ikentoo",
+   "justification_editeur": "Un logiciel d'encaissement doit, en France, être certifié NF525 ou couvert par une attestation de conformité (article 286 du code général des impôts) : une caisse maison n'a ni l'un ni l'autre, avec une amende de 7 500 € par système non conforme. iKentoo, du groupe Lightspeed, tourne sur iPad dans des restaurants gastronomiques et des bars : service en salle, tickets et additions sont le cœur de l'activité. Prenez l'éditeur ; développez ailleurs."
+  },
+  {
+   "slug": "popina",
+   "justification_editeur": "Un logiciel d'encaissement doit, en France, être certifié NF525 ou couvert par une attestation de conformité (article 286 du code général des impôts) : une caisse maison n'a ni l'un ni l'autre, avec une amende de 7 500 € par système non conforme. Popina est une caisse sur iPad pensée pour la simplicité, utilisée par bars, cafés et restaurants indépendants. Cette simplicité cache la rigueur de l'encaissement en plein service. Gardez la caisse ; le sur-mesure peut se faire autour."
+  },
+  {
+   "slug": "square",
+   "justification_editeur": "Un logiciel d'encaissement doit, en France, être certifié NF525 ou couvert par une attestation de conformité (article 286 du code général des impôts) : une caisse maison n'a ni l'un ni l'autre, avec une amende de 7 500 € par système non conforme. Square est indissociable de son terminal de paiement, qui relie encaissement, commandes et ventes en ligne dans un même ensemble. Impossible de reproduire cela avec un outil interne : prenez l'ensemble ou un autre éditeur certifié."
+  },
+  {
+   "slug": "tactill",
+   "justification_editeur": "Un logiciel d'encaissement doit, en France, être certifié NF525 ou couvert par une attestation de conformité (article 286 du code général des impôts) : une caisse maison n'a ni l'un ni l'autre, avec une amende de 7 500 € par système non conforme. Tactill, sur iPad ou iPhone, sert notamment aux commerces de bouche et aux restaurants. Sa simplicité d'usage cache un journal d'encaissement qui doit être inaltérable. Prenez l'éditeur."
+  },
+  {
+   "slug": "tiller",
+   "justification_editeur": "Un logiciel d'encaissement doit, en France, être certifié NF525 ou couvert par une attestation de conformité (article 286 du code général des impôts) : une caisse maison n'a ni l'un ni l'autre, avec une amende de 7 500 € par système non conforme. Tiller est une caisse mobile avec exploitation des données de vente : les statistiques se recréent à partir d'un export, mais l'encaissement lui-même doit rester celui de l'éditeur."
+  },
+  {
+   "slug": "zelty",
+   "justification_editeur": "Un logiciel d'encaissement doit, en France, être certifié NF525 ou couvert par une attestation de conformité (article 286 du code général des impôts) : une caisse maison n'a ni l'un ni l'autre, avec une amende de 7 500 € par système non conforme. Zelty est une caisse cloud complète pour restaurants indépendants et chaînes, avec plusieurs établissements à synchroniser. Le multi-sites ajoute encore à la difficulté. Prenez l'éditeur."
+  },
+  {
+   "slug": "agendrix",
+   "justification_editeur": "Planning, pointage et disponibilités se recodent assez vite. Ce que l'on perd, c'est le suivi du droit du travail : heures supplémentaires, repos entre deux services, export vers la paie, qui changent avec la loi et la convention collective. Agendrix est un bon exemple de ce qui se construit en interne pour le planning, mais pas pour le décompte légal."
+  },
+  {
+   "slug": "cegid",
+   "justification_editeur": "Cegid fournit comptabilité (Quadra, Loop) et paie à des cabinets et des PME, dont des CHR. Le risque est réglementaire, pas technique : plan comptable, déclarations, DSN, formats d'échange avec l'administration. Un outil maison aurait à suivre chacun de ces textes. Ce n'est pas un terrain pour du sur-mesure."
+  },
+  {
+   "slug": "combo",
+   "justification_editeur": "Combo (ex-Snapshift) regroupe RH, planning et paie simplifiée pour la restauration. Le planning est la partie facile. La paie et le droit du travail exigent une mise à jour continue, et les erreurs se paient. Gardez Combo pour la paie, ou construisez un planning à côté, sans y mêler les calculs de paie."
+  },
+  {
+   "slug": "factorial",
+   "justification_editeur": "Factorial couvre planning, pointage et paie, avec des contenus pour la convention HCR. Le planning et le pointage sont abordables en interne. La paie et la conformité au droit du travail ne le sont pas : elles se mettent à jour à chaque évolution de la loi. À réserver à un éditeur."
+  },
+  {
+   "slug": "payfit",
+   "justification_editeur": "PayFit automatise la paie, avec des contenus pour la convention HCR (extras, heures supplémentaires, DSN). Les règles de la convention et de la déclaration sociale nominative changent régulièrement, et une erreur de paie se retrouve dans la fiche de chaque salarié. Un outil interne n'a pas de raison d'exister ici : gardez l'éditeur."
+  },
+  {
+   "slug": "planday",
+   "justification_editeur": "Planday gère plannings, suivi du temps et communication avec les équipes de l'hôtellerie-restauration. Le planning et la messagerie d'équipe se recodent facilement. Les règles de temps de travail, elles, demandent une veille juridique. Si vous construisez, ne calculez pas les heures légales : exportez-les à votre comptable."
+  },
+  {
+   "slug": "deliveroo-restaurant-hub",
+   "justification_editeur": "Deliveroo Restaurant Hub est le back-office qui reçoit et gère vos commandes passées sur Deliveroo. Sa valeur est la visibilité auprès des clients de la plateforme, pas l'écran de gestion. Un outil maison ne ferait pas arriver de commandes. Pour réduire la dépendance, développez plutôt votre propre commande en ligne, sans prétendre remplacer la place de marché."
+  },
+  {
+   "slug": "gloriafood",
+   "justification_editeur": "GloriaFood est un outil de commande en ligne gratuit, répandu chez les petits indépendants. Un formulaire de commande se recode. Ce qui demande le plus d'attention, c'est la fiabilité : un paiement qui échoue ou une notification qui n'arrive pas en cuisine pendant un service fait perdre une vente. Comme l'outil est gratuit, remplacez-le seulement si vous voulez plus de contrôle."
+  },
+  {
+   "slug": "hubrise",
+   "justification_editeur": "HubRise relie votre caisse, les plateformes de livraison, la gestion des stocks et la commande en ligne. Sa valeur est le nombre de connexions maintenues en état de marche chaque fois qu'un partenaire change son interface. Coder une seule de ces connexions est abordable ; les garder toutes à jour dans la durée ne l'est pas."
+  },
+  {
+   "slug": "just-eat-pro",
+   "justification_editeur": "Just Eat Pro est l'extranet qui permet de gérer commandes et menus sur la place de marché Just Eat. Ce qui compte pour un restaurateur, c'est que la clientèle de la plateforme voie son menu. Remplacer l'extranet par un outil interne ne ramène aucune commande. Le levier est ailleurs : promouvoir votre propre commande en direct."
+  },
+  {
+   "slug": "ordrafood",
+   "justification_editeur": "OrdraFood propose la commande en ligne sans commission pour restaurateurs indépendants. La commande de base se recode. La fiabilité en production, c'est-à-dire des paiements qui aboutissent et des notifications qui arrivent à la cuisine en plein service, est le vrai enjeu. Si vous codez vous-même, testez sous charge avant de vous y fier."
+  },
+  {
+   "slug": "uber-eats-manager",
+   "justification_editeur": "Uber Eats Manager sert à gérer vos commandes, vos horaires et votre menu sur Uber Eats. Y renoncer reviendrait à perdre la visibilité auprès des clients de l'application, ce qui coûte souvent plus que l'abonnement. Un outil maison n'a donc de sens qu'en complément, pour votre propre commande en direct."
+  },
+  {
+   "slug": "guestonline",
+   "justification_editeur": "Guestonline gère les réservations, le plan de salle et le fichier client sans commission. La réservation se recode raisonnablement. Le fichier client et le suivi des no-shows demandent plus de soin dans la durée : consentement, relances, suppression à la demande. Pour un seul restaurant, c'est un projet faisable."
+  },
+  {
+   "slug": "opentable",
+   "justification_editeur": "OpenTable est à la fois une plateforme de découverte et un outil de gestion des réservations. Ce que vous payez, c'est l'accès aux clients de la plateforme. Un agenda de réservations maison n'apporte pas ces clients. Gardez-la pour la visibilité, et construisez à côté la réservation directe depuis votre site."
+  }
+ ]
+}
