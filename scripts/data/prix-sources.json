@@ -187,5 +187,61 @@
   "source": "https://www.lemlist.com/fr/pricing",
   "note": "Formule Email, facturation annuelle, utilisateurs illimités ; 55 $ x 0,89087 (BCE, 2026-10-02)",
   "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "tally",
+  "prix": "gratuit (plans payants à partir de 20 €/mois)",
+  "source": "https://tally.so/pricing",
+  "note": "Formule Pro, 20 € par mois ; formule gratuite sans limite de formulaires",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "pennylane",
+  "prix": "gratuit (plans payants à partir de 7 €/mois)",
+  "source": "https://www.pennylane.com/fr/tarifs/",
+  "note": "Starter 7 € HT/mois ; formule gratuite réservée aux micro-entreprises (1 200 factures/an)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "tailscale",
+  "prix": "gratuit (plans payants à partir de 7,13 €/mois/utilisateur, converti de 8 $, cours du 2 oct. 2026)",
+  "source": "https://tailscale.com/pricing",
+  "note": "Formule Standard, par utilisateur ; Personal gratuit ; 8 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "bitwarden",
+  "prix": "gratuit (version payante à partir de 1,47 €/mois, converti de 1,65 $, cours du 2 oct. 2026)",
+  "source": "https://bitwarden.com/pricing/",
+  "note": "Premium 19,80 $/an soit 1,65 $/mois ; formule gratuite ; 1.65 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "mailerlite",
+  "prix": "gratuit (plans payants à partir de 10,69 €/mois, converti de 12 $, cours du 2 oct. 2026)",
+  "source": "https://www.mailerlite.com/pricing",
+  "note": "Formule Comfort ; formule gratuite 250 abonnés ; 12 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "sentry",
+  "prix": "gratuit (plans payants à partir de 23,16 €/mois, converti de 26 $, cours du 2 oct. 2026)",
+  "source": "https://sentry.io/pricing/",
+  "note": "Formule Team facturée à l'année ; Developer gratuit ; 26 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "obsidian",
+  "prix": "gratuit (options payantes à partir de 3,56 €/mois, converti de 4 $, cours du 2 oct. 2026)",
+  "source": "https://obsidian.md/pricing",
+  "note": "Obsidian gratuit ; service Sync payant, 4 $/mois facturé à l'année ; 4 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "framer",
+  "prix": "gratuit (plans payants à partir de 8,91 €/mois, converti de 10 $, cours du 2 oct. 2026)",
+  "source": "https://www.framer.com/pricing",
+  "note": "Formule Basic facturée à l'année ; formule gratuite ; 10 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
  }
 ]

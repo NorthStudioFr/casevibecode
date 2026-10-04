@@ -1,0 +1,44 @@
+{
+ "corrections": [
+  {
+   "slug": "tally",
+   "prix": "gratuit (plans payants à partir de 20 €/mois)",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "pennylane",
+   "prix": "gratuit (plans payants à partir de 7 €/mois)",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "tailscale",
+   "prix": "gratuit (plans payants à partir de 7,13 €/mois/utilisateur, converti de 8 $, cours du 2 oct. 2026)",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "bitwarden",
+   "prix": "gratuit (version payante à partir de 1,47 €/mois, converti de 1,65 $, cours du 2 oct. 2026)",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "mailerlite",
+   "prix": "gratuit (plans payants à partir de 10,69 €/mois, converti de 12 $, cours du 2 oct. 2026)",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "sentry",
+   "prix": "gratuit (plans payants à partir de 23,16 €/mois, converti de 26 $, cours du 2 oct. 2026)",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "obsidian",
+   "prix": "gratuit (options payantes à partir de 3,56 €/mois, converti de 4 $, cours du 2 oct. 2026)",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "framer",
+   "prix": "gratuit (plans payants à partir de 8,91 €/mois, converti de 10 $, cours du 2 oct. 2026)",
+   "prix_mensuel": null
+  }
+ ]
+}
