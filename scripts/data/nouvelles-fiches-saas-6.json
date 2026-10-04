@@ -1,0 +1,176 @@
+[
+ {
+  "slug": "paypal",
+  "nom": "PayPal",
+  "domaine": "paypal.com",
+  "categorie": "paiement",
+  "description": "Service de paiement en ligne et portefeuille : paiements par carte, virements et protection des acheteurs. En France, une transaction commerciale nationale coûte 2,90 % + 0,35 €, sans abonnement mensuel pour un compte marchand standard.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Encaisser un paiement n'est pas le difficile : c'est la confiance. Des millions d'acheteurs ont déjà un compte PayPal et paient en un clic, et le service porte la protection des acheteurs et la gestion des litiges, impossibles à reconstruire. Vous pouvez proposer la carte directement via un autre prestataire, mais vous perdez les acheteurs qui préfèrent PayPal. À 2,90 % + 0,35 €, c'est une option à ajouter, pas à remplacer par du code.",
+  "ce_que_vous_perdez": [
+   "Les acheteurs qui ont déjà un compte et paient en un clic",
+   "La protection des acheteurs et la gestion des litiges",
+   "Les virements et le portefeuille entre particuliers",
+   "La conversion dans de nombreuses devises"
+  ],
+  "alternatives": [],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix": null,
+  "prix_mensuel": null
+ },
+ {
+  "slug": "gandi",
+  "nom": "Gandi",
+  "domaine": "gandi.net",
+  "categorie": "reseau",
+  "description": "Bureau d'enregistrement de noms de domaine et hébergeur français : plus de 750 extensions, certificats SSL, e-mail et cloud. Un .com se renouvelle à 38,38 € par an et un .fr à 28,78 €.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Un bureau d'enregistrement est un intermédiaire accrédité auprès des registres : cela ne se code pas, et posséder son nom de domaine ne s'improvise pas. Ce que vous pouvez faire, c'est bien choisir et ne pas dépendre d'un seul prestataire : garder le domaine chez un bureau d'enregistrement de votre choix, utiliser son DNS ou un DNS gratuit, et héberger le reste où vous voulez. La valeur de Gandi est dans sa réputation et son indépendance, pas dans un logiciel.",
+  "ce_que_vous_perdez": [
+   "L'accréditation auprès des registres de noms de domaine",
+   "La gestion de plus de 750 extensions",
+   "DNS, certificats SSL et e-mail au même endroit",
+   "Un prestataire français avec de l'ancienneté"
+  ],
+  "alternatives": [],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix": null,
+  "prix_mensuel": null
+ },
+ {
+  "slug": "mistral-le-chat",
+  "nom": "Mistral Le Chat",
+  "domaine": "mistral.ai",
+  "categorie": "productivite",
+  "description": "Assistant et modèles d'IA de l'entreprise française Mistral AI. Formule gratuite à l'usage limité ; l'offre Pro coûte 14,99 $ par mois et l'offre Team 24,99 $ par utilisateur plus 50 $ de base mensuelle.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Des modèles à poids ouverts tournent sur votre propre machine avec Ollama : privé, gratuit et hors ligne. Pour résumer, reformuler et du code simple, cela suffit souvent. Ce que vous perdez : la qualité des plus gros modèles, qui exigent un matériel sérieux, ainsi que la recherche web, la lecture de fichiers et la vitesse d'un service hébergé. Pour des données sensibles qui ne doivent pas quitter votre machine, c'est une vraie option.",
+  "ce_que_vous_perdez": [
+   "La qualité des plus gros modèles, qui exigent un matériel lourd",
+   "La recherche web et la lecture de fichiers intégrées",
+   "La rapidité d'un service hébergé",
+   "L'usage inclus dans l'abonnement, sans machine à entretenir"
+  ],
+  "prix": "gratuit (plans payants à partir de 13,35 €/mois, converti de 14,99 $, cours du 2 oct. 2026)",
+  "prompt": "Mets en place un assistant IA local pour remplacer un chatbot payant pour mes usages courants.\n\nNe développe ni modèle ni interface : installe Ollama et utilise un modèle à poids ouverts adapté à ma machine.\n\nÀ faire :\n- L'installation d'Ollama sur ma machine et le choix d'un modèle qui tient dans ma RAM (dis-moi lequel et pourquoi).\n- Un script simple pour lancer une conversation dans le terminal et pour résumer ou reformuler un fichier.\n- Un accès limité à ma machine (ne pas exposer le port sur le réseau).\n- Une comparaison honnête sur 5 de mes vraies tâches : là où cela suffit, là où non.\n\nHors périmètre : recherche web, génération d'images, réentraînement.\n\nREADME : installation, changement de modèle, et rappel de l'écart de qualité avec les gros modèles hébergés.",
+  "alternatives": [
+   {
+    "nom": "Ollama",
+    "url": "https://github.com/ollama/ollama",
+    "type": "open-source",
+    "description": "Outil pour faire tourner des modèles de langage à poids ouverts sur votre machine (MIT), avec une API compatible avec les clients courants."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ },
+ {
+  "slug": "digitalocean",
+  "nom": "DigitalOcean",
+  "domaine": "digitalocean.com",
+  "categorie": "reseau",
+  "description": "Hébergeur cloud : serveurs virtuels (Droplets), bases de données gérées, stockage et plateforme d'applications. Le Droplet le moins cher coûte 4 $ par mois (1 vCPU, 512 Mio de RAM, 10 Gio de SSD).",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Un hébergeur loue du matériel et du réseau : cela ne se code pas. Ce que vous pouvez réduire, c'est la dépendance à une offre : un VPS chez n'importe quel fournisseur fait tourner les mêmes applications, et un outil de déploiement comme Coolify facilite le changement. Comparez prix et localisation (centres de données européens) avant de vous engager ; à ce niveau, le choix porte sur le prix et la région, pas sur les fonctions.",
+  "ce_que_vous_perdez": [
+   "Les centres de données, le réseau et le matériel",
+   "Les bases de données gérées et le stockage",
+   "Les sauvegardes et instantanés en quelques clics"
+  ],
+  "prix": "à partir de 3,56 €/mois (converti de 4 $, cours du 2 oct. 2026)",
+  "prix_mensuel": 3.56,
+  "alternatives": [
+   {
+    "nom": "Hetzner",
+    "url": "https://www.hetzner.com",
+    "type": "plus-petit",
+    "description": "Hébergeur allemand de serveurs cloud et dédiés à prix serrés."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode"
+ },
+ {
+  "slug": "bubble",
+  "nom": "Bubble",
+  "domaine": "bubble.io",
+  "categorie": "dev-tools",
+  "description": "Plateforme sans code pour construire des applications web en visuel, avec base de données, hébergement et workflows intégrés. Formule gratuite pour développer ; la formule Starter coûte 59 $ par mois, facturée à l'année.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Avec un assistant de code, une application simple (formulaires, base de données, comptes utilisateurs) s'écrit en code et s'héberge pour quelques euros, sans tarification à l'unité de charge ni verrouillage. Ce que vous perdez : l'éditeur visuel, l'hébergement et la base gérés par Bubble, et l'absence d'entretien de la sécurité et des mises à jour. Le plus dur n'est pas de construire mais de faire tenir l'application dans le temps : décidez si vous le ferez vraiment.",
+  "ce_que_vous_perdez": [
+   "L'éditeur visuel, sans code à entretenir",
+   "L'hébergement, la base et les workflows gérés au même endroit",
+   "La sécurité et les mises à jour prises en charge par l'éditeur",
+   "Une place de marché de plugins"
+  ],
+  "prix": "gratuit (plans payants à partir de 52,56 €/mois, converti de 59 $, cours du 2 oct. 2026)",
+  "prompt": "Reconstruis mon application Bubble en code que je possède.\n\nNe copie pas Bubble : reproduis seulement ce que mon application fait aujourd'hui. Je te décris ses pages, ses données et ses workflows.\n\nÀ faire :\n- Une pile simple que je peux maintenir (Next.js et une base PostgreSQL comme Supabase), avec comptes et permissions.\n- Le modèle de données déduit de ma base Bubble, et un script d'import depuis un export CSV.\n- Les pages et les workflows que je liste, un par un, avec des tests.\n- Un déploiement sur un hébergeur gratuit ou peu cher, secrets en variables d'environnement.\n\nHors périmètre : plugins Bubble, éditeur visuel.\n\nREADME : lancement, import des données, déploiement, et rappel que je suis désormais responsable de la sécurité et des mises à jour.",
+  "alternatives": [
+   {
+    "nom": "Appsmith",
+    "url": "https://github.com/appsmithorg/appsmith",
+    "type": "open-source",
+    "description": "Plateforme open source pour construire des outils internes et des applications avec un éditeur visuel (Apache-2.0), auto-hébergeable."
+   },
+   {
+    "nom": "ToolJet",
+    "url": "https://github.com/ToolJet/ToolJet",
+    "type": "open-source",
+    "description": "Plateforme low-code open source pour outils internes (AGPL), auto-hébergeable."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ },
+ {
+  "slug": "mailgun",
+  "nom": "Mailgun",
+  "domaine": "mailgun.com",
+  "categorie": "dev-tools",
+  "description": "API d'envoi d'e-mails pour développeurs : messages transactionnels et en masse avec suivi de livraison. Formule gratuite de 100 e-mails par jour ; la formule Basic démarre à 15 $ par mois pour 10 000 e-mails.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Envoyer un e-mail est facile ; qu'il arrive en boîte de réception ne l'est pas. La délivrabilité dépend de la réputation des adresses d'envoi, de l'authentification (SPF, DKIM, DMARC), de la gestion des rebonds et des plaintes, et du chauffage d'une adresse, qu'un prestataire fait pour des milliers de clients. Vous pouvez héberger votre propre expéditeur (Postal), mais un serveur neuf finit souvent en courrier indésirable. Pour quelques e-mails transactionnels, la formule gratuite d'un prestataire est en général le meilleur choix.",
+  "ce_que_vous_perdez": [
+   "La réputation d'adresses d'envoi établies",
+   "La gestion des rebonds et des plaintes",
+   "Le suivi de livraison et les journaux",
+   "Le support en cas de problème de délivrabilité"
+  ],
+  "prix": "gratuit (plans payants à partir de 13,36 €/mois, converti de 15 $, cours du 2 oct. 2026)",
+  "alternatives": [
+   {
+    "nom": "Postal",
+    "url": "https://github.com/postalserver/postal",
+    "type": "open-source",
+    "description": "Plateforme d'envoi d'e-mails auto-hébergée (MIT) ; la réputation et la délivrabilité du serveur sont à votre charge."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ },
+ {
+  "slug": "hostinger",
+  "nom": "Hostinger",
+  "domaine": "hostinger.com",
+  "categorie": "reseau",
+  "description": "Hébergeur web : hébergement mutualisé, hébergement WordPress, VPS et noms de domaine. L'offre mutualisée la moins chère est annoncée à 2,99 € par mois avec un engagement de 48 mois, puis 9,99 € par mois au renouvellement (3 sites, 20 Go de SSD, sauvegardes hebdomadaires).",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "L'hébergement mutualisé est une location d'espace sur un serveur : cela ne se code pas. Pour un site statique, des hébergeurs gratuits (Cloudflare Pages, GitHub Pages) ne coûtent rien ; pour plusieurs sites ou une application, un petit VPS avec Coolify revient à peu près au même prix et donne plus de contrôle. Lisez bien les conditions : le prix annoncé exige un long engagement et le prix de renouvellement est plus de trois fois supérieur.",
+  "ce_que_vous_perdez": [
+   "Un hébergement géré, sans serveur à administrer",
+   "Un nom de domaine offert la première année",
+   "Des sauvegardes hebdomadaires incluses"
+  ],
+  "prix": "à partir de 2,99 €/mois (engagement 48 mois)",
+  "alternatives": [],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ }
+]

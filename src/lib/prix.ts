@@ -20,6 +20,7 @@ const MOTS_PRIX: [RegExp, string][] = [
   [/plans payants à partir de/gi, 'paid plans from'],
   [/plans dès/gi, 'plans from'],
   [/options payantes/gi, 'paid options'],
+  [/engagement (\d+) mois/gi, '$1-month commitment'],
   [/Premium à/g, 'Premium at'],
   [/sur devis/gi, 'on request'],
   [/à partir de/gi, 'from'],

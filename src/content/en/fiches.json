@@ -3230,5 +3230,89 @@
   "alternatives": [
    "German provider of cloud and dedicated servers at tight prices."
   ]
+ },
+ "paypal": {
+  "description": "Online payment service and wallet: card payments, transfers and buyer protection. In France, a domestic commercial transaction costs 2.90% + €0.35, with no monthly fee for a standard merchant account.",
+  "justification": "Collecting a payment is not the hard part: it is the trust. Millions of buyers already have a PayPal account and pay in one click, and the service carries buyer protection and dispute handling that you cannot rebuild. You can offer cards directly through another provider, but you lose the buyers who prefer PayPal. At 2.90% + €0.35 it is an option to add, not to replace by your own code.",
+  "perdez": [
+   "Buyers who already have an account and pay in one click",
+   "Buyer protection and dispute handling",
+   "Transfers and wallet between individuals",
+   "Conversion in many currencies"
+  ],
+  "alternatives": []
+ },
+ "gandi": {
+  "description": "French domain registrar and hosting provider: more than 750 extensions, SSL certificates, email and cloud. A .com renews at €38.38 a year and a .fr at €28.78.",
+  "justification": "A registrar is an accredited intermediary with the registries: you cannot code that, and owning your domain is not something to improvise. What you can do is choose well and not depend on one provider: keep the domain at a registrar of your choice, use its DNS or a free DNS service, and host the rest wherever you like. Gandi's value is in its reputation and independence, not in software.",
+  "perdez": [
+   "Accreditation with the domain registries",
+   "Management of more than 750 extensions",
+   "DNS, SSL certificates and email in one place",
+   "A French provider with a long track record"
+  ],
+  "alternatives": []
+ },
+ "mistral-le-chat": {
+  "description": "Assistant and AI models from the French company Mistral AI. Free plan with limited usage; the Pro plan costs $14.99 a month and the Team plan $24.99 per user plus a $50 monthly base fee.",
+  "justification": "Open-weight models run on your own machine with Ollama: private, free and offline. For summaries, rewriting and simple code, that is often enough. What you lose: the quality of the largest models, which need serious hardware, as well as web search, file handling and the speed of a hosted service. For sensitive data that must not leave your machine, it is a real option.",
+  "perdez": [
+   "The quality of the largest models, which need heavy hardware",
+   "Integrated web search and file handling",
+   "The speed of a hosted service",
+   "Usage included in the plan with no machine to maintain"
+  ],
+  "alternatives": [
+   "Tool for running open-weight language models on your own machine (MIT), with an API compatible with common clients."
+  ],
+  "prompt": "Set up a local AI assistant to replace a paid chatbot for my everyday needs.\n\nDo not build a model or an interface: install Ollama and use an open-weight model suited to my machine.\n\nTo do:\n- Installation of Ollama on my machine and the choice of a model that fits my RAM (tell me which one and why).\n- A simple script to start a conversation in the terminal and to summarize or rewrite a file.\n- Access limited to my machine (do not expose the port on the network).\n- An honest comparison on 5 of my real tasks: where it is enough, where it is not.\n\nOut of scope: web search, image generation, fine-tuning.\n\nREADME: installation, model change, and a reminder of the quality gap with large hosted models."
+ },
+ "digitalocean": {
+  "description": "Cloud hosting provider: virtual servers (Droplets), managed databases, storage and app platform. The cheapest Droplet costs $4 a month (1 vCPU, 512 MiB of RAM, 10 GiB of SSD).",
+  "justification": "A hosting provider rents hardware and network: it cannot be coded. What you can reduce is the dependence on a particular offer: a VPS at any provider runs the same applications, and a deployment tool such as Coolify makes switching easier. Compare prices and location (European data centers) before committing; at this level the choice is about price and region, not features.",
+  "perdez": [
+   "Data centers, network and hardware",
+   "Managed databases and storage",
+   "Backups and snapshots in a few clicks"
+  ],
+  "alternatives": []
+ },
+ "bubble": {
+  "description": "No-code platform for building web applications visually, with built-in database, hosting and workflows. Free plan to develop; the Starter plan costs $59 a month billed annually.",
+  "justification": "With a code assistant, a simple application (forms, database, user accounts) can be written in code and hosted for a few euros, with no workload-unit pricing and no lock-in. What you lose: the visual editor, hosting and database managed by Bubble, and not having to maintain security and updates. The hardest part is not building but keeping the app running over time: decide whether you will really do that.",
+  "perdez": [
+   "The visual editor with no code to maintain",
+   "Hosting, database and workflows managed in one place",
+   "Security and updates handled by the vendor",
+   "A plugin marketplace"
+  ],
+  "alternatives": [
+   "Open-source platform for building internal tools and applications with a visual editor (Apache-2.0), self-hostable.",
+   "Open-source low-code platform for internal tools (AGPL), self-hostable."
+  ],
+  "prompt": "Rebuild my Bubble application as code that I own.\n\nDo not copy Bubble: reproduce only what my app does today. I will describe its pages, data and workflows.\n\nTo do:\n- A simple stack I can maintain (Next.js and a PostgreSQL database such as Supabase), with accounts and permissions.\n- The data model deduced from my Bubble database, and an import script from a CSV export.\n- The pages and the workflows I list, one by one, with tests.\n- Deployment on a free or inexpensive host, secrets in environment variables.\n\nOut of scope: Bubble plugins, visual editor.\n\nREADME: launch, data import, deployment, and a reminder that I am now responsible for security and updates."
+ },
+ "mailgun": {
+  "description": "Email sending API for developers: transactional and bulk messages with delivery tracking. Free plan with 100 emails a day; the Basic plan starts at $15 a month for 10,000 emails.",
+  "justification": "Sending an email is easy; getting it to the inbox is not. Deliverability depends on the reputation of sending addresses, authentication (SPF, DKIM, DMARC), handling of bounces and complaints, and warming up an address, which a provider does across thousands of customers. You can host your own sender (Postal), but a new server often lands in spam. For a few transactional emails, a provider's free plan is usually the better choice.",
+  "perdez": [
+   "The reputation of established sending addresses",
+   "Handling of bounces and complaints",
+   "Delivery tracking and logs",
+   "Support for deliverability problems"
+  ],
+  "alternatives": [
+   "Self-hosted email delivery platform (MIT); you handle server reputation and deliverability yourself."
+  ]
+ },
+ "hostinger": {
+  "description": "Web hosting provider: shared hosting, WordPress hosting, VPS and domain names. The cheapest shared plan is advertised at €2.99 a month with a 48-month commitment, renewing at €9.99 a month (3 websites, 20 GB SSD, weekly backups).",
+  "justification": "Shared hosting is a rental of space on a server: it cannot be coded. For a static site, free hosts (Cloudflare Pages, GitHub Pages) cost nothing; for several sites or an application, a small VPS with Coolify is about the same price and gives you more control. Read the conditions carefully: the advertised price requires a long commitment and the renewal price is more than three times higher.",
+  "perdez": [
+   "Managed shared hosting with no server to administer",
+   "A free domain for the first year",
+   "Weekly backups included"
+  ],
+  "alternatives": []
  }
 }

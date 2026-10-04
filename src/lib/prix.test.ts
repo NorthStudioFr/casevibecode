@@ -63,3 +63,9 @@ describe('prix convertis', () => {
     );
   });
 });
+
+describe('prix avec engagement', () => {
+  it('se traduit en anglais', () => {
+    expect(formatPrix('à partir de 2,99 €/mois (engagement 48 mois)', 'en')).toBe('from €2.99/month (48-month commitment)');
+  });
+});
