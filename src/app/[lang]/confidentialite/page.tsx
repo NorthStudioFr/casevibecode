@@ -19,6 +19,11 @@ const TEXTES = {
       "Voter ne demande ni compte ni email. Lors de votre vote, une empreinte chiffrée (hachage cryptographique salé) de votre adresse IP est enregistrée. L'adresse IP brute n'est jamais stockée ni lisible. Cette empreinte permet de limiter strictement à un seul vote par utilisateur et par fiche, afin de prévenir la fraude.",
     newsletterTitre: 'Newsletter',
     newsletter: "Votre email, si vous vous inscrivez au formulaire de newsletter du site.",
+    contribTitre: 'Retours et propositions de logiciels',
+    contrib:
+      "Si vous envoyez un retour ou proposez un logiciel : le texte que vous écrivez, le lien éventuel, la langue de la page et la date. Aucun nom ni e-mail n'est demandé : n'en mettez pas dans votre texte. Un retour n'est publié qu'après relecture, sans nom d'auteur. Une empreinte chiffrée de votre adresse IP est conservée 13 mois contre les abus.",
+    auditTitre: 'Mon audit',
+    audit: "Le calcul de la page « Mon audit » se fait dans votre navigateur : la sélection n'est ni envoyée ni enregistrée. Le lien de partage contient seulement les noms des outils cochés.",
     baseTitre: 'Pourquoi, et sur quelle base légale',
     base: [
       "Le traitement de l'empreinte IP pour les votes repose sur notre ",
@@ -58,6 +63,11 @@ const TEXTES = {
       'Voting requires neither an account nor an email. When you vote, an encrypted fingerprint (salted cryptographic hash) of your IP address is recorded. The raw IP address is never stored or readable. This fingerprint strictly limits voting to one vote per user and per entry, to prevent fraud.',
     newsletterTitre: 'Newsletter',
     newsletter: 'Your email, if you sign up through the site’s newsletter form.',
+    contribTitre: 'Feedback and tool suggestions',
+    contrib:
+      'If you send feedback or suggest a tool: the text you write, the optional link, the page language and the date. No name or email is asked: do not put any in your text. Feedback is only published after review, without an author’s name. An encrypted fingerprint of your IP address is kept for 13 months against abuse.',
+    auditTitre: 'My audit',
+    audit: 'The calculation on the “My audit” page happens in your browser: the selection is neither sent nor saved. The share link only contains the names of the ticked tools.',
     baseTitre: 'Why, and on what legal basis',
     base: [
       'Processing the IP fingerprint for votes rests on our ',
@@ -121,6 +131,14 @@ export default function ConfidentialitePage({ params }: { params?: Promise<{ lan
         <div>
           <p className="font-medium">{x.newsletterTitre}</p>
           <p>{x.newsletter}</p>
+        </div>
+        <div>
+          <p className="font-medium">{x.contribTitre}</p>
+          <p>{x.contrib}</p>
+        </div>
+        <div>
+          <p className="font-medium">{x.auditTitre}</p>
+          <p>{x.audit}</p>
         </div>
       </div>
 

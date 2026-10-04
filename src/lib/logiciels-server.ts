@@ -47,3 +47,38 @@ export async function getVoteCounts(logicielId: string): Promise<VoteCounts> {
   const row = (data as { remplace: number; pas_remplacable: number }[] | null)?.[0];
   return { remplace: row?.remplace ?? 0, pasRemplacable: row?.pas_remplacable ?? 0 };
 }
+
+export interface Retour {
+  id: string;
+  type: 'construit' | 'casse';
+  texte: string;
+  lien: string | null;
+  langue: 'fr' | 'en';
+  createdAt: number;
+}
+
+// Retours publiés d'une fiche (la RLS ne laisse lire que les publiés). Une erreur ne
+// doit jamais casser la fiche : on affiche alors simplement « aucun retour ».
+export async function getRetours(slug: string): Promise<Retour[]> {
+  if (isBuildWithoutSupabase()) return [];
+  try {
+    const { data, error } = await getSupabaseServer()
+      .from('retours')
+      .select('id, type, texte, lien, langue, created_at')
+      .eq('logiciel_slug', slug)
+      .order('created_at', { ascending: false })
+      .limit(20);
+    if (error) throw error;
+    return (data as { id: string; type: Retour['type']; texte: string; lien: string | null; langue: Retour['langue']; created_at: string }[]).map((r) => ({
+      id: r.id,
+      type: r.type,
+      texte: r.texte,
+      lien: r.lien,
+      langue: r.langue,
+      createdAt: new Date(r.created_at).getTime(),
+    }));
+  } catch (e) {
+    console.error('getRetours:', e);
+    return [];
+  }
+}

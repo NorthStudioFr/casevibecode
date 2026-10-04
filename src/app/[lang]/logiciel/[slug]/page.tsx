@@ -2,7 +2,7 @@ import { cache } from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getLogicielBySlug, getVoteCounts, getLogiciels } from '@/lib/logiciels-server';
+import { getLogicielBySlug, getVoteCounts, getLogiciels, getRetours } from '@/lib/logiciels-server';
 import { computeVerdictDisplay } from '@/lib/verdict';
 import { relatedFiches } from '@/lib/related';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
@@ -21,6 +21,7 @@ import { FAQ } from '@/components/FAQ';
 import { CtaEditeur } from '@/components/CtaEditeur';
 import { NewsletterForm } from '@/components/NewsletterForm';
 import { LogoEditeur } from '@/components/LogoEditeur';
+import { RetoursFiche } from '@/components/RetoursFiche';
 
 // Regenerate at most once every 5 min (ISR) instead of rendering per
 // request, to keep database reads within the free-plan limits under
@@ -84,7 +85,7 @@ export default async function FicheLogicielPage({ params }: Props) {
   const logiciel = await getFiche(slug, lang);
   if (!logiciel) notFound();
 
-  const [counts, tousLogiciels] = await Promise.all([getVoteCounts(logiciel.id), getLogiciels(lang)]);
+  const [counts, tousLogiciels, retours] = await Promise.all([getVoteCounts(logiciel.id), getLogiciels(lang), getRetours(logiciel.id)]);
   const display = computeVerdictDisplay(logiciel.verdictEditeur, counts);
 
   // Alphabetical order gives a stable, predictable prev/next sequence
@@ -151,6 +152,7 @@ export default async function FicheLogicielPage({ params }: Props) {
         <NewsletterForm />
       </div>
       <FAQ logiciel={logiciel} verdict={display.verdict} />
+      <RetoursFiche logicielId={logiciel.id} retours={retours} />
       <section className="mt-10 border-t border-slate-200 pt-6">
         <h2 className="font-serif text-xl font-semibold text-slate-800">{t.fiche.related}</h2>
         <ul className="mt-3 space-y-2 text-sm">

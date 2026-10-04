@@ -8,6 +8,13 @@ vi.mock('next/navigation', () => ({ useRouter: () => ({ push: pushMock }) }));
 const listLogicielsClientMock = vi.fn().mockResolvedValue([]);
 vi.mock('@/lib/logiciels-admin-client', () => ({ listLogicielsClient: listLogicielsClientMock }));
 
+vi.mock('@/lib/moderation-client', () => ({
+  listerRetoursEnAttente: vi.fn().mockResolvedValue([]),
+  listerPropositions: vi.fn().mockResolvedValue([]),
+  moderer: vi.fn(),
+  marquerTraitee: vi.fn(),
+}));
+
 let mockAuth = { user: null as { uid: string } | null, isAdmin: false, loading: false };
 vi.mock('@/lib/auth/useAuth', () => ({ useAuth: () => mockAuth }));
 

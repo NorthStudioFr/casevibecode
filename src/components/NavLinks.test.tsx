@@ -6,18 +6,16 @@ let pathname = '/';
 vi.mock('next/navigation', () => ({ usePathname: () => pathname }));
 
 import { NavLinks } from './NavLinks';
+import { LocaleProvider } from '@/lib/i18n/LocaleProvider';
 
 describe('NavLinks', () => {
-  it('offers the list, alternatives and a way to propose a software', () => {
-    render(<NavLinks proposerHref="mailto:contact@exemple.test?subject=Proposer" />);
-    expect(screen.getByRole('link', { name: 'La liste' })).toHaveAttribute('href', '/');
-    expect(screen.getByRole('link', { name: 'Alternatives' })).toHaveAttribute('href', '/alternatives');
-    expect(screen.getByRole('link', { name: 'Proposer un logiciel' }).getAttribute('href')).toMatch(/^mailto:/);
-  });
-
-  it('masque « Proposer un logiciel » sans adresse de contact', () => {
+  it('offers the list, audit, alternatives and the suggestion form', () => {
+    pathname = '/';
     render(<NavLinks />);
-    expect(screen.queryByRole('link', { name: 'Proposer un logiciel' })).toBeNull();
+    expect(screen.getByRole('link', { name: 'La liste' })).toHaveAttribute('href', '/');
+    expect(screen.getByRole('link', { name: 'Mon audit' })).toHaveAttribute('href', '/audit');
+    expect(screen.getByRole('link', { name: 'Alternatives' })).toHaveAttribute('href', '/alternatives');
+    expect(screen.getByRole('link', { name: 'Proposer un logiciel' })).toHaveAttribute('href', '/proposer');
   });
 
   it('marks the current tab, and keeps "La liste" active on a fiche page', () => {
@@ -29,5 +27,17 @@ describe('NavLinks', () => {
     pathname = '/logiciel/zenchef';
     rerender(<NavLinks />);
     expect(screen.getByRole('link', { name: 'La liste' })).toHaveAttribute('aria-current', 'page');
+  });
+
+  it('prefixes links and recognises the active tab in English', () => {
+    pathname = '/en/audit';
+    render(
+      <LocaleProvider lang="en">
+        <NavLinks />
+      </LocaleProvider>,
+    );
+    expect(screen.getByRole('link', { name: 'My audit' })).toHaveAttribute('href', '/en/audit');
+    expect(screen.getByRole('link', { name: 'My audit' })).toHaveAttribute('aria-current', 'page');
+    expect(screen.getByRole('link', { name: 'Suggest a tool' })).toHaveAttribute('href', '/en/proposer');
   });
 });

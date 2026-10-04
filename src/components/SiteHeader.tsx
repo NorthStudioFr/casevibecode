@@ -3,15 +3,9 @@ import { LangSwitch } from './LangSwitch';
 import { ThemeToggle } from './ThemeToggle';
 import { NavLinks } from './NavLinks';
 import { AccountNav } from './AccountNav';
-import { editeur } from '@/lib/editeur';
-import { getDict } from '@/lib/i18n/dictionaries';
 import { localePath, DEFAULT_LANG, type Lang } from '@/lib/i18n/config';
 
 export function SiteHeader({ lang = DEFAULT_LANG }: { lang?: Lang }) {
-  const { email } = editeur();
-  const proposerHref = email
-    ? `mailto:${email}?subject=${encodeURIComponent(getDict(lang).nav.proposeSubject)}`
-    : undefined;
   return (
     <header className="border-b border-slate-200">
       <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-8 py-3">
@@ -25,7 +19,7 @@ export function SiteHeader({ lang = DEFAULT_LANG }: { lang?: Lang }) {
           casevibecode
         </Link>
         <div className="order-3 w-full md:order-none md:w-auto md:flex-1">
-          <NavLinks proposerHref={proposerHref} />
+          <NavLinks />
         </div>
         <div className="flex items-center gap-x-4">
           <AccountNav />

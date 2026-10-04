@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useAuth } from '@/lib/auth/useAuth';
 import { listLogicielsClient } from '@/lib/logiciels-admin-client';
 import type { Logiciel } from '@/types/logiciel';
+import { ModerationPanel } from '@/components/ModerationPanel';
 
 // This page uses AuthProvider, which relies on the Supabase browser client (public env vars absent at build time).
 // Prerendering at build time would fail without them.
@@ -49,6 +50,7 @@ export default function AdminPage() {
           </li>
         ))}
       </ul>
+      <ModerationPanel />
     </main>
   );
 }
