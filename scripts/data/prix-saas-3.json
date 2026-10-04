@@ -6,11 +6,6 @@
    "prix_mensuel": null
   },
   {
-   "slug": "pennylane",
-   "prix": "gratuit (plans payants à partir de 7 €/mois)",
-   "prix_mensuel": null
-  },
-  {
    "slug": "tailscale",
    "prix": "gratuit (plans payants à partir de 7,13 €/mois/utilisateur, converti de 8 $, cours du 2 oct. 2026)",
    "prix_mensuel": null
