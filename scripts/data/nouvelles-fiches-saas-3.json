@@ -1,0 +1,205 @@
+[
+  {
+    "slug": "deel",
+    "nom": "Deel",
+    "domaine": "deel.com",
+    "categorie": "rh-paie",
+    "secteur": "saas",
+    "description": "Plateforme mondiale pour recruter, payer et gérer salariés et prestataires dans plus de 150 pays : paie internationale, conformité locale, avantages et mobilité.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Payer un salarié ou un prestataire à l'étranger engage le droit du travail, la fiscalité et la protection sociale de chaque pays, avec des textes qui évoluent. Deel porte cette conformité et, selon l'offre, agit comme employeur officiel. Aucun outil interne ne peut reproduire cela. Vous pouvez construire un tableau de suivi de vos contrats ; la paie et la conformité restent à l'éditeur.",
+    "ce_que_vous_perdez": [
+      "La conformité au droit du travail de chaque pays",
+      "La paie internationale en plusieurs devises",
+      "Le statut d'employeur officiel, selon l'offre",
+      "Les experts locaux annoncés par l'éditeur"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "eurecia",
+    "nom": "Eurécia",
+    "domaine": "eurecia.com",
+    "categorie": "rh-paie",
+    "secteur": "saas",
+    "description": "Logiciel de ressources humaines français pour PME : congés et absences, suivi du temps, notes de frais, paie, recrutement et entretiens.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Les congés, le suivi du temps et les notes de frais se recodent bien : ce sont des formulaires, des validations et des soldes. Ce que vous perdez : la paie et les règles légales qui changent, et la prise en charge de la conformité par l'éditeur. Pour une petite équipe qui gère ses congés dans un tableur, un outil maison suffit ; pour la paie, gardez un éditeur.",
+    "ce_que_vous_perdez": [
+      "La paie et ses mises à jour légales",
+      "Le suivi des évolutions du droit du travail",
+      "Les modules de recrutement et d'entretiens",
+      "Le support d'un éditeur installé depuis vingt ans"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un outil de congés, de suivi du temps et de notes de frais pour une petite entreprise, sans prétendre remplacer Eurécia ni faire de la paie.\n\nPile : Next.js, TypeScript, SQLite. Données chez moi, secrets dans .env, aucune télémétrie.\n\nÀ faire :\n- Employés avec rôle (employé, manager, RH) et connexion par mot de passe ou lien magique.\n- Demandes de congés et d'absences avec validation, calendrier d'équipe, soldes par type de congé que je paramètre.\n- Saisie du temps de travail par jour ou par semaine, récapitulatif mensuel.\n- Notes de frais : montant, photo du justificatif, statut de validation.\n- Export CSV des heures et des absences pour mon expert-comptable.\n- Données de salariés : accès par rôle, journal des modifications, suppression sur demande.\n- Tests sur les soldes de congés ; README avec les limites.\n\nHors périmètre : calcul de la paie, DSN, recrutement. N'affirme jamais que les décomptes sont conformes à la loi.",
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "sendcloud",
+    "nom": "Sendcloud",
+    "domaine": "sendcloud.com",
+    "categorie": "ecommerce",
+    "secteur": "saas",
+    "description": "Plateforme européenne d'expédition pour boutiques en ligne : création d'étiquettes, suivi et retours, avec plus de 170 transporteurs dont Colissimo et Mondial Relay selon l'éditeur.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Générer une étiquette pour un transporteur est faisable ; en gérer plusieurs, avec des tarifs négociés, du suivi et des retours, ne l'est plus. La valeur de Sendcloud est dans les contrats et les connexions aux transporteurs, qui changent régulièrement. Pour une boutique qui envoie un seul type de colis avec un seul transporteur, passer directement par ce transporteur suffit.",
+    "ce_que_vous_perdez": [
+      "Les tarifs négociés avec les transporteurs",
+      "Les connexions à plus de 170 transporteurs annoncées par l'éditeur",
+      "Le suivi de colis et les retours automatisés",
+      "Les intégrations avec les boutiques en ligne"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "lengow",
+    "nom": "Lengow",
+    "domaine": "lengow.com",
+    "categorie": "ecommerce",
+    "secteur": "saas",
+    "description": "Plateforme française de diffusion de catalogues produits vers les places de marché et les canaux publicitaires, avec gestion des ventes, veille tarifaire et protection de marque.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Exporter un catalogue au format d'une place de marché est faisable pour une seule. Gérer plus de 90 places de marché, chacune avec ses règles qui changent, ses catégories à faire correspondre et ses retours d'erreurs, est un travail permanent. C'est précisément ce que l'éditeur maintient. Pour une boutique qui vend sur une place de marché, son export natif suffit souvent.",
+    "ce_que_vous_perdez": [
+      "Les connexions à plus de 90 places de marché annoncées par l'éditeur",
+      "La correspondance des catégories produit par canal",
+      "La veille tarifaire et la protection de marque",
+      "La mise à jour des formats exigés par chaque canal"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "qare",
+    "nom": "Qare",
+    "domaine": "qare.fr",
+    "categorie": "assurance-sante",
+    "secteur": "saas",
+    "description": "Plateforme française de téléconsultation médicale : médecins généralistes et spécialistes, ordonnances et arrêts de travail, consultations remboursables par l'Assurance maladie.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Une consultation médicale est un acte de santé : médecins inscrits à l'Ordre, données de santé, prescriptions et remboursement par l'Assurance maladie. Rien de cela ne se construit en interne. Ce que l'on peut faire seul, c'est un outil de prise de rendez-vous ; l'acte médical et l'hébergement des données restent à un acteur agréé.",
+    "ce_que_vous_perdez": [
+      "Les médecins inscrits à l'Ordre",
+      "Les ordonnances et les arrêts de travail",
+      "Le remboursement par l'Assurance maladie",
+      "L'hébergement et la protection des données de santé"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "obsidian",
+    "nom": "Obsidian",
+    "domaine": "obsidian.md",
+    "categorie": "notes",
+    "secteur": "saas",
+    "description": "Application de notes en fichiers Markdown stockés sur votre appareil, avec liens entre notes et extensions. Gratuite pour un usage personnel ; synchronisation et publication en options payantes.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Des notes en Markdown dans un dossier, avec recherche, étiquettes et liens entre notes, se construisent facilement et gardent vos fichiers lisibles partout. Ce que vous perdez : la vue graphique des liens, l'écosystème de milliers d'extensions et la synchronisation chiffrée sur tous vos appareils. Si vous n'utilisez que les notes et les liens, remplaçable.",
+    "ce_que_vous_perdez": [
+      "L'écosystème d'extensions",
+      "La vue graphique des liens entre notes",
+      "La synchronisation chiffrée entre appareils",
+      "Les mises à jour régulières et la communauté"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi une application de notes en Markdown pour mon usage personnel, sans prétendre remplacer Obsidian.\n\nPile : application web installable (PWA), Node ou Next.js, notes stockées en fichiers .md dans un dossier sur mon serveur.\n\nÀ faire :\n- Éditeur Markdown avec aperçu, création et renommage de notes, dossiers.\n- Liens entre notes avec la syntaxe [[nom de la note]], liste des notes qui pointent vers la note ouverte.\n- Étiquettes et recherche plein texte rapide.\n- Notes du jour créées en un clic.\n- Export de tout le dossier en archive ; les fichiers restent lisibles sans l'application.\n- Authentification simple, sauvegarde quotidienne ; tests sur l'analyse des liens ; README avec les limites.\n\nHors périmètre : extensions, vue graphique, synchronisation chiffrée de bout en bout.",
+    "alternatives": [
+      {
+        "nom": "Logseq",
+        "url": "https://github.com/logseq/logseq",
+        "type": "open-source",
+        "description": "Prise de notes libre (AGPL-3.0) en fichiers locaux, avec liens entre notes et journal quotidien."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "bear",
+    "nom": "Bear",
+    "domaine": "bear.app",
+    "categorie": "notes",
+    "secteur": "saas",
+    "description": "Application de notes Markdown pour Mac, iPhone et iPad. Version gratuite avec notes locales ; Bear Pro ajoute la synchronisation iCloud, des thèmes et des exports supplémentaires.",
+    "verdict_editeur": "YES",
+    "justification_editeur": "Une application de notes Markdown avec étiquettes, recherche et export est un projet très accessible. Ce que Bear apporte, c'est le soin de l'interface sur Apple et la synchronisation iCloud. Si vous voulez des notes sur tous vos appareils, une application web installable suffit, et vous gardez vos fichiers. À vérifier : l'écriture hors ligne.",
+    "ce_que_vous_perdez": [
+      "L'interface soignée sur Mac, iPhone et iPad",
+      "La synchronisation iCloud de Bear Pro",
+      "La recherche de texte dans les PDF et les images (OCR)",
+      "Les thèmes et les exports supplémentaires"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi une application de notes Markdown simple, sur tous mes appareils, en remplacement de Bear.\n\nPile : application web installable (PWA), Node ou Next.js, SQLite.\n\nÀ faire :\n- Éditeur Markdown avec aperçu ; notes avec étiquettes imbriquées (#projet/idée) créées en tapant le #.\n- Recherche plein texte rapide, notes épinglées, corbeille avec restauration.\n- Fonctionne hors ligne (service worker) et se synchronise à la reconnexion sans perdre de note.\n- Export d'une note ou de toutes en Markdown, PDF et HTML.\n- Authentification simple, sauvegarde quotidienne ; tests sur la synchronisation ; README avec les limites.\n\nHors périmètre : reconnaissance de texte dans les images, partage collaboratif.",
+    "alternatives": [
+      {
+        "nom": "Logseq",
+        "url": "https://github.com/logseq/logseq",
+        "type": "open-source",
+        "description": "Prise de notes libre (AGPL-3.0) en fichiers locaux, avec liens entre notes et journal quotidien."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "adobe-creative-cloud",
+    "nom": "Adobe Creative Cloud",
+    "domaine": "adobe.com",
+    "categorie": "design",
+    "secteur": "saas",
+    "description": "Suite de logiciels de création d'Adobe (Photoshop, Illustrator, Premiere Pro, Lightroom…) en abonnement. Creative Cloud Pro à 78,65 € par mois avec engagement annuel (prix TTC lu sur le site).",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Photoshop, Illustrator ou Premiere sont des logiciels professionnels de plusieurs millions de lignes de code, avec des formats de fichiers que tout le secteur utilise. Aucun développement interne ne les remplace. Pour un usage ponctuel (retouche simple, logo), des alternatives gratuites existent ; pour un usage professionnel, gardez la suite.",
+    "ce_que_vous_perdez": [
+      "Les formats de fichiers PSD, AI et PRPROJ échangés avec toute la profession",
+      "Des outils de retouche, de vectoriel et de montage de niveau professionnel",
+      "L'intégration entre les applications",
+      "Les fonctions d'IA générative intégrées"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "framer",
+    "nom": "Framer",
+    "domaine": "framer.com",
+    "categorie": "design",
+    "secteur": "saas",
+    "description": "Outil de conception et de publication de sites web avec éditeur visuel, CMS, hébergement et fonctions d'IA. Formule gratuite avec domaine Framer ; formule Basic à 10 $ par mois.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Un site vitrine avec des pages, des sections et un blog se construit avec un framework et un CMS simple. Ce que vous perdez : l'éditeur visuel où l'on déplace les blocs à la souris, les animations prêtes à l'emploi et l'hébergement sans réglage. Si vous êtes à l'aise avec le code et que le site change peu, remplaçable ; si une personne non technique modifie le site, gardez l'outil.",
+    "ce_que_vous_perdez": [
+      "L'éditeur visuel pour modifier le site sans code",
+      "Les animations et les effets prêts à l'emploi",
+      "L'hébergement et le HTTPS sans réglage",
+      "Le CMS intégré"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un site vitrine modifiable par une personne non technique, sans prétendre remplacer Framer.\n\nPile : Next.js, TypeScript, contenu en fichiers Markdown et JSON dans le dépôt, hébergé sur mon serveur ou sur un hébergeur statique.\n\nÀ faire :\n- Pages composées de sections réutilisables (en-tête, texte et image, galerie, témoignages réels uniquement, formulaire de contact).\n- Blog en Markdown avec images optimisées, balises de référencement et plan du site.\n- Formulaire de contact avec protection anti-spam et envoi par e-mail (SMTP configurable).\n- Interface d'édition simple et protégée par mot de passe pour changer les textes et les images, sans toucher au code.\n- Bandeau de consentement si des mesures d'audience sont ajoutées ; polices hébergées sur le site.\n- Tests de génération des pages ; README avec la procédure de publication.\n\nHors périmètre : éditeur visuel par glisser-déposer, animations avancées.",
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  }
+]
