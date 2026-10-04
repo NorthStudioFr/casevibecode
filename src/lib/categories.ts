@@ -17,6 +17,7 @@ export const CATEGORIE_EMOJI: Record<Categorie, string> = {
   'dev-tools': '💻',
   design: '🎨',
   notes: '📝',
+  evenementiel: '🎉',
 };
 
 export const CATEGORIE_LABEL: Record<Categorie, string> = {
@@ -36,4 +37,5 @@ export const CATEGORIE_LABEL: Record<Categorie, string> = {
   'dev-tools': 'Dev Tools',
   design: 'Design',
   notes: 'Notes',
+  evenementiel: 'Événementiel & privatisation',
 };

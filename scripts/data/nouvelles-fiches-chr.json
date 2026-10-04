@@ -1,0 +1,137 @@
+[
+  {
+    "slug": "booking-shake",
+    "nom": "Booking Shake",
+    "categorie": "evenementiel",
+    "secteur": "chr",
+    "description": "Logiciel français de gestion des groupes et événements : demandes, devis, factures, plannings et fiches de fonction, pour hôtels, restaurants-bars et lieux d'événements.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Le cœur (formulaire de demande, devis, facture, planning des événements) se construit avec un formulaire, un tableur ou une base simple et un générateur de PDF. Ce que vous perdez : les liens de paiement Stripe déjà branchés, la synchronisation des fiches de fonction avec les équipes et la conformité à la facturation électronique, qui change les obligations d'émission de factures en France. Pour une privatisation de temps en temps, une solution maison suffit ; pour un volume d'événements régulier, l'outil se justifie.",
+    "domaine": "bookingshake.com",
+    "prix": null,
+    "prix_mensuel": null,
+    "ce_que_vous_perdez": [
+      "Les liens de paiement sécurisés (Stripe) déjà intégrés",
+      "La mise en conformité avec la facturation électronique",
+      "La synchronisation des fiches de fonction avec les équipes",
+      "Le support d'un éditeur qui connaît l'hôtellerie-restauration"
+    ],
+    "alternatives": [
+      {
+        "nom": "Dolibarr",
+        "url": "https://www.dolibarr.org/",
+        "type": "open-source",
+        "description": "ERP/CRM open source (GPL) pour devis, factures, clients et agenda, développé en France."
+      },
+      {
+        "nom": "Henrri",
+        "url": "https://www.henrri.com/",
+        "type": "gratuit",
+        "description": "Logiciel français de facturation gratuit : devis, factures et clients illimités."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "biver-io",
+    "nom": "Biver.io",
+    "categorie": "evenementiel",
+    "secteur": "chr",
+    "description": "Logiciel français de réservations de groupe et de privatisation pour restaurants, bars, brasseries et salles de réception : formulaire en ligne, planning et CRM.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Un formulaire de demande sur votre site, un agenda partagé et une liste de contacts couvrent l'essentiel d'une privatisation : c'est le périmètre de l'outil, qui se recode sans difficulté. Ce que vous perdez : le formulaire déjà intégré à votre site, le calendrier et le CRM alimentés automatiquement par chaque demande, et un essai gratuit de 14 jours pour comparer avant de vous lancer.",
+    "domaine": "biver.io",
+    "prix": null,
+    "prix_mensuel": null,
+    "ce_que_vous_perdez": [
+      "Le formulaire de demande prêt à intégrer à votre site",
+      "Le calendrier et le CRM alimentés automatiquement par les demandes",
+      "Le suivi des relances et des devis en un seul endroit"
+    ],
+    "alternatives": [
+      {
+        "nom": "Dolibarr",
+        "url": "https://www.dolibarr.org/",
+        "type": "open-source",
+        "description": "ERP/CRM open source (GPL) pour devis, factures, clients et agenda, développé en France."
+      },
+      {
+        "nom": "Henrri",
+        "url": "https://www.henrri.com/",
+        "type": "gratuit",
+        "description": "Logiciel français de facturation gratuit : devis, factures et clients illimités."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "tripleseat",
+    "nom": "Tripleseat",
+    "categorie": "evenementiel",
+    "secteur": "chr",
+    "description": "Plateforme américaine de gestion d'événements privés pour restaurants et lieux : demandes, propositions, contrats, paiements, plans de salle et ordres d'événement.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Les demandes, propositions et suivi des événements se recodent avec un formulaire et une base simple. Ce que vous perdez : l'outil est conçu pour le marché américain (aucune version française visible sur le site), avec des documents de type BEO et un paiement intégré qu'il faut reconstruire et rendre conformes au droit français (TVA, mentions des devis et factures). Plutôt un repère pour comparer qu'un outil à installer en France.",
+    "domaine": "tripleseat.com",
+    "prix": null,
+    "prix_mensuel": null,
+    "ce_que_vous_perdez": [
+      "Les propositions et contrats générés avec paiement intégré",
+      "Le dessin de plans de salle pour chaque événement",
+      "Les ordres d'événement (BEO) pour briefer les équipes"
+    ],
+    "alternatives": [
+      {
+        "nom": "Dolibarr",
+        "url": "https://www.dolibarr.org/",
+        "type": "open-source",
+        "description": "ERP/CRM open source (GPL) pour devis, factures, clients et agenda, développé en France."
+      },
+      {
+        "nom": "Henrri",
+        "url": "https://www.henrri.com/",
+        "type": "gratuit",
+        "description": "Logiciel français de facturation gratuit : devis, factures et clients illimités."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "eventsoft",
+    "nom": "EventSoft",
+    "categorie": "evenementiel",
+    "secteur": "chr",
+    "description": "Logiciel français (éditeur Intrapole) de planification d'événements et de ressources : personnel, véhicules, matériel, avec DPAE, contrats de travail et export de paie. Cible notamment les traiteurs et prestataires de l'événementiel.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Le planning des équipes et du matériel se recode, mais l'outil automatise aussi les déclarations préalables à l'embauche (DPAE), les contrats de travail et l'export vers la paie. Ce sont des obligations légales où une erreur coûte cher à l'employeur, et elles évoluent. Pour un traiteur qui emploie des extras, mieux vaut un éditeur spécialisé qu'un outil maison.",
+    "domaine": "eventsoft.fr",
+    "prix": null,
+    "prix_mensuel": null,
+    "ce_que_vous_perdez": [
+      "La DPAE et les contrats générés pour chaque extra",
+      "L'export des données de paie en un clic",
+      "L'application mobile pour les équipes sur le terrain"
+    ],
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "chr365",
+    "nom": "Chr365",
+    "categorie": "caisse",
+    "secteur": "chr",
+    "description": "Suite française (Acantech, Nantes) pour hôtels, restaurants, bars et spas : PMS, caisse certifiée NF525 depuis 2018 selon l'éditeur, applications pour les équipes et les clients.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "La suite regroupe un PMS et une caisse. En France, un logiciel d'encaissement doit être certifié NF525 ou couvert par une attestation de conformité, ce qu'une solution maison n'a pas : l'amende prévue est de 7 500 € par système non conforme. À cela s'ajoutent les modules hôteliers (réservation, housekeeping) qui s'interfacent avec les plateformes de réservation. Choisissez un éditeur, pas un développement interne.",
+    "domaine": "chr365.eu",
+    "prix": null,
+    "prix_mensuel": null,
+    "ce_que_vous_perdez": [
+      "La certification NF525 de la caisse",
+      "L'intégration PMS, caisse et restaurant dans un seul outil",
+      "Les applications équipes (housekeeping) et clients"
+    ],
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  }
+]

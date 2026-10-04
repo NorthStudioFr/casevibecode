@@ -2,7 +2,7 @@ export type Categorie =
   | 'caisse' | 'reservation' | 'livraison' | 'compta' | 'autre'
   | 'finance-compta' | 'rh-paie' | 'marketing' | 'vente-crm' 
   | 'communication' | 'productivite' | 'ecommerce' | 'assurance-sante' 
-  | 'dev-tools' | 'design' | 'notes';
+  | 'dev-tools' | 'design' | 'notes' | 'evenementiel';
 
 export type Secteur = 'chr' | 'saas';
 export type VerdictEditeur = 'YES' | 'KINDA' | 'NOT_REALLY';
