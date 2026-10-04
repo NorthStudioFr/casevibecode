@@ -1,0 +1,358 @@
+{
+ "corrections": [
+  {
+   "slug": "billiv",
+   "ce_que_vous_perdez": [
+    "L'intégration directe à votre caisse qui génère le ticket.",
+    "L'application client déjà installée chez vos clients, le cas échéant.",
+    "Le support de l'éditeur."
+   ],
+   "prompt": "Construis-moi un ticket de caisse numérique avec fidélité et collecte d'avis, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Ticket numérique envoyé par e-mail ou accessible par QR code après le paiement, avec le détail de la note.\n- Programme de fidélité simple : un point par euro ou un tampon par visite, récompense paramétrable.\n- Invitation à laisser un avis sur la fiche Google, envoyée à tous les clients ayant consenti.\n\nExigences :\n- RGPD : consentement explicite à la collecte (case non précochée, texte clair), lien de désinscription dans chaque message, export et suppression d'un client sur demande, durée de conservation réglable.\n- Honnêteté des avis : tous les clients reçoivent la même invitation, sans tri préalable selon leur satisfaction, et aucune récompense n'est liée à un avis positif. Les règles des plateformes d'avis s'appliquent.\n- Envoi d'e-mails par un serveur SMTP configurable, avec limitation du débit ; aucun scraping des plateformes d'avis.\n- Tableau de bord simple : invitations envoyées, clics, évolution dans le temps.\n\nHors périmètre : l'intégration à la caisse (la note est saisie ou importée en CSV) ; ce ticket numérique ne remplace pas le ticket de la caisse certifiée.\n\nREADME : installation, configuration SMTP, rappel RGPD (finalités, base légale, durée) et rappel que les liens vers les plateformes d'avis se saisissent à la main."
+  },
+  {
+   "slug": "caves-explorer",
+   "ce_que_vous_perdez": [
+    "La traçabilité NFC et son matériel.",
+    "Les indicateurs financiers préconfigurés.",
+    "Les mises à jour et le support de l'éditeur."
+   ],
+   "prompt": "Construis-moi un outil de gestion de cave pour restaurant ou caviste, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Fiche vin : domaine, cuvée, millésime, région, prix d'achat, prix de vente, emplacement dans la cave.\n- Mouvements de stock (entrée, sortie, casse, dégustation) avec historique ; étiquettes QR code imprimables pour retrouver une bouteille.\n- Indicateurs : valeur du stock, rotation, marge par référence, bouteilles à boire avant une date.\n\nExigences :\n- Unités et conversions (kg, g, L, cl, pièce) ; prix d'achat HT par produit et par fournisseur, avec historique des variations.\n- Fiche technique par recette : ingrédients, grammages, pertes et rendement, coût de revient par portion, prix de vente TTC, marge en euros et en pourcentage.\n- TVA configurable par produit (par exemple 10 % pour la restauration, 20 % pour l'alcool) : à faire valider par mon comptable, ne rien coder en dur.\n- Allergènes : les 14 allergènes à déclaration obligatoire cochés par ingrédient, et remontés automatiquement sur chaque fiche technique (décret 2015-447).\n- Import et export CSV (produits, fournisseurs, recettes) pour ne pas être enfermé.\n- Alcool : prix de vente TTC avec TVA à 20 %, à confirmer par le comptable.\n\nHors périmètre : la traçabilité par puce NFC et le matériel de lecture.\n\nREADME : installation, sauvegarde de la base, et rappel que les taux de TVA et les déclarations d'allergènes sont à valider avec mon comptable et mes fournisseurs."
+  },
+  {
+   "slug": "customer-alliance",
+   "ce_que_vous_perdez": [
+    "La récupération automatique des avis sur les plateformes.",
+    "Les comparatifs avec d'autres établissements.",
+    "Les intégrations avec les PMS hôteliers."
+   ],
+   "prompt": "Construis-moi un outil de centralisation des avis et d'enquêtes clients, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Enquête de satisfaction après le séjour ou le repas, avec questions paramétrables et envoi par e-mail.\n- Tableau des avis saisis ou importés en CSV (plateforme, note, texte, date), avec suivi des réponses.\n- Indicateurs : note moyenne par période, thèmes récurrents repérés par mots-clés.\n\nExigences :\n- RGPD : consentement explicite à la collecte (case non précochée, texte clair), lien de désinscription dans chaque message, export et suppression d'un client sur demande, durée de conservation réglable.\n- Honnêteté des avis : tous les clients reçoivent la même invitation, sans tri préalable selon leur satisfaction, et aucune récompense n'est liée à un avis positif. Les règles des plateformes d'avis s'appliquent.\n- Envoi d'e-mails par un serveur SMTP configurable, avec limitation du débit ; aucun scraping des plateformes d'avis.\n- Tableau de bord simple : invitations envoyées, clics, évolution dans le temps.\n\nHors périmètre : la récupération automatique des avis sur les plateformes (sans accès officiel, elle est fragile) et les réponses automatiques.\n\nREADME : installation, configuration SMTP, rappel RGPD (finalités, base légale, durée) et rappel que les liens vers les plateformes d'avis se saisissent à la main."
+  },
+  {
+   "slug": "foodmeup",
+   "ce_que_vous_perdez": [
+    "Les bibliothèques d'ingrédients et de recettes déjà remplies.",
+    "Le suivi des évolutions de prix chez les fournisseurs, s'il est automatisé.",
+    "L'accompagnement de l'éditeur sur les calculs de rentabilité.",
+    "Les mises à jour des taux de TVA et des règles d'étiquetage."
+   ],
+   "prompt": "Construis-moi un outil de fiches techniques et de calcul de rentabilité pour la cuisine, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Bibliothèque d'ingrédients avec prix d'achat et allergènes.\n- Fiches techniques avec sous-recettes, coût par portion et seuil de marge cible, avec alerte si la marge passe sous le seuil.\n- Impression de la fiche technique en PDF pour la cuisine.\n\nExigences :\n- Unités et conversions (kg, g, L, cl, pièce) ; prix d'achat HT par produit et par fournisseur, avec historique des variations.\n- Fiche technique par recette : ingrédients, grammages, pertes et rendement, coût de revient par portion, prix de vente TTC, marge en euros et en pourcentage.\n- TVA configurable par produit (par exemple 10 % pour la restauration, 20 % pour l'alcool) : à faire valider par mon comptable, ne rien coder en dur.\n- Allergènes : les 14 allergènes à déclaration obligatoire cochés par ingrédient, et remontés automatiquement sur chaque fiche technique (décret 2015-447).\n- Import et export CSV (produits, fournisseurs, recettes) pour ne pas être enfermé.\n\nHors périmètre : la gestion de stock, les commandes fournisseurs et la comptabilité.\n\nREADME : installation, sauvegarde de la base, et rappel que les taux de TVA et les déclarations d'allergènes sont à valider avec mon comptable et mes fournisseurs."
+  },
+  {
+   "slug": "guest-suite",
+   "ce_que_vous_perdez": [
+    "La récupération automatique des avis des plateformes.",
+    "La gestion de réseaux d'établissements.",
+    "Les intégrations aux outils de marketing et de CRM."
+   ],
+   "prompt": "Construis-moi un outil de collecte et de gestion des avis clients, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Campagnes d'invitation à donner un avis par e-mail ou par QR code, avec page de remerciement.\n- Suivi des avis reçus, des réponses apportées et des avis restant à traiter.\n- Widget affichant sur mon site une sélection d'avis réels, avec date et source, sans les trier artificiellement.\n\nExigences :\n- RGPD : consentement explicite à la collecte (case non précochée, texte clair), lien de désinscription dans chaque message, export et suppression d'un client sur demande, durée de conservation réglable.\n- Honnêteté des avis : tous les clients reçoivent la même invitation, sans tri préalable selon leur satisfaction, et aucune récompense n'est liée à un avis positif. Les règles des plateformes d'avis s'appliquent.\n- Envoi d'e-mails par un serveur SMTP configurable, avec limitation du débit ; aucun scraping des plateformes d'avis.\n- Tableau de bord simple : invitations envoyées, clics, évolution dans le temps.\n\nHors périmètre : la récupération automatique des avis des plateformes et la gestion multi-établissements en réseau.\n\nREADME : installation, configuration SMTP, rappel RGPD (finalités, base légale, durée) et rappel que les liens vers les plateformes d'avis se saisissent à la main."
+  },
+  {
+   "slug": "koust",
+   "ce_que_vous_perdez": [
+    "L'import automatique des ventes depuis votre caisse.",
+    "La connexion aux catalogues et factures des fournisseurs.",
+    "La consolidation multi-établissements pour un groupe.",
+    "L'assistance de l'éditeur au quotidien."
+   ],
+   "prompt": "Construis-moi un outil d'achats, de stocks et de coûts matière pour restaurant, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Commandes fournisseurs avec réception et contrôle des quantités reçues.\n- Stock théorique calculé à partir des ventes saisies ou importées en CSV, et inventaire physique pour mesurer l'écart.\n- Coût matière réel en pourcentage du chiffre d'affaires, par période.\n\nExigences :\n- Unités et conversions (kg, g, L, cl, pièce) ; prix d'achat HT par produit et par fournisseur, avec historique des variations.\n- Fiche technique par recette : ingrédients, grammages, pertes et rendement, coût de revient par portion, prix de vente TTC, marge en euros et en pourcentage.\n- TVA configurable par produit (par exemple 10 % pour la restauration, 20 % pour l'alcool) : à faire valider par mon comptable, ne rien coder en dur.\n- Allergènes : les 14 allergènes à déclaration obligatoire cochés par ingrédient, et remontés automatiquement sur chaque fiche technique (décret 2015-447).\n- Import et export CSV (produits, fournisseurs, recettes) pour ne pas être enfermé.\n\nHors périmètre : la connexion directe à la caisse, aux grossistes et à la comptabilité.\n\nREADME : installation, sauvegarde de la base, et rappel que les taux de TVA et les déclarations d'allergènes sont à valider avec mon comptable et mes fournisseurs."
+  },
+  {
+   "slug": "le-commis",
+   "ce_que_vous_perdez": [
+    "La centralisation automatique des avis de plusieurs plateformes.",
+    "Les réponses assistées par IA.",
+    "Les autres modules de la suite de gestion."
+   ],
+   "prompt": "Construis-moi un outil de suivi des avis clients avec e-mail post-visite, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- E-mail envoyé après la visite avec lien direct vers ma fiche Google.\n- Suivi manuel ou par import CSV des avis Google, Facebook et TripAdvisor, avec statut « répondu / à répondre ».\n- Modèles de réponses que j'adapte moi-même, sans génération automatique.\n\nExigences :\n- RGPD : consentement explicite à la collecte (case non précochée, texte clair), lien de désinscription dans chaque message, export et suppression d'un client sur demande, durée de conservation réglable.\n- Honnêteté des avis : tous les clients reçoivent la même invitation, sans tri préalable selon leur satisfaction, et aucune récompense n'est liée à un avis positif. Les règles des plateformes d'avis s'appliquent.\n- Envoi d'e-mails par un serveur SMTP configurable, avec limitation du débit ; aucun scraping des plateformes d'avis.\n- Tableau de bord simple : invitations envoyées, clics, évolution dans le temps.\n\nHors périmètre : la récupération automatique des avis, les réponses générées par IA et le reste de la suite de gestion.\n\nREADME : installation, configuration SMTP, rappel RGPD (finalités, base légale, durée) et rappel que les liens vers les plateformes d'avis se saisissent à la main."
+  },
+  {
+   "slug": "marge-up",
+   "ce_que_vous_perdez": [
+    "La gestion automatique des taux de TVA mise à jour par l'éditeur.",
+    "Les bibliothèques de produits déjà renseignées.",
+    "Les alertes de dérive de marge sans saisie manuelle."
+   ],
+   "prompt": "Construis-moi un calculateur de marge et de food cost pour restaurant, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Saisie d'un plat : ingrédients, coût matière, prix de vente TTC, TVA.\n- Calcul automatique de la marge brute, du coefficient multiplicateur et du prix de vente conseillé pour atteindre un food cost cible.\n- Comparaison de plusieurs plats dans un tableau trié par marge.\n\nExigences :\n- Unités et conversions (kg, g, L, cl, pièce) ; prix d'achat HT par produit et par fournisseur, avec historique des variations.\n- Fiche technique par recette : ingrédients, grammages, pertes et rendement, coût de revient par portion, prix de vente TTC, marge en euros et en pourcentage.\n- TVA configurable par produit (par exemple 10 % pour la restauration, 20 % pour l'alcool) : à faire valider par mon comptable, ne rien coder en dur.\n- Allergènes : les 14 allergènes à déclaration obligatoire cochés par ingrédient, et remontés automatiquement sur chaque fiche technique (décret 2015-447).\n- Import et export CSV (produits, fournisseurs, recettes) pour ne pas être enfermé.\n\nHors périmètre : les stocks, les commandes fournisseurs et la comptabilité.\n\nREADME : installation, sauvegarde de la base, et rappel que les taux de TVA et les déclarations d'allergènes sont à valider avec mon comptable et mes fournisseurs."
+  },
+  {
+   "slug": "marketman",
+   "ce_que_vous_perdez": [
+    "Les intégrations avec les caisses et les logiciels comptables.",
+    "L'application mobile d'inventaire éprouvée.",
+    "La gestion centralisée de plusieurs établissements.",
+    "Le support en français, selon l'offre."
+   ],
+   "prompt": "Construis-moi un outil de stocks, fournisseurs, recettes et coûts pour restaurant, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Catalogue de produits par fournisseur avec bon de commande envoyé par e-mail.\n- Réception des livraisons, comparaison avec le bon de commande, écarts de prix.\n- Recettes liées aux produits, coût de revient mis à jour quand un prix d'achat change, inventaire et écart de stock.\n\nExigences :\n- Unités et conversions (kg, g, L, cl, pièce) ; prix d'achat HT par produit et par fournisseur, avec historique des variations.\n- Fiche technique par recette : ingrédients, grammages, pertes et rendement, coût de revient par portion, prix de vente TTC, marge en euros et en pourcentage.\n- TVA configurable par produit (par exemple 10 % pour la restauration, 20 % pour l'alcool) : à faire valider par mon comptable, ne rien coder en dur.\n- Allergènes : les 14 allergènes à déclaration obligatoire cochés par ingrédient, et remontés automatiquement sur chaque fiche technique (décret 2015-447).\n- Import et export CSV (produits, fournisseurs, recettes) pour ne pas être enfermé.\n\nHors périmètre : l'intégration avec la comptabilité et la caisse, et le multi-établissements.\n\nREADME : installation, sauvegarde de la base, et rappel que les taux de TVA et les déclarations d'allergènes sont à valider avec mon comptable et mes fournisseurs."
+  },
+  {
+   "slug": "melba",
+   "ce_que_vous_perdez": [
+    "L'intégration avec votre caisse et votre comptabilité.",
+    "La mise à jour automatique des prix fournisseurs.",
+    "L'accompagnement de l'éditeur à la mise en place."
+   ],
+   "prompt": "Construis-moi un ERP de cuisine : recettes, stocks, achats et coût de revient, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Fiches techniques avec sous-recettes et coût de revient par portion.\n- Achats et réception de marchandises avec prix HT mis à jour dans les recettes.\n- Inventaire, écarts de stock et rapport de coût matière par période.\n\nExigences :\n- Unités et conversions (kg, g, L, cl, pièce) ; prix d'achat HT par produit et par fournisseur, avec historique des variations.\n- Fiche technique par recette : ingrédients, grammages, pertes et rendement, coût de revient par portion, prix de vente TTC, marge en euros et en pourcentage.\n- TVA configurable par produit (par exemple 10 % pour la restauration, 20 % pour l'alcool) : à faire valider par mon comptable, ne rien coder en dur.\n- Allergènes : les 14 allergènes à déclaration obligatoire cochés par ingrédient, et remontés automatiquement sur chaque fiche technique (décret 2015-447).\n- Import et export CSV (produits, fournisseurs, recettes) pour ne pas être enfermé.\n\nHors périmètre : la caisse, la comptabilité et le multi-établissements.\n\nREADME : installation, sauvegarde de la base, et rappel que les taux de TVA et les déclarations d'allergènes sont à valider avec mon comptable et mes fournisseurs."
+  },
+  {
+   "slug": "menu-touch",
+   "ce_que_vous_perdez": [
+    "L'envoi fiable des commandes en cuisine en plein service.",
+    "Les mises à jour et le support.",
+    "L'intégration avec votre caisse, selon l'offre."
+   ],
+   "prompt": "Construis-moi une carte digitale avec prise de commande sur tablette, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Carte consultable par QR code.\n- Prise de commande par le serveur sur tablette, avec envoi à la cuisine ou au bar sur un écran ou une imprimante de tickets.\n- Statuts de commande : envoyée, en préparation, servie.\n\nExigences :\n- Carte éditable en ligne : catégories, plats, photos, prix TTC service compris, plats du jour, mise en ligne immédiate.\n- Allergènes : les 14 allergènes cochés par plat, visibles par le client (décret 2015-447) ; origine des viandes et mention « fait maison » uniquement si elle est vraie.\n- QR code imprimable par table ou pour tout l'établissement.\n- Mobile d'abord, très rapide, sans compte client, fonctionne avec une mauvaise connexion.\n- Fiabilité : file d'attente locale si la connexion coupe, aucun bon perdu, avertissement visible si l'envoi échoue.\n\nHors périmètre : l'encaissement et la caisse certifiée : la commande est un bon de préparation, la note se règle dans ma caisse.\n\nREADME : installation et rappel que le QR code ne remplace pas l'affichage des prix visible de l'extérieur (arrêté du 27 mars 1987) ; toute commande payée doit être enregistrée dans ma caisse certifiée."
+  },
+  {
+   "slug": "onrush",
+   "ce_que_vous_perdez": [
+    "La mercuriale tenue à jour par l'éditeur ou par import fournisseur.",
+    "Les alertes automatiques quand un prix évolue.",
+    "Le support de l'éditeur."
+   ],
+   "prompt": "Construis-moi un logiciel de food cost avec mercuriale et fiches techniques, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Mercuriale : prix des produits par fournisseur avec date de dernière mise à jour.\n- Fiches techniques calculées à partir de la mercuriale, avec marge par plat.\n- Simulation : si le prix d'un produit augmente de X %, quelles recettes passent sous la marge cible ?\n\nExigences :\n- Unités et conversions (kg, g, L, cl, pièce) ; prix d'achat HT par produit et par fournisseur, avec historique des variations.\n- Fiche technique par recette : ingrédients, grammages, pertes et rendement, coût de revient par portion, prix de vente TTC, marge en euros et en pourcentage.\n- TVA configurable par produit (par exemple 10 % pour la restauration, 20 % pour l'alcool) : à faire valider par mon comptable, ne rien coder en dur.\n- Allergènes : les 14 allergènes à déclaration obligatoire cochés par ingrédient, et remontés automatiquement sur chaque fiche technique (décret 2015-447).\n- Import et export CSV (produits, fournisseurs, recettes) pour ne pas être enfermé.\n\nHors périmètre : les stocks, les commandes et la comptabilité.\n\nREADME : installation, sauvegarde de la base, et rappel que les taux de TVA et les déclarations d'allergènes sont à valider avec mon comptable et mes fournisseurs."
+  },
+  {
+   "slug": "overfull",
+   "ce_que_vous_perdez": [
+    "La maintenance dans la durée.",
+    "Le support de l'éditeur.",
+    "Les intégrations de plateformes."
+   ],
+   "prompt": "Construis-moi un outil de réservation et de CRM pour restaurant, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Réservation en ligne, plan de salle et agenda.\n- CRM : historique des visites, étiquettes, préférences.\n- Campagnes e-mail simples avec consentement.\n\nExigences :\n- Formulaire de réservation intégrable dans mon site : date, heure, nombre de couverts, coordonnées, remarques.\n- Capacité par créneau et par service, durée de repas par taille de groupe, blocage de dates, liste d'attente.\n- Confirmation et rappel par e-mail, avec lien d'annulation ; suivi des no-shows.\n- Fichier client avec consentement RGPD, export et suppression sur demande ; protection anti-spam.\n- Vue du jour pour le service : arrivées, tables, notes.\n\nHors périmètre : les intégrations de plateformes.\n\nREADME : installation, configuration SMTP, rappel RGPD, et rappel que la synchronisation avec Google, TheFork ou d'autres plateformes est hors périmètre."
+  },
+  {
+   "slug": "pongo",
+   "ce_que_vous_perdez": [
+    "Le suivi du référencement local et ses tableaux de bord.",
+    "L'envoi de SMS inclus, selon l'offre.",
+    "Le support de l'éditeur."
+   ],
+   "prompt": "Construis-moi un outil de fidélité, de marketing client et d'avis Google, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Carnet de clients avec consentement, historique de visites et points de fidélité.\n- Campagnes e-mail ou SMS ciblées (clients inactifs, anniversaires), avec désinscription.\n- Invitation à laisser un avis Google après la visite.\n\nExigences :\n- RGPD : consentement explicite à la collecte (case non précochée, texte clair), lien de désinscription dans chaque message, export et suppression d'un client sur demande, durée de conservation réglable.\n- Honnêteté des avis : tous les clients reçoivent la même invitation, sans tri préalable selon leur satisfaction, et aucune récompense n'est liée à un avis positif. Les règles des plateformes d'avis s'appliquent.\n- Envoi d'e-mails par un serveur SMTP configurable, avec limitation du débit ; aucun scraping des plateformes d'avis.\n- Tableau de bord simple : invitations envoyées, clics, évolution dans le temps.\n\nHors périmètre : le suivi du référencement local (SEO) et l'envoi massif de SMS (nécessite un prestataire payant).\n\nREADME : installation, configuration SMTP, rappel RGPD (finalités, base légale, durée) et rappel que les liens vers les plateformes d'avis se saisissent à la main."
+  },
+  {
+   "slug": "resto-flux",
+   "ce_que_vous_perdez": [
+    "Les commandes transmises directement aux fournisseurs, selon l'offre.",
+    "Les mises à jour et le support.",
+    "Les intégrations tierces."
+   ],
+   "prompt": "Construis-moi un outil de gestion des stocks et des fournisseurs pour restaurant, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Fiche fournisseur : contacts, jours de livraison, délais, conditions.\n- Stock par produit avec seuil minimum et liste de réapprovisionnement.\n- Bon de commande par fournisseur envoyé par e-mail, inventaire par zone de stockage.\n\nExigences :\n- Unités et conversions (kg, g, L, cl, pièce) ; prix d'achat HT par produit et par fournisseur, avec historique des variations.\n- Fiche technique par recette : ingrédients, grammages, pertes et rendement, coût de revient par portion, prix de vente TTC, marge en euros et en pourcentage.\n- TVA configurable par produit (par exemple 10 % pour la restauration, 20 % pour l'alcool) : à faire valider par mon comptable, ne rien coder en dur.\n- Allergènes : les 14 allergènes à déclaration obligatoire cochés par ingrédient, et remontés automatiquement sur chaque fiche technique (décret 2015-447).\n- Import et export CSV (produits, fournisseurs, recettes) pour ne pas être enfermé.\n\nHors périmètre : la connexion à la caisse et à la comptabilité.\n\nREADME : installation, sauvegarde de la base, et rappel que les taux de TVA et les déclarations d'allergènes sont à valider avec mon comptable et mes fournisseurs."
+  },
+  {
+   "slug": "sommit",
+   "ce_que_vous_perdez": [
+    "La mise en page soignée des cartes toute prête.",
+    "Les mises à jour du catalogue de références.",
+    "Le support de l'éditeur."
+   ],
+   "prompt": "Construis-moi un outil de stock de boissons et de génération de la carte des vins, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Fiche vin et boisson : producteur, appellation, millésime, contenance, prix d'achat, prix de vente, stock.\n- Carte des vins générée automatiquement : version écran (page web) et version imprimable en PDF, classée par région ou par style.\n- Retrait automatique d'une référence de la carte quand le stock tombe à zéro.\n\nExigences :\n- Unités et conversions (kg, g, L, cl, pièce) ; prix d'achat HT par produit et par fournisseur, avec historique des variations.\n- Fiche technique par recette : ingrédients, grammages, pertes et rendement, coût de revient par portion, prix de vente TTC, marge en euros et en pourcentage.\n- TVA configurable par produit (par exemple 10 % pour la restauration, 20 % pour l'alcool) : à faire valider par mon comptable, ne rien coder en dur.\n- Allergènes : les 14 allergènes à déclaration obligatoire cochés par ingrédient, et remontés automatiquement sur chaque fiche technique (décret 2015-447).\n- Import et export CSV (produits, fournisseurs, recettes) pour ne pas être enfermé.\n- Prix affichés TTC ; mention de la contenance.\n\nHors périmètre : la caisse et la comptabilité.\n\nREADME : installation, sauvegarde de la base, et rappel que les taux de TVA et les déclarations d'allergènes sont à valider avec mon comptable et mes fournisseurs."
+  },
+  {
+   "slug": "tastycloud",
+   "ce_que_vous_perdez": [
+    "La fiabilité du paiement en ligne en heure de rush.",
+    "L'impression automatique des commandes en cuisine.",
+    "L'intégration avec votre caisse."
+   ],
+   "prompt": "Construis-moi un menu digital interactif avec commande en ligne et click & collect, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Carte en ligne avec options (cuisson, accompagnement) et suppléments.\n- Commande click & collect avec créneau de retrait et limite de commandes par créneau.\n- Paiement en ligne par Stripe Checkout (mode test pour commencer) ou paiement au retrait.\n\nExigences :\n- Carte éditable en ligne : catégories, plats, photos, prix TTC service compris, plats du jour, mise en ligne immédiate.\n- Allergènes : les 14 allergènes cochés par plat, visibles par le client (décret 2015-447) ; origine des viandes et mention « fait maison » uniquement si elle est vraie.\n- QR code imprimable par table ou pour tout l'établissement.\n- Mobile d'abord, très rapide, sans compte client, fonctionne avec une mauvaise connexion.\n- Une commande payée en ligne doit être enregistrée dans ma caisse certifiée NF525 : exporte les commandes du jour en CSV pour la saisie ou l'import.\n\nHors périmètre : la livraison et l'intégration à la caisse.\n\nREADME : installation et rappel que le QR code ne remplace pas l'affichage des prix visible de l'extérieur (arrêté du 27 mars 1987) ; toute commande payée doit être enregistrée dans ma caisse certifiée."
+  },
+  {
+   "slug": "ubiliz",
+   "ce_que_vous_perdez": [
+    "L'envoi multicanal e-mail et SMS.",
+    "Les modèles de campagnes pensés pour la restauration.",
+    "La délivrabilité éprouvée des envois."
+   ],
+   "prompt": "Construis-moi un CRM et des campagnes de fidélisation pour restaurant, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Fichier clients avec consentement, segments (habitués, nouveaux, inactifs) et historique de visites.\n- Campagnes e-mail avec modèles et planification, statistiques d'ouverture et de clics.\n- Offres de fidélisation simples avec code à présenter au service.\n\nExigences :\n- RGPD : consentement explicite à la collecte (case non précochée, texte clair), lien de désinscription dans chaque message, export et suppression d'un client sur demande, durée de conservation réglable.\n- Honnêteté des avis : tous les clients reçoivent la même invitation, sans tri préalable selon leur satisfaction, et aucune récompense n'est liée à un avis positif. Les règles des plateformes d'avis s'appliquent.\n- Envoi d'e-mails par un serveur SMTP configurable, avec limitation du débit ; aucun scraping des plateformes d'avis.\n- Tableau de bord simple : invitations envoyées, clics, évolution dans le temps.\n\nHors périmètre : les campagnes SMS et les cartes de fidélité sur le téléphone du client.\n\nREADME : installation, configuration SMTP, rappel RGPD (finalités, base légale, durée) et rappel que les liens vers les plateformes d'avis se saisissent à la main."
+  },
+  {
+   "slug": "yokitup",
+   "ce_que_vous_perdez": [
+    "L'application d'inventaire mobile éprouvée.",
+    "Les intégrations avec les caisses et les fournisseurs.",
+    "L'accompagnement et le support de l'éditeur."
+   ],
+   "prompt": "Construis-moi un outil de stocks, commandes fournisseurs, inventaires et coûts matière, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Inventaires tournants sur téléphone, par zone, avec saisie rapide.\n- Commandes fournisseurs avec historique et suivi des livraisons.\n- Coût matière par période, comparé au chiffre d'affaires saisi, avec écarts d'inventaire.\n\nExigences :\n- Unités et conversions (kg, g, L, cl, pièce) ; prix d'achat HT par produit et par fournisseur, avec historique des variations.\n- Fiche technique par recette : ingrédients, grammages, pertes et rendement, coût de revient par portion, prix de vente TTC, marge en euros et en pourcentage.\n- TVA configurable par produit (par exemple 10 % pour la restauration, 20 % pour l'alcool) : à faire valider par mon comptable, ne rien coder en dur.\n- Allergènes : les 14 allergènes à déclaration obligatoire cochés par ingrédient, et remontés automatiquement sur chaque fiche technique (décret 2015-447).\n- Import et export CSV (produits, fournisseurs, recettes) pour ne pas être enfermé.\n\nHors périmètre : la caisse, la comptabilité et les grossistes.\n\nREADME : installation, sauvegarde de la base, et rappel que les taux de TVA et les déclarations d'allergènes sont à valider avec mon comptable et mes fournisseurs."
+  },
+  {
+   "slug": "agendrix",
+   "ce_que_vous_perdez": [
+    "L'application mobile éprouvée avec notifications.",
+    "Les connexions aux logiciels de paie.",
+    "Le support en français de l'éditeur."
+   ],
+   "prompt": "Construis-moi un outil de planning, de pointage et de disponibilités, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Planning par poste avec modèles de semaine.\n- Disponibilités déclarées par les employés, échanges de service validés par le responsable.\n- Pointage depuis le téléphone ou une tablette à l'entrée, avec écart entre heures prévues et réalisées.\n\nExigences :\n- Planning hebdomadaire par poste et par service, avec glisser-déposer, copie de la semaine précédente et publication aux équipes.\n- Disponibilités et demandes de congés saisies par l'employé, validées par le responsable.\n- Alertes paramétrables : repos de 11 h entre deux services, 10 h de travail par jour, temps de travail hebdomadaire. Valeurs par défaut du Code du travail, à adapter à la convention collective HCR par mon expert-comptable.\n- Export CSV des heures par employé et par période, pour mon comptable.\n- Données des salariés : accès par rôle (manager, employé), mot de passe ou lien magique, journal des modifications.\n\nHors périmètre : la paie, la DSN et la géolocalisation du pointage.\n\nREADME : installation, sauvegarde, et rappel que cet outil n'est pas un logiciel de paie et ne calcule ni salaire, ni DSN, ni DPAE, et que les décomptes légaux restent à vérifier par mon expert-comptable."
+  },
+  {
+   "slug": "combo",
+   "ce_que_vous_perdez": [
+    "La préparation de paie intégrée.",
+    "La signature électronique des documents.",
+    "Les mises à jour réglementaires de la convention HCR."
+   ],
+   "prompt": "Construis-moi un outil de RH et de planning de restauration, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Dossier du salarié : contrat, poste, contacts, documents.\n- Planning par service et suivi du temps de travail, congés et absences.\n- Export des variables de paie (heures, absences) en CSV pour mon cabinet.\n\nExigences :\n- Planning hebdomadaire par poste et par service, avec glisser-déposer, copie de la semaine précédente et publication aux équipes.\n- Disponibilités et demandes de congés saisies par l'employé, validées par le responsable.\n- Alertes paramétrables : repos de 11 h entre deux services, 10 h de travail par jour, temps de travail hebdomadaire. Valeurs par défaut du Code du travail, à adapter à la convention collective HCR par mon expert-comptable.\n- Export CSV des heures par employé et par période, pour mon comptable.\n- Données des salariés : accès par rôle (manager, employé), mot de passe ou lien magique, journal des modifications.\n\nHors périmètre : le calcul de la paie, la DSN et la signature électronique des contrats.\n\nREADME : installation, sauvegarde, et rappel que cet outil n'est pas un logiciel de paie et ne calcule ni salaire, ni DSN, ni DPAE, et que les décomptes légaux restent à vérifier par mon expert-comptable."
+  },
+  {
+   "slug": "factorial",
+   "ce_que_vous_perdez": [
+    "La paie et les contenus à jour sur la convention HCR.",
+    "La suite RH complète (recrutement, performance).",
+    "Le support de l'éditeur."
+   ],
+   "prompt": "Construis-moi un outil de RH avec planning et pointage, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Fiche employé et documents.\n- Planning, congés et absences avec validation.\n- Pointage et export des heures.\n\nExigences :\n- Planning hebdomadaire par poste et par service, avec glisser-déposer, copie de la semaine précédente et publication aux équipes.\n- Disponibilités et demandes de congés saisies par l'employé, validées par le responsable.\n- Alertes paramétrables : repos de 11 h entre deux services, 10 h de travail par jour, temps de travail hebdomadaire. Valeurs par défaut du Code du travail, à adapter à la convention collective HCR par mon expert-comptable.\n- Export CSV des heures par employé et par période, pour mon comptable.\n- Données des salariés : accès par rôle (manager, employé), mot de passe ou lien magique, journal des modifications.\n\nHors périmètre : la paie, les notes de frais et les modules de recrutement.\n\nREADME : installation, sauvegarde, et rappel que cet outil n'est pas un logiciel de paie et ne calcule ni salaire, ni DSN, ni DPAE, et que les décomptes légaux restent à vérifier par mon expert-comptable."
+  },
+  {
+   "slug": "komia",
+   "ce_que_vous_perdez": [
+    "Le suivi HACCP intégré au même outil que le planning.",
+    "Les checklists HACCP prêtes à l'emploi.",
+    "Le support de l'éditeur lors d'un contrôle."
+   ],
+   "prompt": "Construis-moi un outil de planning du personnel et de pointage avec un module HACCP, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Planning par poste avec modèles de semaine, et pointage depuis le téléphone ou une tablette.\n- Module HACCP séparé : relevés de température et checklists de nettoyage horodatés par l'employé.\n- Vue du jour : qui travaille, quelles tâches sanitaires restent à faire.\n\nExigences :\n- Planning hebdomadaire par poste et par service, avec glisser-déposer, copie de la semaine précédente et publication aux équipes.\n- Disponibilités et demandes de congés saisies par l'employé, validées par le responsable.\n- Alertes paramétrables : repos de 11 h entre deux services, 10 h de travail par jour, temps de travail hebdomadaire. Valeurs par défaut du Code du travail, à adapter à la convention collective HCR par mon expert-comptable.\n- Export CSV des heures par employé et par période, pour mon comptable.\n- Données des salariés : accès par rôle (manager, employé), mot de passe ou lien magique, journal des modifications.\n- Relevés HACCP : journal en ajout seul, jamais modifié ni effacé ; une correction crée une nouvelle ligne (règlement (CE) 852/2004, plan de maîtrise sanitaire).\n\nHors périmètre : la paie et la connexion à une sonde de température.\n\nREADME : installation, sauvegarde, et rappel que cet outil n'est pas un logiciel de paie et ne calcule ni salaire, ni DSN, ni DPAE, et que les décomptes légaux restent à vérifier par mon expert-comptable."
+  },
+  {
+   "slug": "lucca",
+   "ce_que_vous_perdez": [
+    "Les modules RH interconnectés (paie, talents).",
+    "Les intégrations comptables.",
+    "La conformité réglementaire suivie par l'éditeur."
+   ],
+   "prompt": "Construis-moi un outil de congés, de temps de travail et de notes de frais, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Demande et validation de congés, solde par type de congé.\n- Saisie du temps de travail et des absences, récapitulatif mensuel.\n- Notes de frais avec photo du justificatif et statut de validation.\n\nExigences :\n- Planning hebdomadaire par poste et par service, avec glisser-déposer, copie de la semaine précédente et publication aux équipes.\n- Disponibilités et demandes de congés saisies par l'employé, validées par le responsable.\n- Alertes paramétrables : repos de 11 h entre deux services, 10 h de travail par jour, temps de travail hebdomadaire. Valeurs par défaut du Code du travail, à adapter à la convention collective HCR par mon expert-comptable.\n- Export CSV des heures par employé et par période, pour mon comptable.\n- Données des salariés : accès par rôle (manager, employé), mot de passe ou lien magique, journal des modifications.\n\nHors périmètre : la paie, la gestion des talents et les intégrations comptables.\n\nREADME : installation, sauvegarde, et rappel que cet outil n'est pas un logiciel de paie et ne calcule ni salaire, ni DSN, ni DPAE, et que les décomptes légaux restent à vérifier par mon expert-comptable."
+  },
+  {
+   "slug": "planday",
+   "ce_que_vous_perdez": [
+    "Les notifications push de l'application mobile.",
+    "Les intégrations avec la paie et la caisse.",
+    "Le support de l'éditeur."
+   ],
+   "prompt": "Construis-moi un outil de planning, de suivi du temps et de communication d'équipe, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Planning par poste avec publication et notifications aux équipes.\n- Pointage et suivi du temps, congés.\n- Fil de messages d'équipe par service.\n\nExigences :\n- Planning hebdomadaire par poste et par service, avec glisser-déposer, copie de la semaine précédente et publication aux équipes.\n- Disponibilités et demandes de congés saisies par l'employé, validées par le responsable.\n- Alertes paramétrables : repos de 11 h entre deux services, 10 h de travail par jour, temps de travail hebdomadaire. Valeurs par défaut du Code du travail, à adapter à la convention collective HCR par mon expert-comptable.\n- Export CSV des heures par employé et par période, pour mon comptable.\n- Données des salariés : accès par rôle (manager, employé), mot de passe ou lien magique, journal des modifications.\n\nHors périmètre : la paie et les intégrations de pointage matériel.\n\nREADME : installation, sauvegarde, et rappel que cet outil n'est pas un logiciel de paie et ne calcule ni salaire, ni DSN, ni DPAE, et que les décomptes légaux restent à vérifier par mon expert-comptable."
+  },
+  {
+   "slug": "skello",
+   "ce_que_vous_perdez": [
+    "Les alertes légales tenues à jour par l'éditeur.",
+    "L'export vers les logiciels de paie.",
+    "L'application mobile et le support de l'éditeur."
+   ],
+   "prompt": "Construis-moi un outil de planning RH pour la restauration, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Planning avec modèles et alertes de conformité paramétrables.\n- Disponibilités, congés et échanges de service.\n- Aperçu du coût de masse salariale à partir des taux horaires saisis, pour piloter le planning.\n\nExigences :\n- Planning hebdomadaire par poste et par service, avec glisser-déposer, copie de la semaine précédente et publication aux équipes.\n- Disponibilités et demandes de congés saisies par l'employé, validées par le responsable.\n- Alertes paramétrables : repos de 11 h entre deux services, 10 h de travail par jour, temps de travail hebdomadaire. Valeurs par défaut du Code du travail, à adapter à la convention collective HCR par mon expert-comptable.\n- Export CSV des heures par employé et par période, pour mon comptable.\n- Données des salariés : accès par rôle (manager, employé), mot de passe ou lien magique, journal des modifications.\n\nHors périmètre : la paie et la DSN.\n\nREADME : installation, sauvegarde, et rappel que cet outil n'est pas un logiciel de paie et ne calcule ni salaire, ni DSN, ni DPAE, et que les décomptes légaux restent à vérifier par mon expert-comptable."
+  },
+  {
+   "slug": "tiime",
+   "ce_que_vous_perdez": [
+    "La liaison bancaire et le rapprochement automatique.",
+    "La comptabilité tenue avec l'expert-comptable.",
+    "La mise en conformité à la facturation électronique."
+   ],
+   "prompt": "Construis-moi un outil de devis et de facturation, pour mon activité, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Fichier clients, devis puis facture à partir du devis, acompte et solde.\n- Suivi des paiements : facture envoyée, payée, en retard, relance par e-mail.\n- Export CSV des factures pour mon comptable.\n\nExigences :\n- Devis et factures en PDF : numérotation continue sans trou, mentions obligatoires, TVA par ligne, acompte et solde. À faire valider par mon comptable.\n- Les factures et les clients ne sont jamais supprimés : une erreur se corrige par un avoir.\n- Données sur mon serveur, sauvegarde automatique, export CSV.\n\nHors périmètre : la comptabilité, la banque et la déclaration de TVA.\n\nREADME : installation, sauvegarde, et rappel que l'outil produit des documents mais ne remplace pas la plateforme agréée exigée à terme par la réforme de la facturation électronique (calendrier à vérifier), qui reste hors périmètre."
+  },
+  {
+   "slug": "biver-io",
+   "ce_que_vous_perdez": [
+    "Le formulaire déjà intégré, prêt à copier.",
+    "Le CRM alimenté automatiquement.",
+    "L'essai gratuit pour comparer."
+   ],
+   "prompt": "Construis-moi un outil de réservations de groupe et de privatisation, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Formulaire de demande de privatisation intégrable à mon site, avec disponibilité de la salle.\n- Calendrier des événements et fiche contact créée à chaque demande.\n- Relances automatiques des devis sans réponse.\n\nExigences :\n- Formulaire de demande en ligne (date, nombre de personnes, type d'événement, budget, contact) qui crée une fiche dans un tableau de suivi : nouveau, devis envoyé, accepté, acompte reçu, réalisé.\n- Devis puis facture en PDF : numérotation continue sans trou, mentions obligatoires, TVA par ligne, acompte. À faire valider par mon comptable.\n- Fiche de fonction PDF pour briefer les équipes (horaires, menu, plan de salle, contacts).\n- Agenda des événements avec détection des conflits de salle.\n\nHors périmètre : le paiement en ligne.\n\nREADME : installation, sauvegarde, et rappel que l'outil produit des documents mais ne remplace pas la plateforme agréée exigée à terme par la réforme de la facturation électronique, qui reste hors périmètre."
+  },
+  {
+   "slug": "booking-shake",
+   "ce_que_vous_perdez": [
+    "Les liens de paiement déjà intégrés.",
+    "La synchronisation des fiches de fonction avec les équipes.",
+    "La mise en conformité à la facturation électronique."
+   ],
+   "prompt": "Construis-moi un outil de gestion des groupes et des événements, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Centralisation des demandes (formulaire, e-mail saisi à la main) avec statut.\n- Devis, facture, acompte avec lien de paiement Stripe en mode test pour commencer.\n- Planning des événements et fiche de fonction PDF.\n\nExigences :\n- Formulaire de demande en ligne (date, nombre de personnes, type d'événement, budget, contact) qui crée une fiche dans un tableau de suivi : nouveau, devis envoyé, accepté, acompte reçu, réalisé.\n- Devis puis facture en PDF : numérotation continue sans trou, mentions obligatoires, TVA par ligne, acompte. À faire valider par mon comptable.\n- Fiche de fonction PDF pour briefer les équipes (horaires, menu, plan de salle, contacts).\n- Agenda des événements avec détection des conflits de salle.\n\nHors périmètre : la synchronisation avec un PMS et la conformité à la facturation électronique.\n\nREADME : installation, sauvegarde, et rappel que l'outil produit des documents mais ne remplace pas la plateforme agréée exigée à terme par la réforme de la facturation électronique, qui reste hors périmètre."
+  },
+  {
+   "slug": "tripleseat",
+   "ce_que_vous_perdez": [
+    "Les contrats avec paiement intégré.",
+    "Le plan de salle graphique.",
+    "Les intégrations américaines (OpenTable et autres)."
+   ],
+   "prompt": "Construis-moi un outil de gestion d'événements privés pour restaurant, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Demandes, propositions et contrats avec signature par case à cocher et date.\n- Ordre d'événement (BEO) en PDF avec menu, horaires et plan.\n- Plan de salle par événement dessiné sur une grille.\n\nExigences :\n- Formulaire de demande en ligne (date, nombre de personnes, type d'événement, budget, contact) qui crée une fiche dans un tableau de suivi : nouveau, devis envoyé, accepté, acompte reçu, réalisé.\n- Devis puis facture en PDF : numérotation continue sans trou, mentions obligatoires, TVA par ligne, acompte. À faire valider par mon comptable.\n- Fiche de fonction PDF pour briefer les équipes (horaires, menu, plan de salle, contacts).\n- Agenda des événements avec détection des conflits de salle.\n\nHors périmètre : le paiement en ligne et le raccordement à un site de réservation.\n\nREADME : installation, sauvegarde, et rappel que l'outil produit des documents mais ne remplace pas la plateforme agréée exigée à terme par la réforme de la facturation électronique, qui reste hors périmètre."
+  },
+  {
+   "slug": "clickeat",
+   "ce_que_vous_perdez": [
+    "L'intégration à votre caisse.",
+    "Le support de l'éditeur et les mises à jour.",
+    "Les paiements déjà configurés."
+   ],
+   "prompt": "Construis-moi un outil de commande en ligne, click & collect et livraison sans commission, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Carte, panier, créneau de retrait ou zone de livraison avec frais.\n- Paiement en ligne par Stripe Checkout (mode test pour commencer), notification e-mail et écran des commandes en cuisine.\n- Statistiques : commandes par jour, panier moyen.\n\nExigences :\n- Carte éditable en ligne : catégories, plats, photos, prix TTC service compris, plats du jour, mise en ligne immédiate.\n- Allergènes : les 14 allergènes cochés par plat, visibles par le client (décret 2015-447) ; origine des viandes et mention « fait maison » uniquement si elle est vraie.\n- QR code imprimable par table ou pour tout l'établissement.\n- Mobile d'abord, très rapide, sans compte client, fonctionne avec une mauvaise connexion.\n- Une commande payée en ligne doit être enregistrée dans ma caisse certifiée NF525 : exporte les commandes du jour en CSV.\n\nHors périmètre : la flotte de livraison et l'intégration à la caisse.\n\nREADME : installation et rappel que le QR code ne remplace pas l'affichage des prix visible de l'extérieur (arrêté du 27 mars 1987) ; toute commande payée doit être enregistrée dans ma caisse certifiée."
+  },
+  {
+   "slug": "gloriafood",
+   "ce_que_vous_perdez": [
+    "L'offre gratuite avec options payantes déjà en place.",
+    "La publication directe sur Google et Facebook.",
+    "Les mises à jour et le support."
+   ],
+   "prompt": "Construis-moi un outil de commande en ligne gratuit pour petit restaurant, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Carte avec options et commande en ligne depuis mon site.\n- Réception des commandes par e-mail et sur un écran de cuisine, avec bouton « accepter / refuser ».\n- Paiement au retrait ou par Stripe Checkout (mode test).\n\nExigences :\n- Carte éditable en ligne : catégories, plats, photos, prix TTC service compris, plats du jour, mise en ligne immédiate.\n- Allergènes : les 14 allergènes cochés par plat, visibles par le client (décret 2015-447) ; origine des viandes et mention « fait maison » uniquement si elle est vraie.\n- QR code imprimable par table ou pour tout l'établissement.\n- Mobile d'abord, très rapide, sans compte client, fonctionne avec une mauvaise connexion.\n- Une commande payée en ligne doit être enregistrée dans ma caisse certifiée NF525 : exporte les commandes du jour en CSV.\n\nHors périmètre : la livraison et l'intégration à la caisse.\n\nREADME : installation et rappel que le QR code ne remplace pas l'affichage des prix visible de l'extérieur (arrêté du 27 mars 1987) ; toute commande payée doit être enregistrée dans ma caisse certifiée."
+  },
+  {
+   "slug": "ordrafood",
+   "ce_que_vous_perdez": [
+    "L'intégration à votre caisse.",
+    "Le support de l'éditeur.",
+    "Les mises à jour du paiement et de la sécurité."
+   ],
+   "prompt": "Construis-moi une commande en ligne sans commission pour restaurateur indépendant, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Carte, panier, créneau de retrait ou livraison.\n- Notification de commande à la cuisine, statut visible par le client.\n- Paiement par Stripe Checkout (mode test) ou sur place.\n\nExigences :\n- Carte éditable en ligne : catégories, plats, photos, prix TTC service compris, plats du jour, mise en ligne immédiate.\n- Allergènes : les 14 allergènes cochés par plat, visibles par le client (décret 2015-447) ; origine des viandes et mention « fait maison » uniquement si elle est vraie.\n- QR code imprimable par table ou pour tout l'établissement.\n- Mobile d'abord, très rapide, sans compte client, fonctionne avec une mauvaise connexion.\n- Une commande payée en ligne doit être enregistrée dans ma caisse certifiée NF525 : exporte les commandes du jour en CSV.\n\nHors périmètre : la flotte de livraison et l'intégration à la caisse.\n\nREADME : installation et rappel que le QR code ne remplace pas l'affichage des prix visible de l'extérieur (arrêté du 27 mars 1987) ; toute commande payée doit être enregistrée dans ma caisse certifiée."
+  },
+  {
+   "slug": "covermanager",
+   "ce_que_vous_perdez": [
+    "La gestion multi-établissements.",
+    "Les intégrations de plateformes de réservation.",
+    "Le support de l'éditeur."
+   ],
+   "prompt": "Construis-moi un outil de réservation, de gestion de salle et de relation client, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Plan de salle graphique avec tables et groupes de tables.\n- Réservation en ligne et par téléphone saisie au bureau.\n- Fiche client avec historique, préférences et allergies saisies par l'équipe.\n\nExigences :\n- Formulaire de réservation intégrable dans mon site : date, heure, nombre de couverts, coordonnées, remarques.\n- Capacité par créneau et par service, durée de repas par taille de groupe, blocage de dates, liste d'attente.\n- Confirmation et rappel par e-mail, avec lien d'annulation ; suivi des no-shows.\n- Fichier client avec consentement RGPD, export et suppression sur demande ; protection anti-spam.\n- Vue du jour pour le service : arrivées, tables, notes.\n\nHors périmètre : la gestion de plusieurs établissements et les intégrations de plateformes.\n\nREADME : installation, configuration SMTP, rappel RGPD, et rappel que la synchronisation avec Google, TheFork ou d'autres plateformes est hors périmètre."
+  },
+  {
+   "slug": "eat-app",
+   "ce_que_vous_perdez": [
+    "Les intégrations avec les plateformes de réservation.",
+    "L'application mobile native.",
+    "Le support de l'éditeur."
+   ],
+   "prompt": "Construis-moi un outil de réservation, de gestion des tables et de fidélisation, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Réservation en ligne, plan de tables, liste d'attente.\n- Fichier client avec historique et étiquettes (VIP, allergies).\n- Programme de fidélité simple par e-mail avec consentement.\n\nExigences :\n- Formulaire de réservation intégrable dans mon site : date, heure, nombre de couverts, coordonnées, remarques.\n- Capacité par créneau et par service, durée de repas par taille de groupe, blocage de dates, liste d'attente.\n- Confirmation et rappel par e-mail, avec lien d'annulation ; suivi des no-shows.\n- Fichier client avec consentement RGPD, export et suppression sur demande ; protection anti-spam.\n- Vue du jour pour le service : arrivées, tables, notes.\n\nHors périmètre : les intégrations de plateformes et l'application mobile native.\n\nREADME : installation, configuration SMTP, rappel RGPD, et rappel que la synchronisation avec Google, TheFork ou d'autres plateformes est hors périmètre."
+  },
+  {
+   "slug": "guestonline",
+   "ce_que_vous_perdez": [
+    "Les intégrations avec les plateformes de réservation.",
+    "Le support de l'éditeur.",
+    "Les mises à jour de sécurité."
+   ],
+   "prompt": "Construis-moi un outil de réservation avec plan de salle et fichier client, sans commission, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Réservation en ligne avec plan de salle.\n- Fichier client avec historique de visites.\n- Vue du service avec arrivées et tables.\n\nExigences :\n- Formulaire de réservation intégrable dans mon site : date, heure, nombre de couverts, coordonnées, remarques.\n- Capacité par créneau et par service, durée de repas par taille de groupe, blocage de dates, liste d'attente.\n- Confirmation et rappel par e-mail, avec lien d'annulation ; suivi des no-shows.\n- Fichier client avec consentement RGPD, export et suppression sur demande ; protection anti-spam.\n- Vue du jour pour le service : arrivées, tables, notes.\n\nHors périmètre : les intégrations de plateformes.\n\nREADME : installation, configuration SMTP, rappel RGPD, et rappel que la synchronisation avec Google, TheFork ou d'autres plateformes est hors périmètre."
+  },
+  {
+   "slug": "kouver",
+   "ce_que_vous_perdez": [
+    "L'agent vocal qui décroche le téléphone.",
+    "Le support de l'éditeur.",
+    "Les intégrations de plateformes."
+   ],
+   "prompt": "Construis-moi un outil de réservation avec plan de salle, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Formulaire de réservation et plan de salle.\n- Gestion des no-shows : liste noire manuelle et message de rappel.\n- Page de configuration des horaires et des services.\n\nExigences :\n- Formulaire de réservation intégrable dans mon site : date, heure, nombre de couverts, coordonnées, remarques.\n- Capacité par créneau et par service, durée de repas par taille de groupe, blocage de dates, liste d'attente.\n- Confirmation et rappel par e-mail, avec lien d'annulation ; suivi des no-shows.\n- Fichier client avec consentement RGPD, export et suppression sur demande ; protection anti-spam.\n- Vue du jour pour le service : arrivées, tables, notes.\n\nHors périmètre : l'agent vocal IA qui décroche le téléphone et les intégrations de plateformes.\n\nREADME : installation, configuration SMTP, rappel RGPD, et rappel que la synchronisation avec Google, TheFork ou d'autres plateformes est hors périmètre."
+  },
+  {
+   "slug": "resdiary",
+   "ce_que_vous_perdez": [
+    "Les intégrations avec les plateformes de réservation.",
+    "Le support de l'éditeur.",
+    "La gestion multi-établissements."
+   ],
+   "prompt": "Construis-moi un outil de réservation en ligne et de gestion des tables pour restaurant, bar et hôtel, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Réservation en ligne avec plan de tables et créneaux par service.\n- Fiche client et historique.\n- Gestion du bar et des tables d'hôtes, liste d'attente.\n\nExigences :\n- Formulaire de réservation intégrable dans mon site : date, heure, nombre de couverts, coordonnées, remarques.\n- Capacité par créneau et par service, durée de repas par taille de groupe, blocage de dates, liste d'attente.\n- Confirmation et rappel par e-mail, avec lien d'annulation ; suivi des no-shows.\n- Fichier client avec consentement RGPD, export et suppression sur demande ; protection anti-spam.\n- Vue du jour pour le service : arrivées, tables, notes.\n\nHors périmètre : les intégrations de plateformes et la gestion de groupes.\n\nREADME : installation, configuration SMTP, rappel RGPD, et rappel que la synchronisation avec Google, TheFork ou d'autres plateformes est hors périmètre."
+  },
+  {
+   "slug": "zenchef",
+   "ce_que_vous_perdez": [
+    "La synchronisation avec Google et TheFork.",
+    "La gestion de salle en temps réel éprouvée.",
+    "Le support de l'éditeur."
+   ],
+   "prompt": "Construis-moi un outil de réservation en ligne avec gestion de salle, pour mon établissement, en remplacement d'un abonnement.\n\nPile : application web (Next.js ou Node/Express) avec SQLite, hébergée sur mon petit serveur, utilisable sur téléphone et ordinateur. Pas de service payant obligatoire, aucune télémétrie.\n\nCœur de l'outil :\n- Formulaire de réservation en ligne et agenda partagé.\n- Plan de salle en temps réel, avec statut des tables (libre, occupée, à nettoyer).\n- Fiche client avec historique.\n\nExigences :\n- Formulaire de réservation intégrable dans mon site : date, heure, nombre de couverts, coordonnées, remarques.\n- Capacité par créneau et par service, durée de repas par taille de groupe, blocage de dates, liste d'attente.\n- Confirmation et rappel par e-mail, avec lien d'annulation ; suivi des no-shows.\n- Fichier client avec consentement RGPD, export et suppression sur demande ; protection anti-spam.\n- Vue du jour pour le service : arrivées, tables, notes.\n\nHors périmètre : la synchronisation avec Google et TheFork et la gestion des plateformes tierces.\n\nREADME : installation, configuration SMTP, rappel RGPD, et rappel que la synchronisation avec Google, TheFork ou d'autres plateformes est hors périmètre."
+  }
+ ]
+}
