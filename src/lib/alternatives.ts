@@ -5,6 +5,7 @@ export const TYPE_ALTERNATIVE_LABEL: Record<TypeAlternative, string> = {
   'open-source': 'Open source',
   gratuit: 'Gratuit',
   'plus-petit': 'Plus petit',
+  concurrent: 'Concurrent',
 };
 
 // Même projet, écrit « https://www.x.io/ » ou « https://x.io » : une seule clé.

@@ -72,6 +72,7 @@ export const fr = {
     'open-source': 'Open source',
     gratuit: 'Gratuit',
     'plus-petit': 'Plus petit',
+    concurrent: 'Concurrent',
   } as Record<TypeAlternative, string>,
   categories: {
     caisse: 'Caisse',
@@ -333,6 +334,7 @@ export const en: Dict = {
     'open-source': 'Open source',
     gratuit: 'Free',
     'plus-petit': 'Smaller vendor',
+    concurrent: 'Competitor',
   },
   categories: {
     caisse: 'Point of sale',

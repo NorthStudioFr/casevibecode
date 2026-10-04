@@ -947,16 +947,6 @@
   ],
   "prompt": "Build me a customer support tool for a small team, to replace Freshdesk.\n\nStack: Next.js, TypeScript, PostgreSQL with Drizzle, WebSockets, Docker Compose.\n\nTo do:\n- Receive messages by email and through a web form, turn them into tickets with priority and owner.\n- A shared inbox: filters, alert when two agents open the same ticket, internal notes, canned replies, searchable history.\n- A chat widget for websites: automatic reconnection, unread counter, file limits, availability indicator.\n- A small published help centre.\n- Email and in-browser notifications, immutable log of assignments and status changes.\n- Anti-spam, configurable retention period, export and deletion of a contact (GDPR).\n- Docker Compose, backups, health checks, migrations, administrator recovery procedure.\n- Secrets in .env, no telemetry, targeted tests, README.\n\nOut of scope: multiple social channels, AI agents trained on support data, SSO and enterprise compliance."
  },
- "fudger": {
-  "description": "Till and management solution for independent restaurants.",
-  "justification": "In France, till software must be NF525-certified or covered by a certificate of compliance (article 286 of the French tax code): an in-house till has neither, with a fine of €7,500 per non-compliant system. Fudger offers a till and management for independent restaurants. The dashboard can be imitated; the till cannot. For management, import sales as CSV into your own tool.",
-  "alternatives": [
-   "Odoo Community edition (LGPL) with restaurant Point of Sale module, QR code self-ordering and self-service till. NF525 to be checked.",
-   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. French tax compliance to be checked.",
-   "NF525-certified online cash register with a free plan, usable in restaurants and retail.",
-   "Certified iPad cash register, simpler, aimed at shopkeepers and restaurants."
-  ]
- },
  "gloriafood": {
   "description": "Free online ordering platform (freemium plan), widespread among small independents.",
   "justification": "GloriaFood is a free online ordering tool, widespread among small independents. An order form can be rebuilt. What needs the most attention is reliability: a payment that fails or a notification that does not reach the kitchen during service loses a sale. As the tool is free, replace it only if you want more control.",
@@ -2021,21 +2011,6 @@
    "PMS, channel manager and booking engine for accommodation, from €15.50/month with no commitment.",
    "PMS, channel manager and booking engine designed for independent hotels, pricing on quote."
   ]
- },
- "resto-flux": {
-  "description": "Stock and supplier management for restaurants.",
-  "justification": "Simple stock tracking (quantities, thresholds, alerts) is easy to rebuild in a few days. Negotiation and the built-in supplier catalogue are what remain hard to replace.",
-  "perdez": [
-   "Orders sent directly to suppliers, depending on the plan.",
-   "Updates and support.",
-   "Third-party integrations."
-  ],
-  "alternatives": [
-   "Open-source ERP/CRM of French origin (GPL): quotes, invoicing, accounting, stock and purchasing.",
-   "Open-source ERP (Community edition): invoicing, stock management, purchasing and sales.",
-   "Permanent free plan: recipe cards, cost per ingredient, margin rate, allergens and stock valuation."
-  ],
-  "prompt": "Build me a stock and supplier management tool for a restaurant, for my venue, to replace a subscription.\n\nStack: web app (Next.js or Node/Express) with SQLite, hosted on my small server, usable on phone and computer. No mandatory paid service, no telemetry.\n\nCore of the tool:\n- Supplier record: contacts, delivery days, lead times, terms.\n- Stock per product with a minimum threshold and a reorder list.\n- Purchase order per supplier sent by email, inventory per storage area.\n\nRequirements:\n- Units and conversions (kg, g, L, cl, piece); purchase price excl. VAT per product and per supplier, with a history of changes.\n- Recipe card per dish: ingredients, weights, losses and yield, cost per portion, selling price incl. VAT, margin in euros and as a percentage.\n- VAT configurable per product (for example 10% for catering, 20% for alcohol): to be validated by my accountant, hard-code nothing.\n- Allergens: the 14 mandatory allergens ticked per ingredient, and automatically carried onto each recipe card (decree 2015-447).\n- CSV import and export (products, suppliers, recipes) so I am not locked in.\n\nOut of scope: connection to the till and accounting.\n\nREADME: installation, database backup, and a reminder that the VAT rates and allergen declarations are to be validated with my accountant and my suppliers."
  },
  "restopilot": {
   "description": "Dynamic recipe cards and connected price list assisted by AI.",

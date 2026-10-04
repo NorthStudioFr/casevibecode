@@ -10,7 +10,7 @@ import { execFileSync } from 'child_process';
 import { join } from 'path';
 import { getServiceClient } from './lib/supabase-admin';
 
-type Type = 'open-source' | 'gratuit' | 'plus-petit';
+type Type = 'open-source' | 'gratuit' | 'plus-petit' | 'concurrent';
 interface Alt {
   nom: string;
   url: string;
@@ -25,7 +25,7 @@ if (!dir) {
   process.exit(1);
 }
 
-const TYPES: Type[] = ['open-source', 'gratuit', 'plus-petit'];
+const TYPES: Type[] = ['open-source', 'gratuit', 'plus-petit', 'concurrent'];
 const LICENCE_CONNUE = new Set(['odoo/odoo']);
 const DIX_HUIT_MOIS_MS = 18 * 30 * 24 * 3600 * 1000;
 

@@ -8,7 +8,7 @@ export type Categorie =
 export type Secteur = 'chr' | 'saas';
 export type VerdictEditeur = 'YES' | 'KINDA' | 'NOT_REALLY';
 
-export type TypeAlternative = 'open-source' | 'gratuit' | 'plus-petit';
+export type TypeAlternative = 'open-source' | 'gratuit' | 'plus-petit' | 'concurrent';
 
 export interface Alternative {
   nom: string;
