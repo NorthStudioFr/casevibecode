@@ -2515,7 +2515,7 @@
  },
  "tipjaar": {
   "description": "Collection and transparent sharing of digital tips paid by bank card.",
-  "justification": "TiPJAAR collects the tip by bank card and shares it out transparently. The transparency is precisely the difficulty: following each payment to the right employee, with a reliable trail, amounts to managing third-party funds and may fall under payment-services regulation. Not a project to attempt without legal advice.",
+  "justification": "TiPJAR collects the tip by bank card and shares it out transparently. The transparency is precisely the difficulty: following each payment to the right employee, with a reliable trail, amounts to managing third-party funds and may fall under payment-services regulation. Not a project to attempt without legal advice.",
   "alternatives": [
    "Digital tipping app by QR code, advertised with no subscription, with a split between front and back of house.",
    "French platform for restaurants and hotels: tipping by QR code, Google reviews and digital menu, one-month trial.",

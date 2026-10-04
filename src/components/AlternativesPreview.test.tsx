@@ -34,9 +34,13 @@ describe('AlternativesPreview', () => {
     );
   });
 
-  it('renders nothing without alternatives', () => {
-    const { container } = render(<AlternativesPreview nom="Zenchef" slug="zenchef" alternatives={[]} />);
-    expect(container).toBeEmptyDOMElement();
+  it('says so plainly when the list is empty', () => {
+    render(<AlternativesPreview nom="Zenchef" slug="zenchef" alternatives={[]} />);
+    expect(screen.getByText(/aucune alternative libre ou gratuite/i)).toBeInTheDocument();
+    expect(screen.queryByRole('link')).toBeNull();
+  });
+
+  it('renders nothing when alternatives are unknown', () => {
     const { container: c2 } = render(<AlternativesPreview nom="Zenchef" slug="zenchef" />);
     expect(c2).toBeEmptyDOMElement();
   });

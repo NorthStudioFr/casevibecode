@@ -1,0 +1,38 @@
+{
+ "corrections": [
+  {
+   "slug": "kouver",
+   "description": "Logiciel français de réservation de tables, avec plan de salle et un agent vocal IA pour la prise d'appels."
+  },
+  {
+   "slug": "tipjaar",
+   "nom": "TiPJAR",
+   "domaine": "wearetipjar.com",
+   "justification_editeur": "TiPJAR collecte le pourboire par carte bancaire et le répartit de façon transparente. La transparence est justement la difficulté : suivre chaque versement jusqu'au bon salarié, avec une trace fiable, relève de la gestion de fonds de tiers et peut tomber sous la réglementation des services de paiement. Pas un projet à tenter sans avis juridique."
+  },
+  {
+   "slug": "hpa-solutions",
+   "domaine": "hpa-solutions.fr"
+  },
+  {
+   "slug": "ulyses-suite-hotel",
+   "domaine": "ulyses.septeo.com"
+  },
+  {
+   "slug": "5stelle",
+   "domaine": "zucchetti.it"
+  },
+  {
+   "slug": "le-commis",
+   "justification_editeur": "Collecter des avis par e-mail après le passage du client est un projet accessible ; centraliser plusieurs plateformes et y ajouter des réponses IA demande davantage de maintenance."
+  },
+  {
+   "slug": "ubiliz",
+   "justification_editeur": "Un programme de fidélité par points avec campagnes e-mail/SMS se recode ; la délivrabilité et la conformité RGPD sur la durée sont ce qui reste du travail."
+  },
+  {
+   "slug": "guest-suite",
+   "justification_editeur": "Un envoi d'e-mail post-visite pour collecter un avis se recode facilement. La diffusion automatisée vers plusieurs plateformes et le reporting consolidé demandent plus de maintenance."
+  }
+ ]
+}

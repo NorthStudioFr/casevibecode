@@ -119,6 +119,7 @@ export const fr = {
   },
   alternatives: {
     previewTitle: (nom: string) => `Alternatives à ${nom} qui existent déjà`,
+    none: "Aucune alternative libre ou gratuite ne répond pour l'instant à nos critères de contrôle (projet actif sous licence libre, offre gratuite lue chez l'éditeur). Plutôt que d'en inventer, la liste reste vide.",
     seeAll: (n: number) => (n > 1 ? `Voir toutes les ${n} alternatives` : "Voir l'alternative en détail"),
     pageTitle: (nom: string) => `Alternatives à ${nom} : open source, gratuites et plus petites`,
     pageDescription: (nom: string, n: number) =>
@@ -379,6 +380,7 @@ export const en: Dict = {
   },
   alternatives: {
     previewTitle: (nom: string) => `Existing alternatives to ${nom}`,
+    none: 'No free or open-source alternative currently meets our checks (active project under a free licence, free plan read on the vendor’s own site). Rather than invent one, the list stays empty.',
     seeAll: (n: number) => (n > 1 ? `See all ${n} alternatives` : 'See the alternative in detail'),
     pageTitle: (nom: string) => `Alternatives to ${nom}: open source, free and smaller vendors`,
     pageDescription: (nom: string, n: number) =>

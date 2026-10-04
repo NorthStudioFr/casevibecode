@@ -17,7 +17,15 @@ export function AlternativesPreview({
   alternatives?: Alternative[];
 }) {
   const { t, href } = useLocale();
-  if (!alternatives || alternatives.length === 0) return null;
+  if (!alternatives) return null;
+  if (alternatives.length === 0) {
+    return (
+      <section className="mt-4 rounded-sm border border-slate-200 bg-slate-50 p-4">
+        <h2 className="text-sm font-medium text-slate-800">{t.alternatives.previewTitle(nom)}</h2>
+        <p className="mt-2 text-sm text-slate-600">{t.alternatives.none}</p>
+      </section>
+    );
+  }
 
   return (
     <section className="mt-4 rounded-sm border border-slate-200 bg-slate-50 p-4">
