@@ -7,7 +7,7 @@ describe('problemesNouvelleFiche', () => {
     for (const f of fiches) expect(problemesNouvelleFiche(f)).toEqual([]);
   });
   it('refuse un verdict, un slug ou un secteur invalide', () => {
-    const p = problemesNouvelleFiche({ ...fiches[0], verdict_editeur: 'MAYBE', slug: 'Bad Slug', secteur: 'saas' });
+    const p = problemesNouvelleFiche({ ...fiches[0], verdict_editeur: 'MAYBE', slug: 'Bad Slug', secteur: 'autre' });
     expect(p).toHaveLength(3);
   });
 });

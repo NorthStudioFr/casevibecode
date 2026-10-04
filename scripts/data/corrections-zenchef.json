@@ -1,0 +1,8 @@
+{
+ "corrections": [
+  {
+   "slug": "zenchef",
+   "justification_editeur": "La prise de réservation en ligne se recode facilement avec un formulaire et un agenda partagé. La gestion de salle en temps réel et la synchronisation multi-plateformes (Google, TheFork) demandent plus de travail à maintenir soi-même. À noter : Zenchef regroupe désormais Formitable (fusion annoncée en 2024) et Resengo (dont le site redirige vers Zenchef)."
+  }
+ ]
+}

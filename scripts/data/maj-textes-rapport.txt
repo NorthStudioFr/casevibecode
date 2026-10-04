@@ -1,0 +1,64 @@
+~ notion : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ microsoft-teams-essentials : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ monday-com : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ dropbox-plus : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ loom : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ calendly : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ zapier : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ dashlane : justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ chatgpt : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ wordpress : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ mailerlite : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ linktree : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ lemlist : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ systeme-io : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ freshdesk : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ slack-pro : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ zoom-pro : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ clickup : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ icloud-plus : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ miro : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ typeform : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ make : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ bitwarden : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ shopify : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ webflow : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ klaviyo : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ hootsuite : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ waalaxy : justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ pipedrive : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ zendesk : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ indy : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ google-workspace-business-starter : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ trello : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ airtable : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ evernote : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ figma : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ jotform : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ n8n-cloud : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ grammarly : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ wix : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ mailchimp : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ semrush : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ buffer : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ livestorm : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ salesforce : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ intercom : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ finary : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ asana : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ google-drive : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ todoist : description, justification_editeur, ce_que_vous_perdez, prompt, verdict_editeur, source_verdict ⚠ VERDICT YES → KINDA
+~ canva : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ tally : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ 1password : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ deepl-pro : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ squarespace : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ brevo : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ ahrefs : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ agorapulse : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ weglot : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ zoho-crm : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ crisp : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+~ docusign : description, justification_editeur, ce_que_vous_perdez, prompt, source_verdict
+
+Résumé : 62 fiche(s) à modifier, 0 déjà à jour, 1 changement(s) de verdict.

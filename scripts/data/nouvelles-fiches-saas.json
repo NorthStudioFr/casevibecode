@@ -1,0 +1,146 @@
+[
+  {
+    "slug": "qonto",
+    "nom": "Qonto",
+    "domaine": "qonto.com",
+    "categorie": "finance-compta",
+    "secteur": "saas",
+    "description": "Compte professionnel en ligne (établissement de paiement supervisé par la Banque de France selon son site) : cartes, virements, facturation et gestion des dépenses. Formule d'entrée à 9 € par mois HT, facturée à l'année.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Un compte professionnel est un service financier réglementé : détention des fonds, cartes, virements, lutte contre la fraude et le blanchiment. Rien de cela ne se construit en interne. Ce que vous pouvez faire vous-même, c'est un suivi des dépenses importé en CSV ; l'argent, lui, reste chez un établissement agréé.",
+    "ce_que_vous_perdez": [
+      "Le compte et les cartes, sous la supervision d'un régulateur",
+      "Les virements et prélèvements sécurisés",
+      "La lutte contre la fraude",
+      "La facturation et les justificatifs reliés aux paiements"
+    ],
+    "prix": "à partir de 9 €/mois",
+    "prix_mensuel": 9,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "alan",
+    "nom": "Alan",
+    "domaine": "alan.com",
+    "categorie": "assurance-sante",
+    "secteur": "saas",
+    "description": "Assurance santé (mutuelle) française pour entreprises et particuliers, avec application mobile, remboursements rapides et services de prévention.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Alan est un assureur : il porte le risque, rembourse les soins et répond à une réglementation que ne couvre aucun outil développé en interne. On peut écrire une page de comparaison de mutuelles ou un tableau de suivi des remboursements, mais pas se passer de l'assureur.",
+    "ce_que_vous_perdez": [
+      "La couverture santé elle-même",
+      "Le remboursement rapide des soins",
+      "L'application mobile et les services de prévention",
+      "La gestion administrative côté entreprise"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "hubspot",
+    "nom": "HubSpot",
+    "domaine": "hubspot.fr",
+    "categorie": "vente-crm",
+    "secteur": "saas",
+    "description": "CRM américain avec formule gratuite limitée à deux utilisateurs, et outils de marketing, de vente et de service client en options payantes.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Un CRM de base (contacts, entreprises, étapes de vente, notes, rappels) se construit en un week-end avec une base simple, et couvre l'usage d'une petite équipe. Ce qui fait la valeur de HubSpot, ce sont les formulaires et e-mails marketing avec délivrabilité éprouvée, l'automatisation et les intégrations. Pour un usage de suivi commercial, remplaçable ; pour l'automatisation marketing, gardez-le.",
+    "ce_que_vous_perdez": [
+      "La délivrabilité des e-mails marketing",
+      "L'automatisation des campagnes et des relances",
+      "Les intégrations avec vos autres outils",
+      "Les rapports prêts à l'emploi"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un CRM simple pour une petite équipe commerciale, sans prétendre remplacer HubSpot ni faire de l'automatisation marketing.\n\nPile : Next.js, TypeScript, SQLite. Données chez moi, secrets dans .env, aucune télémétrie.\n\nÀ faire :\n- Contacts et entreprises : fiche, historique des échanges, notes et pièces jointes.\n- Pipeline en colonnes (nouveau, contacté, devis, gagné, perdu), glisser-déposer, valeur et date de clôture prévues.\n- Rappels de relance par e-mail (SMTP configurable) et vue « à faire aujourd'hui ».\n- Formulaire de contact intégrable à mon site : chaque envoi crée un contact.\n- Import et export CSV ; plusieurs utilisateurs avec rôles.\n- RGPD : consentement noté sur chaque contact, export et suppression d'un contact sur demande.\n- Tests sur le pipeline ; README avec les limites.\n\nHors périmètre : campagnes e-mail en masse, automatisation marketing, scoring, intégrations tierces.",
+    "alternatives": [
+      {
+        "nom": "Dolibarr",
+        "url": "https://github.com/Dolibarr/dolibarr",
+        "type": "open-source",
+        "description": "Suite de gestion libre : clients, devis, factures, agenda et suivi des paiements, développée en France."
+      },
+      {
+        "nom": "ERPNext",
+        "url": "https://github.com/frappe/erpnext",
+        "type": "open-source",
+        "description": "ERP libre avec CRM, devis et facturation ; mise en place plus lourde."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "sellsy",
+    "nom": "Sellsy",
+    "domaine": "sellsy.com",
+    "categorie": "vente-crm",
+    "secteur": "saas",
+    "description": "Plateforme française de gestion commerciale (groupe TeamSystem) : CRM, devis, facturation, signature électronique et pré-comptabilité, avec facturation électronique via une plateforme agréée selon l'éditeur.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Le CRM, les devis et les factures en PDF se recodent sans difficulté, et suffisent à beaucoup d'indépendants. Ce que vous perdez : la transmission des factures par une plateforme agréée, que la réforme de la facturation électronique impose à terme, et la mise à jour continue des règles. Si vous gardez Sellsy pour la facturation et construisez le CRM autour, le compromis est raisonnable.",
+    "ce_que_vous_perdez": [
+      "La plateforme agréée de facturation électronique",
+      "La signature électronique des devis",
+      "La pré-comptabilité et les exports pour l'expert-comptable",
+      "Les mises à jour réglementaires"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un petit outil de gestion commerciale pour indépendant ou très petite entreprise, sans prétendre remplacer Sellsy ni faire de la comptabilité officielle.\n\nPile : Next.js, TypeScript, SQLite. Données chez moi, secrets dans .env, aucune télémétrie.\n\nÀ faire :\n- Clients et prospects : fiche, historique des échanges, étape du suivi commercial (nouveau, devis envoyé, gagné, perdu).\n- Devis puis facture à partir du devis, en PDF : numérotation continue sans trou, mentions obligatoires, TVA par ligne, acompte et solde.\n- Les factures ne sont jamais supprimées ni modifiées : une erreur se corrige par un avoir.\n- Suivi des paiements et relance par e-mail (SMTP configurable).\n- Signature du devis par le client : lien unique, case à cocher, date et horodatage conservés.\n- Export CSV des clients et des factures pour mon comptable ; sauvegarde simple.\n- Tests sur la numérotation et les totaux ; README avec les limites.\n\nHors périmètre : comptabilité, rapprochement bancaire, déclaration de TVA, et la transmission des factures par une plateforme agréée exigée à terme par la réforme de la facturation électronique (calendrier à vérifier). N'affirme jamais que les documents sont conformes à cette réforme.",
+    "alternatives": [
+      {
+        "nom": "Dolibarr",
+        "url": "https://github.com/Dolibarr/dolibarr",
+        "type": "open-source",
+        "description": "Suite de gestion libre : clients, devis, factures, agenda et suivi des paiements, développée en France."
+      },
+      {
+        "nom": "ERPNext",
+        "url": "https://github.com/frappe/erpnext",
+        "type": "open-source",
+        "description": "ERP libre réunissant CRM, devis, facturation et suivi des projets ; mise en place plus lourde."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "axonaut",
+    "nom": "Axonaut",
+    "domaine": "axonaut.com",
+    "categorie": "finance-compta",
+    "secteur": "saas",
+    "description": "Logiciel de gestion français tout-en-un (Labège) : CRM, devis, facturation, trésorerie, notes de frais, stocks, avec compte professionnel et facturation électronique.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Le CRM, les devis et les factures se recodent ; ce sont des formulaires et des PDF. La trésorerie reliée à la banque, la comptabilité et la facturation électronique, en revanche, demandent des connexions et un suivi des règles que l'éditeur assure. Pour un usage commercial simple, remplaçable ; pour une gestion complète avec l'expert-comptable, gardez l'outil.",
+    "ce_que_vous_perdez": [
+      "La liaison bancaire et le rapprochement automatique",
+      "Le compte professionnel et les cartes intégrés",
+      "La mise en conformité avec la facturation électronique",
+      "Les connexions à plus de 14 000 outils annoncées par l'éditeur"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un petit outil de gestion commerciale pour indépendant ou très petite entreprise, sans prétendre remplacer Axonaut ni faire de la comptabilité officielle.\n\nPile : Next.js, TypeScript, SQLite. Données chez moi, secrets dans .env, aucune télémétrie.\n\nÀ faire :\n- Clients et prospects : fiche, historique des échanges, étape du suivi commercial (nouveau, devis envoyé, gagné, perdu).\n- Devis puis facture à partir du devis, en PDF : numérotation continue sans trou, mentions obligatoires, TVA par ligne, acompte et solde.\n- Les factures ne sont jamais supprimées ni modifiées : une erreur se corrige par un avoir.\n- Suivi des paiements et relance par e-mail (SMTP configurable).\n- Notes de frais : saisie avec photo du justificatif, statut de validation.\n- Export CSV des clients et des factures pour mon comptable ; sauvegarde simple.\n- Tests sur la numérotation et les totaux ; README avec les limites.\n\nHors périmètre : comptabilité, rapprochement bancaire, déclaration de TVA, et la transmission des factures par une plateforme agréée exigée à terme par la réforme de la facturation électronique (calendrier à vérifier). N'affirme jamais que les documents sont conformes à cette réforme.",
+    "alternatives": [
+      {
+        "nom": "Dolibarr",
+        "url": "https://github.com/Dolibarr/dolibarr",
+        "type": "open-source",
+        "description": "Suite de gestion libre : clients, devis, factures, agenda et suivi des paiements, développée en France."
+      },
+      {
+        "nom": "ERPNext",
+        "url": "https://github.com/frappe/erpnext",
+        "type": "open-source",
+        "description": "ERP libre réunissant CRM, devis, facturation et suivi des projets ; mise en place plus lourde."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  }
+]
