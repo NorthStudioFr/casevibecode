@@ -40,8 +40,8 @@ describe('AlternativesPreview', () => {
     expect(screen.queryByRole('link')).toBeNull();
   });
 
-  it('renders nothing when alternatives are unknown', () => {
-    const { container: c2 } = render(<AlternativesPreview nom="Zenchef" slug="zenchef" />);
-    expect(c2).toBeEmptyDOMElement();
+  it('says so plainly when alternatives are missing (null in the database)', () => {
+    render(<AlternativesPreview nom="Zenchef" slug="zenchef" />);
+    expect(screen.getByText(/aucune alternative libre ou gratuite/i)).toBeInTheDocument();
   });
 });
