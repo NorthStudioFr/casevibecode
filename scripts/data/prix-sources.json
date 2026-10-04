@@ -243,5 +243,12 @@
   "source": "https://www.framer.com/pricing",
   "note": "Formule Basic facturée à l'année ; formule gratuite ; 10 $ x 0,89087 (BCE, 2026-10-02)",
   "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "sumup",
+  "prix": "gratuit (plans payants à partir de 49 €/mois)",
+  "source": "https://www.sumup.com/fr-fr/caisse-enregistreuse/",
+  "note": "Logiciel de base gratuit, version avancée 49 €/mois ; terminal de caisse 399 € HT",
+  "lu_le": "2026-10-04"
  }
 ]
