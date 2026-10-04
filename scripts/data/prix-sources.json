@@ -110,5 +110,47 @@
   "source": "https://calendly.com/pricing",
   "note": "Standard, par siège ; 10 $ x 0,89087 (BCE, 2026-10-02)",
   "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "plausible",
+  "prix": "à partir de 8,02 €/mois (converti de 9 $, cours du 2 oct. 2026)",
+  "source": "https://plausible.io/#pricing",
+  "note": "Formule Starter, 10 000 pages vues, facturation mensuelle ; 9 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "resend",
+  "prix": "à partir de 17,82 €/mois (converti de 20 $, cours du 2 oct. 2026)",
+  "source": "https://resend.com/pricing",
+  "note": "Formule Pro, 50 000 e-mails/mois ; 20 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "typeform",
+  "prix": "à partir de 24,94 €/mois (converti de 28 $, cours du 2 oct. 2026)",
+  "source": "https://www.typeform.com/pricing/",
+  "note": "Formule Basic, 100 réponses/mois, facturée à l'année ; 28 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "linear",
+  "prix": "à partir de 8,91 €/mois/utilisateur (converti de 10 $, cours du 2 oct. 2026)",
+  "source": "https://linear.app/pricing",
+  "note": "Formule Basic, par utilisateur, facturation annuelle ; 10 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "miro",
+  "prix": "à partir de 7,13 €/mois/utilisateur (converti de 8 $, cours du 2 oct. 2026)",
+  "source": "https://miro.com/pricing/",
+  "note": "Starter, par membre, facturation annuelle ; 8 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "loom",
+  "prix": "à partir de 16,04 €/mois/utilisateur (converti de 18 $, cours du 2 oct. 2026)",
+  "source": "https://www.loom.com/pricing",
+  "note": "Business, par utilisateur, facturation mensuelle ; 18 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
  }
 ]

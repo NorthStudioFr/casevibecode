@@ -1,0 +1,34 @@
+{
+ "corrections": [
+  {
+   "slug": "plausible",
+   "prix": "à partir de 8,02 €/mois (converti de 9 $, cours du 2 oct. 2026)",
+   "prix_mensuel": 8.02
+  },
+  {
+   "slug": "resend",
+   "prix": "à partir de 17,82 €/mois (converti de 20 $, cours du 2 oct. 2026)",
+   "prix_mensuel": 17.82
+  },
+  {
+   "slug": "typeform",
+   "prix": "à partir de 24,94 €/mois (converti de 28 $, cours du 2 oct. 2026)",
+   "prix_mensuel": 24.94
+  },
+  {
+   "slug": "linear",
+   "prix": "à partir de 8,91 €/mois/utilisateur (converti de 10 $, cours du 2 oct. 2026)",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "miro",
+   "prix": "à partir de 7,13 €/mois/utilisateur (converti de 8 $, cours du 2 oct. 2026)",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "loom",
+   "prix": "à partir de 16,04 €/mois/utilisateur (converti de 18 $, cours du 2 oct. 2026)",
+   "prix_mensuel": null
+  }
+ ]
+}
