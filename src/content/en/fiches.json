@@ -3400,5 +3400,70 @@
    "Lightweight Git forge (MIT), self-hostable: repositories, merge requests, issues, built-in CI."
   ],
   "prompt": "Set up a self-hosted Git server to replace GitLab for my private repositories.\n\nDo not build a forge: deploy Gitea on my VPS.\n\nTo do:\n- A docker-compose.yml with the official image, SQLite storage to start, data volume in ./gitea-data, automatic restart.\n- Caddy in front for automatic HTTPS on a subdomain that I will give you; SSH for git on a dedicated port.\n- Registration closed after my account is created, two-factor authentication enabled, nothing else exposed.\n- A runner for the CI on the same machine, with a resource limit.\n- Migration of my repositories from GitLab with the built-in migration tool, issues and merge requests included.\n- A nightly encrypted backup with age (repositories and database), copied off the server; write restore.sh and have me run a restore test.\n\nOut of scope: security scanning, package registry, compliance.\n\nREADME: launch, account creation, update, restore, and a reminder that I am now responsible for availability and security updates."
+ },
+ "obat": {
+  "description": "Quote and invoicing software for French construction tradespeople, with a library of 30,000 construction works with prices and labor times, 300 quote templates and electronic signature. Plans from about €25 to €129 excl. VAT a month.",
+  "justification": "A quote template is easy to build. What makes Obat valuable is the data: a library of 30,000 works with rates and labor times that someone keeps up to date, plus construction-specific features (progress invoices, site tracking) and compliance with the e-invoicing reform, whose calendar should be checked on the official texts. Without that library you start from a blank page on every quote. For a tradesperson, the time saved on pricing is worth far more than the subscription.",
+  "perdez": [
+   "The library of 30,000 works with up-to-date rates and labor times",
+   "300 ready-made quote templates",
+   "Progress invoices and construction site tracking",
+   "Compliance with e-invoicing obligations"
+  ],
+  "alternatives": [
+   "Free ERP and CRM (GPL): quotes, invoices, customers and products, self-hostable. Does not do online filing or ready-made bank synchronization."
+  ]
+ },
+ "abby": {
+  "description": "Invoicing and accounting tool for French freelancers: unlimited quotes and invoices, URSSAF contribution estimates, bank connection and electronic signature. Free Basic plan; paid plans from €9 a month (regular price, often discounted).",
+  "justification": "A free plan with unlimited invoices already covers the basic need, and there is nothing to rebuild at that price. For paid plans, the value is in what surrounds invoicing: URSSAF declarations, bank connection, reminders and compliance with the e-invoicing reform (calendar to check on the official texts). Building those yourself costs more time than the €9 a month. Replace it only for invoicing alone, with a free tool.",
+  "perdez": [
+   "URSSAF contribution estimates and declarations",
+   "Bank connection and reconciliation",
+   "Automatic payment reminders",
+   "Compliance with e-invoicing obligations"
+  ],
+  "alternatives": [
+   "Free ERP and CRM (GPL): quotes, invoices, customers and products, self-hostable. Does not do online filing or ready-made bank synchronization."
+  ]
+ },
+ "henrri": {
+  "description": "Free invoicing software from the company Rivalis: unlimited quotes, invoices and credit notes, payment tracking and reminders, bank reconciliation and online payment. Premium tiers (Henrri Pro, Expert and VIP+) exist for more specialized needs.",
+  "justification": "The software is already free and unlimited, so there is little to gain by rebuilding it: you would only swap a free tool for time spent maintaining your own. The real question is dependence on a free service whose business model comes from its paid tiers. Keep your data exportable and revisit only if the tool changes its terms or does not keep up with the e-invoicing reform (calendar to check on the official texts).",
+  "perdez": [
+   "A free tool that is maintained and kept compliant by the vendor",
+   "Bank reconciliation and online payment",
+   "Automatic payment reminders"
+  ],
+  "alternatives": [
+   "Free ERP and CRM (GPL): quotes, invoices, customers and products, self-hostable. Does not do online filing or ready-made bank synchronization."
+  ]
+ },
+ "cal-com": {
+  "description": "Scheduling tool for booking meetings, from the open-source Cal.com project (MIT). Free plan for one user with unlimited event types and calendars; the Teams plan costs $12 per user a month billed annually.",
+  "justification": "Cal.com is itself open source: the replacement is hosting it yourself. A small server with Docker, a database and access to your calendar is enough to offer booking pages without a per-user subscription. What you lose: managed hosting, updates, the connected-app marketplace kept working for you, and support. For one person or a very small team, self-hosting is an afternoon; the cost is maintenance and the reliability of calendar connections.",
+  "perdez": [
+   "Managed hosting, updates and backups",
+   "Support and the maintenance of calendar and video connections",
+   "The simplest setup, with no server"
+  ],
+  "alternatives": [
+   "The same open-source software (MIT), installed on your server: booking pages, calendar connections and reminders."
+  ],
+  "prompt": "Set up self-hosted Cal.com to replace the hosted subscription for my booking pages.\n\nDo not build a scheduler: deploy the open-source Cal.com.\n\nTo do:\n- A docker-compose.yml with Cal.com and PostgreSQL, volumes in ./data, automatic restart.\n- Caddy in front, automatic HTTPS on a subdomain that I will give you.\n- Connection to my calendar (Google or Microsoft) with the minimum permissions, keys in .env, never in the repository.\n- Email sending for confirmations and reminders through a transactional service that I will give you.\n- Registration closed after my account is created.\n- A nightly encrypted backup of the database, copied off the server, with restore.sh and a restore test.\n\nOut of scope: team features, payments, workflows.\n\nREADME: launch, calendar connection, update, restore, and a reminder that I am now responsible for updates and for the reliability of bookings."
+ },
+ "mixpanel": {
+  "description": "Product analytics: tracking events, funnels, retention and session replays. Free plan with up to 1 million events a month and unlimited seats; the Growth plan is billed by usage.",
+  "justification": "For a site or a small product, measuring visits and a few key events does not need Mixpanel: Umami, free software, gives you pages, referrers and custom events without cookies. The free plan already covers 1 million events a month, so replacing it is mainly worth it for privacy or to stay in control of the data. What you lose: funnel and retention analysis, cohorts, session replays and the speed of a managed analysis tool.",
+  "perdez": [
+   "Funnel, retention and cohort analysis",
+   "Session replays",
+   "A managed service with no server to maintain",
+   "Advanced segmentation and reports"
+  ],
+  "alternatives": [
+   "Privacy-friendly web analytics, self-hostable (MIT): pages, referrers, custom events, no cookies."
+  ],
+  "prompt": "Set up self-hosted web analytics to replace Mixpanel for my site.\n\nDo not build an analytics tool: deploy Umami.\n\nTo do:\n- A docker-compose.yml with Umami and PostgreSQL, volumes in ./data, automatic restart.\n- Caddy in front, automatic HTTPS on a subdomain that I will give you.\n- The tracking snippet added to my site, loaded asynchronously, with custom events for the 3 actions that I list (sign-up, purchase, download).\n- Registration closed after my account is created.\n- A nightly encrypted backup of the database, copied off the server, with restore.sh and a restore test.\n\nOut of scope: funnels, cohorts, session replays.\n\nREADME: launch, adding a site, adding an event, update, restore, and a reminder of what I no longer measure."
  }
 }

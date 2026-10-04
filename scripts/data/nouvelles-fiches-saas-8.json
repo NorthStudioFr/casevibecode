@@ -1,0 +1,137 @@
+[
+ {
+  "slug": "obat",
+  "nom": "Obat",
+  "domaine": "obat.fr",
+  "categorie": "finance-compta",
+  "description": "Logiciel de devis et de facturation pour artisans du bâtiment, avec une bibliothèque de 30 000 ouvrages chiffrés avec prix et temps de main-d'œuvre, 300 modèles de devis et la signature électronique. Formules d'environ 25 à 129 € HT par mois.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Un modèle de devis se construit facilement. Ce qui fait la valeur d'Obat, ce sont les données : une bibliothèque de 30 000 ouvrages avec tarifs et temps de main-d'œuvre que quelqu'un tient à jour, plus les fonctions propres au bâtiment (factures de situation, suivi de chantier) et la conformité à la réforme de la facturation électronique, dont le calendrier est à vérifier sur les textes officiels. Sans cette bibliothèque, vous repartez d'une page blanche à chaque devis. Pour un artisan, le temps gagné sur le chiffrage vaut bien plus que l'abonnement.",
+  "ce_que_vous_perdez": [
+   "La bibliothèque de 30 000 ouvrages avec tarifs et temps à jour",
+   "300 modèles de devis prêts à l'emploi",
+   "Les factures de situation et le suivi de chantier",
+   "La conformité aux obligations de facturation électronique"
+  ],
+  "prix": "à partir de 25 €/mois",
+  "prix_mensuel": 25,
+  "alternatives": [
+   {
+    "nom": "Dolibarr",
+    "url": "https://github.com/Dolibarr/dolibarr",
+    "type": "open-source",
+    "description": "ERP et CRM libre (GPL) : devis, factures, clients et produits, auto-hébergeable. Ne fait ni télédéclaration ni synchronisation bancaire clé en main."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode"
+ },
+ {
+  "slug": "abby",
+  "nom": "Abby",
+  "domaine": "abby.fr",
+  "categorie": "finance-compta",
+  "description": "Outil de facturation et de comptabilité pour indépendants français : devis et factures illimités, estimation des cotisations URSSAF, connexion bancaire et signature électronique. Formule Basique gratuite ; formules payantes à partir de 9 € par mois (prix normal, souvent remisé).",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Une formule gratuite avec factures illimitées couvre déjà le besoin de base, et il n'y a rien à reconstruire à ce prix. Pour les formules payantes, la valeur est dans ce qui entoure la facturation : déclarations URSSAF, connexion bancaire, relances et conformité à la réforme de la facturation électronique (calendrier à vérifier sur les textes officiels). Les construire vous-même coûte plus de temps que 9 € par mois. Ne le remplacez que pour la facturation seule, avec un outil gratuit.",
+  "ce_que_vous_perdez": [
+   "L'estimation et la déclaration des cotisations URSSAF",
+   "La connexion et le rapprochement bancaires",
+   "Les relances de paiement automatiques",
+   "La conformité aux obligations de facturation électronique"
+  ],
+  "prix": "gratuit (plans payants à partir de 9 €/mois)",
+  "alternatives": [
+   {
+    "nom": "Dolibarr",
+    "url": "https://github.com/Dolibarr/dolibarr",
+    "type": "open-source",
+    "description": "ERP et CRM libre (GPL) : devis, factures, clients et produits, auto-hébergeable. Ne fait ni télédéclaration ni synchronisation bancaire clé en main."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ },
+ {
+  "slug": "henrri",
+  "nom": "Henrri",
+  "domaine": "henrri.com",
+  "categorie": "finance-compta",
+  "description": "Logiciel de facturation gratuit de l'éditeur Rivalis : devis, factures et avoirs illimités, suivi des paiements et relances, rapprochement bancaire et paiement en ligne. Des formules supérieures (Henrri Pro, Expert et VIP+) existent pour des besoins plus spécialisés.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Le logiciel est déjà gratuit et illimité : reconstruire n'apporte presque rien, vous échangeriez un outil gratuit contre du temps passé à entretenir le vôtre. La vraie question est la dépendance à un service gratuit dont le modèle économique vient de ses formules payantes. Gardez vos données exportables et ne réexaminez que si l'outil change ses conditions ou ne suit pas la réforme de la facturation électronique (calendrier à vérifier sur les textes officiels).",
+  "ce_que_vous_perdez": [
+   "Un outil gratuit entretenu et tenu conforme par l'éditeur",
+   "Le rapprochement bancaire et le paiement en ligne",
+   "Les relances de paiement automatiques"
+  ],
+  "prix": "gratuit",
+  "alternatives": [
+   {
+    "nom": "Dolibarr",
+    "url": "https://github.com/Dolibarr/dolibarr",
+    "type": "open-source",
+    "description": "ERP et CRM libre (GPL) : devis, factures, clients et produits, auto-hébergeable. Ne fait ni télédéclaration ni synchronisation bancaire clé en main."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ },
+ {
+  "slug": "cal-com",
+  "nom": "Cal.com",
+  "domaine": "cal.com",
+  "categorie": "productivite",
+  "description": "Outil de prise de rendez-vous issu du projet open source Cal.com (MIT). Formule gratuite pour un utilisateur avec types d'événements et calendriers illimités ; la formule Teams coûte 12 $ par utilisateur et par mois, facturée à l'année.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Cal.com est lui-même open source : le remplacer, c'est l'héberger vous-même. Un petit serveur avec Docker, une base de données et l'accès à votre agenda suffisent pour proposer des pages de réservation sans abonnement par utilisateur. Ce que vous perdez : l'hébergement géré, les mises à jour, les connexions aux applications maintenues pour vous, et le support. Pour une personne ou une très petite équipe, l'auto-hébergement prend un après-midi ; le coût est la maintenance et la fiabilité des connexions aux agendas.",
+  "ce_que_vous_perdez": [
+   "L'hébergement géré, les mises à jour et les sauvegardes",
+   "Le support et l'entretien des connexions aux agendas et à la visio",
+   "La mise en place la plus simple, sans serveur"
+  ],
+  "prix": "gratuit (plans payants à partir de 10,69 €/mois/utilisateur, converti de 12 $, cours du 2 oct. 2026)",
+  "prompt": "Mets en place Cal.com auto-hébergé pour remplacer l'abonnement hébergé pour mes pages de réservation.\n\nNe développe pas d'outil de planification : déploie le logiciel open source Cal.com.\n\nÀ faire :\n- Un docker-compose.yml avec Cal.com et PostgreSQL, volumes dans ./data, redémarrage automatique.\n- Caddy devant, HTTPS automatique sur un sous-domaine que je te donne.\n- La connexion à mon agenda (Google ou Microsoft) avec les permissions minimales, clés dans .env, jamais dans le dépôt.\n- L'envoi d'e-mails de confirmation et de rappel via un service transactionnel que je te donne.\n- Les inscriptions fermées après la création de mon compte.\n- Une sauvegarde nocturne chiffrée de la base, copiée hors du serveur, avec restore.sh et un test de restauration.\n\nHors périmètre : fonctions d'équipe, paiements, workflows.\n\nREADME : lancement, connexion à l'agenda, mise à jour, restauration, et rappel que je suis désormais responsable des mises à jour et de la fiabilité des réservations.",
+  "alternatives": [
+   {
+    "nom": "Cal.com (auto-hébergé)",
+    "url": "https://github.com/calcom/cal.com",
+    "type": "open-source",
+    "description": "Le même logiciel open source (MIT), installé sur votre serveur : pages de réservation, connexions aux agendas et rappels."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ },
+ {
+  "slug": "mixpanel",
+  "nom": "Mixpanel",
+  "domaine": "mixpanel.com",
+  "categorie": "marketing",
+  "description": "Analyse de produit : suivi d'événements, entonnoirs, rétention et replays de sessions. Formule gratuite jusqu'à 1 million d'événements par mois avec utilisateurs illimités ; la formule Growth est facturée à l'usage.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Pour un site ou un petit produit, mesurer les visites et quelques événements clés n'exige pas Mixpanel : Umami, logiciel libre, donne pages, sources de trafic et événements personnalisés sans cookies. La formule gratuite couvre déjà 1 million d'événements par mois, donc remplacer vaut surtout pour la vie privée ou pour garder la maîtrise des données. Ce que vous perdez : l'analyse d'entonnoirs et de rétention, les cohortes, les replays de sessions et la rapidité d'un outil d'analyse géré.",
+  "ce_que_vous_perdez": [
+   "L'analyse d'entonnoirs, de rétention et de cohortes",
+   "Les replays de sessions",
+   "Un service géré, sans serveur à entretenir",
+   "La segmentation avancée et les rapports"
+  ],
+  "prix": "gratuit (options payantes)",
+  "prompt": "Mets en place des statistiques web auto-hébergées pour remplacer Mixpanel sur mon site.\n\nNe développe pas d'outil d'analyse : déploie Umami.\n\nÀ faire :\n- Un docker-compose.yml avec Umami et PostgreSQL, volumes dans ./data, redémarrage automatique.\n- Caddy devant, HTTPS automatique sur un sous-domaine que je te donne.\n- Le code de suivi ajouté à mon site, chargé en asynchrone, avec des événements personnalisés pour les 3 actions que je liste (inscription, achat, téléchargement).\n- Les inscriptions fermées après la création de mon compte.\n- Une sauvegarde nocturne chiffrée de la base, copiée hors du serveur, avec restore.sh et un test de restauration.\n\nHors périmètre : entonnoirs, cohortes, replays de sessions.\n\nREADME : lancement, ajout d'un site, ajout d'un événement, mise à jour, restauration, et rappel de ce que je ne mesure plus.",
+  "alternatives": [
+   {
+    "nom": "Umami",
+    "url": "https://github.com/umami-software/umami",
+    "type": "open-source",
+    "description": "Statistiques web respectueuses de la vie privée, auto-hébergeables (MIT) : pages, sources, événements personnalisés, sans cookies."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ }
+]
