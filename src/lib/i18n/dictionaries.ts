@@ -49,6 +49,7 @@ export const fr = {
     sortVotes: 'Les plus votés',
     sortName: 'Nom (A→Z)',
     empty: 'Aucune fiche ne correspond à ces filtres.',
+    reset: 'Réinitialiser les filtres',
     votes: (n: number) => `${n} ${plur(n, 'vote', 'votes')}`,
   },
   verdict: {
@@ -301,6 +302,7 @@ export const en: Dict = {
     sortVotes: 'Most voted',
     sortName: 'Name (A→Z)',
     empty: 'No tool matches these filters.',
+    reset: 'Reset filters',
     votes: (n: number) => `${n} ${plur(n, 'vote', 'votes')}`,
   },
   verdict: {

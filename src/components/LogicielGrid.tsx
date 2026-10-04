@@ -10,14 +10,7 @@ import { SortControl, type SortOption } from './SortControl';
 import { LogicielRow } from './LogicielRow';
 import { CATEGORIE_LABEL } from '@/lib/categories';
 import { useLocale } from '@/lib/i18n/LocaleProvider';
-
-// Accent/case-insensitive so "cegid" also matches "Cégid".
-function normalize(value: string): string {
-  return value
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .toLowerCase();
-}
+import { normaliser as normalize } from '@/lib/texte';
 
 export function LogicielGrid({ logiciels }: { logiciels: LogicielAvecVerdict[] }) {
   const { t, lang } = useLocale();
@@ -43,13 +36,20 @@ export function LogicielGrid({ logiciels }: { logiciels: LogicielAvecVerdict[] }
     setCategorie('toutes');
   }
 
+  function reinitialiser() {
+    setSecteur('tous');
+    setCategorie('toutes');
+    setVerdict('tous');
+    setQuery('');
+  }
+
   const filtered = useMemo(() => {
     const normalizedQuery = normalize(query.trim());
     const result = logiciels
       .filter((l) => secteur === 'tous' || l.secteur === secteur)
       .filter((l) => categorie === 'toutes' || l.categorie === categorie)
       .filter((l) => verdict === 'tous' || l.displayVerdict === verdict)
-      .filter((l) => normalizedQuery === '' || normalize(l.nom).includes(normalizedQuery));
+      .filter((l) => normalizedQuery === '' || (normalize(l.nom).includes(normalizedQuery) || normalize(l.description).includes(normalizedQuery)));
 
     return [...result].sort((a, b) =>
       sort === 'votes' ? b.totalVotes - a.totalVotes || a.nom.localeCompare(b.nom, lang) : a.nom.localeCompare(b.nom, lang)
@@ -71,7 +71,12 @@ export function LogicielGrid({ logiciels }: { logiciels: LogicielAvecVerdict[] }
         <SortControl value={sort} onChange={setSort} />
       </div>
       {filtered.length === 0 ? (
-        <p className="mt-6 text-sm text-slate-500">{t.grid.empty}</p>
+        <p className="mt-6 text-sm text-slate-500">
+          {t.grid.empty}{' '}
+          <button type="button" onClick={reinitialiser} className="text-secondary underline">
+            {t.grid.reset}
+          </button>
+        </p>
       ) : (
         <div className="mt-4 border-t border-slate-200">
           {filtered.map((l, i) => (

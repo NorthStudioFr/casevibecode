@@ -46,7 +46,7 @@ export function ModerationPanel() {
   }
 
   return (
-    <section className="mt-10 border-t border-slate-200 pt-6">
+    <section className="mt-8">
       <h2 className="font-serif text-xl font-semibold text-slate-800">Modération</h2>
       {erreur && (
         <p role="alert" className="mt-2 text-sm text-red-600">
