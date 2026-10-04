@@ -47,3 +47,4 @@ ui-debug.log
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+scripts/data/maj-textes-rapport.txt
