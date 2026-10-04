@@ -1,7 +1,7 @@
 // Ne reconnaît que « [à partir de] N €/mois » exact. Les prix par employé, par
 // jour, uniques ou gratuits ne s'additionnent pas honnêtement dans un total
 // mensuel : ils restent affichés en texte mais sans valeur chiffrée.
-const PRIX_MENSUEL = /^(?:à partir de\s+)?(\d+(?:[.,]\d+)?)\s*€\s*\/\s*mois$/i;
+const PRIX_MENSUEL = /^(?:à partir de\s+)?(\d+(?:[.,]\d+)?)\s*€\s*\/\s*mois(?:\s*\(converti de [^)]*\))?$/i;
 
 export function parsePrixMensuel(prix: string | undefined): number | undefined {
   if (!prix) return undefined;
@@ -23,6 +23,7 @@ const MOTS_PRIX: [RegExp, string][] = [
   [/Premium à/g, 'Premium at'],
   [/sur devis/gi, 'on request'],
   [/à partir de/gi, 'from'],
+  [/converti de (\d+(?:[.,]\d+)?) \$, cours du (\d+) (\S+) (\d{4})/gi, 'converted from $$$1, rate of $2 $3 $4'],
   [/gratuit/gi, 'free'],
 ];
 

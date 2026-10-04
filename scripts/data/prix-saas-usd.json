@@ -1,0 +1,49 @@
+{
+ "corrections": [
+  {
+   "slug": "make",
+   "prix": "à partir de 8,02 €/mois (converti de 9 $, cours du 2 oct. 2026)",
+   "prix_mensuel": 8.02
+  },
+  {
+   "slug": "zapier",
+   "prix": "à partir de 17,81 €/mois (converti de 19,99 $, cours du 2 oct. 2026)",
+   "prix_mensuel": 17.81
+  },
+  {
+   "slug": "vercel",
+   "prix": "à partir de 17,82 €/mois (converti de 20 $, cours du 2 oct. 2026)",
+   "prix_mensuel": 17.82
+  },
+  {
+   "slug": "supabase",
+   "prix": "à partir de 22,27 €/mois (converti de 25 $, cours du 2 oct. 2026)",
+   "prix_mensuel": 22.27
+  },
+  {
+   "slug": "cursor",
+   "prix": "à partir de 17,82 €/mois (converti de 20 $, cours du 2 oct. 2026)",
+   "prix_mensuel": 17.82
+  },
+  {
+   "slug": "netlify",
+   "prix": "à partir de 17,82 €/mois (converti de 20 $, cours du 2 oct. 2026)",
+   "prix_mensuel": 17.82
+  },
+  {
+   "slug": "trello",
+   "prix": "à partir de 4,45 €/mois/utilisateur (converti de 5 $, cours du 2 oct. 2026)",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "asana",
+   "prix": "à partir de 9,79 €/mois/utilisateur (converti de 10,99 $, cours du 2 oct. 2026)",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "calendly",
+   "prix": "à partir de 8,91 €/mois/utilisateur (converti de 10 $, cours du 2 oct. 2026)",
+   "prix_mensuel": null
+  }
+ ]
+}

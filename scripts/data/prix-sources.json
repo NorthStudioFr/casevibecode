@@ -47,5 +47,68 @@
   "source": "https://www.waalaxy.com/fr/pricing",
   "note": "Formule Pro",
   "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "make",
+  "prix": "à partir de 8,02 €/mois (converti de 9 $, cours du 2 oct. 2026)",
+  "source": "https://www.make.com/en/pricing",
+  "note": "Formule Core, 10 000 crédits, facturation mensuelle ; 9 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "zapier",
+  "prix": "à partir de 17,81 €/mois (converti de 19,99 $, cours du 2 oct. 2026)",
+  "source": "https://zapier.com/pricing",
+  "note": "Formule Pro 750 tâches, facturée à l'année ; 19,99 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "vercel",
+  "prix": "à partir de 17,82 €/mois (converti de 20 $, cours du 2 oct. 2026)",
+  "source": "https://vercel.com/pricing",
+  "note": "Formule Pro ; 20 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "supabase",
+  "prix": "à partir de 22,27 €/mois (converti de 25 $, cours du 2 oct. 2026)",
+  "source": "https://supabase.com/pricing",
+  "note": "Formule Pro ; 25 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "cursor",
+  "prix": "à partir de 17,82 €/mois (converti de 20 $, cours du 2 oct. 2026)",
+  "source": "https://cursor.com/pricing",
+  "note": "Formule Pro individuelle ; 20 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "netlify",
+  "prix": "à partir de 17,82 €/mois (converti de 20 $, cours du 2 oct. 2026)",
+  "source": "https://www.netlify.com/pricing/",
+  "note": "Formule Pro, membres illimités ; 20 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "trello",
+  "prix": "à partir de 4,45 €/mois/utilisateur (converti de 5 $, cours du 2 oct. 2026)",
+  "source": "https://trello.com/pricing",
+  "note": "Standard, par utilisateur, facturation annuelle ; 5 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "asana",
+  "prix": "à partir de 9,79 €/mois/utilisateur (converti de 10,99 $, cours du 2 oct. 2026)",
+  "source": "https://asana.com/pricing",
+  "note": "Starter, par utilisateur, facturation annuelle ; 10,99 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "calendly",
+  "prix": "à partir de 8,91 €/mois/utilisateur (converti de 10 $, cours du 2 oct. 2026)",
+  "source": "https://calendly.com/pricing",
+  "note": "Standard, par siège ; 10 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
  }
 ]

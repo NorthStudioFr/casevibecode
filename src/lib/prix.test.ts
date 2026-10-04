@@ -48,3 +48,13 @@ describe('formatPrix', () => {
     expect(formatPrix(fr, 'en')).toBe(en);
   });
 });
+
+describe('prix convertis', () => {
+  const p = 'à partir de 17,82 €/mois (converti de 20 $, cours du 2 oct. 2026)';
+  it('reste chiffrable malgré la mention de conversion', () => {
+    expect(parsePrixMensuel(p)).toBe(17.82);
+  });
+  it('se traduit en anglais', () => {
+    expect(formatPrix(p, 'en')).toBe('from €17.82/month (converted from $20, rate of 2 oct. 2026)');
+  });
+});
