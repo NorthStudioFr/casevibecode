@@ -1,4 +1,5 @@
-// Usage : npx --yes tsx scripts/maj-corrections-chr.ts [--apply]
+// Usage : npx --yes tsx scripts/maj-corrections-chr.ts [fichier.json] [--apply]
+// (fichier par défaut : scripts/data/corrections-chr.json)
 //
 // Applique scripts/data/corrections-chr.json aux fiches CHR : corrections de
 // colonnes listées (jamais les alternatives, la source ni les votes) et retrait
@@ -10,7 +11,8 @@ import { getServiceClient } from './lib/supabase-admin';
 import { colonnesInterdites, diffCorrection, type Correction } from './lib/corrections-chr';
 
 const apply = process.argv.includes('--apply');
-const { retirer = [], corrections = [] } = JSON.parse(readFileSync('scripts/data/corrections-chr.json', 'utf8')) as { retirer?: string[]; corrections?: Correction[] };
+const fichier = process.argv.slice(2).find((a) => !a.startsWith('--')) ?? 'scripts/data/corrections-chr.json';
+const { retirer = [], corrections = [] } = JSON.parse(readFileSync(fichier, 'utf8')) as { retirer?: string[]; corrections?: Correction[] };
 
 async function main() {
   const interdites = corrections.flatMap((c) => colonnesInterdites(c).map((k) => `${c.slug} : colonne interdite « ${k} »`));
@@ -33,7 +35,7 @@ async function main() {
     .filter((a) => Object.keys(a.diff).length > 0);
   for (const a of aAppliquer) {
     const l = lignes.get(a.slug)!;
-    const detail = Object.keys(a.diff).map((k) => (k === 'justification_editeur' ? k : `${k}: ${JSON.stringify(l[k])} → ${JSON.stringify(a.diff[k])}`));
+    const detail = Object.keys(a.diff).map((k) => (['justification_editeur', 'prompt', 'ce_que_vous_perdez'].includes(k) ? k : `${k}: ${JSON.stringify(l[k])} → ${JSON.stringify(a.diff[k])}`));
     console.log(`~ ${a.slug} : ${detail.join(' ; ')}`);
   }
   retirer.forEach((s) => console.log(`- ${s} : fiche retirée (votes supprimés en cascade)`));
@@ -41,7 +43,7 @@ async function main() {
 
   if (!apply) return void console.log('Simulation : rien écrit en base. Relancer avec --apply.');
 
-  const sauvegarde = `${process.env.HOME}/claude/casevibecode-sauvegarde-corrections-chr-${new Date().toISOString().slice(0, 10)}.json`;
+  const sauvegarde = `${process.env.HOME}/claude/casevibecode-sauvegarde-corrections-chr-${new Date().toISOString().replace(/[:.]/g, '-')}.json`;
   writeFileSync(sauvegarde, JSON.stringify([...lignes.values()], null, 1), { mode: 0o600 });
   console.log(`Sauvegarde : ${sauvegarde}`);
 
