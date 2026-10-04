@@ -1,0 +1,63 @@
+// Usage : npx --yes tsx scripts/maj-corrections-chr.ts [--apply]
+//
+// Applique scripts/data/corrections-chr.json aux fiches CHR : corrections de
+// colonnes listées (jamais les alternatives, la source ni les votes) et retrait
+// de fiches (« retirer »). Sans --apply : simulation, la base n'est que LUE.
+// Avec --apply : sauvegarde d'abord les lignes touchées dans
+// ../casevibecode-sauvegarde-corrections-chr-<date>.json (hors dépôt).
+import { readFileSync, writeFileSync } from 'fs';
+import { getServiceClient } from './lib/supabase-admin';
+import { colonnesInterdites, diffCorrection, type Correction } from './lib/corrections-chr';
+
+const apply = process.argv.includes('--apply');
+const { retirer = [], corrections = [] } = JSON.parse(readFileSync('scripts/data/corrections-chr.json', 'utf8')) as { retirer?: string[]; corrections?: Correction[] };
+
+async function main() {
+  const interdites = corrections.flatMap((c) => colonnesInterdites(c).map((k) => `${c.slug} : colonne interdite « ${k} »`));
+  if (interdites.length) throw new Error(interdites.join('\n'));
+
+  const client = getServiceClient();
+  const slugs = [...corrections.map((c) => c.slug), ...retirer];
+  const { data, error } = await client.from('logiciels').select('*').in('slug', slugs);
+  if (error) throw error;
+  const lignes = new Map((data as Record<string, unknown>[]).map((l) => [l.slug as string, l]));
+
+  for (const s of slugs) {
+    const l = lignes.get(s);
+    if (!l) throw new Error(`${s} : absent de la base`);
+    if (l.secteur !== 'chr') throw new Error(`${s} : secteur ≠ chr, refus`);
+  }
+
+  const aAppliquer = corrections
+    .map((c) => ({ slug: c.slug, diff: diffCorrection(c, lignes.get(c.slug)!) }))
+    .filter((a) => Object.keys(a.diff).length > 0);
+  for (const a of aAppliquer) {
+    const l = lignes.get(a.slug)!;
+    const detail = Object.keys(a.diff).map((k) => (k === 'justification_editeur' ? k : `${k}: ${JSON.stringify(l[k])} → ${JSON.stringify(a.diff[k])}`));
+    console.log(`~ ${a.slug} : ${detail.join(' ; ')}`);
+  }
+  retirer.forEach((s) => console.log(`- ${s} : fiche retirée (votes supprimés en cascade)`));
+  console.log(`\nRésumé : ${aAppliquer.length} fiche(s) à corriger, ${retirer.length} à retirer.`);
+
+  if (!apply) return void console.log('Simulation : rien écrit en base. Relancer avec --apply.');
+
+  const sauvegarde = `${process.env.HOME}/claude/casevibecode-sauvegarde-corrections-chr-${new Date().toISOString().slice(0, 10)}.json`;
+  writeFileSync(sauvegarde, JSON.stringify([...lignes.values()], null, 1), { mode: 0o600 });
+  console.log(`Sauvegarde : ${sauvegarde}`);
+
+  for (const a of aAppliquer) {
+    const { error: e } = await client.from('logiciels').update(a.diff).eq('slug', a.slug);
+    if (e) throw new Error(`${a.slug} : ${e.message}`);
+    console.log(`✓ ${a.slug}`);
+  }
+  for (const s of retirer) {
+    const { error: e } = await client.from('logiciels').delete().eq('slug', s);
+    if (e) throw new Error(`${s} : ${e.message}`);
+    console.log(`✓ ${s} retirée`);
+  }
+}
+
+main().catch((e) => {
+  console.error(e instanceof Error ? e.message : e);
+  process.exit(1);
+});

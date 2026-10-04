@@ -1,0 +1,34 @@
+{
+  "retirer": ["squel"],
+  "corrections": [
+    {
+      "slug": "hiboutik",
+      "verdict_editeur": "NOT_REALLY",
+      "justification_editeur": "Une caisse d'encaissement ne se recode pas : en France, tout commerce assujetti à la TVA doit utiliser un logiciel certifié ou attesté conforme (article 286 du CGI), quel que soit son volume, avec ventes inaltérables, clôtures et archivage. Hiboutik est gratuit pour les besoins de base : l'économie est faible face au risque d'une caisse non conforme (jusqu'à 7 500 € d'amende par système)."
+    },
+    {
+      "slug": "sunday",
+      "verdict_editeur": "NOT_REALLY",
+      "justification_editeur": "Le paiement à table n'est pas qu'une page reliée à Stripe : l'encaissement doit être enregistré dans la caisse du restaurant, elle-même certifiée ou attestée conforme (NF525), et le ticket vient de cette caisse. Refaire cette intégration pour chaque caisse, gérer les additions partagées, les pourboires et les litiges en plein service dépasse un projet sur mesure."
+    },
+    {
+      "slug": "dood",
+      "verdict_editeur": "NOT_REALLY",
+      "justification_editeur": "Un menu avec prise de commande se construit, mais dès que le client paie depuis son téléphone, la vente doit remonter dans la caisse certifiée du restaurant avec les bonnes lignes de TVA. Cette intégration et la fiabilité en plein service sont le vrai travail. L'option à construire soi-même, c'est le menu et la commande sans paiement."
+    },
+    {
+      "slug": "skeat",
+      "verdict_editeur": "NOT_REALLY",
+      "justification_editeur": "Commander et payer sans application demande que chaque paiement soit enregistré dans la caisse certifiée du restaurant, avec les bonnes lignes de TVA, y compris en heure de pointe. Le menu et la commande sans paiement sont à votre portée ; l'encaissement mobile relié à la caisse, non."
+    },
+    {
+      "slug": "tiime",
+      "justification_editeur": "La facturation seule (devis, factures PDF, envoi) se recode vite, mais elle ne suffit plus : la réforme de la facturation électronique impose à toutes les entreprises de pouvoir recevoir des factures électroniques à partir du 1er septembre 2026, et l'émission suit par étapes selon la taille, via une plateforme agréée. Un outil maison doit donc se brancher sur une plateforme agréée, ce qui est un vrai chantier. Dès que l'outil couvre aussi la comptabilité et les déclarations, on retombe sur les obligations des autres suites comptables."
+    },
+    { "slug": "marketman", "prix": null, "prix_mensuel": null },
+    { "slug": "eat-app", "prix": null, "prix_mensuel": null },
+    { "slug": "resdiary", "prix": null, "prix_mensuel": null },
+    { "slug": "gloriafood", "prix": "gratuit (options payantes)", "prix_mensuel": null },
+    { "slug": "placeyourguest", "prix": null, "prix_mensuel": null, "domaine": "placeyourguests.com" }
+  ]
+}
