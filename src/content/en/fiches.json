@@ -390,7 +390,7 @@
    "The vendor's updates and support."
   ],
   "alternatives": [
-   "French vendor of cellar and drinks stock management for restaurants, connected to the till, free account on sign-up."
+   "Cellar and drinks stock management connected to the till (French vendor), free account on sign-up."
   ],
   "prompt": "Build me a cellar management tool for a restaurant or wine merchant, for my venue, to replace a subscription.\n\nStack: web app (Next.js or Node/Express) with SQLite, hosted on my small server, usable on phone and computer. No mandatory paid service, no telemetry.\n\nCore of the tool:\n- Wine record: estate, cuvée, vintage, region, purchase price, selling price, location in the cellar.\n- Stock movements (in, out, breakage, tasting) with history; printable QR code labels to find a bottle.\n- Indicators: stock value, turnover, margin per reference, bottles to drink before a date.\n\nRequirements:\n- Units and conversions (kg, g, L, cl, piece); purchase price excl. VAT per product and per supplier, with a history of changes.\n- Recipe card per dish: ingredients, weights, losses and yield, cost per portion, selling price incl. VAT, margin in euros and as a percentage.\n- VAT configurable per product (for example 10% for catering, 20% for alcohol): to be validated by my accountant, hard-code nothing.\n- Allergens: the 14 mandatory allergens ticked per ingredient, and automatically carried onto each recipe card (decree 2015-447).\n- CSV import and export (products, suppliers, recipes) so I am not locked in.\n- Alcohol: selling price incl. VAT at 20%, to be confirmed by the accountant.\n\nOut of scope: NFC-tag traceability and reading hardware.\n\nREADME: installation, database backup, and a reminder that the VAT rates and allergen declarations are to be validated with my accountant and my suppliers."
  },
@@ -1774,8 +1774,8 @@
   "description": "Tipping by QR code for hotels, restaurants and local shops.",
   "justification": "Onetip lets customers leave a tip by QR code in hotels, restaurants and shops. The QR code is the easy part; collecting the tip by card and then redistributing it to the teams is the delicate part, because handling money meant for third parties may fall under payment-services rules. Have a lawyer validate this before building anything.",
   "alternatives": [
-   "Card tipping via QR code or NFC, no terminal; 6% commission only when withdrawing funds.",
-   "French platform combining multilingual QR menu, card tipping and Google review collection."
+   "Card tipping by QR code or NFC, no terminal, 6% commission when funds are withdrawn.",
+   "Tipping by QR code, Google reviews and digital menu for restaurants and hotels (French vendor), one-month trial."
   ]
  },
  "onrush": {
@@ -2234,7 +2234,7 @@
    "The vendor's support."
   ],
   "alternatives": [
-   "French vendor of cellar management for restaurateurs: stock, up-to-date wine list and digital export, from €29/month."
+   "Cellar management for restaurateurs (French vendor): stock, up-to-date wine list, digital export, from €29/month."
   ],
   "prompt": "Build me a drinks stock tool and wine list generator, for my venue, to replace a subscription.\n\nStack: web app (Next.js or Node/Express) with SQLite, hosted on my small server, usable on phone and computer. No mandatory paid service, no telemetry.\n\nCore of the tool:\n- Wine and drink record: producer, appellation, vintage, volume, purchase price, selling price, stock.\n- Wine list generated automatically: screen version (web page) and printable PDF version, sorted by region or style.\n- Automatic removal of a reference from the list when stock reaches zero.\n\nRequirements:\n- Units and conversions (kg, g, L, cl, piece); purchase price excl. VAT per product and per supplier, with a history of changes.\n- Recipe card per dish: ingredients, weights, losses and yield, cost per portion, selling price incl. VAT, margin in euros and as a percentage.\n- VAT configurable per product (for example 10% for catering, 20% for alcohol): to be validated by my accountant, hard-code nothing.\n- Allergens: the 14 mandatory allergens ticked per ingredient, and automatically carried onto each recipe card (decree 2015-447).\n- CSV import and export (products, suppliers, recipes) so I am not locked in.\n- Prices displayed incl. VAT; volume stated.\n\nOut of scope: the till and accounting.\n\nREADME: installation, database backup, and a reminder that the VAT rates and allergen declarations are to be validated with my accountant and my suppliers."
  },
@@ -2475,8 +2475,8 @@
   "justification": "Tip&Go lets customers give a digital tip to hotel and restaurant teams. The interface is simple, but sharing the money out to specific employees raises a compliance problem: holding the funds, traceability, handling each payout. To be examined with a lawyer before getting started.",
   "alternatives": [
    "Digital tipping app by QR code, advertised with no subscription, with a split between front and back of house.",
-   "French platform for restaurants and hotels: tipping by QR code, Google reviews and digital menu, one-month trial.",
-   "App to collect and share out tips by terminal, QR code or cash, with no account-creation fee."
+   "Tipping by QR code, Google reviews and digital menu for restaurants and hotels (French vendor), one-month trial.",
+   "Collection and sharing of tips by terminal, QR code or cash, with no account-creation fee."
   ]
  },
  "tipgo": {
@@ -2484,8 +2484,8 @@
   "justification": "Paying money out to individual employees touches payment-services regulation: it is not only a question of interface.",
   "alternatives": [
    "Digital tipping app by QR code, advertised with no subscription, with a split between front and back of house.",
-   "French platform for restaurants and hotels: tipping by QR code, Google reviews and digital menu, one-month trial.",
-   "Cashless tipping by QR code, free for the venue, with 2.5% fee when tips are withdrawn."
+   "Tipping by QR code, Google reviews and digital menu for restaurants and hotels (French vendor), one-month trial.",
+   "Cashless tipping by QR code, free for the venue, 2.5% fee when tips are withdrawn."
   ]
  },
  "tipjaar": {
@@ -2493,9 +2493,9 @@
   "justification": "TiPJAR collects the tip by bank card and shares it out transparently. The transparency is precisely the difficulty: following each payment to the right employee, with a reliable trail, amounts to managing third-party funds and may fall under payment-services regulation. Not a project to attempt without legal advice.",
   "alternatives": [
    "Digital tipping app by QR code, advertised with no subscription, with a split between front and back of house.",
-   "French platform for restaurants and hotels: tipping by QR code, Google reviews and digital menu, one-month trial.",
-   "App to collect and share out tips by terminal, QR code or cash, with no account-creation fee.",
-   "Cashless tipping by QR code, free for the venue, with 2.5% fee when tips are withdrawn."
+   "Tipping by QR code, Google reviews and digital menu for restaurants and hotels (French vendor), one-month trial.",
+   "Collection and sharing of tips by terminal, QR code or cash, with no account-creation fee.",
+   "Cashless tipping by QR code, free for the venue, 2.5% fee when tips are withdrawn."
   ]
  },
  "tipsi": {
@@ -2503,18 +2503,18 @@
   "justification": "Tipsi lets customers leave a digital tip by QR code. As with the other tipping apps, the QR code takes an hour to make; the payment, then the split between team members, engage the compliance of whoever holds the money. An in-house tool would have to settle this point before the interface.",
   "alternatives": [
    "Digital tipping app by QR code, advertised with no subscription, with a split between front and back of house.",
-   "French platform for restaurants and hotels: tipping by QR code, Google reviews and digital menu, one-month trial.",
-   "App to collect and share out tips by terminal, QR code or cash, with no account-creation fee.",
-   "Cashless tipping by QR code, free for the venue, with 2.5% fee when tips are withdrawn."
+   "Tipping by QR code, Google reviews and digital menu for restaurants and hotels (French vendor), one-month trial.",
+   "Collection and sharing of tips by terminal, QR code or cash, with no account-creation fee.",
+   "Cashless tipping by QR code, free for the venue, 2.5% fee when tips are withdrawn."
   ]
  },
  "tipsyou": {
   "description": "Free digital tipping app by QR code, with front/back-of-house split.",
   "justification": "Free for the venue or not, the constraint is the same: distributing funds to employees is a regulatory subject, not a simple in-house development.",
   "alternatives": [
-   "French platform for restaurants and hotels: tipping by QR code, Google reviews and digital menu, one-month trial.",
-   "App to collect and share out tips by terminal, QR code or cash, with no account-creation fee.",
-   "Cashless tipping by QR code, free for the venue, with 2.5% fee when tips are withdrawn."
+   "Tipping by QR code, Google reviews and digital menu for restaurants and hotels (French vendor), one-month trial.",
+   "Collection and sharing of tips by terminal, QR code or cash, with no account-creation fee.",
+   "Cashless tipping by QR code, free for the venue, 2.5% fee when tips are withdrawn."
   ]
  },
  "todoist": {
