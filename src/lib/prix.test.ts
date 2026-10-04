@@ -55,6 +55,11 @@ describe('prix convertis', () => {
     expect(parsePrixMensuel(p)).toBe(17.82);
   });
   it('se traduit en anglais', () => {
-    expect(formatPrix(p, 'en')).toBe('from €17.82/month (converted from $20, rate of 2 oct. 2026)');
+    expect(formatPrix(p, 'en')).toBe('from €17.82/month (converted from $20, rate of Oct 2, 2026)');
+  });
+  it('convertit la virgule décimale du montant d\'origine', () => {
+    expect(formatPrix('à partir de 9,79 €/mois/utilisateur (converti de 10,99 $, cours du 2 oct. 2026)', 'en')).toBe(
+      'from €9.79/month/user (converted from $10.99, rate of Oct 2, 2026)',
+    );
   });
 });
