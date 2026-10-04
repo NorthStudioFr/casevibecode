@@ -45,6 +45,7 @@ export function formatPrix(prix: string | undefined, lang: 'fr' | 'en'): string 
     .replace(/\/jour/g, '/day')
     .replace(/\/tablette/g, '/tablet')
     .replace(/\/utilisateur/g, '/user')
-    .replace(/\/employé/g, '/employee');
+    .replace(/\/employé/g, '/employee')
+    .replace(/\/hôte/g, '/host');
   return sortie;
 }

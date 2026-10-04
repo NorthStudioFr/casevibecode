@@ -1,0 +1,273 @@
+[
+ {
+  "slug": "freebe",
+  "nom": "Freebe",
+  "domaine": "freebe.me",
+  "categorie": "finance-compta",
+  "description": "Facturation et comptabilité simplifiée pour indépendants français : devis et factures illimités, synchronisation bancaire, suivi du temps, déclarations URSSAF et paiement en ligne via Stripe. Toutes les fonctions sont incluses dans l'abonnement unique.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Émettre un devis et une facture est facile. Le difficile est ce qui entoure : mentions légales à jour, numérotation continue, conservation, synchronisation avec 450 banques, calcul et télédéclaration des cotisations URSSAF, et la réforme de la facturation électronique, dont les obligations (plateforme agréée) sont à vérifier sur les textes officiels. À 12,50 € par mois, le temps passé à tout maintenir coûte bien plus cher que l'abonnement. Pour de la facturation seule, un outil libre existe ; pour tout le reste, non.",
+  "ce_que_vous_perdez": [
+   "La télédéclaration URSSAF automatique",
+   "La synchronisation avec plus de 450 banques",
+   "La mise à jour des mentions légales et des obligations de facturation",
+   "Le suivi de trésorerie en temps réel"
+  ],
+  "prix": "à partir de 12,50 €/mois",
+  "prix_mensuel": 12.5,
+  "alternatives": [
+   {
+    "nom": "Dolibarr",
+    "url": "https://github.com/Dolibarr/dolibarr",
+    "type": "open-source",
+    "description": "ERP et CRM libre (GPL) : devis, factures, clients et produits, auto-hébergeable. Ne fait ni télédéclaration URSSAF ni synchronisation bancaire clé en main."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode"
+ },
+ {
+  "slug": "gumroad",
+  "nom": "Gumroad",
+  "domaine": "gumroad.com",
+  "categorie": "finance-compta",
+  "description": "Plateforme de vente de produits numériques (ebooks, modèles, cours, logiciels) qui agit comme marchand de référence : elle encaisse et reverse la TVA à votre place. 10 % + 0,50 $ par vente directe, 30 % pour les ventes issues de sa place de marché, sans abonnement.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Avec Stripe seul, vous restez le vendeur : c'est à vous de collecter et de reverser la TVA dans chaque pays où vous vendez. Gumroad prend cette responsabilité en échange d'une commission de 10 % + 0,50 $. Ce n'est pas un logiciel à reconstruire, c'est un statut juridique et fiscal. Si vous vendez un produit numérique à l'international sans vouloir gérer la TVA, c'est précisément ce que vous achetez. Si vous vendez peu et surtout en France, Stripe Payment Links peut suffire.",
+  "ce_que_vous_perdez": [
+   "Le statut de marchand de référence qui gère la TVA à votre place",
+   "La collecte et le reversement de la taxe dans chaque pays",
+   "La protection contre la fraude et les litiges",
+   "La place de marché qui apporte de nouveaux clients"
+  ],
+  "alternatives": [
+   {
+    "nom": "Polar",
+    "url": "https://github.com/polarsource/polar",
+    "type": "open-source",
+    "description": "Plateforme de facturation et de vente de produits numériques (code Apache-2.0), également marchand de référence dans sa version hébergée, à commission réduite."
+   },
+   {
+    "nom": "Stripe Payment Links",
+    "url": "https://stripe.com/payments/payment-links",
+    "type": "plus-petit",
+    "description": "Liens de paiement sans code ; vous restez le vendeur, donc responsable de la TVA."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix": null,
+  "prix_mensuel": null
+ },
+ {
+  "slug": "ghost",
+  "nom": "Ghost",
+  "domaine": "ghost.org",
+  "categorie": "marketing",
+  "description": "Plateforme de publication et de newsletters avec abonnements payants intégrés, sans commission sur vos revenus. Le logiciel est libre (MIT) ; l'offre hébergée Ghost(Pro) démarre à 18 $ par mois pour 1 000 membres, facturée à l'année.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Ghost est lui-même open source : le remplacer, c'est l'héberger vous-même. Un VPS à quelques euros, Docker et un service d'envoi d'e-mails suffisent à publier, gérer des abonnés et encaisser via Stripe. Ce que vous perdez : l'hébergement géré, les sauvegardes, les mises à jour et surtout la délivrabilité des e-mails, qui demande de bien configurer l'envoi. Pour un blog ou une petite newsletter, c'est une soirée de travail.",
+  "ce_que_vous_perdez": [
+   "L'hébergement géré, les mises à jour et les sauvegardes",
+   "La délivrabilité des e-mails prise en charge par l'éditeur",
+   "Le support et la mise à l'échelle sans y penser"
+  ],
+  "prix": "à partir de 16,04 €/mois (converti de 18 $, cours du 2 oct. 2026)",
+  "prix_mensuel": 16.04,
+  "prompt": "Mets en place Ghost auto-hébergé pour remplacer Ghost(Pro) pour mon blog et ma newsletter.\n\nNe développe pas de plateforme : déploie le logiciel libre Ghost.\n\nÀ faire :\n- Un docker-compose.yml avec Ghost et MySQL, volumes dans ./data, redémarrage automatique.\n- Caddy devant, HTTPS automatique sur mon domaine.\n- L'envoi d'e-mails via un service transactionnel que je te donne (clés dans .env, jamais dans le dépôt), avec vérification SPF, DKIM et DMARC.\n- Stripe branché pour les abonnements payants, en mode test d'abord.\n- Une sauvegarde nocturne chiffrée de la base et du contenu, copiée hors du serveur ; écris restore.sh et fais-moi faire un test de restauration.\n- La migration de mon contenu et de mes abonnés depuis Ghost(Pro) par export/import.\n\nHors périmètre : thème sur mesure, analytics avancées.\n\nREADME : lancement, mise à jour, restauration, et rappel que je suis responsable des mises à jour de sécurité et de la délivrabilité.",
+  "alternatives": [
+   {
+    "nom": "Ghost (auto-hébergé)",
+    "url": "https://github.com/TryGhost/Ghost",
+    "type": "open-source",
+    "description": "Le même logiciel (MIT), installé sur votre serveur : publication, newsletters et abonnements payants."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode"
+ },
+ {
+  "slug": "substack",
+  "nom": "Substack",
+  "domaine": "substack.com",
+  "categorie": "marketing",
+  "description": "Plateforme de newsletters avec abonnements payants et recommandations entre auteurs. Gratuit pour démarrer ; l'auteur garde 90 % de ses revenus, hors frais de carte bancaire.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Envoyer une newsletter et encaisser des abonnements se fait avec Ghost ou listmonk plus Stripe, sans commission de 10 %. Ce que vous perdez est l'essentiel de Substack : le réseau de recommandations et l'application qui apportent de nouveaux lecteurs, et l'envoi géré sans souci de délivrabilité. Si votre audience vient déjà de vous, remplaçable ; si vous comptez sur la découverte, non.",
+  "ce_que_vous_perdez": [
+   "Les recommandations entre auteurs et l'application de lecture qui apportent des abonnés",
+   "L'envoi géré, sans réglage de délivrabilité",
+   "L'encaissement des abonnements prêt à l'emploi"
+  ],
+  "prompt": "Mets en place une newsletter payante auto-hébergée pour remplacer Substack.\n\nNe développe pas de plateforme : déploie Ghost, qui gère publication, abonnés et abonnements payants.\n\nÀ faire :\n- Un docker-compose.yml avec Ghost et MySQL, volumes dans ./data, redémarrage automatique.\n- Caddy devant, HTTPS automatique sur mon domaine.\n- L'envoi d'e-mails via un service transactionnel que je te donne (clés dans .env), avec SPF, DKIM et DMARC vérifiés.\n- Stripe branché pour les abonnements payants, en mode test d'abord.\n- L'import de mes abonnés et de mes articles depuis l'export Substack.\n- Une sauvegarde nocturne chiffrée copiée hors du serveur, avec restore.sh et un test de restauration.\n\nHors périmètre : recommandations entre auteurs, application mobile de lecture.\n\nREADME : lancement, import, mise à jour, restauration, et rappel que je perds l'effet de découverte de Substack.",
+  "alternatives": [
+   {
+    "nom": "Ghost",
+    "url": "https://github.com/TryGhost/Ghost",
+    "type": "open-source",
+    "description": "Publication, newsletters et abonnements payants, sans commission sur vos revenus (MIT)."
+   },
+   {
+    "nom": "listmonk",
+    "url": "https://github.com/knadh/listmonk",
+    "type": "open-source",
+    "description": "Gestionnaire de newsletters auto-hébergé (AGPL) ; l'envoi passe par un service d'e-mails de votre choix."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix": null,
+  "prix_mensuel": null
+ },
+ {
+  "slug": "twilio",
+  "nom": "Twilio",
+  "domaine": "twilio.com",
+  "categorie": "dev-tools",
+  "description": "API de communication : SMS, appels, WhatsApp et vérification par code. Paiement à l'usage ; en France, le SMS sortant coûte environ 0,08 $ par segment et un numéro international à partir de 1,15 $ par mois.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Ce que vous payez n'est pas du logiciel mais l'accès aux réseaux des opérateurs : un SMS ne part que par des interconnexions avec les opérateurs que vous ne pouvez pas reconstruire. Vous pouvez changer de fournisseur, pas vous en passer. Pour limiter la facture, remplacez les SMS par un e-mail ou une notification quand le cas d'usage le permet (code de connexion par lien, rappel de rendez-vous).",
+  "ce_que_vous_perdez": [
+   "L'accès aux opérateurs téléphoniques dans de nombreux pays",
+   "La délivrabilité et la conformité des envois",
+   "Les numéros, WhatsApp et appels derrière une seule API"
+  ],
+  "alternatives": [],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix": null,
+  "prix_mensuel": null
+ },
+ {
+  "slug": "datadog",
+  "nom": "Datadog",
+  "domaine": "datadoghq.com",
+  "categorie": "dev-tools",
+  "description": "Supervision et observabilité : métriques, logs, traces et alertes pour serveurs et applications. L'offre Infrastructure Pro coûte 15 $ par hôte et par mois en facturation annuelle (18 $ au mois).",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Prometheus et Grafana, tous deux libres, couvrent métriques et tableaux de bord, et Uptime Kuma la surveillance de disponibilité. Pour quelques serveurs, c'est une demi-journée. Ce que vous perdez : plus de mille intégrations prêtes à l'emploi, les logs et traces corrélés au même endroit, et l'absence d'exploitation à faire vous-même (stockage, mises à jour, alertes qui ne tombent pas avec le serveur supervisé).",
+  "ce_que_vous_perdez": [
+   "Plus de 1 000 intégrations prêtes à l'emploi",
+   "Logs, métriques et traces corrélés dans une seule interface",
+   "Un service supervisé hors de vos propres serveurs",
+   "Les alertes et l'astreinte intégrées"
+  ],
+  "prix": "à partir de 13,36 €/mois/hôte (converti de 15 $, cours du 2 oct. 2026)",
+  "prompt": "Mets en place une supervision auto-hébergée pour remplacer Datadog sur mes quelques serveurs.\n\nNe développe pas d'outil : déploie Prometheus, Grafana et Uptime Kuma.\n\nÀ faire :\n- Un docker-compose.yml avec Prometheus, Grafana et Alertmanager, volumes persistants, redémarrage automatique.\n- node_exporter sur chaque serveur à superviser, avec un accès restreint (réseau privé ou pare-feu).\n- Un tableau de bord Grafana pour CPU, mémoire, disque et réseau, et des alertes sur disque presque plein et service arrêté.\n- Uptime Kuma pour surveiller mes sites depuis une machine différente de celle supervisée, avec notification par e-mail ou Telegram.\n- Caddy devant Grafana avec HTTPS et authentification, rien d'autre exposé.\n- Une sauvegarde de la configuration et des tableaux de bord.\n\nHors périmètre : traces applicatives, collecte de logs, détection d'anomalies.\n\nREADME : lancement, ajout d'un serveur, mise à jour, et rappel que si ce serveur tombe, la supervision tombe avec lui.",
+  "alternatives": [
+   {
+    "nom": "Prometheus",
+    "url": "https://github.com/prometheus/prometheus",
+    "type": "open-source",
+    "description": "Collecte de métriques et alertes (Apache-2.0), standard de la supervision auto-hébergée."
+   },
+   {
+    "nom": "Grafana",
+    "url": "https://github.com/grafana/grafana",
+    "type": "open-source",
+    "description": "Tableaux de bord et visualisation (AGPL), s'appuie sur Prometheus."
+   },
+   {
+    "nom": "Uptime Kuma",
+    "url": "https://github.com/louislam/uptime-kuma",
+    "type": "open-source",
+    "description": "Surveillance de disponibilité de sites et services avec notifications (MIT)."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ },
+ {
+  "slug": "heroku",
+  "nom": "Heroku",
+  "domaine": "heroku.com",
+  "categorie": "dev-tools",
+  "description": "Plateforme d'hébergement d'applications : on pousse le code, Heroku le construit et l'exécute. Les dynos démarrent à 5 $ par mois (Eco, qui se met en veille après 30 minutes d'inactivité) et 7 $ (Basic).",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Coolify et Dokku offrent la même expérience sur votre propre VPS : un push et l'application est déployée, avec base de données et HTTPS. Pour quelques applications, c'est une demi-journée et un coût divisé par plusieurs. Ce que vous perdez : un service géré (pannes, correctifs de sécurité, sauvegardes) et les modules complémentaires en un clic. Si vous n'avez personne pour administrer un serveur, restez sur Heroku.",
+  "ce_que_vous_perdez": [
+   "Un service géré : correctifs de sécurité, sauvegardes, reprise après panne",
+   "Les modules complémentaires installés en un clic",
+   "La mise à l'échelle sans toucher au serveur"
+  ],
+  "prix": "à partir de 4,45 €/mois (converti de 5 $, cours du 2 oct. 2026)",
+  "prix_mensuel": 4.45,
+  "prompt": "Mets en place une plateforme de déploiement auto-hébergée pour remplacer Heroku sur mon VPS.\n\nNe développe pas de plateforme : installe Coolify (ou Dokku si tu juges que c'est plus adapté à mon cas).\n\nÀ faire :\n- L'installation sur mon VPS Ubuntu, avec accès restreint par clé SSH et pare-feu ne laissant passer que 22, 80 et 443.\n- Le déploiement d'une première application depuis mon dépôt Git, avec HTTPS automatique sur mon domaine.\n- Une base PostgreSQL avec sauvegarde nocturne chiffrée copiée hors du serveur ; écris restore.sh et fais-moi faire un test de restauration.\n- Les variables d'environnement gérées dans l'outil, jamais dans le dépôt.\n- La migration de mon application et de sa base depuis Heroku.\n\nHors périmètre : mise à l'échelle automatique, plusieurs serveurs.\n\nREADME : déploiement, restauration, mise à jour, et rappel que je suis désormais responsable des correctifs de sécurité du serveur.",
+  "alternatives": [
+   {
+    "nom": "Coolify",
+    "url": "https://github.com/coollabsio/coolify",
+    "type": "open-source",
+    "description": "Plateforme de déploiement auto-hébergée (Apache-2.0) : applications, bases de données et HTTPS depuis un dépôt Git."
+   },
+   {
+    "nom": "Dokku",
+    "url": "https://github.com/dokku/dokku",
+    "type": "open-source",
+    "description": "Mini-PaaS sur un seul serveur (MIT) : git push pour déployer, dans l'esprit de Heroku."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode"
+ },
+ {
+  "slug": "docker",
+  "nom": "Docker",
+  "domaine": "docker.com",
+  "categorie": "dev-tools",
+  "description": "Outils de conteneurs : Docker Desktop, Docker Hub et services de build dans le cloud. Docker Personal est gratuit ; Docker Pro coûte 9 $ par mois (11 $ au mois), Team 15 $ par utilisateur et Business 24 $.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Le moteur de conteneurs est libre et des alternatives complètes existent : Podman (sans démon) sur Linux, Colima sur Mac, qui exécutent les mêmes images et la plupart des mêmes commandes. Pour un développeur seul, passer de Docker Desktop à l'une d'elles prend quelques minutes. Ce que vous perdez : l'interface graphique, l'intégration au poste de travail et Docker Hub sans limite de téléchargement, les offres payantes de build dans le cloud. En entreprise, vérifiez les conditions de licence de Docker Desktop avant de décider.",
+  "ce_que_vous_perdez": [
+   "L'interface graphique et l'intégration de Docker Desktop",
+   "Docker Hub sans limite de téléchargement",
+   "Les services de build et de test dans le cloud"
+  ],
+  "prix": "gratuit (plans payants à partir de 8,02 €/mois, converti de 9 $, cours du 2 oct. 2026)",
+  "prompt": "Remplace Docker Desktop par une solution libre sur mon poste.\n\nNe développe rien : installe et configure Podman (Linux) ou Colima (Mac) selon ma machine.\n\nÀ faire :\n- L'installation et la configuration, avec un alias docker vers la nouvelle commande si c'est utile.\n- Le test de mes docker-compose.yml existants (podman compose ou docker compose avec Colima) et la liste de ce qui ne marche pas à l'identique.\n- Un script de vérification qui lance mes projets et signale les écarts.\n- Les étapes pour se connecter à un registre privé.\n\nHors périmètre : build dans le cloud, interface graphique.\n\nREADME : installation, usage au quotidien, différences connues avec Docker Desktop.",
+  "alternatives": [
+   {
+    "nom": "Podman",
+    "url": "https://github.com/containers/podman",
+    "type": "open-source",
+    "description": "Moteur de conteneurs sans démon (Apache-2.0), compatible avec la plupart des commandes Docker."
+   },
+   {
+    "nom": "Colima",
+    "url": "https://github.com/abiosoft/colima",
+    "type": "open-source",
+    "description": "Conteneurs sur Mac et Linux en ligne de commande (MIT), compatible Docker."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ },
+ {
+  "slug": "ovhcloud",
+  "nom": "OVHcloud",
+  "domaine": "ovhcloud.com",
+  "categorie": "reseau",
+  "description": "Hébergeur et fournisseur cloud français : serveurs privés virtuels, serveurs dédiés, stockage et noms de domaine. Les VPS démarrent à 3,81 € HT par mois pour 2 vCores, 4 Go de RAM et 40 Go de SSD NVMe, avec trafic illimité et sauvegarde quotidienne.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Un hébergeur loue du matériel, des réseaux et des centres de données : cela ne se code pas. Pour réduire la dépendance, on peut changer de fournisseur (Hetzner, Scaleway) ou, pour un petit site, passer par un hébergement statique. Rester chez un acteur européen peut compter pour des données soumises au RGPD. À ce prix, un VPS est déjà l'option la plus économique pour héberger vos propres outils.",
+  "ce_que_vous_perdez": [
+   "Les centres de données, le réseau et le matériel",
+   "Les sauvegardes et la protection anti-DDoS incluses",
+   "Un hébergement européen sous droit européen"
+  ],
+  "prix": "à partir de 3,81 €/mois",
+  "prix_mensuel": 3.81,
+  "alternatives": [
+   {
+    "nom": "Hetzner",
+    "url": "https://www.hetzner.com",
+    "type": "plus-petit",
+    "description": "Hébergeur allemand de serveurs cloud et dédiés à prix serrés."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode"
+ }
+]

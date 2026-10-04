@@ -3110,5 +3110,125 @@
    "Fraud protection",
    "License key management and payments in more than 130 currencies"
   ]
+ },
+ "freebe": {
+  "description": "Simplified invoicing and accounting for French freelancers: unlimited quotes and invoices, bank synchronization, time tracking, URSSAF (social contribution) declarations and online payment through Stripe. Every feature is included in the single subscription.",
+  "justification": "Issuing a quote and an invoice is easy. The hard part is everything around it: up-to-date legal mentions, continuous numbering, record keeping, synchronization with 450 banks, calculation and online filing of URSSAF contributions, and the e-invoicing reform, whose obligations (approved platform) should be checked against the official texts. At €12.50 a month, the time spent maintaining all of that costs far more than the subscription. For invoicing alone a free tool exists; for everything else, no.",
+  "perdez": [
+   "Automatic URSSAF online filing",
+   "Synchronization with more than 450 banks",
+   "Up-to-date legal mentions and invoicing obligations",
+   "Real-time cash flow tracking"
+  ],
+  "alternatives": [
+   "Free ERP and CRM (GPL): quotes, invoices, customers and products, self-hostable. Does not do URSSAF online filing or ready-made bank synchronization."
+  ]
+ },
+ "gumroad": {
+  "description": "Platform for selling digital products (ebooks, templates, courses, software) that acts as merchant of record: it collects and remits VAT on your behalf. 10% + $0.50 per direct sale, 30% for sales coming from its marketplace, with no subscription.",
+  "justification": "With Stripe alone, you stay the seller: it is up to you to collect and remit VAT in every country where you sell. Gumroad takes that responsibility in exchange for a 10% + $0.50 commission. It is not software you rebuild, it is a legal and tax status. If you sell a digital product internationally without wanting to handle VAT, that is exactly what you are buying. If you sell little and mostly in France, Stripe Payment Links may be enough.",
+  "perdez": [
+   "Merchant-of-record status that handles VAT for you",
+   "Collection and remittance of tax in each country",
+   "Protection against fraud and disputes",
+   "The marketplace that brings new customers"
+  ],
+  "alternatives": [
+   "Billing and digital product sales platform (Apache-2.0 code), also a merchant of record in its hosted version, at a lower commission.",
+   "Payment links with no code; you remain the seller, so you are responsible for VAT."
+  ]
+ },
+ "ghost": {
+  "description": "Publishing and newsletter platform with built-in paid subscriptions and no commission on your revenue. The software is free (MIT); the hosted Ghost(Pro) offer starts at $18 a month for 1,000 members, billed yearly.",
+  "justification": "Ghost is itself open source: replacing it means hosting it yourself. A VPS costing a few euros, Docker and an email delivery service are enough to publish, manage subscribers and collect payments through Stripe. What you lose: managed hosting, backups, updates and above all email deliverability, which requires careful sending setup. For a blog or a small newsletter, it is an evening of work.",
+  "perdez": [
+   "Managed hosting, updates and backups",
+   "Email deliverability handled by the vendor",
+   "Support and scaling without having to think about it"
+  ],
+  "prompt": "Set up self-hosted Ghost to replace Ghost(Pro) for my blog and newsletter.\n\nDo not build a platform: deploy the open-source Ghost software.\n\nTo do:\n- A docker-compose.yml with Ghost and MySQL, volumes in ./data, automatic restart.\n- Caddy in front, automatic HTTPS on my domain.\n- Email sending through a transactional service that I will give you (keys in .env, never in the repository), with SPF, DKIM and DMARC checked.\n- Stripe connected for paid subscriptions, in test mode first.\n- A nightly encrypted backup of the database and content, copied off the server; write restore.sh and have me run a restore test.\n- Migration of my content and subscribers from Ghost(Pro) by export/import.\n\nOut of scope: custom theme, advanced analytics.\n\nREADME: launch, update, restore, and a reminder that I am responsible for security updates and deliverability.",
+  "alternatives": [
+   "The same software (MIT), installed on your server: publishing, newsletters and paid subscriptions."
+  ]
+ },
+ "substack": {
+  "description": "Newsletter platform with paid subscriptions and recommendations between authors. Free to start; the author keeps 90% of revenue, minus credit card fees.",
+  "justification": "Sending a newsletter and collecting subscriptions can be done with Ghost or listmonk plus Stripe, without the 10% commission. What you lose is the core of Substack: the recommendation network and the app that bring new readers, and managed sending with no deliverability worries. If your audience already comes from you, replaceable; if you count on discovery, not.",
+  "perdez": [
+   "Recommendations between authors and the reading app that bring subscribers",
+   "Managed sending, with no deliverability tuning",
+   "Ready-made subscription payments"
+  ],
+  "prompt": "Set up a self-hosted paid newsletter to replace Substack.\n\nDo not build a platform: deploy Ghost, which handles publishing, subscribers and paid subscriptions.\n\nTo do:\n- A docker-compose.yml with Ghost and MySQL, volumes in ./data, automatic restart.\n- Caddy in front, automatic HTTPS on my domain.\n- Email sending through a transactional service that I will give you (keys in .env), with SPF, DKIM and DMARC checked.\n- Stripe connected for paid subscriptions, in test mode first.\n- Import of my subscribers and articles from the Substack export.\n- A nightly encrypted backup copied off the server, with restore.sh and a restore test.\n\nOut of scope: recommendations between authors, mobile reading app.\n\nREADME: launch, import, update, restore, and a reminder that I lose Substack's discovery effect.",
+  "alternatives": [
+   "Publishing, newsletters and paid subscriptions, with no commission on your revenue (MIT).",
+   "Self-hosted newsletter manager (AGPL); sending goes through an email service of your choice."
+  ]
+ },
+ "twilio": {
+  "description": "Communication API: SMS, calls, WhatsApp and code verification. Pay as you go; in France, an outbound SMS costs about $0.08 per segment and an international number starts at $1.15 a month.",
+  "justification": "What you pay for is not software but access to the carriers' networks: an SMS only goes out through interconnections with operators that you cannot rebuild. You can change provider, but not do without one. To cut the bill, replace SMS with an email or a notification when the use case allows (sign-in link instead of a code, appointment reminder).",
+  "perdez": [
+   "Access to telephone carriers in many countries",
+   "Delivery quality and compliance of messages",
+   "Numbers, WhatsApp and calls behind a single API"
+  ],
+  "alternatives": []
+ },
+ "datadog": {
+  "description": "Monitoring and observability: metrics, logs, traces and alerts for servers and applications. The Infrastructure Pro plan costs $15 per host per month billed annually ($18 on demand).",
+  "justification": "Prometheus and Grafana, both free, cover metrics and dashboards, and Uptime Kuma covers availability monitoring. For a few servers, that is half a day. What you lose: more than a thousand ready-made integrations, logs and traces correlated in one place, and not having to operate it yourself (storage, updates, alerts that do not go down with the monitored server).",
+  "perdez": [
+   "More than 1,000 ready-made integrations",
+   "Logs, metrics and traces correlated in a single interface",
+   "A service monitored outside your own servers",
+   "Built-in alerting and on-call"
+  ],
+  "prompt": "Set up self-hosted monitoring to replace Datadog on my few servers.\n\nDo not build a tool: deploy Prometheus, Grafana and Uptime Kuma.\n\nTo do:\n- A docker-compose.yml with Prometheus, Grafana and Alertmanager, persistent volumes, automatic restart.\n- node_exporter on each server to monitor, with restricted access (private network or firewall).\n- A Grafana dashboard for CPU, memory, disk and network, and alerts for nearly full disk and stopped service.\n- Uptime Kuma to monitor my sites from a different machine than the one being monitored, with notification by email or Telegram.\n- Caddy in front of Grafana with HTTPS and authentication, nothing else exposed.\n- A backup of the configuration and dashboards.\n\nOut of scope: application traces, log collection, anomaly detection.\n\nREADME: launch, adding a server, update, and a reminder that if this server goes down, monitoring goes down with it.",
+  "alternatives": [
+   "Metrics collection and alerting (Apache-2.0), the standard of self-hosted monitoring.",
+   "Dashboards and visualization (AGPL), built on Prometheus.",
+   "Website and service availability monitoring with notifications (MIT)."
+  ]
+ },
+ "heroku": {
+  "description": "Application hosting platform: you push the code, Heroku builds and runs it. Dynos start at $5 a month (Eco, which sleeps after 30 minutes of inactivity) and $7 (Basic).",
+  "justification": "Coolify and Dokku give the same experience on your own VPS: one push and the app is deployed, with a database and HTTPS. For a few applications, it is half a day and a cost divided several times over. What you lose: a managed service (outages, security patches, backups) and one-click add-ons. If you have nobody to administer a server, stay on Heroku.",
+  "perdez": [
+   "A managed service: security patches, backups, recovery after an outage",
+   "Add-ons installed in one click",
+   "Scaling without touching the server"
+  ],
+  "prompt": "Set up a self-hosted deployment platform to replace Heroku on my VPS.\n\nDo not build a platform: install Coolify (or Dokku if you judge it better suited to my case).\n\nTo do:\n- Installation on my Ubuntu VPS, with access restricted by SSH key and a firewall allowing only 22, 80 and 443.\n- Deployment of a first application from my Git repository, with automatic HTTPS on my domain.\n- A PostgreSQL database with a nightly encrypted backup copied off the server; write restore.sh and have me run a restore test.\n- Environment variables managed in the tool, never in the repository.\n- Migration of my application and its database from Heroku.\n\nOut of scope: autoscaling, multiple servers.\n\nREADME: deployment, restore, update, and a reminder that I am now responsible for the server's security patches.",
+  "alternatives": [
+   "Self-hosted deployment platform (Apache-2.0): applications, databases and HTTPS from a Git repository.",
+   "Mini-PaaS on a single server (MIT): git push to deploy, in the spirit of Heroku."
+  ]
+ },
+ "docker": {
+  "description": "Container tools: Docker Desktop, Docker Hub and cloud build services. Docker Personal is free; Docker Pro costs $9 a month ($11 monthly), Team $15 per user and Business $24.",
+  "justification": "The container engine is free software and complete alternatives exist: Podman (daemonless) on Linux, Colima on Mac, which run the same images and most of the same commands. For a solo developer, moving from Docker Desktop to one of them takes a few minutes. What you lose: the graphical interface, the desktop integration and Docker Hub with no pull limit, and the paid cloud build offers. In a company, check Docker Desktop's license terms before deciding.",
+  "perdez": [
+   "The graphical interface and desktop integration of Docker Desktop",
+   "Docker Hub with no pull limit",
+   "Cloud build and test services"
+  ],
+  "prompt": "Replace Docker Desktop with a free solution on my machine.\n\nDo not build anything: install and configure Podman (Linux) or Colima (Mac) depending on my machine.\n\nTo do:\n- Installation and configuration, with a docker alias to the new command if useful.\n- A test of my existing docker-compose.yml files (podman compose or docker compose with Colima) and a list of what does not work identically.\n- A verification script that starts my projects and reports differences.\n- The steps to log in to a private registry.\n\nOut of scope: cloud builds, graphical interface.\n\nREADME: installation, daily use, known differences with Docker Desktop.",
+  "alternatives": [
+   "Daemonless container engine (Apache-2.0), compatible with most Docker commands.",
+   "Containers on Mac and Linux from the command line (MIT), Docker-compatible."
+  ]
+ },
+ "ovhcloud": {
+  "description": "French hosting and cloud provider: virtual private servers, dedicated servers, storage and domain names. VPS start at €3.81 excl. VAT a month for 2 vCores, 4 GB of RAM and 40 GB of NVMe SSD, with unlimited traffic and daily backup.",
+  "justification": "A hosting provider rents hardware, networks and data centers: that cannot be coded. To reduce dependence you can change provider (Hetzner, Scaleway) or, for a small site, use static hosting. Staying with a European provider can matter for data subject to the GDPR. At this price, a VPS is already the cheapest way to host your own tools.",
+  "perdez": [
+   "Data centers, network and hardware",
+   "Backups and DDoS protection included",
+   "European hosting under European law"
+  ],
+  "alternatives": [
+   "German provider of cloud and dedicated servers at tight prices."
+  ]
  }
 }
