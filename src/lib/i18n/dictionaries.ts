@@ -92,6 +92,7 @@ export const fr = {
     fidelite: 'Fidélité & CRM',
     achats: 'Achats & marketplaces',
     paiement: 'Paiement en ligne',
+    reseau: 'Réseau & infrastructure',
   } as Record<Categorie, string>,
   fiche: {
     back: '← Retour à toutes les fiches',
@@ -276,6 +277,7 @@ export const en: Dict = {
     fidelite: 'Loyalty & CRM',
     achats: 'Purchasing & marketplaces',
     paiement: 'Online payments',
+    reseau: 'Networking & infrastructure',
   },
   fiche: {
     back: '← Back to all tools',

@@ -27,6 +27,7 @@ export const CATEGORIE_EMOJI: Record<Categorie, string> = {
   fidelite: '🎁',
   achats: '🛒',
   paiement: '🏦',
+  reseau: '🌐',
 };
 
 export const CATEGORIE_LABEL: Record<Categorie, string> = {
@@ -56,4 +57,5 @@ export const CATEGORIE_LABEL: Record<Categorie, string> = {
   fidelite: 'Fidélité & CRM',
   achats: 'Achats & marketplaces',
   paiement: 'Paiement en ligne',
+  reseau: 'Réseau & infrastructure',
 };

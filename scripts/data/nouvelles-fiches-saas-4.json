@@ -1,0 +1,532 @@
+[
+  {
+    "slug": "github",
+    "nom": "GitHub",
+    "domaine": "github.com",
+    "categorie": "dev-tools",
+    "secteur": "saas",
+    "description": "Hébergement de code et collaboration autour de Git : dépôts, demandes de fusion, tickets, intégration continue (Actions) et assistant Copilot. Formule gratuite avec dépôts privés illimités et 2 000 minutes de CI par mois.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Héberger ses dépôts Git sur son propre serveur est une demi-journée avec Forgejo ou Gitea : demandes de fusion, tickets et CI y sont déjà. Ce que vous perdez : l'effet réseau (tout le monde a un compte, les contributeurs et les clients y sont), l'écosystème d'actions prêtes à l'emploi et la disponibilité d'un service géré. Pour un usage solo ou une petite équipe fermée, remplaçable ; pour de l'open source ouvert aux contributions, non.",
+    "ce_que_vous_perdez": [
+      "L'effet réseau : contributeurs, clients et recruteurs y sont déjà",
+      "L'écosystème d'actions de CI prêtes à l'emploi",
+      "La disponibilité et les sauvegardes d'un service géré",
+      "Copilot et les outils de sécurité intégrés"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Mets en place un serveur Git auto-hébergé pour remplacer GitHub pour mes dépôts privés.\n\nNe développe pas de forge : déploie Forgejo (ou Gitea) sur mon VPS.\n\nÀ faire :\n- Un docker-compose.yml avec l'image officielle, stockage SQLite pour commencer, volume de données dans ./forgejo-data, redémarrage automatique.\n- Caddy devant, pour le HTTPS automatique sur un sous-domaine que je te donne ; SSH pour git sur un port dédié.\n- Fermer les inscriptions après la création de mon compte, activer l'authentification à deux facteurs, ne rien exposer d'autre.\n- Un runner pour les Actions (compatible avec la syntaxe de GitHub Actions) sur la même machine, avec une limite de ressources.\n- Une migration de mes dépôts depuis GitHub avec l'outil de migration intégré, tickets et demandes de fusion compris.\n- Une sauvegarde nocturne chiffrée avec age (dépôts et base), copiée hors du serveur ; écris restore.sh et fais-moi faire un test de restauration.\n\nHors périmètre : réseau social de développeurs, Copilot, scan de sécurité de dépendances.\n\nREADME : lancement, création du compte, mise à jour, restauration, et rappel que je suis désormais responsable de la disponibilité et des mises à jour de sécurité.",
+    "alternatives": [
+      {
+        "nom": "Gitea",
+        "url": "https://github.com/go-gitea/gitea",
+        "type": "open-source",
+        "description": "Forge Git légère (MIT) auto-hébergeable : dépôts, demandes de fusion, tickets, CI intégrée."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "postman",
+    "nom": "Postman",
+    "domaine": "postman.com",
+    "categorie": "dev-tools",
+    "secteur": "saas",
+    "description": "Plateforme pour concevoir, tester et documenter des API : client de requêtes, collections, serveurs simulés et surveillance. Formule gratuite ; formule Solo à 9 $ par mois, Team à 19 $ par utilisateur.",
+    "verdict_editeur": "YES",
+    "justification_editeur": "Un client de requêtes HTTP avec collections, variables d'environnement et historique se remplace très bien : Bruno et Hoppscotch sont libres et font déjà l'essentiel, sans compte obligatoire. Ce que vous perdez : la synchronisation d'équipe, la surveillance planifiée et les serveurs simulés hébergés. Pour un usage solo, c'est l'un des remplacements les plus faciles du catalogue.",
+    "ce_que_vous_perdez": [
+      "La synchronisation d'équipe des collections",
+      "La surveillance planifiée des API",
+      "Les serveurs simulés hébergés",
+      "Les fonctions d'IA intégrées"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un petit client de requêtes HTTP local pour remplacer Postman dans mon usage solo.\n\nPile : application web locale (Node, Express, JavaScript natif), collections stockées en fichiers JSON dans un dossier versionné par git.\n\nÀ faire :\n- Créer des requêtes (méthode, URL, en-têtes, corps JSON ou formulaire), les ranger en collections et dossiers.\n- Variables d'environnement (dev, prod) avec substitution {{variable}}, secrets lus dans .env et jamais écrits dans les fichiers.\n- Affichage de la réponse : statut, durée, taille, en-têtes, corps formaté, copie en curl.\n- Assertions simples sur la réponse (statut, champ JSON égal à) exécutables sur toute une collection, avec résumé.\n- Import d'une collection Postman (format v2.1) et d'un fichier OpenAPI.\n- Historique des 100 dernières requêtes ; localhost uniquement, sans compte ni télémétrie.\n\nHors périmètre : synchronisation d'équipe, surveillance planifiée, serveurs simulés hébergés.\n\nREADME : lancement, format des collections, et un rappel que Bruno ou Hoppscotch font déjà cela si je préfère ne rien maintenir.",
+    "alternatives": [
+      {
+        "nom": "Bruno",
+        "url": "https://github.com/usebruno/bruno",
+        "type": "open-source",
+        "description": "Client d'API libre (MIT) dont les collections sont de simples fichiers dans votre dépôt git, utilisable sans compte."
+      },
+      {
+        "nom": "Hoppscotch",
+        "url": "https://github.com/hoppscotch/hoppscotch",
+        "type": "open-source",
+        "description": "Client d'API libre (MIT) dans le navigateur, auto-hébergeable, avec collections et variables d'environnement."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "netlify",
+    "nom": "Netlify",
+    "domaine": "netlify.com",
+    "categorie": "dev-tools",
+    "secteur": "saas",
+    "description": "Plateforme d'hébergement et de déploiement de sites et d'applications web, avec déploiements à chaque commit, fonctions et formulaires. Formule gratuite à crédits limités ; formule Pro à 20 $ par mois.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Pour un site statique, un serveur web, un script de déploiement et un proxy font le travail. Netlify apporte le déploiement à chaque commit, les aperçus par branche, le réseau de diffusion mondial, les formulaires et les fonctions sans serveur à gérer. Remplaçable pour un site vitrine que vous modifiez rarement ; moins pour une équipe qui déploie dix fois par jour.",
+    "ce_que_vous_perdez": [
+      "Le déploiement à chaque commit et les aperçus par branche",
+      "Le réseau de diffusion mondial",
+      "Les formulaires et fonctions sans serveur à gérer",
+      "Le HTTPS et les domaines gérés"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un déploiement auto-hébergé de sites statiques pour remplacer Netlify.\n\nPile : un petit serveur Linux, Caddy, un petit service Node pour recevoir les webhooks, GitHub Actions ou Forgejo.\n\nÀ faire :\n- Chaque site vit dans /srv/sites/<nom>/ ; Caddy sert le dossier courant par un lien symbolique, HTTPS automatique, un sous-domaine par site.\n- À chaque envoi sur la branche principale, la CI compile le site et envoie le résultat par rsync dans un nouveau dossier daté ; le lien symbolique bascule seulement si l'envoi a réussi, ce qui permet un retour en arrière en une commande.\n- Un aperçu par branche sur <branche>.<nom>.mondomaine, supprimé à la fermeture de la branche.\n- Un point d'accès pour formulaires : POST reçu, anti-spam par champ piège, e-mail envoyé via SMTP configurable.\n- Surveillance simple (site en ligne, espace disque) avec alerte par e-mail.\n\nHors périmètre : réseau de diffusion mondial, fonctions sans serveur, tests A/B.\n\nREADME : ajouter un site, retour arrière, DNS et configuration du serveur.",
+    "alternatives": [
+      {
+        "nom": "Coolify",
+        "url": "https://github.com/coollabsio/coolify",
+        "type": "open-source",
+        "description": "Plateforme libre (Apache-2.0) à installer sur votre serveur pour déployer sites, applications et bases de données."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "firebase",
+    "nom": "Firebase",
+    "domaine": "firebase.google.com",
+    "categorie": "dev-tools",
+    "secteur": "saas",
+    "description": "Plateforme de Google pour applications : authentification, base de données Firestore, hébergement, stockage de fichiers, fonctions et messagerie. Formule gratuite Spark ; formule Blaze à l'usage.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Pour une petite application, une base SQLite ou Postgres avec une authentification simple et un stockage de fichiers suffit, et PocketBase fait déjà tout cela dans un seul exécutable. Ce que Firebase apporte : l'authentification clé en main, la synchronisation en temps réel avec hors ligne sur mobile, les notifications push et la montée en charge automatique. Remplaçable pour un site ou une application web classique ; moins pour une application mobile temps réel.",
+    "ce_que_vous_perdez": [
+      "L'authentification clé en main",
+      "La synchronisation temps réel avec mode hors ligne sur mobile",
+      "Les notifications push",
+      "La montée en charge automatique"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un petit backend auto-hébergé pour une application web, en remplacement de Firebase.\n\nPile : Node, TypeScript, SQLite, hébergé sur mon petit serveur.\n\nÀ faire :\n- Authentification par e-mail et mot de passe (argon2), sessions par cookie sécurisé, réinitialisation par e-mail.\n- API REST sur mes collections avec règles d'accès par utilisateur, validées par un schéma.\n- Abonnement aux changements en temps réel par Server-Sent Events.\n- Stockage de fichiers sur disque avec limites de taille et de type.\n- Sauvegarde quotidienne de la base et procédure de restauration testée.\n- Tests sur les règles d'accès ; README avec la procédure de mise à jour.\n\nHors périmètre : notifications push, hors ligne sur mobile, fonctions sans serveur, authentification par réseaux sociaux.",
+    "alternatives": [
+      {
+        "nom": "PocketBase",
+        "url": "https://github.com/pocketbase/pocketbase",
+        "type": "open-source",
+        "description": "Backend libre (MIT) en un seul exécutable : base SQLite, authentification, stockage de fichiers, API et temps réel."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "clerk",
+    "nom": "Clerk",
+    "domaine": "clerk.com",
+    "categorie": "dev-tools",
+    "secteur": "saas",
+    "description": "Service d'authentification et de gestion des utilisateurs pour applications : connexion, double authentification, SSO d'entreprise. Formule gratuite jusqu'à 50 000 utilisateurs actifs retenus ; Pro à 25 $ par mois.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Une connexion par e-mail et mot de passe se code en une soirée ; la vraie difficulté est tout ce qui l'entoure : réinitialisation sûre, double authentification, détection de bots, sessions révoquées, SSO d'entreprise. En sécurité, mal faire est pire que ne pas faire. Si vous voulez garder la main, une bibliothèque libre comme Better Auth fait le travail ; écrire l'authentification soi-même n'est pas recommandé.",
+    "ce_que_vous_perdez": [
+      "La double authentification et la détection de bots clés en main",
+      "La gestion des sessions et leur révocation",
+      "Le SSO d'entreprise",
+      "Les composants de connexion déjà conçus"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [
+      {
+        "nom": "Better Auth",
+        "url": "https://github.com/better-auth/better-auth",
+        "type": "open-source",
+        "description": "Bibliothèque d'authentification libre (MIT) pour TypeScript : e-mail, réseaux sociaux, double authentification, sessions."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "resend",
+    "nom": "Resend",
+    "domaine": "resend.com",
+    "categorie": "dev-tools",
+    "secteur": "saas",
+    "description": "Service d'envoi d'e-mails par API ou SMTP, pour les messages transactionnels et marketing. Formule gratuite à 3 000 e-mails par mois (100 par jour) ; Pro à 20 $ par mois.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Envoyer un e-mail est facile ; qu'il arrive en boîte de réception ne l'est pas : réputation d'expéditeur, domaine bien configuré (SPF, DKIM, DMARC), gestion des rebonds et des plaintes. Un serveur d'envoi maison finit en spam. Le bon compromis est d'utiliser un fournisseur (Resend, Amazon SES, Brevo) et de construire autour de lui : modèles, files d'attente, suivi.",
+    "ce_que_vous_perdez": [
+      "La réputation d'expéditeur et la délivrabilité",
+      "La gestion des rebonds et des plaintes",
+      "L'infrastructure d'envoi à grande échelle",
+      "Les webhooks et le suivi des envois"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "cursor",
+    "nom": "Cursor",
+    "domaine": "cursor.com",
+    "categorie": "dev-tools",
+    "secteur": "saas",
+    "description": "Éditeur de code avec agents d'IA intégrés, revue de code et collaboration. Formule gratuite Hobby ; Pro à 20 $ par mois, Teams à 40 $ par utilisateur.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Un éditeur de code est un énorme projet, et ce qui fait la valeur de Cursor, ce sont l'accès aux modèles d'IA de pointe, l'intégration dans l'éditeur et les agents qui modifient plusieurs fichiers. Rien de cela ne se reproduit seul. Ce que vous pouvez faire : brancher votre propre clé d'API sur un éditeur libre ; vous gardez l'éditeur, vous changez le fournisseur du modèle.",
+    "ce_que_vous_perdez": [
+      "L'accès aux modèles d'IA de pointe inclus dans l'abonnement",
+      "Les agents qui modifient plusieurs fichiers",
+      "L'intégration profonde dans l'éditeur",
+      "La revue de code assistée"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "algolia",
+    "nom": "Algolia",
+    "domaine": "algolia.com",
+    "categorie": "dev-tools",
+    "secteur": "saas",
+    "description": "Service de recherche pour sites et applications : recherche par mots-clés et sémantique, classement, personnalisation et recommandations. Formule gratuite avec 10 000 requêtes de recherche par mois et 50 000 enregistrements.",
+    "verdict_editeur": "YES",
+    "justification_editeur": "Pour un site de quelques milliers de pages ou un catalogue modeste, la recherche plein texte de SQLite (FTS5) ou un moteur libre comme Typesense suffit, avec tolérance aux fautes de frappe. Algolia pèse pour les gros volumes, la personnalisation et la vitesse mondiale. Pour la plupart des sites vitrines et des catalogues, c'est un des remplacements les plus faciles.",
+    "ce_que_vous_perdez": [
+      "La vitesse mondiale sur de gros volumes",
+      "La personnalisation et les recommandations",
+      "L'analyse des recherches",
+      "L'intégration prête à l'emploi avec les frameworks"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un moteur de recherche pour mon site, en remplacement d'Algolia, pour un catalogue de quelques milliers d'éléments.\n\nPile : Node, SQLite avec FTS5 (better-sqlite3), une petite API Express, un composant de recherche en JavaScript natif.\n\nÀ faire :\n- Indexation depuis un fichier JSON ou une table : champs recherchables et champs de filtre déclarés dans un fichier de configuration.\n- Recherche tolérante : préfixes, accents ignorés, classement par pertinence (bm25) avec poids par champ, tolérance aux fautes de frappe simples.\n- Filtres à facettes avec comptage, tri, pagination, surlignage des termes trouvés.\n- Réponse en moins de 50 ms sur 10 000 éléments, mesurée par un test.\n- Réindexation incrémentale à la modification d'un élément ; point d'accès protégé par jeton.\n- Journal des recherches sans résultat, sans donnée personnelle.\n\nHors périmètre : recherche sémantique, personnalisation, réplication mondiale.\n\nREADME : indexation, configuration des champs, et un rappel que Typesense fait cela avec plus de finition si le volume grossit.",
+    "alternatives": [
+      {
+        "nom": "Typesense",
+        "url": "https://github.com/typesense/typesense",
+        "type": "open-source",
+        "description": "Moteur de recherche libre (GPL-3.0) rapide, tolérant aux fautes de frappe, auto-hébergeable."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "linear",
+    "nom": "Linear",
+    "domaine": "linear.app",
+    "categorie": "productivite",
+    "secteur": "saas",
+    "description": "Gestion de tickets et de projets pour équipes de développement : tickets, cycles, feuilles de route, intégration avec GitHub. Formule gratuite jusqu'à 250 tickets ; Basic à 10 $ par utilisateur et par mois.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Un suivi de tickets avec cycles, étiquettes et vues enregistrées se construit en quelques jours, et Plane existe en libre. Ce que Linear apporte : la rapidité et la finition de l'interface, les raccourcis clavier partout, les intégrations avec GitHub et Slack et la synchronisation instantanée. Pour une équipe de trois qui n'utilise que les tickets, remplaçable ; pour une équipe qui y vit toute la journée, la finition justifie l'abonnement.",
+    "ce_que_vous_perdez": [
+      "La rapidité et la finition de l'interface",
+      "Les raccourcis clavier partout",
+      "Les intégrations GitHub et Slack",
+      "La synchronisation instantanée"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un suivi de tickets pour une petite équipe de développement, en remplacement de Linear.\n\nPile : Next.js, TypeScript, Tailwind, PostgreSQL avec Drizzle, Docker Compose.\n\nÀ faire :\n- Équipes, projets, tickets avec identifiants lisibles (ABC-123), priorités, étiquettes, responsables et cycles.\n- Vues liste et kanban, vues enregistrées avec filtres, recherche instantanée.\n- Raccourcis clavier pour créer, assigner, changer le statut et ouvrir un ticket, avec palette de commandes (cmd+K).\n- Liaison avec GitHub : une branche ou une demande de fusion qui mentionne ABC-123 se rattache au ticket, et sa fusion le ferme (webhook).\n- Commentaires, mentions, journal d'activité, notifications par e-mail.\n- Mises à jour de l'interface sans recharger la page.\n- Lancement local en une commande, secrets dans .env, aucune télémétrie, tests, README.\n\nHors périmètre : feuilles de route multi-équipes, intégrations autres que GitHub, applications mobiles.",
+    "alternatives": [
+      {
+        "nom": "Plane",
+        "url": "https://github.com/makeplane/plane",
+        "type": "open-source",
+        "description": "Gestion de tickets et de projets libre (AGPL-3.0), auto-hébergeable, avec cycles et vues kanban."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "cloudflare",
+    "nom": "Cloudflare",
+    "domaine": "cloudflare.com",
+    "categorie": "reseau",
+    "secteur": "saas",
+    "description": "Réseau mondial de diffusion de contenu, DNS, protection contre les attaques et plateforme de développement (Workers, R2, D1). Formule gratuite généreuse ; tarification à l'usage au-delà.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Cloudflare est d'abord un réseau : des centres de données dans le monde entier qui absorbent les attaques et servent vos pages près de vos visiteurs. Aucune solution maison ne reproduit cela. On peut héberger son propre DNS ou un proxy inverse, mais pas la capacité d'encaisser une attaque. Gardez-le pour le DNS et la protection ; l'offre gratuite suffit à la plupart des sites.",
+    "ce_que_vous_perdez": [
+      "La capacité d'absorber une attaque par déni de service",
+      "Le réseau de diffusion mondial",
+      "Le DNS rapide et résilient",
+      "La plateforme de développement (Workers, R2, D1)"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "tailscale",
+    "nom": "Tailscale",
+    "domaine": "tailscale.com",
+    "categorie": "reseau",
+    "secteur": "saas",
+    "description": "Réseau privé virtuel maillé fondé sur WireGuard : relie vos appareils et serveurs sans configuration réseau complexe. Formule Personal gratuite jusqu'à 6 utilisateurs ; Standard à 8 $ par utilisateur et par mois.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "WireGuard est libre, et Headscale reproduit le serveur de coordination de Tailscale : vous pouvez monter le même réseau privé sur votre serveur en une demi-journée. Ce que vous perdez : le passage automatique des pare-feu et des réseaux d'opérateurs (NAT), les applications mobiles soignées, la gestion des accès par identité et la disponibilité du service. Remplaçable si vous êtes à l'aise avec l'administration réseau.",
+    "ce_que_vous_perdez": [
+      "Le passage automatique des pare-feu et du NAT",
+      "Les applications mobiles soignées",
+      "La gestion des accès par identité",
+      "La disponibilité du service de coordination"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Mets en place un réseau privé maillé auto-hébergé pour mes appareils, en remplacement de Tailscale.\n\nNe développe pas de VPN : déploie Headscale (serveur de coordination libre, compatible avec les clients Tailscale) sur mon VPS.\n\nÀ faire :\n- Un docker-compose.yml avec l'image officielle de Headscale, Caddy devant pour le HTTPS sur un sous-domaine que je te donne.\n- Un espace de noms par usage (personnel, serveurs), des clés de préinscription à usage unique et à durée limitée.\n- Les clients officiels Tailscale pointés vers mon serveur (--login-server), sur mon ordinateur, mon téléphone et deux serveurs de test.\n- Des règles d'accès (ACL) minimales : mes appareils parlent à tout, les serveurs ne parlent qu'entre eux.\n- Un serveur de relais DERP intégré activé, pour les réseaux qui bloquent les connexions directes.\n- Une sauvegarde nocturne chiffrée de la base de Headscale, un script de restauration testé, et une procédure de mise à jour à version épinglée.\n\nHors périmètre : SSO d'entreprise, journaux de flux, accès à la demande.\n\nREADME : ajout d'un appareil, révocation, restauration, et un rappel que si mon VPS tombe, les connexions déjà établies continuent mais plus aucun appareil ne peut en ouvrir de nouvelles.",
+    "alternatives": [
+      {
+        "nom": "Headscale",
+        "url": "https://github.com/juanfont/headscale",
+        "type": "open-source",
+        "description": "Serveur de coordination libre (BSD-3-Clause) compatible avec les clients Tailscale, à héberger soi-même."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "ngrok",
+    "nom": "ngrok",
+    "domaine": "ngrok.com",
+    "categorie": "reseau",
+    "secteur": "saas",
+    "description": "Tunnels pour exposer une application locale sur Internet, passerelle d'API et entrée Kubernetes. Formule gratuite limitée à 3 points d'accès ; Hobbyist à 10 $ par mois.",
+    "verdict_editeur": "YES",
+    "justification_editeur": "Exposer un service local, c'est un tunnel inverse : un petit serveur sur votre VPS et un client sur votre machine font le même travail, avec votre propre domaine et sans limite. frp (libre) ou un simple tunnel SSH le font déjà. Ce que vous perdez : l'inspecteur de requêtes confortable et les domaines prêts à l'emploi. Pour un usage de développement, c'est un des remplacements les plus faciles.",
+    "ce_que_vous_perdez": [
+      "L'inspecteur de requêtes pour déboguer les webhooks",
+      "Les domaines prêts à l'emploi",
+      "La passerelle d'API et les contrôles d'accès",
+      "L'absence de serveur à maintenir"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Mets en place un tunnel auto-hébergé pour exposer mes applications locales, en remplacement de ngrok.\n\nNe développe pas de tunnel : déploie frp (serveur frps sur mon VPS, client frpc sur ma machine).\n\nÀ faire :\n- frps sur mon VPS derrière Caddy, avec un jeton d'authentification dans .env, un sous-domaine générique *.dev.mondomaine et HTTPS automatique.\n- Un fichier frpc.toml avec un exemple par service (port 3000 → app.dev.mondomaine) et un script `expose <port> <nom>` qui l'ouvre en une commande.\n- Un petit inspecteur de requêtes en localhost (Node) : liste des requêtes reçues avec en-têtes et corps, bouton pour rejouer une requête, utile pour les webhooks.\n- Limite de débit et liste d'adresses autorisées facultative, tunnels fermés par défaut quand je ne travaille pas.\n- Journal des connexions.\n\nHors périmètre : passerelle d'API, entrée Kubernetes, authentification des visiteurs.\n\nREADME : installation du serveur, DNS générique, utilisation du script, et un rappel que tout ce qui est exposé est public.",
+    "alternatives": [
+      {
+        "nom": "frp",
+        "url": "https://github.com/fatedier/frp",
+        "type": "open-source",
+        "description": "Proxy inverse rapide (Apache-2.0) pour exposer un service local derrière un NAT ou un pare-feu."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "proton-vpn",
+    "nom": "Proton VPN",
+    "domaine": "protonvpn.com",
+    "categorie": "reseau",
+    "secteur": "saas",
+    "description": "Service de VPN suisse aux applications open source et auditées, plus de 2 000 serveurs dans plus de 140 pays ; offre gratuite limitée à un appareil.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Un VPN personnel est facile à monter : WireGuard sur un VPS vous protège sur un Wi-Fi public. Mais un service comme Proton VPN vend autre chose : des milliers de serveurs dans des dizaines de pays, une politique sans journaux auditée par des tiers et la possibilité de choisir la sortie. Un VPN sur votre propre serveur ne vous rend pas anonyme : votre fournisseur voit tout ce qui y passe.",
+    "ce_que_vous_perdez": [
+      "Les serveurs dans plus de 140 pays",
+      "La politique sans journaux auditée par des tiers",
+      "La possibilité de choisir le pays de sortie",
+      "Les applications open source et auditées"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "plausible",
+    "nom": "Plausible Analytics",
+    "domaine": "plausible.io",
+    "categorie": "marketing",
+    "secteur": "saas",
+    "description": "Mesure d'audience légère, sans cookies, hébergée dans l'Union européenne ; code ouvert et auto-hébergeable. À partir de 9 $ par mois pour 10 000 pages vues, essai de 30 jours.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Compter des pages vues sans cookie, avec référents, pays et appareils, est un petit projet : un script de quelques lignes, une table et un tableau de bord. Ce que vous perdez : le filtrage des robots et du trafic parasite, les objectifs et entonnoirs, l'intégration Search Console et la tranquillité d'un service géré. Pour un petit site, remplaçable, ou installez simplement Plausible ou Umami sur votre serveur.",
+    "ce_que_vous_perdez": [
+      "Le filtrage des robots et du trafic parasite",
+      "Les objectifs et les entonnoirs de conversion",
+      "L'intégration avec Search Console",
+      "L'hébergement européen géré"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi une mesure d'audience sans cookies pour mes sites, en remplacement de Plausible.\n\nPile : Node, Express, SQLite (better-sqlite3), un script d'environ 1 Ko à inclure dans mes pages, un tableau de bord sur mon serveur.\n\nÀ faire :\n- Le script envoie la page vue, le référent et la largeur d'écran par un point d'accès POST ; aucun cookie, aucun stockage local, aucun identifiant persistant.\n- Le visiteur est compté de façon anonyme avec une empreinte quotidienne (hachage salé, sel renouvelé chaque jour) ; ni adresse IP ni agent utilisateur complet n'est conservé.\n- Pays déduit de l'adresse IP par une base locale (puis l'adresse est oubliée), navigateur et appareil déduits de l'agent utilisateur.\n- Filtrage de base des robots (liste d'agents connus, requêtes sans référent plausible).\n- Tableau de bord : visiteurs et pages vues par jour, pages les plus vues, référents, pays, appareils, objectifs simples (page cible atteinte).\n- Plusieurs sites sur la même installation ; tableau de bord protégé par mot de passe ; export CSV.\n- Durée de conservation réglable ; tests sur le comptage et le filtrage.\n\nHors périmètre : entonnoirs, intégration Search Console, mesure par appareil sur plusieurs jours.\n\nREADME : installation, inclusion du script, explication de ce qui est collecté, et un rappel que Plausible ou Umami s'auto-hébergent aussi.",
+    "alternatives": [
+      {
+        "nom": "Umami",
+        "url": "https://github.com/umami-software/umami",
+        "type": "open-source",
+        "description": "Mesure d'audience libre (MIT), sans cookies, auto-hébergeable, avec tableau de bord simple."
+      },
+      {
+        "nom": "Plausible auto-hébergé",
+        "url": "https://github.com/plausible/analytics",
+        "type": "open-source",
+        "description": "Le même produit en édition communautaire libre (AGPL-3.0), à installer sur votre propre serveur."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "posthog",
+    "nom": "PostHog",
+    "domaine": "posthog.com",
+    "categorie": "marketing",
+    "secteur": "saas",
+    "description": "Plateforme d'analyse de produit : événements, entonnoirs, rejeu de sessions, drapeaux de fonctionnalités et tests A/B ; code ouvert, auto-hébergeable, cloud européen disponible. Formule gratuite avec limites mensuelles.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Un compteur d'événements se code en un week-end ; PostHog, c'est autre chose : entonnoirs, rétention, rejeu de sessions, drapeaux de fonctionnalités et expérimentations réunis dans un produit qui a des années d'avance. L'auto-héberger est possible mais lourd (plusieurs services). Si vous n'avez besoin que de compter des pages, Plausible ou Umami suffisent.",
+    "ce_que_vous_perdez": [
+      "Les entonnoirs, la rétention et les cohortes",
+      "Le rejeu de sessions",
+      "Les drapeaux de fonctionnalités et les tests A/B",
+      "Les intégrations de données"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "kit",
+    "nom": "Kit (ex-ConvertKit)",
+    "domaine": "kit.com",
+    "categorie": "marketing",
+    "secteur": "saas",
+    "description": "Plateforme d'e-mailing pour créateurs : pages d'inscription, newsletters, séquences, vente de produits numériques et abonnements payants. Formule gratuite jusqu'à 10 000 abonnés ; Creator à 33 $ par mois.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Une page d'inscription, des envois et une séquence de bienvenue se construisent en quelques jours avec Amazon SES, et listmonk existe en libre. Ce que Kit vend : la délivrabilité, les automatisations visuelles, la vente de produits numériques et d'abonnements payants, et l'écosystème de créateurs. Comme la formule gratuite va jusqu'à 10 000 abonnés, l'économie ne justifie souvent pas de changer.",
+    "ce_que_vous_perdez": [
+      "La délivrabilité des e-mails",
+      "Les automatisations visuelles",
+      "La vente de produits numériques et d'abonnements payants",
+      "Les recommandations entre créateurs"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un outil de newsletter pour créateur, en remplacement de Kit.\n\nPile : Next.js, TypeScript, PostgreSQL avec Drizzle, envoi via Amazon SES.\n\nÀ faire :\n- Pages d'inscription avec double confirmation, étiquettes, champs personnalisés, consentement horodaté conservé (RGPD).\n- Import et export des abonnés, suppression sur demande.\n- Éditeur de diffusions en Markdown, aperçu HTML et texte.\n- Séquences : une suite d'e-mails avec délais, déclenchée par une inscription ou une étiquette, qui s'arrête à la désinscription.\n- Envois en file d'attente avec limites de débit, nouvelles tentatives, traitement des rebonds et plaintes.\n- Une page de ressources protégée par un lien magique, pour offrir un contenu en échange de l'inscription.\n- Désinscription en un clic, en-têtes List-Unsubscribe ; conseils SPF/DKIM/DMARC dans le README.\n- Secrets dans .env, aucune télémétrie, tests, sauvegardes.\n\nHors périmètre : vente de produits numériques, abonnements payants, recommandations entre créateurs, automatisations visuelles.",
+    "alternatives": [
+      {
+        "nom": "listmonk",
+        "url": "https://github.com/knadh/listmonk",
+        "type": "open-source",
+        "description": "Gestionnaire de newsletters et de listes de diffusion libre (AGPL-3.0), rapide, avec API."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "beehiiv",
+    "nom": "beehiiv",
+    "domaine": "beehiiv.com",
+    "categorie": "marketing",
+    "secteur": "saas",
+    "description": "Plateforme de newsletters qui réunit envoi, site, abonnements payants et publicité ; 0 % de commission sur les abonnements payants. Formule gratuite jusqu'à 2 500 abonnés ; Lite à 49 $ par mois.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Envoyer une newsletter et en publier l'archive est un projet raisonnable avec Amazon SES. Ce que beehiiv apporte : un réseau publicitaire pour monétiser une audience, des abonnements payants sans commission, un site de newsletter prêt à l'emploi et la délivrabilité. Remplaçable tant que vous n'avez ni publicité ni abonnés payants ; au-delà, la plateforme fait ce que vous ne ferez pas seul.",
+    "ce_que_vous_perdez": [
+      "Le réseau publicitaire pour monétiser une audience",
+      "Les abonnements payants sans commission",
+      "Le site de newsletter prêt à l'emploi",
+      "La délivrabilité"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [
+      {
+        "nom": "listmonk",
+        "url": "https://github.com/knadh/listmonk",
+        "type": "open-source",
+        "description": "Gestionnaire de newsletters et de listes de diffusion libre (AGPL-3.0), rapide, avec API."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "toggl-track",
+    "nom": "Toggl Track",
+    "domaine": "toggl.com",
+    "categorie": "productivite",
+    "secteur": "saas",
+    "description": "Suivi du temps : minuteur en un clic, rapports par client et par projet, taux facturables. Formule gratuite jusqu'à 3 utilisateurs ; Starter à 9 $ par utilisateur et par mois.",
+    "verdict_editeur": "YES",
+    "justification_editeur": "Un minuteur avec projets, clients, étiquettes et rapports exportables est l'un des projets les plus classiques à reconstruire, et Kimai est libre. Ce que vous perdez : les applications mobiles et l'extension de navigateur à un clic, les intégrations (Jira, Asana) et la synchronisation instantanée. Pour un freelance qui suit son temps seul, remplaçable en un week-end.",
+    "ce_que_vous_perdez": [
+      "Les applications mobiles et l'extension de navigateur",
+      "Les intégrations (Jira, Asana)",
+      "La synchronisation instantanée entre appareils",
+      "Les rapports de rentabilité"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un suivi du temps pour freelance, en remplacement de Toggl Track.\n\nPile : application web installable (PWA), Node, Express, SQLite.\n\nÀ faire :\n- Clients, projets et tâches ; un gros bouton démarre et arrête un minuteur, le minuteur survit à la fermeture de l'onglet.\n- Saisie manuelle et correction des entrées, étiquettes, taux horaire par projet, case « facturable ».\n- Rapports par jour, semaine, client et projet, avec totaux d'heures et de montants ; export CSV.\n- Un bouton pour transformer les entrées facturables d'une période en lignes de facture (CSV) pour mon outil de facturation.\n- Rappel si un minuteur tourne depuis plus de 4 heures.\n- Mono-utilisateur, authentification simple, sauvegarde quotidienne, aucune télémétrie.\n- Tests sur le calcul des totaux ; README avec les limites.\n\nHors périmètre : équipes, approbation des feuilles de temps, intégrations, application mobile native.",
+    "alternatives": [
+      {
+        "nom": "Kimai",
+        "url": "https://github.com/kimai/kimai",
+        "type": "open-source",
+        "description": "Suivi du temps libre (AGPL-3.0), auto-hébergeable, avec clients, projets, taux et rapports."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "harvest",
+    "nom": "Harvest",
+    "domaine": "getharvest.com",
+    "categorie": "finance-compta",
+    "secteur": "saas",
+    "description": "Suivi du temps et facturation : minuteur, dépenses, factures et paiements, avec plus de 50 intégrations. Formule gratuite pour 1 utilisateur et 2 projets ; Teams à 9 $ par utilisateur et par mois.",
+    "verdict_editeur": "KINDA",
+    "justification_editeur": "Le suivi du temps et la génération de factures PDF depuis les heures se construisent en quelques jours. Ce que vous perdez : le paiement en ligne des factures, les rapprochements avec Stripe, QuickBooks ou Xero, et surtout la conformité des factures au droit local. En France, la numérotation continue et les mentions obligatoires sont à votre charge ; la facturation électronique impose à terme une plateforme agréée.",
+    "ce_que_vous_perdez": [
+      "Le paiement en ligne des factures",
+      "Les rapprochements avec Stripe, QuickBooks et Xero",
+      "La conformité des factures au droit local",
+      "Les plus de 50 intégrations"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": "Construis-moi un outil de suivi du temps et de facturation pour freelance, en remplacement de Harvest.\n\nPile : Next.js, TypeScript, SQLite. Données chez moi, secrets dans .env, aucune télémétrie.\n\nÀ faire :\n- Clients, projets, minuteur, saisie manuelle, taux horaire par projet, dépenses refacturables avec justificatif.\n- Création d'une facture depuis les heures et dépenses non facturées d'une période, avec lignes modifiables.\n- Facture et devis en PDF : numérotation continue sans trou, mentions obligatoires, TVA par ligne, acompte. À faire valider par mon comptable.\n- Les factures ne sont jamais supprimées ni modifiées : une erreur se corrige par un avoir.\n- Suivi des paiements et relance par e-mail (SMTP configurable) ; lien de paiement Stripe en option, en mode test pour commencer.\n- Export CSV des factures pour mon comptable ; sauvegarde simple.\n- Tests sur la numérotation et les totaux ; README avec les limites.\n\nHors périmètre : équipes, approbation des feuilles de temps, comptabilité, et la transmission des factures par une plateforme agréée exigée à terme par la réforme de la facturation électronique (calendrier à vérifier). N'affirme jamais que les documents sont conformes à cette réforme.",
+    "alternatives": [
+      {
+        "nom": "Kimai",
+        "url": "https://github.com/kimai/kimai",
+        "type": "open-source",
+        "description": "Suivi du temps libre (AGPL-3.0), auto-hébergeable, avec clients, projets, taux et exports pour la facturation."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "lemon-squeezy",
+    "nom": "Lemon Squeezy",
+    "domaine": "lemonsqueezy.com",
+    "categorie": "finance-compta",
+    "secteur": "saas",
+    "description": "Plateforme de vente de produits numériques et d'abonnements qui agit comme marchand officiel : elle collecte et déclare la TVA à votre place. 5 % + 0,50 $ par vente, sans abonnement mensuel.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Avec Stripe, vous restez le vendeur : c'est à vous de collecter et déclarer la TVA dans chaque pays où vous vendez. Un marchand officiel prend cette responsabilité à votre place, en échange de sa commission. Ce n'est pas un logiciel qu'on recode : c'est un statut juridique et fiscal. Pour vendre un produit numérique à l'international sans gérer la TVA, c'est exactement ce que vous achetez.",
+    "ce_que_vous_perdez": [
+      "Le statut de marchand officiel qui porte la TVA à votre place",
+      "La collecte et la déclaration de la TVA dans chaque pays",
+      "La protection contre la fraude",
+      "La gestion des clés de licence et des paiements dans plus de 130 devises"
+    ],
+    "prix": null,
+    "prix_mensuel": null,
+    "prompt": null,
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  }
+]

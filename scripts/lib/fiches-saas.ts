@@ -6,7 +6,7 @@ import type { Alternative, Categorie, NouveauLogicielInput, TypeAlternative, Ver
 
 export const CATEGORIES_SAAS: Categorie[] = [
   'finance-compta', 'rh-paie', 'marketing', 'vente-crm', 'communication',
-  'productivite', 'ecommerce', 'dev-tools', 'design', 'notes', 'autre',
+  'productivite', 'ecommerce', 'dev-tools', 'design', 'notes', 'reseau', 'autre',
 ];
 const VERDICTS: VerdictEditeur[] = ['YES', 'KINDA', 'NOT_REALLY'];
 const TYPES: TypeAlternative[] = ['open-source', 'gratuit', 'plus-petit'];

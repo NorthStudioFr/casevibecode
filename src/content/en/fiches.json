@@ -2854,5 +2854,261 @@
    "Calls and chat built into Nextcloud; heavier calls need a TURN server and some network work."
   ],
   "prompt": "Set up private, self-hosted video conferencing rooms, to replace Zoom Pro, for small meetings.\n\nStack: Docker Compose, Jitsi Meet (pinned images), dedicated TURN server, Next.js control panel with PostgreSQL.\n\nTo do:\n- Deploy Jitsi Meet and TURN, local launch in one documented command.\n- A panel to create rooms, issue signed invitation links that expire, enable the waiting room and limit participants.\n- A diagnostics page: camera, microphone, browser, bandwidth, TURN reachability.\n- Recording disabled by default; if enabled, visible on-screen consent for each participant.\n- Room metadata and audit log kept, no media without explicit activation.\n- Health checks, bandwidth dashboard, backup, restore, update, incident handling.\n- Secrets in .env, no telemetry, tests, README.\n\nOut of scope: worldwide media network, large-scale webinars, telephony, recording with regulatory value, guaranteed support."
+ },
+ "github": {
+  "description": "Code hosting and collaboration around Git: repositories, pull requests, issues, continuous integration (Actions) and the Copilot assistant. Free plan with unlimited private repositories and 2,000 CI minutes a month.",
+  "justification": "Hosting your Git repositories on your own server is half a day with Forgejo or Gitea: pull requests, issues and CI are already there. What you lose: the network effect (everyone has an account, contributors and clients are there), the ecosystem of ready-made actions and the availability of a managed service. For solo use or a small closed team, replaceable; for open source open to contributions, no.",
+  "perdez": [
+   "The network effect: contributors, clients and recruiters are already there",
+   "The ecosystem of ready-made CI actions",
+   "The availability and backups of a managed service",
+   "Copilot and the built-in security tools"
+  ],
+  "prompt": "Set up a self-hosted Git server to replace GitHub for my private repositories.\n\nDo not develop a forge: deploy Forgejo (or Gitea) on my VPS.\n\nTo do:\n- A docker-compose.yml with the official image, SQLite storage to start with, data volume in ./forgejo-data, automatic restart.\n- Caddy in front, for automatic HTTPS on a subdomain that I give you; SSH for git on a dedicated port.\n- Close sign-ups after my account is created, enable two-factor authentication, expose nothing else.\n- A runner for Actions (compatible with GitHub Actions syntax) on the same machine, with a resource limit.\n- A migration of my repositories from GitHub with the built-in migration tool, issues and pull requests included.\n- A nightly backup encrypted with age (repositories and database), copied off the server; write restore.sh and make me run a restore test.\n\nOut of scope: developer social network, Copilot, dependency security scanning.\n\nREADME: launch, account creation, update, restore, and a reminder that I am now responsible for availability and security updates.",
+  "alternatives": [
+   "Lightweight Git forge (MIT), self-hostable: repositories, pull requests, issues, built-in CI."
+  ]
+ },
+ "postman": {
+  "description": "Platform to design, test and document APIs: request client, collections, mock servers and monitoring. Free plan; Solo plan at $9 a month, Team at $19 per user.",
+  "justification": "An HTTP request client with collections, environment variables and history is very easy to replace: Bruno and Hoppscotch are free software and already do the essentials, with no mandatory account. What you lose: team sync, scheduled monitoring and hosted mock servers. For solo use, this is one of the easiest replacements in the catalogue.",
+  "perdez": [
+   "Team sync of collections",
+   "Scheduled API monitoring",
+   "Hosted mock servers",
+   "The built-in AI features"
+  ],
+  "prompt": "Build me a small local HTTP request client to replace Postman in my solo use.\n\nStack: local web app (Node, Express, plain JavaScript), collections stored as JSON files in a folder versioned by git.\n\nTo do:\n- Create requests (method, URL, headers, JSON or form body), organise them into collections and folders.\n- Environment variables (dev, prod) with {{variable}} substitution, secrets read from .env and never written to the files.\n- Response display: status, duration, size, headers, formatted body, copy as curl.\n- Simple assertions on the response (status, JSON field equal to) runnable across a whole collection, with a summary.\n- Import of a Postman collection (v2.1 format) and of an OpenAPI file.\n- History of the last 100 requests; localhost only, no account or telemetry.\n\nOut of scope: team sync, scheduled monitoring, hosted mock servers.\n\nREADME: launch, collection format, and a reminder that Bruno or Hoppscotch already do this if I prefer to maintain nothing.",
+  "alternatives": [
+   "Free API client (MIT) whose collections are plain files in your git repository, usable without an account.",
+   "Free API client (MIT) in the browser, self-hostable, with collections and environment variables."
+  ]
+ },
+ "netlify": {
+  "description": "Hosting and deployment platform for websites and web applications, with deployments on every commit, functions and forms. Free plan with limited credits; Pro plan at $20 a month.",
+  "justification": "For a static site, a web server, a deployment script and a proxy do the job. Netlify brings deployment on every commit, branch previews, the worldwide delivery network, forms and serverless functions with nothing to manage. Replaceable for a showcase site you rarely change; less so for a team that deploys ten times a day.",
+  "perdez": [
+   "Deployment on every commit and branch previews",
+   "The worldwide delivery network",
+   "Forms and serverless functions with nothing to manage",
+   "Managed HTTPS and domains"
+  ],
+  "prompt": "Build me a self-hosted static site deployment to replace Netlify.\n\nStack: a small Linux server, Caddy, a small Node service to receive webhooks, GitHub Actions or Forgejo.\n\nTo do:\n- Each site lives in /srv/sites/<name>/; Caddy serves the current folder through a symbolic link, automatic HTTPS, one subdomain per site.\n- On every push to the main branch, CI builds the site and uploads the result by rsync into a new dated folder; the symbolic link only switches if the upload succeeded, which allows a rollback in one command.\n- One preview per branch at <branch>.<name>.mydomain, removed when the branch is closed.\n- A forms endpoint: POST received, honeypot anti-spam, email sent through configurable SMTP.\n- Simple monitoring (site online, disk space) with email alert.\n\nOut of scope: worldwide delivery network, serverless functions, A/B tests.\n\nREADME: adding a site, rollback, DNS and server configuration.",
+  "alternatives": [
+   "Free platform (Apache-2.0) to install on your server to deploy sites, applications and databases."
+  ]
+ },
+ "firebase": {
+  "description": "Google's platform for applications: authentication, Firestore database, hosting, file storage, functions and messaging. Free Spark plan; Blaze plan pay-as-you-go.",
+  "justification": "For a small application, a SQLite or Postgres database with simple authentication and file storage is enough, and PocketBase already does all that in a single executable. What Firebase brings: turnkey authentication, real-time sync with offline mode on mobile, push notifications and automatic scaling. Replaceable for a classic website or web app; less so for a real-time mobile app.",
+  "perdez": [
+   "Turnkey authentication",
+   "Real-time sync with offline mode on mobile",
+   "Push notifications",
+   "Automatic scaling"
+  ],
+  "prompt": "Build me a small self-hosted backend for a web application, to replace Firebase.\n\nStack: Node, TypeScript, SQLite, hosted on my small server.\n\nTo do:\n- Authentication by email and password (argon2), sessions by secure cookie, reset by email.\n- REST API on my collections with per-user access rules, validated by a schema.\n- Subscription to real-time changes through Server-Sent Events.\n- File storage on disk with size and type limits.\n- Daily database backup and a tested restore procedure.\n- Tests on the access rules; README with the update procedure.\n\nOut of scope: push notifications, offline on mobile, serverless functions, social-network authentication.",
+  "alternatives": [
+   "Free backend (MIT) in a single executable: SQLite database, authentication, file storage, API and real time."
+  ]
+ },
+ "clerk": {
+  "description": "Authentication and user management service for applications: sign-in, two-factor authentication, enterprise SSO. Free plan up to 50,000 retained active users; Pro at $25 a month.",
+  "justification": "An email and password sign-in can be coded in an evening; the real difficulty is everything around it: safe reset, two-factor authentication, bot detection, revocable sessions, enterprise SSO. In security, doing it badly is worse than not doing it. If you want to keep control, a free library like Better Auth does the job; writing authentication yourself is not recommended.",
+  "perdez": [
+   "Turnkey two-factor authentication and bot detection",
+   "Session management and revocation",
+   "Enterprise SSO",
+   "Ready-made sign-in components"
+  ],
+  "alternatives": [
+   "Free authentication library (MIT) for TypeScript: email, social sign-in, two-factor authentication, sessions."
+  ]
+ },
+ "resend": {
+  "description": "Email sending service by API or SMTP, for transactional and marketing messages. Free plan with 3,000 emails a month (100 a day); Pro at $20 a month.",
+  "justification": "Sending an email is easy; getting it into the inbox is not: sender reputation, a properly configured domain (SPF, DKIM, DMARC), handling bounces and complaints. A home-made sending server ends up in spam. The right compromise is to use a provider (Resend, Amazon SES, Brevo) and build around it: templates, queues, tracking.",
+  "perdez": [
+   "Sender reputation and deliverability",
+   "Handling of bounces and complaints",
+   "Sending infrastructure at scale",
+   "Webhooks and delivery tracking"
+  ]
+ },
+ "cursor": {
+  "description": "Code editor with built-in AI agents, code review and collaboration. Free Hobby plan; Pro at $20 a month, Teams at $40 per user.",
+  "justification": "A code editor is a huge project, and what makes Cursor valuable is access to leading AI models, integration in the editor and agents that edit several files. None of that can be reproduced alone. What you can do: plug your own API key into a free editor; you keep the editor, you change the model provider.",
+  "perdez": [
+   "Access to leading AI models included in the subscription",
+   "Agents that edit several files",
+   "Deep integration in the editor",
+   "AI-assisted code review"
+  ]
+ },
+ "algolia": {
+  "description": "Search service for sites and applications: keyword and semantic search, ranking, personalisation and recommendations. Free plan with 10,000 search requests a month and 50,000 records.",
+  "justification": "For a site of a few thousand pages or a modest catalogue, SQLite's full-text search (FTS5) or a free engine like Typesense is enough, with typo tolerance. Algolia weighs for large volumes, personalisation and worldwide speed. For most showcase sites and catalogues, it is one of the easiest replacements.",
+  "perdez": [
+   "Worldwide speed at large volumes",
+   "Personalisation and recommendations",
+   "Search analytics",
+   "Ready-made integration with frameworks"
+  ],
+  "prompt": "Build me a search engine for my site, to replace Algolia, for a catalogue of a few thousand items.\n\nStack: Node, SQLite with FTS5 (better-sqlite3), a small Express API, a search component in plain JavaScript.\n\nTo do:\n- Indexing from a JSON file or a table: searchable fields and filter fields declared in a configuration file.\n- Tolerant search: prefixes, accents ignored, relevance ranking (bm25) with weight per field, tolerance for simple typos.\n- Faceted filters with counts, sorting, pagination, highlighting of matched terms.\n- Response in under 50 ms on 10,000 items, measured by a test.\n- Incremental reindexing when an item changes; endpoint protected by token.\n- Log of searches with no result, with no personal data.\n\nOut of scope: semantic search, personalisation, worldwide replication.\n\nREADME: indexing, field configuration, and a reminder that Typesense does this with more polish if volume grows.",
+  "alternatives": [
+   "Fast free search engine (GPL-3.0), typo-tolerant, self-hostable."
+  ]
+ },
+ "linear": {
+  "description": "Issue and project management for development teams: issues, cycles, roadmaps, GitHub integration. Free plan up to 250 issues; Basic at $10 per user per month.",
+  "justification": "Issue tracking with cycles, labels and saved views can be built in a few days, and Plane exists as free software. What Linear brings: the speed and polish of the interface, keyboard shortcuts everywhere, integrations with GitHub and Slack and instant sync. For a team of three that only uses issues, replaceable; for a team that lives in it all day, the polish justifies the subscription.",
+  "perdez": [
+   "The speed and polish of the interface",
+   "Keyboard shortcuts everywhere",
+   "GitHub and Slack integrations",
+   "Instant sync"
+  ],
+  "prompt": "Build me an issue tracker for a small development team, to replace Linear.\n\nStack: Next.js, TypeScript, Tailwind, PostgreSQL with Drizzle, Docker Compose.\n\nTo do:\n- Teams, projects, issues with readable identifiers (ABC-123), priorities, labels, owners and cycles.\n- List and kanban views, saved views with filters, instant search.\n- Keyboard shortcuts to create, assign, change status and open an issue, with a command palette (cmd+K).\n- GitHub link: a branch or pull request that mentions ABC-123 attaches to the issue, and merging it closes it (webhook).\n- Comments, mentions, activity log, email notifications.\n- Interface updates without reloading the page.\n- Local launch in one command, secrets in .env, no telemetry, tests, README.\n\nOut of scope: multi-team roadmaps, integrations other than GitHub, mobile apps.",
+  "alternatives": [
+   "Free issue and project management (AGPL-3.0), self-hostable, with cycles and kanban views."
+  ]
+ },
+ "cloudflare": {
+  "description": "Worldwide content delivery network, DNS, attack protection and developer platform (Workers, R2, D1). Generous free plan; usage-based pricing beyond.",
+  "justification": "Cloudflare is first of all a network: data centres across the world that absorb attacks and serve your pages close to your visitors. No home-made solution reproduces that. You can host your own DNS or a reverse proxy, but not the capacity to withstand an attack. Keep it for DNS and protection; the free plan is enough for most sites.",
+  "perdez": [
+   "The capacity to absorb a denial-of-service attack",
+   "The worldwide delivery network",
+   "Fast, resilient DNS",
+   "The developer platform (Workers, R2, D1)"
+  ]
+ },
+ "tailscale": {
+  "description": "Mesh virtual private network built on WireGuard: connects your devices and servers without complex network configuration. Free Personal plan up to 6 users; Standard at $8 per user per month.",
+  "justification": "WireGuard is free software, and Headscale reproduces Tailscale's coordination server: you can set up the same private network on your server in half a day. What you lose: automatic traversal of firewalls and carrier networks (NAT), the polished mobile apps, identity-based access management and the availability of the service. Replaceable if you are comfortable with network administration.",
+  "perdez": [
+   "Automatic traversal of firewalls and NAT",
+   "The polished mobile apps",
+   "Identity-based access management",
+   "Availability of the coordination service"
+  ],
+  "prompt": "Set up a self-hosted mesh private network for my devices, to replace Tailscale.\n\nDo not develop a VPN: deploy Headscale (a free coordination server, compatible with Tailscale clients) on my VPS.\n\nTo do:\n- A docker-compose.yml with Headscale's official image, Caddy in front for HTTPS on a subdomain that I give you.\n- One namespace per use (personal, servers), single-use, time-limited pre-auth keys.\n- The official Tailscale clients pointed at my server (--login-server), on my computer, my phone and two test servers.\n- Minimal access rules (ACL): my devices talk to everything, servers only talk to each other.\n- A built-in DERP relay server enabled, for networks that block direct connections.\n- A nightly encrypted backup of Headscale's database, a tested restore script, and a pinned-version update procedure.\n\nOut of scope: enterprise SSO, flow logs, just-in-time access.\n\nREADME: adding a device, revocation, restore, and a reminder that if my VPS goes down, already-established connections keep going but no device can open new ones.",
+  "alternatives": [
+   "Free coordination server (BSD-3-Clause) compatible with Tailscale clients, to host yourself."
+  ]
+ },
+ "ngrok": {
+  "description": "Tunnels to expose a local application on the Internet, API gateway and Kubernetes ingress. Free plan limited to 3 endpoints; Hobbyist at $10 a month.",
+  "justification": "Exposing a local service is a reverse tunnel: a small server on your VPS and a client on your machine do the same job, with your own domain and no limit. frp (free software) or a plain SSH tunnel already do it. What you lose: the comfortable request inspector and ready-made domains. For development use, it is one of the easiest replacements.",
+  "perdez": [
+   "The request inspector to debug webhooks",
+   "Ready-made domains",
+   "The API gateway and access controls",
+   "No server to maintain"
+  ],
+  "prompt": "Set up a self-hosted tunnel to expose my local applications, to replace ngrok.\n\nDo not develop a tunnel: deploy frp (frps server on my VPS, frpc client on my machine).\n\nTo do:\n- frps on my VPS behind Caddy, with an authentication token in .env, a wildcard *.dev.mydomain subdomain and automatic HTTPS.\n- A frpc.toml file with an example per service (port 3000 → app.dev.mydomain) and an `expose <port> <name>` script that opens it in one command.\n- A small request inspector on localhost (Node): list of received requests with headers and body, button to replay a request, useful for webhooks.\n- Rate limit and optional allowed-address list, tunnels closed by default when I am not working.\n- Connection log.\n\nOut of scope: API gateway, Kubernetes ingress, visitor authentication.\n\nREADME: server installation, wildcard DNS, using the script, and a reminder that anything exposed is public.",
+  "alternatives": [
+   "Fast reverse proxy (Apache-2.0) to expose a local service behind a NAT or firewall."
+  ]
+ },
+ "proton-vpn": {
+  "description": "Swiss VPN service with open-source, audited apps, more than 2,000 servers in more than 140 countries; free plan limited to one device.",
+  "justification": "A personal VPN is easy to set up: WireGuard on a VPS protects you on public Wi-Fi. But a service like Proton VPN sells something else: thousands of servers in dozens of countries, a no-logs policy audited by third parties and the ability to choose the exit. A VPN on your own server does not make you anonymous: your provider sees everything that goes through it.",
+  "perdez": [
+   "Servers in more than 140 countries",
+   "The no-logs policy audited by third parties",
+   "The ability to choose the exit country",
+   "The open-source, audited apps"
+  ]
+ },
+ "plausible": {
+  "description": "Lightweight, cookie-free audience measurement, hosted in the European Union; open code and self-hostable. From $9 a month for 10,000 pageviews, 30-day trial.",
+  "justification": "Counting pageviews without cookies, with referrers, countries and devices, is a small project: a few-line script, a table and a dashboard. What you lose: filtering of bots and junk traffic, goals and funnels, Search Console integration and the peace of mind of a managed service. For a small site, replaceable, or simply install Plausible or Umami on your server.",
+  "perdez": [
+   "Filtering of bots and junk traffic",
+   "Goals and conversion funnels",
+   "Search Console integration",
+   "Managed European hosting"
+  ],
+  "prompt": "Build me a cookie-free audience measurement for my sites, to replace Plausible.\n\nStack: Node, Express, SQLite (better-sqlite3), a script of about 1 KB to include in my pages, a dashboard on my server.\n\nTo do:\n- The script sends the page viewed, the referrer and the screen width through a POST endpoint; no cookie, no local storage, no persistent identifier.\n- The visitor is counted anonymously with a daily fingerprint (salted hash, salt renewed every day); neither the IP address nor the full user agent is kept.\n- Country inferred from the IP address by a local database (then the address is forgotten), browser and device inferred from the user agent.\n- Basic bot filtering (list of known agents, requests with no plausible referrer).\n- Dashboard: visitors and pageviews per day, top pages, referrers, countries, devices, simple goals (target page reached).\n- Several sites on the same installation; dashboard protected by password; CSV export.\n- Configurable retention period; tests on counting and filtering.\n\nOut of scope: funnels, Search Console integration, per-device measurement across several days.\n\nREADME: installation, including the script, explaining what is collected, and a reminder that Plausible or Umami also self-host.",
+  "alternatives": [
+   "Free audience measurement (MIT), cookie-free, self-hostable, with a simple dashboard.",
+   "The same product in a free community edition (AGPL-3.0), to install on your own server."
+  ]
+ },
+ "posthog": {
+  "description": "Product analytics platform: events, funnels, session replay, feature flags and A/B tests; open code, self-hostable, European cloud available. Free plan with monthly limits.",
+  "justification": "An event counter can be coded in a weekend; PostHog is something else: funnels, retention, session replay, feature flags and experiments combined in a product years ahead. Self-hosting is possible but heavy (several services). If you only need to count pages, Plausible or Umami are enough.",
+  "perdez": [
+   "Funnels, retention and cohorts",
+   "Session replay",
+   "Feature flags and A/B tests",
+   "Data integrations"
+  ]
+ },
+ "kit": {
+  "description": "Email platform for creators: sign-up pages, newsletters, sequences, digital product sales and paid subscriptions. Free plan up to 10,000 subscribers; Creator at $33 a month.",
+  "justification": "A sign-up page, sends and a welcome sequence can be built in a few days with Amazon SES, and listmonk exists as free software. What Kit sells: deliverability, visual automations, selling digital products and paid subscriptions, and the creator ecosystem. As the free plan goes up to 10,000 subscribers, the saving often does not justify switching.",
+  "perdez": [
+   "Email deliverability",
+   "Visual automations",
+   "Selling digital products and paid subscriptions",
+   "Creator-to-creator recommendations"
+  ],
+  "prompt": "Build me a newsletter tool for a creator, to replace Kit.\n\nStack: Next.js, TypeScript, PostgreSQL with Drizzle, sending through Amazon SES.\n\nTo do:\n- Sign-up pages with double opt-in, tags, custom fields, timestamped consent kept (GDPR).\n- Subscriber import and export, deletion on request.\n- Broadcast editor in Markdown, HTML and text preview.\n- Sequences: a series of emails with delays, triggered by a sign-up or a tag, which stops on unsubscribe.\n- Queued sending with rate limits, retries, handling of bounces and complaints.\n- A resources page protected by a magic link, to give content in exchange for signing up.\n- One-click unsubscribe, List-Unsubscribe headers; SPF/DKIM/DMARC tips in the README.\n- Secrets in .env, no telemetry, tests, backups.\n\nOut of scope: selling digital products, paid subscriptions, creator recommendations, visual automations.",
+  "alternatives": [
+   "Free newsletter and mailing-list manager (AGPL-3.0), fast, with API."
+  ]
+ },
+ "beehiiv": {
+  "description": "Newsletter platform combining sending, website, paid subscriptions and advertising; 0% commission on paid subscriptions. Free plan up to 2,500 subscribers; Lite at $49 a month.",
+  "justification": "Sending a newsletter and publishing its archive is a reasonable project with Amazon SES. What beehiiv brings: an advertising network to monetise an audience, paid subscriptions with no commission, a ready-made newsletter site and deliverability. Replaceable as long as you have neither advertising nor paying subscribers; beyond that, the platform does what you will not do alone.",
+  "perdez": [
+   "The advertising network to monetise an audience",
+   "Paid subscriptions with no commission",
+   "The ready-made newsletter site",
+   "Deliverability"
+  ],
+  "alternatives": [
+   "Free newsletter and mailing-list manager (AGPL-3.0), fast, with API."
+  ]
+ },
+ "toggl-track": {
+  "description": "Time tracking: one-click timer, reports per client and per project, billable rates. Free plan up to 3 users; Starter at $9 per user per month.",
+  "justification": "A timer with projects, clients, tags and exportable reports is one of the most classic projects to rebuild, and Kimai is free software. What you lose: the mobile apps and the one-click browser extension, integrations (Jira, Asana) and instant sync. For a freelancer who tracks time alone, replaceable in a weekend.",
+  "perdez": [
+   "The mobile apps and browser extension",
+   "Integrations (Jira, Asana)",
+   "Instant sync between devices",
+   "Profitability reports"
+  ],
+  "prompt": "Build me a time tracker for a freelancer, to replace Toggl Track.\n\nStack: installable web app (PWA), Node, Express, SQLite.\n\nTo do:\n- Clients, projects and tasks; one big button starts and stops a timer, the timer survives closing the tab.\n- Manual entry and correction of entries, tags, hourly rate per project, “billable” checkbox.\n- Reports by day, week, client and project, with totals of hours and amounts; CSV export.\n- A button to turn the billable entries of a period into invoice lines (CSV) for my invoicing tool.\n- Reminder if a timer has been running for more than 4 hours.\n- Single user, simple authentication, daily backup, no telemetry.\n- Tests on totals calculation; README with the limits.\n\nOut of scope: teams, timesheet approval, integrations, native mobile app.",
+  "alternatives": [
+   "Free time tracking (AGPL-3.0), self-hostable, with clients, projects, rates and reports."
+  ]
+ },
+ "harvest": {
+  "description": "Time tracking and invoicing: timer, expenses, invoices and payments, with more than 50 integrations. Free plan for 1 user and 2 projects; Teams at $9 per user per month.",
+  "justification": "Time tracking and generating PDF invoices from the hours can be built in a few days. What you lose: online payment of invoices, reconciliation with Stripe, QuickBooks or Xero, and above all the compliance of invoices with local law. In France, continuous numbering and mandatory mentions are up to you; electronic invoicing will eventually require an approved platform.",
+  "perdez": [
+   "Online payment of invoices",
+   "Reconciliation with Stripe, QuickBooks and Xero",
+   "Compliance of invoices with local law",
+   "The 50+ integrations"
+  ],
+  "prompt": "Build me a time tracking and invoicing tool for a freelancer, to replace Harvest.\n\nStack: Next.js, TypeScript, SQLite. Data at my place, secrets in .env, no telemetry.\n\nTo do:\n- Clients, projects, timer, manual entry, hourly rate per project, re-billable expenses with receipt.\n- Creating an invoice from the unbilled hours and expenses of a period, with editable lines.\n- Invoice and quote as PDF: continuous numbering with no gaps, mandatory mentions, VAT per line, deposit. To be validated by my accountant.\n- Invoices are never deleted or edited: a mistake is corrected with a credit note.\n- Payment tracking and reminder by email (configurable SMTP); Stripe payment link as an option, in test mode to start with.\n- CSV export of invoices for my accountant; simple backup.\n- Tests on numbering and totals; README with the limits.\n\nOut of scope: teams, timesheet approval, accounting, and the transmission of invoices through an approved platform that electronic invoicing reform will eventually require (timetable to be checked). Never state that the documents comply with that reform.",
+  "alternatives": [
+   "Free time tracking (AGPL-3.0), self-hostable, with clients, projects, rates and exports for invoicing."
+  ]
+ },
+ "lemon-squeezy": {
+  "description": "Platform for selling digital products and subscriptions that acts as merchant of record: it collects and remits VAT on your behalf. 5% + $0.50 per sale, with no monthly subscription.",
+  "justification": "With Stripe, you stay the seller: it is up to you to collect and remit VAT in every country where you sell. A merchant of record takes that responsibility in your place, in exchange for its commission. It is not software you rebuild: it is a legal and tax status. To sell a digital product internationally without handling VAT, that is exactly what you are buying.",
+  "perdez": [
+   "Merchant-of-record status that carries VAT in your place",
+   "Collection and remittance of VAT in each country",
+   "Fraud protection",
+   "License key management and payments in more than 130 currencies"
+  ]
  }
 }
