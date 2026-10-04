@@ -8,6 +8,7 @@
 // ../casevibecode-sauvegarde-corrections-chr-<date>.json (hors dépôt).
 import { readFileSync, writeFileSync } from 'fs';
 import { getServiceClient } from './lib/supabase-admin';
+import { CATEGORIE_LABEL } from '../src/lib/categories';
 import { colonnesInterdites, diffCorrection, type Correction } from './lib/corrections-chr';
 
 const apply = process.argv.includes('--apply');
@@ -17,6 +18,8 @@ const { retirer = [], corrections = [] } = JSON.parse(readFileSync(fichier, 'utf
 async function main() {
   const interdites = corrections.flatMap((c) => colonnesInterdites(c).map((k) => `${c.slug} : colonne interdite « ${k} »`));
   if (interdites.length) throw new Error(interdites.join('\n'));
+  const mauvaises = corrections.filter((c) => c.categorie !== undefined && !(c.categorie as string in CATEGORIE_LABEL)).map((c) => `${c.slug} : catégorie inconnue « ${c.categorie} »`);
+  if (mauvaises.length) throw new Error(mauvaises.join('\n'));
 
   const client = getServiceClient();
   const slugs = [...corrections.map((c) => c.slug), ...retirer];

@@ -1,7 +1,7 @@
 // Corrections ciblées de fiches CHR : logique pure, sans réseau. Seules les
 // colonnes de COLONNES_AUTORISEES peuvent être modifiées ; prix et domaine
 // peuvent être mis à null (« mieux vaut pas de prix qu'un prix faux »).
-export const COLONNES_AUTORISEES = ['description', 'justification_editeur', 'verdict_editeur', 'prix', 'prix_mensuel', 'domaine', 'prompt', 'ce_que_vous_perdez'] as const;
+export const COLONNES_AUTORISEES = ['description', 'justification_editeur', 'verdict_editeur', 'prix', 'prix_mensuel', 'domaine', 'prompt', 'ce_que_vous_perdez','categorie'] as const;
 export type ColonneAutorisee = (typeof COLONNES_AUTORISEES)[number];
 
 export interface Correction {

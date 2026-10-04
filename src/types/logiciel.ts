@@ -2,7 +2,8 @@ export type Categorie =
   | 'caisse' | 'reservation' | 'livraison' | 'compta' | 'autre'
   | 'finance-compta' | 'rh-paie' | 'marketing' | 'vente-crm' 
   | 'communication' | 'productivite' | 'ecommerce' | 'assurance-sante' 
-  | 'dev-tools' | 'design' | 'notes' | 'evenementiel';
+  | 'dev-tools' | 'design' | 'notes' | 'evenementiel'
+  | 'hotellerie' | 'hygiene' | 'stocks' | 'avis' | 'commande' | 'pourboire' | 'fidelite' | 'achats' | 'paiement';
 
 export type Secteur = 'chr' | 'saas';
 export type VerdictEditeur = 'YES' | 'KINDA' | 'NOT_REALLY';

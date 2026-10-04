@@ -1,0 +1,356 @@
+{
+ "corrections": [
+  {
+   "slug": "5stelle",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "amenitiz",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "apaleo",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "ariane-systems",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "asterio",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "chloe-my-groom-service",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "cloudbeds",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "d-edge",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "elloha",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "eviivo",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "family-hotel",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "ke-booking",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "medialog",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "mews",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "misterbooking",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "reservit",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "roomraccoon",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "sequoiasoft",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "siteminder",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "thais-soft",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "ulyses-suite-hotel",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "salto-ks",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "booking-com-extranet",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "expedia-partner-central",
+   "categorie": "hotellerie"
+  },
+  {
+   "slug": "eazyhaccp",
+   "categorie": "hygiene"
+  },
+  {
+   "slug": "epackpro",
+   "categorie": "hygiene"
+  },
+  {
+   "slug": "hpa-solutions",
+   "categorie": "hygiene"
+  },
+  {
+   "slug": "iqoo",
+   "categorie": "hygiene"
+  },
+  {
+   "slug": "kooklin",
+   "categorie": "hygiene"
+  },
+  {
+   "slug": "octopus-haccp",
+   "categorie": "hygiene"
+  },
+  {
+   "slug": "tracely-haccp",
+   "categorie": "hygiene"
+  },
+  {
+   "slug": "traqfood",
+   "categorie": "hygiene"
+  },
+  {
+   "slug": "apicbase",
+   "categorie": "stocks"
+  },
+  {
+   "slug": "caves-explorer",
+   "categorie": "stocks"
+  },
+  {
+   "slug": "easilys-fb",
+   "categorie": "stocks"
+  },
+  {
+   "slug": "foodmeup",
+   "categorie": "stocks"
+  },
+  {
+   "slug": "inpulse",
+   "categorie": "stocks"
+  },
+  {
+   "slug": "koust",
+   "categorie": "stocks"
+  },
+  {
+   "slug": "marge-up",
+   "categorie": "stocks"
+  },
+  {
+   "slug": "marketman",
+   "categorie": "stocks"
+  },
+  {
+   "slug": "melba",
+   "categorie": "stocks"
+  },
+  {
+   "slug": "onrush",
+   "categorie": "stocks"
+  },
+  {
+   "slug": "resto-flux",
+   "categorie": "stocks"
+  },
+  {
+   "slug": "restopilot",
+   "categorie": "stocks"
+  },
+  {
+   "slug": "sommit",
+   "categorie": "stocks"
+  },
+  {
+   "slug": "yokitup",
+   "categorie": "stocks"
+  },
+  {
+   "slug": "customer-alliance",
+   "categorie": "avis"
+  },
+  {
+   "slug": "guest-suite",
+   "categorie": "avis"
+  },
+  {
+   "slug": "le-commis",
+   "categorie": "avis"
+  },
+  {
+   "slug": "localranker",
+   "categorie": "avis"
+  },
+  {
+   "slug": "malou",
+   "categorie": "avis"
+  },
+  {
+   "slug": "partoo",
+   "categorie": "avis"
+  },
+  {
+   "slug": "klixi",
+   "categorie": "avis"
+  },
+  {
+   "slug": "dood",
+   "categorie": "commande"
+  },
+  {
+   "slug": "eazmenu",
+   "categorie": "commande"
+  },
+  {
+   "slug": "id-menu",
+   "categorie": "commande"
+  },
+  {
+   "slug": "menu-touch",
+   "categorie": "commande"
+  },
+  {
+   "slug": "menupleaz",
+   "categorie": "commande"
+  },
+  {
+   "slug": "obypay",
+   "categorie": "commande"
+  },
+  {
+   "slug": "skeat",
+   "categorie": "commande"
+  },
+  {
+   "slug": "tabesto",
+   "categorie": "commande"
+  },
+  {
+   "slug": "tastycloud",
+   "categorie": "commande"
+  },
+  {
+   "slug": "onetip",
+   "categorie": "pourboire"
+  },
+  {
+   "slug": "tip-go",
+   "categorie": "pourboire"
+  },
+  {
+   "slug": "tipgo",
+   "categorie": "pourboire"
+  },
+  {
+   "slug": "tipjaar",
+   "categorie": "pourboire"
+  },
+  {
+   "slug": "tipsi",
+   "categorie": "pourboire"
+  },
+  {
+   "slug": "tipsyou",
+   "categorie": "pourboire"
+  },
+  {
+   "slug": "billiv",
+   "categorie": "fidelite"
+  },
+  {
+   "slug": "pongo",
+   "categorie": "fidelite"
+  },
+  {
+   "slug": "ubiliz",
+   "categorie": "fidelite"
+  },
+  {
+   "slug": "pourdebon",
+   "categorie": "achats"
+  },
+  {
+   "slug": "rungismarket",
+   "categorie": "achats"
+  },
+  {
+   "slug": "paygreen-lunch-kit",
+   "categorie": "paiement"
+  },
+  {
+   "slug": "payplug",
+   "categorie": "paiement"
+  },
+  {
+   "slug": "yavin",
+   "categorie": "caisse"
+  },
+  {
+   "slug": "overfull",
+   "categorie": "reservation"
+  },
+  {
+   "slug": "agendrix",
+   "categorie": "rh-paie"
+  },
+  {
+   "slug": "brigad",
+   "categorie": "rh-paie"
+  },
+  {
+   "slug": "combo",
+   "categorie": "rh-paie"
+  },
+  {
+   "slug": "factorial",
+   "categorie": "rh-paie"
+  },
+  {
+   "slug": "komia",
+   "categorie": "rh-paie"
+  },
+  {
+   "slug": "lucca",
+   "categorie": "rh-paie"
+  },
+  {
+   "slug": "planday",
+   "categorie": "rh-paie"
+  },
+  {
+   "slug": "skello",
+   "categorie": "rh-paie"
+  },
+  {
+   "slug": "staff-and-go",
+   "categorie": "rh-paie"
+  },
+  {
+   "slug": "payfit",
+   "categorie": "rh-paie"
+  },
+  {
+   "slug": "silae",
+   "categorie": "rh-paie"
+  }
+ ]
+}

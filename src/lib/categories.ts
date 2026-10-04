@@ -18,6 +18,15 @@ export const CATEGORIE_EMOJI: Record<Categorie, string> = {
   design: '🎨',
   notes: '📝',
   evenementiel: '🎉',
+  hotellerie: '🏨',
+  hygiene: '🧼',
+  stocks: '📦',
+  avis: '🌟',
+  commande: '📱',
+  pourboire: '💶',
+  fidelite: '🎁',
+  achats: '🛒',
+  paiement: '🏦',
 };
 
 export const CATEGORIE_LABEL: Record<Categorie, string> = {
@@ -38,4 +47,13 @@ export const CATEGORIE_LABEL: Record<Categorie, string> = {
   design: 'Design',
   notes: 'Notes',
   evenementiel: 'Événementiel & privatisation',
+  hotellerie: 'Hôtellerie (PMS, channel managers)',
+  hygiene: 'Hygiène & HACCP',
+  stocks: 'Stocks & food cost',
+  avis: 'Avis & visibilité locale',
+  commande: 'Menus & commande QR',
+  pourboire: 'Pourboires',
+  fidelite: 'Fidélité & CRM',
+  achats: 'Achats & marketplaces',
+  paiement: 'Paiement en ligne',
 };
