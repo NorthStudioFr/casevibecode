@@ -3316,5 +3316,89 @@
    "Weekly backups included"
   ],
   "alternatives": []
+ },
+ "bitly": {
+  "description": "Link shortener and QR code generator with click analytics. Free plan limited to 5 links a month; the Core plan costs $10 a month (annual billing only) for 100 links, and a custom domain only comes with the Growth plan at $29 a month.",
+  "justification": "A link shortener is a table of codes and a redirect: Shlink does it on your own domain, with click statistics, for the cost of a small server. For a handful of links, Bitly's limits (5 a month for free, custom domain only from $29) are more expensive than hosting yourself. What you lose: the polished analytics dashboard, the QR code and landing page generator, and an uptime guarantee: if your server goes down, all your short links go down with it.",
+  "perdez": [
+   "The polished analytics dashboard",
+   "The QR code and landing page generator",
+   "An uptime guarantee: your short links keep working if you do not maintain a server",
+   "Nothing to host or update"
+  ],
+  "alternatives": [
+   "Self-hosted URL shortener (MIT) with click statistics and an API.",
+   "Simple self-hosted URL shortener (MIT), lighter than Shlink."
+  ],
+  "prompt": "Set up a self-hosted link shortener to replace Bitly, on my own domain.\n\nDo not build a shortener: deploy Shlink.\n\nTo do:\n- A docker-compose.yml with Shlink and PostgreSQL, volumes in ./data, automatic restart.\n- Caddy in front, automatic HTTPS on a short domain that I will give you.\n- The API key generated and kept in .env, never in the repository.\n- A simple script to create a link from the command line and list click statistics.\n- Import of my existing Bitly links (CSV export), keeping the same short codes where possible.\n- A nightly encrypted backup of the database, copied off the server, with restore.sh and a restore test.\n\nOut of scope: link-in-bio pages, QR code design.\n\nREADME: launch, link creation, import, restore, and a reminder that if the server goes down, every short link goes down."
+ },
+ "uptimerobot": {
+  "description": "Website and service availability monitoring with alerts. Free plan with 50 monitors checked every 5 minutes; the Solo plan costs €9 a month billed annually (€10 monthly) for checks every minute.",
+  "justification": "Uptime Kuma, free software, does the same job: checks every minute or less, alerts by email, Telegram or other channels, and a public status page. The one thing to keep in mind: a monitor hosted on the same server as the site it watches goes down with it. Run it on a different machine, a small separate VPS or a home server, and the replacement is complete for a few euros.",
+  "perdez": [
+   "Monitoring from outside your own infrastructure",
+   "Nothing to host or update",
+   "Checks from several locations around the world"
+  ],
+  "alternatives": [
+   "Self-hosted monitoring tool (MIT): HTTP, TCP and ping checks, multi-channel notifications and status pages."
+  ],
+  "prompt": "Set up self-hosted availability monitoring to replace UptimeRobot.\n\nDo not build a tool: deploy Uptime Kuma.\n\nTo do:\n- A docker-compose.yml with Uptime Kuma, volume in ./data, automatic restart.\n- Caddy in front, automatic HTTPS on a domain that I will give you, with authentication enabled.\n- The monitors for the sites and services that I list, with checks every 60 seconds.\n- Alert notifications by email or Telegram that I choose, with a test alert.\n- A public status page if I ask for one.\n- A backup of the data volume, copied off the server.\n\nOut of scope: multi-region checks.\n\nREADME: launch, adding a monitor, update, and a reminder that this must run on a different machine than the sites it watches."
+ },
+ "surveymonkey": {
+  "description": "Online survey tool with templates and response analysis. The free plan is limited to 10 questions per survey; the Standard monthly plan costs €39 a month for 1,000 responses, with €0.10 for each additional response.",
+  "justification": "A short survey (a few questions, results in a table or a chart) is quick to build with an assistant and costs nothing to host. For occasional use, a free form tool such as Tally already goes further than SurveyMonkey's free plan. What you lose: the survey templates, advanced analysis (cross-tabulation, filters), and paid respondent panels. For a customer survey or event feedback, building your own is plenty.",
+  "perdez": [
+   "Ready-made survey templates",
+   "Advanced analysis such as cross-tabulation and filters",
+   "Paid respondent panels",
+   "Export and integrations ready to use"
+  ],
+  "alternatives": [
+   "Free form builder with unlimited forms and submissions, no limit on questions."
+  ],
+  "prompt": "Build a simple survey app to replace SurveyMonkey for my customer surveys.\n\nDo not copy SurveyMonkey: only what I need. I will give you the questions.\n\nTo do:\n- A Next.js page with the form (text, single choice, multiple choice, rating), mobile-friendly.\n- Answers stored in Supabase, one table, no personal data unless I ask for it; a clear notice if I do.\n- A private results page protected by login: counts per answer, a chart per question, a CSV export.\n- Protection against spam (honeypot and rate limit).\n- Deployment on a free host, secrets in environment variables.\n\nOut of scope: respondent panels, cross-tabulation, templates.\n\nREADME: creating a survey, reading results, deployment, and what I must say to respondents about their data (GDPR)."
+ },
+ "retool": {
+  "description": "Platform for building internal tools (admin panels, dashboards, back offices) on top of databases and APIs. Free plan for up to 5 users; the Team plan costs €9 a month per builder and €5 per internal user, billed annually.",
+  "justification": "An admin panel, a back office or a dashboard on top of your database is exactly what a code assistant builds well, and you own the result with no per-user pricing. Appsmith and ToolJet, free software, also offer a visual editor if you prefer clicking to coding. What you lose: Retool's library of ready-made components and connectors, permissions and audit logging, and not having to maintain the tool yourself. For a small team with a few screens, it is a good trade.",
+  "perdez": [
+   "A library of ready-made components and connectors",
+   "Permission controls and audit logging",
+   "Hosting and updates handled by the vendor",
+   "A visual editor with little code"
+  ],
+  "alternatives": [
+   "Open-source platform for building internal tools with a visual editor (Apache-2.0), self-hostable.",
+   "Open-source low-code platform for internal tools (AGPL), self-hostable."
+  ],
+  "prompt": "Build an internal admin panel to replace Retool for my small team.\n\nDo not copy Retool: only the screens I list. I will describe the data and who can do what.\n\nTo do:\n- A Next.js app with login and roles (admin, read-only), on top of my existing PostgreSQL database.\n- The screens I list: table with search and filters, detail and edit form, a few key figures.\n- Every write action recorded in a log table (who, what, when).\n- Access to the database through a restricted role, never the main one.\n- Deployment behind login on an inexpensive host, secrets in environment variables.\n\nOut of scope: visual editor, workflows, mobile apps.\n\nREADME: adding a screen, managing roles, deployment, and a reminder that I am responsible for the panel's security."
+ },
+ "eventbrite": {
+  "description": "Event ticketing and promotion platform. Creating free events costs nothing; for paid tickets, ticketing fees are charged to buyers by default, and the organizer can choose to absorb them.",
+  "justification": "Selling tickets to your own audience is easy to rebuild: a page, Stripe and a QR code scanned at the door. What Eventbrite sells is two other things: the discovery of your event by people who do not know you, and handling of payments, refunds and fraud at scale. If your audience already comes from you (your newsletter, your community), a self-hosted ticketing tool is enough; if you count on being found, it is not.",
+  "perdez": [
+   "Discovery of your event by people who do not know you",
+   "Payments, refunds and fraud protection at scale",
+   "The mobile check-in app",
+   "Built-in email and social promotion tools"
+  ],
+  "alternatives": [
+   "Open-source ticketing system for events (GPL-3.0), self-hostable, with payment and check-in."
+  ]
+ },
+ "gitlab": {
+  "description": "Git hosting and DevSecOps platform: repositories, merge requests, built-in CI/CD, security scanning and package registry. Free plan with 400 compute minutes a month; the Premium plan costs $29 per user a month billed annually.",
+  "justification": "GitLab's core is itself free software, and Gitea gives you repositories, merge requests, issues and CI on a small server in an afternoon. For a solo developer or a small closed team, it is enough. What you lose: the integrated security scanning, the container and package registry, the compliance features and the compute minutes of a managed service. For an organization that needs those, the Premium plan has real value.",
+  "perdez": [
+   "Integrated security scanning and compliance features",
+   "The container and package registry",
+   "Managed CI/CD compute minutes",
+   "Hosting, backups and updates handled by the vendor"
+  ],
+  "alternatives": [
+   "Lightweight Git forge (MIT), self-hostable: repositories, merge requests, issues, built-in CI."
+  ],
+  "prompt": "Set up a self-hosted Git server to replace GitLab for my private repositories.\n\nDo not build a forge: deploy Gitea on my VPS.\n\nTo do:\n- A docker-compose.yml with the official image, SQLite storage to start, data volume in ./gitea-data, automatic restart.\n- Caddy in front for automatic HTTPS on a subdomain that I will give you; SSH for git on a dedicated port.\n- Registration closed after my account is created, two-factor authentication enabled, nothing else exposed.\n- A runner for the CI on the same machine, with a resource limit.\n- Migration of my repositories from GitLab with the built-in migration tool, issues and merge requests included.\n- A nightly encrypted backup with age (repositories and database), copied off the server; write restore.sh and have me run a restore test.\n\nOut of scope: security scanning, package registry, compliance.\n\nREADME: launch, account creation, update, restore, and a reminder that I am now responsible for availability and security updates."
  }
 }

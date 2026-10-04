@@ -1,0 +1,180 @@
+[
+ {
+  "slug": "bitly",
+  "nom": "Bitly",
+  "domaine": "bitly.com",
+  "categorie": "marketing",
+  "description": "Raccourcisseur de liens et générateur de QR codes avec statistiques de clics. Formule gratuite limitée à 5 liens par mois ; la formule Core coûte 10 $ par mois (facturation annuelle uniquement) pour 100 liens, et le domaine personnalisé n'arrive qu'avec la formule Growth à 29 $ par mois.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Un raccourcisseur de liens, c'est une table de codes et une redirection : Shlink le fait sur votre propre domaine, avec statistiques de clics, pour le prix d'un petit serveur. Pour une poignée de liens, les limites de Bitly (5 par mois en gratuit, domaine personnalisé seulement à partir de 29 $) coûtent plus cher que l'auto-hébergement. Ce que vous perdez : le tableau de bord d'analyse soigné, le générateur de QR codes et de pages d'atterrissage, et une garantie de disponibilité : si votre serveur tombe, tous vos liens courts tombent avec lui.",
+  "ce_que_vous_perdez": [
+   "Le tableau de bord d'analyse soigné",
+   "Le générateur de QR codes et de pages d'atterrissage",
+   "Une garantie de disponibilité, sans serveur à entretenir",
+   "Rien à héberger ni à mettre à jour"
+  ],
+  "prix": "gratuit (plans payants à partir de 8,91 €/mois, converti de 10 $, cours du 2 oct. 2026)",
+  "prompt": "Mets en place un raccourcisseur de liens auto-hébergé pour remplacer Bitly, sur mon propre domaine.\n\nNe développe pas de raccourcisseur : déploie Shlink.\n\nÀ faire :\n- Un docker-compose.yml avec Shlink et PostgreSQL, volumes dans ./data, redémarrage automatique.\n- Caddy devant, HTTPS automatique sur un domaine court que je te donne.\n- La clé d'API générée et conservée dans .env, jamais dans le dépôt.\n- Un script simple pour créer un lien en ligne de commande et lister les statistiques de clics.\n- L'import de mes liens Bitly existants (export CSV), en gardant les mêmes codes courts quand c'est possible.\n- Une sauvegarde nocturne chiffrée de la base, copiée hors du serveur, avec restore.sh et un test de restauration.\n\nHors périmètre : pages de liens en bio, design des QR codes.\n\nREADME : lancement, création de lien, import, restauration, et rappel que si le serveur tombe, tous les liens courts tombent.",
+  "alternatives": [
+   {
+    "nom": "Shlink",
+    "url": "https://github.com/shlinkio/shlink",
+    "type": "open-source",
+    "description": "Raccourcisseur de liens auto-hébergé (MIT) avec statistiques de clics et API."
+   },
+   {
+    "nom": "YOURLS",
+    "url": "https://github.com/YOURLS/YOURLS",
+    "type": "open-source",
+    "description": "Raccourcisseur de liens auto-hébergé simple (MIT), plus léger que Shlink."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ },
+ {
+  "slug": "uptimerobot",
+  "nom": "UptimeRobot",
+  "domaine": "uptimerobot.com",
+  "categorie": "reseau",
+  "description": "Surveillance de disponibilité de sites et services avec alertes. Formule gratuite de 50 moniteurs vérifiés toutes les 5 minutes ; la formule Solo coûte 9 € par mois en facturation annuelle (10 € au mois) pour des vérifications chaque minute.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Uptime Kuma, logiciel libre, fait le même travail : vérifications chaque minute ou moins, alertes par e-mail, Telegram ou d'autres canaux, et une page d'état publique. Un seul point à retenir : une surveillance hébergée sur le même serveur que le site surveillé tombe avec lui. Faites-la tourner sur une autre machine, un petit VPS séparé ou un serveur à la maison, et le remplacement est complet pour quelques euros.",
+  "ce_que_vous_perdez": [
+   "La surveillance depuis l'extérieur de votre infrastructure",
+   "Rien à héberger ni à mettre à jour",
+   "Des vérifications depuis plusieurs lieux dans le monde"
+  ],
+  "prix": "gratuit (plans payants à partir de 9 €/mois)",
+  "prompt": "Mets en place une surveillance de disponibilité auto-hébergée pour remplacer UptimeRobot.\n\nNe développe pas d'outil : déploie Uptime Kuma.\n\nÀ faire :\n- Un docker-compose.yml avec Uptime Kuma, volume dans ./data, redémarrage automatique.\n- Caddy devant, HTTPS automatique sur un domaine que je te donne, avec l'authentification activée.\n- Les moniteurs pour les sites et services que je liste, avec une vérification toutes les 60 secondes.\n- Des alertes par e-mail ou Telegram selon mon choix, avec une alerte de test.\n- Une page d'état publique si je la demande.\n- Une sauvegarde du volume de données, copiée hors du serveur.\n\nHors périmètre : vérifications depuis plusieurs régions.\n\nREADME : lancement, ajout d'un moniteur, mise à jour, et rappel que cela doit tourner sur une autre machine que les sites surveillés.",
+  "alternatives": [
+   {
+    "nom": "Uptime Kuma",
+    "url": "https://github.com/louislam/uptime-kuma",
+    "type": "open-source",
+    "description": "Outil de surveillance auto-hébergé (MIT) : vérifications HTTP, TCP et ping, notifications multicanaux et pages d'état."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ },
+ {
+  "slug": "surveymonkey",
+  "nom": "SurveyMonkey",
+  "domaine": "surveymonkey.com",
+  "categorie": "marketing",
+  "description": "Outil de sondages en ligne avec modèles et analyse des réponses. La formule gratuite est limitée à 10 questions par sondage ; la formule Standard mensuelle coûte 39 € par mois pour 1 000 réponses, avec 0,10 € par réponse supplémentaire.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Un sondage court (quelques questions, résultats dans un tableau ou un graphique) se construit vite avec un assistant et ne coûte rien à héberger. Pour un usage ponctuel, un outil de formulaires gratuit comme Tally va déjà plus loin que la formule gratuite de SurveyMonkey. Ce que vous perdez : les modèles de sondage, l'analyse avancée (tableaux croisés, filtres) et les panels de répondants payants. Pour une enquête clients ou un retour d'événement, construire le vôtre suffit largement.",
+  "ce_que_vous_perdez": [
+   "Des modèles de sondage prêts à l'emploi",
+   "L'analyse avancée : tableaux croisés et filtres",
+   "Les panels de répondants payants",
+   "Les exports et intégrations prêts à l'emploi"
+  ],
+  "prix": "gratuit (plans payants à partir de 39 €/mois)",
+  "prompt": "Construis une petite application de sondage pour remplacer SurveyMonkey dans mes enquêtes clients.\n\nNe copie pas SurveyMonkey : seulement ce dont j'ai besoin. Je te donne les questions.\n\nÀ faire :\n- Une page Next.js avec le formulaire (texte, choix unique, choix multiple, note), adaptée au mobile.\n- Les réponses stockées dans Supabase, une table, sans donnée personnelle sauf si je le demande ; une mention claire si c'est le cas.\n- Une page de résultats privée protégée par connexion : décompte par réponse, un graphique par question, un export CSV.\n- Une protection contre le spam (champ piège et limitation de débit).\n- Un déploiement sur un hébergeur gratuit, secrets en variables d'environnement.\n\nHors périmètre : panels de répondants, tableaux croisés, modèles.\n\nREADME : créer un sondage, lire les résultats, déploiement, et ce que je dois dire aux répondants sur leurs données (RGPD).",
+  "alternatives": [
+   {
+    "nom": "Tally",
+    "url": "https://tally.so",
+    "type": "gratuit",
+    "description": "Créateur de formulaires gratuit, formulaires et réponses illimités, sans limite de questions."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ },
+ {
+  "slug": "retool",
+  "nom": "Retool",
+  "domaine": "retool.com",
+  "categorie": "dev-tools",
+  "description": "Plateforme pour construire des outils internes (panneaux d'administration, tableaux de bord, back-offices) au-dessus de bases de données et d'API. Formule gratuite jusqu'à 5 utilisateurs ; la formule Team coûte 9 € par mois par concepteur et 5 € par utilisateur interne, facturée à l'année.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Un panneau d'administration, un back-office ou un tableau de bord au-dessus de votre base, c'est exactement ce qu'un assistant de code construit bien, et vous possédez le résultat sans tarification par utilisateur. Appsmith et ToolJet, logiciels libres, proposent aussi un éditeur visuel si vous préférez cliquer plutôt que coder. Ce que vous perdez : la bibliothèque de composants et de connecteurs prêts à l'emploi, les permissions et le journal d'audit, et l'absence d'entretien de l'outil. Pour une petite équipe avec quelques écrans, l'échange est bon.",
+  "ce_que_vous_perdez": [
+   "Une bibliothèque de composants et de connecteurs prêts à l'emploi",
+   "Les permissions et le journal d'audit",
+   "L'hébergement et les mises à jour pris en charge par l'éditeur",
+   "Un éditeur visuel avec peu de code"
+  ],
+  "prix": "gratuit (plans payants à partir de 9 €/mois/utilisateur)",
+  "prompt": "Construis un panneau d'administration interne pour remplacer Retool pour ma petite équipe.\n\nNe copie pas Retool : seulement les écrans que je liste. Je te décris les données et qui peut faire quoi.\n\nÀ faire :\n- Une application Next.js avec connexion et rôles (admin, lecture seule), au-dessus de ma base PostgreSQL existante.\n- Les écrans que je liste : tableau avec recherche et filtres, fiche détail et formulaire de modification, quelques chiffres clés.\n- Chaque action d'écriture consignée dans une table de journal (qui, quoi, quand).\n- Un accès à la base par un rôle restreint, jamais le rôle principal.\n- Un déploiement derrière une connexion sur un hébergeur peu cher, secrets en variables d'environnement.\n\nHors périmètre : éditeur visuel, workflows, applications mobiles.\n\nREADME : ajouter un écran, gérer les rôles, déploiement, et rappel que je suis responsable de la sécurité du panneau.",
+  "alternatives": [
+   {
+    "nom": "Appsmith",
+    "url": "https://github.com/appsmithorg/appsmith",
+    "type": "open-source",
+    "description": "Plateforme open source pour construire des outils internes avec un éditeur visuel (Apache-2.0), auto-hébergeable."
+   },
+   {
+    "nom": "ToolJet",
+    "url": "https://github.com/ToolJet/ToolJet",
+    "type": "open-source",
+    "description": "Plateforme low-code open source pour outils internes (AGPL), auto-hébergeable."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ },
+ {
+  "slug": "eventbrite",
+  "nom": "Eventbrite",
+  "domaine": "eventbrite.fr",
+  "categorie": "evenementiel",
+  "description": "Plateforme de billetterie et de promotion d'événements. Créer un événement gratuit ne coûte rien ; pour les billets payants, des frais de billetterie sont facturés aux acheteurs par défaut, et l'organisateur peut choisir de les prendre à sa charge.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Vendre des billets à votre propre public est facile à reconstruire : une page, Stripe et un QR code scanné à l'entrée. Ce que vend Eventbrite, ce sont deux autres choses : la découverte de votre événement par des gens qui ne vous connaissent pas, et la gestion des paiements, remboursements et fraudes à grande échelle. Si votre public vient déjà de vous (votre newsletter, votre communauté), un outil de billetterie auto-hébergé suffit ; si vous comptez sur la découverte, non.",
+  "ce_que_vous_perdez": [
+   "La découverte de votre événement par des inconnus",
+   "Les paiements, remboursements et la protection contre la fraude à grande échelle",
+   "L'application mobile de contrôle d'entrée",
+   "Les outils de promotion par e-mail et réseaux sociaux intégrés"
+  ],
+  "alternatives": [
+   {
+    "nom": "alf.io",
+    "url": "https://github.com/alfio-event/alf.io",
+    "type": "open-source",
+    "description": "Système de billetterie open source pour événements (GPL-3.0), auto-hébergeable, avec paiement et contrôle d'entrée."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix": null,
+  "prix_mensuel": null
+ },
+ {
+  "slug": "gitlab",
+  "nom": "GitLab",
+  "domaine": "gitlab.com",
+  "categorie": "dev-tools",
+  "description": "Plateforme d'hébergement Git et de DevSecOps : dépôts, demandes de fusion, CI/CD intégrée, analyse de sécurité et registre de paquets. Formule gratuite avec 400 minutes de calcul par mois ; la formule Premium coûte 29 $ par utilisateur et par mois, facturée à l'année.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Le cœur de GitLab est lui-même un logiciel libre, et Gitea vous donne dépôts, demandes de fusion, tickets et CI sur un petit serveur en un après-midi. Pour un développeur seul ou une petite équipe fermée, cela suffit. Ce que vous perdez : l'analyse de sécurité intégrée, le registre de conteneurs et de paquets, les fonctions de conformité et les minutes de calcul d'un service géré. Pour une organisation qui en a besoin, la formule Premium a une vraie valeur.",
+  "ce_que_vous_perdez": [
+   "L'analyse de sécurité intégrée et les fonctions de conformité",
+   "Le registre de conteneurs et de paquets",
+   "Les minutes de calcul de CI/CD gérées",
+   "L'hébergement, les sauvegardes et les mises à jour pris en charge par l'éditeur"
+  ],
+  "prix": "gratuit (plans payants à partir de 25,84 €/mois/utilisateur, converti de 29 $, cours du 2 oct. 2026)",
+  "prompt": "Mets en place un serveur Git auto-hébergé pour remplacer GitLab pour mes dépôts privés.\n\nNe développe pas de forge : déploie Gitea sur mon VPS.\n\nÀ faire :\n- Un docker-compose.yml avec l'image officielle, stockage SQLite pour commencer, volume de données dans ./gitea-data, redémarrage automatique.\n- Caddy devant, pour le HTTPS automatique sur un sous-domaine que je te donne ; SSH pour git sur un port dédié.\n- Fermer les inscriptions après la création de mon compte, activer l'authentification à deux facteurs, ne rien exposer d'autre.\n- Un runner pour la CI sur la même machine, avec une limite de ressources.\n- Une migration de mes dépôts depuis GitLab avec l'outil de migration intégré, tickets et demandes de fusion compris.\n- Une sauvegarde nocturne chiffrée avec age (dépôts et base), copiée hors du serveur ; écris restore.sh et fais-moi faire un test de restauration.\n\nHors périmètre : analyse de sécurité, registre de paquets, conformité.\n\nREADME : lancement, création du compte, mise à jour, restauration, et rappel que je suis désormais responsable de la disponibilité et des mises à jour de sécurité.",
+  "alternatives": [
+   {
+    "nom": "Gitea",
+    "url": "https://github.com/go-gitea/gitea",
+    "type": "open-source",
+    "description": "Forge Git légère (MIT) auto-hébergeable : dépôts, demandes de fusion, tickets, CI intégrée."
+   }
+  ],
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ }
+]
