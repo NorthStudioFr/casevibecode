@@ -152,5 +152,40 @@
   "source": "https://www.loom.com/pricing",
   "note": "Business, par utilisateur, facturation mensuelle ; 18 $ x 0,89087 (BCE, 2026-10-02)",
   "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "shine",
+  "prix": "à partir de 9 €/mois",
+  "source": "https://www.shine.fr/tarifs/",
+  "note": "Formule Start, 9 € HT par mois",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "sendcloud",
+  "prix": "à partir de 26 €/mois",
+  "source": "https://www.sendcloud.com/fr/tarifs/",
+  "note": "Formule Lite, plus 0,11 € par étiquette ; formule gratuite à l'étiquette",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "indy",
+  "prix": "gratuit (plans payants à partir de 9 €/mois)",
+  "source": "https://www.indy.fr/tarifs/",
+  "note": "Essentiel gratuit ; Plus à partir de 9 € HT par mois",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "systeme-io",
+  "prix": "à partir de 15,14 €/mois (converti de 17 $, cours du 2 oct. 2026)",
+  "source": "https://www.systeme.io/pricing",
+  "note": "Formule Startup, 5 000 contacts ; formule gratuite existante ; 17 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "lemlist",
+  "prix": "à partir de 49 €/mois (converti de 55 $, cours du 2 oct. 2026)",
+  "source": "https://www.lemlist.com/fr/pricing",
+  "note": "Formule Email, facturation annuelle, utilisateurs illimités ; 55 $ x 0,89087 (BCE, 2026-10-02)",
+  "lu_le": "2026-10-04"
  }
 ]

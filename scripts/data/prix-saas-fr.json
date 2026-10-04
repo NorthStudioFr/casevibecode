@@ -1,0 +1,29 @@
+{
+ "corrections": [
+  {
+   "slug": "shine",
+   "prix": "à partir de 9 €/mois",
+   "prix_mensuel": 9
+  },
+  {
+   "slug": "sendcloud",
+   "prix": "à partir de 26 €/mois",
+   "prix_mensuel": 26
+  },
+  {
+   "slug": "indy",
+   "prix": "gratuit (plans payants à partir de 9 €/mois)",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "systeme-io",
+   "prix": "à partir de 15,14 €/mois (converti de 17 $, cours du 2 oct. 2026)",
+   "prix_mensuel": 15.14
+  },
+  {
+   "slug": "lemlist",
+   "prix": "à partir de 49 €/mois (converti de 55 $, cours du 2 oct. 2026)",
+   "prix_mensuel": 49.0
+  }
+ ]
+}
