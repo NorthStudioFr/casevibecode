@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "tilby",
+    "nom": "Tilby",
+    "categorie": "caisse",
+    "secteur": "chr",
+    "description": "Caisse enregistreuse en ligne pour restaurants, cafés et commerces (éditeur Zucchetti Hospitality, Turin), certifiée NF525 selon l'éditeur : ventes, commandes, stocks, fidélité, livraison et vente à emporter.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Un logiciel d'encaissement doit, en France, être certifié NF525 ou couvert par une attestation de conformité : une caisse développée en interne n'a ni l'un ni l'autre, avec une amende prévue de 7 500 € par système non conforme. Tilby ajoute des connexions aux plateformes de livraison et à des logiciels de comptabilité, qui évoluent régulièrement. Pour encaisser, prenez un éditeur certifié ; réservez le sur-mesure aux à-côtés (menu, réservation).",
+    "domaine": "tilby.com",
+    "prix": null,
+    "prix_mensuel": null,
+    "ce_que_vous_perdez": [
+      "La certification NF525 de la caisse (affirmée par l'éditeur sur son site)",
+      "Les connexions aux plateformes de livraison et à la comptabilité",
+      "L'application sur téléphone, tablette et ordinateur synchronisée en temps réel"
+    ],
+    "alternatives": [],
+    "source_verdict": "casevibecode"
+  },
+  {
+    "slug": "apaleo",
+    "nom": "Apaleo",
+    "categorie": "autre",
+    "secteur": "chr",
+    "description": "PMS hôtelier allemand ouvert (Apaleo GmbH), conçu autour d'API : réservations, facturation, paiements (Apaleo Pay) et place de marché d'intégrations, pour hôtels et résidences de tourisme.",
+    "verdict_editeur": "NOT_REALLY",
+    "justification_editeur": "Un PMS touche à la facturation, aux paiements et à la synchronisation des disponibilités avec les canaux de vente : une erreur peut coûter une chambre vendue deux fois. Apaleo est un cas particulier, car son API ouverte permet de construire des outils autour (tableau de bord, e-mails d'arrivée) sans refaire le cœur. Le cœur, lui, ne se recode pas : gardez le PMS, et personnalisez autour.",
+    "domaine": "apaleo.com",
+    "prix": null,
+    "prix_mensuel": null,
+    "ce_que_vous_perdez": [
+      "La synchronisation fiable des chambres avec les canaux de vente",
+      "Les paiements intégrés (Apaleo Pay)",
+      "La place de marché d'intégrations"
+    ],
+    "alternatives": [
+      {
+        "nom": "QloApps",
+        "url": "https://github.com/Qloapps/QloApps",
+        "type": "open-source",
+        "description": "PMS et moteur de réservation hôtelier libre (PHP, licence OSL-3.0), auto-hébergeable, dépôt actif."
+      }
+    ],
+    "source_verdict": "casevibecode"
+  }
+]
