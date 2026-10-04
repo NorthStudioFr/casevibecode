@@ -1,3 +1,6 @@
+import { getDict } from './i18n/dictionaries';
+import type { Lang } from './i18n/config';
+
 type Priced = { prixMensuel?: number };
 
 export function totalMensuel(logiciels: Priced[]): number {
@@ -10,15 +13,15 @@ export function totalMensuel(logiciels: Priced[]): number {
   );
 }
 
-export function formatEuros(value: number): string {
-  return value.toLocaleString('fr-FR', { maximumFractionDigits: 2 });
+export function formatEuros(value: number, lang: Lang = 'fr'): string {
+  return value.toLocaleString(lang === 'fr' ? 'fr-FR' : 'en-US', { maximumFractionDigits: 2 });
 }
 
-export function tapeItems(logiciels: (Priced & { nom: string })[]): string[] {
+export function tapeItems(logiciels: (Priced & { nom: string })[], lang: Lang = 'fr'): string[] {
   return logiciels
     .filter((l): l is { nom: string; prixMensuel: number } => typeof l.prixMensuel === 'number' && l.prixMensuel > 0)
     .sort((a, b) => b.prixMensuel - a.prixMensuel)
-    .map((l) => `${l.nom.toUpperCase()} −${formatEuros(l.prixMensuel)} €/mois`);
+    .map((l) => getDict(lang).ticker.tapeItem(l.nom, formatEuros(l.prixMensuel, lang)));
 }
 
 // Le ruban défile d'une copie complète par cycle : une durée fixe ferait varier

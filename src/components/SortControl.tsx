@@ -1,16 +1,18 @@
 'use client';
 
+import { useLocale } from '@/lib/i18n/LocaleProvider';
+
 export type SortOption = 'nom' | 'votes';
 
-const OPTIONS: { value: SortOption; label: string }[] = [
-  { value: 'votes', label: 'Les plus votés' },
-  { value: 'nom', label: 'Nom (A→Z)' },
-];
-
 export function SortControl({ value, onChange }: { value: SortOption; onChange: (value: SortOption) => void }) {
+  const { t } = useLocale();
+  const OPTIONS: { value: SortOption; label: string }[] = [
+    { value: 'votes', label: t.grid.sortVotes },
+    { value: 'nom', label: t.grid.sortName },
+  ];
   return (
     <label className="flex items-center gap-2 text-sm text-slate-600">
-      trier par
+      {t.grid.sortBy}
       <select
         value={value}
         onChange={(e) => onChange(e.target.value as SortOption)}

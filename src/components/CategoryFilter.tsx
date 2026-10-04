@@ -2,6 +2,7 @@
 
 import type { Categorie } from '@/types/logiciel';
 import { CATEGORIE_EMOJI, CATEGORIE_LABEL } from '@/lib/categories';
+import { useLocale } from '@/lib/i18n/LocaleProvider';
 
 const TOUTES = Object.keys(CATEGORIE_LABEL) as Categorie[];
 
@@ -16,9 +17,10 @@ export function CategoryFilter({
   onChange: (categorie: Categorie | 'toutes') => void;
   categories?: Categorie[];
 }) {
+  const { t } = useLocale();
   const OPTIONS: { value: Categorie | 'toutes'; label: string }[] = [
-    { value: 'toutes', label: '⚡ Toutes' },
-    ...categories.map((value) => ({ value, label: `${CATEGORIE_EMOJI[value]} ${CATEGORIE_LABEL[value]}` })),
+    { value: 'toutes', label: t.grid.all },
+    ...categories.map((value) => ({ value, label: `${CATEGORIE_EMOJI[value]} ${t.categories[value]}` })),
   ];
   return (
     <div className="flex gap-2 flex-wrap">

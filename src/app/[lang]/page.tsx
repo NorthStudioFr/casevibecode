@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { alternatesFor, langOf } from '@/lib/i18n/config';
+import { getDict } from '@/lib/i18n/dictionaries';
 import { getLogiciels, getVoteCounts } from '@/lib/logiciels-server';
 import { computeVerdictDisplay } from '@/lib/verdict';
 import type { LogicielAvecVerdict } from '@/types/logiciel';
@@ -7,9 +9,9 @@ import { NewsletterForm } from '@/components/NewsletterForm';
 import { Ticker } from '@/components/Ticker';
 import { itemListJsonLd } from '@/lib/jsonld';
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/' },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang?: string }> }): Promise<Metadata> {
+  return { alternates: alternatesFor(langOf(await params), '/') };
+}
 
 // Regenerate at most once every 5 min (ISR) instead of rendering per
 // request: this page's own regeneration runs one vote-count query per
@@ -19,8 +21,10 @@ export const metadata: Metadata = {
 // own count optimistically, so a voter still sees their vote immediately.
 export const revalidate = 300;
 
-export default async function Page() {
-  const fiches = await getLogiciels();
+export default async function Page({ params }: { params?: Promise<{ lang?: string }> } = {}) {
+  const lang = langOf(params && (await params));
+  const t = getDict(lang);
+  const fiches = await getLogiciels(lang);
   // Show the same community-aware verdict as the fiche page, not the raw
   // editor verdict. This is N+1 work (getVoteCounts = one RPC per fiche);
   // amortized by the page's revalidation window. Revisit (one grouped query)
@@ -39,7 +43,7 @@ export default async function Page() {
       <main className="min-h-screen p-8 max-w-5xl mx-auto">
         <h1 className="font-serif text-4xl font-semibold text-slate-800">casevibecode</h1>
         <p className="mt-2 text-slate-600">
-          {logiciels.length} logiciels, du CHR aux outils du quotidien. Un verdict par outil : est-ce remplaçable par du sur-mesure, ou pas ?
+          {t.home.intro(logiciels.length)}
         </p>
         <div className="mt-8">
           <LogicielGrid logiciels={logiciels} />
@@ -49,7 +53,7 @@ export default async function Page() {
         </footer>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd(logiciels)) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd(logiciels, lang)) }}
         />
       </main>
     </>

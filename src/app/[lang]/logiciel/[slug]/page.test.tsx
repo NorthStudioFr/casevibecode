@@ -26,7 +26,7 @@ describe('Fiche logiciel generateMetadata', () => {
 
     const metadata = await generateMetadata({ params: Promise.resolve({ slug: 'zenchef' }) });
 
-    expect(getLogicielBySlugMock).toHaveBeenCalledWith('zenchef');
+    expect(getLogicielBySlugMock).toHaveBeenCalledWith('zenchef', 'fr');
     expect(metadata.title).toBe('Zenchef : remplaçable ou pas ?');
     expect(metadata.description).toBe('Gestion des réservations en ligne');
   });

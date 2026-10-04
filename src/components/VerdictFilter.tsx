@@ -1,12 +1,13 @@
 'use client';
 
 import type { VerdictEditeur } from '@/types/logiciel';
+import { useLocale } from '@/lib/i18n/LocaleProvider';
 
-const OPTIONS: { value: VerdictEditeur | 'tous'; label: string; dotClassName: string }[] = [
-  { value: 'tous', label: 'Tous les verdicts', dotClassName: 'bg-slate-400' },
-  { value: 'YES', label: 'Remplaçable', dotClassName: 'bg-primary' },
-  { value: 'KINDA', label: 'Partiellement remplaçable', dotClassName: 'bg-kinda' },
-  { value: 'NOT_REALLY', label: 'Pas remplaçable', dotClassName: 'bg-no' },
+const OPTIONS: { value: VerdictEditeur | 'tous'; dotClassName: string }[] = [
+  { value: 'tous', dotClassName: 'bg-slate-400' },
+  { value: 'YES', dotClassName: 'bg-primary' },
+  { value: 'KINDA', dotClassName: 'bg-kinda' },
+  { value: 'NOT_REALLY', dotClassName: 'bg-no' },
 ];
 
 export function VerdictFilter({
@@ -16,6 +17,7 @@ export function VerdictFilter({
   selected: VerdictEditeur | 'tous';
   onChange: (verdict: VerdictEditeur | 'tous') => void;
 }) {
+  const { t } = useLocale();
   return (
     <div className="flex gap-2 flex-wrap">
       {OPTIONS.map((opt) => (
@@ -30,7 +32,7 @@ export function VerdictFilter({
           }`}
         >
           <span className={`h-2 w-2 rounded-full ${opt.dotClassName}`} aria-hidden="true" />
-          {opt.label}
+          {opt.value === 'tous' ? t.grid.allVerdicts : t.verdict[opt.value]}
         </button>
       ))}
     </div>

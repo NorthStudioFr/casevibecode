@@ -1,15 +1,17 @@
+'use client';
+
 import type { Logiciel, VerdictEditeur } from '@/types/logiciel';
-import { VERDICT_LABEL } from '@/lib/verdict';
-import { TYPE_ALTERNATIVE_LABEL } from '@/lib/alternatives';
+import { useLocale } from '@/lib/i18n/LocaleProvider';
 
 export function FAQ({ logiciel, verdict }: { logiciel: Logiciel; verdict: VerdictEditeur }) {
+  const { t } = useLocale();
   const items: { question: string; reponse: string }[] = [
     {
-      question: `${logiciel.nom} est-il remplaçable par un outil sur mesure ?`,
-      reponse: `Verdict casevibecode : ${VERDICT_LABEL[verdict]}. ${logiciel.justificationEditeur}`,
+      question: t.faq.replaceable(logiciel.nom),
+      reponse: t.faq.verdictAnswer(t.verdict[verdict], logiciel.justificationEditeur),
     },
     {
-      question: `À quoi sert ${logiciel.nom} ?`,
+      question: t.faq.what(logiciel.nom),
       reponse: logiciel.description,
     },
   ];
@@ -17,11 +19,11 @@ export function FAQ({ logiciel, verdict }: { logiciel: Logiciel; verdict: Verdic
   if (logiciel.alternatives && logiciel.alternatives.length > 0) {
     const noms = logiciel.alternatives
       .slice(0, 3)
-      .map((a) => `${a.nom} (${TYPE_ALTERNATIVE_LABEL[a.type].toLowerCase()})`)
+      .map((a) => `${a.nom} (${t.typeAlt[a.type].toLowerCase()})`)
       .join(', ');
     items.push({
-      question: `Quelles alternatives existent déjà à ${logiciel.nom} ?`,
-      reponse: `${noms}. Des options à comparer avant de vous lancer dans un développement sur mesure.`,
+      question: t.faq.alternatives(logiciel.nom),
+      reponse: t.faq.alternativesAnswer(noms),
     });
   }
 
@@ -37,7 +39,7 @@ export function FAQ({ logiciel, verdict }: { logiciel: Logiciel; verdict: Verdic
 
   return (
     <div className="mt-10 border-t border-slate-200 pt-6">
-      <h2 className="font-serif text-xl font-semibold text-slate-800">Questions fréquentes</h2>
+      <h2 className="font-serif text-xl font-semibold text-slate-800">{t.faq.title}</h2>
       <dl className="mt-4 space-y-4">
         {items.map((item) => (
           <div key={item.question}>

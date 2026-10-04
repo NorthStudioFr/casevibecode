@@ -1,9 +1,10 @@
 import { ImageResponse } from 'next/og';
 import { getLogicielBySlug } from '@/lib/logiciels-server';
-import { VERDICT_LABEL } from '@/lib/verdict';
+import { getDict } from '@/lib/i18n/dictionaries';
+import { langOf } from '@/lib/i18n/config';
 import type { VerdictEditeur } from '@/types/logiciel';
 
-export const alt = 'Verdict casevibecode';
+export const alt = 'casevibecode';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -13,10 +14,12 @@ const VERDICT_COLORS: Record<VerdictEditeur, { bg: string; text: string }> = {
   NOT_REALLY: { bg: '#ff4444', text: '#1a0505' },
 };
 
-export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const logiciel = await getLogicielBySlug(slug);
-  const nom = logiciel?.nom ?? 'Logiciel introuvable';
+export default async function Image({ params }: { params: Promise<{ lang?: string; slug: string }> }) {
+  const { lang: langParam, slug } = await params;
+  const lang = langOf({ lang: langParam });
+  const t = getDict(lang);
+  const logiciel = await getLogicielBySlug(slug, lang);
+  const nom = logiciel?.nom ?? t.fiche.notFound;
   const description = logiciel?.description ?? '';
   const verdict = logiciel?.verdictEditeur ?? 'KINDA';
   const colors = VERDICT_COLORS[verdict];
@@ -58,7 +61,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
               color: colors.text,
             }}
           >
-            {VERDICT_LABEL[verdict]}
+            {t.verdict[verdict]}
           </div>
         )}
       </div>

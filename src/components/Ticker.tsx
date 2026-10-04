@@ -1,13 +1,17 @@
+'use client';
+
+import { useLocale } from '@/lib/i18n/LocaleProvider';
 import { formatEuros, tapeDurationSeconds, tapeItems, totalMensuel } from '@/lib/ticker';
 
 const REEL = Array.from({ length: 10 }, (_, n) => n);
 
 export function Ticker({ logiciels }: { logiciels: { nom: string; prixMensuel?: number }[] }) {
+  const { t, lang } = useLocale();
   const total = totalMensuel(logiciels);
   if (total === 0) return null;
 
-  const tape = tapeItems(logiciels).join(' · ');
-  const label = formatEuros(total);
+  const tape = tapeItems(logiciels, lang).join(' · ');
+  const label = formatEuros(total, lang);
 
   return (
     <div className="ticker">
@@ -19,11 +23,11 @@ export function Ticker({ logiciels }: { logiciels: { nom: string; prixMensuel?: 
       </div>
       <div className="flex flex-wrap items-center justify-center gap-4 px-4 py-5">
         <span className="text-right text-xs leading-tight" style={{ color: 'var(--ticker-label)' }}>
-          abonnements
+          {t.ticker.label1}
           <br />
-          passés au crible
+          {t.ticker.label2}
         </span>
-        <span className="odometer" role="img" aria-label={`${label} € par mois`}>
+        <span className="odometer" role="img" aria-label={t.ticker.ariaTotal(label)}>
           {[...label].map((ch, i) =>
             /\d/.test(ch) ? (
               <span key={i} className="digit">
@@ -42,7 +46,7 @@ export function Ticker({ logiciels }: { logiciels: { nom: string; prixMensuel?: 
           <span className="sym">€</span>
         </span>
         <span className="text-sm" style={{ color: 'var(--ticker-dim)' }}>
-          /mois
+          {t.ticker.perMonth}
         </span>
       </div>
     </div>

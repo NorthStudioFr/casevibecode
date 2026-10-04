@@ -1,10 +1,13 @@
 import { ImageResponse } from 'next/og';
+import { getDict } from '@/lib/i18n/dictionaries';
+import { langOf } from '@/lib/i18n/config';
 
-export const alt = 'casevibecode — le verdict sur vos logiciels';
+export const alt = 'casevibecode';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export default function Image() {
+export default async function Image({ params }: { params: Promise<{ lang?: string }> }) {
+  const t = getDict(langOf(await params));
   return new ImageResponse(
     (
       <div
@@ -39,7 +42,7 @@ export default function Image() {
           casevibecode
         </div>
         <div style={{ display: 'flex', fontSize: 34, color: '#9aa29a', marginTop: 20, maxWidth: 900 }}>
-          Le verdict sur vos logiciels, du CHR aux outils du quotidien : remplaçable par du sur-mesure, ou pas ?
+          {t.site.tagline}
         </div>
       </div>
     ),

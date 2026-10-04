@@ -1,5 +1,7 @@
+'use client';
+
 import type { VerdictEditeur } from '@/types/logiciel';
-import { VERDICT_LABEL } from '@/lib/verdict';
+import { useLocale } from '@/lib/i18n/LocaleProvider';
 
 // Couleurs du thème (globals.css) : vert phosphore / ambre / rouge, texte
 // sombre sur fond saturé pour tenir le contraste AA dans les deux thèmes.
@@ -10,10 +12,11 @@ const COLORS: Record<VerdictEditeur, string> = {
 };
 
 export function VerdictBadge({ verdict, big = false }: { verdict: VerdictEditeur; big?: boolean }) {
+  const { t } = useLocale();
   const size = big ? 'px-4 py-1.5 text-lg' : 'px-2.5 py-0.5 text-xs';
   return (
     <span className={`inline-block rounded-sm font-bold ${size} ${COLORS[verdict]}`}>
-      {VERDICT_LABEL[verdict]}
+      {t.verdict[verdict]}
     </span>
   );
 }

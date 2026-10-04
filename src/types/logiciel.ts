@@ -35,6 +35,8 @@ export interface Logiciel {
   alternatives?: Alternative[];
   prompt?: string;
   sourceVerdict?: string;
+  // Renseigné pour les pages non françaises : le texte a-t-il été traduit ? (sinon, texte d'origine)
+  traduit?: boolean;
 }
 
 export type NouveauLogiciel = Omit<Logiciel, 'id' | 'dateAjout' | 'dateMaj'>;

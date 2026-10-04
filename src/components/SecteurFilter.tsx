@@ -1,6 +1,7 @@
 'use client';
 
 import type { Secteur } from '@/types/logiciel';
+import { useLocale } from '@/lib/i18n/LocaleProvider';
 
 export const SECTEUR_LABEL: Record<Secteur, string> = {
   chr: '🍽️ CHR',
@@ -16,12 +17,13 @@ export function SecteurFilter({
   secteurs: Secteur[];
   onChange: (secteur: Secteur | 'tous') => void;
 }) {
+  const { t } = useLocale();
   const options: { value: Secteur | 'tous'; label: string }[] = [
-    { value: 'tous', label: 'Tous les secteurs' },
-    ...secteurs.map((value) => ({ value, label: SECTEUR_LABEL[value] })),
+    { value: 'tous', label: t.grid.allSectors },
+    ...secteurs.map((value) => ({ value, label: t.secteur[value] })),
   ];
   return (
-    <div className="flex gap-2 flex-wrap" role="group" aria-label="Secteur">
+    <div className="flex gap-2 flex-wrap" role="group" aria-label={t.grid.sectorGroup}>
       {options.map((opt) => (
         <button
           key={opt.value}

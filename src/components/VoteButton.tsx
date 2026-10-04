@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { castVote } from '@/lib/votes-client';
 import type { VoteCounts } from '@/lib/verdict';
 import type { ValeurVote } from '@/types/vote';
+import { useLocale } from '@/lib/i18n/LocaleProvider';
 
 export function VoteButton({
   logicielId,
@@ -12,6 +13,7 @@ export function VoteButton({
   logicielId: string;
   initialCounts: VoteCounts;
 }) {
+  const { t } = useLocale();
   const [counts, setCounts] = useState(initialCounts);
   const [voteError, setVoteError] = useState<string | null>(null);
 
@@ -30,7 +32,7 @@ export function VoteButton({
       console.error('castVote failed', err);
       // Rollback
       setCounts((prev) => ({ ...prev, [key]: prev[key] - 1 }));
-      setVoteError((err instanceof Error && err.message) || 'Votre vote n\'a pas pu être enregistré. Réessayez plus tard.');
+      setVoteError((err instanceof Error && err.message) || t.vote.failed);
     }
   }
 
@@ -42,14 +44,14 @@ export function VoteButton({
           onClick={() => handleVote('remplace')}
           className="rounded-sm border border-slate-300 px-4 py-2 transition-colors hover:border-secondary hover:text-secondary"
         >
-          Je l&apos;ai remplacé (<span>{counts.remplace}</span>)
+          {t.vote.replaced} (<span>{counts.remplace}</span>)
         </button>
         <button
           type="button"
           onClick={() => handleVote('pas_remplacable')}
           className="rounded-sm border border-slate-300 px-4 py-2 transition-colors hover:border-secondary hover:text-secondary"
         >
-          Pas remplaçable (<span>{counts.pasRemplacable}</span>)
+          {t.vote.notReplaceable} (<span>{counts.pasRemplacable}</span>)
         </button>
       </div>
       {voteError && (

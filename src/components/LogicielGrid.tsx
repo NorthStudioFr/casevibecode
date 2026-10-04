@@ -9,6 +9,7 @@ import { SearchInput } from './SearchInput';
 import { SortControl, type SortOption } from './SortControl';
 import { LogicielRow } from './LogicielRow';
 import { CATEGORIE_LABEL } from '@/lib/categories';
+import { useLocale } from '@/lib/i18n/LocaleProvider';
 
 // Accent/case-insensitive so "cegid" also matches "Cégid".
 function normalize(value: string): string {
@@ -19,6 +20,7 @@ function normalize(value: string): string {
 }
 
 export function LogicielGrid({ logiciels }: { logiciels: LogicielAvecVerdict[] }) {
+  const { t, lang } = useLocale();
   const [secteur, setSecteur] = useState<Secteur | 'tous'>('tous');
   const [categorie, setCategorie] = useState<Categorie | 'toutes'>('toutes');
   const [verdict, setVerdict] = useState<VerdictEditeur | 'tous'>('tous');
@@ -50,9 +52,9 @@ export function LogicielGrid({ logiciels }: { logiciels: LogicielAvecVerdict[] }
       .filter((l) => normalizedQuery === '' || normalize(l.nom).includes(normalizedQuery));
 
     return [...result].sort((a, b) =>
-      sort === 'votes' ? b.totalVotes - a.totalVotes || a.nom.localeCompare(b.nom, 'fr') : a.nom.localeCompare(b.nom, 'fr')
+      sort === 'votes' ? b.totalVotes - a.totalVotes || a.nom.localeCompare(b.nom, lang) : a.nom.localeCompare(b.nom, lang)
     );
-  }, [logiciels, secteur, categorie, verdict, query, sort]);
+  }, [logiciels, secteur, categorie, verdict, query, sort, lang]);
 
   return (
     <div>
@@ -64,12 +66,12 @@ export function LogicielGrid({ logiciels }: { logiciels: LogicielAvecVerdict[] }
       </div>
       <div className="mt-3 flex items-center justify-between">
         <p className="text-sm text-slate-500">
-          {filtered.length} fiche{filtered.length > 1 ? 's' : ''}
+          {t.grid.count(filtered.length)}
         </p>
         <SortControl value={sort} onChange={setSort} />
       </div>
       {filtered.length === 0 ? (
-        <p className="mt-6 text-sm text-slate-500">Aucune fiche ne correspond à ces filtres.</p>
+        <p className="mt-6 text-sm text-slate-500">{t.grid.empty}</p>
       ) : (
         <div className="mt-4 border-t border-slate-200">
           {filtered.map((l, i) => (

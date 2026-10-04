@@ -1,18 +1,21 @@
 import Link from 'next/link';
+import { LangSwitch } from './LangSwitch';
 import { ThemeToggle } from './ThemeToggle';
 import { NavLinks } from './NavLinks';
 import { AccountNav } from './AccountNav';
 import { editeur } from '@/lib/editeur';
+import { getDict } from '@/lib/i18n/dictionaries';
+import { localePath, DEFAULT_LANG, type Lang } from '@/lib/i18n/config';
 
-export function SiteHeader() {
+export function SiteHeader({ lang = DEFAULT_LANG }: { lang?: Lang }) {
   const { email } = editeur();
   const proposerHref = email
-    ? `mailto:${email}?subject=Proposer%20un%20logiciel%20sur%20casevibecode`
+    ? `mailto:${email}?subject=${encodeURIComponent(getDict(lang).nav.proposeSubject)}`
     : undefined;
   return (
     <header className="border-b border-slate-200">
       <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-8 py-3">
-        <Link href="/" className="flex items-center gap-2 font-serif text-lg font-semibold text-slate-800">
+        <Link href={localePath(lang, '/')} className="flex items-center gap-2 font-serif text-lg font-semibold text-slate-800">
           <span
             aria-hidden="true"
             className="flex h-7 w-7 items-center justify-center rounded-sm border border-primary text-xs font-bold text-primary"
@@ -26,6 +29,7 @@ export function SiteHeader() {
         </div>
         <div className="flex items-center gap-x-4">
           <AccountNav />
+          <LangSwitch />
           <ThemeToggle />
         </div>
       </div>

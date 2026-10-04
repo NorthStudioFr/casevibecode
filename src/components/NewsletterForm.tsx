@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import { subscribeNewsletter } from '@/lib/newsletter-client';
+import { useLocale } from '@/lib/i18n/LocaleProvider';
 
 export function NewsletterForm() {
+  const { t } = useLocale();
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
@@ -22,14 +24,14 @@ export function NewsletterForm() {
   }
 
   if (submitted) {
-    return <p className="text-sm text-green-700">Merci, vous êtes inscrit à la newsletter.</p>;
+    return <p className="text-sm text-green-700">{t.newsletter.thanks}</p>;
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit} className="flex gap-2">
         <label className="sr-only" htmlFor="newsletter-email">
-          Email
+          {t.newsletter.emailLabel}
         </label>
         <input
           id="newsletter-email"
@@ -37,19 +39,19 @@ export function NewsletterForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="votre@email.fr"
+          placeholder={t.newsletter.placeholder}
           className="flex-1 rounded-sm border border-slate-300 px-3 py-2 focus:border-secondary focus:outline-none"
         />
         <button
           type="submit"
           className="rounded-sm bg-primary px-4 py-2 font-sans text-sm font-medium text-primary-ink transition-colors hover:bg-secondary hover:text-stone-50"
         >
-          S&apos;abonner
+          {t.newsletter.subscribe}
         </button>
       </form>
       {error && (
         <p role="alert" className="mt-2 text-sm text-red-600">
-          L&apos;inscription a échoué. Vérifiez votre adresse email et réessayez.
+          {t.newsletter.error}
         </p>
       )}
     </div>

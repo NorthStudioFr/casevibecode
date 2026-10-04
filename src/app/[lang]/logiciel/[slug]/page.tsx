@@ -3,11 +3,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getLogicielBySlug, getVoteCounts, getLogiciels } from '@/lib/logiciels-server';
-import { computeVerdictDisplay, VERDICT_LABEL } from '@/lib/verdict';
+import { computeVerdictDisplay } from '@/lib/verdict';
 import { relatedFiches } from '@/lib/related';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import { SITE_URL } from '@/lib/site';
-import { CATEGORIE_LABEL } from '@/lib/categories';
+import { getDict } from '@/lib/i18n/dictionaries';
+import { langOf, localePath, type Lang } from '@/lib/i18n/config';
+import { traductionDe } from '@/lib/traductions';
+import { formatPrix } from '@/lib/prix';
 import { ShareOnX } from '@/components/ShareOnX';
 import { CeQueVousPerdez } from '@/components/CeQueVousPerdez';
 import { VerdictBadge } from '@/components/VerdictBadge';
@@ -38,46 +41,63 @@ export async function generateStaticParams() {
 // within a single render.
 const getFiche = cache(getLogicielBySlug);
 
-type Props = { params: Promise<{ slug: string }> };
+type Props = { params: Promise<{ lang?: string; slug: string }> };
+
+// Les liens hreflang et l'indexation ne concernent que les fiches réellement traduites.
+function alternatesFiche(lang: Lang, slug: string) {
+  const chemin = `/logiciel/${slug}`;
+  const traduite = Boolean(traductionDe(slug, 'en'));
+  return {
+    canonical: localePath(lang, chemin),
+    ...(traduite
+      ? { languages: { fr: localePath('fr', chemin), en: localePath('en', chemin), 'x-default': localePath('fr', chemin) } }
+      : {}),
+  };
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const logiciel = await getFiche(slug);
+  const { lang: langParam, slug } = await params;
+  const lang = langOf({ lang: langParam });
+  const t = getDict(lang);
+  const logiciel = await getFiche(slug, lang);
   if (!logiciel) {
-    return { title: 'Logiciel introuvable' };
+    return { title: t.fiche.notFound };
   }
-  const title = `${logiciel.nom} : remplaçable ou pas ?`;
-  const description =
-    logiciel.description ||
-    `${logiciel.nom} peut-il être remplacé par un outil sur mesure ? Verdict éditeur et vote de la communauté.`;
+  const title = t.fiche.titleSuffix(logiciel.nom);
+  const description = logiciel.description || t.fiche.fallbackDescription(logiciel.nom);
   return {
     title,
     description,
-    alternates: { canonical: `/logiciel/${slug}` },
-    openGraph: { type: 'website', title, description, url: `/logiciel/${slug}` },
+    alternates: alternatesFiche(lang, slug),
+    openGraph: { type: 'website', title, description, url: localePath(lang, `/logiciel/${slug}`) },
     twitter: { card: 'summary_large_image', title, description },
+    // Page anglaise dont le texte n'est pas encore traduit : on évite le contenu dupliqué.
+    ...(lang !== 'fr' && logiciel.traduit === false ? { robots: { index: false, follow: true } } : {}),
   };
 }
 
 export default async function FicheLogicielPage({ params }: Props) {
-  const { slug } = await params;
-  const logiciel = await getFiche(slug);
+  const { lang: langParam, slug } = await params;
+  const lang = langOf({ lang: langParam });
+  const t = getDict(lang);
+  const href = (chemin: string) => localePath(lang, chemin);
+  const logiciel = await getFiche(slug, lang);
   if (!logiciel) notFound();
 
-  const [counts, tousLogiciels] = await Promise.all([getVoteCounts(logiciel.id), getLogiciels()]);
+  const [counts, tousLogiciels] = await Promise.all([getVoteCounts(logiciel.id), getLogiciels(lang)]);
   const display = computeVerdictDisplay(logiciel.verdictEditeur, counts);
 
   // Alphabetical order gives a stable, predictable prev/next sequence
   // regardless of the database's read order.
-  const tries = [...tousLogiciels].sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
+  const tries = [...tousLogiciels].sort((a, b) => a.nom.localeCompare(b.nom, lang));
   const index = tries.findIndex((l) => l.id === logiciel.id);
   const precedent = index > 0 ? tries[index - 1] : null;
   const suivant = index >= 0 && index < tries.length - 1 ? tries[index + 1] : null;
 
   return (
     <main className="min-h-screen p-8 max-w-2xl mx-auto">
-      <Link href="/" className="text-sm text-slate-500 hover:text-slate-800">
-        ← Retour à toutes les fiches
+      <Link href={href('/')} className="text-sm text-slate-500 hover:text-slate-800">
+        {t.fiche.back}
       </Link>
       <div className="mt-3 flex items-center gap-3">
         <LogoEditeur domaine={logiciel.domaine} taille={48} />
@@ -85,19 +105,19 @@ export default async function FicheLogicielPage({ params }: Props) {
       </div>
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <VerdictBadge verdict={display.verdict} big />
-        {logiciel.prix && <span className="text-sm text-slate-700">{logiciel.prix}</span>}
+        {logiciel.prix && <span className="text-sm text-slate-700">{formatPrix(logiciel.prix, lang)}</span>}
         <span className="text-sm text-slate-500">
           {display.source === 'communaute'
-            ? 'verdict communauté'
+            ? t.fiche.sourceCommunity
             : logiciel.sourceVerdict === 'canivibecodeit'
-              ? 'verdict d’après canivibecodeit'
-              : 'verdict éditeur'}{' '}
-          · {display.totalVotes} votes
+              ? t.fiche.sourceCanivibecodeit
+              : t.fiche.sourceEditor}{' '}
+          · {t.fiche.votes(display.totalVotes)}
         </span>
       </div>
       {logiciel.sourceVerdict === 'canivibecodeit' && display.source !== 'communaute' && (
         <p className="mt-2 text-xs text-slate-500">
-          Verdict initial repris de{' '}
+          {t.fiche.attributionBefore}{' '}
           <a
             href="https://canivibecodeit.com"
             className="underline hover:text-slate-800"
@@ -106,7 +126,7 @@ export default async function FicheLogicielPage({ params }: Props) {
           >
             canivibecodeit.com
           </a>{' '}
-          (licence MIT), traduit et adapté. Votez pour le corriger.
+          {t.fiche.attributionAfter}
         </p>
       )}
       <p className="mt-4 text-slate-700">{logiciel.description}</p>
@@ -120,24 +140,24 @@ export default async function FicheLogicielPage({ params }: Props) {
       <div className="mt-4">
         <ShareOnX
           nom={logiciel.nom}
-          verdictLabel={VERDICT_LABEL[display.verdict]}
-          url={`${SITE_URL}/logiciel/${logiciel.slug}`}
+          verdictLabel={t.verdict[display.verdict]}
+          url={`${SITE_URL}${href(`/logiciel/${logiciel.slug}`)}`}
         />
       </div>
       <div className="mt-10">
-        <CtaEditeur />
+        <CtaEditeur lang={lang} />
       </div>
       <div className="mt-10">
         <NewsletterForm />
       </div>
       <FAQ logiciel={logiciel} verdict={display.verdict} />
       <section className="mt-10 border-t border-slate-200 pt-6">
-        <h2 className="font-serif text-xl font-semibold text-slate-800">Dans la même veine</h2>
+        <h2 className="font-serif text-xl font-semibold text-slate-800">{t.fiche.related}</h2>
         <ul className="mt-3 space-y-2 text-sm">
           {relatedFiches(tousLogiciels, logiciel).map((l) => (
             <li key={l.id}>
-              <Link href={`/logiciel/${l.slug}`} className="text-slate-700 hover:text-primary">
-                {l.nom} <span className="text-slate-500">· {l.prix ?? CATEGORIE_LABEL[l.categorie]}</span>
+              <Link href={href(`/logiciel/${l.slug}`)} className="text-slate-700 hover:text-primary">
+                {l.nom} <span className="text-slate-500">· {formatPrix(l.prix, lang) ?? t.categories[l.categorie]}</span>
               </Link>
             </li>
           ))}
@@ -145,14 +165,14 @@ export default async function FicheLogicielPage({ params }: Props) {
       </section>
       <nav className="mt-10 flex items-center justify-between border-t border-slate-200 pt-6 text-sm">
         {precedent ? (
-          <Link href={`/logiciel/${precedent.slug}`} className="text-slate-600 hover:text-slate-900">
+          <Link href={href(`/logiciel/${precedent.slug}`)} className="text-slate-600 hover:text-slate-900">
             ← {precedent.nom}
           </Link>
         ) : (
           <span />
         )}
         {suivant ? (
-          <Link href={`/logiciel/${suivant.slug}`} className="text-slate-600 hover:text-slate-900 text-right">
+          <Link href={href(`/logiciel/${suivant.slug}`)} className="text-slate-600 hover:text-slate-900 text-right">
             {suivant.nom} →
           </Link>
         ) : (
@@ -161,7 +181,7 @@ export default async function FicheLogicielPage({ params }: Props) {
       </nav>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(logiciel.nom, logiciel.slug)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(logiciel.nom, logiciel.slug, lang)) }}
       />
     </main>
   );
