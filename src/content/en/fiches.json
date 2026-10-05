@@ -99,7 +99,7 @@
   "description": "NF525 touchscreen till for restaurants and food businesses, including hotels and campsites.",
   "justification": "In France, till software must be NF525-certified or covered by a certificate of compliance (article 286 of the French tax code): an in-house till has neither, with a fine of €7,500 per non-compliant system. AirKitchen is a touchscreen till for restaurants and food businesses, including hotels and campsites: takings, receipts and closings must remain tamper-proof. Go with the vendor; keep custom work for the extras (menu, reservations).",
   "alternatives": [
-   "Free ERP whose Community edition includes a till with restaurant mode; NF525 compliance still to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "French NF525-certified till with floor plan and kitchen screen, free up to 100 receipts a month.",
    "NF525-certified online cash register, free with paid options, restaurant version."
   ]
@@ -376,7 +376,7 @@
   "description": "Touchscreen till for restaurants, with mobile order taking, kitchen screen and central management.",
   "justification": "A kitchen screen and real-time multi-terminal sync need reliable infrastructure; added to NF525 certification, this is not a weekend project.",
   "alternatives": [
-   "Free ERP whose Community edition includes a till with restaurant mode; NF525 compliance still to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "French NF525-certified till with floor plan and kitchen screen, free up to 100 receipts a month.",
    "NF525-certified online cash register, free with paid options, restaurant version."
   ]
@@ -486,7 +486,7 @@
   "description": "Modular till and point-of-sale management for restaurants, bars and nightclubs.",
   "justification": "A till + stock + online ordering bundle certified NF525 means several regulatory building blocks to maintain, not a single simple tool to rebuild.",
   "alternatives": [
-   "Free ERP whose Community edition includes a till with restaurant mode; NF525 compliance still to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "French NF525-certified till with floor plan and kitchen screen, free up to 100 receipts a month.",
    "NF525-certified online cash register, free with paid options, restaurant version."
   ]
@@ -526,7 +526,7 @@
   "description": "Till software for restaurants, brasseries, bakeries and other food businesses.",
   "justification": "A certified till for several food trades implies ongoing regulatory maintenance that few small businesses have any interest in taking in-house.",
   "alternatives": [
-   "Free ERP whose Community edition includes a till with restaurant mode; NF525 compliance still to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "French NF525-certified till with floor plan and kitchen screen, free up to 100 receipts a month.",
    "NF525-certified online cash register, free with paid options, restaurant version."
   ]
@@ -1043,8 +1043,8 @@
   "description": "Online till used by shops and restaurants, with a freemium offer.",
   "justification": "A cash register cannot be rebuilt: in France, any business subject to VAT must use certified software or software attested as compliant (article 286 of the French tax code), whatever its volume, with tamper-proof sales, closings and archiving. Hiboutik is free for basic needs: the saving is small against the risk of a non-compliant till (up to €7,500 fine per system).",
   "alternatives": [
-   "Odoo Community edition (LGPL) with restaurant Point of Sale module, QR code self-ordering and self-service till. NF525 to be checked.",
-   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. French tax compliance to be checked."
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
+   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France."
   ]
  },
  "hootsuite": {
@@ -1131,8 +1131,8 @@
    "The vendor's assistance."
   ],
   "alternatives": [
-   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. French tax compliance to be checked.",
-   "Odoo Community edition (LGPL) with restaurant Point of Sale module, QR code self-ordering and self-service till. NF525 to be checked.",
+   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "Digital restaurant menu by QR code, advertised as free for restaurateurs.",
    "Free digital menu by QR code, with photos, allergens and menu translation.",
    "QR digital menu with a free plan funded by advertising; games and loyalty on paid plans."
@@ -1143,8 +1143,8 @@
   "description": "iPad till (Lightspeed group) used by fine-dining restaurants and bars.",
   "justification": "In France, till software must be NF525-certified or covered by a certificate of compliance (article 286 of the French tax code): an in-house till has neither, with a fine of €7,500 per non-compliant system. iKentoo, from the Lightspeed group, runs on iPad in fine-dining restaurants and bars: table service, receipts and bills are the heart of the business. Go with the vendor; build elsewhere.",
   "alternatives": [
-   "Odoo Community edition (LGPL) with restaurant Point of Sale module, QR code self-ordering and self-service till. NF525 to be checked.",
-   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. French tax compliance to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
+   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France.",
    "NF525-certified online cash register with a free plan, usable in restaurants and retail.",
    "Certified iPad cash register, simpler, aimed at shopkeepers and restaurants."
   ]
@@ -1169,8 +1169,8 @@
   "description": "Ordering kiosks and till for fast food.",
   "justification": "Touch kiosks, a certified till and multiple integrations (delivery, kitchen) form a hardware-plus-software package too heavy for a small business to rebuild.",
   "alternatives": [
-   "Odoo Community edition (LGPL) with restaurant Point of Sale module, QR code self-ordering and self-service till. NF525 to be checked.",
-   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. French tax compliance to be checked."
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
+   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France."
   ]
  },
  "inpulse": {
@@ -1338,8 +1338,8 @@
   "description": "Till and management software for restaurants and bars.",
   "justification": "An NF525-certified till system with stock management, VAT and accounting closings represents regulatory and reliability work that few small businesses have any interest in rebuilding themselves.",
   "alternatives": [
-   "Odoo Community edition (LGPL) with restaurant Point of Sale module, QR code self-ordering and self-service till. NF525 to be checked.",
-   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. French tax compliance to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
+   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France.",
    "NF525-certified online cash register with a free plan, usable in restaurants and retail.",
    "Certified iPad cash register, simpler, aimed at shopkeepers and restaurants."
   ]
@@ -1388,8 +1388,8 @@
   "description": "Cloud till and management (KDS, stock, multi-site) for high-volume restaurants and hotels.",
   "justification": "Kitchen screen, stock and multi-site synchronised in real time, on an NF525-certified base: a package too broad and too regulated for a custom build.",
   "alternatives": [
-   "Odoo Community edition (LGPL) with restaurant Point of Sale module, QR code self-ordering and self-service till. NF525 to be checked.",
-   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. French tax compliance to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
+   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France.",
    "NF525-certified online cash register with a free plan, usable in restaurants and retail.",
    "Certified iPad cash register, simpler, aimed at shopkeepers and restaurants."
   ]
@@ -1596,8 +1596,8 @@
    "Integration with your till, depending on the plan."
   ],
   "alternatives": [
-   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. French tax compliance to be checked.",
-   "Odoo Community edition (LGPL) with restaurant Point of Sale module, QR code self-ordering and self-service till. NF525 to be checked.",
+   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "Digital restaurant menu by QR code, advertised as free for restaurateurs.",
    "Free digital menu by QR code, with photos, allergens and menu translation.",
    "QR digital menu with a free plan funded by advertising; games and loyalty on paid plans."
@@ -1615,8 +1615,8 @@
    "The vendor's assistance."
   ],
   "alternatives": [
-   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. French tax compliance to be checked.",
-   "Odoo Community edition (LGPL) with restaurant Point of Sale module, QR code self-ordering and self-service till. NF525 to be checked.",
+   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "Digital restaurant menu by QR code, advertised as free for restaurateurs.",
    "Free digital menu by QR code, with photos, allergens and menu translation.",
    "QR digital menu with a free plan funded by advertising; games and loyalty on paid plans."
@@ -1747,7 +1747,7 @@
   "description": "Order and pay at the table by QR code, click & collect, prepaid cards and ordering kiosks.",
   "justification": "Prepaid cards involve money held on behalf of third parties, a regulatory subject (electronic money) that goes well beyond the scope of a home-made ordering tool.",
   "alternatives": [
-   "Open-source ERP (Community edition) including a restaurant till, floor plan and table ordering by QR code. NF525 to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "Open-source platform (MIT, Laravel) for online ordering, table reservation and restaurant management.",
    "French online ordering and QR menu with no commission, free starter plan limited to 20 orders/month.",
    "Click & collect, table ordering by QR code and loyalty, subscription with no commission on turnover."
@@ -1954,8 +1954,8 @@
   "description": "Touchscreen iPad till designed for simplicity, used by bars, cafés and independent restaurants.",
   "justification": "In France, till software must be NF525-certified or covered by a certificate of compliance (article 286 of the French tax code): an in-house till has neither, with a fine of €7,500 per non-compliant system. Popina is an iPad till designed for simplicity, used by bars, cafés and independent restaurants. That simplicity hides the rigour of taking payment in the middle of service. Keep the till; custom work can be done around it.",
   "alternatives": [
-   "Open-source touchscreen till for restaurants and cafés (Java), with table and kitchen management.",
-   "Open-source ERP (Community edition) including a restaurant till, floor plan and table ordering by QR code. NF525 to be checked.",
+   "Open-source touchscreen till for restaurants and cafés (Java), tables and kitchen. No NF525 certification announced: check before using it as a till in France.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "NF525-certified till software, free basic version and paid options, usable in restaurants."
   ]
  },
@@ -2024,8 +2024,8 @@
   "description": "Till and order-taking ecosystem, with a self-order kiosk module (Revo Kiosk).",
   "justification": "A certified till and hardware kiosks make a software-and-hardware package too heavy for a small business to rebuild.",
   "alternatives": [
-   "Open-source ERP (Community) with restaurant till and self-order kiosk or QR code mode. NF525 to be checked.",
-   "Open-source touchscreen till for restaurants and cafés (Java), with table and kitchen management.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
+   "Open-source touchscreen till for restaurants and cafés (Java), tables and kitchen. No NF525 certification announced: check before using it as a till in France.",
    "NF525-certified till software, free basic version and paid options, usable in restaurants."
   ]
  },
@@ -2187,7 +2187,7 @@
   "justification": "Ordering and paying without an app requires every payment to be recorded in the restaurant's certified till, with the right VAT lines, including at peak times. The menu and ordering without payment are within your reach; mobile payment linked to the till is not.",
   "alternatives": [
    "Open-source platform (MIT, Laravel) for online ordering, table reservation and restaurant management.",
-   "Open-source ERP (Community edition) including a restaurant till, floor plan and table ordering by QR code. NF525 to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "French online ordering and QR menu with no commission, free starter plan limited to 20 orders/month.",
    "Click & collect, table ordering by QR code and loyalty, subscription with no commission on turnover."
   ]
@@ -2252,7 +2252,7 @@
   "description": "Till and ordering solution for restaurants and bars, linked to payments and online sales.",
   "justification": "In France, till software must be NF525-certified or covered by a certificate of compliance (article 286 of the French tax code): an in-house till has neither, with a fine of €7,500 per non-compliant system. Square cannot be separated from its payment terminal, which links takings, orders and online sales in one package. It is impossible to reproduce this with an in-house tool: take the whole package or another certified vendor.",
   "alternatives": [
-   "Open-source ERP whose Point of Sale app handles floor plan, tables and sending to the kitchen for restaurants. NF525 to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "NF525-compliant online cash register, offered free with optional paid extras, restaurant mode included.",
    "NF525-certified iPad till for restaurants and bars, with click & collect, reservations and pay-at-table.",
    "Certified till software for restaurants, bars and shops, with floor plan, stock and customer accounts."
@@ -2307,7 +2307,7 @@
   "description": "Till system and mobile payment terminal for cafés and restaurants, with sending to the kitchen.",
   "justification": "Tied to a certified physical payment terminal, this is not only software: hardware, certification and payment reliability rule out a home-made solution outright.",
   "alternatives": [
-   "Open-source ERP whose Point of Sale app handles floor plan, tables and sending to the kitchen for restaurants. NF525 to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "NF525-compliant online cash register, offered free with optional paid extras, restaurant mode included.",
    "NF525-certified iPad till for restaurants and bars, with click & collect, reservations and pay-at-table.",
    "Certified touchscreen cash register on iPad, used by restaurants and local shops."
@@ -2317,7 +2317,7 @@
   "description": "Pay at the table by QR code for restaurants.",
   "justification": "Paying at the table is not just a page linked to Stripe: the payment must be recorded in the restaurant's till, itself certified or attested compliant (NF525), and the receipt comes from that till. Redoing this integration for each till, handling split bills, tips and disputes in the middle of service goes beyond a custom project.",
   "alternatives": [
-   "Open-source ERP whose Point of Sale app handles floor plan, tables and sending to the kitchen for restaurants. NF525 to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "Ordering and payment by QR code with no till to connect and no commission, subscription from €19.90/month excluding Stripe fees.",
    "Digital menu and order-and-pay by QR code at the table, subscription from €29/month plus transaction fees."
   ]
@@ -2369,7 +2369,7 @@
   "description": "Ordering kiosks, table tablets and integrated touchscreen till for fast food and table service.",
   "justification": "The package of hardware kiosks + payment + sync with the till and kitchen is an integration project far heavier than a simple digital menu.",
   "alternatives": [
-   "Open-source ERP whose Point of Sale app handles floor plan, tables and sending to the kitchen for restaurants. NF525 to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "French specialist in ordering kiosks, with touchscreen tills, kitchen screens and management software for restaurants."
   ]
  },
@@ -2377,7 +2377,7 @@
   "description": "iPad or iPhone till used notably by food shops and restaurants.",
   "justification": "In France, till software must be NF525-certified or covered by a certificate of compliance (article 286 of the French tax code): an in-house till has neither, with a fine of €7,500 per non-compliant system. Tactill, on iPad or iPhone, is used notably by food shops and restaurants. Its ease of use hides a takings log that must be tamper-proof. Go with the vendor.",
   "alternatives": [
-   "Open-source ERP whose Point of Sale app handles floor plan, tables and sending to the kitchen for restaurants. NF525 to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "NF525-compliant online cash register, offered free with optional paid extras, restaurant mode included.",
    "NF525-certified iPad till for restaurants and bars, with click & collect, reservations and pay-at-table.",
    "Certified till software for restaurants, bars and shops, with floor plan, stock and customer accounts."
@@ -2464,7 +2464,7 @@
   "description": "Mobile till for restaurants and shops, with sales data analysis.",
   "justification": "In France, till software must be NF525-certified or covered by a certificate of compliance (article 286 of the French tax code): an in-house till has neither, with a fine of €7,500 per non-compliant system. Tiller is a mobile till with sales data analysis: the statistics can be recreated from an export, but the taking of payments itself must remain the vendor's.",
   "alternatives": [
-   "Open-source ERP whose Point of Sale app handles floor plan, tables and sending to the kitchen for restaurants. NF525 to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "NF525-compliant online cash register, offered free with optional paid extras, restaurant mode included.",
    "NF525-certified iPad till for restaurants and bars, with click & collect, reservations and pay-at-table.",
    "Certified till software for restaurants, bars and shops, with floor plan, stock and customer accounts."
@@ -2601,7 +2601,7 @@
   "description": "Till and operations management system for restaurants, bars and hotels.",
   "justification": "A multi-venue till system with regulatory obligations remains, like the others, safer to buy than to rebuild.",
   "alternatives": [
-   "Open-source ERP whose Point of Sale app handles floor plan, tables and sending to the kitchen for restaurants. NF525 to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "NF525-compliant online cash register, offered free with optional paid extras, restaurant mode included.",
    "NF525-certified iPad till for restaurants and bars, with click & collect, reservations and pay-at-table.",
    "Certified till software for restaurants, bars and shops, with floor plan, stock and customer accounts."
@@ -2763,7 +2763,7 @@
   "description": "Takings and payment tracking solution by terminal, with features designed for restaurateurs.",
   "justification": "A certified payment terminal follows the same logic as NF525 tills: the hardware and certification weigh more than the software.",
   "alternatives": [
-   "Open-source ERP whose Point of Sale app handles floor plan, tables and sending to the kitchen for restaurants. NF525 to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "NF525-compliant online cash register, offered free with optional paid extras, restaurant mode included.",
    "NF525-certified iPad till for restaurants and bars, with click & collect, reservations and pay-at-table.",
    "Certified till software for restaurants, bars and shops, with floor plan, stock and customer accounts."
@@ -2804,7 +2804,7 @@
   "description": "Certified till for restaurants and bars, with floor plan, stock and customer accounts.",
   "justification": "NF525 certification is explicitly highlighted: that is the classic signal that it is better to pay a vendor than rebuild it yourself.",
   "alternatives": [
-   "Open-source ERP whose Point of Sale app handles floor plan, tables and sending to the kitchen for restaurants. NF525 to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "NF525-compliant online cash register, offered free with optional paid extras, restaurant mode included.",
    "NF525-certified iPad till for restaurants and bars, with click & collect, reservations and pay-at-table.",
    "Certified touchscreen cash register on iPad, used by restaurants and local shops."
@@ -2814,7 +2814,7 @@
   "description": "Complete cloud till for independent restaurants and multi-venue chains.",
   "justification": "In France, till software must be NF525-certified or covered by a certificate of compliance (article 286 of the French tax code): an in-house till has neither, with a fine of €7,500 per non-compliant system. Zelty is a complete cloud till for independent restaurants and chains, with several venues to synchronise. Multi-site adds to the difficulty. Go with the vendor.",
   "alternatives": [
-   "Open-source ERP whose Point of Sale app handles floor plan, tables and sending to the kitchen for restaurants. NF525 to be checked.",
+   "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "NF525-compliant online cash register, offered free with optional paid extras, restaurant mode included.",
    "NF525-certified iPad till for restaurants and bars, with click & collect, reservations and pay-at-table.",
    "Certified till software for restaurants, bars and shops, with floor plan, stock and customer accounts.",
