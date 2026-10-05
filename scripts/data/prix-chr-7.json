@@ -1,0 +1,29 @@
+{
+ "corrections": [
+  {
+   "slug": "innovorder",
+   "prix": "à partir de 79 €/mois",
+   "prix_mensuel": 79
+  },
+  {
+   "slug": "lightspeed-restaurant",
+   "prix": "à partir de 89 €/mois",
+   "prix_mensuel": 89
+  },
+  {
+   "slug": "zatyoo",
+   "prix": "à partir de 29,90 €/mois",
+   "prix_mensuel": 29.9
+  },
+  {
+   "slug": "tilby",
+   "prix": "à partir de 39 €/mois",
+   "prix_mensuel": 39
+  },
+  {
+   "slug": "eviivo",
+   "prix": "à partir de 44,54 €/mois (converti de 50 $, cours du 2 oct. 2026)",
+   "prix_mensuel": 44.54
+  }
+ ]
+}

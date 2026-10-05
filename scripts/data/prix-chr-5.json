@@ -1,0 +1,34 @@
+{
+ "corrections": [
+  {
+   "slug": "tactill",
+   "prix": "à partir de 29 €/mois",
+   "prix_mensuel": 29
+  },
+  {
+   "slug": "popina",
+   "prix": "à partir de 52 €/mois",
+   "prix_mensuel": 52
+  },
+  {
+   "slug": "square",
+   "prix": "gratuit (plans payants à partir de 59 €/mois)",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "laddition",
+   "prix": "sur devis",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "hubrise",
+   "prix": "à partir de 35 €/mois",
+   "prix_mensuel": 35
+  },
+  {
+   "slug": "payplug",
+   "prix": "à partir de 10 €/mois",
+   "prix_mensuel": 10
+  }
+ ]
+}

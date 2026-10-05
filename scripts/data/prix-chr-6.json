@@ -1,0 +1,24 @@
+{
+ "corrections": [
+  {
+   "slug": "hpa-solutions",
+   "prix": "à partir de 39,90 €/mois",
+   "prix_mensuel": 39.9
+  },
+  {
+   "slug": "tabesto",
+   "prix": "à partir de 179 €/mois",
+   "prix_mensuel": 179
+  },
+  {
+   "slug": "thefork-manager",
+   "prix": "sur devis",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "eat-app",
+   "prix": "gratuit (plans payants à partir de 88,20 €/mois, converti de 99 $, cours du 2 oct. 2026)",
+   "prix_mensuel": null
+  }
+ ]
+}

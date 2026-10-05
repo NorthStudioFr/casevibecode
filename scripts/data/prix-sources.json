@@ -250,5 +250,138 @@
   "source": "https://www.sumup.com/fr-fr/caisse-enregistreuse/",
   "note": "Logiciel de base gratuit, version avancée 49 €/mois ; terminal de caisse 399 € HT",
   "lu_le": "2026-10-04"
+ },
+ {
+  "slug": "tactill",
+  "prix": "à partir de 29 €/mois",
+  "source": "https://www.tactill.com/prix-caisse-enregistreuse/",
+  "note": "Formule Découverte, 348 € HT par an soit 29 € HT par mois, engagement annuel ; formules Professionnel (588 €/an) et Entreprise (828 €/an)",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "popina",
+  "prix": "à partir de 52 €/mois",
+  "source": "https://www.popina.com/en/offres/",
+  "note": "Basic Pack (licence Pro et back-office), 52 € HT par mois, matériel non compris ; Starter et Premium sur devis",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "square",
+  "prix": "gratuit (plans payants à partir de 59 €/mois)",
+  "source": "https://squareup.com/fr/fr/point-of-sale/restaurants/pricing",
+  "note": "Formule Gratuite à 0 €, formule Plus à 59 € HT par mois, Premium sur mesure ; paiements en présentiel à 1,65 %",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "laddition",
+  "prix": "sur devis",
+  "source": "https://www.laddition.com/fr/prix-logiciel-caisse",
+  "note": "Le site ne publie aucune grille : devis en ligne selon matériel et modules",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "hubrise",
+  "prix": "à partir de 35 €/mois",
+  "source": "https://www.hubrise.com/fr/tarifs",
+  "note": "35 € HT par point de vente et par mois, sans engagement ; dégressif pour les chaînes ; formule gratuite pour un faible volume",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "payplug",
+  "prix": "à partir de 10 €/mois",
+  "source": "https://www.payplug.com/pricing/",
+  "note": "Formule Starter 10 € HT par mois (CA ≤ 100 000 €), plus commission de 1,5 % + 0,25 € par paiement en ligne ; Pro 30 € HT par mois",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "hpa-solutions",
+  "prix": "à partir de 39,90 €/mois",
+  "source": "https://hpa-solutions.fr/",
+  "note": "39,90 € HT par mois, essai gratuit de 30 jours",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "tabesto",
+  "prix": "à partir de 179 €/mois",
+  "source": "https://www.tabesto.com/en/tarifs",
+  "note": "Borne de commande : 179 € HT par mois pour la première borne, 40 € HT pour chaque borne suivante ; matériel et installation (environ 780 € par site) en plus ; commission de paiement 0,70 % + frais d'interchange",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "thefork-manager",
+  "prix": "sur devis",
+  "source": "https://www.theforkmanager.com/en/restaurant-software-price",
+  "note": "Formules Performance et Enterprise : prix sur demande ; commission en pourcentage du ticket moyen sur les réservations venant de TheFork et de ses partenaires, aucune sur celles du site du restaurant",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "eat-app",
+  "prix": "gratuit (plans payants à partir de 88,20 €/mois, converti de 99 $, cours du 2 oct. 2026)",
+  "source": "https://restaurant.eatapp.co/pricing",
+  "note": "Formule gratuite limitée à 100 clients par mois ; Lite à 99 $ par mois en facturation mensuelle (69 $ en annuel) ; Core 199 $, Pro 389 $",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "innovorder",
+  "prix": "à partir de 79 €/mois",
+  "source": "https://www.innovorder.com/en/price",
+  "note": "Formule Starter, 1 point de vente avec 1 caisse certifiée NF525, facturée au mois, matériel exclu ; Growth 299 €/mois pour 2 à 10 points de vente",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "lightspeed-restaurant",
+  "prix": "à partir de 89 €/mois",
+  "source": "https://www.lightspeedhq.fr/caisse/restaurant/pricing/",
+  "note": "Formule Basic, 1 licence ; Core 159 € (2 licences), Pro 249 € (3 licences), licence supplémentaire 49 € ; le site ne précise pas HT ou TTC",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "zatyoo",
+  "prix": "à partir de 29,90 €/mois",
+  "source": "https://www.zatyoo.fr/Pack-Premium",
+  "note": "Pack Premium obligatoire par établissement : 29,90 € HT par mois (assistance, sauvegardes, archivage fiscal, attestation annuelle LNE) ; frais de dossier de 139 € HT offerts à la première souscription ; la licence du logiciel est en plus",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "tilby",
+  "prix": "à partir de 39 €/mois",
+  "source": "https://www.tilby.com/en/sectors/hotel-restaurant-cloud-pos/",
+  "note": "39 € + TVA par mois sur la page caisse pour hôtel-restaurant",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "eviivo",
+  "prix": "à partir de 44,54 €/mois (converti de 50 $, cours du 2 oct. 2026)",
+  "source": "https://eviivo.com/pricing/",
+  "note": "À partir de 50 $ par mois pour un établissement, selon le nombre de chambres ; frais de traitement fixes de 0,50 € par réservation confirmée ; 30 jours offerts à l'ouverture",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "onetip",
+  "prix": "gratuit (plans payants à partir de 11 €/mois)",
+  "source": "https://www.onetip-app.com/pricing",
+  "note": "Packs application mobile et puce NFC gratuits, pack tablette 11 € HT par mois ; commission de 4 % sur chaque pourboire (frais bancaires jusqu'à 5 % en plus) et 5 € par mois et par collaborateur, prélevés seulement s'il reçoit des pourboires",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "biver-io",
+  "prix": "à partir de 3,50 €/jour",
+  "source": "https://biver.io/tarifs/",
+  "note": "3,50 € HT par jour, sans engagement, résiliable depuis le tableau de bord ; essai gratuit de 14 jours ; sans commission",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "staff-and-go",
+  "prix": "à partir de 3,50 €/mois/employé",
+  "source": "https://staffngo.com/tarifs/tarif-entreprises/",
+  "note": "Pack SIRH de 6 modules à partir de 3,50 € HT par salarié et par mois, dégressif selon l'effectif ; gestion des temps 1,80 € en option",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "tipsyou",
+  "prix": "gratuit",
+  "source": "https://thetipsyou.fr/en",
+  "note": "Le site annonce un service gratuit, sans abonnement ; paiements par Stripe ; la page d'accueil ne détaille pas la commission sur les pourboires",
+  "lu_le": "2026-10-05"
  }
 ]

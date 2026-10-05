@@ -1,0 +1,24 @@
+{
+ "corrections": [
+  {
+   "slug": "onetip",
+   "prix": "gratuit (plans payants à partir de 11 €/mois)",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "biver-io",
+   "prix": "à partir de 3,50 €/jour",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "staff-and-go",
+   "prix": "à partir de 3,50 €/mois/employé",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "tipsyou",
+   "prix": "gratuit",
+   "prix_mensuel": null
+  }
+ ]
+}
