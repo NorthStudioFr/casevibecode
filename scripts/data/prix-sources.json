@@ -383,5 +383,33 @@
   "source": "https://thetipsyou.fr/en",
   "note": "Le site annonce un service gratuit, sans abonnement ; paiements par Stripe ; la page d'accueil ne détaille pas la commission sur les pourboires",
   "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "stuart",
+  "prix": "à partir de 7,50 €/course",
+  "source": "https://stuart.com/fr/tarifs/",
+  "note": "7,50 € HT par livraison pour les PME (jusqu'à 500 livraisons par mois), selon l'emplacement, le volume et le type de transport ; tarifs sur mesure au-delà",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "tip-go",
+  "prix": "gratuit",
+  "source": "https://tip-n-go.com/",
+  "note": "Gratuit pour l'établissement et le client ; 2,5 % de frais au retrait des pourboires accumulés",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "tipgo",
+  "prix": "gratuit",
+  "source": "https://tipgo.io/",
+  "note": "Création de compte gratuite, paiement des pourboires sans frais pour l'établissement ; frais au retrait pour le salarié : 5,5 % sous 50 €, 4,5 % de 50 à 250 €, 3,9 % au-delà (conversion en cartes cadeaux sans frais de retrait)",
+  "lu_le": "2026-10-05"
+ },
+ {
+  "slug": "tipjaar",
+  "prix": "gratuit",
+  "source": "https://wearetipjar.com/fr/perso/produits",
+  "note": "Compte Solo gratuit sans engagement ; boîtier Tap To Tip à 150 € remboursables et 0,25 €/jour d'abonnement ; page marquée « bientôt disponible » en France",
+  "lu_le": "2026-10-05"
  }
 ]

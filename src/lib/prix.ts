@@ -44,6 +44,7 @@ export function formatPrix(prix: string | undefined, lang: 'fr' | 'en'): string 
     .replace(/(\d+(?:,\d+)?)\s*€/g, (_, n: string) => `€${n.replace(',', '.')}`)
     .replace(/\/mois/g, '/month')
     .replace(/\/jour/g, '/day')
+    .replace(/\/course/g, '/delivery')
     .replace(/\/tablette/g, '/tablet')
     .replace(/\/utilisateur/g, '/user')
     .replace(/\/employé/g, '/employee')

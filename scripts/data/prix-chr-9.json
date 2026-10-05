@@ -1,0 +1,24 @@
+{
+ "corrections": [
+  {
+   "slug": "stuart",
+   "prix": "à partir de 7,50 €/course",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "tip-go",
+   "prix": "gratuit",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "tipgo",
+   "prix": "gratuit",
+   "prix_mensuel": null
+  },
+  {
+   "slug": "tipjaar",
+   "prix": "gratuit",
+   "prix_mensuel": null
+  }
+ ]
+}

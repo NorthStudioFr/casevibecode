@@ -37,6 +37,7 @@ describe('formatPrix', () => {
     ['à partir de 9 €/mois/utilisateur', 'from €9/month/user'],
     ['à partir de 2,75 €/mois/employé', 'from €2.75/month/employee'],
     ['à partir de 1 €/jour/tablette', 'from €1/day/tablet'],
+    ['à partir de 7,50 €/course', 'from €7.50/delivery'],
     ['gratuit (plans payants à partir de 9,99 €/mois)', 'free (paid plans from €9.99/month)'],
     ['gratuit (plans dès 19,99 €/mois)', 'free (plans from €19.99/month)'],
     ['gratuit (Premium à 14,90 €/mois)', 'free (Premium at €14.90/month)'],
