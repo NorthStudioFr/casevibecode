@@ -36,6 +36,8 @@ export function AuditClient({ logiciels }: { logiciels: AuditLogiciel[] }) {
   useEffect(() => {
     const connus = new Set(logiciels.map((l) => l.slug));
     const depuisUrl = lireSelection(new URLSearchParams(window.location.search).get('t')).filter((s) => connus.has(s));
+    // Lecture de l'URL après l'hydratation : un initialiseur de useState ferait diverger le rendu serveur et client.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (depuisUrl.length > 0) setChoisis(new Set(depuisUrl));
   }, [logiciels]);
 

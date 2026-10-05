@@ -33,6 +33,8 @@ export function ModerationPanel() {
   }, []);
 
   useEffect(() => {
+    // Premier chargement : la fonction attend le réseau avant d'écrire dans l'état.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     void charger();
   }, [charger]);
 
