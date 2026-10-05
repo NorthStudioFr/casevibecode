@@ -1,18 +1,25 @@
-// Appel à l'action vers l'éditeur du site ; affiché seulement si EDITEUR_CONTACT_URL
-// est défini (le dépôt public ne contient aucune adresse de contact).
-import { editeur } from '@/lib/editeur';
+// Mot de l'éditeur : une ligne discrète, étiquetée, sans image ni script tiers.
+// Affiché seulement si EDITEUR_CONTACT_URL est défini (le dépôt public ne contient ni
+// adresse de contact ni marque : le nom vient de EDITEUR_MARQUE).
+import { editeur, libelleEditeur } from '@/lib/editeur';
 import { getDict } from '@/lib/i18n/dictionaries';
 import { DEFAULT_LANG, type Lang } from '@/lib/i18n/config';
+import type { Secteur } from '@/types/logiciel';
 
-export function CtaEditeur({ lang = DEFAULT_LANG }: { lang?: Lang }) {
-  const { contactUrl } = editeur();
-  if (!contactUrl) return null;
+export function CtaEditeur({ lang = DEFAULT_LANG, secteur = 'saas' }: { lang?: Lang; secteur?: Secteur }) {
+  const e = editeur();
+  if (!e.contactUrl) return null;
+  const t = getDict(lang).cta;
+  const marque = libelleEditeur(e);
   return (
-    <a
-      href={contactUrl}
-      className="inline-block rounded-sm bg-primary px-4 py-2 text-center font-sans text-xs font-medium text-primary-ink transition-colors hover:bg-secondary hover:text-stone-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
-    >
-      {getDict(lang).cta.editeur}
-    </a>
+    <aside className="rounded-sm border border-dashed border-slate-300 px-4 py-3 text-sm text-slate-600">
+      <p className="text-xs uppercase tracking-wide text-slate-400">{t.label}</p>
+      <p className="mt-1">
+        {secteur === 'chr' ? t.chr(marque) : t.saas(marque)}{' '}
+        <a href={e.contactUrl} className="whitespace-nowrap text-primary underline hover:no-underline">
+          {t.more} →
+        </a>
+      </p>
+    </aside>
   );
 }

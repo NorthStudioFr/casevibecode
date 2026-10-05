@@ -173,7 +173,12 @@ Contraintes :
     subscribe: "S'abonner",
     error: "L'inscription a échoué. Vérifiez votre adresse email et réessayez.",
   },
-  cta: { editeur: "Vous voulez qu'on regarde vos outils et automatise ce qui peut l'être ?" },
+  cta: {
+    label: "Mot de l'éditeur",
+    chr: (marque: string) => `Restaurateur, hôtelier ? ${marque} crée sites, vidéos et automatisations pour les CHR.`,
+    saas: (marque: string) => `Un abonnement que vous hésitez à garder ? ${marque} regarde vos outils et automatise ce qui peut l'être.`,
+    more: 'En savoir plus',
+  },
   share: {
     button: 'Partager sur X',
     text: (nom: string, verdict: string, url: string) => `${nom} : ${verdict} ? Le verdict casevibecode ${url}`,
@@ -434,7 +439,12 @@ Constraints:
     subscribe: 'Subscribe',
     error: 'Subscription failed. Check your email address and try again.',
   },
-  cta: { editeur: 'Want us to look at your tools and automate what can be automated?' },
+  cta: {
+    label: 'A word from the publisher',
+    chr: (marque: string) => `Run a restaurant or a hotel? ${marque} builds websites, videos and automations for hospitality businesses.`,
+    saas: (marque: string) => `A subscription you are unsure about keeping? ${marque} reviews your tools and automates what can be automated.`,
+    more: 'Learn more',
+  },
   share: {
     button: 'Share on X',
     text: (nom: string, verdict: string, url: string) => `${nom}: ${verdict}? The casevibecode verdict ${url}`,

@@ -146,13 +146,13 @@ export default async function FicheLogicielPage({ params }: Props) {
         />
       </div>
       <div className="mt-10">
-        <CtaEditeur lang={lang} />
-      </div>
-      <div className="mt-10">
         <NewsletterForm />
       </div>
       <FAQ logiciel={logiciel} verdict={display.verdict} />
       <RetoursFiche logicielId={logiciel.id} retours={retours} />
+      <div className="mt-10">
+        <CtaEditeur lang={lang} secteur={logiciel.secteur} />
+      </div>
       <section className="mt-10 border-t border-slate-200 pt-6">
         <h2 className="font-serif text-xl font-semibold text-slate-800">{t.fiche.related}</h2>
         <ul className="mt-3 space-y-2 text-sm">
