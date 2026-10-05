@@ -1,0 +1,8 @@
+{
+ "corrections": [
+  {
+   "slug": "tiime",
+   "justification_editeur": "La facturation seule (devis, factures PDF, envoi) se recode vite, mais elle ne suffit plus : la réforme de la facturation électronique impose à toutes les entreprises de pouvoir recevoir des factures électroniques à partir du 1er septembre 2026, et l'émission suit : dès le 1er septembre 2026 pour les grandes entreprises et les ETI, le 1er septembre 2027 pour les PME et les micro-entreprises, via une plateforme agréée. Un outil maison doit donc se brancher sur une plateforme agréée, ce qui est un vrai chantier. Dès que l'outil couvre aussi la comptabilité et les déclarations, on retombe sur les obligations des autres suites comptables."
+  }
+ ]
+}

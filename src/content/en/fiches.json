@@ -2437,7 +2437,7 @@
  },
  "tiime": {
   "description": "Invoicing and accounting app for freelancers and small businesses, including in hospitality.",
-  "justification": "Invoicing alone (quotes, PDF invoices, sending) is quick to rebuild, but it is no longer enough: the electronic invoicing reform requires all businesses to be able to receive electronic invoices from 1 September 2026, and issuing follows in stages by size, through an approved platform. A home-made tool must therefore connect to an approved platform, which is a real undertaking. As soon as the tool also covers accounting and returns, you fall back on the obligations of the other accounting suites.",
+  "justification": "Invoicing alone (quotes, PDF invoices, sending) is quick to rebuild, but it is no longer enough: the electronic invoicing reform requires all businesses to be able to receive electronic invoices from 1 September 2026, and issuing follows: from 1 September 2026 for large companies and mid-size companies, from 1 September 2027 for SMEs and micro-businesses, through an approved platform. A home-made tool must therefore connect to an approved platform, which is a real undertaking. As soon as the tool also covers accounting and returns, you fall back on the obligations of the other accounting suites.",
   "perdez": [
    "Bank link and automatic reconciliation.",
    "Accounting kept together with your accountant.",
