@@ -135,7 +135,7 @@
  },
  "amenitiz": {
   "description": "Management suite for independent hotels, with PMS, booking engine and channel management.",
-  "justification": "PMS, booking engine and multichannel distribution synchronised in real time: the risk of double booking makes this trio unsuitable for do-it-yourself.",
+  "justification": "Amenitiz bundles PMS, booking engine, channel manager and payments in a single subscription, with no commission on direct bookings; its built-in payment, AmenitizPay, charges 1.5% + €0.25 per transaction. It targets small hotels without an IT person: the value is in the whole package already wired to the booking platforms. A direct-booking site can be built; the PMS and distribution stay with the vendor.",
   "alternatives": [
    "Open-source hotel PMS and booking engine (PHP, OSL-3.0 licence), self-hostable, active repository.",
    "Free PMS with no room limit (planning, bookings, invoicing), in French; paid channel manager from €25/month.",
@@ -167,7 +167,7 @@
  },
  "ariane-systems": {
   "description": "Kiosks and online check-in to automate guest arrival and departure at hotels.",
-  "justification": "Hardware kiosks synchronised with the PMS and with payment make for a hardware-plus-software integration project far beyond a home-made development."
+  "justification": "Ariane Systems supplies check-in kiosks and online check-in so guests can arrive and leave without going through reception. The kiosk software is only one part: there is also the hardware, the payment, the link with the PMS and handing over a key or an access code. It is an integration project, not an app to develop."
  },
  "asana": {
   "description": "Team project management: projects, tasks, owners, dependencies and progress updates.",
@@ -190,7 +190,7 @@
  },
  "asterio": {
   "description": "Cloud PMS for hotels, restaurants and spas, with multi-activity management and built-in point of sale.",
-  "justification": "Running several activities (accommodation, restaurant, spa) in one system with cross-billing is a project far too broad for a custom build.",
+  "justification": "Asterio brings accommodation, dining and spa into a single PMS, with an integrated point of sale. The hard part is not the screen but cross-billing (one bill mixing room, meals and treatments) and payment collection: an integrated till has to follow French rules on cash-register software, with a certificate or an attestation from the vendor. An in-house tool ticks neither box.",
   "alternatives": [
    "Open-source hotel PMS and booking engine (PHP, OSL-3.0 licence), self-hostable, active repository.",
    "Free PMS (GPL-3.0) for small hotels and guesthouses, German and English interface, active repository.",
@@ -279,7 +279,7 @@
  },
  "booking-com-extranet": {
   "description": "Extranet to manage listings, rates and availability on the number-one OTA for French hotels.",
-  "justification": "It is the most extreme example of dependence on a marketplace: the value comes entirely from Booking's traffic, and no home-made tool can replicate that audience."
+  "justification": "The Booking.com extranet is the free tool through which a hotel manages its listings, rates and availability; Booking is paid through a commission on each reservation. What has value is the platform's audience, which no in-house tool can reproduce. If you sell on several platforms, a channel manager saves you from updating each extranet by hand."
  },
  "booking-shake": {
   "description": "French software to manage groups and events: requests, quotes, invoices, schedules and function sheets, for hotels, restaurant-bars and event venues.",
@@ -422,7 +422,7 @@
  },
  "chloe-my-groom-service": {
   "description": "Multi-activity PMS (hotel, restaurant, bar, spa, seminars), installed locally.",
-  "justification": "On top of the usual synchronisation risks of a PMS, managing several activities in one tool adds a complexity that few businesses have any interest in rebuilding.",
+  "justification": "Chloë is an on-premise PMS for properties that mix hotel, restaurant, bar, spa and seminars. A local installation means backups, updates and remote access that you are responsible for, on top of the usual PMS risks. Maintaining it in-house takes real IT skills that few properties have.",
   "alternatives": [
    "Open-source hotel PMS and booking engine (PHP, OSL-3.0 licence), self-hostable, active repository.",
    "Free PMS (GPL-3.0) for small hotels and guesthouses, German and English interface, active repository.",
@@ -565,7 +565,7 @@
  },
  "d-edge": {
   "description": "Hotel distribution suite combining CRS, channel manager, booking engine and payment (Accor group).",
-  "justification": "A full CRS with channel manager and payment is one of a hotel's most critical systems: no room for the approximations of a home-made tool.",
+  "justification": "D-EDGE is aimed at chains and groups: a CRS (central reservation system) feeding several hotels, a channel manager, a booking engine and payments, all published within the Accor group. At that scale, a wrong rate or stock figure multiplies across every property at once. The ambition of an in-house tool stops well before that level.",
   "alternatives": [
    "PMS and channel manager priced per unit, from €15.50/month, no commission on bookings.",
    "Italian vendor of PMS, channel manager and booking engine for hotels, B&Bs and small chains.",
@@ -1625,7 +1625,7 @@
  },
  "mews": {
   "description": "Cloud PMS that centralises reservations, hotel operations, payments and F&B points of sale.",
-  "justification": "A hotel PMS touches invoicing, payments and real-time multichannel sync: an error can cost a room sold twice, so this is not ground for DIY.",
+  "justification": "Mews goes beyond the PMS: it also carries payments and food-and-beverage points of sale, and is priced per room or per bed in three tiers. The more services a hotel plugs into one tool (restaurant till, payment, invoicing), the further a defect spreads. Keep the PMS and connect your custom tools to it rather than replacing it.",
   "alternatives": [
    "PMS, booking engine and website for hotels, open source (OSL 3.0 licence), to host yourself.",
    "PMS, channel manager and booking engine for accommodation, from €15.50/month with no commitment.",
@@ -2005,7 +2005,7 @@
  },
  "reservit": {
   "description": "French direct booking and multichannel distribution solution for hotels and tourist accommodation.",
-  "justification": "Real-time multichannel distribution to several OTAs is precisely the kind of fragile synchronisation that is better entrusted to a specialist vendor.",
+  "justification": "Reservit offers a direct-booking engine, multichannel distribution and tools to watch competitors' rates. The direct booking button on your own site is the part that can be built; distribution to several booking sites, which has to stay up to date continuously, is better left to the vendor.",
   "alternatives": [
    "PMS, booking engine and website for hotels, open source (OSL 3.0 licence), to host yourself.",
    "PMS, channel manager and booking engine for accommodation, from €15.50/month with no commitment.",
@@ -2121,7 +2121,7 @@
  },
  "sequoiasoft": {
   "description": "Software suite for managing hotels, outdoor accommodation and wellness centres.",
-  "justification": "Covering hotels, outdoor hospitality and wellness in a single system with cross-billing is a scope far too broad for a custom build.",
+  "justification": "Sequoiasoft covers three trades in one piece of software: the hotel, outdoor hospitality and the wellness centre. Outdoor hospitality adds its own rules (pitches, lengths of stay, tourist tax) that differ from a hotel's. Making them coexist with shared invoicing is too wide a scope for custom work; pick the vendor that knows your trade.",
   "alternatives": [
    "PMS, booking engine and website for hotels, open source (OSL 3.0 licence), to host yourself.",
    "Management suite for outdoor hospitality: reservations, invoicing, till and access, demo on request.",
@@ -2176,7 +2176,7 @@
  },
  "siteminder": {
   "description": "Tool to synchronise hotel rates and availability across OTAs and booking channels.",
-  "justification": "The channel manager is the classic example of software where a failed sync costs a room sold twice: not a good candidate for a custom build.",
+  "justification": "SiteMinder is a channel manager: it pushes your rates and availability to booking sites and brings back the reservations. Its base plan covers synchronisation; the Plus plan adds a booking engine and website. A one-minute stock gap is enough to sell the same room twice, and every channel connection has to be kept up as the channel changes. Not an in-house project.",
   "alternatives": [
    "PMS, channel manager and booking engine for accommodation, from €15.50/month with no commitment.",
    "Channel manager, cloud PMS and booking engine, monthly with no commitment and no commission on direct sales."
@@ -2651,7 +2651,7 @@
  },
  "ulyses-suite-hotel": {
   "description": "PMS for hotel groups and multi-site venues to centralise operations and reservations.",
-  "justification": "A PMS designed for multi-site groups adds a consolidation layer that makes the DIY idea even less realistic than for an independent hotel.",
+  "justification": "Ulyses Suite, from Septeo, is a twelve-module platform (PMS, distribution, revenue management, CRM, payments, online reputation) aimed at groups and multi-property hotels, with a native CRS. The value is consolidation: one dashboard and one guest file shared by every property. Rebuilding a single module is possible, but keeping it consistent with the others is not, for a small organisation.",
   "alternatives": [
    "Open-source (OSL-3.0) hotel management and booking software, with booking engine and room management.",
    "PMS for small hotels with a free basic version: bookings, calendar, arrivals/departures and invoicing.",

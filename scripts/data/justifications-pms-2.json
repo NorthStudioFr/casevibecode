@@ -1,0 +1,48 @@
+{
+ "corrections": [
+  {
+   "slug": "amenitiz",
+   "justification_editeur": "Amenitiz regroupe PMS, moteur de réservation, channel manager et paiement dans un seul abonnement, sans commission sur les réservations directes ; son paiement intégré, AmenitizPay, prélève 1,5 % + 0,25 € par transaction. C'est l'offre qui vise le petit hôtel sans informaticien : la valeur est dans l'ensemble déjà branché sur les plateformes. Un site de réservation directe se construit ; le PMS et la distribution restent chez l'éditeur."
+  },
+  {
+   "slug": "mews",
+   "justification_editeur": "Mews va plus loin que le PMS : il porte aussi les paiements et les points de vente de restauration, et sa tarification se fait par chambre ou par lit, en trois niveaux. Plus un hôtel branche de services sur un même outil (caisse du restaurant, paiement, facturation), plus un défaut se répercute partout. Gardez le PMS et reliez-y vos outils sur mesure plutôt que de le remplacer."
+  },
+  {
+   "slug": "siteminder",
+   "justification_editeur": "SiteMinder est un channel manager : il envoie vos tarifs et vos disponibilités vers les sites de réservation et en rapatrie les réservations. Sa formule de base couvre la synchronisation ; la formule Plus ajoute moteur de réservation et site web. Un décalage de stock d'une minute suffit à vendre deux fois la même chambre, et chaque connexion à un canal doit être maintenue au rythme des changements du canal. Ce n'est pas un projet maison."
+  },
+  {
+   "slug": "d-edge",
+   "justification_editeur": "D-EDGE s'adresse aux chaînes et aux groupes : un CRS (système central de réservation) qui alimente plusieurs hôtels, un channel manager, un moteur de réservation et le paiement, le tout édité dans le giron du groupe Accor. À cette échelle, un tarif ou un stock erroné se multiplie sur tous les établissements d'un coup. L'ambition d'un outil maison s'arrête bien avant ce niveau."
+  },
+  {
+   "slug": "ulyses-suite-hotel",
+   "justification_editeur": "Ulyses Suite, de Septeo, est une plateforme à douze modules (PMS, distribution, gestion des revenus, relation client, paiements, e-réputation) qui vise les groupes et les hôtels multi-sites, avec un CRS natif. La valeur est la consolidation : un tableau de bord et un fichier clients communs à tous les établissements. Recoder un seul module est possible, mais le tenir cohérent avec les autres ne l'est pas pour une petite structure."
+  },
+  {
+   "slug": "asterio",
+   "justification_editeur": "Asterio réunit hébergement, restauration et spa dans un seul PMS, avec un point de vente intégré. La difficulté n'est pas l'écran, c'est la facturation croisée (une note qui mêle chambre, repas et soin) et l'encaissement : une caisse intégrée doit respecter les règles françaises sur les logiciels de caisse, avec certificat ou attestation de l'éditeur. Un outil maison ne coche pas ces deux cases."
+  },
+  {
+   "slug": "reservit",
+   "justification_editeur": "Reservit propose un moteur de réservation directe, de la distribution multicanale et des outils de veille sur les tarifs de la concurrence. Le bouton de réservation directe sur votre site est la partie qui se construit ; la distribution vers plusieurs sites de réservation, qui doit rester à jour en continu, est celle qu'il vaut mieux laisser à l'éditeur."
+  },
+  {
+   "slug": "sequoiasoft",
+   "justification_editeur": "Sequoiasoft vise trois métiers dans un seul logiciel : l'hôtel, l'hôtellerie de plein air et le centre de bien-être. Le plein air ajoute ses règles propres (emplacements, durées de séjour, taxe de séjour) qui diffèrent de celles de l'hôtel. Les faire cohabiter avec une facturation commune est un périmètre trop large pour du sur-mesure ; choisissez l'éditeur qui connaît votre métier."
+  },
+  {
+   "slug": "chloe-my-groom-service",
+   "justification_editeur": "Chloë est un PMS installé sur place, pour des établissements qui mêlent hôtel, restaurant, bar, spa et séminaires. Une installation locale veut dire des sauvegardes, des mises à jour et un accès à distance dont vous êtes responsable, en plus des risques habituels d'un PMS. Pour la maintenir en interne, il faut de vraies compétences informatiques que peu d'établissements ont."
+  },
+  {
+   "slug": "ariane-systems",
+   "justification_editeur": "Ariane Systems fournit des bornes d'enregistrement et un enregistrement en ligne pour que le client arrive et reparte sans passer par la réception. Le logiciel de la borne n'est qu'une partie : il y a aussi le matériel, le paiement, le lien avec le PMS et la remise d'une clé ou d'un code d'accès. C'est un projet d'intégration, pas une application à développer."
+  },
+  {
+   "slug": "booking-com-extranet",
+   "justification_editeur": "L'extranet de Booking.com est l'outil gratuit par lequel un hôtel gère ses annonces, ses tarifs et ses disponibilités ; Booking se paie par une commission sur chaque réservation. Ce qui a de la valeur, c'est l'audience de la plateforme, qu'aucun outil maison ne reproduit. Si vous vendez sur plusieurs plateformes, un channel manager évite de mettre à jour chaque extranet à la main."
+  }
+ ]
+}
