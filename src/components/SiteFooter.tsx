@@ -8,7 +8,7 @@ export function SiteFooter() {
   const { t, href } = useLocale();
   const pathname = usePathname();
   // Page d'où l'on signale : sans le préfixe de langue, pour le chemin « canonique » de la fiche.
-  const page = pathname && pathname !== '/' && !pathname.startsWith(href('/signaler')) ? pathname.replace(/^\/en(?=\/|$)/, '') || '/' : null;
+  const page = pathname && pathname !== '/' && !/\/signaler$/.test(pathname) ? pathname.replace(/^\/(?:fr|en)(?=\/|$)/, '') || '/' : null;
   return (
     <footer className="mt-auto border-t border-slate-200 px-8 py-6 text-center text-sm text-slate-500">
       <nav className="flex justify-center gap-4">
