@@ -3,10 +3,13 @@
 import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import {
+  listerBugs,
   listerPropositions,
   listerRetoursEnAttente,
+  marquerBugTraite,
   marquerTraitee,
   moderer,
+  type BugATraiter,
   type PropositionATraiter,
   type RetourAModerer,
 } from '@/lib/moderation-client';
@@ -19,13 +22,15 @@ const BTN = 'rounded-sm border border-slate-300 px-2 py-1 text-xs font-medium te
 export function ModerationPanel() {
   const [retours, setRetours] = useState<RetourAModerer[]>([]);
   const [propositions, setPropositions] = useState<PropositionATraiter[]>([]);
+  const [bugs, setBugs] = useState<BugATraiter[]>([]);
   const [erreur, setErreur] = useState<string | null>(null);
 
   const charger = useCallback(async () => {
     try {
-      const [r, p] = await Promise.all([listerRetoursEnAttente(), listerPropositions()]);
+      const [r, p, b] = await Promise.all([listerRetoursEnAttente(), listerPropositions(), listerBugs()]);
       setRetours(r);
       setPropositions(p);
+      setBugs(b);
       setErreur(null);
     } catch (e) {
       setErreur(e instanceof Error ? e.message : 'Chargement impossible.');
@@ -99,6 +104,25 @@ export function ModerationPanel() {
               </p>
               <button type="button" className={`mt-2 ${BTN}`} onClick={() => agir(() => marquerTraitee(p.id))}>
                 Marquer comme traitée
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <h3 className="mt-6 text-sm font-medium text-slate-800">Bugs signalés ({bugs.length})</h3>
+      {bugs.length === 0 ? (
+        <p className="mt-1 text-sm text-slate-500">Aucun bug à traiter.</p>
+      ) : (
+        <ul className="mt-2 space-y-3">
+          {bugs.map((b) => (
+            <li key={b.id} className="rounded-sm border border-slate-200 p-3 text-sm text-slate-700">
+              <p className="whitespace-pre-line">{b.message}</p>
+              <p className="mt-1 text-xs text-slate-500">
+                {b.page ?? 'page non précisée'} · {b.langue} · {new Date(b.created_at).toLocaleString('fr-FR')}
+              </p>
+              <button type="button" className={`mt-2 ${BTN}`} onClick={() => agir(() => marquerBugTraite(b.id))}>
+                Marquer comme traité
               </button>
             </li>
           ))}

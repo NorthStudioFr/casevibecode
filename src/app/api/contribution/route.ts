@@ -6,8 +6,8 @@ import { validerContribution } from '@/lib/contribution';
 const MAX_PAR_HEURE = 6;
 const FK_VIOLATION = '23503';
 
-// Envoi d'un retour (« je l'ai construit », « ça a cassé ») ou d'une proposition de
-// logiciel. Rien n'est publié tant qu'un administrateur n'a pas validé.
+// Envoi d'un retour (« je l'ai construit », « ça a cassé »), d'une proposition de
+// logiciel ou d'un signalement de bug. Rien n'est publié tant qu'un administrateur n'a pas validé.
 export async function POST(request: Request) {
   try {
     const ipHash = hashIp(getClientIp(request));
@@ -39,13 +39,15 @@ export async function POST(request: Request) {
             langue: c.langue,
             ip_hash: ipHash,
           })
-        : await supabase.from('propositions').insert({
-            nom: c.nom,
-            url: c.url,
-            raison: c.raison,
-            langue: c.langue,
-            ip_hash: ipHash,
-          });
+        : c.kind === 'bug'
+          ? await supabase.from('bugs').insert({ message: c.message, page: c.page, langue: c.langue, ip_hash: ipHash })
+          : await supabase.from('propositions').insert({
+              nom: c.nom,
+              url: c.url,
+              raison: c.raison,
+              langue: c.langue,
+              ip_hash: ipHash,
+            });
     if (error) {
       if (error.code === FK_VIOLATION) return NextResponse.json({ error: 'fiche' }, { status: 400 });
       console.error('contribution insert:', error);

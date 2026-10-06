@@ -18,11 +18,17 @@ export interface PropositionValide {
   raison: string | null;
   langue: Langue;
 }
-export type ContributionValide = RetourValide | PropositionValide;
+export interface BugValide {
+  kind: 'bug';
+  message: string;
+  page: string | null;
+  langue: Langue;
+}
+export type ContributionValide = RetourValide | PropositionValide | BugValide;
 
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
-export const LIMITES = { texteMin: 20, texteMax: 600, nomMin: 2, nomMax: 80, urlMax: 200, raisonMax: 500 } as const;
+export const LIMITES = { texteMin: 20, texteMax: 600, nomMin: 2, nomMax: 80, urlMax: 200, raisonMax: 500, bugMin: 15, bugMax: 800, pageMax: 200 } as const;
 
 // Lien facultatif : https uniquement, sans identifiants, sans adresse locale.
 export function lienValide(brut: unknown): string | null | undefined {
@@ -48,6 +54,16 @@ function texte(brut: unknown, min: number, max: number): string | undefined {
   // Espaces et sauts de ligne multiples réduits ; caractères de contrôle retirés.
   const v = brut.replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, '').replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
   return v.length >= min && v.length <= max ? v : undefined;
+}
+
+// Chemin interne facultatif (« /logiciel/tally ») : pas d'URL complète, pas d'espace.
+function pageValide(brut: unknown): string | null | undefined {
+  if (brut === undefined || brut === null) return null;
+  if (typeof brut !== 'string') return undefined;
+  const v = brut.trim();
+  if (v === '') return null;
+  if (v.length > LIMITES.pageMax || !v.startsWith('/') || v.startsWith('//') || /[\s\u0000-\u001f\u007f]/.test(v)) return undefined;
+  return v;
 }
 
 // Renvoie la contribution nettoyée, ou un message d'erreur (code) pour la réponse 400.
@@ -80,6 +96,14 @@ export function validerContribution(corps: unknown): { ok: true; valeur: Contrib
       raison = r;
     }
     return { ok: true, valeur: { kind: 'proposition', nom, url, raison, langue } };
+  }
+
+  if (c.kind === 'bug') {
+    const message = texte(c.message, LIMITES.bugMin, LIMITES.bugMax);
+    if (!message) return { ok: false, erreur: 'texte' };
+    const page = pageValide(c.page);
+    if (page === undefined) return { ok: false, erreur: 'page' };
+    return { ok: true, valeur: { kind: 'bug', message, page, langue } };
   }
 
   return { ok: false, erreur: 'invalide' };

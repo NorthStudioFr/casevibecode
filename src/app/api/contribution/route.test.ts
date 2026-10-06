@@ -45,6 +45,16 @@ describe('POST /api/contribution', () => {
     expect(insert.mock.calls[0][0]).toMatchObject({ nom: 'Tilby', url: 'https://www.tilby.com/', raison: null });
   });
 
+  it('enregistre un signalement de bug', async () => {
+    const res = await post({ kind: 'bug', message: 'Le bouton ne répond pas sur mon iPhone.', page: '/logiciel/tally', langue: 'fr' });
+    expect(res.status).toBe(201);
+    expect(from).toHaveBeenCalledWith('bugs');
+    const row = insert.mock.calls[0][0];
+    expect(row).toMatchObject({ message: 'Le bouton ne répond pas sur mon iPhone.', page: '/logiciel/tally', langue: 'fr' });
+    expect(row.ip_hash).toMatch(/^[0-9a-f]{64}$/);
+    expect(JSON.stringify(row)).not.toContain('9.9.9.9');
+  });
+
   it('répond 429 au-delà de la limite, sans écrire', async () => {
     rpc.mockResolvedValueOnce({ data: false, error: null });
     expect((await post(retour)).status).toBe(429);

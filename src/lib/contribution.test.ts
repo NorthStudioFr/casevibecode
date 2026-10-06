@@ -43,3 +43,28 @@ describe('validerContribution', () => {
     expect(validerContribution({ kind: 'autre' })).toEqual({ ok: false, erreur: 'invalide' });
   });
 });
+
+describe('validerContribution : bug', () => {
+  const bug = { kind: 'bug', message: 'Le bouton Ouvrir dans Claude ne fait rien sur mon iPhone.', page: '/logiciel/tally', langue: 'fr' };
+
+  it('valide et nettoie un signalement', () => {
+    expect(validerContribution({ ...bug, message: '  Le  bouton  ne répond pas, voilà ce que je vois.  ' })).toEqual({
+      ok: true,
+      valeur: { kind: 'bug', message: 'Le bouton ne répond pas, voilà ce que je vois.', page: '/logiciel/tally', langue: 'fr' },
+    });
+  });
+  it('la page est facultative', () => {
+    expect(validerContribution({ ...bug, page: '' })).toMatchObject({ ok: true, valeur: { page: null } });
+    expect(validerContribution({ ...bug, page: undefined })).toMatchObject({ ok: true, valeur: { page: null } });
+  });
+  it('refuse un message trop court ou trop long', () => {
+    expect(validerContribution({ ...bug, message: 'bug' })).toEqual({ ok: false, erreur: 'texte' });
+    expect(validerContribution({ ...bug, message: 'x'.repeat(801) })).toEqual({ ok: false, erreur: 'texte' });
+  });
+  it.each(['https://exemple.fr/x', '//exemple.fr', 'logiciel/tally', '/a b', '/' + 'x'.repeat(200)])('refuse la page %s', (page) => {
+    expect(validerContribution({ ...bug, page })).toEqual({ ok: false, erreur: 'page' });
+  });
+  it('refuse le champ piège rempli', () => {
+    expect(validerContribution({ ...bug, site: 'http://spam' })).toEqual({ ok: false, erreur: 'invalide' });
+  });
+});
