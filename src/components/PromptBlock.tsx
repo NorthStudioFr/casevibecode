@@ -38,7 +38,7 @@ export function PromptBlock({ logiciel }: { logiciel: Logiciel }) {
             href={agent.href(prompt)}
             onClick={copy}
             {...(agent.newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-            className={BUTTON}
+            className={agent.desktopOnly ? `${BUTTON} max-md:hidden` : BUTTON}
           >
             {t.prompt.openIn(agent.label)}
           </a>
