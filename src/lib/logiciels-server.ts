@@ -9,9 +9,10 @@ import { DEFAULT_LANG, type Lang } from './i18n/config';
 // Lecture de toute la liste (133+ fiches et plus), utilisée par chaque page de
 // fiche (navigation précédent/suivant), l'accueil, le sitemap et llms.txt.
 // Mise en cache indépendamment de la revalidation propre à chaque page pour ne
-// pas relire toute la table à chaque régénération de fiche. 5 min (comme les
-// pages) : une fiche ajoutée ou modifiée apparaît vite, et Supabase n'a pas de
-// quota de lecture à ménager comme Firestore.
+// pas relire toute la table à chaque régénération de fiche. 1 h (comme les
+// pages) : le quota de calcul Vercel est partagé avec un autre projet, donc on
+// régénère rarement ; une fiche modifiée apparaît dans l'heure (ou au prochain
+// déploiement).
 const getLogicielsCached = unstable_cache(
   async (): Promise<Logiciel[]> => {
     const { data, error } = await getSupabaseServer().from('logiciels').select('*').order('slug');
@@ -19,7 +20,7 @@ const getLogicielsCached = unstable_cache(
     return (data as LogicielRow[]).map(mapLogicielRow);
   },
   ['logiciels-all'],
-  { revalidate: 300 },
+  { revalidate: 3600 },
 );
 
 // Le cas « build de CI sans variables » reste HORS du cache : sinon la liste vide qu'il

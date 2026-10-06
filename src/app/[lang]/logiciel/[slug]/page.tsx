@@ -23,12 +23,12 @@ import { NewsletterForm } from '@/components/NewsletterForm';
 import { LogoEditeur } from '@/components/LogoEditeur';
 import { RetoursFiche } from '@/components/RetoursFiche';
 
-// Regenerate at most once every 5 min (ISR) instead of rendering per
+// Regenerate at most once an hour (ISR) instead of rendering per
 // request, to keep database reads within the free-plan limits under
-// crawl/traffic spikes. Admin edits and new votes show up within 5 min.
+// crawl/traffic spikes. Admin edits and new votes show up within an hour.
 // VoteButton updates its own count optimistically, so a voter still sees
 // their vote immediately.
-export const revalidate = 300;
+export const revalidate = 3600;
 
 // Required for `revalidate` to actually cache this dynamic route: without
 // generateStaticParams the route stays dynamically rendered on every request
