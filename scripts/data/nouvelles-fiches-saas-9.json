@@ -1,0 +1,22 @@
+[
+ {
+  "slug": "arvow",
+  "nom": "Arvow",
+  "domaine": "arvow.com",
+  "categorie": "marketing",
+  "description": "Plateforme de référencement par IA : des agents proposent des mots-clés, rédigent des articles de blog et les publient sur votre site (connexion à des CMS comme WordPress), avec maillage interne et externe. Les formules supérieures ajoutent des backlinks automatiques et le suivi de la visibilité de la marque dans les réponses des IA. Abonnement de 39 $ par mois facturé à l'année (69 $ au mois) pour 1 000 crédits et 1 site.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "La partie rédaction se recode : une liste de mots-clés, un modèle de langage, une relecture et une publication en brouillon sur WordPress tiennent dans un petit script. Ce qui est difficile à refaire, ce sont les backlinks, qui reposent sur un réseau de sites que l'éditeur entretient, et le suivi de la visibilité dans les réponses des IA, qui demande d'interroger régulièrement plusieurs services. Attention aussi au fond : publier des articles en masse sans relecture peut être traité par Google comme du contenu produit à grande échelle. Le script ne vous fait donc économiser que la partie mécanique, pas le travail éditorial.",
+  "ce_que_vous_perdez": [
+   "Les backlinks automatiques, qui s'appuient sur un réseau de sites que vous n'avez pas",
+   "Le suivi de la visibilité de votre marque dans les réponses des IA",
+   "La recherche de mots-clés automatisée avec des données de volume",
+   "Les connexions maintenues vers les CMS et le maillage interne géré pour vous"
+  ],
+  "prix": "à partir de 34,75 €/mois (converti de 39 $, facturé à l'année, cours du 2 oct. 2026)",
+  "prompt": "Construis un petit outil pour rédiger des brouillons d'articles de blog à partir d'une liste de mots-clés, en remplacement d'un abonnement de référencement par IA.\n\nNe publie jamais directement : chaque article part en brouillon, à relire par moi.\n\nÀ faire :\n- Un fichier mots-cles.csv (mot-clé, intention de recherche, page à lier).\n- Pour chaque mot-clé, un brouillon en Markdown généré par l'API d'un modèle de langage, avec plan, titres, une FAQ et des liens internes vers les pages que je liste.\n- Une consigne qui interdit d'inventer chiffres, citations ou sources : toute donnée doit venir d'un lien que je fournis, sinon la phrase est omise.\n- L'envoi en brouillon (statut draft) sur mon WordPress via l'API REST avec un mot de passe d'application, stocké dans .env, jamais dans le dépôt.\n- Un plafond de 10 articles par semaine et un journal des brouillons créés.\n\nHors périmètre : backlinks, suivi de la visibilité dans les moteurs d'IA, publication automatique.\n\nREADME : lancement, relecture obligatoire avant publication, et rappel que le contenu produit en masse sans relecture peut être sanctionné par Google.",
+  "secteur": "saas",
+  "source_verdict": "casevibecode",
+  "prix_mensuel": null
+ }
+]

@@ -3549,5 +3549,16 @@
    "Lightweight cookie-free web analytics (AGPL), self-hostable version."
   ],
   "prompt": "Set up self-hosted web analytics to replace Mixpanel for my site.\n\nDo not build an analytics tool: deploy Umami.\n\nTo do:\n- A docker-compose.yml with Umami and PostgreSQL, volumes in ./data, automatic restart.\n- Caddy in front, automatic HTTPS on a subdomain that I will give you.\n- The tracking snippet added to my site, loaded asynchronously, with custom events for the 3 actions that I list (sign-up, purchase, download).\n- Registration closed after my account is created.\n- A nightly encrypted backup of the database, copied off the server, with restore.sh and a restore test.\n\nOut of scope: funnels, cohorts, session replays.\n\nREADME: launch, adding a site, adding an event, update, restore, and a reminder of what I no longer measure."
+ },
+ "arvow": {
+  "description": "AI SEO platform: agents suggest keywords, write blog articles and publish them to your site (connects to CMSs such as WordPress), with internal and external linking. Higher plans add automatic backlinks and tracking of your brand's visibility in AI answers. Subscription from $39 a month billed yearly ($69 month to month) for 1,000 credits and 1 site.",
+  "justification": "The writing part can be rebuilt: a keyword list, a language model, a review step and a draft published to WordPress fit in a small script. What is hard to redo is backlinks, which rely on a network of sites the vendor maintains, and tracking visibility in AI answers, which means querying several services on a regular basis. Mind the substance too: publishing articles in bulk without review can be treated by Google as content produced at scale. A script only saves you the mechanical part, not the editorial work.",
+  "perdez": [
+   "Automatic backlinks, which rely on a network of sites you don't have",
+   "Tracking of your brand's visibility in AI answers",
+   "Automated keyword research with volume data",
+   "Maintained CMS connections and internal linking handled for you"
+  ],
+  "prompt": "Build a small tool that writes draft blog articles from a keyword list, to replace an AI SEO subscription.\n\nNever publish directly: every article goes out as a draft for me to review.\n\nTo do:\n- A keywords.csv file (keyword, search intent, page to link).\n- For each keyword, a Markdown draft generated through a language model API, with outline, headings, an FAQ and internal links to the pages I list.\n- An instruction that forbids inventing figures, quotes or sources: any data point must come from a link I provide, otherwise the sentence is left out.\n- Sending the draft (status draft) to my WordPress through the REST API with an application password, kept in .env, never in the repository.\n- A cap of 10 articles per week and a log of the drafts created.\n\nOut of scope: backlinks, tracking visibility in AI engines, automatic publishing.\n\nREADME: how to run it, mandatory review before publishing, and a reminder that content produced in bulk without review can be penalised by Google."
  }
 }
