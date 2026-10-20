@@ -1170,7 +1170,8 @@
   "justification": "Touch kiosks, a certified till and multiple integrations (delivery, kitchen) form a hardware-plus-software package too heavy for a small business to rebuild.",
   "alternatives": [
    "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
-   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France."
+   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France.",
+   "French cloud till and management system, LNE-certified, for independent restaurants, fast-food outlets and chains: kitchen screen, click & collect, order management and BI."
   ]
  },
  "inpulse": {
@@ -1341,7 +1342,8 @@
    "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France.",
    "NF525-certified online cash register with a free plan, usable in restaurants and retail.",
-   "Certified iPad cash register, simpler, aimed at shopkeepers and restaurants."
+   "Certified iPad cash register, simpler, aimed at shopkeepers and restaurants.",
+   "French cloud till and management system, LNE-certified, for independent restaurants, fast-food outlets and chains: kitchen screen, click & collect, order management and BI."
   ]
  },
  "le-commis": {
@@ -1391,7 +1393,8 @@
    "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France.",
    "NF525-certified online cash register with a free plan, usable in restaurants and retail.",
-   "Certified iPad cash register, simpler, aimed at shopkeepers and restaurants."
+   "Certified iPad cash register, simpler, aimed at shopkeepers and restaurants.",
+   "French cloud till and management system, LNE-certified, for independent restaurants, fast-food outlets and chains: kitchen screen, click & collect, order management and BI."
   ]
  },
  "linktree": {
@@ -2811,8 +2814,8 @@
   ]
  },
  "zelty": {
-  "description": "Complete cloud till for independent restaurants and multi-venue chains.",
-  "justification": "In France, till software must be NF525-certified or covered by a certificate of compliance (article 286 of the French tax code): an in-house till has neither, with a fine of €7,500 per non-compliant system. Zelty is a complete cloud till for independent restaurants and chains, with several venues to synchronise. Multi-site adds to the difficulty. Go with the vendor.",
+  "description": "Cloud till and management (kitchen screen, click & collect, order manager, BI) for independent restaurants, fast-food outlets and multi-venue chains. LNE-certified.",
+  "justification": "In France, till software must be certified (NF525 or LNE): an in-house till has neither, with a fine of €7,500 per non-compliant system. Zelty is a complete LNE-certified cloud till for independent restaurants and chains, with several venues to synchronise. Multi-site adds to the difficulty. Go with the vendor.",
   "alternatives": [
    "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
    "NF525-compliant online cash register, offered free with optional paid extras, restaurant mode included.",
