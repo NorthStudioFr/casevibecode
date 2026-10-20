@@ -82,6 +82,10 @@ describe('FicheLogicielPage rendu', () => {
     render(jsx);
 
     expect(screen.getByText(/Vérifié le 20 octobre 2026/)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Vous êtes l'éditeur/i })).toHaveAttribute(
+      'href',
+      expect.stringContaining('sujet=editeur')
+    );
   });
 
   it('n’affiche aucune mention de vérification si verifieLe est absent', async () => {

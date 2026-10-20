@@ -12,9 +12,16 @@ function pageDuLien(brut: string | null): string {
   return brut && brut.startsWith('/') && !brut.startsWith('//') && brut.length <= 200 && !/\s/.test(brut) ? brut : '';
 }
 
+// Sujet transmis par le lien (?sujet=editeur) ; seule la valeur autorisée est acceptée.
+function sujetDuLien(brut: string | null): 'editeur' | null {
+  return brut === 'editeur' ? 'editeur' : null;
+}
+
 function Formulaire() {
   const { t, lang } = useLocale();
-  const pageInitiale = pageDuLien(useSearchParams().get('page'));
+  const searchParams = useSearchParams();
+  const pageInitiale = pageDuLien(searchParams.get('page'));
+  const sujet = sujetDuLien(searchParams.get('sujet'));
   const [message, setMessage] = useState('');
   const [page, setPage] = useState(pageInitiale);
   const [piege, setPiege] = useState('');
@@ -45,6 +52,11 @@ function Formulaire() {
 
   return (
     <form onSubmit={envoyer} className="mt-6 max-w-xl space-y-4">
+      {sujet === 'editeur' && (
+        <div className="rounded-sm border border-secondary/40 bg-secondary/10 p-4 text-sm text-slate-800">
+          <p className="font-medium">{t.signaler.editorBanner}</p>
+        </div>
+      )}
       <div>
         <label htmlFor="bug-message" className="block text-sm text-slate-700">
           {t.signaler.messageLabel}
@@ -57,6 +69,7 @@ function Formulaire() {
           minLength={15}
           maxLength={800}
           rows={6}
+          placeholder={sujet === 'editeur' ? t.signaler.editorPlaceholder : undefined}
           aria-describedby="bug-hint"
           className={CHAMP}
         />

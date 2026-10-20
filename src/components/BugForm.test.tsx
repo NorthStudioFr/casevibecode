@@ -27,6 +27,19 @@ describe('BugForm', () => {
     expect(screen.getByLabelText(/Page concernée/)).toHaveValue('');
   });
 
+  it('affiche la consigne éditeur et la mention de vérification si sujet=editeur', () => {
+    query = 'page=%2Flogiciel%2Fzelty&sujet=editeur';
+    render(<BugForm />);
+    expect(screen.getByText(/Vous représentez l'éditeur/)).toBeInTheDocument();
+    expect(screen.getByText(/Rien n'est publié sans vérification/)).toBeInTheDocument();
+  });
+
+  it('ignore un sujet non autorisé', () => {
+    query = 'page=%2Flogiciel%2Fzelty&sujet=inconnu';
+    render(<BugForm />);
+    expect(screen.queryByText(/Vous représentez l'éditeur/)).toBeNull();
+  });
+
   it('envoie le signalement à /api/contribution et remercie', async () => {
     const fetchMock = vi.fn().mockResolvedValue({ ok: true, status: 201 });
     vi.stubGlobal('fetch', fetchMock);

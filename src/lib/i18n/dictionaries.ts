@@ -116,6 +116,7 @@ export const fr = {
     sourceCanivibecodeit: 'verdict d’après canivibecodeit',
     sourceEditor: 'verdict casevibecode',
     verifiedOn: (date: string) => `Vérifié le ${date}`,
+    editorNotice: "Vous êtes l'éditeur ? Proposer une correction",
     votes: (n: number) => `${n} votes`,
     attributionBefore: 'Verdict initial repris de',
     attributionAfter: '(licence MIT), traduit et adapté. Votez pour le corriger.',
@@ -283,6 +284,10 @@ Contraintes :
     sending: 'Envoi…',
     thanks: 'Merci ! Nous regardons ça. Vous ne recevrez pas de réponse (aucun e-mail demandé), mais le correctif part en ligne dès que possible.',
     errorTexte: 'Le message doit faire entre 15 et 800 caractères.',
+    editorBanner:
+      "Vous représentez l'éditeur de ce logiciel : indiquez les points factuels à corriger ou compléter (avec sources ou documentation officielle). Rien n'est publié sans vérification par notre équipe.",
+    editorPlaceholder:
+      'Précisez les points à corriger (nouvelle certification, fonctionnalités, tarifs) avec liens vers votre documentation officielle...',
     privacy: "Aucun e-mail demandé. Seule une empreinte de votre adresse IP est conservée 13 mois contre les abus.",
   },
   methode: {
@@ -435,6 +440,7 @@ export const en: Dict = {
     sourceCanivibecodeit: 'verdict based on canivibecodeit',
     sourceEditor: 'casevibecode verdict',
     verifiedOn: (date: string) => `Verified on ${date}`,
+    editorNotice: 'Are you the publisher? Suggest a correction',
     votes: (n: number) => `${n} votes`,
     attributionBefore: 'Initial verdict taken from',
     attributionAfter: '(MIT licence), translated and adapted. Vote to correct it.',
@@ -601,6 +607,10 @@ Constraints:
     sending: 'Sending…',
     thanks: "Thank you! We'll look into it. You won't get a reply (no email asked), but the fix goes online as soon as possible.",
     errorTexte: 'The message must be between 15 and 800 characters.',
+    editorBanner:
+      'You represent the publisher of this software: please specify factual points to correct or update (with sources or official documentation). Nothing is published without verification by our team.',
+    editorPlaceholder:
+      'Specify points to correct (new certification, features, pricing) with links to your official documentation...',
     privacy: 'No email asked. Only a fingerprint of your IP address is kept for 13 months against abuse.',
   },
   methode: {
