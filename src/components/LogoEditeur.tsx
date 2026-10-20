@@ -22,7 +22,7 @@ export function LogoEditeur({ domaine, taille = 32 }: { domaine?: string; taille
       width={taille}
       height={taille}
       unoptimized
-      className="shrink-0 rounded-sm border border-slate-200 bg-white object-contain"
+      className="shrink-0 rounded-sm border border-slate-200 bg-[#f6f6f2] object-contain"
       onError={() => setEnErreur(true)}
     />
   );
