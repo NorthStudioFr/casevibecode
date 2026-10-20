@@ -104,6 +104,16 @@ export default async function FicheLogicielPage({ params }: Props) {
         <LogoEditeur domaine={logiciel.domaine} taille={48} />
         <h1 className="font-serif text-4xl font-semibold text-slate-800">{logiciel.nom}</h1>
       </div>
+      {logiciel.domaine && (
+        <a
+          href={`https://${logiciel.domaine}`}
+          className="mt-2 inline-block text-sm text-slate-500 underline hover:text-slate-800"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t.fiche.officialSite} · {logiciel.domaine} ↗
+        </a>
+      )}
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <VerdictBadge verdict={display.verdict} big />
         {logiciel.prix && <span className="text-sm text-slate-700">{formatPrix(logiciel.prix, lang)}</span>}

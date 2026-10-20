@@ -106,6 +106,7 @@ export const fr = {
   } as Record<Categorie, string>,
   fiche: {
     back: '← Retour à toutes les fiches',
+    officialSite: 'Site officiel',
     notFound: 'Logiciel introuvable',
     titleSuffix: (nom: string) => `${nom} : remplaçable ou pas ?`,
     fallbackDescription: (nom: string) =>
@@ -389,6 +390,7 @@ export const en: Dict = {
   },
   fiche: {
     back: '← Back to all tools',
+    officialSite: 'Official website',
     notFound: 'Tool not found',
     titleSuffix: (nom: string) => `${nom}: replaceable or not?`,
     fallbackDescription: (nom: string) =>
