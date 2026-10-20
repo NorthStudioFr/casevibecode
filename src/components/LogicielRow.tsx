@@ -40,7 +40,7 @@ export function LogicielRow({
       </span>
       <span className="hidden text-sm text-slate-600 md:block">{prix ?? ''}</span>
       <span className="col-start-2 row-start-2 justify-self-start md:col-start-auto md:row-start-auto">
-        <VerdictBadge verdict={verdict} />
+        <VerdictBadge verdict={verdict} court />
       </span>
       <span
         className="hidden text-right text-sm text-slate-600 md:block"
@@ -52,7 +52,9 @@ export function LogicielRow({
         className="hidden text-right text-sm md:block"
         aria-label={t.grid.built(nbConstruits)}
       >
-        <span className={nbConstruits > 0 ? 'font-medium text-slate-800' : 'text-slate-400'}>{nbConstruits}</span>
+        <span className={nbConstruits > 0 ? 'font-medium text-slate-800' : 'text-slate-400'}>
+          {nbConstruits > 0 ? nbConstruits : '—'}
+        </span>
       </span>
       {prix && (
         <span className="col-start-2 row-start-4 text-xs text-slate-600 md:hidden">{prix}</span>

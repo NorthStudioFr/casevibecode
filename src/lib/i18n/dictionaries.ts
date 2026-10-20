@@ -66,6 +66,11 @@ export const fr = {
     KINDA: 'Partiellement remplaçable',
     NOT_REALLY: 'Pas remplaçable',
   } as Record<VerdictEditeur, string>,
+  verdictCourt: {
+    YES: 'Remplaçable',
+    KINDA: 'Partiel',
+    NOT_REALLY: 'Pas remplaçable',
+  } as Record<VerdictEditeur, string>,
   secteur: {
     chr: '🍽️ CHR',
     saas: '💼 Outils du quotidien',
@@ -389,6 +394,11 @@ export const en: Dict = {
     YES: 'Replaceable',
     KINDA: 'Partly replaceable',
     NOT_REALLY: 'Not replaceable',
+  },
+  verdictCourt: {
+    YES: 'Replaceable',
+    KINDA: 'Partial',
+    NOT_REALLY: 'Not really',
   },
   secteur: {
     chr: '🍽️ Hospitality',

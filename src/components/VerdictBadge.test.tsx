@@ -16,4 +16,14 @@ describe('VerdictBadge', () => {
     render(<VerdictBadge verdict="YES" big />);
     expect(screen.getByText('Remplaçable').className).toContain('text-lg');
   });
+
+  it('includes whitespace-nowrap to avoid breaking onto two lines', () => {
+    render(<VerdictBadge verdict="KINDA" />);
+    expect(screen.getByText('Partiellement remplaçable').className).toContain('whitespace-nowrap');
+  });
+
+  it('renders a short label when court is set', () => {
+    render(<VerdictBadge verdict="KINDA" court />);
+    expect(screen.getByText('Partiel')).toBeInTheDocument();
+  });
 });

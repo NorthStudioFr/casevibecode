@@ -62,7 +62,7 @@ describe('Home page', () => {
     expect(getVoteCountsMock).toHaveBeenCalledWith('laddition');
     const zenchefCard = screen.getByRole('link', { name: /zenchef/i });
     expect(zenchefCard).toHaveTextContent('Remplaçable');
-    expect(zenchefCard).not.toHaveTextContent('Partiellement remplaçable');
-    expect(screen.getByRole('link', { name: /l'addition/i })).toHaveTextContent('Partiellement remplaçable');
+    expect(zenchefCard).not.toHaveTextContent('Partiel');
+    expect(screen.getByRole('link', { name: /l'addition/i })).toHaveTextContent('Partiel');
   });
 });

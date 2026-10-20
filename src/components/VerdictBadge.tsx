@@ -11,12 +11,21 @@ const COLORS: Record<VerdictEditeur, string> = {
   NOT_REALLY: 'bg-no text-on-no',
 };
 
-export function VerdictBadge({ verdict, big = false }: { verdict: VerdictEditeur; big?: boolean }) {
+export function VerdictBadge({
+  verdict,
+  big = false,
+  court = false,
+}: {
+  verdict: VerdictEditeur;
+  big?: boolean;
+  court?: boolean;
+}) {
   const { t } = useLocale();
   const size = big ? 'px-4 py-1.5 text-lg' : 'px-2.5 py-0.5 text-xs';
+  const label = court ? t.verdictCourt[verdict] : t.verdict[verdict];
   return (
-    <span className={`inline-block rounded-sm font-bold ${size} ${COLORS[verdict]}`}>
-      {t.verdict[verdict]}
+    <span className={`inline-block whitespace-nowrap rounded-sm font-bold ${size} ${COLORS[verdict]}`}>
+      {label}
     </span>
   );
 }

@@ -25,9 +25,12 @@ describe('LogicielRow', () => {
     expect(screen.getByRole('link')).toHaveAttribute('href', '/logiciel/zenchef');
   });
 
-  it('shows the display verdict it is given, not the raw verdictEditeur', () => {
-    render(<LogicielRow logiciel={logiciel} verdict="YES" totalVotes={0} rang={1} />);
+  it('shows the display verdict it is given, not the raw verdictEditeur, using short label', () => {
+    const { rerender } = render(<LogicielRow logiciel={logiciel} verdict="YES" totalVotes={0} rang={1} />);
     expect(screen.getByText('Remplaçable')).toBeInTheDocument();
+
+    rerender(<LogicielRow logiciel={logiciel} verdict="KINDA" totalVotes={0} rang={1} />);
+    expect(screen.getByText('Partiel')).toBeInTheDocument();
     expect(screen.queryByText('Partiellement remplaçable')).not.toBeInTheDocument();
   });
 
@@ -49,10 +52,15 @@ describe('LogicielRow', () => {
     expect(screen.getByLabelText('3 votes')).toBeInTheDocument();
   });
 
-  it('affiche le nombre de personnes qui ont remplacé l\'outil', () => {
+  it('affiche le nombre de personnes qui ont remplacé l\'outil, ou un tiret à zéro', () => {
     const { rerender } = render(<LogicielRow logiciel={logiciel} verdict="YES" totalVotes={0} rang={1} />);
-    expect(screen.getByLabelText('0 personne a remplacé cet outil')).toBeInTheDocument();
+    const cell0 = screen.getByLabelText('0 personne a remplacé cet outil');
+    expect(cell0).toBeInTheDocument();
+    expect(cell0).toHaveTextContent('—');
+
     rerender(<LogicielRow logiciel={logiciel} verdict="YES" totalVotes={0} nbConstruits={3} rang={1} />);
-    expect(screen.getByLabelText('3 personnes ont remplacé cet outil')).toBeInTheDocument();
+    const cell3 = screen.getByLabelText('3 personnes ont remplacé cet outil');
+    expect(cell3).toBeInTheDocument();
+    expect(cell3).toHaveTextContent('3');
   });
 });
