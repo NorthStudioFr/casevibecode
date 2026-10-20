@@ -1170,8 +1170,8 @@
   "justification": "Touch kiosks, a certified till and multiple integrations (delivery, kitchen) form a hardware-plus-software package too heavy for a small business to rebuild.",
   "alternatives": [
    "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
-   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France.",
-   "French cloud till and management system, LNE-certified, for independent restaurants, fast-food outlets and chains: kitchen screen, click & collect, order management and BI."
+   "French cloud till and management system, LNE-certified, for independent restaurants, fast-food outlets and chains: kitchen screen, click & collect, order management and BI.",
+   "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France."
   ]
  },
  "inpulse": {
@@ -1340,10 +1340,10 @@
   "justification": "An NF525-certified till system with stock management, VAT and accounting closings represents regulatory and reliability work that few small businesses have any interest in rebuilding themselves.",
   "alternatives": [
    "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
+   "French cloud till and management system, LNE-certified, for independent restaurants, fast-food outlets and chains: kitchen screen, click & collect, order management and BI.",
    "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France.",
    "NF525-certified online cash register with a free plan, usable in restaurants and retail.",
-   "Certified iPad cash register, simpler, aimed at shopkeepers and restaurants.",
-   "French cloud till and management system, LNE-certified, for independent restaurants, fast-food outlets and chains: kitchen screen, click & collect, order management and BI."
+   "Certified iPad cash register, simpler, aimed at shopkeepers and restaurants."
   ]
  },
  "le-commis": {
@@ -1391,10 +1391,10 @@
   "justification": "Kitchen screen, stock and multi-site synchronised in real time, on an NF525-certified base: a package too broad and too regulated for a custom build.",
   "alternatives": [
    "Open-source ERP (LGPL) whose Point of Sale app handles floor plan, kitchen and QR code. NF525 certification not confirmed for the Community edition: check with the vendor before using it as a till in France.",
+   "French cloud till and management system, LNE-certified, for independent restaurants, fast-food outlets and chains: kitchen screen, click & collect, order management and BI.",
    "Self-hosted restaurant till and ordering (AGPL): QR menu, tables, reservations, kitchen screen. No NF525 certification announced: check before using it as a till in France.",
    "NF525-certified online cash register with a free plan, usable in restaurants and retail.",
-   "Certified iPad cash register, simpler, aimed at shopkeepers and restaurants.",
-   "French cloud till and management system, LNE-certified, for independent restaurants, fast-food outlets and chains: kitchen screen, click & collect, order management and BI."
+   "Certified iPad cash register, simpler, aimed at shopkeepers and restaurants."
   ]
  },
  "linktree": {
