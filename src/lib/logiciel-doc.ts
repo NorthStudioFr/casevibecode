@@ -15,6 +15,7 @@ export interface LogicielRow {
   alternatives: Alternative[] | null;
   prompt: string | null;
   source_verdict: string | null;
+  verifie_le?: string | null;
   date_ajout: string;
   date_maj: string;
 }
@@ -44,6 +45,7 @@ export function mapLogicielRow(row: LogicielRow): Logiciel {
   if (row.alternatives) logiciel.alternatives = row.alternatives;
   if (row.prompt) logiciel.prompt = row.prompt;
   if (row.source_verdict) logiciel.sourceVerdict = row.source_verdict;
+  if (row.verifie_le) logiciel.verifieLe = row.verifie_le;
 
   return logiciel;
 }
@@ -64,5 +66,6 @@ export function mapNouveauLogicielToRow(logiciel: NouveauLogicielInput): Omit<Lo
     alternatives: logiciel.alternatives ?? null,
     prompt: logiciel.prompt ?? null,
     source_verdict: logiciel.sourceVerdict ?? null,
+    verifie_le: logiciel.verifieLe ?? null,
   };
 }

@@ -35,6 +35,7 @@ export interface Logiciel {
   alternatives?: Alternative[];
   prompt?: string;
   sourceVerdict?: string;
+  verifieLe?: string | null;
   // Renseigné pour les pages non françaises : le texte a-t-il été traduit ? (sinon, texte d'origine)
   traduit?: boolean;
 }

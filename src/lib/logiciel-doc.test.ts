@@ -52,6 +52,7 @@ describe('mapLogicielRow', () => {
       alternatives: [{ nom: 'X', url: 'https://x.test', type: 'gratuit', description: 'd' }],
       prompt: 'my prompt',
       source_verdict: 'my_source',
+      verifie_le: '2026-10-20',
     });
     expect(l.prix).toBe('29 €/mois');
     expect(l.prixMensuel).toBe(29.5);
@@ -59,9 +60,11 @@ describe('mapLogicielRow', () => {
     expect(l.alternatives).toHaveLength(1);
     expect(l.prompt).toBe('my prompt');
     expect(l.sourceVerdict).toBe('my_source');
+    expect(l.verifieLe).toBe('2026-10-20');
     expect('prix' in mapLogicielRow(baseRow)).toBe(false);
     expect('prixMensuel' in mapLogicielRow(baseRow)).toBe(false);
     expect('alternatives' in mapLogicielRow(baseRow)).toBe(false);
+    expect('verifieLe' in mapLogicielRow(baseRow)).toBe(false);
   });
 });
 
@@ -93,6 +96,7 @@ describe('mapNouveauLogicielToRow', () => {
       alternatives: null,
       prompt: null,
       source_verdict: null,
+      verifie_le: null,
     });
     expect(row).not.toHaveProperty('date_ajout');
     expect(row).not.toHaveProperty('date_maj');
