@@ -53,4 +53,9 @@ describe('FAQ', () => {
     expect(data.mainEntity).toHaveLength(2);
     expect(data.mainEntity[0].name).toBe('Eazmenu est-il remplaçable par un outil sur mesure ?');
   });
+
+  it('links to the methodology page', () => {
+    render(<FAQ logiciel={logiciel} verdict="YES" />);
+    expect(screen.getByRole('link', { name: /méthode/i })).toHaveAttribute('href', '/methode');
+  });
 });

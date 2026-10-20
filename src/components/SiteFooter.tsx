@@ -12,6 +12,9 @@ export function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-slate-200 px-8 py-6 text-center text-sm text-slate-500">
       <nav className="flex justify-center gap-4">
+        <Link href={href('/methode')} className="hover:text-secondary">
+          {t.footer.method}
+        </Link>
         <Link href={href('/mentions-legales')} className="hover:text-secondary">
           {t.footer.legal}
         </Link>

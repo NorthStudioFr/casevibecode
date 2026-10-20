@@ -1,10 +1,11 @@
 'use client';
 
+import Link from 'next/link';
 import type { Logiciel, VerdictEditeur } from '@/types/logiciel';
 import { useLocale } from '@/lib/i18n/LocaleProvider';
 
 export function FAQ({ logiciel, verdict }: { logiciel: Logiciel; verdict: VerdictEditeur }) {
-  const { t } = useLocale();
+  const { t, href } = useLocale();
   const items: { question: string; reponse: string }[] = [
     {
       question: t.faq.replaceable(logiciel.nom),
@@ -48,6 +49,11 @@ export function FAQ({ logiciel, verdict }: { logiciel: Logiciel; verdict: Verdic
           </div>
         ))}
       </dl>
+      <p className="mt-4 text-xs text-slate-500">
+        <Link href={href('/methode')} className="underline hover:text-slate-800">
+          {t.faq.methodLink}
+        </Link>
+      </p>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </div>
   );

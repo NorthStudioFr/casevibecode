@@ -8,7 +8,7 @@ export const fr = {
     titleDefault: 'casevibecode — le verdict sur vos logiciels : remplaçables ou pas ?',
     titleTemplate: '%s | casevibecode',
     description:
-      "Logiciels de restauration et d'hôtellerie (caisse, réservation, livraison, compta) et outils du quotidien (Notion, Canva, Shopify…) : lesquels un outil sur mesure peut-il remplacer ? Verdict éditeur et vote de la communauté.",
+      "Logiciels de restauration et d'hôtellerie (caisse, réservation, livraison, compta) et outils du quotidien (Notion, Canva, Shopify…) : lesquels un outil sur mesure peut-il remplacer ? Verdict casevibecode et vote de la communauté.",
     tagline: 'Le verdict sur vos logiciels, du CHR aux outils du quotidien : remplaçable par du sur-mesure, ou pas ?',
     ogAlt: 'casevibecode — le verdict sur vos logiciels',
     ogAltFiche: 'Verdict casevibecode',
@@ -28,6 +28,7 @@ export const fr = {
     switchLabel: 'Read this page in English',
   },
   footer: {
+    method: 'Méthode',
     legal: 'Mentions légales',
     privacy: 'Confidentialité',
     report: 'Signaler un bug',
@@ -110,10 +111,10 @@ export const fr = {
     notFound: 'Logiciel introuvable',
     titleSuffix: (nom: string) => `${nom} : remplaçable ou pas ?`,
     fallbackDescription: (nom: string) =>
-      `${nom} peut-il être remplacé par un outil sur mesure ? Verdict éditeur et vote de la communauté.`,
+      `${nom} peut-il être remplacé par un outil sur mesure ? Verdict casevibecode et vote de la communauté.`,
     sourceCommunity: 'verdict communauté',
     sourceCanivibecodeit: 'verdict d’après canivibecodeit',
-    sourceEditor: 'verdict éditeur',
+    sourceEditor: 'verdict casevibecode',
     votes: (n: number) => `${n} votes`,
     attributionBefore: 'Verdict initial repris de',
     attributionAfter: '(licence MIT), traduit et adapté. Votez pour le corriger.',
@@ -192,6 +193,7 @@ Contraintes :
     what: (nom: string) => `À quoi sert ${nom} ?`,
     alternatives: (nom: string) => `Quelles alternatives existent déjà à ${nom} ?`,
     alternativesAnswer: (noms: string) => `${noms}. Des options à comparer avant de vous lancer dans un développement sur mesure.`,
+    methodLink: 'Comment nos verdicts sont-ils établis ? Consulter notre méthode détaillée ↗',
   },
   ticker: {
     label1: 'abonnements',
@@ -282,6 +284,38 @@ Contraintes :
     errorTexte: 'Le message doit faire entre 15 et 800 caractères.',
     privacy: "Aucun e-mail demandé. Seule une empreinte de votre adresse IP est conservée 13 mois contre les abus.",
   },
+  methode: {
+    title: 'Méthode',
+    description: 'Comment les verdicts sont établis, qui édite casevibecode et comment corriger une fiche.',
+    heading: 'Méthode',
+    intro:
+      'casevibecode analyse les logiciels professionnels pour déterminer s’ils peuvent être remplacés par un outil sur mesure (vibe coding), ou pas.',
+    whoTitle: 'Qui édite casevibecode ?',
+    whoContent:
+      'Le site est édité par North Studio (représenté par Mickaël Gallego). North Studio conçoit des sites web, des vidéos et des automatisations pour les professionnels du CHR (restauration et hôtellerie). Cette activité est mentionnée en toute transparence via le mot de l’éditeur présent sur les fiches.',
+    dataTitle: 'D’où viennent les données ?',
+    dataContent:
+      'Pour le secteur CHR (restauration/hôtellerie), les verdicts initiaux proviennent de recherches par intelligence artificielle recoupées (GPT, Mistral, Gemini fin septembre 2026), complétées par l’analyse des contraintes légales françaises (notamment la certification NF525 ou LNE obligatoire pour les systèmes d’encaissement, art. 286 du CGI). Pour les outils du quotidien (SaaS généraux), les fiches initiales, alternatives et prompts sont repris, traduits et adaptés de l’initiative open source canivibecodeit.com (licence MIT).',
+    verdictsTitle: 'Que signifient les trois verdicts ?',
+    replaceableTitle: 'Remplaçable',
+    replaceableContent:
+      'L’outil peut être avantageusement remplacé par un développement sur mesure rapide (vibe coding). Les flux sont standards, sans barrière réglementaire bloquante ni matériel propriétaire.',
+    kindaTitle: 'Partiellement remplaçable',
+    kindaContent:
+      'Un outil sur mesure peut couvrir les besoins de base (ex. usage individuel, carnet de bord simple), mais ne peut pas rivaliser avec les fonctions avancées, les intégrations écosystème ou les contraintes d’équipe.',
+    notReallyTitle: 'Pas remplaçable',
+    notReallyContent:
+      'Un développement sur mesure est déconseillé ou illégal : obligation de certification légale (NF525 avec amende de 7 500 € par caisse non certifiée), risque opérationnel lourd (gestion d’inventaire en temps réel, réconciliation bancaire, surréservation hôtelière) ou dépendance matérielle complexe.',
+    communityTitle: 'La prise de relais par la communauté',
+    communityContent:
+      'Chaque fiche permet à quiconque de voter sans compte, avec une empreinte IP salée pour limiter à un vote par personne. À partir de 20 votes (seuil configuré dans notre code), le vote de la communauté prend automatiquement le relais et remplace le verdict initial casevibecode.',
+    editorTitle: 'Vous êtes éditeur : comment corriger une fiche ?',
+    editorContent:
+      'Nous vérifions chaque proposition. Si vous êtes l’éditeur d’un logiciel référencé et constatez une inexactitude (fonctionnalité ajoutée, évolution tarifaire, certification obtenue), signalez-la via le lien dédié sur votre fiche. Chaque signalement est examiné avec sources vérifiables avant toute modification.',
+    linksTitle: 'Liens vers les éditeurs et indépendance',
+    linksContent:
+      'Les liens vers les éditeurs pointent directement vers leurs domaines officiels. Aucun lien n’est affilié ni sponsorisé. Si un éditeur choisit de relayer casevibecode, cela ne confère aucun passe-droit sur l’objectivité de son verdict.',
+  },
   breadcrumbHome: 'Accueil',
 };
 
@@ -292,7 +326,7 @@ export const en: Dict = {
     titleDefault: 'casevibecode — the verdict on your software: replaceable or not?',
     titleTemplate: '%s | casevibecode',
     description:
-      'Software for restaurants and hotels (point of sale, reservations, delivery, accounting) and everyday tools (Notion, Canva, Shopify…): which ones can a custom-built tool replace? Editor verdict and community vote.',
+      'Software for restaurants and hotels (point of sale, reservations, delivery, accounting) and everyday tools (Notion, Canva, Shopify…): which ones can a custom-built tool replace? casevibecode verdict and community vote.',
     tagline: 'The verdict on your software, from restaurants and hotels to everyday tools: replaceable by a custom build, or not?',
     ogAlt: 'casevibecode — the verdict on your software',
     ogAltFiche: 'casevibecode verdict',
@@ -312,6 +346,7 @@ export const en: Dict = {
     switchLabel: 'Lire cette page en français',
   },
   footer: {
+    method: 'Methodology',
     legal: 'Legal notice',
     privacy: 'Privacy',
     report: 'Report a bug',
@@ -394,10 +429,10 @@ export const en: Dict = {
     notFound: 'Tool not found',
     titleSuffix: (nom: string) => `${nom}: replaceable or not?`,
     fallbackDescription: (nom: string) =>
-      `Can ${nom} be replaced by a custom-built tool? Editor verdict and community vote.`,
+      `Can ${nom} be replaced by a custom-built tool? casevibecode verdict and community vote.`,
     sourceCommunity: 'community verdict',
     sourceCanivibecodeit: 'verdict based on canivibecodeit',
-    sourceEditor: 'editor verdict',
+    sourceEditor: 'casevibecode verdict',
     votes: (n: number) => `${n} votes`,
     attributionBefore: 'Initial verdict taken from',
     attributionAfter: '(MIT licence), translated and adapted. Vote to correct it.',
@@ -475,6 +510,7 @@ Constraints:
     what: (nom: string) => `What is ${nom} used for?`,
     alternatives: (nom: string) => `What alternatives to ${nom} already exist?`,
     alternativesAnswer: (noms: string) => `${noms}. Options to compare before committing to a custom build.`,
+    methodLink: 'How are our verdicts established? Read our detailed methodology ↗',
   },
   ticker: {
     label1: 'subscriptions',
@@ -564,6 +600,38 @@ Constraints:
     thanks: "Thank you! We'll look into it. You won't get a reply (no email asked), but the fix goes online as soon as possible.",
     errorTexte: 'The message must be between 15 and 800 characters.',
     privacy: 'No email asked. Only a fingerprint of your IP address is kept for 13 months against abuse.',
+  },
+  methode: {
+    title: 'Methodology',
+    description: 'How verdicts are established, who publishes casevibecode, and how to submit a correction.',
+    heading: 'Methodology',
+    intro:
+      'casevibecode analyzes business software to determine whether it can be replaced by a custom-built tool (vibe coding), or not.',
+    whoTitle: 'Who publishes casevibecode?',
+    whoContent:
+      'The website is published by North Studio (headed by Mickaël Gallego). North Studio creates websites, videos, and automations for the hospitality industry (restaurants and hotels). This activity is stated in full transparency via the publisher notice displayed on software pages.',
+    dataTitle: 'Where does the data come from?',
+    dataContent:
+      'For hospitality software (restaurants/hotels), initial verdicts come from cross-referenced AI research (GPT, Mistral, Gemini in late September 2026), supplemented by analysis of French legal requirements (notably mandatory NF525 or LNE certification for cash register systems, art. 286 of CGI). For everyday SaaS tools, initial entries, alternatives, and prompts are adapted, translated, and built upon from the open source initiative canivibecodeit.com (MIT license).',
+    verdictsTitle: 'What do the three verdicts mean?',
+    replaceableTitle: 'Replaceable',
+    replaceableContent:
+      'The tool can be effectively replaced by a fast custom build (vibe coding). Workflows are standard, without regulatory roadblocks or proprietary hardware.',
+    kindaTitle: 'Partially replaceable',
+    kindaContent:
+      'A custom tool can cover basic needs (e.g. solo usage, simple logbook), but cannot match advanced capabilities, ecosystem integrations, or team requirements.',
+    notReallyTitle: 'Not really',
+    notReallyContent:
+      'A custom build is not recommended or illegal: mandatory legal certification (NF525 with a €7,500 fine per non-compliant cash register), severe operational risk (real-time inventory, bank reconciliation, hotel overbooking), or complex hardware dependencies.',
+    communityTitle: 'Community takeover',
+    communityContent:
+      'Every software page lets anyone vote without an account, using a salted IP hash to restrict to one vote per person. Starting at 20 votes (threshold configured in our code), community votes automatically take over and replace the initial casevibecode verdict.',
+    editorTitle: 'You are a software publisher: how to submit a correction?',
+    editorContent:
+      'We review every submission. If you publish a listed tool and notice an inaccuracy (added feature, pricing update, certification obtained), report it via the dedicated link on your page. Every report is reviewed with verifiable sources before any change goes live.',
+    linksTitle: 'Publisher links and independence',
+    linksContent:
+      'Links to software vendors point directly to their official domains. No link is affiliated or sponsored. If a publisher chooses to mention casevibecode, it provides no special privilege regarding the objectivity of its verdict.',
   },
   breadcrumbHome: 'Home',
 };

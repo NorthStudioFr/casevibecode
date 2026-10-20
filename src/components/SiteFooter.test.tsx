@@ -10,6 +10,10 @@ import { SiteFooter } from './SiteFooter';
 describe('SiteFooter', () => {
   it('links to the legal pages', () => {
     render(<SiteFooter />);
+    expect(screen.getByRole('link', { name: 'Méthode' })).toHaveAttribute(
+      'href',
+      '/methode'
+    );
     expect(screen.getByRole('link', { name: 'Mentions légales' })).toHaveAttribute(
       'href',
       '/mentions-legales'
