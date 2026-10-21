@@ -24,12 +24,12 @@ export function CategoryFilter({
   const total = counts ? categories.reduce((n, c) => n + (counts[c] ?? 0), 0) : undefined;
   const avec = (label: string, n: number | undefined) => (n === undefined ? label : `${label} (${n})`);
   return (
-    <label className="flex items-center gap-2 text-sm text-slate-600">
+    <label className="flex w-full items-center gap-2 text-sm text-slate-600 sm:w-auto">
       <span className="shrink-0">{t.grid.categoryLabel}</span>
       <select
         value={selected}
         onChange={(e) => onChange(e.target.value as Categorie | 'toutes')}
-        className="min-w-0 max-w-full flex-1 rounded-sm border border-slate-200 bg-white px-2 py-1.5 text-sm text-slate-800 focus:border-secondary focus:outline-none"
+        className="min-w-0 flex-1 rounded-sm border border-slate-200 bg-white px-2 py-1.5 text-sm text-slate-800 focus:border-secondary focus:outline-none"
       >
         <option value="toutes">{avec(t.grid.allCategories, total)}</option>
         {categories.map((value) => (

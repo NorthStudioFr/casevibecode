@@ -84,7 +84,7 @@ export function LogicielGrid({ logiciels }: { logiciels: LogicielListe[] }) {
         </div>
       </div>
       <div className="mt-3 flex items-center justify-between">
-        <p className="text-sm text-slate-500">
+        <p className="whitespace-nowrap text-sm text-slate-500">
           {t.grid.count(filtered.length)}
         </p>
         <SortControl value={sort} onChange={setSort} />

@@ -25,14 +25,14 @@ export function VerdictFilter({
           key={opt.value}
           type="button"
           onClick={() => onChange(opt.value)}
-          className={`flex items-center gap-1.5 rounded-full border px-3 py-1 text-sm font-medium transition-colors ${
+          className={`flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-sm font-medium transition-colors ${
             selected === opt.value
               ? 'border-primary bg-primary text-primary-ink'
               : 'border-slate-200 bg-white text-slate-700 hover:border-secondary hover:text-secondary'
           }`}
         >
           <span className={`h-2 w-2 rounded-full ${opt.dotClassName}`} aria-hidden="true" />
-          {opt.value === 'tous' ? t.grid.allVerdicts : t.verdict[opt.value]}
+          {opt.value === 'tous' ? t.grid.allVerdicts : t.verdictCourt[opt.value]}
         </button>
       ))}
     </div>

@@ -12,7 +12,7 @@ export function SortControl({ value, onChange }: { value: SortOption; onChange: 
     { value: 'nom', label: t.grid.sortName },
   ];
   return (
-    <label className="flex items-center gap-2 text-sm text-slate-600">
+    <label className="flex items-center gap-2 whitespace-nowrap text-sm text-slate-600">
       {t.grid.sortBy}
       <select
         value={value}
