@@ -43,6 +43,19 @@ describe('Fiche logiciel generateMetadata', () => {
     expect((metadata.description as string).length).toBeLessThanOrEqual(155);
   });
 
+  it('raccourcit la description de l’outil, jamais le verdict ni le prix', async () => {
+    getLogicielBySlugMock.mockResolvedValue({
+      id: 'zelty', nom: 'Zelty', slug: 'zelty', verdictEditeur: 'NOT_REALLY', prix: 'à partir de 59 €/mois',
+      description: 'Caisse et gestion cloud pour restaurants indépendants, fast-foods et chaînes multi-établissements, avec écran cuisine, click & collect et gestionnaire de commandes.',
+    });
+    const { generateMetadata } = await import('./page');
+    const d = (await generateMetadata({ params: Promise.resolve({ slug: 'zelty' }) })).description as string;
+    expect(d.length).toBeLessThanOrEqual(155);
+    expect(d).toContain('Prix : à partir de 59 €/mois.');
+    expect(d).toContain('Verdict casevibecode : Pas remplaçable.');
+    expect(d).toContain('…');
+  });
+
   it('falls back to a generated description when the fiche has none', async () => {
     getLogicielBySlugMock.mockResolvedValue({ id: 'fudger', nom: 'Fudger', slug: 'fudger', description: '' });
     const { generateMetadata } = await import('./page');

@@ -117,8 +117,8 @@ export const fr = {
     notFound: 'Logiciel introuvable',
     titleSuffix: (nom: string) => `${nom} : remplaçable ou pas ?`,
     title: (nom: string, prixConnu: boolean) => (prixConnu ? `${nom} : prix, alternatives et verdict` : `${nom} : alternatives et verdict`),
-    metaDescription: (p: { nom: string; description: string; prix?: string; verdict: string; nbAlternatives: number }) =>
-      [p.description || p.nom, p.prix ? `Prix : ${p.prix}.` : '', `Verdict casevibecode : ${p.verdict}.`, p.nbAlternatives > 0 ? `${p.nbAlternatives} alternative${p.nbAlternatives > 1 ? 's' : ''}.` : ''].filter(Boolean).join(' '),
+    metaFacts: (p: { prix?: string; verdict: string; nbAlternatives: number }) =>
+      [p.prix ? `Prix : ${p.prix}.` : '', `Verdict casevibecode : ${p.verdict}.`, p.nbAlternatives > 0 ? `${p.nbAlternatives} alternative${p.nbAlternatives > 1 ? 's' : ''}.` : ''].filter(Boolean).join(' '),
     fallbackDescription: (nom: string) =>
       `${nom} peut-il être remplacé par un outil sur mesure ? Verdict casevibecode et vote de la communauté.`,
     sourceCommunity: 'verdict communauté',
@@ -472,8 +472,8 @@ export const en: Dict = {
     notFound: 'Tool not found',
     titleSuffix: (nom: string) => `${nom}: replaceable or not?`,
     title: (nom: string, prixConnu: boolean) => (prixConnu ? `${nom}: pricing, alternatives & verdict` : `${nom}: alternatives & verdict`),
-    metaDescription: (p: { nom: string; description: string; prix?: string; verdict: string; nbAlternatives: number }) =>
-      [p.description || p.nom, p.prix ? `Price: ${p.prix}.` : '', `casevibecode verdict: ${p.verdict}.`, p.nbAlternatives > 0 ? `${p.nbAlternatives} alternative${p.nbAlternatives > 1 ? 's' : ''}.` : ''].filter(Boolean).join(' '),
+    metaFacts: (p: { prix?: string; verdict: string; nbAlternatives: number }) =>
+      [p.prix ? `Price: ${p.prix}.` : '', `casevibecode verdict: ${p.verdict}.`, p.nbAlternatives > 0 ? `${p.nbAlternatives} alternative${p.nbAlternatives > 1 ? 's' : ''}.` : ''].filter(Boolean).join(' '),
     fallbackDescription: (nom: string) =>
       `Can ${nom} be replaced by a custom-built tool? casevibecode verdict and community vote.`,
     sourceCommunity: 'community verdict',

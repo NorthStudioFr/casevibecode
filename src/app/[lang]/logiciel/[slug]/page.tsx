@@ -71,11 +71,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const verdict = computeVerdictDisplay(logiciel.verdictEditeur, counts).verdict;
   const prix = formatPrix(logiciel.prix, lang);
   const title = t.fiche.title(logiciel.nom, Boolean(prix));
-  const description = tronquer(
-    logiciel.description || logiciel.justificationEditeur
-      ? t.fiche.metaDescription({ nom: logiciel.nom, description: logiciel.description, prix, verdict: t.verdict[verdict], nbAlternatives: logiciel.alternatives?.length ?? 0 })
-      : t.fiche.fallbackDescription(logiciel.nom),
-  );
+  // Les faits utiles (prix, verdict, nombre d'alternatives) passent en dernier mais ne sont jamais
+  // coupés : c'est la description de l'outil qu'on raccourcit pour tenir sous ~155 caractères.
+  const faits = t.fiche.metaFacts({ prix, verdict: t.verdict[verdict], nbAlternatives: logiciel.alternatives?.length ?? 0 });
+  const texte = logiciel.description || logiciel.justificationEditeur;
+  const description = texte ? `${tronquer(texte, 155 - faits.length - 1)} ${faits}` : t.fiche.fallbackDescription(logiciel.nom);
   return {
     title,
     description,
