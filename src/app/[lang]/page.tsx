@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { alternatesFor, langOf } from '@/lib/i18n/config';
+import { alternatesFor, langOf, localePath } from '@/lib/i18n/config';
 import { getDict } from '@/lib/i18n/dictionaries';
-import { getLogiciels, getNbConstruits, getVoteCounts } from '@/lib/logiciels-server';
-import { computeVerdictDisplay } from '@/lib/verdict';
-import type { LogicielListe } from '@/types/logiciel';
+import Link from 'next/link';
+import { chargerListe } from '@/lib/liste';
+import { SECTEURS, SECTEUR_PAGE } from '@/lib/secteurs';
 import { LogicielGrid } from '@/components/LogicielGrid';
 import { NewsletterForm } from '@/components/NewsletterForm';
 import { Ticker } from '@/components/Ticker';
@@ -24,33 +24,7 @@ export const revalidate = 3600;
 export default async function Page({ params }: { params?: Promise<{ lang?: string }> } = {}) {
   const lang = langOf(params && (await params));
   const t = getDict(lang);
-  const fiches = await getLogiciels(lang);
-  // Show the same community-aware verdict as the fiche page, not the raw
-  // editor verdict. This is N+1 work (getVoteCounts = one RPC per fiche);
-  // amortized by the page's revalidation window. Revisit (one grouped query)
-  // if the catalogue grows significantly.
-  const construits = await getNbConstruits();
-  const logiciels: LogicielListe[] = await Promise.all(
-    fiches.map(async (l) => {
-      const counts = await getVoteCounts(l.id);
-      const display = computeVerdictDisplay(l.verdictEditeur, counts);
-      return {
-        id: l.id,
-        nom: l.nom,
-        slug: l.slug,
-        categorie: l.categorie,
-        secteur: l.secteur,
-        description: l.description,
-        domaine: l.domaine,
-        prix: l.prix,
-        prixMensuel: l.prixMensuel,
-        verdictEditeur: l.verdictEditeur,
-        displayVerdict: display.verdict,
-        totalVotes: display.totalVotes,
-        nbConstruits: construits[l.slug] ?? 0,
-      };
-    })
-  );
+  const logiciels = await chargerListe(lang);
 
   return (
     <>
@@ -60,6 +34,20 @@ export default async function Page({ params }: { params?: Promise<{ lang?: strin
         <p className="mt-2 text-slate-600">
           {t.home.intro(logiciels.length)}
         </p>
+        <nav aria-label={t.secteurPage.entryLabel} className="mt-5 grid gap-3 sm:grid-cols-2">
+          {SECTEURS.map((s) => (
+            <Link
+              key={s}
+              href={localePath(lang, SECTEUR_PAGE[s])}
+              className="rounded-sm border border-slate-200 p-4 transition-colors hover:border-primary"
+            >
+              <span className="block text-sm text-slate-500">
+                {t.secteur[s]} · {logiciels.filter((l) => l.secteur === s).length}
+              </span>
+              <span className="mt-1 block font-serif text-lg font-semibold text-slate-800">{t.secteurPage[s].heading} →</span>
+            </Link>
+          ))}
+        </nav>
         <div className="mt-8">
           <LogicielGrid logiciels={logiciels} />
         </div>

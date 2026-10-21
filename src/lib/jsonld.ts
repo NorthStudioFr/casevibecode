@@ -92,3 +92,39 @@ export function organisationJsonLd(e: Editeur) {
     ...(e.fondateur ? { founder: { '@type': 'Person', name: e.fondateur, ...(e.fondateurUrl ? { sameAs: [e.fondateurUrl] } : {}) } } : {}),
   };
 }
+
+// Page d'atterrissage d'un secteur : une collection de fiches. `dateModified` est la plus récente des
+// mises à jour des fiches listées. Aucune note, aucun avis.
+export function collectionPageJsonLd(p: {
+  lang: Lang;
+  chemin: string;
+  name: string;
+  description: string;
+  logiciels: { nom: string; slug: string }[];
+  dateMaj?: number;
+}) {
+  const url = `${SITE_URL}${localePath(p.lang, p.chemin)}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': url,
+    url,
+    name: p.name,
+    description: p.description,
+    inLanguage: p.lang === 'fr' ? 'fr-FR' : 'en',
+    isPartOf: { '@type': 'WebSite', name: 'casevibecode', url: SITE_URL },
+    ...(p.dateMaj && Number.isFinite(p.dateMaj) ? { dateModified: new Date(p.dateMaj).toISOString() } : {}),
+    mainEntity: itemListJsonLd(p.logiciels, p.lang),
+  };
+}
+
+export function pageBreadcrumbJsonLd(lang: Lang, chemin: string, nom: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: getDict(lang).breadcrumbHome, item: `${SITE_URL}${localePath(lang, '/')}` },
+      { '@type': 'ListItem', position: 2, name: nom, item: `${SITE_URL}${localePath(lang, chemin)}` },
+    ],
+  };
+}

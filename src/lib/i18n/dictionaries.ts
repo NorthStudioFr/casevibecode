@@ -224,6 +224,31 @@ Contraintes :
     button: 'Partager sur X',
     text: (nom: string, verdict: string, url: string) => `${nom} : ${verdict} ? Le verdict casevibecode ${url}`,
   },
+  secteurPage: {
+    chr: {
+      title: 'Logiciels CHR : lesquels remplacer ?',
+      description:
+        "Caisse, réservation, livraison, compta… : parmi les logiciels de restauration et d'hôtellerie, lesquels un outil sur mesure peut-il remplacer ?",
+      heading: 'Restaurateur, hôtelier : quels logiciels pouvez-vous remplacer ?',
+      intro:
+        "Pour chaque logiciel du métier, un verdict honnête : un outil sur mesure peut-il le remplacer, en partie, ou pas du tout ? Les obligations légales, comme la certification NF525 ou LNE des caisses, sont prises en compte.",
+      crumb: 'Restauration et hôtellerie',
+    },
+    saas: {
+      title: 'Outils du quotidien : lesquels remplacer ?',
+      description:
+        'Notion, Canva, Shopify… : quels abonnements du quotidien un outil sur mesure peut-il remplacer ? Verdict, prix et alternatives pour chacun.',
+      heading: 'Indépendant, petite équipe : quels abonnements pouvez-vous remplacer ?',
+      intro:
+        "Notes, design, facturation, e-commerce… : pour chaque abonnement courant, un verdict honnête sur ce qu'un outil sur mesure peut remplacer et ce qu'il vaut mieux garder. Les verdicts initiaux sont repris de canivibecodeit.com (licence MIT), traduits et adaptés.",
+      crumb: 'Outils du quotidien',
+    },
+    stats: (n: number, total: string) => `${n} logiciels · ${total} € par mois cumulés (tarifs publics chiffrés uniquement)`,
+    verdictsTitle: 'Répartition des verdicts',
+    entryLabel: 'Choisir son secteur',
+    alsoSee: 'Voir aussi',
+    method: 'Comment ces verdicts sont-ils établis ?',
+  },
   faq: {
     title: 'Questions fréquentes',
     replaceable: (nom: string) => `${nom} est-il remplaçable par un outil sur mesure ?`,
@@ -594,6 +619,31 @@ Constraints:
   share: {
     button: 'Share on X',
     text: (nom: string, verdict: string, url: string) => `${nom}: ${verdict}? The casevibecode verdict ${url}`,
+  },
+  secteurPage: {
+    chr: {
+      title: 'Hospitality software: what to replace?',
+      description:
+        'Tills, bookings, delivery, accounting… which restaurant and hotel software can a custom-built tool replace? Verdict, price and alternatives.',
+      heading: 'Restaurateur, hotelier: which software can you replace?',
+      intro:
+        'For each tool of the trade, an honest verdict: can a custom-built tool replace it, partly, or not at all? Legal obligations, such as NF525 or LNE certification of tills in France, are taken into account.',
+      crumb: 'Restaurants and hotels',
+    },
+    saas: {
+      title: 'Everyday tools: what to replace?',
+      description:
+        'Notion, Canva, Shopify… which everyday subscriptions can a custom-built tool replace? Verdict, price and alternatives for each.',
+      heading: 'Freelancer, small team: which subscriptions can you replace?',
+      intro:
+        'Notes, design, invoicing, e-commerce… for each common subscription, an honest verdict on what a custom-built tool can replace and what is better kept. Initial verdicts are adapted and translated from canivibecodeit.com (MIT licence).',
+      crumb: 'Everyday tools',
+    },
+    stats: (n: number, total: string) => `${n} tools · €${total} per month combined (published prices only)`,
+    verdictsTitle: 'Verdict breakdown',
+    entryLabel: 'Choose your sector',
+    alsoSee: 'See also',
+    method: 'How are these verdicts established?',
   },
   faq: {
     title: 'Frequently asked questions',
