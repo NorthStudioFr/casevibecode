@@ -3,6 +3,10 @@ import type { Metadata } from 'next';
 import { getDict } from '@/lib/i18n/dictionaries';
 import { alternatesFor, langOf, localePath } from '@/lib/i18n/config';
 import { VerdictBadge } from '@/components/VerdictBadge';
+import { methodePageJsonLd } from '@/lib/jsonld';
+
+// À mettre à jour avec le texte « Dernière mise à jour » du dictionnaire quand la page change.
+const METHODE_MAJ = '2026-10-21';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang?: string }> }): Promise<Metadata> {
   const lang = langOf(await params);
@@ -99,6 +103,7 @@ export default async function MethodePage({ params }: { params?: Promise<{ lang?
       </section>
 
       <p className="mt-10 text-xs text-slate-500">{m.updated}</p>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(methodePageJsonLd(lang, METHODE_MAJ)) }} />
     </main>
   );
 }

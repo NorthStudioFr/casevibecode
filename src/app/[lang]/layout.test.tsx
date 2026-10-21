@@ -14,7 +14,7 @@ describe('Root layout', () => {
     const { generateMetadata } = await import('./layout');
     const metadata = await generateMetadata({ params: Promise.resolve({ lang: 'fr' }) });
     expect(metadata.title).toEqual({
-      default: 'casevibecode — le verdict sur vos logiciels : remplaçables ou pas ?',
+      default: 'casevibecode : vos logiciels sont-ils remplaçables ?',
       template: '%s | casevibecode',
     });
     expect(metadata.description).toMatch(/logiciels/i);
@@ -25,7 +25,7 @@ describe('Root layout', () => {
     const { generateMetadata } = await import('./layout');
     const metadata = await generateMetadata({ params: Promise.resolve({ lang: 'en' }) });
     expect(metadata.title).toEqual({
-      default: 'casevibecode — the verdict on your software: replaceable or not?',
+      default: 'casevibecode: is your software replaceable?',
       template: '%s | casevibecode',
     });
     expect(metadata.openGraph).toMatchObject({ locale: 'en_US' });

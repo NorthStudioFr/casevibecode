@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { getLogicielBySlug, getVoteCounts, getLogiciels, getRetours } from '@/lib/logiciels-server';
 import { computeVerdictDisplay } from '@/lib/verdict';
 import { relatedFiches, voisinsCategorie } from '@/lib/related';
-import { breadcrumbJsonLd } from '@/lib/jsonld';
+import { breadcrumbJsonLd, fichePageJsonLd } from '@/lib/jsonld';
 import { SITE_URL } from '@/lib/site';
 import { getDict } from '@/lib/i18n/dictionaries';
 import { langOf, localePath, type Lang } from '@/lib/i18n/config';
@@ -219,6 +219,23 @@ export default async function FicheLogicielPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(logiciel.nom, logiciel.slug, lang)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            fichePageJsonLd({
+              nom: logiciel.nom,
+              slug: logiciel.slug,
+              lang,
+              description: logiciel.description,
+              categorie: t.categories[logiciel.categorie],
+              domaine: logiciel.domaine,
+              dateMaj: logiciel.dateMaj,
+              verifieLe: logiciel.verifieLe,
+            }),
+          ),
+        }}
       />
     </main>
   );

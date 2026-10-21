@@ -61,7 +61,7 @@ function jsonLdFor(lang: ReturnType<typeof langOf>) {
     },
     // L'éditeur n'est déclaré que si l'environnement le fournit.
     ...(editeur().marque
-      ? [{ "@context": "https://schema.org", "@type": "Organization", name: editeur().marque, url: editeur().url }]
+      ? [{ "@context": "https://schema.org", "@type": "Organization", name: editeur().marque, url: editeur().url, logo: `${SITE_URL}/apple-icon.png` }]
       : []),
   ];
 }

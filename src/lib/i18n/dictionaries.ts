@@ -5,7 +5,7 @@ const plur = (n: number, un: string, plusieurs: string) => (n > 1 ? plusieurs : 
 
 export const fr = {
   site: {
-    titleDefault: 'casevibecode — le verdict sur vos logiciels : remplaçables ou pas ?',
+    titleDefault: 'casevibecode : vos logiciels sont-ils remplaçables ?',
     titleTemplate: '%s | casevibecode',
     description:
       "Caisse, réservation, compta, Notion, Canva… : quels logiciels un outil sur mesure peut-il remplacer ? Verdict casevibecode et vote de la communauté.",
@@ -152,7 +152,7 @@ export const fr = {
       `${n} option${n > 1 ? 's' : ''} qui existent déjà, à comparer avant de vous lancer dans un développement sur mesure.`,
     checked:
       "Chaque lien est contrôlé (projet actif et sous licence libre, offre gratuite lue chez l'éditeur, site en ligne). Aucune alternative n'est sponsorisée.",
-    indexTitle: 'Alternatives open source, gratuites ou plus petites aux logiciels payants',
+    indexTitle: 'Alternatives gratuites aux logiciels payants',
     indexDescription:
       'Pour chaque logiciel payant, les alternatives qui existent déjà : projets open source maintenus, outils gratuits ou éditeurs plus petits.',
     indexHeading: 'Les alternatives',
@@ -237,7 +237,7 @@ Contraintes :
     tapeItem: (nom: string, formatted: string) => `${nom.toUpperCase()} −${formatted} €/mois`,
   },
   audit: {
-    title: 'Mon audit : combien coûtent vos abonnements, et lesquels sont remplaçables ?',
+    title: 'Mon audit : combien coûtent vos abonnements ?',
     description:
       "Cochez vos logiciels : casevibecode additionne les abonnements et sépare ce qui est remplaçable par du sur-mesure de ce qui ne l'est pas.",
     heading: 'Mon audit',
@@ -366,7 +366,7 @@ export type Dict = typeof fr;
 
 export const en: Dict = {
   site: {
-    titleDefault: 'casevibecode — the verdict on your software: replaceable or not?',
+    titleDefault: 'casevibecode: is your software replaceable?',
     titleTemplate: '%s | casevibecode',
     description:
       'Tills, bookings, accounting, Notion, Canva… which software can a custom-built tool replace? casevibecode verdict and community vote.',
@@ -512,7 +512,7 @@ export const en: Dict = {
     intro: (n: number) => `${n} existing option${n > 1 ? 's' : ''} to compare before committing to a custom build.`,
     checked:
       'Every link is checked (active project under a free licence, free plan verified on the vendor’s website, live site). No alternative is sponsored.',
-    indexTitle: 'Open-source, free or smaller alternatives to paid software',
+    indexTitle: 'Free alternatives to paid software',
     indexDescription:
       'For each paid tool, the alternatives that already exist: maintained open-source projects, free tools or smaller vendors.',
     indexHeading: 'The alternatives',
@@ -597,7 +597,7 @@ Constraints:
     tapeItem: (nom: string, formatted: string) => `${nom.toUpperCase()} −€${formatted}/month`,
   },
   audit: {
-    title: 'My audit: how much do your subscriptions cost, and which are replaceable?',
+    title: 'My audit: what do your subscriptions cost?',
     description:
       'Tick the software you pay for: casevibecode adds up the subscriptions and separates what a custom build can replace from what it cannot.',
     heading: 'My audit',
