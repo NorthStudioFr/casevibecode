@@ -10,7 +10,7 @@ describe('CtaEditeur', () => {
     vi.stubEnv('EDITEUR_CONTACT_URL', 'https://exemple.test/contact');
     vi.stubEnv('EDITEUR_MARQUE', 'Marque Test');
     render(<CtaEditeur />);
-    expect(screen.getByText("Mot de l'éditeur")).toBeInTheDocument();
+    expect(screen.getByText('Le mot de North Studio')).toBeInTheDocument();
     expect(screen.getByText(/Marque Test regarde vos outils/)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /En savoir plus/ })).toHaveAttribute('href', 'https://exemple.test/contact');
   });

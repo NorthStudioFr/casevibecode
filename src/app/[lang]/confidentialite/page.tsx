@@ -8,7 +8,7 @@ const TEXTES = {
     title: 'Politique de confidentialité',
     description: 'Comment casevibecode collecte et utilise les données des comptes, des votes et de la newsletter.',
     intro: (responsable: string) =>
-      `Cette page explique quelles données casevibecode collecte, pourquoi, et comment les exercer vos droits. Le responsable du traitement est ${responsable}.`,
+      `Cette page explique quelles données casevibecode collecte, pourquoi, et comment exercer vos droits. Le responsable du traitement est ${responsable}.`,
     contactDefaut: "l'adresse indiquée dans les mentions légales",
     collecteesTitre: 'Quelles données sont collectées',
     compteTitre: 'Compte (connexion par email ou Google)',

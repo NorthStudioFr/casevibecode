@@ -72,10 +72,7 @@ export default async function AlternativesDeLaFichePage({ params }: Props) {
           </li>
         ))}
       </ul>
-      <p className="mt-6 text-sm text-slate-500">
-        Chaque lien est contrôlé (projet actif et sous licence libre, offre gratuite lue chez l&apos;éditeur, site en
-        ligne). Aucune alternative n&apos;est sponsorisée.
-      </p>
+      <p className="mt-6 text-sm text-slate-500">{t.alternatives.checked}</p>
     </main>
   );
 }

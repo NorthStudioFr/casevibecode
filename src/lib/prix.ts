@@ -35,9 +35,9 @@ const MOIS_EN: Record<string, string> = {
 export function formatPrix(prix: string | undefined, lang: 'fr' | 'en'): string | undefined {
   if (!prix || lang === 'fr') return prix;
   let sortie = prix.replace(
-    /converti de (\d+(?:,\d+)?) \$, cours du (\d+) (\S+) (\d{4})/gi,
-    (_, n: string, jour: string, mois: string, an: string) =>
-      `converted from $${n.replace(',', '.')}, rate of ${MOIS_EN[mois.toLowerCase()] ?? mois} ${Number(jour)}, ${an}`,
+    /converti de (\d+(?:,\d+)?) \$(, facturé à l'année)?, cours du (\d+) (\S+) (\d{4})/gi,
+    (_, n: string, annuel: string | undefined, jour: string, mois: string, an: string) =>
+      `converted from $${n.replace(',', '.')}${annuel ? ', billed annually' : ''}, rate of ${MOIS_EN[mois.toLowerCase()] ?? mois} ${Number(jour)}, ${an}`,
   );
   for (const [motif, remplacement] of MOTS_PRIX) sortie = sortie.replace(motif, remplacement);
   sortie = sortie

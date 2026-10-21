@@ -164,6 +164,8 @@ export const fr = {
     copy: 'Copier le prompt',
     copied: 'Copié !',
     openIn: (agent: string) => `Ouvrir dans ${agent}`,
+    copyFor: (agent: string) => `Copier pour ${agent}`,
+    copiedFor: 'Copié ✓',
     build: (nom: string, description: string, justification: string) => `Construis un outil qui remplace ${nom} pour un restaurant, bar ou hôtel en France.
 
 Ce que ${nom} fait aujourd'hui : ${description}
@@ -189,7 +191,7 @@ Contraintes :
     error: "L'inscription a échoué. Vérifiez votre adresse email et réessayez.",
   },
   cta: {
-    label: "Mot de l'éditeur",
+    label: 'Le mot de North Studio',
     chr: (marque: string) => `Restaurateur, hôtelier ? ${marque} crée sites, vidéos et automatisations pour les CHR.`,
     saas: (marque: string) => `Un abonnement que vous hésitez à garder ? ${marque} regarde vos outils et automatise ce qui peut l'être.`,
     more: 'En savoir plus',
@@ -479,7 +481,7 @@ export const en: Dict = {
     heading: (nom: string) => `Alternatives to ${nom}`,
     intro: (n: number) => `${n} existing option${n > 1 ? 's' : ''} to compare before committing to a custom build.`,
     checked:
-      'Every link is checked (active project under a free licence, free plan read on the vendor’s own site, site online). No alternative is sponsored.',
+      'Every link is checked (active project under a free licence, free plan verified on the vendor’s website, live site). No alternative is sponsored.',
     indexTitle: 'Open-source, free or smaller alternatives to paid software',
     indexDescription:
       'For each paid tool listed (hospitality and everyday tools), the alternatives that already exist: maintained open-source projects, free tools or smaller vendors.',
@@ -497,6 +499,8 @@ export const en: Dict = {
     copy: 'Copy the prompt',
     copied: 'Copied!',
     openIn: (agent: string) => `Open in ${agent}`,
+    copyFor: (agent: string) => `Copy for ${agent}`,
+    copiedFor: 'Copied ✓',
     build: (nom: string, description: string, justification: string) => `Build a tool that replaces ${nom} for a restaurant, bar or hotel.
 
 What ${nom} does today: ${description}
@@ -522,7 +526,7 @@ Constraints:
     error: 'Subscription failed. Check your email address and try again.',
   },
   cta: {
-    label: 'A word from the publisher',
+    label: 'A word from North Studio',
     chr: (marque: string) => `Run a restaurant or a hotel? ${marque} builds websites, videos and automations for hospitality businesses.`,
     saas: (marque: string) => `A subscription you are unsure about keeping? ${marque} reviews your tools and automates what can be automated.`,
     more: 'Learn more',
@@ -559,7 +563,7 @@ Constraints:
     selected: (n: number) => (n > 1 ? `${n} tools selected` : n === 1 ? '1 tool selected' : 'No tool selected'),
     perMonth: 'per month',
     perYear: 'per year',
-    priceUnknown: 'price not quantified',
+    priceUnknown: 'price not listed',
     replaceable: 'Replaceable',
     partly: 'Partly',
     notReplaceable: 'Keep',

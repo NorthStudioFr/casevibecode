@@ -32,17 +32,23 @@ export function PromptBlock({ logiciel }: { logiciel: Logiciel }) {
         <button type="button" onClick={copy} className={BUTTON}>
           {copied ? t.prompt.copied : t.prompt.copy}
         </button>
-        {AGENTS.map((agent) => (
+        {AGENTS.map((agent) =>
+          agent.desktopOnly ? (
+            <button key={agent.id} type="button" onClick={copy} className={`${BUTTON} max-md:hidden`}>
+              {copied ? t.prompt.copiedFor : t.prompt.copyFor(agent.label)}
+            </button>
+          ) : (
           <a
             key={agent.id}
             href={agent.href(prompt)}
             onClick={copy}
             {...(agent.newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-            className={agent.desktopOnly ? `${BUTTON} max-md:hidden` : BUTTON}
+            className={BUTTON}
           >
             {t.prompt.openIn(agent.label)}
           </a>
-        ))}
+          ),
+        )}
       </div>
       <pre className="mt-3 whitespace-pre-wrap rounded-sm border border-slate-200 bg-white p-3 text-xs text-slate-600">
         {prompt}

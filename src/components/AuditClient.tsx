@@ -193,7 +193,7 @@ export function AuditClient({ logiciels }: { logiciels: AuditLogiciel[] }) {
                   <Link
                     href={href(`/logiciel/${l.slug}`)}
                     className="shrink-0 text-xs text-slate-500 underline hover:text-primary"
-                    aria-label={`${t.audit.openFiche} : ${l.nom}`}
+                    aria-label={`${t.audit.openFiche}${lang === 'fr' ? ' : ' : ': '}${l.nom}`}
                   >
                     ↗
                   </Link>

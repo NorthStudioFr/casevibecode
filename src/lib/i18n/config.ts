@@ -21,10 +21,10 @@ export function localePath(lang: Lang, path: string): string {
   return propre === '/' ? `/${lang}` : `/${lang}${propre}`;
 }
 
-// Chemin sans préfixe de langue : '/en/alternatives' → '/alternatives'.
+// Chemin sans préfixe de langue : '/en/alternatives' → '/alternatives'. Le préfixe /fr est
+// retiré aussi : le proxy réécrit en interne vers /fr, et un chemin déjà préfixé donnerait /en/fr/….
 export function stripLang(pathname: string): string {
   for (const lang of LANGS) {
-    if (lang === DEFAULT_LANG) continue;
     if (pathname === `/${lang}`) return '/';
     if (pathname.startsWith(`/${lang}/`)) return pathname.slice(lang.length + 1);
   }

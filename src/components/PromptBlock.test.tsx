@@ -39,7 +39,8 @@ describe('PromptBlock', () => {
 
   it('offers an open-in link for each agent carrying the prompt', () => {
     render(<PromptBlock logiciel={logiciel} />);
-    expect(screen.getByRole('link', { name: /Claude Code/ }).getAttribute('href')).toMatch(/^claude-cli:\/\/open\?q=/);
+    expect(screen.queryByRole('link', { name: /Claude Code/ })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Copier pour Claude Code' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Codex/ }).getAttribute('href')).toMatch(/^https:\/\/chatgpt\.com\/codex/);
     expect(screen.getByRole('link', { name: /Cursor/ }).getAttribute('href')).toMatch(/^https:\/\/cursor\.com\/link\/prompt/);
   });

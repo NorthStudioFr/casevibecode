@@ -16,6 +16,7 @@ export function NavLinks() {
     { to: '/audit', label: t.nav.audit, isActive: pathname.startsWith('/audit') },
     { to: '/alternatives', label: t.nav.alternatives, isActive: pathname.startsWith('/alternatives') },
     { to: '/proposer', label: t.nav.propose, isActive: pathname.startsWith('/proposer') },
+    { to: '/methode', label: t.footer.method, isActive: pathname.startsWith('/methode') },
   ];
   return (
     <nav aria-label={t.nav.main} className="flex flex-wrap items-center gap-x-5 gap-y-1">

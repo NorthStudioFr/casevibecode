@@ -12,6 +12,8 @@ describe('i18n config', () => {
     expect(stripLang('/en')).toBe('/');
     expect(stripLang('/en/alternatives')).toBe('/alternatives');
     expect(stripLang('/alternatives')).toBe('/alternatives');
+    expect(stripLang('/fr/proposer')).toBe('/proposer');
+    expect(stripLang('/fr')).toBe('/');
     expect(stripLang('/english')).toBe('/english');
   });
   it('retombe sur le français sans langue valide', () => {

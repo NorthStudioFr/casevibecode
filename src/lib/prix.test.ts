@@ -69,4 +69,10 @@ describe('prix avec engagement', () => {
   it('se traduit en anglais', () => {
     expect(formatPrix('à partir de 2,99 €/mois (engagement 48 mois)', 'en')).toBe('from €2.99/month (48-month commitment)');
   });
+
+  it("traduit aussi « facturé à l'année » dans la conversion", () => {
+    expect(formatPrix("à partir de 35 €/mois (converti de 39 $, facturé à l'année, cours du 2 oct. 2026)", 'en')).toBe(
+      'from €35/month (converted from $39, billed annually, rate of Oct 2, 2026)',
+    );
+  });
 });
