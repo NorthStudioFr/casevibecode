@@ -23,6 +23,7 @@ import { CtaEditeur } from '@/components/CtaEditeur';
 import { NewsletterForm } from '@/components/NewsletterForm';
 import { LogoEditeur } from '@/components/LogoEditeur';
 import { RetoursFiche } from '@/components/RetoursFiche';
+import { SnippetBadgeEditeur } from '@/components/SnippetBadgeEditeur';
 
 // Regenerate at most once an hour (ISR) instead of rendering per
 // request, to keep database reads within the free-plan limits under
@@ -170,6 +171,11 @@ export default async function FicheLogicielPage({ params }: Props) {
           url={`${SITE_URL}${href(`/logiciel/${logiciel.slug}`)}`}
         />
       </div>
+      <SnippetBadgeEditeur
+        nom={logiciel.nom}
+        slug={logiciel.slug}
+        verdict={display.verdict}
+      />
       <div className="mt-10">
         <NewsletterForm />
       </div>

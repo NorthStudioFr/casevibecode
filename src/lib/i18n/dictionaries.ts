@@ -127,6 +127,11 @@ export const fr = {
     attributionAfter: '(licence MIT), traduit et adapté. Votez pour le corriger.',
     related: 'Dans la même veine',
     loseTitle: 'Ce que vous perdez',
+    badgeEditeurTitle: 'Badge pour votre site',
+    badgeEditeurDesc: 'Affichez le verdict casevibecode sur votre site ou votre documentation.',
+    badgeEditeurCopy: 'Copier le snippet HTML',
+    badgeEditeurCopied: 'Copié !',
+    badgeEditeurLabel: (verdict: string) => `Verdict casevibecode : ${verdict}`,
   },
   alternatives: {
     previewTitle: (nom: string) => `Alternatives à ${nom} qui existent déjà`,
@@ -456,6 +461,11 @@ export const en: Dict = {
     attributionAfter: '(MIT licence), translated and adapted. Vote to correct it.',
     related: 'More like this',
     loseTitle: 'What you lose',
+    badgeEditeurTitle: 'Badge for your website',
+    badgeEditeurDesc: 'Display the casevibecode verdict on your website or documentation.',
+    badgeEditeurCopy: 'Copy HTML snippet',
+    badgeEditeurCopied: 'Copied!',
+    badgeEditeurLabel: (verdict: string) => `casevibecode verdict: ${verdict}`,
   },
   alternatives: {
     previewTitle: (nom: string) => `Existing alternatives to ${nom}`,

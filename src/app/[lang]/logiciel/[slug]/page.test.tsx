@@ -86,9 +86,13 @@ describe('FicheLogicielPage rendu', () => {
       'href',
       expect.stringContaining('sujet=editeur')
     );
+    // Snippet badge éditeur sur Zelty (NOT_REALLY)
+    expect(screen.getByText('Badge pour votre site')).toBeInTheDocument();
+    expect(screen.getAllByText(/Verdict casevibecode : Pas remplaçable/).length).toBeGreaterThanOrEqual(2);
+    expect(screen.queryByText(/recommandé par/i)).not.toBeInTheDocument();
   });
 
-  it('n’affiche aucune mention de vérification si verifieLe est absent', async () => {
+  it('n’affiche aucune mention de vérification si verifieLe est absent mais propose le badge éditeur', async () => {
     getLogicielBySlugMock.mockResolvedValue({
       id: 'notion',
       nom: 'Notion',
@@ -107,5 +111,8 @@ describe('FicheLogicielPage rendu', () => {
     render(jsx);
 
     expect(screen.queryByText(/Vérifié le/)).not.toBeInTheDocument();
+    // Le badge est bien proposé sur Notion (KINDA) à l’identique
+    expect(screen.getByText('Badge pour votre site')).toBeInTheDocument();
+    expect(screen.getAllByText(/Verdict casevibecode : Partiellement remplaçable/).length).toBeGreaterThanOrEqual(2);
   });
 });
