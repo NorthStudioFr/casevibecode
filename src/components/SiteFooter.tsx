@@ -24,6 +24,9 @@ export function SiteFooter() {
         <Link href={href('/signaler') + (page ? `?page=${encodeURIComponent(page)}` : '')} className="hover:text-secondary">
           {t.footer.report}
         </Link>
+        <Link href={href('/connexion')} className="text-slate-400 hover:text-secondary">
+          {t.nav.login}
+        </Link>
       </nav>
       <p className="mt-3 text-xs">
         {t.footer.designBefore}{' '}

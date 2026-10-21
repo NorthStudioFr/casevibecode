@@ -24,6 +24,11 @@ describe('SiteFooter', () => {
     );
   });
 
+  it('garde un accès discret à la connexion dans le pied de page', () => {
+    render(<SiteFooter />);
+    expect(screen.getByRole('link', { name: 'Connexion' })).toHaveAttribute('href', '/connexion');
+  });
+
   it('credits canivibecodeit for the design', () => {
     render(<SiteFooter />);
     expect(screen.getByRole('link', { name: /canivibecodeit/i })).toHaveAttribute(

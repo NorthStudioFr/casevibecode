@@ -21,15 +21,14 @@ const wrap = (v: Partial<AuthContextValue>) =>
   );
 
 describe('AccountNav', () => {
-  it('propose « Connexion » hors AuthProvider', () => {
-    render(<AccountNav />);
-    expect(screen.getByRole('link', { name: 'Connexion' })).toHaveAttribute('href', '/connexion');
+  it("n'affiche aucun lien de connexion hors AuthProvider", () => {
+    const { container } = render(<AccountNav />);
+    expect(container).toBeEmptyDOMElement();
   });
 
-  it('propose « Connexion » à un votant anonyme (session sans e-mail)', () => {
-    wrap({ user: { uid: 'a', email: undefined } });
-    expect(screen.getByRole('link', { name: 'Connexion' })).toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: /déconnecter/i })).toBeNull();
+  it("n'affiche rien à un votant anonyme (session sans e-mail)", () => {
+    const { container } = wrap({ user: { uid: 'a', email: undefined } });
+    expect(container).toBeEmptyDOMElement();
   });
 
   it('propose « Se déconnecter » à un compte et déconnecte au clic, sans lien Admin', () => {
