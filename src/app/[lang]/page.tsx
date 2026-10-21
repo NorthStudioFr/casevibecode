@@ -3,7 +3,7 @@ import { alternatesFor, langOf } from '@/lib/i18n/config';
 import { getDict } from '@/lib/i18n/dictionaries';
 import { getLogiciels, getNbConstruits, getVoteCounts } from '@/lib/logiciels-server';
 import { computeVerdictDisplay } from '@/lib/verdict';
-import type { LogicielAvecVerdict } from '@/types/logiciel';
+import type { LogicielListe } from '@/types/logiciel';
 import { LogicielGrid } from '@/components/LogicielGrid';
 import { NewsletterForm } from '@/components/NewsletterForm';
 import { Ticker } from '@/components/Ticker';
@@ -30,11 +30,25 @@ export default async function Page({ params }: { params?: Promise<{ lang?: strin
   // amortized by the page's revalidation window. Revisit (one grouped query)
   // if the catalogue grows significantly.
   const construits = await getNbConstruits();
-  const logiciels: LogicielAvecVerdict[] = await Promise.all(
+  const logiciels: LogicielListe[] = await Promise.all(
     fiches.map(async (l) => {
       const counts = await getVoteCounts(l.id);
       const display = computeVerdictDisplay(l.verdictEditeur, counts);
-      return { ...l, displayVerdict: display.verdict, totalVotes: display.totalVotes, nbConstruits: construits[l.slug] ?? 0 };
+      return {
+        id: l.id,
+        nom: l.nom,
+        slug: l.slug,
+        categorie: l.categorie,
+        secteur: l.secteur,
+        description: l.description,
+        domaine: l.domaine,
+        prix: l.prix,
+        prixMensuel: l.prixMensuel,
+        verdictEditeur: l.verdictEditeur,
+        displayVerdict: display.verdict,
+        totalVotes: display.totalVotes,
+        nbConstruits: construits[l.slug] ?? 0,
+      };
     })
   );
 

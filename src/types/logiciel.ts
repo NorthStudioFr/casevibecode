@@ -45,4 +45,11 @@ export type NouveauLogiciel = Omit<Logiciel, 'id' | 'dateAjout' | 'dateMaj'>;
 // Les fiches CHR n'ont pas à répéter `secteur` : il vaut 'chr' par défaut.
 export type NouveauLogicielInput = Omit<NouveauLogiciel, 'secteur'> & { secteur?: Secteur };
 // nbConstruits : retours publiés « je l'ai construit » (personnes qui disent l'avoir remplacé).
+// Ce que la liste d'accueil affiche : les champs lourds (justification, prompt, alternatives, ce que
+// vous perdez) restent côté serveur, sinon les 270+ fiches complètes sont envoyées au navigateur.
+export type LogicielListe = Pick<Logiciel, 'id' | 'nom' | 'slug' | 'categorie' | 'secteur' | 'description' | 'domaine' | 'prix' | 'prixMensuel' | 'verdictEditeur'> & {
+  displayVerdict: VerdictEditeur;
+  totalVotes: number;
+  nbConstruits?: number;
+};
 export type LogicielAvecVerdict = Logiciel & { displayVerdict: VerdictEditeur; totalVotes: number; nbConstruits?: number };

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import type { Logiciel, VerdictEditeur } from '@/types/logiciel';
+import type { LogicielListe, VerdictEditeur } from '@/types/logiciel';
 import { CATEGORIE_EMOJI } from '@/lib/categories';
 import { useLocale } from '@/lib/i18n/LocaleProvider';
 import { formatPrix } from '@/lib/prix';
@@ -17,7 +17,7 @@ export function LogicielRow({
   nbConstruits = 0,
   rang,
 }: {
-  logiciel: Logiciel;
+  logiciel: Omit<LogicielListe, 'displayVerdict' | 'totalVotes' | 'nbConstruits'>;
   verdict: VerdictEditeur;
   totalVotes: number;
   nbConstruits?: number;

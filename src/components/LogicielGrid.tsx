@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import type { Categorie, LogicielAvecVerdict, Secteur, VerdictEditeur } from '@/types/logiciel';
+import type { Categorie, LogicielListe, Secteur, VerdictEditeur } from '@/types/logiciel';
 import { CategoryFilter } from './CategoryFilter';
 import { SecteurFilter } from './SecteurFilter';
 import { VerdictFilter } from './VerdictFilter';
@@ -12,7 +12,7 @@ import { CATEGORIE_LABEL } from '@/lib/categories';
 import { useLocale } from '@/lib/i18n/LocaleProvider';
 import { normaliser as normalize } from '@/lib/texte';
 
-export function LogicielGrid({ logiciels }: { logiciels: LogicielAvecVerdict[] }) {
+export function LogicielGrid({ logiciels }: { logiciels: LogicielListe[] }) {
   const { t, lang } = useLocale();
   const [secteur, setSecteur] = useState<Secteur | 'tous'>('tous');
   const [categorie, setCategorie] = useState<Categorie | 'toutes'>('toutes');

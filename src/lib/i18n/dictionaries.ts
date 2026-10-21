@@ -8,7 +8,7 @@ export const fr = {
     titleDefault: 'casevibecode — le verdict sur vos logiciels : remplaçables ou pas ?',
     titleTemplate: '%s | casevibecode',
     description:
-      "Logiciels de restauration et d'hôtellerie (caisse, réservation, livraison, compta) et outils du quotidien (Notion, Canva, Shopify…) : lesquels un outil sur mesure peut-il remplacer ? Verdict casevibecode et vote de la communauté.",
+      "Caisse, réservation, compta, Notion, Canva… : quels logiciels un outil sur mesure peut-il remplacer ? Verdict casevibecode et vote de la communauté.",
     tagline: 'Le verdict sur vos logiciels, du CHR aux outils du quotidien : remplaçable par du sur-mesure, ou pas ?',
     ogAlt: 'casevibecode — le verdict sur vos logiciels',
     ogAltFiche: 'Verdict casevibecode',
@@ -154,7 +154,7 @@ export const fr = {
       "Chaque lien est contrôlé (projet actif et sous licence libre, offre gratuite lue chez l'éditeur, site en ligne). Aucune alternative n'est sponsorisée.",
     indexTitle: 'Alternatives open source, gratuites ou plus petites aux logiciels payants',
     indexDescription:
-      'Pour chaque logiciel payant référencé (CHR et outils du quotidien), les alternatives qui existent déjà : projets open source maintenus, outils gratuits ou éditeurs plus petits.',
+      'Pour chaque logiciel payant, les alternatives qui existent déjà : projets open source maintenus, outils gratuits ou éditeurs plus petits.',
     indexHeading: 'Les alternatives',
     indexCount: (a: number, l: number) => `${a} alternative${a > 1 ? 's' : ''} · ${l} logiciel${l > 1 ? 's' : ''}`,
     indexIntro:
@@ -239,7 +239,7 @@ Contraintes :
   audit: {
     title: 'Mon audit : combien coûtent vos abonnements, et lesquels sont remplaçables ?',
     description:
-      "Cochez les logiciels que vous payez : casevibecode additionne les abonnements et sépare ce qui est remplaçable par du sur-mesure de ce qui ne l'est pas.",
+      "Cochez vos logiciels : casevibecode additionne les abonnements et sépare ce qui est remplaçable par du sur-mesure de ce qui ne l'est pas.",
     heading: 'Mon audit',
     intro:
       "Cochez les outils que vous payez. Le total se calcule dans votre navigateur : rien n'est envoyé, rien n'est enregistré. Le lien de partage contient seulement votre sélection.",
@@ -369,7 +369,7 @@ export const en: Dict = {
     titleDefault: 'casevibecode — the verdict on your software: replaceable or not?',
     titleTemplate: '%s | casevibecode',
     description:
-      'Software for restaurants and hotels (point of sale, reservations, delivery, accounting) and everyday tools (Notion, Canva, Shopify…): which ones can a custom-built tool replace? casevibecode verdict and community vote.',
+      'Tills, bookings, accounting, Notion, Canva… which software can a custom-built tool replace? casevibecode verdict and community vote.',
     tagline: 'The verdict on your software, from restaurants and hotels to everyday tools: replaceable by a custom build, or not?',
     ogAlt: 'casevibecode — the verdict on your software',
     ogAltFiche: 'casevibecode verdict',
@@ -514,7 +514,7 @@ export const en: Dict = {
       'Every link is checked (active project under a free licence, free plan verified on the vendor’s website, live site). No alternative is sponsored.',
     indexTitle: 'Open-source, free or smaller alternatives to paid software',
     indexDescription:
-      'For each paid tool listed (hospitality and everyday tools), the alternatives that already exist: maintained open-source projects, free tools or smaller vendors.',
+      'For each paid tool, the alternatives that already exist: maintained open-source projects, free tools or smaller vendors.',
     indexHeading: 'The alternatives',
     indexCount: (a: number, l: number) => `${a} alternative${a > 1 ? 's' : ''} · ${l} tool${l > 1 ? 's' : ''}`,
     indexIntro:

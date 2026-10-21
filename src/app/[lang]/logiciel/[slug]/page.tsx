@@ -120,7 +120,6 @@ export default async function FicheLogicielPage({ params }: Props) {
             {t.fiche.officialSite} · {logiciel.domaine} ↗
           </a>
         )}
-        {logiciel.domaine && <span aria-hidden="true">·</span>}
         <Link
           href={href('/signaler') + `?page=${encodeURIComponent(`/logiciel/${logiciel.slug}`)}&sujet=editeur`}
           className="underline hover:text-slate-800"
@@ -141,7 +140,7 @@ export default async function FicheLogicielPage({ params }: Props) {
         </span>
         {logiciel.verifieLe && (
           <span className="text-sm text-slate-500">
-            · {t.fiche.verifiedOn(formaterDateVerifie(logiciel.verifieLe, lang))}
+            {t.fiche.verifiedOn(formaterDateVerifie(logiciel.verifieLe, lang))}
           </span>
         )}
       </div>
