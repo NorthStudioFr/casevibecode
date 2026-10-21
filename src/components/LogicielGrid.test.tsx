@@ -133,3 +133,19 @@ describe('LogicielGrid — secteurs', () => {
     expect(screen.queryByRole('button', { name: /Notes/ })).toBeNull();
   });
 });
+
+describe('LogicielGrid — tri par défaut « Pertinence »', () => {
+  const base = { secteur: 'chr' as const, categorie: 'caisse' as const, description: '', verdictEditeur: 'KINDA' as const, justificationEditeur: '', domaine: '', dateAjout: 0, dateMaj: 0, displayVerdict: 'KINDA' as const };
+  it("place d'abord les fiches votées, puis celles au tarif documenté, puis l'ordre alphabétique", () => {
+    const liste: LogicielAvecVerdict[] = [
+      { ...base, id: 'a', nom: 'Alpha', slug: 'a', totalVotes: 0 },
+      { ...base, id: 'b', nom: 'Bravo', slug: 'b', totalVotes: 0, prix: '10 €/mois' },
+      { ...base, id: 'c', nom: 'Charlie', slug: 'c', totalVotes: 2 },
+    ];
+    render(<LogicielGrid logiciels={liste} />);
+    const ordre = screen.getAllByRole('link').map((l) => l.textContent ?? '').filter((t) => /Alpha|Bravo|Charlie/.test(t));
+    expect(ordre[0]).toMatch(/Charlie/);
+    expect(ordre[1]).toMatch(/Bravo/);
+    expect(ordre[2]).toMatch(/Alpha/);
+  });
+});

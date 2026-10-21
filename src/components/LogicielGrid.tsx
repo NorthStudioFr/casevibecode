@@ -18,7 +18,7 @@ export function LogicielGrid({ logiciels }: { logiciels: LogicielAvecVerdict[] }
   const [categorie, setCategorie] = useState<Categorie | 'toutes'>('toutes');
   const [verdict, setVerdict] = useState<VerdictEditeur | 'tous'>('tous');
   const [query, setQuery] = useState('');
-  const [sort, setSort] = useState<SortOption>('votes');
+  const [sort, setSort] = useState<SortOption>('pertinence');
 
   // Les pastilles ne proposent que ce qui existe : un secteur ou une catégorie
   // sans fiche n'apparaît pas.
@@ -51,8 +51,16 @@ export function LogicielGrid({ logiciels }: { logiciels: LogicielAvecVerdict[] }
       .filter((l) => verdict === 'tous' || l.displayVerdict === verdict)
       .filter((l) => normalizedQuery === '' || (normalize(l.nom).includes(normalizedQuery) || normalize(l.description).includes(normalizedQuery)));
 
+    // « Pertinence » : d'abord les fiches qui ont des votes, puis celles au tarif documenté
+    // (plus utiles à comparer), puis l'ordre alphabétique. Un classement qui ne dit pas « les plus
+    // votés » quand personne n'a encore voté.
+    const parNom = (a: { nom: string }, b: { nom: string }) => a.nom.localeCompare(b.nom, lang);
     return [...result].sort((a, b) =>
-      sort === 'votes' ? b.totalVotes - a.totalVotes || a.nom.localeCompare(b.nom, lang) : a.nom.localeCompare(b.nom, lang)
+      sort === 'nom'
+        ? parNom(a, b)
+        : sort === 'votes'
+          ? b.totalVotes - a.totalVotes || parNom(a, b)
+          : b.totalVotes - a.totalVotes || Number(Boolean(b.prix)) - Number(Boolean(a.prix)) || parNom(a, b),
     );
   }, [logiciels, secteur, categorie, verdict, query, sort, lang]);
 

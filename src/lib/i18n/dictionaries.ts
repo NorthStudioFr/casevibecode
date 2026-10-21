@@ -42,12 +42,13 @@ export const fr = {
   grid: {
     searchPlaceholder: 'Rechercher un logiciel…',
     searchLabel: 'Rechercher un logiciel',
-    all: '⚡ Toutes',
+    all: '🗂️ Toutes',
     allSectors: 'Tous les secteurs',
     sectorGroup: 'Secteur',
     allVerdicts: 'Tous les verdicts',
     count: (n: number) => `${n} ${plur(n, 'fiche', 'fiches')}`,
     sortBy: 'trier par',
+    sortRelevance: 'Pertinence',
     sortVotes: 'Les plus votés',
     sortName: 'Nom (A→Z)',
     empty: 'Aucune fiche ne correspond à ces filtres.',
@@ -170,6 +171,12 @@ export const fr = {
     copied: 'Copié !',
     openIn: (agent: string) => `Ouvrir dans ${agent}`,
     copyFor: (agent: string) => `Copier pour ${agent}`,
+    runningTitle: 'Ce que coûte un outil maison une fois construit',
+    running: [
+      'Hébergement et base de données : un coût de serveur, et des sauvegardes automatiques à tester vraiment.',
+      'Sécurité et RGPD : mises à jour des dépendances, certificat HTTPS, protection des données de vos clients.',
+      "Temps de maintien : qui répare l'outil un samedi soir en plein service si le serveur tombe ?",
+    ],
     copiedFor: 'Copié ✓',
     build: (nom: string, description: string, justification: string) => `Construis un outil qui remplace ${nom} pour un restaurant, bar ou hôtel en France.
 
@@ -390,12 +397,13 @@ export const en: Dict = {
   grid: {
     searchPlaceholder: 'Search for a tool…',
     searchLabel: 'Search for a tool',
-    all: '⚡ All',
+    all: '🗂️ All',
     allSectors: 'All sectors',
     sectorGroup: 'Sector',
     allVerdicts: 'All verdicts',
     count: (n: number) => `${n} ${plur(n, 'tool', 'tools')}`,
     sortBy: 'sort by',
+    sortRelevance: 'Relevance',
     sortVotes: 'Most voted',
     sortName: 'Name (A→Z)',
     empty: 'No tool matches these filters.',
@@ -517,6 +525,12 @@ export const en: Dict = {
     copied: 'Copied!',
     openIn: (agent: string) => `Open in ${agent}`,
     copyFor: (agent: string) => `Copy for ${agent}`,
+    runningTitle: 'What a home-built tool costs once it exists',
+    running: [
+      'Hosting and database: a server cost, and automatic backups you actually test.',
+      'Security and GDPR: dependency updates, an HTTPS certificate, protection of your customers’ data.',
+      'Upkeep time: who fixes the tool on a Saturday night in the middle of service if the server goes down?',
+    ],
     copiedFor: 'Copied ✓',
     build: (nom: string, description: string, justification: string) => `Build a tool that replaces ${nom} for a restaurant, bar or hotel.
 

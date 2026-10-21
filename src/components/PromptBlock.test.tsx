@@ -46,6 +46,16 @@ describe('PromptBlock', () => {
   });
 });
 
+describe('PromptBlock — coûts d\'exploitation', () => {
+  it('rappelle les trois réalités d\'exploitation au-dessus du prompt', () => {
+    render(<PromptBlock logiciel={logiciel} />);
+    expect(screen.getByText(/Ce que coûte un outil maison/)).toBeInTheDocument();
+    expect(screen.getByText(/Hébergement et base de données/)).toBeInTheDocument();
+    expect(screen.getByText(/Sécurité et RGPD/)).toBeInTheDocument();
+    expect(screen.getByText(/Temps de maintien/)).toBeInTheDocument();
+  });
+});
+
 describe('PromptBlock — prompt dédié', () => {
   it('affiche le prompt propre à la fiche quand il existe, sans le texte CHR', () => {
     render(<PromptBlock logiciel={{ ...logiciel, secteur: 'saas', prompt: 'Construis un clone de Notion avec Next.js.' }} />);

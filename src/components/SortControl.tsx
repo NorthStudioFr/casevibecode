@@ -2,11 +2,12 @@
 
 import { useLocale } from '@/lib/i18n/LocaleProvider';
 
-export type SortOption = 'nom' | 'votes';
+export type SortOption = 'pertinence' | 'nom' | 'votes';
 
 export function SortControl({ value, onChange }: { value: SortOption; onChange: (value: SortOption) => void }) {
   const { t } = useLocale();
   const OPTIONS: { value: SortOption; label: string }[] = [
+    { value: 'pertinence', label: t.grid.sortRelevance },
     { value: 'votes', label: t.grid.sortVotes },
     { value: 'nom', label: t.grid.sortName },
   ];

@@ -25,7 +25,7 @@ export const CATEGORIE_EMOJI: Record<Categorie, string> = {
   commande: '📱',
   pourboire: '💶',
   fidelite: '🎁',
-  achats: '🛒',
+  achats: '🏪',
   paiement: '🏦',
   reseau: '🌐',
 };

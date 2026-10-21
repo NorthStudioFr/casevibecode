@@ -30,7 +30,7 @@ export function Ticker({ logiciels }: { logiciels: { nom: string; prixMensuel?: 
         <span className="odometer" role="img" aria-label={t.ticker.ariaTotal(label)}>
           {[...label].map((ch, i) =>
             /\d/.test(ch) ? (
-              <span key={i} className="digit">
+              <span key={i} className="digit" aria-hidden="true">
                 <span className="reel" style={{ transform: `translateY(calc(${-Number(ch)} * var(--digit-h)))` }}>
                   {REEL.map((n) => (
                     <span key={n}>{n}</span>

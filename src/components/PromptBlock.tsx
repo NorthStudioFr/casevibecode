@@ -27,6 +27,14 @@ export function PromptBlock({ logiciel }: { logiciel: Logiciel }) {
 
   return (
     <div className="mt-4 rounded-sm border border-slate-200 bg-slate-50 p-4">
+      <div className="mb-4 rounded-sm border border-slate-200 bg-white p-3 text-xs text-slate-600">
+        <p className="font-medium text-slate-800">{t.prompt.runningTitle}</p>
+        <ul className="mt-2 list-disc space-y-1 pl-4">
+          {t.prompt.running.map((ligne) => (
+            <li key={ligne}>{ligne}</li>
+          ))}
+        </ul>
+      </div>
       <p className="text-sm font-medium text-slate-800">{t.prompt.title}</p>
       <div className="mt-3 flex flex-wrap gap-2">
         <button type="button" onClick={copy} className={BUTTON}>
