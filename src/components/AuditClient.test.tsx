@@ -49,6 +49,19 @@ describe('AuditClient', () => {
     expect(screen.getByText(/100\s*055\s*€/)).toBeInTheDocument();
   });
 
+  it('permet de personnaliser un montant et met à jour le total et l’URL', async () => {
+    render(<AuditClient logiciels={logiciels} />);
+    await userEvent.click(screen.getByRole('checkbox', { name: /Notion/ }));
+    // Base Notion: 10€
+    expect(screen.getAllByText(/10\s*€/).length).toBeGreaterThanOrEqual(1);
+    const input = screen.getByRole('textbox', { name: 'Prix mensuel pour Notion' });
+    expect(input).toHaveValue('10');
+    await userEvent.clear(input);
+    await userEvent.type(input, '50');
+    expect(screen.getAllByText(/50\s*€/).length).toBeGreaterThanOrEqual(1);
+    expect(window.location.search).toBe('?t=notion%3A50');
+  });
+
   it('filtre la liste et parle anglais sous /en', async () => {
     render(
       <LocaleProvider lang="en">

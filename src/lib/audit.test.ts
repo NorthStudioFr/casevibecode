@@ -21,11 +21,14 @@ describe('validerEtPlafonnerMontant', () => {
     expect(validerEtPlafonnerMontant('10.551')).toBe(10.55);
   });
 
-  it('rejette les montants nuls ou négatifs', () => {
+  it('rejette les montants nuls, négatifs ou arrondis à zéro', () => {
     expect(validerEtPlafonnerMontant(0)).toBeUndefined();
     expect(validerEtPlafonnerMontant(-10)).toBeUndefined();
     expect(validerEtPlafonnerMontant('-50')).toBeUndefined();
     expect(validerEtPlafonnerMontant('0')).toBeUndefined();
+    expect(validerEtPlafonnerMontant(0.001)).toBeUndefined();
+    expect(validerEtPlafonnerMontant('0.004')).toBeUndefined();
+    expect(validerEtPlafonnerMontant(0.005)).toBe(0.01);
   });
 
   it('rejette les valeurs non numériques, NaN, Infinity et injections', () => {

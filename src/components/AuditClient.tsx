@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import type { Categorie, Secteur, VerdictEditeur } from '@/types/logiciel';
 import { CATEGORIE_EMOJI } from '@/lib/categories';
-import { calculerAudit, ecrireSelection, lireSelectionAvecMontants } from '@/lib/audit';
+import { calculerAudit, ecrireSelection, lireSelectionAvecMontants, validerEtPlafonnerMontant } from '@/lib/audit';
 import { formatEuros } from '@/lib/ticker';
 import { formatPrix } from '@/lib/prix';
 import { useLocale } from '@/lib/i18n/LocaleProvider';
@@ -30,8 +30,10 @@ export function AuditClient({ logiciels }: { logiciels: AuditLogiciel[] }) {
   const { t, lang, href } = useLocale();
   const [choisis, setChoisis] = useState<Set<string>>(new Set());
   const [montants, setMontants] = useState<Record<string, number>>({});
+  const [saisies, setSaisies] = useState<Record<string, string>>({});
   const [filtre, setFiltre] = useState('');
   const [copie, setCopie] = useState(false);
+  const chargeRef = useRef(false);
 
   // La sélection d'un lien partagé (?t=a,b ou ?t=a:10,b:20) est lue une fois au chargement.
   // Les montants sont validés et plafonnés pour ne pas casser la page en cas d'URL manipulée.
@@ -50,10 +52,13 @@ export function AuditClient({ logiciels }: { logiciels: AuditLogiciel[] }) {
       }
       setMontants(montantsConnus);
     }
+    chargeRef.current = true;
   }, [logiciels]);
 
   // L'adresse suit la sélection (sans navigation) : on peut copier l'URL telle quelle.
+  // Le flag chargeRef évite d'effacer les paramètres d'URL sur le premier rendu avant lecture.
   useEffect(() => {
+    if (!chargeRef.current) return;
     const url = new URL(window.location.href);
     if (choisis.size > 0) url.searchParams.set('t', ecrireSelection(choisis, montants));
     else url.searchParams.delete('t');
@@ -83,9 +88,38 @@ export function AuditClient({ logiciels }: { logiciels: AuditLogiciel[] }) {
   function basculer(slug: string) {
     setChoisis((prev) => {
       const suivant = new Set(prev);
-      if (suivant.has(slug)) suivant.delete(slug);
-      else suivant.add(slug);
+      if (suivant.has(slug)) {
+        suivant.delete(slug);
+        setMontants((m) => {
+          if (!(slug in m)) return m;
+          const next = { ...m };
+          delete next[slug];
+          return next;
+        });
+        setSaisies((s) => {
+          if (!(slug in s)) return s;
+          const next = { ...s };
+          delete next[slug];
+          return next;
+        });
+      } else {
+        suivant.add(slug);
+      }
       return suivant;
+    });
+  }
+
+  function changerMontant(slug: string, brut: string) {
+    setSaisies((prev) => ({ ...prev, [slug]: brut }));
+    const n = validerEtPlafonnerMontant(brut);
+    setMontants((prev) => {
+      const next = { ...prev };
+      if (n !== undefined) {
+        next[slug] = n;
+      } else {
+        delete next[slug];
+      }
+      return next;
     });
   }
 
@@ -116,12 +150,13 @@ export function AuditClient({ logiciels }: { logiciels: AuditLogiciel[] }) {
           <ul className="mt-3 border-t border-slate-200">
             {visibles.map((l) => {
               const prix = formatPrix(l.prix, lang);
+              const estChoisi = choisis.has(l.slug);
               return (
                 <li key={l.slug} className="flex items-center gap-3 border-b border-slate-200 py-2">
                   <input
                     id={`audit-${l.slug}`}
                     type="checkbox"
-                    checked={choisis.has(l.slug)}
+                    checked={estChoisi}
                     onChange={() => basculer(l.slug)}
                     className="h-4 w-4 shrink-0 accent-primary"
                   />
@@ -130,9 +165,30 @@ export function AuditClient({ logiciels }: { logiciels: AuditLogiciel[] }) {
                     <span className="truncate text-slate-800">{l.nom}</span>
                     <span className="hidden text-xs text-slate-500 sm:inline">{CATEGORIE_EMOJI[l.categorie]}</span>
                   </label>
-                  <span className="hidden shrink-0 text-xs text-slate-500 sm:inline">
-                    {l.prixMensuel ? prix : (prix ?? t.audit.priceUnknown)}
-                  </span>
+                  {estChoisi ? (
+                    <div className="flex items-center gap-1 shrink-0 text-xs text-slate-600">
+                      <input
+                        type="text"
+                        inputMode="decimal"
+                        value={
+                          saisies[l.slug] !== undefined
+                            ? saisies[l.slug]
+                            : montants[l.slug] !== undefined
+                              ? String(montants[l.slug])
+                              : (l.prixMensuel !== undefined ? String(l.prixMensuel) : '')
+                        }
+                        onChange={(e) => changerMontant(l.slug, e.target.value)}
+                        placeholder={l.prixMensuel ? String(l.prixMensuel) : '0'}
+                        className="w-16 rounded-sm border border-slate-300 bg-white px-1.5 py-0.5 text-right font-medium text-slate-800 focus:border-secondary focus:outline-none"
+                        aria-label={`Prix mensuel pour ${l.nom}`}
+                      />
+                      <span className="text-slate-500">€/m</span>
+                    </div>
+                  ) : (
+                    <span className="hidden shrink-0 text-xs text-slate-500 sm:inline">
+                      {l.prixMensuel ? prix : (prix ?? t.audit.priceUnknown)}
+                    </span>
+                  )}
                   <VerdictBadge verdict={l.verdict} />
                   <Link
                     href={href(`/logiciel/${l.slug}`)}
@@ -191,6 +247,7 @@ export function AuditClient({ logiciels }: { logiciels: AuditLogiciel[] }) {
               onClick={() => {
                 setChoisis(new Set());
                 setMontants({});
+                setSaisies({});
               }}
               disabled={resume.nombre === 0}
               className="rounded-sm border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 transition-colors hover:border-primary hover:text-primary disabled:opacity-50"

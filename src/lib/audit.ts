@@ -32,20 +32,20 @@ export const PLAFOND_MONTANT_MENSUEL = 100_000;
  * - Plafonne à la valeur maximale raisonnable (par défaut 100 000 €).
  */
 export function validerEtPlafonnerMontant(valeur: unknown, max = PLAFOND_MONTANT_MENSUEL): number | undefined {
+  let n: number;
   if (typeof valeur === 'number') {
-    if (!Number.isFinite(valeur) || valeur <= 0) return undefined;
-    const arrondi = Math.round(valeur * 100) / 100;
-    return Math.min(arrondi, max);
-  }
-  if (typeof valeur === 'string') {
+    n = valeur;
+  } else if (typeof valeur === 'string') {
     const propre = valeur.trim().replace(',', '.');
     if (!/^\d+(?:\.\d+)?$/.test(propre)) return undefined;
-    const n = Number(propre);
-    if (!Number.isFinite(n) || n <= 0) return undefined;
-    const arrondi = Math.round(n * 100) / 100;
-    return Math.min(arrondi, max);
+    n = Number(propre);
+  } else {
+    return undefined;
   }
-  return undefined;
+  if (!Number.isFinite(n) || n <= 0) return undefined;
+  const arrondi = Math.round(n * 100) / 100;
+  if (arrondi <= 0) return undefined;
+  return Math.min(arrondi, max);
 }
 
 // « ?t=notion,canva » ou « ?t=notion:25,canva » → ['notion', 'canva'] ; ignore ce qui n'est pas un slug valide.
