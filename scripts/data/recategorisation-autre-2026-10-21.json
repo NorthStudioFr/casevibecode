@@ -1,0 +1,11 @@
+{
+  "corrections": [
+    { "slug": "wordpress", "categorie": "marketing" },
+    { "slug": "wix", "categorie": "marketing" },
+    { "slug": "squarespace", "categorie": "marketing" },
+    { "slug": "weglot", "categorie": "marketing" },
+    { "slug": "deepl-pro", "categorie": "productivite" },
+    { "slug": "docusign", "categorie": "productivite" },
+    { "slug": "planity", "categorie": "reservation" }
+  ]
+}
