@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getLogicielBySlug, getVoteCounts, getLogiciels, getRetours } from '@/lib/logiciels-server';
 import { computeVerdictDisplay } from '@/lib/verdict';
-import { relatedFiches } from '@/lib/related';
+import { relatedFiches, voisinsCategorie } from '@/lib/related';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import { SITE_URL } from '@/lib/site';
 import { getDict } from '@/lib/i18n/dictionaries';
@@ -24,6 +24,7 @@ import { NewsletterForm } from '@/components/NewsletterForm';
 import { LogoEditeur } from '@/components/LogoEditeur';
 import { RetoursFiche } from '@/components/RetoursFiche';
 import { SnippetBadgeEditeur } from '@/components/SnippetBadgeEditeur';
+import { tronquer } from '@/lib/meta';
 
 // Regenerate at most once an hour (ISR) instead of rendering per
 // request, to keep database reads within the free-plan limits under
@@ -66,8 +67,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!logiciel) {
     return { title: t.fiche.notFound };
   }
-  const title = t.fiche.titleSuffix(logiciel.nom);
-  const description = logiciel.description || t.fiche.fallbackDescription(logiciel.nom);
+  const counts = await getVoteCounts(logiciel.id);
+  const verdict = computeVerdictDisplay(logiciel.verdictEditeur, counts).verdict;
+  const prix = formatPrix(logiciel.prix, lang);
+  const title = t.fiche.title(logiciel.nom, Boolean(prix));
+  const description = tronquer(
+    logiciel.description || logiciel.justificationEditeur
+      ? t.fiche.metaDescription({ nom: logiciel.nom, description: logiciel.description, prix, verdict: t.verdict[verdict], nbAlternatives: logiciel.alternatives?.length ?? 0 })
+      : t.fiche.fallbackDescription(logiciel.nom),
+  );
   return {
     title,
     description,
@@ -90,12 +98,7 @@ export default async function FicheLogicielPage({ params }: Props) {
   const [counts, tousLogiciels, retours] = await Promise.all([getVoteCounts(logiciel.id), getLogiciels(lang), getRetours(logiciel.id)]);
   const display = computeVerdictDisplay(logiciel.verdictEditeur, counts);
 
-  // Alphabetical order gives a stable, predictable prev/next sequence
-  // regardless of the database's read order.
-  const tries = [...tousLogiciels].sort((a, b) => a.nom.localeCompare(b.nom, lang));
-  const index = tries.findIndex((l) => l.id === logiciel.id);
-  const precedent = index > 0 ? tries[index - 1] : null;
-  const suivant = index >= 0 && index < tries.length - 1 ? tries[index + 1] : null;
+  const { precedent, suivant } = voisinsCategorie(tousLogiciels, logiciel, lang);
 
   return (
     <main className="min-h-screen p-8 max-w-2xl mx-auto">
@@ -188,10 +191,11 @@ export default async function FicheLogicielPage({ params }: Props) {
         <h2 className="font-serif text-xl font-semibold text-slate-800">{t.fiche.related}</h2>
         <ul className="mt-3 space-y-2 text-sm">
           {relatedFiches(tousLogiciels, logiciel).map((l) => (
-            <li key={l.id}>
+            <li key={l.id} className="flex flex-wrap items-center gap-x-3 gap-y-1">
               <Link href={href(`/logiciel/${l.slug}`)} className="text-slate-700 hover:text-primary">
                 {l.nom} <span className="text-slate-500">· {formatPrix(l.prix, lang) ?? t.categories[l.categorie]}</span>
               </Link>
+              <VerdictBadge verdict={l.verdictEditeur} />
             </li>
           ))}
         </ul>

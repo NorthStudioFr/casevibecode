@@ -115,6 +115,9 @@ export const fr = {
     officialSite: 'Site officiel',
     notFound: 'Logiciel introuvable',
     titleSuffix: (nom: string) => `${nom} : remplaçable ou pas ?`,
+    title: (nom: string, prixConnu: boolean) => (prixConnu ? `${nom} : prix, alternatives et verdict` : `${nom} : alternatives et verdict`),
+    metaDescription: (p: { nom: string; description: string; prix?: string; verdict: string; nbAlternatives: number }) =>
+      [p.description || p.nom, p.prix ? `Prix : ${p.prix}.` : '', `Verdict casevibecode : ${p.verdict}.`, p.nbAlternatives > 0 ? `${p.nbAlternatives} alternative${p.nbAlternatives > 1 ? 's' : ''}.` : ''].filter(Boolean).join(' '),
     fallbackDescription: (nom: string) =>
       `${nom} peut-il être remplacé par un outil sur mesure ? Verdict casevibecode et vote de la communauté.`,
     sourceCommunity: 'verdict communauté',
@@ -208,6 +211,13 @@ Contraintes :
     alternatives: (nom: string) => `Quelles alternatives existent déjà à ${nom} ?`,
     alternativesAnswer: (noms: string) => `${noms}. Des options à comparer avant de vous lancer dans un développement sur mesure.`,
     methodLink: 'Comment nos verdicts sont-ils établis ? Consulter notre méthode détaillée ↗',
+    cost: (nom: string) => `Combien coûte ${nom}, et que paie-t-on vraiment ?`,
+    costAnswer: (prix: string | undefined, perdez: string[]) =>
+      [prix ? `Tarif indiqué : ${prix}.` : '', perdez.length ? `Ce que l'abonnement couvre et qu'il est difficile de maintenir soi-même : ${perdez.join(' ; ')}.` : ''].filter(Boolean).join(' '),
+    freeAlternatives: (nom: string) => `Quelles sont les alternatives gratuites ou open source à ${nom} ?`,
+    freeAlternativesAnswer: (noms: string) => `${noms}. Des options à comparer avant de vous lancer dans un développement sur mesure.`,
+    build: (nom: string) => `Par où commencer pour construire un équivalent à ${nom} ?`,
+    buildAnswer: "Copiez le prompt de cette fiche dans Claude, Codex ou Cursor pour obtenir un premier prototype. Prévoyez ensuite l'hébergement, la sauvegarde des données et leur conformité RGPD : c'est ce qui coûte le plus à maintenir dans la durée.",
   },
   ticker: {
     label1: 'abonnements',
@@ -451,6 +461,9 @@ export const en: Dict = {
     officialSite: 'Official website',
     notFound: 'Tool not found',
     titleSuffix: (nom: string) => `${nom}: replaceable or not?`,
+    title: (nom: string, prixConnu: boolean) => (prixConnu ? `${nom}: pricing, alternatives & verdict` : `${nom}: alternatives & verdict`),
+    metaDescription: (p: { nom: string; description: string; prix?: string; verdict: string; nbAlternatives: number }) =>
+      [p.description || p.nom, p.prix ? `Price: ${p.prix}.` : '', `casevibecode verdict: ${p.verdict}.`, p.nbAlternatives > 0 ? `${p.nbAlternatives} alternative${p.nbAlternatives > 1 ? 's' : ''}.` : ''].filter(Boolean).join(' '),
     fallbackDescription: (nom: string) =>
       `Can ${nom} be replaced by a custom-built tool? casevibecode verdict and community vote.`,
     sourceCommunity: 'community verdict',
@@ -543,6 +556,13 @@ Constraints:
     alternatives: (nom: string) => `What alternatives to ${nom} already exist?`,
     alternativesAnswer: (noms: string) => `${noms}. Options to compare before committing to a custom build.`,
     methodLink: 'How are our verdicts established? Read our detailed methodology ↗',
+    cost: (nom: string) => `How much does ${nom} cost, and what do you really pay for?`,
+    costAnswer: (prix: string | undefined, perdez: string[]) =>
+      [prix ? `Listed price: ${prix}.` : '', perdez.length ? `What the subscription covers and is hard to maintain yourself: ${perdez.join('; ')}.` : ''].filter(Boolean).join(' '),
+    freeAlternatives: (nom: string) => `What free or open-source alternatives to ${nom} exist?`,
+    freeAlternativesAnswer: (noms: string) => `${noms}. Options to compare before committing to a custom build.`,
+    build: (nom: string) => `Where do you start to build an equivalent of ${nom}?`,
+    buildAnswer: 'Copy this page’s prompt into Claude, Codex or Cursor to get a first prototype. Then plan for hosting, data backups and GDPR compliance: that is what costs the most to maintain over time.',
   },
   ticker: {
     label1: 'subscriptions',

@@ -3,30 +3,37 @@
 import Link from 'next/link';
 import type { Logiciel, VerdictEditeur } from '@/types/logiciel';
 import { useLocale } from '@/lib/i18n/LocaleProvider';
+import { formatPrix } from '@/lib/prix';
 
 export function FAQ({ logiciel, verdict }: { logiciel: Logiciel; verdict: VerdictEditeur }) {
-  const { t, href } = useLocale();
-  const items: { question: string; reponse: string }[] = [
-    {
-      question: t.faq.replaceable(logiciel.nom),
-      reponse: t.faq.verdictAnswer(t.verdict[verdict], logiciel.justificationEditeur),
-    },
-    {
-      question: t.faq.what(logiciel.nom),
-      reponse: logiciel.description,
-    },
-  ];
+  const { t, href, lang } = useLocale();
+  // Le haut de la fiche affiche déjà le verdict et la description : la FAQ n'en répète rien.
+  // Chaque question n'apparaît que si la fiche contient réellement de quoi y répondre.
+  const items: { question: string; reponse: string }[] = [];
 
-  if (logiciel.alternatives && logiciel.alternatives.length > 0) {
-    const noms = logiciel.alternatives
-      .slice(0, 3)
+  const prix = formatPrix(logiciel.prix, lang);
+  const perdez = logiciel.ceQueVousPerdez ?? [];
+  if (prix || perdez.length > 0) {
+    items.push({ question: t.faq.cost(logiciel.nom), reponse: t.faq.costAnswer(prix, perdez) });
+  }
+
+  const alternatives = logiciel.alternatives ?? [];
+  if (alternatives.length > 0) {
+    const noms = alternatives
+      .slice(0, 5)
       .map((a) => `${a.nom} (${t.typeAlt[a.type].toLowerCase()})`)
       .join(', ');
     items.push({
-      question: t.faq.alternatives(logiciel.nom),
-      reponse: t.faq.alternativesAnswer(noms),
+      question: t.faq.freeAlternatives(logiciel.nom),
+      reponse: t.faq.freeAlternativesAnswer(noms),
     });
   }
+
+  if (verdict !== 'NOT_REALLY') {
+    items.push({ question: t.faq.build(logiciel.nom), reponse: t.faq.buildAnswer });
+  }
+
+  if (items.length === 0) return null;
 
   const jsonLd = {
     '@context': 'https://schema.org',

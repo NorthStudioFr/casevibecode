@@ -27,14 +27,20 @@ describe('Fiche logiciel generateMetadata', () => {
       nom: 'Zenchef',
       slug: 'zenchef',
       description: 'Gestion des réservations en ligne',
+      verdictEditeur: 'KINDA',
+      prix: 'à partir de 69 €/mois',
+      alternatives: [{ nom: 'Odoo', url: 'https://odoo.com', type: 'open-source', description: '' }],
     });
     const { generateMetadata } = await import('./page');
 
     const metadata = await generateMetadata({ params: Promise.resolve({ slug: 'zenchef' }) });
 
     expect(getLogicielBySlugMock).toHaveBeenCalledWith('zenchef', 'fr');
-    expect(metadata.title).toBe('Zenchef : remplaçable ou pas ?');
-    expect(metadata.description).toBe('Gestion des réservations en ligne');
+    expect(metadata.title).toBe('Zenchef : prix, alternatives et verdict');
+    expect(metadata.description).toBe(
+      'Gestion des réservations en ligne Prix : à partir de 69 €/mois. Verdict casevibecode : Partiellement remplaçable. 1 alternative.',
+    );
+    expect((metadata.description as string).length).toBeLessThanOrEqual(155);
   });
 
   it('falls back to a generated description when the fiche has none', async () => {
@@ -43,7 +49,7 @@ describe('Fiche logiciel generateMetadata', () => {
 
     const metadata = await generateMetadata({ params: Promise.resolve({ slug: 'fudger' }) });
 
-    expect(metadata.title).toBe('Fudger : remplaçable ou pas ?');
+    expect(metadata.title).toBe('Fudger : alternatives et verdict');
     expect(metadata.description).toMatch(/^Fudger peut-il être remplacé/);
   });
 
@@ -88,7 +94,7 @@ describe('FicheLogicielPage rendu', () => {
     );
     // Snippet badge éditeur sur Zelty (NOT_REALLY)
     expect(screen.getByText('Badge pour votre site')).toBeInTheDocument();
-    expect(screen.getAllByText(/Verdict casevibecode : Pas remplaçable/).length).toBeGreaterThanOrEqual(2);
+    expect(screen.getAllByText(/Verdict casevibecode : Pas remplaçable/).length).toBeGreaterThanOrEqual(1);
     expect(screen.queryByText(/recommandé par/i)).not.toBeInTheDocument();
   });
 
@@ -113,6 +119,6 @@ describe('FicheLogicielPage rendu', () => {
     expect(screen.queryByText(/Vérifié le/)).not.toBeInTheDocument();
     // Le badge est bien proposé sur Notion (KINDA) à l’identique
     expect(screen.getByText('Badge pour votre site')).toBeInTheDocument();
-    expect(screen.getAllByText(/Verdict casevibecode : Partiellement remplaçable/).length).toBeGreaterThanOrEqual(2);
+    expect(screen.getAllByText(/Verdict casevibecode : Partiellement remplaçable/).length).toBeGreaterThanOrEqual(1);
   });
 });
