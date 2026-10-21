@@ -148,4 +148,15 @@ describe('FicheLogicielPage rendu', () => {
     render(await Page({ params: Promise.resolve({ lang: 'fr', slug: 'notion' }) }));
     expect(screen.queryByText(/pas sur une recommandation/)).not.toBeInTheDocument();
   });
+
+  it("range le badge éditeur dans un bloc repliable et affiche une seule mention de date", async () => {
+    getLogicielBySlugMock.mockResolvedValue({ id: 'z', nom: 'Zelty', slug: 'zelty', categorie: 'caisse', secteur: 'chr', description: 'Caisse', verdictEditeur: 'NOT_REALLY', justificationEditeur: 'x', domaine: 'zelty.fr', verifieLe: '2026-10-20', dateAjout: 0, dateMaj: Date.UTC(2026, 9, 20) });
+    const Page = (await import('./page')).default;
+    const { container } = render(await Page({ params: Promise.resolve({ lang: 'fr', slug: 'zelty' }) }));
+    const details = container.querySelector('details');
+    expect(details?.textContent).toMatch(/Vous êtes l'éditeur de Zelty/);
+    expect(details?.textContent).toMatch(/Badge pour votre site/);
+    expect(screen.queryByText(/Fiche mise à jour le/)).not.toBeInTheDocument();
+    expect(screen.getAllByText(/Vérifié le 20 octobre 2026/)).toHaveLength(1);
+  });
 });

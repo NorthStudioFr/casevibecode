@@ -139,9 +139,12 @@ export default async function FicheLogicielPage({ params }: Props) {
               : t.fiche.sourceEditor}{' '}
           · {t.fiche.votes(display.totalVotes)}
         </span>
-        {logiciel.dateMaj > 0 && (
+        {(logiciel.verifieLe || logiciel.dateMaj > 0) && (
           <span className="text-sm text-slate-500">
-            {t.fiche.updatedOn(formaterDateVerifie(new Date(logiciel.dateMaj).toISOString().slice(0, 10), lang))}
+            {/* Une seule mention de date : la vérification éditoriale quand elle existe, sinon la mise à jour de la fiche. */}
+            {logiciel.verifieLe
+              ? t.fiche.verifiedOn(formaterDateVerifie(logiciel.verifieLe, lang))
+              : t.fiche.updatedOn(formaterDateVerifie(new Date(logiciel.dateMaj).toISOString().slice(0, 10), lang))}
             {editeur().marque && (
               <>
                 {' · '}
@@ -150,11 +153,6 @@ export default async function FicheLogicielPage({ params }: Props) {
                 </Link>
               </>
             )}
-          </span>
-        )}
-        {logiciel.verifieLe && (
-          <span className="text-sm text-slate-500">
-            {t.fiche.verifiedOn(formaterDateVerifie(logiciel.verifieLe, lang))}
           </span>
         )}
       </div>
@@ -188,14 +186,6 @@ export default async function FicheLogicielPage({ params }: Props) {
           url={`${SITE_URL}${href(`/logiciel/${logiciel.slug}`)}`}
         />
       </div>
-      <SnippetBadgeEditeur
-        nom={logiciel.nom}
-        slug={logiciel.slug}
-        verdict={display.verdict}
-      />
-      <div className="mt-10">
-        <NewsletterForm />
-      </div>
       <FAQ logiciel={logiciel} verdict={display.verdict} />
       <RetoursFiche logicielId={logiciel.id} retours={retours} />
       <div className="mt-10">
@@ -214,6 +204,13 @@ export default async function FicheLogicielPage({ params }: Props) {
           ))}
         </ul>
       </section>
+      <details className="mt-10 border-t border-slate-200 pt-6">
+        <summary className="cursor-pointer text-sm font-medium text-slate-700 hover:text-primary">{t.fiche.editorDetails(logiciel.nom)}</summary>
+        <SnippetBadgeEditeur nom={logiciel.nom} slug={logiciel.slug} verdict={display.verdict} />
+      </details>
+      <div className="mt-10">
+        <NewsletterForm />
+      </div>
       <nav className="mt-10 flex items-center justify-between border-t border-slate-200 pt-6 text-sm">
         {precedent ? (
           <Link href={href(`/logiciel/${precedent.slug}`)} className="text-slate-600 hover:text-slate-900">
