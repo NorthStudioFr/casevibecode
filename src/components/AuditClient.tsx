@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import type { Categorie, Secteur, VerdictEditeur } from '@/types/logiciel';
 import { CATEGORIE_EMOJI } from '@/lib/categories';
-import { calculerAudit, ecrireSelection, lireSelection } from '@/lib/audit';
+import { calculerAudit, ecrireSelection, lireSelectionAvecMontants } from '@/lib/audit';
 import { formatEuros } from '@/lib/ticker';
 import { formatPrix } from '@/lib/prix';
 import { useLocale } from '@/lib/i18n/LocaleProvider';
@@ -29,25 +29,36 @@ function normaliser(v: string): string {
 export function AuditClient({ logiciels }: { logiciels: AuditLogiciel[] }) {
   const { t, lang, href } = useLocale();
   const [choisis, setChoisis] = useState<Set<string>>(new Set());
+  const [montants, setMontants] = useState<Record<string, number>>({});
   const [filtre, setFiltre] = useState('');
   const [copie, setCopie] = useState(false);
 
-  // La sélection d'un lien partagé (?t=a,b) est lue une fois au chargement.
+  // La sélection d'un lien partagé (?t=a,b ou ?t=a:10,b:20) est lue une fois au chargement.
+  // Les montants sont validés et plafonnés pour ne pas casser la page en cas d'URL manipulée.
   useEffect(() => {
     const connus = new Set(logiciels.map((l) => l.slug));
-    const depuisUrl = lireSelection(new URLSearchParams(window.location.search).get('t')).filter((s) => connus.has(s));
+    const param = new URLSearchParams(window.location.search).get('t');
+    const { slugs: depuisUrl, montants: montantsUrl } = lireSelectionAvecMontants(param);
+    const filtres = depuisUrl.filter((s) => connus.has(s));
     // Lecture de l'URL après l'hydratation : un initialiseur de useState ferait diverger le rendu serveur et client.
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    if (depuisUrl.length > 0) setChoisis(new Set(depuisUrl));
+    if (filtres.length > 0) {
+      setChoisis(new Set(filtres));
+      const montantsConnus: Record<string, number> = {};
+      for (const s of filtres) {
+        if (montantsUrl[s] !== undefined) montantsConnus[s] = montantsUrl[s];
+      }
+      setMontants(montantsConnus);
+    }
   }, [logiciels]);
 
   // L'adresse suit la sélection (sans navigation) : on peut copier l'URL telle quelle.
   useEffect(() => {
     const url = new URL(window.location.href);
-    if (choisis.size > 0) url.searchParams.set('t', ecrireSelection(choisis));
+    if (choisis.size > 0) url.searchParams.set('t', ecrireSelection(choisis, montants));
     else url.searchParams.delete('t');
     window.history.replaceState(null, '', url);
-  }, [choisis]);
+  }, [choisis, montants]);
 
   const visibles = useMemo(() => {
     const q = normaliser(filtre.trim());
@@ -57,8 +68,16 @@ export function AuditClient({ logiciels }: { logiciels: AuditLogiciel[] }) {
   }, [logiciels, filtre, lang]);
 
   const resume = useMemo(
-    () => calculerAudit(logiciels.filter((l) => choisis.has(l.slug))),
-    [logiciels, choisis],
+    () =>
+      calculerAudit(
+        logiciels
+          .filter((l) => choisis.has(l.slug))
+          .map((l) => ({
+            ...l,
+            montantPersonnalise: montants[l.slug],
+          })),
+      ),
+    [logiciels, choisis, montants],
   );
 
   function basculer(slug: string) {
@@ -169,7 +188,10 @@ export function AuditClient({ logiciels }: { logiciels: AuditLogiciel[] }) {
             </button>
             <button
               type="button"
-              onClick={() => setChoisis(new Set())}
+              onClick={() => {
+                setChoisis(new Set());
+                setMontants({});
+              }}
               disabled={resume.nombre === 0}
               className="rounded-sm border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 transition-colors hover:border-primary hover:text-primary disabled:opacity-50"
             >

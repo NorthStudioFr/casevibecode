@@ -35,6 +35,20 @@ describe('AuditClient', () => {
     expect(screen.getByRole('checkbox', { name: /Canva/ })).toBeChecked();
   });
 
+  it('relit un lien partagé avec montants en validant et plafonnant sans casser la page', async () => {
+    // canva: montant valide personnalisé 45€
+    // notion: montant négatif manipulé -> ignoré, repli sur prix catalogue 10€
+    // gratuit: montant astronomique manipulé -> plafonné à 100 000€
+    window.history.replaceState(null, '', '/?t=canva:45,notion:-999,gratuit:999999999');
+    render(<AuditClient logiciels={logiciels} />);
+    expect(await screen.findByText('3 outils choisis')).toBeInTheDocument();
+    expect(screen.getByRole('checkbox', { name: /Canva/ })).toBeChecked();
+    expect(screen.getByRole('checkbox', { name: /Notion/ })).toBeChecked();
+    expect(screen.getByRole('checkbox', { name: /Gratuit/ })).toBeChecked();
+    // 45 + 10 + 100 000 = 100 055 €
+    expect(screen.getByText(/100\s*055\s*€/)).toBeInTheDocument();
+  });
+
   it('filtre la liste et parle anglais sous /en', async () => {
     render(
       <LocaleProvider lang="en">
