@@ -41,4 +41,14 @@ describe('MethodePage', () => {
     expect(metaEn.title).toBe('Methodology');
     expect(metaEn.description).toBeDefined();
   });
+
+  it("nomme l'éditeur comme les mentions légales, sans nom erroné, et pose les limites des verdicts", async () => {
+    render(await MethodePage({ params: Promise.resolve({ lang: 'fr' }) }));
+    expect(screen.getByText(/François-Laurent Lhabitant/)).toBeInTheDocument();
+    expect(screen.queryByText(/Mickaël/)).not.toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'Ce que les verdicts ne sont pas' })).toBeInTheDocument();
+    expect(screen.getByText(/Dernière mise à jour de cette page/)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Proposer une correction/ })).toHaveAttribute('href', expect.stringContaining('sujet=editeur'));
+    expect(screen.queryByText(/illégal/)).not.toBeInTheDocument();
+  });
 });

@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-// Logos chargés via le service de favicons de Google plutôt qu'hébergés :
+// Logos récupérés par notre serveur auprès du service de favicons de Google (jamais depuis le
+// navigateur du visiteur : voir /api/logo) plutôt qu'hébergés :
 // pas de 133 fichiers à maintenir, et ça s'adapte tout seul aux futurs
 // ajouts. (Clearbit, qui offrait un vrai logo haute qualité, a fermé son API
 // publique — ce service-ci est plus modeste visuellement mais stable et sans
@@ -17,7 +18,7 @@ export function LogoEditeur({ domaine, taille = 32 }: { domaine?: string; taille
 
   return (
     <Image
-      src={`https://www.google.com/s2/favicons?domain=${domaine}&sz=128`}
+      src={`/api/logo/${encodeURIComponent(domaine)}`}
       alt=""
       width={taille}
       height={taille}

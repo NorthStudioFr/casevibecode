@@ -45,7 +45,7 @@ const TEXTES = {
       `Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression, de limitation et d'opposition concernant vos données, exerçable en écrivant à ${contact}. Vous disposez également du droit d'introduire une réclamation auprès de la CNIL (cnil.fr).`,
     cookiesTitre: 'Cookies',
     cookies:
-      "casevibecode n'utilise aucun cookie publicitaire, aucun outil de mesure d'audience, et ne dépose aucun cookie ou stockage local pour les votes (système sans cookie limité par empreinte IP). Seule la connexion au panneau d'administration nécessite le stockage technique sécurisé d'une session Supabase.",
+      "casevibecode n'utilise aucun cookie publicitaire, aucun outil de mesure d'audience, et ne dépose aucun cookie pour les votes (système sans cookie limité par empreinte IP). Le seul stockage local est votre choix de thème clair ou sombre, qui reste dans votre navigateur et n'est jamais envoyé. La connexion au panneau d'administration nécessite en plus le stockage technique sécurisé d'une session Supabase. Les logos des éditeurs sont récupérés par notre serveur : votre navigateur ne contacte aucun service tiers pour les afficher, donc votre adresse IP n'est transmise à personne d'autre que nos hébergeurs.",
     langueNote: null as string | null,
   },
   en: {
@@ -89,7 +89,7 @@ const TEXTES = {
       `Under the GDPR, you have the right to access, rectify, erase, restrict and object to the processing of your data, exercisable by writing to ${contact}. You also have the right to lodge a complaint with the CNIL, the French data protection authority (cnil.fr).`,
     cookiesTitre: 'Cookies',
     cookies:
-      'casevibecode uses no advertising cookies and no audience-measurement tools, and sets no cookie or local storage for votes (a cookie-free system limited by IP fingerprint). Only signing in to the admin panel requires the secure technical storage of a Supabase session.',
+      'casevibecode uses no advertising cookies and no audience-measurement tools, and sets no cookie for votes (a cookie-free system limited by IP fingerprint). The only local storage is your light or dark theme choice, which stays in your browser and is never sent anywhere. Signing in to the admin panel additionally requires the secure technical storage of a Supabase session. Publisher logos are fetched by our server: your browser contacts no third-party service to display them, so your IP address is passed on to no one but our hosting providers.',
     langueNote: 'This English text is a courtesy translation; the French version prevails.',
   },
 } as const;

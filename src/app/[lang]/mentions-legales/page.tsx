@@ -36,7 +36,7 @@ const TEXTES = {
     conception: (nom: string) => `Le site casevibecode a été conçu et réalisé par ${nom}.`,
     pieTitre: 'Propriété intellectuelle',
     pie: (nom: string) =>
-      `L'ensemble des éléments présents sur ce site (textes, code source, structure, identité visuelle) sont protégés par le droit de la propriété intellectuelle et sont la propriété exclusive de ${nom}, sauf mention contraire. Les verdicts, notes et commentaires publiés par les utilisateurs restent la propriété de leurs auteurs ; en les publiant, l'utilisateur autorise ${nom} à les afficher sur le site.`,
+      `L'ensemble des éléments présents sur ce site (textes, code source, structure, identité visuelle) sont protégés par le droit de la propriété intellectuelle et sont la propriété exclusive de ${nom}, sauf mention contraire. Les votes et retours publiés par les utilisateurs restent la propriété de leurs auteurs ; en les publiant, l'utilisateur autorise ${nom} à les afficher sur le site.`,
     respTitre: 'Responsabilité',
     resp: (nom: string) =>
       `${nom} s'efforce de fournir des informations aussi précises que possible, mais les verdicts affichés (éditeur ou communauté) reflètent des avis, pas une vérité absolue sur les logiciels évoqués. L'éditeur ne pourra être tenu responsable des omissions, inexactitudes ou décisions prises sur la base des informations du site. Le site peut contenir des liens vers des sites externes ; ${nom} ne saurait être tenu responsable de leur contenu.`,
@@ -76,7 +76,7 @@ const TEXTES = {
     conception: (nom: string) => `The casevibecode site was designed and built by ${nom}.`,
     pieTitre: 'Intellectual property',
     pie: (nom: string) =>
-      `All elements of this site (text, source code, structure, visual identity) are protected by intellectual property law and are the exclusive property of ${nom}, unless stated otherwise. Verdicts, ratings and comments published by users remain the property of their authors; by publishing them, users authorise ${nom} to display them on the site.`,
+      `All elements of this site (text, source code, structure, visual identity) are protected by intellectual property law and are the exclusive property of ${nom}, unless stated otherwise. Votes and feedback published by users remain the property of their authors; by publishing them, users authorise ${nom} to display them on the site.`,
     respTitre: 'Liability',
     resp: (nom: string) =>
       `${nom} strives to provide information that is as accurate as possible, but the verdicts shown (editor or community) reflect opinions, not an absolute truth about the software mentioned. The publisher cannot be held liable for omissions, inaccuracies or decisions made on the basis of the site's information. The site may contain links to external sites; ${nom} cannot be held liable for their content.`,

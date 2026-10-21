@@ -71,6 +71,11 @@ export default async function MethodePage({ params }: { params?: Promise<{ lang?
       </section>
 
       <section>
+        <h2 className={h2}>{m.limitsTitle}</h2>
+        <p className={p}>{m.limitsContent}</p>
+      </section>
+
+      <section>
         <h2 className={h2}>{m.communityTitle}</h2>
         <p className={p}>{m.communityContent}</p>
       </section>
@@ -80,10 +85,10 @@ export default async function MethodePage({ params }: { params?: Promise<{ lang?
         <p className={p}>{m.editorContent}</p>
         <div className="mt-4">
           <Link
-            href={localePath(lang, '/signaler')}
+            href={`${localePath(lang, '/signaler')}?page=${encodeURIComponent('/methode')}&sujet=editeur`}
             className="inline-block rounded-sm bg-primary px-4 py-2 text-sm font-medium text-primary-ink transition-colors hover:bg-secondary hover:text-stone-50"
           >
-            {t.footer.report} →
+            {m.editorCta} →
           </Link>
         </div>
       </section>
@@ -92,6 +97,8 @@ export default async function MethodePage({ params }: { params?: Promise<{ lang?
         <h2 className={h2}>{m.linksTitle}</h2>
         <p className={p}>{m.linksContent}</p>
       </section>
+
+      <p className="mt-10 text-xs text-slate-500">{m.updated}</p>
     </main>
   );
 }

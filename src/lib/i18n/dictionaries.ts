@@ -300,7 +300,7 @@ Contraintes :
     reasonLabel: 'Pourquoi cet outil ? (facultatif)',
     submit: 'Envoyer la proposition',
     sending: 'Envoi…',
-    thanks: 'Merci ! Nous regarderons cet outil.',
+    thanks: 'Merci ! Nous lisons le site officiel de l’outil avant d’écrire la fiche, ce qui peut prendre quelques jours. Vous ne recevrez pas de réponse (aucun e-mail demandé) : si la fiche est créée, elle apparaîtra dans la liste.',
     privacy: "Aucun e-mail demandé. Seule une empreinte de votre adresse IP est conservée 13 mois contre les abus.",
   },
   signaler: {
@@ -329,7 +329,7 @@ Contraintes :
       'casevibecode analyse les logiciels professionnels pour déterminer s’ils peuvent être remplacés par un outil sur mesure (vibe coding), ou pas.',
     whoTitle: 'Qui édite casevibecode ?',
     whoContent:
-      'Le site est édité par North Studio (représenté par Mickaël Gallego). North Studio conçoit des sites web, des vidéos et des automatisations pour les professionnels du CHR (restauration et hôtellerie). Cette activité est mentionnée en toute transparence via le mot de l’éditeur présent sur les fiches.',
+      'Le site est édité par North Studio, entreprise individuelle de François-Laurent Lhabitant (coordonnées complètes dans les mentions légales). North Studio conçoit aussi des sites web, des vidéos et des automatisations pour les professionnels du CHR (restauration et hôtellerie) : c’est une activité commerciale, signalée sur les fiches par l’encart « Le mot de North Studio ». Cette activité n’influence pas les verdicts, et aucun éditeur de logiciel ne nous rémunère.',
     dataTitle: 'D’où viennent les données ?',
     dataContent:
       'Pour le secteur CHR (restauration/hôtellerie), les verdicts initiaux proviennent de recherches par intelligence artificielle recoupées (GPT, Mistral, Gemini fin septembre 2026), complétées par l’analyse des contraintes légales françaises (notamment la certification NF525 ou LNE obligatoire pour les systèmes d’encaissement, art. 286 du CGI). Pour les outils du quotidien (SaaS généraux), les fiches initiales, alternatives et prompts sont repris, traduits et adaptés de l’initiative open source canivibecodeit.com (licence MIT).',
@@ -342,13 +342,18 @@ Contraintes :
       'Un outil sur mesure peut couvrir les besoins de base (ex. usage individuel, carnet de bord simple), mais ne peut pas rivaliser avec les fonctions avancées, les intégrations écosystème ou les contraintes d’équipe.',
     notReallyTitle: 'Pas remplaçable',
     notReallyContent:
-      'Un développement sur mesure est déconseillé ou illégal : obligation de certification légale (NF525 avec amende de 7 500 € par caisse non certifiée), risque opérationnel lourd (gestion d’inventaire en temps réel, réconciliation bancaire, surréservation hôtelière) ou dépendance matérielle complexe.',
+      'Un développement sur mesure est déconseillé : obligation de certification légale (par exemple NF525 ou LNE pour une caisse, avec jusqu’à 7 500 € d’amende par système non conforme), risque opérationnel lourd (gestion d’inventaire en temps réel, réconciliation bancaire, surréservation hôtelière) ou dépendance matérielle complexe.',
     communityTitle: 'La prise de relais par la communauté',
     communityContent:
-      'Chaque fiche permet à quiconque de voter sans compte, avec une empreinte IP salée pour limiter à un vote par personne. À partir de 20 votes (seuil configuré dans notre code), le vote de la communauté prend automatiquement le relais et remplace le verdict initial casevibecode.',
+      'Chaque fiche permet à quiconque de voter sans compte, avec une empreinte IP salée pour limiter à un vote par personne. À partir de 20 votes sur une fiche, le vote de la communauté prend automatiquement le relais et remplace le verdict initial de casevibecode. En dessous, le verdict affiché reste celui de casevibecode, même si quelques votes ont été exprimés.',
     editorTitle: 'Vous êtes éditeur : comment corriger une fiche ?',
     editorContent:
       'Nous vérifions chaque proposition. Si vous êtes l’éditeur d’un logiciel référencé et constatez une inexactitude (fonctionnalité ajoutée, évolution tarifaire, certification obtenue), signalez-la via le lien dédié sur votre fiche. Chaque signalement est examiné avec sources vérifiables avant toute modification.',
+    limitsTitle: 'Ce que les verdicts ne sont pas',
+    limitsContent:
+      'Un verdict est un avis éditorial sur la faisabilité d’un remplacement par un outil sur mesure, pas un audit technique ni un conseil juridique ou fiscal. Il ne garantit aucune économie : le temps de développement, l’hébergement et la maintenance ne sont pas comptés. Pour une obligation légale (certification des caisses, par exemple), vérifiez auprès de l’éditeur ou d’un professionnel.',
+    editorCta: 'Proposer une correction',
+    updated: 'Dernière mise à jour de cette page : 21 octobre 2026.',
     linksTitle: 'Liens vers les éditeurs et indépendance',
     linksContent:
       'Les liens vers les éditeurs pointent directement vers leurs domaines officiels. Aucun lien n’est affilié ni sponsorisé. Si un éditeur choisit de relayer casevibecode, cela ne confère aucun passe-droit sur l’objectivité de son verdict.',
@@ -654,7 +659,7 @@ Constraints:
     reasonLabel: 'Why this tool? (optional)',
     submit: 'Send the suggestion',
     sending: 'Sending…',
-    thanks: 'Thank you! We will look at this tool.',
+    thanks: 'Thank you! We read the tool’s official website before writing its page, which can take a few days. You will not get a reply (no email requested): if the page is created, it will appear in the list.',
     privacy: 'No email asked. Only a fingerprint of your IP address is kept for 13 months against abuse.',
   },
   signaler: {
@@ -683,7 +688,7 @@ Constraints:
       'casevibecode analyzes business software to determine whether it can be replaced by a custom-built tool (vibe coding), or not.',
     whoTitle: 'Who publishes casevibecode?',
     whoContent:
-      'The website is published by North Studio (headed by Mickaël Gallego). North Studio creates websites, videos, and automations for the hospitality industry (restaurants and hotels). This activity is stated in full transparency via the publisher notice displayed on software pages.',
+      'The website is published by North Studio, the sole proprietorship of François-Laurent Lhabitant (full details in the legal notice). North Studio also builds websites, videos and automations for hospitality professionals (restaurants and hotels): this is a commercial activity, flagged on software pages by the “A word from North Studio” box. It does not influence the verdicts, and no software vendor pays us.',
     dataTitle: 'Where does the data come from?',
     dataContent:
       'For hospitality software (restaurants/hotels), initial verdicts come from cross-referenced AI research (GPT, Mistral, Gemini in late September 2026), supplemented by analysis of French legal requirements (notably mandatory NF525 or LNE certification for cash register systems, art. 286 of CGI). For everyday SaaS tools, initial entries, alternatives, and prompts are adapted, translated, and built upon from the open source initiative canivibecodeit.com (MIT license).',
@@ -696,13 +701,18 @@ Constraints:
       'A custom tool can cover basic needs (e.g. solo usage, simple logbook), but cannot match advanced capabilities, ecosystem integrations, or team requirements.',
     notReallyTitle: 'Not really',
     notReallyContent:
-      'A custom build is not recommended or illegal: mandatory legal certification (NF525 with a €7,500 fine per non-compliant cash register), severe operational risk (real-time inventory, bank reconciliation, hotel overbooking), or complex hardware dependencies.',
+      'A custom build is not recommended: mandatory legal certification (for example NF525 or LNE for a cash register, with fines of up to €7,500 per non-compliant system), severe operational risk (real-time inventory, bank reconciliation, hotel overbooking), or complex hardware dependencies.',
     communityTitle: 'Community takeover',
     communityContent:
-      'Every software page lets anyone vote without an account, using a salted IP hash to restrict to one vote per person. Starting at 20 votes (threshold configured in our code), community votes automatically take over and replace the initial casevibecode verdict.',
+      'Every software page lets anyone vote without an account, using a salted IP hash to restrict to one vote per person. Starting at 20 votes on a page, community votes automatically take over and replace the initial casevibecode verdict. Below that, the displayed verdict stays casevibecode’s, even if a few votes have been cast.',
     editorTitle: 'You are a software publisher: how to submit a correction?',
     editorContent:
       'We review every submission. If you publish a listed tool and notice an inaccuracy (added feature, pricing update, certification obtained), report it via the dedicated link on your page. Every report is reviewed with verifiable sources before any change goes live.',
+    limitsTitle: 'What the verdicts are not',
+    limitsContent:
+      'A verdict is an editorial opinion on how feasible it is to replace a tool with a custom-built one, not a technical audit nor legal or tax advice. It guarantees no savings: development time, hosting and maintenance are not counted. For a legal obligation (cash-register certification, for example), check with the vendor or a professional.',
+    editorCta: 'Suggest a correction',
+    updated: 'This page was last updated on 21 October 2026.',
     linksTitle: 'Publisher links and independence',
     linksContent:
       'Links to software vendors point directly to their official domains. No link is affiliated or sponsored. If a publisher chooses to mention casevibecode, it provides no special privilege regarding the objectivity of its verdict.',
