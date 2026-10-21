@@ -65,3 +65,28 @@ describe('logicielsParCategorie', () => {
     expect(groupes[0].logiciels.map((l) => l.id)).toEqual(['a', 'b']);
   });
 });
+
+describe('alternativesPolyvalentes — doublons', () => {
+  const mk = (id: string, alternatives: { nom: string; url: string }[]) =>
+    ({ id, nom: id, slug: id, categorie: 'caisse', secteur: 'chr', description: '', verdictEditeur: 'KINDA', justificationEditeur: '', domaine: '', dateAjout: 0, dateMaj: 0,
+      alternatives: alternatives.map((a) => ({ ...a, type: 'open-source', description: '' })) }) as never;
+
+  it('fusionne un même outil référencé par son site et par son dépôt', () => {
+    const r = alternativesPolyvalentes([
+      mk('a', [{ nom: 'OpenResto', url: 'https://get.openres.to' }]),
+      mk('b', [{ nom: 'OpenResto', url: 'https://github.com/karanshukla/openresto' }]),
+    ]);
+    expect(r).toHaveLength(1);
+    expect(r[0].remplace.map((l) => l.id)).toEqual(['a', 'b']);
+  });
+
+  it("ne compte qu'une fois un logiciel qui liste deux adresses du même outil", () => {
+    const r = alternativesPolyvalentes(
+      [
+        mk('a', [{ nom: 'Combo', url: 'https://combohr.com/' }, { nom: 'Combo', url: 'https://combohr.com/fr/' }]),
+        mk('b', [{ nom: 'Combo', url: 'https://combohr.com/' }]),
+      ],
+    );
+    expect(r[0].remplace).toHaveLength(2);
+  });
+});

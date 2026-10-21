@@ -157,6 +157,8 @@ export const fr = {
     indexCount: (a: number, l: number) => `${a} alternative${a > 1 ? 's' : ''} · ${l} logiciel${l > 1 ? 's' : ''}`,
     indexIntro:
       "Pas envie de tout recoder ? Pour chaque logiciel payant, ce qui existe déjà : projets open source maintenus, outils gratuits ou éditeurs plus petits. Chaque lien est contrôlé (dépôt actif et sous licence libre, offre gratuite lue chez l'éditeur, site en ligne), sans vote et sans lien sponsorisé.",
+    searchPlaceholder: 'Rechercher un outil ou une alternative…',
+    noResult: 'Aucun résultat.',
     polyTitle: 'Un outil, plusieurs abonnements',
     polyNeeds: (n: number) => `besoin proche de ${n} logiciels`,
     polyTotal: (formatted: string) => ` · ${formatted} €/mois d'abonnements`,
@@ -502,6 +504,8 @@ export const en: Dict = {
     indexCount: (a: number, l: number) => `${a} alternative${a > 1 ? 's' : ''} · ${l} tool${l > 1 ? 's' : ''}`,
     indexIntro:
       'Not keen on rebuilding everything? For each paid tool, what already exists: maintained open-source projects, free tools or smaller vendors. Every link is checked (active repository under a free licence, free plan read on the vendor’s own site, site online), with no voting and no sponsored links.',
+    searchPlaceholder: 'Search a tool or an alternative…',
+    noResult: 'No results.',
     polyTitle: 'One tool, several subscriptions',
     polyNeeds: (n: number) => `covers a need close to ${n} tools`,
     polyTotal: (formatted: string) => ` · €${formatted}/month in subscriptions`,

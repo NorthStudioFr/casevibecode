@@ -8,9 +8,11 @@ export const TYPE_ALTERNATIVE_LABEL: Record<TypeAlternative, string> = {
   concurrent: 'Concurrent',
 };
 
-// Même projet, écrit « https://www.x.io/ » ou « https://x.io » : une seule clé.
-function cleUrl(url: string): string {
-  return url.toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/+$/, '');
+// Même projet, écrit « https://www.x.io/ » ou « https://x.io », ou référencé par son site et par
+// son dépôt (OpenResto, Dolibarr…) : une seule clé, fondée sur le nom du produit.
+function cleAlternative(a: Alternative): string {
+  const nom = a.nom.toLowerCase().replace(/[^a-z0-9]+/g, '');
+  return nom || a.url.toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/+$/, '');
 }
 
 function aDesAlternatives(l: Logiciel): l is Logiciel & { alternatives: Alternative[] } {
@@ -23,7 +25,7 @@ export function compteAlternatives(logiciels: Logiciel[]): { alternatives: numbe
   for (const l of logiciels) {
     if (!aDesAlternatives(l)) continue;
     avecAlternatives++;
-    l.alternatives.forEach((a) => urls.add(cleUrl(a.url)));
+    l.alternatives.forEach((a) => urls.add(cleAlternative(a)));
   }
   return { alternatives: urls.size, logiciels: avecAlternatives };
 }
@@ -42,8 +44,10 @@ export function alternativesPolyvalentes(logiciels: Logiciel[], minimum = 2): Al
   for (const l of [...logiciels].sort((a, b) => a.nom.localeCompare(b.nom, 'fr'))) {
     if (!aDesAlternatives(l)) continue;
     for (const a of l.alternatives) {
-      const cle = cleUrl(a.url);
+      const cle = cleAlternative(a);
       const entree = parCle.get(cle) ?? { ...a, remplace: [], totalMensuel: 0 };
+      // Un logiciel qui liste deux adresses du même outil ne compte qu'une fois.
+      if (entree.remplace.some((r) => r.id === l.id)) continue;
       entree.remplace.push(l);
       entree.totalMensuel += l.prixMensuel ?? 0;
       parCle.set(cle, entree);
