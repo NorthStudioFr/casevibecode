@@ -30,6 +30,11 @@ export function LogicielGrid({ logiciels }: { logiciels: LogicielListe[] }) {
     const presentes = new Set(logiciels.filter((l) => secteur === 'tous' || l.secteur === secteur).map((l) => l.categorie));
     return (Object.keys(CATEGORIE_LABEL) as Categorie[]).filter((c) => presentes.has(c));
   }, [logiciels, secteur]);
+  const comptes = useMemo(() => {
+    const n: Partial<Record<Categorie, number>> = {};
+    for (const l of logiciels) if (secteur === 'tous' || l.secteur === secteur) n[l.categorie] = (n[l.categorie] ?? 0) + 1;
+    return n;
+  }, [logiciels, secteur]);
 
   function changerSecteur(s: Secteur | 'tous') {
     setSecteur(s);
@@ -69,8 +74,10 @@ export function LogicielGrid({ logiciels }: { logiciels: LogicielListe[] }) {
       <SearchInput value={query} onChange={setQuery} />
       <div className="mt-3 flex flex-col gap-3">
         {secteurs.length > 1 && <SecteurFilter selected={secteur} secteurs={secteurs} onChange={changerSecteur} />}
-        <CategoryFilter selected={categorie} onChange={setCategorie} categories={categories} />
-        <VerdictFilter selected={verdict} onChange={setVerdict} />
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+          <CategoryFilter selected={categorie} onChange={setCategorie} categories={categories} counts={comptes} />
+          <VerdictFilter selected={verdict} onChange={setVerdict} />
+        </div>
       </div>
       <div className="mt-3 flex items-center justify-between">
         <p className="text-sm text-slate-500">
