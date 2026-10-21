@@ -47,3 +47,10 @@ describe('SiteFooter', () => {
     chemin = '/';
   });
 });
+
+describe('SiteFooter — mobile', () => {
+  it('passe à la ligne au lieu de déborder quand les liens sont nombreux', () => {
+    const { container } = render(<SiteFooter />);
+    expect(container.querySelector('nav')?.className).toContain('flex-wrap');
+  });
+});

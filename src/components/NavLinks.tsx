@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { stripLang } from '@/lib/i18n/config';
 import { useLocale } from '@/lib/i18n/LocaleProvider';
 
-const CLASS = 'text-sm text-slate-500 transition-colors hover:text-primary aria-[current=page]:text-primary';
+const CLASS = 'inline-block py-1 text-sm text-slate-500 transition-colors hover:text-primary aria-[current=page]:text-primary';
 
 export function NavLinks() {
   const { t, href } = useLocale();

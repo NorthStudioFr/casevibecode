@@ -11,7 +11,7 @@ export function SiteFooter() {
   const page = pathname && pathname !== '/' && !/\/signaler$/.test(pathname) ? pathname.replace(/^\/(?:fr|en)(?=\/|$)/, '') || '/' : null;
   return (
     <footer className="mt-auto border-t border-slate-200 px-8 py-6 text-center text-sm text-slate-500">
-      <nav className="flex justify-center gap-4">
+      <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2">
         <Link href={href('/methode')} className="hover:text-secondary">
           {t.footer.method}
         </Link>
