@@ -134,4 +134,18 @@ describe('FicheLogicielPage rendu', () => {
     expect(screen.getByText('Badge pour votre site')).toBeInTheDocument();
     expect(screen.getAllByText(/Verdict casevibecode : Partiellement remplaçable/).length).toBeGreaterThanOrEqual(1);
   });
+
+  it('précise sur une caisse que le vote porte sur le verdict, pas sur une recommandation', async () => {
+    getLogicielBySlugMock.mockResolvedValue({ id: 'z', nom: 'Zelty', slug: 'zelty', categorie: 'caisse', secteur: 'chr', description: 'Caisse', verdictEditeur: 'NOT_REALLY', justificationEditeur: 'x', domaine: 'zelty.fr', dateAjout: 0, dateMaj: 0 });
+    const Page = (await import('./page')).default;
+    render(await Page({ params: Promise.resolve({ lang: 'fr', slug: 'zelty' }) }));
+    expect(screen.getByText(/pas sur une recommandation/)).toBeInTheDocument();
+  });
+
+  it("n'ajoute pas cette précision hors caisse", async () => {
+    getLogicielBySlugMock.mockResolvedValue({ id: 'n', nom: 'Notion', slug: 'notion', categorie: 'notes', secteur: 'saas', description: 'Notes', verdictEditeur: 'KINDA', justificationEditeur: 'x', domaine: 'notion.so', dateAjout: 0, dateMaj: 0 });
+    const Page = (await import('./page')).default;
+    render(await Page({ params: Promise.resolve({ lang: 'fr', slug: 'notion' }) }));
+    expect(screen.queryByText(/pas sur une recommandation/)).not.toBeInTheDocument();
+  });
 });

@@ -166,6 +166,7 @@ export default async function FicheLogicielPage({ params }: Props) {
       {display.verdict !== 'NOT_REALLY' && <PromptBlock logiciel={logiciel} />}
       <div className="mt-6">
         <VoteButton logicielId={logiciel.id} initialCounts={counts} />
+        {logiciel.categorie === 'caisse' && <p className="mt-2 text-xs text-slate-500">{t.fiche.voteNoteCaisse}</p>}
       </div>
       <div className="mt-4">
         <ShareOnX
