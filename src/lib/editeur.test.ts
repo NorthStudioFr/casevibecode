@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { editeur, libelleEditeur } from './editeur';
+import { adressesHttps, editeur, libelleEditeur } from './editeur';
 
-const NOMS = ['MARQUE', 'NOM', 'URL', 'CONTACT_URL', 'EMAIL', 'SIRET', 'APE', 'FORME', 'TVA', 'ADRESSE'];
+const NOMS = ['MARQUE', 'NOM', 'URL', 'CONTACT_URL', 'EMAIL', 'SIRET', 'APE', 'FORME', 'TVA', 'ADRESSE', 'SAMEAS', 'FONDATEUR', 'FONDATEUR_URL'];
 
 describe('editeur', () => {
   afterEach(() => vi.unstubAllEnvs());
@@ -25,5 +25,12 @@ describe('libelleEditeur', () => {
     expect(libelleEditeur({ marque: 'Studio', nom: 'Jean' })).toBe('Studio');
     expect(libelleEditeur({ nom: 'Jean' })).toBe('Jean');
     expect(libelleEditeur({})).toBe("l'éditeur du site");
+  });
+});
+
+describe('adressesHttps', () => {
+  it("ne garde que des adresses https valides, et ignore les autres sans rien inventer", () => {
+    expect(adressesHttps('https://www.linkedin.com/in/x, http://non-securise.fr, pas une adresse, ,https://a.fr')).toEqual(['https://www.linkedin.com/in/x', 'https://a.fr']);
+    expect(adressesHttps(undefined)).toEqual([]);
   });
 });

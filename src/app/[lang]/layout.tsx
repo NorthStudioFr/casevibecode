@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { THEME_SCRIPT } from "@/components/ThemeToggle";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
+import { organisationJsonLd } from "@/lib/jsonld";
 import { editeur } from "@/lib/editeur";
 import { LocaleProvider } from "@/lib/i18n/LocaleProvider";
 import { getDict } from "@/lib/i18n/dictionaries";
@@ -60,9 +61,7 @@ function jsonLdFor(lang: ReturnType<typeof langOf>) {
       inLanguage: HTML_LANG[lang],
     },
     // L'éditeur n'est déclaré que si l'environnement le fournit.
-    ...(editeur().marque
-      ? [{ "@context": "https://schema.org", "@type": "Organization", name: editeur().marque, url: editeur().url, logo: `${SITE_URL}/apple-icon.png` }]
-      : []),
+    ...[organisationJsonLd(editeur())].filter((o) => o !== null),
   ];
 }
 

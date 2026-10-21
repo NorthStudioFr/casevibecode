@@ -12,6 +12,7 @@ import { langOf, localePath, type Lang } from '@/lib/i18n/config';
 import { traductionDe } from '@/lib/traductions';
 import { formatPrix } from '@/lib/prix';
 import { formaterDateVerifie } from '@/lib/date';
+import { editeur } from '@/lib/editeur';
 import { ShareOnX } from '@/components/ShareOnX';
 import { CeQueVousPerdez } from '@/components/CeQueVousPerdez';
 import { VerdictBadge } from '@/components/VerdictBadge';
@@ -138,6 +139,19 @@ export default async function FicheLogicielPage({ params }: Props) {
               : t.fiche.sourceEditor}{' '}
           · {t.fiche.votes(display.totalVotes)}
         </span>
+        {logiciel.dateMaj > 0 && (
+          <span className="text-sm text-slate-500">
+            {t.fiche.updatedOn(formaterDateVerifie(new Date(logiciel.dateMaj).toISOString().slice(0, 10), lang))}
+            {editeur().marque && (
+              <>
+                {' · '}
+                <Link href={href('/methode')} className="underline hover:text-slate-800">
+                  {t.fiche.editedBy(editeur().marque as string)}
+                </Link>
+              </>
+            )}
+          </span>
+        )}
         {logiciel.verifieLe && (
           <span className="text-sm text-slate-500">
             {t.fiche.verifiedOn(formaterDateVerifie(logiciel.verifieLe, lang))}
@@ -233,6 +247,7 @@ export default async function FicheLogicielPage({ params }: Props) {
               domaine: logiciel.domaine,
               dateMaj: logiciel.dateMaj,
               verifieLe: logiciel.verifieLe,
+              auteur: editeur().marque,
             }),
           ),
         }}

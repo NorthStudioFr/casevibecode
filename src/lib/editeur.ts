@@ -3,7 +3,9 @@
 // une information absente n'est simplement pas affichée.
 //
 //   EDITEUR_MARQUE, EDITEUR_NOM, EDITEUR_URL, EDITEUR_CONTACT_URL, EDITEUR_EMAIL,
-//   EDITEUR_SIRET, EDITEUR_APE, EDITEUR_FORME, EDITEUR_TVA, EDITEUR_ADRESSE
+//   EDITEUR_SIRET, EDITEUR_APE, EDITEUR_FORME, EDITEUR_TVA, EDITEUR_ADRESSE,
+//   EDITEUR_SAMEAS (profils de la marque, adresses https séparées par des virgules),
+//   EDITEUR_FONDATEUR (nom) et EDITEUR_FONDATEUR_URL (son profil), pour les données structurées
 export interface Editeur {
   marque?: string;
   nom?: string;
@@ -15,6 +17,23 @@ export interface Editeur {
   forme?: string;
   tva?: string;
   adresse?: string;
+  sameAs?: string[];
+  fondateur?: string;
+  fondateurUrl?: string;
+}
+
+// Seules les adresses https valides sont gardées : une variable mal saisie ne produit rien de faux.
+export function adressesHttps(brut: string | undefined): string[] {
+  return (brut ?? '')
+    .split(',')
+    .map((u) => u.trim())
+    .filter((u) => {
+      try {
+        return new URL(u).protocol === 'https:';
+      } catch {
+        return false;
+      }
+    });
 }
 
 function lire(nom: string): string | undefined {
@@ -34,6 +53,9 @@ export function editeur(): Editeur {
     forme: lire('EDITEUR_FORME'),
     tva: lire('EDITEUR_TVA'),
     adresse: lire('EDITEUR_ADRESSE'),
+    sameAs: adressesHttps(lire('EDITEUR_SAMEAS')).length ? adressesHttps(lire('EDITEUR_SAMEAS')) : undefined,
+    fondateur: lire('EDITEUR_FONDATEUR'),
+    fondateurUrl: adressesHttps(lire('EDITEUR_FONDATEUR_URL'))[0],
   };
 }
 

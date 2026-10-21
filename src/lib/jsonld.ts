@@ -1,6 +1,7 @@
 import { SITE_URL } from './site';
 import { getDict } from './i18n/dictionaries';
 import { DEFAULT_LANG, localePath, type Lang } from './i18n/config';
+import type { Editeur } from './editeur';
 
 export function itemListJsonLd(logiciels: { nom: string; slug: string }[], lang: Lang = DEFAULT_LANG) {
   return {
@@ -38,6 +39,7 @@ export function fichePageJsonLd(p: {
   domaine?: string;
   dateMaj?: number;
   verifieLe?: string | null;
+  auteur?: string;
 }) {
   const lang = p.lang ?? DEFAULT_LANG;
   const url = `${SITE_URL}${localePath(lang, `/logiciel/${p.slug}`)}`;
@@ -52,6 +54,7 @@ export function fichePageJsonLd(p: {
     isPartOf: { '@type': 'WebSite', name: 'casevibecode', url: SITE_URL },
     ...(p.dateMaj && Number.isFinite(p.dateMaj) ? { dateModified: new Date(p.dateMaj).toISOString() } : {}),
     ...(p.verifieLe ? { lastReviewed: p.verifieLe } : {}),
+    ...(p.auteur ? { author: { '@type': 'Organization', name: p.auteur }, publisher: { '@type': 'Organization', name: p.auteur } } : {}),
     about: {
       '@type': 'SoftwareApplication',
       name: p.nom,
@@ -72,5 +75,20 @@ export function methodePageJsonLd(lang: Lang, dateModified: string) {
     inLanguage: lang === 'fr' ? 'fr-FR' : 'en',
     dateModified,
     isPartOf: { '@type': 'WebSite', name: 'casevibecode', url: SITE_URL },
+  };
+}
+
+// L'éditeur du site, décrit à partir des variables d'environnement : rien n'est écrit dans le dépôt
+// (public), et une information absente n'est pas émise.
+export function organisationJsonLd(e: Editeur) {
+  if (!e.marque) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: e.marque,
+    url: e.url,
+    logo: `${SITE_URL}/apple-icon.png`,
+    ...(e.sameAs?.length ? { sameAs: e.sameAs } : {}),
+    ...(e.fondateur ? { founder: { '@type': 'Person', name: e.fondateur, ...(e.fondateurUrl ? { sameAs: [e.fondateurUrl] } : {}) } } : {}),
   };
 }
