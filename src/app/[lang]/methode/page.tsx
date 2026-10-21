@@ -28,7 +28,7 @@ export default async function MethodePage({ params }: { params?: Promise<{ lang?
 
   return (
     <main className="mx-auto min-h-screen max-w-2xl p-8">
-      <Link href={localePath(lang, '/')} className="text-sm text-slate-500 hover:text-slate-800">
+      <Link href={localePath(lang, '/')} className="inline-block py-1 text-sm text-slate-500 hover:text-slate-800">
         {t.fiche.back}
       </Link>
 

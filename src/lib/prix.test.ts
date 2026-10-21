@@ -1,4 +1,4 @@
-import { formatPrix, parsePrixMensuel } from './prix';
+import { formatPrixCourt, formatPrix, parsePrixMensuel } from './prix';
 
 describe('parsePrixMensuel', () => {
   it.each([
@@ -74,5 +74,12 @@ describe('prix avec engagement', () => {
     expect(formatPrix("à partir de 35 €/mois (converti de 39 $, facturé à l'année, cours du 2 oct. 2026)", 'en')).toBe(
       'from €35/month (converted from $39, billed annually, rate of Oct 2, 2026)',
     );
+  });
+
+  it("retire la conversion de devise en version courte, en gardant le reste du prix", () => {
+    expect(formatPrixCourt('à partir de 17,82 €/mois (converti de 20 $, cours du 2 oct. 2026)', 'fr')).toBe('à partir de 17,82 €/mois');
+    expect(formatPrixCourt('gratuit (plans payants à partir de 8,91 €/mois, converti de 10 $, cours du 2 oct. 2026)', 'fr')).toBe('gratuit (plans payants à partir de 8,91 €/mois)');
+    expect(formatPrixCourt('à partir de 59 €/mois', 'fr')).toBe('à partir de 59 €/mois');
+    expect(formatPrixCourt(undefined, 'fr')).toBeUndefined();
   });
 });

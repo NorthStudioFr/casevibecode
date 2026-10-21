@@ -48,6 +48,10 @@ export function LogicielGrid({ logiciels }: { logiciels: LogicielListe[] }) {
     setQuery('');
   }
 
+  // Tant que presque aucune fiche n'a de vote, les colonnes Votes et Remplacé ne montreraient que des
+  // zéros : on les masque plutôt que d'afficher un catalogue qui a l'air inactif.
+  const avecVotes = useMemo(() => logiciels.filter((l) => l.totalVotes > 0 || (l.nbConstruits ?? 0) > 0).length >= 10, [logiciels]);
+
   const filtered = useMemo(() => {
     const normalizedQuery = normalize(query.trim());
     const result = logiciels
@@ -96,18 +100,18 @@ export function LogicielGrid({ logiciels }: { logiciels: LogicielListe[] }) {
         <div className="mt-4 border-t border-slate-200">
           <div
             aria-hidden="true"
-            className="hidden grid-cols-[2.5rem_minmax(0,1fr)_9rem_11rem_11rem_4rem_5rem] gap-x-3 border-b border-slate-200 px-2 py-2 text-xs uppercase tracking-wider text-slate-500 md:grid"
+            className={`hidden gap-x-3 border-b border-slate-200 px-2 py-2 text-xs uppercase tracking-wider text-slate-500 md:grid ${avecVotes ? 'grid-cols-[2.5rem_minmax(0,1fr)_9rem_11rem_11rem_4rem_5rem]' : 'grid-cols-[2.5rem_minmax(0,1fr)_9rem_14rem_11rem]'}`}
           >
             <span>#</span>
             <span>{t.grid.colApp}</span>
             <span>{t.grid.colCategory}</span>
             <span>{t.grid.colPrice}</span>
             <span>{t.grid.colVerdict}</span>
-            <span className="text-right">{t.grid.colVotes}</span>
-            <span className="text-right">{t.grid.colBuilt}</span>
+            {avecVotes && <span className="text-right">{t.grid.colVotes}</span>}
+            {avecVotes && <span className="text-right">{t.grid.colBuilt}</span>}
           </div>
           {filtered.map((l, i) => (
-            <LogicielRow key={l.id} logiciel={l} verdict={l.displayVerdict} totalVotes={l.totalVotes} nbConstruits={l.nbConstruits} rang={i + 1} />
+            <LogicielRow key={l.id} logiciel={l} verdict={l.displayVerdict} totalVotes={l.totalVotes} nbConstruits={l.nbConstruits} rang={i + 1} avecVotes={avecVotes} />
           ))}
         </div>
       )}

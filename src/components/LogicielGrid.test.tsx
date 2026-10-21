@@ -149,3 +149,26 @@ describe('LogicielGrid — tri par défaut « Pertinence »', () => {
     expect(ordre[2]).toMatch(/Alpha/);
   });
 });
+
+describe('LogicielGrid — états vides', () => {
+  const base = { secteur: 'chr' as const, categorie: 'caisse' as const, description: '', verdictEditeur: 'KINDA' as const, justificationEditeur: '', domaine: '', dateAjout: 0, dateMaj: 0, displayVerdict: 'KINDA' as const };
+  const fiches = (avecVotes: number): LogicielAvecVerdict[] =>
+    Array.from({ length: 12 }, (_, i) => ({ ...base, id: `f${i}`, nom: `Outil${i}`, slug: `f${i}`, totalVotes: i < avecVotes ? 1 : 0 }));
+
+  it('masque les colonnes Votes et Remplacé tant que presque aucune fiche n’a de données', () => {
+    render(<LogicielGrid logiciels={fiches(2)} />);
+    expect(screen.queryByText('Votes')).not.toBeInTheDocument();
+    expect(screen.queryByText('Remplacé')).not.toBeInTheDocument();
+  });
+
+  it('les affiche dès que dix fiches ont des données', () => {
+    render(<LogicielGrid logiciels={fiches(10)} />);
+    expect(screen.getByText('Votes')).toBeInTheDocument();
+    expect(screen.getByText('Remplacé')).toBeInTheDocument();
+  });
+
+  it('dit « tarif non communiqué » quand il n’y a pas de prix', () => {
+    render(<LogicielGrid logiciels={fiches(0)} />);
+    expect(screen.getAllByText('tarif non communiqué').length).toBeGreaterThan(0);
+  });
+});

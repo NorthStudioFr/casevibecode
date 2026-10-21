@@ -38,4 +38,11 @@ describe('VoteButton', () => {
     expect(screen.queryByText('3')).not.toBeInTheDocument();
     errorSpy.mockRestore();
   });
+
+  it("n'affiche pas « (0) » : le compteur n'apparaît qu'à partir d'un vote", async () => {
+    const { VoteButton } = await import('./VoteButton');
+    render(<VoteButton logicielId="zenchef" initialCounts={{ remplace: 0, pasRemplacable: 2 }} />);
+    expect(screen.getByRole('button', { name: /Je l'ai remplacé$/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Pas remplaçable \(2\)/ })).toBeInTheDocument();
+  });
 });

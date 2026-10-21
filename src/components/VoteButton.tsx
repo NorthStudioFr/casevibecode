@@ -44,14 +44,24 @@ export function VoteButton({
           onClick={() => handleVote('remplace')}
           className="rounded-sm border border-slate-300 px-4 py-2 transition-colors hover:border-secondary hover:text-secondary"
         >
-          {t.vote.replaced} (<span>{counts.remplace}</span>)
+          {t.vote.replaced}
+          {counts.remplace > 0 && (
+            <>
+              {' '}(<span>{counts.remplace}</span>)
+            </>
+          )}
         </button>
         <button
           type="button"
           onClick={() => handleVote('pas_remplacable')}
           className="rounded-sm border border-slate-300 px-4 py-2 transition-colors hover:border-secondary hover:text-secondary"
         >
-          {t.vote.notReplaceable} (<span>{counts.pasRemplacable}</span>)
+          {t.vote.notReplaceable}
+          {counts.pasRemplacable > 0 && (
+            <>
+              {' '}(<span>{counts.pasRemplacable}</span>)
+            </>
+          )}
         </button>
       </div>
       {voteError && (

@@ -103,7 +103,7 @@ export default async function FicheLogicielPage({ params }: Props) {
 
   return (
     <main className="min-h-screen p-8 max-w-2xl mx-auto">
-      <Link href={href('/')} className="text-sm text-slate-500 hover:text-slate-800">
+      <Link href={href('/')} className="inline-block py-1 text-sm text-slate-500 hover:text-slate-800">
         {t.fiche.back}
       </Link>
       <div className="mt-3 flex items-center gap-3">
@@ -130,7 +130,8 @@ export default async function FicheLogicielPage({ params }: Props) {
       </div>
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <VerdictBadge verdict={display.verdict} big />
-        {logiciel.prix && <span className="text-sm text-slate-700">{formatPrix(logiciel.prix, lang)}</span>}
+        <span className="text-sm font-medium text-slate-700">{t.fiche.verdictHint[display.verdict]}</span>
+        <span className={`text-sm ${logiciel.prix ? 'text-slate-700' : 'text-slate-500'}`}>{logiciel.prix ? formatPrix(logiciel.prix, lang) : t.grid.priceNone}</span>
         <span className="text-sm text-slate-500">
           {display.source === 'communaute'
             ? t.fiche.sourceCommunity

@@ -26,4 +26,14 @@ describe('VerdictBadge', () => {
     render(<VerdictBadge verdict="KINDA" court />);
     expect(screen.getByText('Partiel')).toBeInTheDocument();
   });
+
+  it("réserve l'aplat de couleur à « Remplaçable » : les autres verdicts sont en contour, texte neutre", () => {
+    const { rerender } = render(<VerdictBadge verdict="YES" />);
+    expect(screen.getByText('Remplaçable').className).toContain('bg-primary');
+    rerender(<VerdictBadge verdict="NOT_REALLY" />);
+    const no = screen.getByText('Pas remplaçable');
+    expect(no.className).not.toContain('bg-no');
+    expect(no.className).toContain('border-no');
+    expect(no.className).toContain('text-slate-800');
+  });
 });

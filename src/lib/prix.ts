@@ -51,3 +51,11 @@ export function formatPrix(prix: string | undefined, lang: 'fr' | 'en'): string 
     .replace(/\/hôte/g, '/host');
   return sortie;
 }
+
+// Version de liste : sans la mention de conversion de devise (« converti de 39 $, cours du… »), répétée
+// sur des dizaines de lignes. La fiche la garde en entier : la traçabilité du prix y reste complète.
+export function formatPrixCourt(prix: string | undefined, lang: 'fr' | 'en'): string | undefined {
+  if (!prix) return prix;
+  const court = prix.replace(/\s*\(converti de [^)]*\)/i, '').replace(/,\s*converti de [^)]*(?=\))/i, '');
+  return formatPrix(court, lang);
+}

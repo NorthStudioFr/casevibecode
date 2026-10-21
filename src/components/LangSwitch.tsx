@@ -16,7 +16,7 @@ export function LangSwitch() {
       hrefLang={autre}
       lang={autre}
       aria-label={t.nav.switchLabel}
-      className="text-sm text-slate-500 transition-colors hover:text-primary"
+      className="inline-block py-1 text-sm text-slate-500 transition-colors hover:text-primary"
     >
       {t.nav.switchTo}
     </Link>

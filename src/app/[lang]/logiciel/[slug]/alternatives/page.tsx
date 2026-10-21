@@ -55,7 +55,7 @@ export default async function AlternativesDeLaFichePage({ params }: Props) {
 
   return (
     <main className="mx-auto min-h-screen max-w-2xl p-8">
-      <Link href={localePath(lang, `/logiciel/${logiciel.slug}`)} className="text-sm text-slate-500 hover:text-slate-800">
+      <Link href={localePath(lang, `/logiciel/${logiciel.slug}`)} className="inline-block py-1 text-sm text-slate-500 hover:text-slate-800">
         {t.alternatives.backToFiche(logiciel.nom)}
       </Link>
       <div className="mt-3 flex items-center gap-3">

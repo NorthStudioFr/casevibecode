@@ -4,7 +4,7 @@ import Link from 'next/link';
 import type { LogicielListe, VerdictEditeur } from '@/types/logiciel';
 import { CATEGORIE_EMOJI } from '@/lib/categories';
 import { useLocale } from '@/lib/i18n/LocaleProvider';
-import { formatPrix } from '@/lib/prix';
+import { formatPrixCourt } from '@/lib/prix';
 import { VerdictBadge } from './VerdictBadge';
 import { LogoEditeur } from './LogoEditeur';
 
@@ -16,19 +16,21 @@ export function LogicielRow({
   totalVotes,
   nbConstruits = 0,
   rang,
+  avecVotes = true,
 }: {
   logiciel: Omit<LogicielListe, 'displayVerdict' | 'totalVotes' | 'nbConstruits'>;
   verdict: VerdictEditeur;
   totalVotes: number;
   nbConstruits?: number;
   rang: number;
+  avecVotes?: boolean;
 }) {
   const { t, lang, href } = useLocale();
-  const prix = formatPrix(logiciel.prix, lang);
+  const prix = formatPrixCourt(logiciel.prix, lang);
   return (
     <Link
       href={href(`/logiciel/${logiciel.slug}`)}
-      className="grid grid-cols-[2rem_minmax(0,1fr)] items-center gap-x-3 gap-y-1 border-b border-slate-200 px-2 py-3 transition-colors hover:bg-slate-100 md:grid-cols-[2.5rem_minmax(0,1fr)_9rem_11rem_11rem_4rem_5rem]"
+      className={`grid grid-cols-[2rem_minmax(0,1fr)] items-center gap-x-3 gap-y-1 border-b border-slate-200 px-2 py-3 transition-colors hover:bg-slate-100 ${avecVotes ? 'md:grid-cols-[2.5rem_minmax(0,1fr)_9rem_11rem_11rem_4rem_5rem]' : 'md:grid-cols-[2.5rem_minmax(0,1fr)_9rem_14rem_11rem]'}`}
     >
       <span className="text-xs text-slate-500">{String(rang).padStart(2, '0')}</span>
       <span className="flex min-w-0 items-center gap-2">
@@ -38,10 +40,12 @@ export function LogicielRow({
       <span className="col-start-2 row-start-3 text-xs text-slate-500 md:col-start-auto md:row-start-auto">
         {CATEGORIE_EMOJI[logiciel.categorie]} {t.categories[logiciel.categorie]}
       </span>
-      <span className="hidden text-sm text-slate-600 md:block">{prix ?? ''}</span>
+      <span className={`hidden text-sm md:block ${prix ? 'text-slate-600' : 'text-slate-400'}`}>{prix ?? t.grid.priceNone}</span>
       <span className="col-start-2 row-start-2 justify-self-start md:col-start-auto md:row-start-auto">
         <VerdictBadge verdict={verdict} court />
       </span>
+      {avecVotes && (
+        <>
       <span
         className="hidden text-right text-sm text-slate-600 md:block"
         aria-label={t.grid.votes(totalVotes)}
@@ -56,9 +60,9 @@ export function LogicielRow({
           {nbConstruits > 0 ? nbConstruits : '—'}
         </span>
       </span>
-      {prix && (
-        <span className="col-start-2 row-start-4 text-xs text-slate-600 md:hidden">{prix}</span>
+        </>
       )}
+      <span className={`col-start-2 row-start-4 text-xs md:hidden ${prix ? 'text-slate-600' : 'text-slate-400'}`}>{prix ?? t.grid.priceNone}</span>
     </Link>
   );
 }
