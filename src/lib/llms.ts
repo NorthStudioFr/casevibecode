@@ -19,7 +19,7 @@ export function texteFiche(l: Logiciel, siteUrl: string): string {
     l.justificationEditeur && `Pourquoi : ${l.justificationEditeur}`,
     l.prix && `Prix : ${l.prix}`,
     l.verifieLe && `Vérifié le : ${l.verifieLe}`,
-    l.ceQueVousPerdez?.length ? `Ce que vous perdez en le remplaçant : ${l.ceQueVousPerdez.join(' ; ')}` : '',
+    l.ceQueVousPerdez?.length ? `Ce que vous perdez en le remplaçant : ${l.ceQueVousPerdez.map((x) => x.replace(/[.\s]+$/, '')).join(' ; ')}.` : '',
     l.alternatives?.length
       ? `Alternatives :\n${l.alternatives.map((a) => `- ${a.nom} (${TYPE_ALTERNATIVE_LABEL[a.type]}) : ${a.description} ${a.url}`).join('\n')}`
       : '',

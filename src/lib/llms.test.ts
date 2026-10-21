@@ -21,4 +21,8 @@ describe('texteFiche', () => {
     expect(t).toContain('Vérifié le : 2026-10-20');
     expect(t).toContain('- Hiboutik (Gratuit) : Caisse en ligne. https://hiboutik.com');
   });
+  it('ne double pas les points dans « ce que vous perdez »', () => {
+    const t = texteFiche({ ...base, ceQueVousPerdez: ['Les passkeys.', 'Le partage.'] }, 'https://x.fr');
+    expect(t).toContain('Ce que vous perdez en le remplaçant : Les passkeys ; Le partage.');
+  });
 });
