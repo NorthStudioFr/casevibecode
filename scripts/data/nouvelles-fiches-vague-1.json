@@ -138,7 +138,7 @@
  },
  {
   "slug": "mitti",
-  "nom": "Mitti (ex-SafetyCulture)",
+  "nom": "Mitti",
   "categorie": "hygiene",
   "secteur": "chr",
   "domaine": "mitti.com",
@@ -722,7 +722,7 @@
  },
  {
   "slug": "youtrust",
-  "nom": "Youtrust (ex-Yousign)",
+  "nom": "Youtrust",
   "categorie": "productivite",
   "secteur": "saas",
   "domaine": "youtrust.com",
