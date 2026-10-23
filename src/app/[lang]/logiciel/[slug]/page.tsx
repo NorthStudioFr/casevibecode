@@ -10,7 +10,7 @@ import { SITE_URL } from '@/lib/site';
 import { getDict } from '@/lib/i18n/dictionaries';
 import { langOf, localePath, type Lang } from '@/lib/i18n/config';
 import { traductionDe } from '@/lib/traductions';
-import { formatPrix } from '@/lib/prix';
+import { formatPrix, formatPrixCourt } from '@/lib/prix';
 import { formaterDateVerifie } from '@/lib/date';
 import { editeur } from '@/lib/editeur';
 import { ShareOnX } from '@/components/ShareOnX';
@@ -74,9 +74,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = t.fiche.title(logiciel.nom, Boolean(prix));
   // Les faits utiles (prix, verdict, nombre d'alternatives) passent en dernier mais ne sont jamais
   // coupés : c'est la description de l'outil qu'on raccourcit pour tenir sous ~155 caractères.
-  const faits = t.fiche.metaFacts({ prix, verdict: t.verdict[verdict], nbAlternatives: logiciel.alternatives?.length ?? 0 });
+  // Sans la note de conversion de devise (« converti de 25 $, cours du… »), trop longue pour une meta description.
+  const faits = t.fiche.metaFacts({ prix: formatPrixCourt(logiciel.prix, lang), verdict: t.verdict[verdict], nbAlternatives: logiciel.alternatives?.length ?? 0 });
   const texte = logiciel.description || logiciel.justificationEditeur;
-  const description = texte ? `${tronquer(texte, 155 - faits.length - 1)} ${faits}` : t.fiche.fallbackDescription(logiciel.nom);
+  const description = texte ? `${tronquer(texte, Math.max(60, 155 - faits.length - 1))} ${faits}` : t.fiche.fallbackDescription(logiciel.nom);
   return {
     title,
     description,

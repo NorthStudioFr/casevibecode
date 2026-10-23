@@ -21,6 +21,25 @@ describe('Fiche logiciel generateMetadata', () => {
     getLogicielBySlugMock.mockReset();
   });
 
+  it('garde la description sous 160 caractères quand le prix porte une note de conversion de devise', async () => {
+    getLogicielBySlugMock.mockResolvedValue({
+      id: 'front',
+      nom: 'Front',
+      slug: 'front',
+      description: 'Boîte de réception collaborative qui réunit e-mails, SMS et autres canaux pour les équipes : boîte partagée, tickets, règles d\'automatisation, analyses. Starter à 25 $ par siège et par mois en annuel.',
+      verdictEditeur: 'KINDA',
+      prix: "à partir de 22,28 €/mois/utilisateur (converti de 25 $, facturé à l'année, cours du 2 oct. 2026)",
+      alternatives: [],
+    });
+    const { generateMetadata } = await import('./page');
+
+    const metadata = await generateMetadata({ params: Promise.resolve({ slug: 'front' }) });
+
+    expect((metadata.description as string).length).toBeLessThanOrEqual(160);
+    expect(metadata.description).toContain('Verdict casevibecode');
+    expect(metadata.description).not.toContain('converti de');
+  });
+
   it("builds a per-fiche title and description from the logiciel's name and description", async () => {
     getLogicielBySlugMock.mockResolvedValue({
       id: 'zenchef',
