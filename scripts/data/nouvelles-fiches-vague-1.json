@@ -34,7 +34,7 @@
   "categorie": "hotellerie",
   "secteur": "chr",
   "domaine": "oracle.com",
-  "description": "Système de gestion hôtelière en ligne d'Oracle Hospitality, utilisé par des hôtels et des chaînes : réservations, séjours, chambres, facturation et exploitation, avec de nombreuses connexions aux logiciels d'autres éditeurs. Tarifs non publics.",
+  "description": "Système de gestion hôtelière d'Oracle Hospitality, proposé en ligne (OPERA Cloud) et sur serveur (OPERA 5), utilisé par des hôtels et des chaînes : réservations, séjours, chambres, facturation et exploitation, avec des modules associés (ventes et banquets, événements, gestion des revenus, relation client, applications mobiles), un lien client avant l'arrivée, des offres de ventes additionnelles et des paiements conformes aux règles de sécurité des cartes. Oracle ne publie pas de tarifs : devis selon la taille de l'hôtel, les modules et le déploiement.",
   "verdict_editeur": "NOT_REALLY",
   "justification_editeur": "OPERA est le standard de nombreuses chaînes : son intérêt tient aux interfaces (distribution, paiement, fidélité, serrures, téléphonie) que les groupes ont déjà branchées et aux équipes déjà formées. Un développement sur mesure ne reproduit ni ce parc d'interfaces ni cette familiarité. À l'échelle d'un hôtel indépendant, l'outil est surdimensionné : la bonne question est alors de choisir un PMS plus léger, pas de développer le sien.",
   "prix": null,
@@ -260,6 +260,130 @@
    "Des catalogues fournisseurs tenus à jour"
   ],
   "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "toast",
+  "nom": "Toast",
+  "categorie": "caisse",
+  "secteur": "chr",
+  "domaine": "toasttab.com",
+  "description": "Plateforme américaine de caisse et de gestion pour restaurants : caisse, commande à table et en ligne, cuisine, paiements, avec matériel dédié. Les pages publiques consultées concernent les États-Unis, l'Australie et le Royaume-Uni ; le support de l'éditeur mentionne aussi le Canada et l'Irlande. Aucune offre française confirmée. Grille tarifaire officielle non relevée (le site renvoie à des offres par pays, avec matériel et frais de paiement en plus).",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Toast est le modèle américain de la caisse tout-en-un : commande à table, écran cuisine, commande en ligne, le tout relié à son propre traitement des paiements. Une partie se reproduit bien en français : le menu numérique, la prise de commande à table avec envoi en cuisine, l'écran cuisine. Deux choses ne se reproduisent pas : le terminal et le traitement des paiements, qui appartiennent à l'éditeur, et la certification. En France, un logiciel de caisse qui enregistre des ventes doit être certifié NF525 ou attesté conforme, ce qu'une caisse développée en interne n'a pas. Pour encaisser, prenez un éditeur certifié ; réservez le sur-mesure aux à-côtés.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le matériel de caisse et le traitement des paiements de l'éditeur",
+   "La certification fiscale de l'encaissement (NF525 en France)",
+   "La commande en ligne, l'écran cuisine et les rapports déjà reliés entre eux",
+   "L'écosystème d'intégrations et d'applications partenaires"
+  ],
+  "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "clover",
+  "nom": "Clover",
+  "categorie": "caisse",
+  "secteur": "chr",
+  "domaine": "clover.com",
+  "description": "Écosystème de caisses et de terminaux de paiement de Fiserv : plusieurs terminaux (Go, Mini, Station Duo), logiciel pour restaurants et commerces, boutique d'applications. Les formules et prix publiés varient beaucoup d'une source à l'autre et les offres restaurant se font souvent sur devis. En Europe, Fiserv annonce un déploiement en Allemagne ; aucune offre française confirmée.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Clover associe un logiciel de caisse, un terminal et un acquéreur de paiement qui appartiennent au même groupe. Le logiciel de commande se reproduit en grande partie ; le terminal et l'acquisition bancaire ne se reproduisent pas, car ils exigent un matériel agréé et un établissement de paiement. En France s'ajoute l'obligation de certification NF525 pour un logiciel qui enregistre des ventes. Si vous cherchez une caisse, comparez les éditeurs certifiés ; si vous avez des idées d'à-côtés (menu, fidélité), elles se développent à part.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le terminal de paiement agréé et l'acquisition bancaire du groupe",
+   "La certification fiscale de l'encaissement (NF525 en France)",
+   "La boutique d'applications et les intégrations",
+   "Le support et la maintenance du matériel"
+  ],
+  "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "epos-now",
+  "nom": "Epos Now",
+  "categorie": "caisse",
+  "secteur": "chr",
+  "domaine": "eposnow.com",
+  "description": "Éditeur britannique de caisses enregistreuses et de logiciels de gestion pour restaurants, cafés et commerces : matériel, gestion des stocks et paiements intégrés. Les tarifs diffèrent selon les pays et ne sont pas détaillés sur la page d'accueil (des comparateurs tiers citent environ 58 £ par mois et par licence au Royaume-Uni, chiffre non confirmé par l'éditeur). Aucune offre française confirmée.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Une caisse se compose de trois choses : un logiciel de vente, un matériel (écran, tiroir, imprimante) et un moyen de paiement. Le logiciel de vente est reproductible, le matériel s'achète, mais le moyen de paiement relève d'un établissement agréé. En France, l'obligation de certification NF525 s'applique aussi à un logiciel étranger dès qu'il enregistre des ventes. Epos Now n'a pas d'offre française confirmée : pour encaisser en France, il faut un éditeur certifié ici. Le sur-mesure convient pour le stock, les fiches produits et les rapports.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le matériel de caisse (écran, tiroir, imprimante) vendu avec le logiciel",
+   "Les paiements intégrés",
+   "La certification fiscale de l'encaissement (NF525 en France)",
+   "La gestion des stocks reliée aux ventes"
+  ],
+  "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "hotela",
+  "nom": "Hotela",
+  "categorie": "hotellerie",
+  "secteur": "chr",
+  "domaine": "hotela.app",
+  "description": "Logiciel de gestion hôtelière en français destiné à l'Afrique de l'Ouest (Abidjan, Dakar, Lomé, Cotonou…) : réservations et séjours, planning des chambres, site web avec moteur de réservation, caisse restaurant et bar, stocks et fiches techniques, CRM, facturation PDF, salles et événements, multi-hôtels, applications client et équipe, clés d'API. Prix en F CFA : Starter 19 900 par mois (environ 30 €), Business 49 900, Corporate 89 900 ; 10 % de commission sur les réservations faites en ligne via l'application ou le réseau Hotela. Essai de 14 jours, paiement par Mobile Money.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Hotela réunit dans une seule application ce qu'un petit hôtel utilise : planning des chambres, réservations, facturation, caisse du restaurant, stocks et fiches techniques, fichier clients. Ce périmètre se reproduit pour un établissement unique, c'est même un bon exemple de tout-en-un à taille humaine. Ce qui ne se reproduit pas : le réseau de réservation de l'éditeur (d'où la commission de 10 %) et les paiements par Mobile Money. Pour un hôtel français, les règles de caisse (NF525), de taxe de séjour et de fiche de police s'ajoutent et changent les écrans à prévoir.",
+  "prix": "à partir de 30,34 €/mois",
+  "prix_mensuel": 30.34,
+  "ce_que_vous_perdez": [
+   "Le réseau de réservation de l'éditeur et ses clients",
+   "Les paiements par Mobile Money",
+   "Les applications client et équipe prêtes à l'emploi",
+   "Le site web de l'hôtel avec moteur de réservation hébergé"
+  ],
+  "alternatives": [
+   {
+    "nom": "QloApps",
+    "url": "https://github.com/Qloapps/QloApps",
+    "type": "open-source",
+    "description": "Système de réservation hôtelière libre (OSL-3.0), bâti sur PrestaShop : moteur de réservation et gestion des chambres ; les connexions aux agences en ligne restent à votre charge."
+   }
+  ],
+  "prompt": "Construis une petite application de gestion pour mon hôtel, pour remplacer un logiciel hôtelier tout-en-un.\n\nContexte : un hôtel de 14 chambres avec un restaurant de 30 couverts, une équipe de 8 personnes.\n\nÀ faire :\n- Chambres et types de chambres avec tarifs et statuts (libre, occupée, à nettoyer).\n- Un planning visuel des réservations par chambre avec détection des conflits.\n- Des fiches clients (nom, contact, préférences, historique des séjours).\n- La note du séjour avec les prestations du restaurant ajoutées à la chambre, et un PDF.\n- Un petit module de commande au restaurant (tables, plats, envoi en cuisine) sans encaissement.\n- Un stock d'ingrédients avec fiches techniques et alerte de seuil.\n- Des rôles : réception, restaurant, direction.\n\nHors périmètre : réservations en ligne par un réseau, encaissement légal, paiements.\n\nStack : application web, PostgreSQL. README : lancement, sauvegarde quotidienne, et rappel que l'encaissement des ventes doit passer par un logiciel de caisse certifié (NF525), que la taxe de séjour et la fiche individuelle de police des voyageurs étrangers sont à prévoir.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "rms-cloud",
+  "nom": "RMS Cloud",
+  "categorie": "hotellerie",
+  "secteur": "chr",
+  "domaine": "rmscloud.com",
+  "description": "Logiciel de gestion hôtelière en ligne pour hôtels, motels, campings, parcs de vacances, résidences étudiantes, locations meublées et hébergement de travailleurs : gestion des biens, réception, ménage et maintenance, distribution, channel manager, revenue management, moteur de réservation, événements, comptabilité propriétaires, paiements (RMS Pay), point de vente et API ouverte. L'éditeur annonce plus de 6 000 établissements dans plus de 70 pays. Site en anglais, tarif sur devis selon le nombre de sites et de modules.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "RMS couvre un périmètre large : réception, ménage, distribution, tarification, comptabilité des propriétaires et paiements. Le planning d'un camping ou d'un parc de vacances se reproduit pour un site unique ; la distribution (channel manager), le revenue management et la comptabilité fiduciaire non. Les campings ont en plus des règles propres (emplacements, saisonnalité, taxe de séjour) qu'un outil sur mesure doit prévoir dès le départ. Choisissez d'abord la distribution dont vous avez besoin avant de comparer.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La distribution et le channel manager reliés aux agences en ligne",
+   "Le revenue management et la tarification saisonnière",
+   "Les paiements intégrés (RMS Pay) et le point de vente",
+   "La comptabilité propriétaires et les fonds fiduciaires"
+  ],
+  "alternatives": [
+   {
+    "nom": "QloApps",
+    "url": "https://github.com/Qloapps/QloApps",
+    "type": "open-source",
+    "description": "Système de réservation hôtelière libre (OSL-3.0), bâti sur PrestaShop : moteur de réservation et gestion des chambres ; les connexions aux agences en ligne restent à votre charge."
+   }
+  ],
   "prompt": null,
   "source_verdict": "casevibecode",
   "verifie_le": null

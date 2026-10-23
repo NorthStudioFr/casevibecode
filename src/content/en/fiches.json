@@ -3578,7 +3578,7 @@
   ]
  },
  "oracle-opera-cloud": {
-  "description": "Cloud hotel management system from Oracle Hospitality, used by hotels and chains: reservations, stays, rooms, invoicing and operations, with many connections to other vendors' software. Pricing is not public.",
+  "description": "Hotel management system from Oracle Hospitality, offered online (OPERA Cloud) and on a server (OPERA 5), used by hotels and chains: reservations, stays, rooms, invoicing and operations, with related modules (sales and catering, events, revenue management, guest relationship, mobile apps), a pre-arrival guest link, upsell offers and payments that follow card security rules. Oracle does not publish prices: quote based on hotel size, modules and deployment.",
   "justification": "OPERA is the standard in many chains: its value lies in the interfaces (distribution, payment, loyalty, door locks, telephony) that groups have already plugged in, and in teams already trained on it. A custom build reproduces neither that set of interfaces nor that familiarity. For an independent hotel the tool is oversized: the right question is then to choose a lighter PMS, not to build your own.",
   "perdez": [
    "Standard interfaces with distribution, payment and loyalty.",
@@ -3914,5 +3914,65 @@
    "Mature open-source newsletter and mailing-list manager."
   ],
   "prompt": "Build a mail-merge script from a Google Sheets sheet, replacing a Gmail mail-merge tool.\n\nContext: I write to about 150 business contacts a month from my Gmail account.\n\nTo do:\n- A Google Apps Script bound to the sheet: columns email, first name, company, status.\n- An email template with {{first_name}} and {{company}} variables, stored in the sheet.\n- A «Send» menu that only writes to rows with status «to send», with a maximum of 50 emails a day and a random delay between sends.\n- Switching the status to «sent» with the date, and honouring an «unsubscribed» column that blocks any send.\n- An unsubscribe link in every email.\n\nOut of scope: open tracking, automatic follow-ups.\n\nREADME: installing the script, Gmail's sending limits, and a reminder to write only to people with a legal basis (consent or legitimate interest)."
+ },
+ "toast": {
+  "description": "American all-in-one point-of-sale and management platform for restaurants: till, table and online ordering, kitchen, payments, with dedicated hardware. The public pages read cover the United States, Australia and the United Kingdom; the vendor's support also mentions Canada and Ireland. No confirmed French offer. Official price list not recorded (the site points to country-specific plans, with hardware and payment fees on top).",
+  "justification": "Toast is the American model of the all-in-one till: table ordering, kitchen display, online ordering, all tied to its own payment processing. Part of it reproduces well in French: the digital menu, table ordering sent to the kitchen, the kitchen screen. Two things do not: the terminal and the payment processing, which belong to the vendor, and the certification. In France, point-of-sale software that records sales must be NF525-certified or attested compliant, which an in-house till does not have. To take payments, use a certified vendor; keep custom work for the extras.",
+  "perdez": [
+   "The vendor's till hardware and payment processing.",
+   "Tax certification of the till (NF525 in France).",
+   "Online ordering, kitchen display and reports already linked together.",
+   "The ecosystem of integrations and partner apps."
+  ],
+  "alternatives": []
+ },
+ "clover": {
+  "description": "Fiserv's ecosystem of tills and payment terminals: several terminals (Go, Mini, Station Duo), software for restaurants and shops, an app marketplace. Published plans and prices vary greatly between sources and restaurant offers are often quote-based. In Europe, Fiserv announces a rollout in Germany; no confirmed French offer.",
+  "justification": "Clover combines till software, a terminal and a payment acquirer that belong to the same group. The ordering software can largely be reproduced; the terminal and bank acquiring cannot, because they require approved hardware and a payment institution. In France there is also the NF525 certification requirement for software that records sales. If you want a till, compare certified vendors; if you have ideas for extras (menu, loyalty), they can be built separately.",
+  "perdez": [
+   "The approved payment terminal and the group's bank acquiring.",
+   "Tax certification of the till (NF525 in France).",
+   "The app marketplace and integrations.",
+   "Hardware support and maintenance."
+  ],
+  "alternatives": []
+ },
+ "epos-now": {
+  "description": "British vendor of tills and management software for restaurants, cafés and shops: hardware, stock management and integrated payments. Prices differ by country and are not detailed on the home page (third-party comparison sites quote about £58 per month per licence in the United Kingdom, a figure the vendor has not confirmed). No confirmed French offer.",
+  "justification": "A till is made of three things: sales software, hardware (screen, drawer, printer) and a means of payment. The sales software can be reproduced, the hardware can be bought, but the means of payment belongs to a licensed institution. In France, the NF525 certification requirement also applies to foreign software as soon as it records sales. Epos Now has no confirmed French offer: to take payments in France you need a vendor certified here. Custom work suits stock, product records and reports.",
+  "perdez": [
+   "The till hardware (screen, drawer, printer) sold with the software.",
+   "Integrated payments.",
+   "Tax certification of the till (NF525 in France).",
+   "Stock management tied to sales."
+  ],
+  "alternatives": []
+ },
+ "hotela": {
+  "description": "French-language hotel management software aimed at West Africa (Abidjan, Dakar, Lomé, Cotonou…): reservations and stays, room planning, website with booking engine, restaurant and bar till, stock and recipe cards, CRM, PDF invoicing, rooms and events, multi-hotel, guest and staff apps, API keys. Prices in CFA francs: Starter 19,900 a month (about €30), Business 49,900, Corporate 89,900; 10% commission on bookings made online through the app or the Hotela network. 14-day trial, payment by Mobile Money.",
+  "justification": "Hotela brings together in one application what a small hotel uses: room planning, reservations, invoicing, restaurant till, stock and recipe cards, guest file. That scope can be reproduced for a single property; it is even a good example of a human-sized all-in-one. What cannot be reproduced: the vendor's booking network (hence the 10% commission) and Mobile Money payments. For a French hotel, till rules (NF525), tourist tax and the police registration form are added and change the screens to plan.",
+  "perdez": [
+   "The vendor's booking network and its customers.",
+   "Mobile Money payments.",
+   "Ready-to-use guest and staff apps.",
+   "The hotel website with a hosted booking engine."
+  ],
+  "alternatives": [
+   "Open-source hotel booking system (OSL-3.0) built on PrestaShop: booking engine and room management; connections to online travel agencies are up to you."
+  ],
+  "prompt": "Build a small management application for my hotel, replacing an all-in-one hotel software.\n\nContext: a 14-room hotel with a 30-seat restaurant, a team of 8.\n\nTo do:\n- Rooms and room types with rates and statuses (free, occupied, to clean).\n- A visual booking planner per room with conflict detection.\n- Guest records (name, contact, preferences, stay history).\n- The stay bill with restaurant services charged to the room, and a PDF.\n- A small restaurant ordering module (tables, dishes, sending to the kitchen) without taking payments.\n- An ingredient stock with recipe cards and a threshold alert.\n- Roles: front desk, restaurant, management.\n\nOut of scope: online bookings through a network, legal sales recording, payments.\n\nStack: web app, PostgreSQL. README: how to run, daily backup, and a reminder that recording sales must go through certified till software (NF525), and that tourist tax and the police registration form for foreign travellers must be planned."
+ },
+ "rms-cloud": {
+  "description": "Online hotel management software for hotels, motels, campsites, holiday parks, student residences, serviced apartments and workforce accommodation: property management, front desk, housekeeping and maintenance, distribution, channel manager, revenue management, booking engine, events, owner accounting, payments (RMS Pay), point of sale and open API. The vendor claims more than 6,000 properties in more than 70 countries. Site in English, price on quote depending on the number of sites and modules.",
+  "justification": "RMS covers a wide scope: front desk, housekeeping, distribution, pricing, owner accounting and payments. The planning of a campsite or holiday park can be reproduced for a single site; distribution (channel manager), revenue management and trust accounting cannot. Campsites also have their own rules (pitches, seasonality, tourist tax) that a custom tool must plan for from the start. Decide on the distribution you need before comparing.",
+  "perdez": [
+   "Distribution and channel manager connected to online agencies.",
+   "Revenue management and seasonal pricing.",
+   "Integrated payments (RMS Pay) and point of sale.",
+   "Owner accounting and trust funds."
+  ],
+  "alternatives": [
+   "Open-source hotel booking system (OSL-3.0) built on PrestaShop: booking engine and room management; connections to online travel agencies are up to you."
+  ]
  }
 }
