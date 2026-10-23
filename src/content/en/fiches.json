@@ -4118,5 +4118,328 @@
    "Open-source surveys and customer feedback (open core, some features under a commercial licence), self-hosted or cloud."
   ],
   "prompt": "Build a small survey tool for my business, replacing an online survey platform.\n\nContext: I run 3 or 4 surveys a year with 200 to 500 people (customers, teams).\n\nTo do:\n- A page-based questionnaire editor with question types: single choice, multiple choice, scale, simple matrix, free text.\n- Simple conditional jumps between pages based on answers.\n- Individual single-use invitation links, to avoid duplicates.\n- Tracking of the response rate and an email reminder to people who have not answered.\n- Results: counts, percentages, averages, cross-tabulation of two questions, charts.\n- A CSV and Excel export.\n\nOut of scope: quotas, more than 80 languages, exports to statistical software.\n\nStack: web app, PostgreSQL. README: how to run, backup, retention and deletion of responses (GDPR), anonymising results."
+ },
+ "beds24": {
+  "description": "Accommodation management software and channel manager: dynamic calendar, drag-and-drop reservations, dashboards, reports, payments, arrivals and departures, invoice generation, synchronisation of availability and rates with more than 60 channels (Airbnb, Booking.com, Expedia, Vrbo) through certified API connections, commission-free direct booking engine, multilingual. Subscription from €15.50 a month, pay-as-you-go, no commitment or commission; free trial. The vendor belongs to Visit Group; the site offers English and German, French does not appear.",
+  "justification": "The calendar and the direct booking engine can be built for a small property. What you pay for here is more than 60 certified connections with online agencies, which avoid double bookings: each platform only opens its interface to approved partners, and maintaining them takes a team. If you only sell direct, a custom tool is enough; if you sell on Booking.com and Airbnb, the channel manager is the heart of the product and cannot be replaced.",
+  "perdez": [
+   "Certified connections with more than 60 sales channels.",
+   "Updates to the platforms' interfaces.",
+   "The multilingual booking engine with promo codes.",
+   "Payment and invoice tracking."
+  ],
+  "alternatives": [
+   "Open-source hotel booking system (OSL-3.0) built on PrestaShop: booking engine and room management; connections to online travel agencies are up to you."
+  ]
+ },
+ "easy-appointments": {
+  "description": "Free and open-source (GPL-3.0) appointment booking software to install on your own server: a booking page where the customer chooses the service, provider, date and time without creating an account, shared calendar, email notifications, roles, REST API, webhooks, LDAP login, Google Calendar link, WordPress, Joomla! and Drupal extensions. More than 40 languages. Free when self-hosted, with no limit on bookings; managed hosting at €20 a month (€240 a year) with installation, updates and daily backups. SMS reminders and online payments offered as custom developments.",
+  "justification": "A slot, a service, a provider, an email confirmation and a capacity limit: this is a very classic database schema, and Easy!Appointments is already a clean, free and open version of it. For a restaurant taking private-room bookings or a hotel selling treatments, it is a good starting point, to be adapted. What costs: SMS reminders, deposit payments and syncing external calendars, which the tool offers as options.",
+  "perdez": [
+   "SMS reminders and online payments (paid custom developments).",
+   "Managed hosting with daily backups.",
+   "The WordPress, Joomla! and Drupal extensions.",
+   "Synchronisation with Google Calendar."
+  ],
+  "alternatives": [
+   "Open-source resource booking (GPL-3.0): rooms, tables or equipment, with quotas and schedules."
+  ],
+  "prompt": "Build a small online appointment booking system for my business, replacing a reservation software.\n\nContext: a reception venue with 2 privatisable rooms and a spa with 3 treatment rooms.\n\nTo do:\n- Services (duration, price, capacity) and resources (room, treatment room) with opening hours and closed days.\n- A public booking page: choice of service, date, free slot, contact details, no account needed.\n- Conflict detection and a capacity limit per resource.\n- A confirmation email and a reminder the day before, with a cancellation link.\n- An admin calendar per resource, with manual creation of a booking.\n\nOut of scope: SMS reminders, deposit payment, syncing external calendars.\n\nStack: web app, PostgreSQL. README: how to run, backup, how long to keep contact details (GDPR)."
+ },
+ "grocy": {
+  "description": "Free, open-source, self-hosted web app for managing food stock and the household, billed as «the ERP for your home»: purchase and stock tracking with barcode scanning through the browser or camera, shopping lists that fill up below a minimum level, expiry tracking, recipes and meal planning with a score that highlights recipes to cook before items expire, chores, equipment and batteries. Custom fields, REST API, responsive interface installable as a web app. Version 4.7.1; a hobby project by Bernd Bestel, donations accepted.",
+  "justification": "Tracking what comes in and goes out, triggering an alert before an expiry date and generating a restock list are simple arithmetic rules, which Grocy already applies well. It was designed for the home, not a professional kitchen: no batch traceability, no recipe cards with costs, no reconciliation with sales. For a small business wanting a light inventory it can be adapted; for a restaurant, a custom tool built around your suppliers and your recipe cards is more suitable.",
+  "perdez": [
+   "Barcode reading in the browser.",
+   "The score of recipes to cook before expiry.",
+   "Custom fields and the REST API.",
+   "The app installable on a phone with no development."
+  ],
+  "alternatives": [
+   "Open-source inventory management (MIT) with parts, suppliers, orders and a mobile app, more industry-oriented."
+  ],
+  "prompt": "Build a small kitchen stock tool for my restaurant, replacing a home stock application.\n\nContext: a 30-seat restaurant, about 200 items, 6 suppliers, weekly inventory.\n\nTo do:\n- A product catalogue with unit, supplier, purchase price, location (fridge, store room, freezer) and minimum level.\n- Goods receipts with batch number and use-by date, entered on a phone.\n- A list of products to use first (use-by within 3 days) and a morning email alert.\n- An order list per supplier calculated from the minimum levels.\n- A history of movements and a CSV export.\n\nOut of scope: barcode reading, link with sales, full regulatory traceability.\n\nStack: PWA and SQLite. README: how to run, backup, and a reminder that regulatory traceability must be kept separately."
+ },
+ "kwhotel": {
+  "description": "Hotel management software in several modules: reservations and invoicing (KWHotel Desktop), a booking calendar accessible in the browser (KWHotel Web), an automated availability module (Resources) and a channel manager to handle several online agencies from one piece of software. A free Windows version with basic features (KWHotel Free) and a Pro version; prices are not published on the page. Site in English, French, German, Greek and Polish; software in 21 languages, including French. The vendor appears to be based in Poland (0048 dialling code), without explicit confirmation.",
+  "justification": "The room assignment calendar, invoicing and guest records can be built for a small property, and a free version already exists to draw inspiration from. What stays hard: the channel manager, which requires approved connections with each online agency, and the gateways to door locks or telephone exchanges. The desktop software for Windows is also a limit: no online booking without the web module.",
+  "perdez": [
+   "The channel manager connected to several online agencies.",
+   "The online booking calendar (KWHotel Web).",
+   "Automated availability management.",
+   "Software already translated into 21 languages."
+  ],
+  "alternatives": [
+   "Open-source hotel booking system (OSL-3.0) built on PrestaShop: booking engine and room management; connections to online travel agencies are up to you."
+  ],
+  "prompt": "Build a small room planning board for my hotel, replacing a desktop hotel management software.\n\nContext: 18 rooms, a front desk of 2 people, reservations by phone, email and website.\n\nTo do:\n- Rooms and room types with rates, capacities and statuses (free, occupied, to clean, out of service).\n- A visual 30-day planner per room, with drag-and-drop booking and conflict detection.\n- Guest records with stay history.\n- A stay bill with extras and a PDF invoice.\n- A list for the day: arrivals, departures, rooms to prepare, available to housekeeping on a phone.\n\nOut of scope: channel manager, booking by agencies, connected door locks.\n\nStack: web app, PostgreSQL. README: how to run, backup, tourist tax and police registration form to plan."
+ },
+ "mealie": {
+  "description": "Open-source app to host yourself to manage recipes and plan meals: recipe import from compatible sites, from an HTML or JSON fragment or by hand, editor with Markdown, meal plan on a calendar (breakfast, lunch, dinner, snacks), shopping lists from ingredients, accounts and sharing per household, full backups, webhooks and REST API, migration from Paprika, Tandoor, Recipe Keeper and Copy Me That. SQLite by default (about 20 users), PostgreSQL recommended beyond that. Community translations on Crowdin; a hosted offer from the same creator exists (Recipinned).",
+  "justification": "A recipe database with ingredients, quantities, portion scaling and a shopping list is a classic data model, and Mealie is a very clean version of it. For a professional kitchen, most of what a recipe card needs is missing: ingredient cost, margin, regulatory allergens and yield. Mealie suits a team recipe book; for recipe cards with costs, a custom tool linked to your purchase prices is more suitable.",
+  "perdez": [
+   "Recipe import from thousands of sites.",
+   "The automatic meal plan and shopping list.",
+   "Full backups and the API.",
+   "The interface translated by the community."
+  ],
+  "alternatives": [
+   "Open-source recipe manager with meal planning, shopping lists and import from many sites, self-hosted."
+  ],
+  "prompt": "Build a database of kitchen recipe cards, replacing a recipe notebook.\n\nContext: a 40-seat restaurant, 60 dishes, a head chef and 2 cooks.\n\nTo do:\n- Ingredients with unit, purchase price per kilo or piece, yield (loss when peeling) and allergens (the 14 regulatory ones).\n- Recipe cards: ingredients, weights for 10 portions, steps, photo.\n- Automatic calculation of ingredient cost per portion, margin and recommended selling price from a coefficient.\n- Scaling of quantities for any number of covers.\n- A card's allergens deduced from its ingredients, and a one-page print.\n- A CSV export of all cards with their cost.\n\nOut of scope: import from websites, meal planning, shopping.\n\nStack: web app, SQLite. README: how to run, backup, and a reminder that allergens must be rechecked each time a product changes."
+ },
+ "menutech": {
+  "description": "Online menu and bill-of-fare design software: menu creation, custom styles, digital menus, printing or sharing, dish ideas and menu analysis by AI, translations. Options: recipes and recipe cards (nutrition values, margins, ingredients), product management, multi-site, order taking, diet management and purchasing, integrations (website, intranet, social networks). Plans Mini, Maxi, S, M, L depending on the number of menus per month, and Gastronomy, Patients (hospitals) and Seniors (care homes) offers on quote. The page shows two amounts per plan without naming the currency: prices not recorded. Six currencies offered.",
+  "justification": "Generating a laid-out menu from a list of dishes, with allergens shown and a web page to share, is a realistic project, especially for a venue with only a few menus. What matters is accuracy: an allergen mistake engages the venue's responsibility, so the software must deduce allergens from ingredients and alert when a product changes. For a collective kitchen or several sites, diet and purchasing management come in and the tool becomes harder to match.",
+  "perdez": [
+   "Ready-made layout styles.",
+   "Deduction of allergens and nutrition values.",
+   "Translations and AI menu analysis.",
+   "Multi-site and diet management (Patients and Seniors plans)."
+  ],
+  "alternatives": [],
+  "prompt": "Build a menu generator for my restaurant, replacing a menu design software.\n\nContext: a restaurant with a 25-dish menu that changes every week, in French and English.\n\nTo do:\n- A dish database with name, description, VAT-inclusive price, category, ingredients and allergens (the 14 regulatory ones) deduced from the ingredients.\n- A phone-friendly web menu with an allergen filter, reachable through a QR code.\n- A printable A4 version laid out by category with allergen icons.\n- A French and English translation entered by me, never machine-translated for allergens.\n- A «sold out» status and a history of published menus.\n\nOut of scope: AI dish ideas, nutrition values, multi-site.\n\nStack: Next.js, SQLite. README: how to run, backup, and a reminder that allergens must be rechecked each time a recipe changes."
+ },
+ "qloapps": {
+  "description": "Free and open-source hotel management system built on PrestaShop (OSL-3.0 licence, public code on GitHub): accommodation management, booking engine, hotel website creation, channel manager to synchronise rates and availability with online agencies, mobile app, marketplace, restaurant management, till, front desk interface and revenue management. PayPal payment through a module; several paid modules sold on the Webkul shop (housekeeping, SEO, virtual tour, packages, notifications, GDPR, loyalty, online check-in), prices not given. Cloud hosting and paid support, training and audit services. Page in English only.",
+  "justification": "The project proves that a booking engine, a room calendar and a hotel website fit in free software, and its code is a good model for a small property. Using it as is is often more reasonable than starting from scratch: the licence is free and the base is maintained. What remains your job: hosting, security updates, the paid modules you need (housekeeping, online check-in) and the connections to online agencies, which require agreements.",
+  "perdez": [
+   "The channel manager and its connections to online agencies.",
+   "The paid modules (housekeeping, online check-in, loyalty).",
+   "Cloud hosting and the vendor's support.",
+   "The built-in restaurant till and front desk interface."
+  ],
+  "alternatives": [],
+  "prompt": "Build a small management system for a residence of 10 apartments, replacing an open-source hotel software.\n\nContext: apartments rented by the night, a housekeeping team of 2, direct bookings.\n\nTo do:\n- Units with capacity, rates by season, amenities and photos.\n- A visual calendar with booking and date blocking, and conflict detection.\n- A booking request page on my site and a confirmation email.\n- A housekeeping schedule generated at each departure, with a per-apartment checklist on a phone and a «ready» status.\n- A PDF invoice with tourist tax calculated.\n\nOut of scope: channel manager, online payment, restaurant.\n\nStack: web app, PostgreSQL. README: how to run, backup, tourist tax, declaration of foreign travellers."
+ },
+ "resos": {
+  "description": "Reservation software for restaurants: table bookings, floor plan, several services, free email confirmations and reminders. Free up to 25 bookings a month; Basic at €45 a month (350 bookings), Plus at €85 (750), Unlimited at €125 (unlimited), with 50% off the first month for new restaurants billed monthly; 90-day refund guarantee. Add-on modules: waiting list (€7.99 a month), customisable booking widget (€7.99), Google, Facebook and Instagram booking buttons (€11.99 for Facebook and Instagram), online payments and deposits with no-show fees (€11.99). SMS at €0.10 each. Booking form translated into several languages, including French. Six currencies.",
+  "justification": "A booking form with slots, capacity per service and a floor plan is a realistic project for a restaurant, and it is the free part of resOS. What costs more: the waiting list with notification, the deposit with no-show fees (which goes through a payment provider), and above all the booking buttons built into Google, Facebook and Instagram, which assume agreements with those platforms. If most of your bookings come by phone and your site, a custom tool is enough.",
+  "perdez": [
+   "The booking buttons on Google, Facebook and Instagram.",
+   "Online deposits with no-show fees.",
+   "The waiting list with notification.",
+   "Confirmation and reminder SMS."
+  ],
+  "alternatives": [
+   "Open-source appointment booking (GPL-3.0) with slots, email notifications and an API; to be adapted for tables."
+  ],
+  "prompt": "Build a small table booking system for my restaurant, replacing a reservation subscription.\n\nContext: a 45-seat restaurant, two services (lunch, dinner), about 25 bookings a day.\n\nTo do:\n- Services with hours, average meal duration and maximum covers per slot.\n- A simple floor plan (tables, number of seats) and assignment of a table to a booking, with overlap detection.\n- A booking form on my site (date, party size, contact details, allergen remarks) that respects capacity, and an email confirmation with a cancellation link.\n- A day view for the team with expected arrivals, and a status (arrived, seated, left, no-show).\n- A simple waiting list when a slot is full.\n\nOut of scope: Google and social network booking buttons, online deposits, SMS.\n\nStack: web app, PostgreSQL. README: how to run, backup, how long to keep contact details (GDPR)."
+ },
+ "sling": {
+  "description": "Team scheduling tool for shops and restaurants: schedule creation, shift templates, leave requests, shift swaps, automatic assignment, mobile time clock, timesheets, geolocation, shared kiosk, absence tracking, private and group messages, announcement feed, tracking of labour cost, overtime and paid leave (Premium and Business), payroll reports. Free up to 30 users; Premium at $2 per user per month ($1.70 annually), Business at $4 ($3.40 annually), 15-day trial. Page entirely in English; Toast customers have an offer through the Toast shop.",
+  "justification": "A weekly grid of shifts by role, with unavailability, a shift-swap board and an hours count, is a project you build in a few days, and Sling's scheduling part is free anyway. What is not trivial: in France, working-time rules (daily and weekly rest, overtime, hospitality collective agreements) must be coded and kept up to date, and time tracking must stay compliant. The schedule alone is simple; its legal dressing is not.",
+  "perdez": [
+   "Mobile time clock with geolocation.",
+   "The shared time-clock kiosk.",
+   "Real-time labour cost tracking (Premium and Business).",
+   "The built-in team messaging."
+  ],
+  "alternatives": [],
+  "prompt": "Build a team scheduling tool for my restaurant, replacing a scheduling app.\n\nContext: 14 employees (floor, kitchen, dishwashing), weekly schedules, 2 services a day.\n\nTo do:\n- Employees with role, contract, contractual hours and recurring unavailability.\n- A weekly grid per day and role, with drag-and-drop and copy of the previous week.\n- A count of hours per employee with an alert if the total exceeds the contract or if the rest between two services is under 11 hours.\n- A shift-swap board between employees, approved by the manager.\n- Publication of the schedule with email notification and a personal view on a phone.\n- A CSV export to prepare payroll.\n\nOut of scope: mobile time clock, legal payroll calculation.\n\nStack: web app, PostgreSQL. README: how to run, backup, and a reminder that the legal working-time count and collective agreements must be checked with your accountant."
+ },
+ "tandoor-recipes": {
+  "description": "Open-source recipe manager to host yourself: fast recipe editor with tags and advanced search, fractions or decimals, quantity scaling, meal plan with several meals a day, shopping lists generated from the plan or recipes, recipe books and sharing, import from thousands of schema.org-compatible sites and from other managers, customisable themes. Simple installation with Docker, guides for Kubernetes, Unraid and Synology. Designed to share a collection with relatives, not as a public site. Translated by the community into many languages; licence and hosted offer not stated on the page.",
+  "justification": "Same observation as for Mealie: recipes, quantities that recalculate, a meal plan and a shopping list are a classic data model. Tandoor adds advanced search and recipe books. For a kitchen team, costs, margins, allergens and yields are missing. It suits a shared recipe book; ingredient cost needs a tool built around your purchase prices.",
+  "perdez": [
+   "Advanced search and tags.",
+   "Scaling and fractions.",
+   "Import from thousands of sites.",
+   "Recipe books and sharing between accounts."
+  ],
+  "alternatives": [
+   "Open-source recipe manager (AGPL-3.0) with import, meal planning and shopping lists, simpler to install."
+  ],
+  "prompt": "Build a shared recipe book for my kitchen team, replacing a self-hosted recipe manager.\n\nContext: a restaurant, 80 base recipes (sauces, stocks, garnishes) used by several dishes.\n\nTo do:\n- Recipes with ingredients, quantities, steps, times and tags (sauce, garnish, dessert).\n- Nested recipes: a dish uses a sauce, and the quantities are recalculated.\n- Scaling for any number of portions, with readable fractions.\n- A search by ingredient, tag or title word.\n- A one-page print of a recipe for the workstation.\n- Accounts: chef (edits), cook (reads).\n\nOut of scope: import from websites, meal planning, costs.\n\nStack: web app, SQLite. README: how to run, backup."
+ },
+ "fourth": {
+  "description": "Management suite for hospitality, American vendor: scheduling, time clock and labour compliance (HotSchedules), payroll and HR (Fourth Payroll), inventory and purchasing with recipes and menu engineering, production, cash management, AI forecasts (Fourth iQ), and the Adaco, MacromatiX and Red Book Solutions tools. Announced customers: Taco Bell, Dunkin', KFC, Pizza Hut; «120,000 locations», a vendor figure. No public price; a free version of HotSchedules and a free year of payroll are highlighted. American site in English; regional sites for the United Kingdom and Australia, France is not mentioned.",
+  "justification": "The suite bundles pieces of different natures. Scheduling and inventory can be reproduced (see Sling and Mealie). Payroll cannot: it follows each country's legal rules, which change regularly. Activity forecasts rely on data from a very large number of venues that you do not have. For a chain it is a coherent whole; for a single restaurant you take the useful piece (scheduling, stock) separately.",
+  "perdez": [
+   "Payroll and the country's legal rules.",
+   "Activity forecasts based on data from many sites.",
+   "The integrations between scheduling, stock and purchasing already built.",
+   "Support and training for groups."
+  ],
+  "alternatives": []
+ },
+ "chatwoot": {
+  "description": "Customer engagement platform that brings website live chat, email and messaging apps into one inbox, with the Captain AI assistant, a help centre, teams and automations. Cloud (data hosted at AWS in the United States): free Hacker (2 agents, 500 conversations a month, chat only), Startups at $19 per agent per month, Business at $39, Enterprise at $99 with SSO and audit logs; the Startups plan is free for open-source projects. Self-hosting possible; the code is open apart from an «enterprise» folder under a commercial licence.",
+  "justification": "A chat bubble on a site, linked to an interface where a person replies, is a project you build for a small team. What gives Chatwoot its value is the connections: each messaging app (WhatsApp, Instagram, Messenger…) has its own rules and interfaces, which have to be maintained. If you only receive emails and a chat on your site, an in-house tool is enough; for a team replying on five channels, the open-source tool is a better starting point than starting from zero.",
+  "perdez": [
+   "The connections to messaging apps (WhatsApp, Instagram, Messenger…).",
+   "The Captain AI assistant and the help centre.",
+   "Teams, automations and reports.",
+   "The mobile apps and managed hosting."
+  ],
+  "alternatives": [
+   "Open-source ticketing system (AGPL-3.0) with email, chat, SLAs and knowledge base; a rather heavy self-hosting stack.",
+   "Open-source team email inbox (AGPL-3.0) with assignment and notes; several add-ons are paid."
+  ],
+  "prompt": "Build a small live chat for my website, replacing a customer engagement platform.\n\nContext: a showcase site with about fifteen conversations a day during office hours.\n\nTo do:\n- A light chat bubble to embed on my site, with an optional name and email address.\n- An admin interface where a person sees conversations in real time, replies and assigns one to someone else.\n- A queue of messages received outside opening hours, with a reply by email.\n- Saved replies and internal notes.\n- A history per visitor and a CSV export.\n\nOut of scope: WhatsApp, Instagram and other messaging apps, AI assistant.\n\nStack: web app with WebSocket, PostgreSQL. README: how to run, backup, how long to keep conversations (GDPR)."
+ },
+ "documenso": {
+  "description": "Open-source e-signature (AGPL-3.0 for the Community edition): PDF document signing, templates, direct link, workflows, automation, teams, white label, API, Zapier and webhooks, audit log. Cloud: free (5 documents a month, 10 recipients per document), Individual at $25 a month ($300 a year), Teams at $40 a month (5 users, then $8 per extra user), Platform at $250 a month. Self-hosting with a Docker image; Enterprise licence on quote. The vendor cites ESIGN Act, UETA, 21 CFR Part 11, SOC 2 and HIPAA compliance; the page does not detail the eIDAS signature levels (simple, advanced, qualified).",
+  "justification": "Capturing a signature stroke on a PDF, time-stamped and accompanied by the IP address and a log, can be programmed with no difficulty, and is enough for a quote or an internal charter. What the page does not show is a signature level recognised under the European eIDAS regulation: an advanced or qualified signature requires an identity check and a certificate issued by a trust service provider, which neither a custom tool nor, without detail, an open-source tool provides. Choose the level according to the document (employment contract, lease, important deed) before choosing the tool.",
+  "perdez": [
+   "The announced compliance (ESIGN Act, UETA, SOC 2).",
+   "Templates, workflows and white label.",
+   "The API, Zapier and webhooks.",
+   "Support and the managed cloud."
+  ],
+  "alternatives": [],
+  "prompt": "Build a small tool for signing agreements for my business, replacing an e-signature subscription.\n\nContext: a freelancer who has 20 quotes and approvals a month signed by clients.\n\nTo do:\n- Uploading a PDF and defining the signature and date zones.\n- Sending a unique link by email to the signer, who draws or types their signature on their phone.\n- An audit log per document: dates, IP addresses, signer's email, file fingerprint.\n- A sealed final PDF with the signatures and a completion certificate page.\n- A table of documents (sent, opened, signed, declined) and an automatic reminder at D+3.\n\nOut of scope: advanced or qualified signature under eIDAS, identity verification.\n\nStack: web app, SQLite. README: how to run, backup, and a reminder that this tool produces a simple signature: for a contract that requires an advanced or qualified signature, you need a trust service provider."
+ },
+ "freescout": {
+  "description": "Free helpdesk and shared inbox (PHP, Laravel, MySQL), billed as an alternative to Zendesk and Help Scout: conversations received by email, WhatsApp, Telegram, Facebook, Slack or live chat, unlimited agents, tickets and mailboxes according to the site, email through SMTP, IMAP and POP3 with OAuth for Microsoft 365 and Google Workspace, internal notes, conversation forwarding and merging, collision detection, auto-replies, mobile apps and progressive web app. Modules (knowledge base, portal, time tracking, workflows and SLAs, CRM, SAML, reports) sold individually, prices not shown on the page. Free to self-host; managed hosting, professional installation and a cloud version offered. Application translated into 33 languages, including French.",
+  "justification": "The shared email inbox is the textbook case: each message becomes an assignable ticket, with notes the customer cannot see, canned replies and collision detection. FreeScout already does it with no per-agent cost, which makes it the natural starting point for a small team. Rebuilding your own version mostly makes sense if you have very particular needs. What costs: reliable email reception (deliverability, attachments, spam), the useful paid modules (knowledge base, SLAs) and security updates.",
+  "perdez": [
+   "The paid modules (knowledge base, workflows and SLAs, SAML).",
+   "The connections to messaging apps (WhatsApp, Telegram, Facebook).",
+   "The mobile apps.",
+   "Managed hosting and professional installation."
+  ],
+  "alternatives": [
+   "Support inbox with chat, email and messaging apps, self-hostable; the code is open apart from an «enterprise» folder under a commercial licence.",
+   "Open-source ticketing system (AGPL-3.0) with email, chat, SLAs and knowledge base; a rather heavy self-hosting stack."
+  ],
+  "prompt": "Build a shared email inbox for my team, replacing an over-broad open-source helpdesk.\n\nContext: 3 people, one contact@ address, about 25 messages a day.\n\nTo do:\n- IMAP polling and SMTP sending from the same address, with OAuth for Google Workspace if needed.\n- One ticket per conversation with status, assignee, internal notes and tags.\n- A collision alert when two people write at the same time.\n- Saved replies with variables and a signature per person.\n- Simple statistics: messages received, first-response time, open tickets.\n\nOut of scope: social messaging, knowledge base, SLAs.\n\nStack: web app, PostgreSQL, a scheduled job for polling. README: how to run, backup, how long to keep messages (GDPR)."
+ },
+ "listmonk": {
+  "description": "Free, self-hosted newsletter and mailing list manager, distributed as a single executable: management of millions of subscribers with single or double opt-in, segmentation by SQL expressions, campaigns with statistics (bounces, most-clicked links), templates in Go language, visual editor, rich text editor, Markdown or HTML, multi-SMTP sending queues with rate limiting, transactional API, export or deletion of a subscriber's data, OIDC login, roles, S3-compatible media library. Requires PostgreSQL and an SMTP server. Version 7.0.0 in beta when read. The page names neither the licence (AGPL-3.0 according to the GitHub repository) nor French.",
+  "justification": "Managing a subscriber list with double confirmation and unsubscribe, composing a letter and sending it in bulk through your own SMTP server is a simple scope, and listmonk does it with a single file to install, which is already lighter than an in-house build. The difficulty is not the software but deliverability: a badly configured sending server (SPF, DKIM, IP reputation) ends up in spam. For a few hundred subscribers, go through a professional sending relay.",
+  "perdez": [
+   "The deliverability of a dedicated sending service.",
+   "The commercial offer's visual editor and template library.",
+   "Statistics handled for you.",
+   "Support and hosting."
+  ],
+  "alternatives": [
+   "Open-source marketing automation with campaigns, segmentation and forms; more complete and heavier than a simple newsletter manager."
+  ],
+  "prompt": "Build a small newsletter tool for my business, replacing an email-sending subscription.\n\nContext: a restaurant with 800 subscribers, one letter a month and a few one-off offers.\n\nTo do:\n- A sign-up form with double confirmation by email and a one-click unsubscribe page.\n- A subscriber database with date and source of consent, and a CSV export.\n- A letter editor in Markdown with preview and an HTML template in my branding.\n- Batch sending through my SMTP relay with rate limiting and a test send to one address.\n- Simple statistics: sent, opens, clicks, unsubscribes.\n- Permanent deletion of a subscriber on request.\n\nOut of scope: advanced segmentation, scenario automation.\n\nStack: web app, PostgreSQL. README: how to run, backup, SPF and DKIM setup of the sending address, a reminder never to write to people without consent."
+ },
+ "mautic": {
+  "description": "Open-source marketing automation platform: drag-and-drop campaign builder, mobile-friendly email and landing page editor, point scoring to qualify prospects, centralised contact view, sending by email, SMS, WhatsApp and notifications, GDPR compliance features, REST API and plugins. To host yourself, or as managed offers (Managed Mautic, Mautic Hosting) whose terms are not detailed; 14-day trial. The Mautic name is a trademark of the Mautic project within the Open Source Collective. The page names neither the licence (GPL-3.0 according to the repository) nor French.",
+  "justification": "A sign-up, a welcome email, a second email if the person did not open the first and a prospect warmth score can be programmed for a small contact base. What Mautic adds: a scenario editor, several channels and tracking of behaviour on your site. The usual pitfall: email deliverability and respecting consent, which do not depend on the software. For a restaurateur or freelancer, most scenarios fit in three or four rules.",
+  "perdez": [
+   "The drag-and-drop campaign builder.",
+   "Tracking of visitor behaviour and prospect scoring.",
+   "Sending on several channels (email, SMS, WhatsApp).",
+   "The managed offers and support."
+  ],
+  "alternatives": [
+   "Open-source newsletter and mailing list server (AGPL-3.0), self-hosted; sending goes through your own SMTP."
+  ],
+  "prompt": "Build a small email follow-up tool for my business, replacing a marketing automation platform.\n\nContext: a hotel that wants to follow up people who requested an event quote.\n\nTo do:\n- A request form on my site that creates a contact with time-stamped consent.\n- A three-step scenario: immediate confirmation email, reminder at D+3 if the contact has not replied, last message at D+10, stopping if the contact replies or books a meeting.\n- A status per contact (new, contacted, meeting, lost) that I change by hand.\n- A simple score: +1 per click in an email, +3 per reply.\n- An unsubscribe page and deletion of a contact on request.\n\nOut of scope: SMS, WhatsApp, behaviour tracking on the site, scenario editor.\n\nStack: web app, PostgreSQL, a scheduled job. README: how to run, backup, SPF and DKIM setup of the sending address and a reminder about consent (GDPR)."
+ },
+ "metabase": {
+  "description": "Dashboard and visual query tool connected to a database, with more than 20 sources, unlimited questions and dashboards in the open edition, queries by click or in SQL, MCP server and AI with the model of your choice. Free Open Source edition to host yourself (unlimited users); cloud: Starter at $100 a month ($90 annually, 5 users, $6 per extra user), Pro at $575 a month (10 users) with row and column permissions, SSO and white label, Enterprise from $20,000 a year. Pay-as-you-go options for AI, transformations and storage. Claims SOC 2 Type II and SOC 1.",
+  "justification": "For a precise need (three sales indicators drawn from a database, updated every morning), a small custom dashboard is simpler to maintain than a general-purpose tool. What Metabase brings is freedom: anyone on the team builds their own question without writing SQL, across some twenty data sources. If your questions change every week, the open-source tool is much better; if you track five fixed figures, a script and a page are enough.",
+  "perdez": [
+   "Building questions by click, without SQL.",
+   "More than 20 data sources already connected.",
+   "Row and column permissions and SSO (Pro plan).",
+   "Support and the managed cloud."
+  ],
+  "alternatives": [],
+  "prompt": "Build a small management dashboard for my business, replacing a data analysis tool.\n\nContext: a restaurant whose till exports a CSV file of sales every night (date, time, item, quantity, amount, payment method).\n\nTo do:\n- An automatic import of the CSV every morning into a SQLite database.\n- A single page with: revenue for the day and the week compared with the same week a month earlier, sales by service (lunch, dinner), top 10 items, average basket, payment breakdown.\n- Filters by period and by item category.\n- A CSV export of each table.\n- A consistency check on import (duplicates, lines with no amount) with an email alert.\n\nOut of scope: user-built queries, several data sources, row-level permissions.\n\nStack: Python for the import, a simple web page, SQLite. README: how to run, daily scheduling, backup."
+ },
+ "node-red": {
+  "description": "Low-code visual flow-based programming tool to collect, transform and visualise data in real time and automate tasks: more than 5,000 reusable nodes and flows offered by the community, built on Node.js, running on a Raspberry Pi or in the cloud. Deployment locally (Docker), on a device (Raspberry Pi, BeagleBone Black, Android) or in the cloud (FlowFuse, AWS, Azure). The project belongs to the OpenJS Foundation and its contributors; its creators are Nick O'Leary and Dave Conway-Jones, FlowFuse is the active sponsor, IBM and Hitachi former sponsors. Licence and interface languages not stated on the page (Apache-2.0 according to the GitHub repository).",
+  "justification": "For a few automations (send an email when a form arrives, file a document, link two services), a thirty-line script written to measure is easier to read and test than a diagram. What Node-RED brings is prototyping speed and the thousands of nodes already written for sensors, APIs and databases. It is not meant to be reproduced: it is a tool, and a good one. The hidden cost: maintaining visual flows becomes painful once they go beyond a few dozen nodes.",
+  "perdez": [
+   "More than 5,000 reusable nodes and flows.",
+   "The visual editor and live debugging.",
+   "Ready deployments for Raspberry Pi, Docker and the cloud.",
+   "The community and foundation that maintain the project."
+  ],
+  "alternatives": [],
+  "prompt": "Build a small automation script for my business, replacing a visual flow tool.\n\nContext: a hotel; I want (1) to be notified by email when a quote request arrives through the site form, (2) to file the reservations file exported by the software into a dated folder each morning, (3) to receive the number of requests received each week.\n\nTo do:\n- A small service that receives the form by webhook, stores the request in SQLite and sends a summary email.\n- A scheduled task that moves the export file to a \"YYYY-MM-DD\" folder and checks it is not empty.\n- A weekly summary sent by email.\n- A log of each run with a success or error code, and an email alert on error.\n\nOut of scope: visual editor, connectors to other services.\n\nStack: Python or Node.js, SQLite, system scheduled tasks. Credentials in .env, never in the repository. README: how to run, scheduling, backup."
+ },
+ "openproject": {
+  "description": "Open-source project management (GPL-3.0): work packages, Gantt charts, agile boards, wiki, forums, custom fields. Free Community edition with community support; cloud or paid installation in euros excl. VAT per user per month: Basic at €5.95 (minimum 25 users), Professional at €10.95 (minimum 25), Premium at €15.95 (minimum 100), Corporate on request; month-to-month possible for Cloud Basic at €1 more per user, 2 to 5-year commitments with discounts, BIM module €1 more. Enterprise modules add email or phone support, installation help and integrations, without a feature-by-feature detail on the page.",
+  "justification": "A task list with due dates, owners and statuses, in a table and calendar view, is a realistic project for a small team. OpenProject goes further: a Gantt chart with dependencies, budgets, time tracking, agile boards. Reproducing all of it custom is a big project; reproducing what you use, often half the list, is possible. Mind the prices: the paid plans impose a minimum of 25 users, which rules out small teams.",
+  "perdez": [
+   "The Gantt chart with dependencies and critical path.",
+   "The agile boards (Scrum and Kanban).",
+   "The Enterprise modules and the vendor's support.",
+   "The built-in wiki and forums."
+  ],
+  "alternatives": [
+   "Open-source task manager (AGPL-3.0) with list, Kanban, Gantt and table views, self-hosted.",
+   "Open-source agile project management (MPL-2.0) with Scrum, Kanban and issue tracking."
+  ],
+  "prompt": "Build a small project tracker for my team, replacing a project management tool.\n\nContext: a small agency of 6 people, 8 projects in progress, 15 to 40 tasks per project.\n\nTo do:\n- Projects with an owner, start and end dates and an hours budget.\n- Tasks with owner, due date, status (to do, in progress, in review, done), priority and tags.\n- A Kanban board view per project and a list view filterable by person and due date.\n- A simple Gantt chart showing tasks on the calendar, without dependencies.\n- Time tracking per task and a total per project compared with the budget.\n- Comments and attachments on each task.\n\nOut of scope: dependencies and critical path, wiki, forums, financial budgets.\n\nStack: web app, PostgreSQL. README: how to run, backup."
+ },
+ "plane": {
+  "description": "Open-source task tracking and project management tool: projects, work items, cycles, modules, views, intake, estimates, pages, up to 12 users on the free plan. Cloud: Pro at $8 per user per month ($6 annually) with AI credits, wiki, time tracking, dashboards, integrations (GitHub, GitLab, Slack); Business at $15 ($13 annually) with recurring items, email and form intake, SAML and OIDC, customer records; Enterprise on quote. Open source and self-hostable, no price stated for self-hosting; SAML and OIDC are available there from Pro, AI credits are reserved for the cloud. Page in English.",
+  "justification": "A task board with statuses, tags, due dates and a history is the basis of all these tools, and can be built. Plane adds cycles (work iterations), a pages module and intake by email and form. If your team mostly uses tasks and views, a custom tool is enough; for sprint tracking, roadmaps and integrations with code, Plane is more advanced. Paid plans are per user: the cost rises quickly with the team.",
+  "perdez": [
+   "Cycles, modules and roadmaps.",
+   "Intake by email and form (Business plan).",
+   "Integrations with GitHub, GitLab and Slack.",
+   "The cloud's AI credits."
+  ],
+  "alternatives": [
+   "Open-source task manager (AGPL-3.0) with list, Kanban, Gantt and table views, self-hosted."
+  ],
+  "prompt": "Build a small task and iteration tracker for my team, replacing a project management tool.\n\nContext: a team of 5 people, working in two-week cycles.\n\nTo do:\n- Projects and work items with title, Markdown description, owner, priority, estimate and tags.\n- Two-week cycles with the planned items, and automatic carry-over of unfinished items to the next cycle.\n- A Kanban board per project and a filterable list view.\n- A public intake form that creates a «to triage» item.\n- A progress chart for the current cycle.\n\nOut of scope: code integrations, email intake, AI credits, SSO.\n\nStack: web app, PostgreSQL. README: how to run, backup."
+ },
+ "taiga": {
+  "description": "Free and open-source agile project management: Kanban with epics, subtasks, swimlanes, work-in-progress limits, filters and search, option to move to Scrum (backlog, sprint planning, estimates, sprint board, burndown, Taiga Seed estimation tool), issue tracking with customisable types, priorities and severities, dashboards, wiki, customisation, integrations partly through Zapier. On-premise option for large teams; paid plans on a pricing page not read. Announced as 100% open source, licence not stated on the page (MPL-2.0 according to the repository). More than 20 languages, French is not named. The historic repository has been inactive since late 2023, but the Taiga organisation's repository was updated in September 2026.",
+  "justification": "A Kanban board with columns, cards, owners, tags and a backlog is the most classic web development project, and Taiga did it cleanly. Scrum adds sprints and a burndown, which remain simple calculations. The selection criterion is therefore the project's vitality: check the activity of the current repository before building on it, since the historic repository stayed inactive for several years. For a team of under ten people, a custom tool or a more active solution such as Plane or Vikunja are options.",
+  "perdez": [
+   "Epics, swimlanes and work-in-progress limits.",
+   "The backlog, sprints and burndown.",
+   "Issue tracking with severities.",
+   "The integrations through Zapier."
+  ],
+  "alternatives": [
+   "Open-source task manager (AGPL-3.0) with list, Kanban, Gantt and table views, self-hosted."
+  ],
+  "prompt": "Build a small Kanban board for my team, replacing an agile project management tool.\n\nContext: 4 people, a development project, a backlog of 60 items, one-week sprints.\n\nTo do:\n- A backlog with cards (title, description, owner, priority, tags, estimate).\n- A sprint board in columns (to do, in progress, in review, done) with a limit on the number of cards in progress.\n- Sprint planning by drag-and-drop from the backlog and closing with carry-over of unfinished cards.\n- A simple burndown (points remaining per day).\n- Issues with a severity, and the ability to turn an issue into a card.\n\nOut of scope: epics, swimlanes, integrations.\n\nStack: web app, SQLite. README: how to run, backup."
+ },
+ "twenty": {
+  "description": "Open-source CRM of French origin: unlimited custom objects, fields and views, workflows, AI agents, MCP server, REST and GraphQL API, webhooks, two-factor authentication, more than 30 languages. The core is open and self-hostable for free (AGPL-3.0 for the most part, some modules under a commercial licence according to the repository); cloud: Pro at $9 per user per month billed annually (25% discount advertised), Organization at $19 with row-level permissions, SAML and OIDC SSO, custom domain and audit logs, Enterprise from $50,000 a year. Free trial with no card; the page shows no free plan.",
+  "justification": "A configurable CRM with its own objects, fields and views is exactly what Twenty offers, and this is a case where the open-source software is a better starting point than starting from zero: the data model can be configured without development. Rebuilding a CRM makes sense for very targeted needs. Mind the «open core» model: part of the enterprise features is under a commercial licence; check which ones you will need before self-hosting.",
+  "perdez": [
+   "Custom objects, fields and views without development.",
+   "Workflows and AI agents.",
+   "Row-level permissions and SSO (Organization plan).",
+   "The managed cloud and support."
+  ],
+  "alternatives": [
+   "Open-source CRM (AGPL-3.0) to self-host, with customisable entities and a French interface."
+  ],
+  "prompt": "Build a configurable CRM for my business, replacing an open-source CRM.\n\nContext: a caterer managing corporate clients, events and quotes.\n\nTo do:\n- Three linked objects: Company, Contact and Event (date, number of guests, budget, status).\n- Custom fields I can add without development (text, number, date, list).\n- Views: filterable list, Kanban board by event status, calendar.\n- A history of exchanges on each record and follow-up tasks.\n- CSV import and export, and a read-only REST API.\n\nOut of scope: workflows, AI agents, SSO, row-level permissions.\n\nStack: web app, PostgreSQL. README: how to run, backup, deleting a contact on request (GDPR)."
+ },
+ "vikunja": {
+  "description": "Open-source task manager (AGPLv3) with four views (list, Kanban, Gantt, table), project sharing and task assignment to a team. Self-hostable with Docker, native binaries or the install wizard; paid Vikunja Cloud offer with updates and backups, whose prices are on a page not read. Made and hosted in the European Union, no country stated. The page does not name French.",
+  "justification": "A task list with due dates, priorities, tags, Kanban views and sharing between people is the textbook case of simple custom work. Vikunja is precisely the finished example of this scope, open and self-hostable: try it before rebuilding. What remains: hosting, backups, updates and, if you want a mobile app or reminders, extra work.",
+  "perdez": [
+   "The Gantt and table views, already finished.",
+   "Reminders and notifications.",
+   "Project sharing and rights.",
+   "The cloud offer with updates and backups."
+  ],
+  "alternatives": [
+   "Open-source task manager (MIT) with time tracking and daily planning, no account required."
+  ],
+  "prompt": "Build a small task manager for my team, replacing a to-do tool.\n\nContext: a team of 5 people in a hotel, opening, maintenance and event tasks.\n\nTo do:\n- Projects (opening, maintenance, events) and tasks with description, due date, priority, tags and owner.\n- Recurring tasks (daily, weekly) that recreate themselves automatically.\n- A list view, a Kanban board view and a «my tasks this week» view.\n- A morning email reminder of the day's tasks and overdue tasks.\n- Comments and attachments.\n\nOut of scope: Gantt, native mobile app.\n\nStack: web app (PWA), SQLite. README: how to run, backup."
+ },
+ "zammad": {
+  "description": "Open-source support system (AGPL-3.0) with tickets, knowledge base and several channels. Hosted offers in Germany, per agent per month excl. VAT: Starter at €7 annually (€9 monthly, 5 agents maximum) with email, web form, SMS, text templates, macros and triggers; Professional at €16 (€18, 35 agents) with chat, Telegram, SLAs, custom roles and knowledge base; Plus at €25 (€27, unlimited agents) with phone, Facebook, WhatsApp, advanced workflows and reports. Optional AI features at €0.03 per call. Self-hosting goes through support packages from €2,999 to €9,999 a year excl. VAT. Site in English and German, French is not named.",
+  "justification": "A ticketing system with email, history, notes and statuses is the base, and can be built for a small team. Zammad brings SLAs, the multilingual knowledge base and the phone and messaging channels, which require maintained connections. For a team receiving emails and a web form, a custom tool or a lighter helpdesk (FreeScout) is enough. The entry price is fair, but the self-hosted software is not sold with free support: plan for maintenance.",
+  "perdez": [
+   "SLAs and escalation rules.",
+   "The multilingual knowledge base.",
+   "Phone, WhatsApp and Facebook channels.",
+   "In-depth reports and managed hosting."
+  ],
+  "alternatives": [
+   "Open-source team email inbox (AGPL-3.0) with assignment and notes; several add-ons are paid."
+  ],
+  "prompt": "Build a ticketing system with response targets for my team, replacing an open-source helpdesk.\n\nContext: a hotel, 4 agents, requests by email and web form, about 40 a day.\n\nTo do:\n- IMAP polling and a web form that create tickets with number, customer, subject, priority (normal, high) and status.\n- A first-response target per priority (for example 4 hours, 1 hour) with a visible indicator and an email alert to the manager when exceeded.\n- Macros (canned replies with variables) and simple triggers (assign based on a word in the subject).\n- Internal notes and a full history per ticket.\n- A table: open tickets, average response time, target compliance per week.\n\nOut of scope: telephony, WhatsApp, multilingual knowledge base.\n\nStack: web app, PostgreSQL, a scheduled job. README: how to run, backup, retention period (GDPR)."
  }
 }

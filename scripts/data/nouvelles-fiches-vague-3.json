@@ -1,0 +1,667 @@
+[
+ {
+  "slug": "beds24",
+  "nom": "Beds24",
+  "categorie": "hotellerie",
+  "secteur": "chr",
+  "domaine": "beds24.com",
+  "description": "Logiciel de gestion hébergement et channel manager : calendrier dynamique, réservations par glisser-déposer, tableaux de bord, rapports, paiements, arrivées et départs, génération de factures, synchronisation des disponibilités et des prix avec plus de 60 canaux (Airbnb, Booking.com, Expedia, Vrbo) par des connexions API certifiées, moteur de réservation direct sans commission, multilingue. Abonnement à partir de 15,50 € par mois, paiement à l'usage, sans engagement ni commission ; essai gratuit. L'éditeur appartient à Visit Group ; le site propose l'anglais et l'allemand, le français n'apparaît pas.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Le calendrier et le moteur de réservation direct se développent pour un petit établissement. Ce que l'on paie ici, ce sont plus de 60 connexions certifiées avec les agences en ligne, qui évitent les doubles réservations : chaque plateforme n'ouvre son interface qu'à des partenaires agréés, et les maintenir demande une équipe. Si vous ne vendez qu'en direct, un outil sur mesure suffit ; si vous vendez sur Booking.com et Airbnb, le channel manager est le cœur du produit et ne se remplace pas.",
+  "prix": "à partir de 15,50 €/mois",
+  "prix_mensuel": 15.5,
+  "ce_que_vous_perdez": [
+   "Les connexions certifiées avec plus de 60 canaux de vente",
+   "Les mises à jour des interfaces des plateformes",
+   "Le moteur de réservation multilingue avec codes promo",
+   "Le suivi des paiements et des factures"
+  ],
+  "alternatives": [
+   {
+    "nom": "QloApps",
+    "url": "https://github.com/Qloapps/QloApps",
+    "type": "open-source",
+    "description": "Système de réservation hôtelière libre (OSL-3.0), bâti sur PrestaShop : moteur de réservation et gestion des chambres ; les connexions aux agences en ligne restent à votre charge."
+   }
+  ],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "easy-appointments",
+  "nom": "Easy!Appointments",
+  "categorie": "reservation",
+  "secteur": "chr",
+  "domaine": "easyappointments.org",
+  "description": "Logiciel libre (GPL-3.0) de prise de rendez-vous à installer sur son serveur : page de réservation où le client choisit le service, le prestataire, la date et l'heure sans créer de compte, calendrier partagé, notifications par e-mail, rôles, API REST, webhooks, connexion LDAP, lien avec Google Agenda, extensions WordPress, Joomla! et Drupal. Plus de 40 langues. Gratuit en auto-hébergement, sans limite de réservations ; hébergement géré à 20 € par mois (240 € par an) avec installation, mises à jour et sauvegardes quotidiennes. Rappels par SMS et paiements en ligne proposés en développements sur mesure.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Un créneau, un service, un prestataire, une confirmation par e-mail et une jauge : c'est un schéma de base de données très classique, et Easy!Appointments en est déjà une version propre, libre et gratuite. Pour un restaurant qui prend des réservations de salon privé ou un hôtel qui vend des soins, c'est un bon point de départ, à adapter. Ce qui coûte : les rappels par SMS, le paiement d'un acompte et la synchronisation de calendriers externes, que l'outil propose en options.",
+  "prix": "gratuit",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les rappels par SMS et les paiements en ligne (développements sur mesure payants)",
+   "L'hébergement géré avec sauvegardes quotidiennes",
+   "Les extensions WordPress, Joomla! et Drupal",
+   "La synchronisation avec Google Agenda"
+  ],
+  "alternatives": [
+   {
+    "nom": "LibreBooking",
+    "url": "https://github.com/LibreBooking/app",
+    "type": "open-source",
+    "description": "Réservation de ressources libre (GPL-3.0) : salles, tables ou équipements, avec quotas et horaires."
+   }
+  ],
+  "prompt": "Construis un petit système de prise de rendez-vous en ligne pour mon établissement, pour remplacer un logiciel de réservation.\n\nContexte : un salon de réception avec 2 salles privatisables et un spa de 3 cabines.\n\nÀ faire :\n- Des services (durée, prix, capacité) et des ressources (salle, cabine) avec horaires d'ouverture et jours fermés.\n- Une page publique de réservation : choix du service, de la date, du créneau libre, coordonnées, sans création de compte.\n- La détection des conflits et une jauge par ressource.\n- Un e-mail de confirmation et un rappel la veille, avec lien d'annulation.\n- Un calendrier d'administration par ressource, avec création manuelle d'une réservation.\n\nHors périmètre : rappels par SMS, paiement d'un acompte, synchronisation d'agendas externes.\n\nStack : application web, PostgreSQL. README : lancement, sauvegarde, durée de conservation des coordonnées (RGPD).",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "grocy",
+  "nom": "Grocy",
+  "categorie": "stocks",
+  "secteur": "chr",
+  "domaine": "grocy.info",
+  "description": "Application web libre, gratuite et à héberger soi-même pour gérer les stocks alimentaires et le foyer, présentée comme « l'ERP de la maison » : suivi des achats et du stock avec lecture de codes-barres par le navigateur ou la caméra, listes de courses qui se complètent sous un seuil minimum, suivi des dates limites, recettes et plan de repas avec un score qui met en avant les recettes à cuisiner avant péremption, tâches, matériel et piles. Champs personnalisés, API REST, interface adaptable installable comme application web. Version 4.7.1 ; projet de passion de Bernd Bestel, dons possibles.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Suivre ce qui entre et sort, déclencher une alerte avant une date limite et générer une liste de réapprovisionnement sont des règles arithmétiques simples, que Grocy applique déjà bien. Il a été pensé pour la maison, pas pour une cuisine professionnelle : pas de traçabilité par lot, pas de fiches techniques avec coûts, pas de rapprochement avec les ventes. Pour un petit établissement qui veut un inventaire léger, il se détourne ; pour un restaurant, un outil sur mesure construit autour de vos fournisseurs et de vos fiches est plus adapté.",
+  "prix": "gratuit",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La lecture de codes-barres dans le navigateur",
+   "Le score de recettes à cuisiner avant péremption",
+   "Les champs personnalisés et l'API REST",
+   "L'application installable sur téléphone sans développement"
+  ],
+  "alternatives": [
+   {
+    "nom": "InvenTree",
+    "url": "https://github.com/inventree/InvenTree",
+    "type": "open-source",
+    "description": "Gestion d'inventaire libre (MIT) avec pièces, fournisseurs, commandes et application mobile, plus orientée industrie."
+   }
+  ],
+  "prompt": "Construis un petit outil de stock de cuisine pour mon restaurant, pour remplacer une application de stock domestique.\n\nContexte : un restaurant de 30 couverts, environ 200 références, 6 fournisseurs, inventaire hebdomadaire.\n\nÀ faire :\n- Un catalogue de produits avec unité, fournisseur, prix d'achat, emplacement (frigo, réserve, congélateur) et niveau minimum.\n- Des entrées de marchandises avec numéro de lot et date limite de consommation, saisies sur téléphone.\n- Une liste des produits à consommer en priorité (DLC dans les 3 jours) et une alerte e-mail le matin.\n- Une liste de commande par fournisseur calculée selon les niveaux minimum.\n- Un historique des mouvements et un export CSV.\n\nHors périmètre : lecture de codes-barres, lien avec les ventes, traçabilité réglementaire complète.\n\nStack : PWA et SQLite. README : lancement, sauvegarde, et rappel que la traçabilité réglementaire doit être tenue séparément.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "kwhotel",
+  "nom": "KWHotel",
+  "categorie": "hotellerie",
+  "secteur": "chr",
+  "domaine": "kwhotel.com",
+  "description": "Logiciel de gestion hôtelière en plusieurs modules : réservations et facturation (KWHotel Desktop), calendrier de réservations accessible dans le navigateur (KWHotel Web), module de disponibilités automatisées (Resources) et channel manager pour gérer plusieurs agences en ligne depuis un seul logiciel. Une version Windows gratuite aux fonctions de base (KWHotel Free) et une version Pro ; les prix ne sont pas publiés sur la page. Site en anglais, français, allemand, grec et polonais ; logiciel en 21 langues, dont le français. L'éditeur semble basé en Pologne (indicatif 0048), sans confirmation explicite.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Le calendrier d'attribution des chambres, la facturation et les fiches clients se développent pour un petit établissement, et une version gratuite existe déjà pour s'en inspirer. Ce qui reste difficile : le channel manager, qui exige des connexions agréées avec chaque agence en ligne, et les passerelles vers des serrures ou des standards téléphoniques. Le logiciel de bureau pour Windows est aussi une limite : pas de réservation en ligne sans le module web.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le channel manager connecté à plusieurs agences en ligne",
+   "Le calendrier de réservations en ligne (KWHotel Web)",
+   "La gestion automatisée des disponibilités",
+   "Le logiciel déjà traduit en 21 langues"
+  ],
+  "alternatives": [
+   {
+    "nom": "QloApps",
+    "url": "https://github.com/Qloapps/QloApps",
+    "type": "open-source",
+    "description": "Système de réservation hôtelière libre (OSL-3.0), bâti sur PrestaShop : moteur de réservation et gestion des chambres ; les connexions aux agences en ligne restent à votre charge."
+   }
+  ],
+  "prompt": "Construis un petit tableau de planning des chambres pour mon hôtel, pour remplacer un logiciel de gestion hôtelière de bureau.\n\nContexte : 18 chambres, réception de 2 personnes, réservations par téléphone, e-mail et site.\n\nÀ faire :\n- Des chambres et des types de chambres avec tarifs, capacités et statuts (libre, occupée, à nettoyer, hors service).\n- Un planning visuel par chambre sur 30 jours, avec réservation par glisser-déposer et détection des conflits.\n- Des fiches clients avec historique des séjours.\n- Une note de séjour avec extras et une facture PDF.\n- Une liste du jour : arrivées, départs, chambres à préparer, accessible au ménage sur téléphone.\n\nHors périmètre : channel manager, réservation en ligne par les agences, serrures connectées.\n\nStack : application web, PostgreSQL. README : lancement, sauvegarde, taxe de séjour et fiche de police à prévoir.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "mealie",
+  "nom": "Mealie",
+  "categorie": "stocks",
+  "secteur": "chr",
+  "domaine": "mealie.io",
+  "description": "Application libre à héberger soi-même pour gérer ses recettes et planifier ses repas : import de recettes depuis des sites compatibles, d'un fragment HTML ou JSON ou à la main, éditeur avec Markdown, plan de repas sur un calendrier (petit-déjeuner, déjeuner, dîner, en-cas), listes de courses à partir des ingrédients, comptes et partage par foyer, sauvegardes complètes, webhooks et API REST, migration depuis Paprika, Tandoor, Recipe Keeper et Copy Me That. SQLite par défaut (environ 20 utilisateurs), PostgreSQL recommandé au-delà. Traductions communautaires sur Crowdin ; une offre hébergée du même créateur existe (Recipinned).",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Une base de recettes avec ingrédients, quantités, mise à l'échelle des portions et liste de courses est un modèle de données classique, et Mealie en est une version très propre. Pour une cuisine professionnelle, il manque l'essentiel des fiches techniques : coût matière, marge, allergènes réglementaires et rendement. Mealie convient pour un carnet de recettes d'équipe ; pour des fiches techniques avec coûts, un outil sur mesure branché sur vos prix d'achat est plus adapté.",
+  "prix": "gratuit",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "L'import de recettes depuis des milliers de sites",
+   "Le plan de repas et la liste de courses automatiques",
+   "Les sauvegardes complètes et l'API",
+   "L'interface traduite par la communauté"
+  ],
+  "alternatives": [
+   {
+    "nom": "Tandoor Recipes",
+    "url": "https://github.com/TandoorRecipes/recipes",
+    "type": "open-source",
+    "description": "Gestionnaire de recettes libre avec plan de repas, listes de courses et import depuis de nombreux sites, à héberger soi-même."
+   }
+  ],
+  "prompt": "Construis une base de fiches techniques de cuisine, pour remplacer un carnet de recettes.\n\nContexte : un restaurant de 40 couverts, 60 plats, un chef et 2 cuisiniers.\n\nÀ faire :\n- Des ingrédients avec unité, prix d'achat au kilo ou à la pièce, rendement (perte à l'épluchage) et allergènes (les 14 réglementaires).\n- Des fiches techniques : ingrédients, grammages pour 10 portions, étapes, photo.\n- Le calcul automatique du coût matière par portion, de la marge et du prix de vente conseillé selon un coefficient.\n- La mise à l'échelle des quantités pour un nombre de couverts quelconque.\n- Les allergènes d'une fiche déduits de ses ingrédients, et une impression en une page.\n- Un export CSV de toutes les fiches avec leur coût.\n\nHors périmètre : import depuis des sites, plan de repas, courses.\n\nStack : application web, SQLite. README : lancement, sauvegarde, et rappel que les allergènes doivent être revérifiés à chaque changement de produit.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "menutech",
+  "nom": "Menutech",
+  "categorie": "autre",
+  "secteur": "chr",
+  "domaine": "menutech.com",
+  "description": "Logiciel en ligne de conception de menus et de cartes : création de menus, styles personnalisés, menus numériques, impression ou partage, idées de plats et analyse de menu par IA, traductions. En option : recettes et fiches techniques (valeurs nutritionnelles, marges, ingrédients), gestion des produits, multi-site, prise de commande, gestion des régimes et des achats, intégrations (site web, intranet, réseaux sociaux). Formules Mini, Maxi, S, M, L selon le nombre de menus par mois, et offres Gastronomie, Patients (hôpitaux) et Seniors (EHPAD) sur devis. La page affiche deux montants par formule sans désigner la devise : prix non relevés. Six devises proposées.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Générer une carte mise en page à partir d'une liste de plats, avec les allergènes affichés et une page web à partager, est un projet réaliste, surtout pour un établissement qui n'a que quelques cartes. Ce qui compte, c'est l'exactitude : une erreur d'allergène engage la responsabilité de l'établissement, donc le logiciel doit déduire les allergènes des ingrédients et alerter quand un produit change. Pour une cuisine collective ou plusieurs sites, la gestion des régimes et des achats s'ajoute et l'outil devient plus lourd à égaler.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les styles de mise en page prêts à l'emploi",
+   "La déduction des allergènes et des valeurs nutritionnelles",
+   "Les traductions et l'analyse de menu par IA",
+   "La gestion multi-site et des régimes (formules Patients et Seniors)"
+  ],
+  "alternatives": [],
+  "prompt": "Construis un générateur de carte pour mon restaurant, pour remplacer un logiciel de conception de menus.\n\nContexte : un restaurant avec une carte de 25 plats qui change chaque semaine, en français et en anglais.\n\nÀ faire :\n- Une base de plats avec nom, description, prix TTC, catégorie, ingrédients et allergènes (les 14 réglementaires) déduits des ingrédients.\n- Une carte web adaptée au téléphone avec filtre par allergène, accessible par un code QR.\n- Une version imprimable en A4 avec mise en page par catégories et pictogrammes d'allergènes.\n- Une traduction française et anglaise saisie par moi, jamais traduite automatiquement pour les allergènes.\n- Un statut « épuisé » et un historique des cartes publiées.\n\nHors périmètre : idées de plats par IA, valeurs nutritionnelles, multi-site.\n\nStack : Next.js, SQLite. README : lancement, sauvegarde, et rappel que les allergènes doivent être revérifiés à chaque changement de recette.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "qloapps",
+  "nom": "QloApps",
+  "categorie": "hotellerie",
+  "secteur": "chr",
+  "domaine": "qloapps.com",
+  "description": "Système de gestion hôtelière libre et gratuit, bâti sur PrestaShop (licence OSL-3.0, code public sur GitHub) : gestion de l'hébergement, moteur de réservation, création du site de l'hôtel, channel manager pour synchroniser tarifs et disponibilités avec les agences en ligne, application mobile, place de marché, gestion de restaurant, caisse, interface de réception et gestion des revenus. Paiement PayPal par module ; plusieurs modules payants vendus sur la boutique Webkul (housekeeping, SEO, visite virtuelle, forfaits, notifications, RGPD, fidélité, enregistrement en ligne), dont les prix ne sont pas donnés. Hébergement cloud et services payants de support, de formation et d'audit. Page uniquement en anglais.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Le projet prouve qu'un moteur de réservation, un calendrier de chambres et un site d'hôtel tiennent dans un logiciel libre, et son code est un bon modèle pour un petit établissement. L'utiliser tel quel est souvent plus raisonnable que de repartir de zéro : la licence est gratuite et la base est maintenue. Ce qui reste à votre charge : l'hébergement, les mises à jour de sécurité, les modules payants utiles (housekeeping, enregistrement en ligne) et les connexions aux agences en ligne, qui demandent des accords.",
+  "prix": "gratuit",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le channel manager et ses connexions aux agences en ligne",
+   "Les modules payants (housekeeping, enregistrement en ligne, fidélité)",
+   "L'hébergement cloud et le support de l'éditeur",
+   "La caisse du restaurant et l'interface de réception intégrées"
+  ],
+  "alternatives": [],
+  "prompt": "Construis un petit système de gestion pour une résidence de 10 appartements, pour remplacer un logiciel hôtelier libre.\n\nContexte : appartements loués à la nuit, une équipe de ménage de 2 personnes, réservations en direct.\n\nÀ faire :\n- Des logements avec capacité, tarifs par saison, équipements et photos.\n- Un calendrier visuel avec réservation et blocage de dates, et détection des conflits.\n- Une page de demande de réservation sur mon site et un e-mail de confirmation.\n- Un planning de ménage généré à chaque départ, avec une liste par appartement sur téléphone et un statut « prêt ».\n- Une facture PDF avec taxe de séjour calculée.\n\nHors périmètre : channel manager, paiement en ligne, restaurant.\n\nStack : application web, PostgreSQL. README : lancement, sauvegarde, taxe de séjour, déclaration des voyageurs étrangers.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "resos",
+  "nom": "resOS",
+  "categorie": "reservation",
+  "secteur": "chr",
+  "domaine": "resos.com",
+  "description": "Logiciel de réservation pour restaurants : réservations de tables, plan de salle, prise en charge de plusieurs services, confirmations et rappels par e-mail gratuits. Gratuit jusqu'à 25 réservations par mois ; Basic à 45 € par mois (350 réservations), Plus à 85 € (750), Unlimited à 125 € (illimité), avec 50 % de réduction le premier mois pour les nouveaux restaurants en facturation mensuelle ; garantie de remboursement de 90 jours. Modules en supplément : liste d'attente (7,99 € par mois), widget de réservation personnalisable (7,99 €), boutons de réservation Google, Facebook et Instagram (11,99 € pour Facebook et Instagram), paiements en ligne et acomptes avec frais de no-show (11,99 €). SMS à 0,10 € l'unité. Formulaire de réservation traduit en plusieurs langues, dont le français. Six devises.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Un formulaire de réservation avec créneaux, jauge par service et plan de salle est un projet réaliste pour un restaurant, et c'est la partie gratuite d'resOS. Ce qui coûte plus : la liste d'attente avec notification, l'acompte avec frais de no-show (qui passe par un prestataire de paiement), et surtout les boutons de réservation intégrés à Google, Facebook et Instagram, qui supposent des accords avec ces plateformes. Si vous recevez la plupart de vos réservations par téléphone et par votre site, un outil sur mesure suffit.",
+  "prix": "gratuit (plans payants à partir de 45 €/mois)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les boutons de réservation sur Google, Facebook et Instagram",
+   "Les acomptes en ligne avec frais de no-show",
+   "La liste d'attente avec notification",
+   "Les SMS de confirmation et de rappel"
+  ],
+  "alternatives": [
+   {
+    "nom": "Easy!Appointments",
+    "url": "https://github.com/alextselegidis/easyappointments",
+    "type": "open-source",
+    "description": "Prise de rendez-vous libre (GPL-3.0) avec créneaux, notifications par e-mail et API ; à adapter pour des tables."
+   }
+  ],
+  "prompt": "Construis un petit système de réservation de tables pour mon restaurant, pour remplacer un abonnement de réservation.\n\nContexte : un restaurant de 45 couverts, deux services (midi, soir), environ 25 réservations par jour.\n\nÀ faire :\n- Des services avec horaires, durée moyenne d'un repas et capacité maximale en couverts par créneau.\n- Un plan de salle simple (tables, nombre de places) et l'attribution d'une table à une réservation, avec détection des chevauchements.\n- Un formulaire de réservation sur mon site (date, nombre de convives, coordonnées, remarques allergènes) qui respecte la capacité, et une confirmation par e-mail avec lien d'annulation.\n- Une vue du jour pour l'équipe avec les arrivées prévues, et un statut (arrivé, installé, parti, no-show).\n- Une liste d'attente simple quand un créneau est complet.\n\nHors périmètre : boutons de réservation Google et réseaux sociaux, acomptes en ligne, SMS.\n\nStack : application web, PostgreSQL. README : lancement, sauvegarde, durée de conservation des coordonnées (RGPD).",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "sling",
+  "nom": "Sling",
+  "categorie": "autre",
+  "secteur": "chr",
+  "domaine": "getsling.com",
+  "description": "Outil de planning d'équipe pour commerces et restaurants : création des horaires, modèles de shifts, demandes de congé, échanges de shifts, affectation automatique, pointage mobile, feuilles de temps, géolocalisation, borne partagée, suivi des absences, messages privés et de groupe, fil d'annonces, suivi du coût de main-d'œuvre, des heures supplémentaires et des congés payés (Premium et Business), rapports de paie. Gratuit jusqu'à 30 utilisateurs ; Premium à 2 $ par utilisateur et par mois (1,70 $ en annuel), Business à 4 $ (3,40 $ en annuel), essai de 15 jours. Page entièrement en anglais ; les clients Toast ont une offre via la boutique Toast.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Une grille hebdomadaire de shifts par poste, avec les indisponibilités, une bourse d'échange de gardes et un décompte d'heures, est un projet que l'on construit en quelques jours, et la partie planning de Sling est gratuite de toute façon. Ce qui n'est pas anodin : en France, les règles du temps de travail (repos quotidien et hebdomadaire, heures supplémentaires, conventions collectives de la restauration) doivent être codées et tenues à jour, et le pointage doit rester conforme. Le planning seul est simple ; son habillage légal ne l'est pas.",
+  "prix": "gratuit (plans payants à partir de 1,51 €/mois/utilisateur)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le pointage mobile avec géolocalisation",
+   "La borne de pointage partagée",
+   "Le suivi du coût de main-d'œuvre en temps réel (Premium et Business)",
+   "La messagerie d'équipe intégrée"
+  ],
+  "alternatives": [],
+  "prompt": "Construis un outil de planning d'équipe pour mon restaurant, pour remplacer une application de planification.\n\nContexte : 14 salariés (salle, cuisine, plonge), plannings par semaine, 2 services par jour.\n\nÀ faire :\n- Des employés avec poste, contrat, heures contractuelles et indisponibilités récurrentes.\n- Une grille hebdomadaire par jour et par poste, avec glisser-déposer et copie de la semaine précédente.\n- Le compte des heures par employé avec alerte si le total dépasse le contrat ou si le repos entre deux services est inférieur à 11 heures.\n- Une bourse d'échange de gardes entre employés, validée par le responsable.\n- La publication du planning avec notification par e-mail et une vue personnelle sur téléphone.\n- Un export CSV pour la préparation de la paie.\n\nHors périmètre : pointage mobile, calcul légal de la paie.\n\nStack : application web, PostgreSQL. README : lancement, sauvegarde, et rappel que le décompte légal du temps de travail et les conventions collectives restent à vérifier avec votre comptable ou votre expert-comptable.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "tandoor-recipes",
+  "nom": "Tandoor Recipes",
+  "categorie": "stocks",
+  "secteur": "chr",
+  "domaine": "tandoor.dev",
+  "description": "Gestionnaire de recettes libre à héberger soi-même : éditeur de recettes rapide avec étiquettes et recherche avancée, fractions ou décimales, mise à l'échelle des quantités, plan de repas avec plusieurs repas par jour, listes de courses générées depuis le plan ou les recettes, livres de recettes et partage, import depuis des milliers de sites compatibles schema.org et depuis d'autres gestionnaires, thèmes personnalisables. Installation simple avec Docker, guides pour Kubernetes, Unraid et Synology. Pensé pour partager une collection avec des proches, pas comme un site public. Traduit par la communauté en de nombreuses langues ; licence et offre hébergée non précisées sur la page.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Même constat que pour Mealie : des recettes, des quantités qui se recalculent, un plan de repas et une liste de courses sont un modèle de données classique. Tandoor y ajoute une recherche avancée et des livres de recettes. Pour une équipe de cuisine, il manque les coûts, les marges, les allergènes et les rendements. Il convient pour un carnet de recettes partagé ; le coût matière demande un outil construit autour de vos prix d'achat.",
+  "prix": "gratuit",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La recherche avancée et les étiquettes",
+   "La mise à l'échelle et les fractions",
+   "L'import depuis des milliers de sites",
+   "Les livres de recettes et le partage entre comptes"
+  ],
+  "alternatives": [
+   {
+    "nom": "Mealie",
+    "url": "https://github.com/mealie-recipes/mealie",
+    "type": "open-source",
+    "description": "Gestionnaire de recettes libre (AGPL-3.0) avec import, plan de repas et listes de courses, plus simple à installer."
+   }
+  ],
+  "prompt": "Construis un livre de recettes partagé pour l'équipe de ma cuisine, pour remplacer un gestionnaire de recettes auto-hébergé.\n\nContexte : un restaurant, 80 recettes de base (sauces, fonds, garnitures) utilisées par plusieurs plats.\n\nÀ faire :\n- Des recettes avec ingrédients, quantités, étapes, temps et étiquettes (sauce, garniture, dessert).\n- Des recettes imbriquées : un plat utilise une sauce, dont les quantités se recalculent.\n- La mise à l'échelle pour un nombre de portions quelconque, avec fractions lisibles.\n- Une recherche par ingrédient, étiquette ou mot du titre.\n- Une impression d'une fiche en une page pour le poste de travail.\n- Des comptes : chef (modifie), cuisinier (consulte).\n\nHors périmètre : import depuis des sites, plan de repas, coûts.\n\nStack : application web, SQLite. README : lancement, sauvegarde.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "fourth",
+  "nom": "Fourth",
+  "categorie": "autre",
+  "secteur": "chr",
+  "domaine": "fourth.com",
+  "description": "Suite de gestion pour l'hôtellerie-restauration, éditeur américain : planning, pointage et conformité du travail (HotSchedules), paie et RH (Fourth Payroll), stocks et achats avec recettes et ingénierie de menu, production, trésorerie, prévisions par IA (Fourth iQ), et les outils Adaco, MacromatiX et Red Book Solutions. Clients annoncés : Taco Bell, Dunkin', KFC, Pizza Hut ; « 120 000 sites », chiffre de l'éditeur. Aucun tarif public ; une version gratuite de HotSchedules et une année de paie offerte sont mises en avant. Site américain en anglais ; sites régionaux pour le Royaume-Uni et l'Australie, la France n'est pas mentionnée.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "La suite regroupe des morceaux de natures différentes. Le planning et l'inventaire se reproduisent (voir Sling et Mealie). La paie, elle, ne se reproduit pas : elle suit des règles légales de chaque pays qui changent régulièrement. Les prévisions d'activité reposent sur des données de très nombreux établissements que vous n'avez pas. Pour une chaîne, c'est un ensemble cohérent ; pour un restaurant seul, on prend la brique utile (planning, stocks) séparément.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La paie et les règles légales du pays",
+   "Les prévisions d'activité fondées sur les données de nombreux sites",
+   "Les intégrations entre planning, stocks et achats déjà faites",
+   "Le support et la formation pour les groupes"
+  ],
+  "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "chatwoot",
+  "nom": "Chatwoot",
+  "categorie": "communication",
+  "secteur": "saas",
+  "domaine": "chatwoot.com",
+  "description": "Plateforme de relation client qui réunit chat en direct sur site web, e-mail et messageries dans une seule boîte, avec l'assistant IA Captain, un centre d'aide, des équipes et des automatisations. Cloud (données hébergées chez AWS aux États-Unis) : Hacker gratuit (2 agents, 500 conversations par mois, chat seul), Startups à 19 $ par agent et par mois, Business à 39 $, Enterprise à 99 $ avec SSO et journaux d'audit ; le plan Startups est gratuit pour les projets libres. Auto-hébergement possible ; le code est libre à l'exception d'un dossier « enterprise » sous licence commerciale.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Une bulle de discussion sur un site, reliée à une interface où une personne répond, est un projet que l'on construit pour une petite équipe. Ce qui fait la valeur de Chatwoot, ce sont les connexions : chaque messagerie (WhatsApp, Instagram, Messenger…) a ses règles et ses interfaces, qu'il faut maintenir. Si vous ne recevez que des e-mails et un chat sur votre site, un outil maison suffit ; pour une équipe qui répond sur cinq canaux, l'outil libre est un meilleur point de départ que de repartir de zéro.",
+  "prix": "gratuit (plans payants à partir de 16,93 €/mois/utilisateur)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les connexions aux messageries (WhatsApp, Instagram, Messenger…)",
+   "L'assistant IA Captain et le centre d'aide",
+   "Les équipes, les automatisations et les rapports",
+   "Les applications mobiles et l'hébergement géré"
+  ],
+  "alternatives": [
+   {
+    "nom": "Zammad",
+    "url": "https://github.com/zammad/zammad",
+    "type": "open-source",
+    "description": "Système de tickets libre (AGPL-3.0) avec e-mail, chat, SLA et base de connaissances ; pile d'auto-hébergement plutôt lourde."
+   },
+   {
+    "nom": "FreeScout",
+    "url": "https://github.com/freescout-help-desk/freescout",
+    "type": "open-source",
+    "description": "Boîte e-mail d'équipe libre (AGPL-3.0) avec assignation et notes ; plusieurs modules complémentaires sont payants."
+   }
+  ],
+  "prompt": "Construis un petit chat en direct pour mon site, pour remplacer une plateforme de relation client.\n\nContexte : un site vitrine avec une quinzaine de conversations par jour pendant les heures de bureau.\n\nÀ faire :\n- Une bulle de discussion légère à intégrer sur mon site, avec un nom et une adresse e-mail facultatifs.\n- Une interface d'administration où une personne voit les conversations en temps réel, répond et en assigne une à quelqu'un d'autre.\n- Une file d'attente des messages reçus hors des heures d'ouverture, avec une réponse par e-mail.\n- Des réponses enregistrées et des notes internes.\n- Un historique par visiteur et un export CSV.\n\nHors périmètre : WhatsApp, Instagram et autres messageries, assistant IA.\n\nStack : application web avec WebSocket, PostgreSQL. README : lancement, sauvegarde, durée de conservation des conversations (RGPD).",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "documenso",
+  "nom": "Documenso",
+  "categorie": "productivite",
+  "secteur": "saas",
+  "domaine": "documenso.com",
+  "description": "Signature électronique libre (AGPL-3.0 pour l'édition Community) : signature de documents PDF, modèles, lien direct, workflows, automatisation, équipes, marque blanche, API, Zapier et webhooks, journal d'audit. Cloud : gratuit (5 documents par mois, 10 destinataires par document), Individual à 25 $ par mois (300 $ par an), Teams à 40 $ par mois (5 utilisateurs, puis 8 $ par utilisateur supplémentaire), Platform à 250 $ par mois. Auto-hébergement avec image Docker ; licence Enterprise sur devis. L'éditeur cite la conformité ESIGN Act, UETA, 21 CFR Part 11, SOC 2 et HIPAA ; la page ne détaille pas les niveaux de signature (simple, avancée, qualifiée) du règlement eIDAS.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Recueillir un tracé de signature sur un PDF, horodaté et accompagné de l'adresse IP et d'un journal, se programme sans difficulté, et suffit pour un devis ou une charte interne. Ce que la page ne montre pas, c'est un niveau de signature reconnu par le règlement européen eIDAS : une signature avancée ou qualifiée suppose une vérification d'identité et un certificat délivré par un prestataire de confiance, que ni un outil sur mesure ni, sans précision, un outil libre ne fournit. Choisissez le niveau selon le document (contrat de travail, bail, acte important) avant de choisir l'outil.",
+  "prix": "gratuit (plans payants à partir de 22,28 €/mois)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La conformité annoncée (ESIGN Act, UETA, SOC 2)",
+   "Les modèles, workflows et la marque blanche",
+   "L'API, Zapier et les webhooks",
+   "Le support et le cloud géré"
+  ],
+  "alternatives": [],
+  "prompt": "Construis un petit outil de signature d'accords pour mon activité, pour remplacer un abonnement de signature électronique.\n\nContexte : un indépendant qui fait signer 20 devis et bons pour accord par mois à ses clients.\n\nÀ faire :\n- Le téléversement d'un PDF et la définition des zones de signature et de date.\n- L'envoi d'un lien unique par e-mail au signataire, qui dessine ou tape sa signature sur son téléphone.\n- Un journal d'audit par document : dates, adresses IP, e-mail du signataire, empreinte du fichier.\n- Un PDF final scellé avec les signatures et une page de certificat d'achèvement.\n- Un tableau des documents (envoyé, ouvert, signé, refusé) et un rappel automatique à J+3.\n\nHors périmètre : signature avancée ou qualifiée au sens d'eIDAS, vérification d'identité.\n\nStack : application web, SQLite. README : lancement, sauvegarde, et rappel que cet outil produit une signature simple : pour un contrat qui exige une signature avancée ou qualifiée, il faut un prestataire de confiance.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "freescout",
+  "nom": "FreeScout",
+  "categorie": "vente-crm",
+  "secteur": "saas",
+  "domaine": "freescout.net",
+  "description": "Helpdesk et boîte partagée libre (PHP, Laravel, MySQL), présentés comme une alternative à Zendesk et Help Scout : conversations reçues par e-mail, WhatsApp, Telegram, Facebook, Slack ou chat en direct, agents, tickets et boîtes illimités selon le site, e-mail par SMTP, IMAP et POP3 avec OAuth pour Microsoft 365 et Google Workspace, notes internes, transfert et fusion de conversations, détection de collision, réponses automatiques, applications mobiles et web progressive. Modules (base de connaissances, portail, suivi du temps, workflows et SLA, CRM, SAML, rapports) vendus à l'unité dont les prix ne sont pas affichés sur la page. Gratuit à héberger soi-même ; hébergement géré, installation par des professionnels et version cloud proposés. Application traduite en 33 langues, dont le français.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "La boîte e-mail partagée est le cas d'école : chaque message devient un ticket assignable, avec des notes que le client ne voit pas, des réponses types et une détection de collision. FreeScout le fait déjà et sans coût par agent, ce qui en fait le point de départ naturel d'une petite équipe. Reconstruire sa propre version a surtout du sens si vous avez des besoins très particuliers. Ce qui coûte : la réception fiable des e-mails (délivrabilité, pièces jointes, anti-spam), les modules payants utiles (base de connaissances, SLA) et les mises à jour de sécurité.",
+  "prix": "gratuit",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les modules payants (base de connaissances, workflows et SLA, SAML)",
+   "Les connexions aux messageries (WhatsApp, Telegram, Facebook)",
+   "Les applications mobiles",
+   "L'hébergement géré et l'installation par des professionnels"
+  ],
+  "alternatives": [
+   {
+    "nom": "Chatwoot",
+    "url": "https://github.com/chatwoot/chatwoot",
+    "type": "open-source",
+    "description": "Boîte de support avec chat, e-mail et messageries, hébergeable soi-même ; le code est libre à l'exception d'un dossier « enterprise » sous licence commerciale."
+   },
+   {
+    "nom": "Zammad",
+    "url": "https://github.com/zammad/zammad",
+    "type": "open-source",
+    "description": "Système de tickets libre (AGPL-3.0) avec e-mail, chat, SLA et base de connaissances ; pile d'auto-hébergement plutôt lourde."
+   }
+  ],
+  "prompt": "Construis une boîte e-mail partagée pour mon équipe, pour remplacer un helpdesk libre trop large.\n\nContexte : 3 personnes, une adresse contact@, environ 25 messages par jour.\n\nÀ faire :\n- Relève IMAP et envoi SMTP depuis la même adresse, avec OAuth pour Google Workspace si besoin.\n- Un ticket par conversation avec statut, personne assignée, notes internes et étiquettes.\n- Une alerte de collision quand deux personnes écrivent en même temps.\n- Des réponses enregistrées avec variables et une signature par personne.\n- Des statistiques simples : messages reçus, délai de première réponse, tickets ouverts.\n\nHors périmètre : messageries sociales, base de connaissances, SLA.\n\nStack : application web, PostgreSQL, tâche planifiée pour la relève. README : lancement, sauvegarde, durée de conservation des messages (RGPD).",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "listmonk",
+  "nom": "listmonk",
+  "categorie": "marketing",
+  "secteur": "saas",
+  "domaine": "listmonk.app",
+  "description": "Gestionnaire de newsletters et de listes de diffusion libre, à héberger soi-même, distribué en un seul exécutable : gestion de millions d'abonnés en simple ou double opt-in, segmentation par expressions SQL, campagnes avec statistiques (rebonds, liens les plus cliqués), modèles en langage Go, éditeur visuel, éditeur de texte riche, Markdown ou HTML, files d'envoi multi-SMTP avec limitation de débit, API transactionnelle, export ou suppression des données d'un abonné, connexion OIDC, rôles, bibliothèque de médias compatible S3. Exige PostgreSQL et un serveur SMTP. Version 7.0.0 en bêta au moment de la lecture. La page ne cite ni la licence (AGPL-3.0 d'après le dépôt GitHub) ni le français.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Gérer une liste d'abonnés avec double confirmation et désinscription, composer une lettre et l'envoyer en lot par votre propre serveur SMTP, c'est un périmètre simple, et listmonk le fait avec un seul fichier à installer, ce qui est déjà plus léger qu'un développement maison. La difficulté n'est pas le logiciel mais la délivrabilité : un serveur d'envoi mal configuré (SPF, DKIM, réputation de l'adresse IP) finit en courrier indésirable. Pour quelques centaines d'abonnés, passez par un relais d'envoi professionnel.",
+  "prix": "gratuit",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La délivrabilité d'un service d'envoi dédié",
+   "L'éditeur visuel et la bibliothèque de modèles de l'offre commerciale",
+   "Les statistiques gérées pour vous",
+   "Le support et l'hébergement"
+  ],
+  "alternatives": [
+   {
+    "nom": "Mautic",
+    "url": "https://github.com/mautic/mautic",
+    "type": "open-source",
+    "description": "Automatisation marketing libre avec campagnes, segmentation et formulaires ; plus complet et plus lourd qu'un simple gestionnaire de newsletters."
+   }
+  ],
+  "prompt": "Construis un petit outil de newsletter pour mon établissement, pour remplacer un abonnement d'envoi d'e-mails.\n\nContexte : un restaurant avec 800 abonnés, une lettre par mois et quelques offres ponctuelles.\n\nÀ faire :\n- Un formulaire d'inscription avec double confirmation par e-mail et une page de désinscription en un clic.\n- Une base d'abonnés avec date et source du consentement, et un export CSV.\n- Un éditeur de lettre en Markdown avec aperçu et un modèle HTML à mon identité.\n- Un envoi en lots par mon relais SMTP avec limitation de débit et un test avant envoi à une adresse.\n- Des statistiques simples : envoyés, ouvertures, clics, désinscriptions.\n- La suppression définitive d'un abonné sur demande.\n\nHors périmètre : segmentation avancée, automatisation par scénarios.\n\nStack : application web, PostgreSQL. README : lancement, sauvegarde, configuration SPF et DKIM de l'adresse d'envoi, rappel de ne jamais écrire à des personnes sans consentement.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "mautic",
+  "nom": "Mautic",
+  "categorie": "marketing",
+  "secteur": "saas",
+  "domaine": "mautic.org",
+  "description": "Plateforme libre d'automatisation marketing : générateur de campagnes par glisser-déposer, éditeur d'e-mails et de pages de destination adaptés au mobile, attribution de points pour qualifier les prospects, vue centralisée des contacts, envoi par e-mail, SMS, WhatsApp et notifications, fonctions de conformité au RGPD, API REST et plugins. À héberger soi-même, ou en offres gérées (Managed Mautic, Mautic Hosting) dont les conditions ne sont pas détaillées ; essai de 14 jours. Le nom Mautic est une marque du projet Mautic au sein de l'Open Source Collective. La page ne cite ni la licence (GPL-3.0 d'après le dépôt) ni le français.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Une inscription, un e-mail de bienvenue, un second e-mail si la personne n'a pas ouvert le premier et un score de chaleur du prospect se programment pour une petite base de contacts. Ce que Mautic ajoute : un éditeur de scénarios, plusieurs canaux et un suivi du comportement sur votre site. L'écueil habituel : la délivrabilité des e-mails et le respect du consentement, qui ne dépendent pas du logiciel. Pour un restaurateur ou un indépendant, la plupart des scénarios tiennent dans trois ou quatre règles.",
+  "prix": "gratuit",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le générateur de campagnes par glisser-déposer",
+   "Le suivi du comportement des visiteurs et le score des prospects",
+   "L'envoi sur plusieurs canaux (e-mail, SMS, WhatsApp)",
+   "Les offres gérées et le support"
+  ],
+  "alternatives": [
+   {
+    "nom": "listmonk",
+    "url": "https://github.com/knadh/listmonk",
+    "type": "open-source",
+    "description": "Serveur de newsletters et de listes de diffusion libre (AGPL-3.0), à héberger soi-même ; l'envoi passe par votre propre SMTP."
+   }
+  ],
+  "prompt": "Construis un petit outil de relance par e-mail pour mon activité, pour remplacer une plateforme d'automatisation marketing.\n\nContexte : un hôtel qui veut relancer les personnes ayant demandé un devis événementiel.\n\nÀ faire :\n- Un formulaire de demande sur mon site qui crée un contact avec consentement horodaté.\n- Un scénario en trois étapes : e-mail de confirmation immédiat, rappel à J+3 si le contact n'a pas répondu, dernier message à J+10, avec arrêt si le contact répond ou prend rendez-vous.\n- Un statut par contact (nouveau, contacté, rendez-vous, perdu) que je modifie à la main.\n- Un score simple : +1 par clic dans un e-mail, +3 par réponse.\n- Une page de désinscription et la suppression d'un contact sur demande.\n\nHors périmètre : SMS, WhatsApp, suivi du comportement sur le site, éditeur de scénarios.\n\nStack : application web, PostgreSQL, tâche planifiée. README : lancement, sauvegarde, configuration SPF et DKIM de l'adresse d'envoi et rappel du consentement (RGPD).",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "metabase",
+  "nom": "Metabase",
+  "categorie": "dev-tools",
+  "secteur": "saas",
+  "domaine": "metabase.com",
+  "description": "Outil de tableaux de bord et de requêtes visuelles connecté à une base de données, avec plus de 20 sources, questions et tableaux de bord illimités dans l'édition libre, requêtes par clic ou en SQL, serveur MCP et IA avec le modèle de son choix. Édition Open Source gratuite à héberger soi-même (utilisateurs illimités) ; cloud : Starter à 100 $ par mois (90 $ en annuel, 5 utilisateurs, 6 $ par utilisateur en plus), Pro à 575 $ par mois (10 utilisateurs) avec permissions par ligne et colonne, SSO et marque blanche, Enterprise à partir de 20 000 $ par an. Options à l'usage pour l'IA, les transformations et le stockage. Revendique SOC 2 Type II et SOC 1.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Pour un besoin précis (trois indicateurs de ventes tirés d'une base, mis à jour chaque matin), un petit tableau de bord sur mesure est plus simple à maintenir qu'un outil généraliste. Ce que Metabase apporte, c'est la liberté : n'importe quelle personne de l'équipe construit sa question sans écrire de SQL, sur une vingtaine de sources de données. Si vos questions changent chaque semaine, l'outil libre est bien meilleur ; si vous suivez cinq chiffres fixes, un script et une page suffisent.",
+  "prix": "gratuit (plans payants à partir de 89,10 €/mois)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La construction de questions par clic, sans SQL",
+   "Plus de 20 sources de données déjà branchées",
+   "Les permissions par ligne et par colonne et le SSO (formule Pro)",
+   "Le support et le cloud géré"
+  ],
+  "alternatives": [],
+  "prompt": "Construis un petit tableau de bord de pilotage pour mon établissement, pour remplacer un outil d'analyse de données.\n\nContexte : un restaurant dont la caisse exporte chaque nuit un fichier CSV des ventes (date, heure, article, quantité, montant, mode de paiement).\n\nÀ faire :\n- Un import automatique du CSV chaque matin dans une base SQLite.\n- Une page unique avec : chiffre d'affaires du jour et de la semaine par rapport à la même semaine un mois plus tôt, ventes par service (midi, soir), top 10 des articles, panier moyen, répartition des paiements.\n- Des filtres par période et par catégorie d'articles.\n- Un export CSV de chaque tableau.\n- Un contrôle de cohérence à l'import (doublons, lignes sans montant) avec alerte e-mail.\n\nHors périmètre : construction de requêtes par l'utilisateur, plusieurs sources de données, permissions par ligne.\n\nStack : Python pour l'import, une page web simple, SQLite. README : lancement, planification quotidienne, sauvegarde.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "node-red",
+  "nom": "Node-RED",
+  "categorie": "dev-tools",
+  "secteur": "saas",
+  "domaine": "nodered.org",
+  "description": "Outil de programmation visuelle par flux, en low-code, pour collecter, transformer et visualiser des données en temps réel et automatiser des tâches : plus de 5 000 nœuds et flux réutilisables proposés par la communauté, bâti sur Node.js, qui tourne sur un Raspberry Pi ou dans le cloud. Déploiement en local (Docker), sur appareil (Raspberry Pi, BeagleBone Black, Android) ou dans le cloud (FlowFuse, AWS, Azure). Le projet appartient à la fondation OpenJS et à ses contributeurs ; ses créateurs sont Nick O'Leary et Dave Conway-Jones, FlowFuse est le sponsor actif, IBM et Hitachi d'anciens sponsors. Licence et langues de l'interface non précisées sur la page (Apache-2.0 d'après le dépôt GitHub).",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Pour quelques automatisations (envoyer un e-mail quand un formulaire arrive, ranger un fichier, relier deux services), un script de trente lignes écrit sur mesure est plus simple à relire et à tester qu'un diagramme. Ce que Node-RED apporte, c'est la vitesse de prototypage et les milliers de nœuds déjà écrits pour des capteurs, des API et des bases de données. Il n'est pas fait pour être reproduit : c'est un outil, et un bon. Le coût caché : maintenir des flux visuels devient pénible dès qu'ils dépassent quelques dizaines de nœuds.",
+  "prix": "gratuit",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Plus de 5 000 nœuds et flux réutilisables",
+   "L'éditeur visuel et le débogage en direct",
+   "Les déploiements prêts pour Raspberry Pi, Docker et le cloud",
+   "La communauté et la fondation qui maintiennent le projet"
+  ],
+  "alternatives": [],
+  "prompt": "Construis un petit script d'automatisation pour mon activité, pour remplacer un outil de flux visuels.\n\nContexte : un hôtel, je veux (1) être prévenu par e-mail quand une demande de devis arrive par le formulaire du site, (2) ranger chaque matin le fichier de réservations exporté par le logiciel dans un dossier daté, (3) m'envoyer chaque semaine le nombre de demandes reçues.\n\nÀ faire :\n- Un petit service qui reçoit le formulaire par webhook, enregistre la demande dans SQLite et envoie un e-mail récapitulatif.\n- Une tâche planifiée qui déplace le fichier d'export vers un dossier \"AAAA-MM-JJ\" et vérifie qu'il n'est pas vide.\n- Un résumé hebdomadaire envoyé par e-mail.\n- Un journal de chaque exécution avec un code de réussite ou d'erreur, et une alerte e-mail en cas d'erreur.\n\nHors périmètre : éditeur visuel, connecteurs vers d'autres services.\n\nStack : Python ou Node.js, SQLite, tâches planifiées du système. Identifiants dans .env, jamais dans le dépôt. README : lancement, planification, sauvegarde.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "openproject",
+  "nom": "OpenProject",
+  "categorie": "productivite",
+  "secteur": "saas",
+  "domaine": "openproject.org",
+  "description": "Gestion de projet libre (GPL-3.0) : lots de travaux, diagrammes de Gantt, tableaux agiles, wiki, forums, champs personnalisés. Édition Community gratuite avec assistance communautaire ; cloud ou installation payante en euros hors taxes par utilisateur et par mois : Basic à 5,95 € (minimum 25 utilisateurs), Professional à 10,95 € (minimum 25), Premium à 15,95 € (minimum 100), Corporate sur demande ; mois à mois possible pour le Cloud Basic avec 1 € de plus par utilisateur, engagements de 2 à 5 ans dégressifs, module BIM à 1 € de plus. Les modules Enterprise ajoutent assistance par e-mail ou téléphone, aide à l'installation et intégrations, sans détail fonction par fonction sur la page.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Une liste de tâches avec échéances, responsables et statuts, vue en tableau et en calendrier, est un projet réaliste pour une petite équipe. OpenProject va plus loin : diagramme de Gantt avec dépendances, budgets, suivi du temps, tableaux agiles. Reproduire tout cela sur mesure est un chantier ; reproduire ce que vous utilisez, souvent la moitié de la liste, est possible. Attention aux prix : les formules payantes imposent un minimum de 25 utilisateurs, ce qui exclut les petites équipes.",
+  "prix": "gratuit (plans payants à partir de 5,95 €/mois/utilisateur)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le diagramme de Gantt avec dépendances et chemin critique",
+   "Les tableaux agiles (Scrum et Kanban)",
+   "Les modules Enterprise et l'assistance de l'éditeur",
+   "Le wiki et les forums intégrés"
+  ],
+  "alternatives": [
+   {
+    "nom": "Vikunja",
+    "url": "https://github.com/go-vikunja/vikunja",
+    "type": "open-source",
+    "description": "Gestionnaire de tâches libre (AGPL-3.0) avec vues liste, Kanban, Gantt et tableau, à héberger soi-même."
+   },
+   {
+    "nom": "Taiga",
+    "url": "https://github.com/taigaio/taiga-back",
+    "type": "open-source",
+    "description": "Gestion de projet agile libre (MPL-2.0) avec Scrum, Kanban et suivi des anomalies."
+   }
+  ],
+  "prompt": "Construis un petit suivi de projets pour mon équipe, pour remplacer un outil de gestion de projet.\n\nContexte : une petite agence de 6 personnes, 8 projets en cours, 15 à 40 tâches par projet.\n\nÀ faire :\n- Des projets avec un responsable, des dates de début et de fin et un budget en heures.\n- Des tâches avec responsable, échéance, statut (à faire, en cours, en relecture, terminé), priorité et étiquettes.\n- Une vue tableau Kanban par projet et une vue liste filtrable par personne et par échéance.\n- Un diagramme de Gantt simple affichant les tâches sur le calendrier, sans dépendances.\n- Un suivi du temps par tâche et un cumul par projet comparé au budget.\n- Des commentaires et des pièces jointes sur chaque tâche.\n\nHors périmètre : dépendances et chemin critique, wiki, forums, budgets financiers.\n\nStack : application web, PostgreSQL. README : lancement, sauvegarde.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "plane",
+  "nom": "Plane",
+  "categorie": "productivite",
+  "secteur": "saas",
+  "domaine": "plane.so",
+  "description": "Outil libre de suivi des tâches et de gestion de projet : projets, éléments de travail, cycles, modules, vues, intake, estimations, pages, jusqu'à 12 utilisateurs dans la formule gratuite. Cloud : Pro à 8 $ par utilisateur et par mois (6 $ en annuel) avec crédits IA, wiki, suivi du temps, tableaux de bord, intégrations (GitHub, GitLab, Slack) ; Business à 15 $ (13 $ en annuel) avec éléments récurrents, intake par e-mail et formulaires, SAML et OIDC, fiches clients ; Enterprise sur devis. Open source et auto-hébergeable, sans prix indiqué pour l'auto-hébergement ; SAML et OIDC y sont disponibles dès Pro, les crédits IA sont réservés au cloud. Page en anglais.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Un tableau de tâches avec statuts, étiquettes, échéances et un historique est la base de tous ces outils, et se développe. Plane ajoute des cycles (itérations de travail), un module de pages et un intake par e-mail et formulaire. Si votre équipe utilise surtout les tâches et les vues, un outil sur mesure suffit ; pour du suivi de sprints, de feuilles de route et d'intégrations avec le code, Plane est plus avancé. Les plans payants sont par utilisateur : le coût monte vite avec l'équipe.",
+  "prix": "gratuit (plans payants à partir de 5,35 €/mois/utilisateur)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les cycles, modules et feuilles de route",
+   "L'intake par e-mail et par formulaire (formule Business)",
+   "Les intégrations avec GitHub, GitLab et Slack",
+   "Les crédits d'IA du cloud"
+  ],
+  "alternatives": [
+   {
+    "nom": "Vikunja",
+    "url": "https://github.com/go-vikunja/vikunja",
+    "type": "open-source",
+    "description": "Gestionnaire de tâches libre (AGPL-3.0) avec vues liste, Kanban, Gantt et tableau, à héberger soi-même."
+   }
+  ],
+  "prompt": "Construis un petit suivi de tâches et d'itérations pour mon équipe, pour remplacer un outil de gestion de projet.\n\nContexte : une équipe de 5 personnes, travail par cycles de deux semaines.\n\nÀ faire :\n- Des projets et des éléments de travail avec titre, description Markdown, responsable, priorité, estimation et étiquettes.\n- Des cycles de deux semaines avec les éléments planifiés, et le report automatique de ce qui n'est pas terminé au cycle suivant.\n- Un tableau Kanban par projet et une vue liste filtrable.\n- Un formulaire d'intake public qui crée un élément « à trier ».\n- Un graphique d'avancement du cycle en cours.\n\nHors périmètre : intégrations de code, intake par e-mail, crédits d'IA, SSO.\n\nStack : application web, PostgreSQL. README : lancement, sauvegarde.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "taiga",
+  "nom": "Taiga",
+  "categorie": "productivite",
+  "secteur": "saas",
+  "domaine": "taiga.io",
+  "description": "Gestion de projet agile libre et gratuite : Kanban avec epics, sous-tâches, swimlanes, limites de travail en cours, filtres et recherche, possibilité de passer à Scrum (backlog, planification de sprints, estimations, tableau de sprint, burndown, outil d'estimation Taiga Seed), suivi des anomalies avec types, priorités et sévérités personnalisables, tableaux de bord, wiki, personnalisation, intégrations partiellement via Zapier. Option sur site pour les grandes équipes ; formules payantes sur une page de prix non relevée. Annoncé 100 % open source, licence non précisée sur la page (MPL-2.0 d'après le dépôt). Plus de 20 langues, le français n'est pas cité. Le dépôt historique est inactif depuis fin 2023, mais le dépôt de l'organisation Taiga a été mis à jour en septembre 2026.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Un tableau Kanban avec colonnes, cartes, responsables, étiquettes et un backlog est le projet le plus classique du développement web, et Taiga l'a fait proprement. Scrum ajoute des sprints et un burndown, qui restent des calculs simples. Le critère de choix est donc la vitalité du projet : vérifiez l'activité du dépôt actuel avant de bâtir dessus, car le dépôt historique est resté inactif plusieurs années. Pour une équipe de moins de dix personnes, un outil sur mesure ou une solution plus active comme Plane ou Vikunja sont des options.",
+  "prix": "gratuit",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les epics, swimlanes et limites de travail en cours",
+   "Le backlog, les sprints et le burndown",
+   "Le suivi des anomalies avec sévérités",
+   "Les intégrations par Zapier"
+  ],
+  "alternatives": [
+   {
+    "nom": "Vikunja",
+    "url": "https://github.com/go-vikunja/vikunja",
+    "type": "open-source",
+    "description": "Gestionnaire de tâches libre (AGPL-3.0) avec vues liste, Kanban, Gantt et tableau, à héberger soi-même."
+   }
+  ],
+  "prompt": "Construis un petit tableau Kanban pour mon équipe, pour remplacer un outil de gestion de projet agile.\n\nContexte : 4 personnes, un projet de développement, un backlog de 60 éléments, des sprints d'une semaine.\n\nÀ faire :\n- Un backlog avec cartes (titre, description, responsable, priorité, étiquettes, estimation).\n- Un tableau de sprint en colonnes (à faire, en cours, en relecture, terminé) avec limite du nombre de cartes en cours.\n- La planification d'un sprint par glisser-déposer depuis le backlog et la clôture avec report des cartes non terminées.\n- Un burndown simple (points restants par jour).\n- Des anomalies avec sévérité, et la possibilité de transformer une anomalie en carte.\n\nHors périmètre : epics, swimlanes, intégrations.\n\nStack : application web, SQLite. README : lancement, sauvegarde.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "twenty",
+  "nom": "Twenty",
+  "categorie": "vente-crm",
+  "secteur": "saas",
+  "domaine": "twenty.com",
+  "description": "CRM libre d'origine française : objets, champs et vues personnalisés en nombre illimité, workflows, agents IA, serveur MCP, API REST et GraphQL, webhooks, double authentification, plus de 30 langues. Le cœur est libre et auto-hébergeable gratuitement (AGPL-3.0 pour l'essentiel, certains modules sous licence commerciale d'après le dépôt) ; cloud : Pro à 9 $ par utilisateur et par mois en annuel (25 % de remise annoncée), Organization à 19 $ avec permissions par ligne, SSO SAML et OIDC, domaine personnalisé et journaux d'audit, Enterprise à partir de 50 000 $ par an. Essai gratuit sans carte bancaire ; la page ne montre pas de formule gratuite.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Un CRM modulable avec ses propres objets, champs et vues est exactement ce que propose Twenty, et c'est un cas où le logiciel libre est un meilleur point de départ que de repartir de zéro : le modèle de données est paramétrable sans développement. Reconstruire un CRM se justifie pour des besoins très ciblés. Attention au modèle « open core » : une partie des fonctions de l'entreprise est sous licence commerciale ; vérifiez celles dont vous aurez besoin avant d'auto-héberger.",
+  "prix": "gratuit (plans payants à partir de 8,02 €/mois/utilisateur)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les objets, champs et vues personnalisés sans développement",
+   "Les workflows et agents IA",
+   "Les permissions par ligne et le SSO (formule Organization)",
+   "Le cloud géré et le support"
+  ],
+  "alternatives": [
+   {
+    "nom": "EspoCRM",
+    "url": "https://github.com/espocrm/espocrm",
+    "type": "open-source",
+    "description": "CRM libre (AGPL-3.0) à héberger soi-même, avec entités personnalisables et interface en français."
+   }
+  ],
+  "prompt": "Construis un CRM modulable pour mon activité, pour remplacer un CRM libre.\n\nContexte : un traiteur qui gère des clients entreprises, des événements et des devis.\n\nÀ faire :\n- Trois objets reliés entre eux : Entreprise, Contact et Événement (date, nombre d'invités, budget, statut).\n- Des champs personnalisés que je peux ajouter sans développement (texte, nombre, date, liste).\n- Des vues : liste filtrable, tableau Kanban par statut d'événement, calendrier.\n- Un historique des échanges sur chaque fiche et des tâches de relance.\n- Un import et un export CSV, et une API REST en lecture.\n\nHors périmètre : workflows, agents IA, SSO, permissions par ligne.\n\nStack : application web, PostgreSQL. README : lancement, sauvegarde, suppression d'un contact sur demande (RGPD).",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "vikunja",
+  "nom": "Vikunja",
+  "categorie": "productivite",
+  "secteur": "saas",
+  "domaine": "vikunja.io",
+  "description": "Gestionnaire de tâches libre (AGPLv3) avec quatre vues (liste, Kanban, Gantt, tableau), partage de projets et attribution de tâches à une équipe. Auto-hébergeable avec Docker, des binaires natifs ou l'assistant d'installation ; offre Vikunja Cloud payante avec mises à jour et sauvegardes, dont les tarifs figurent sur une page non relevée. Fait et hébergé dans l'Union européenne, sans pays précisé. La page ne cite pas le français.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Une liste de tâches avec échéances, priorités, étiquettes, vues en tableau Kanban et partage entre personnes est le cas d'école du sur-mesure simple. Vikunja est justement l'exemple abouti de ce périmètre, libre et auto-hébergeable : avant de rebâtir, essayez-le. Ce qui reste : l'hébergement, les sauvegardes, les mises à jour et, si vous voulez une application mobile ou des rappels, un travail en plus.",
+  "prix": "gratuit",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les vues Gantt et tableau déjà finies",
+   "Les rappels et les notifications",
+   "Le partage de projets et les droits",
+   "L'offre cloud avec mises à jour et sauvegardes"
+  ],
+  "alternatives": [
+   {
+    "nom": "Super Productivity",
+    "url": "https://github.com/johannesjo/super-productivity",
+    "type": "open-source",
+    "description": "Gestionnaire de tâches libre (MIT) avec suivi du temps et planification quotidienne, sans compte obligatoire."
+   }
+  ],
+  "prompt": "Construis un petit gestionnaire de tâches pour mon équipe, pour remplacer un outil de to-do.\n\nContexte : une équipe de 5 personnes dans un hôtel, des tâches d'ouverture, de maintenance et d'événements.\n\nÀ faire :\n- Des projets (ouverture, maintenance, événements) et des tâches avec description, échéance, priorité, étiquettes et responsable.\n- Des tâches récurrentes (quotidiennes, hebdomadaires) qui se recréent automatiquement.\n- Une vue liste, une vue tableau Kanban et une vue « mes tâches de la semaine ».\n- Un rappel par e-mail le matin des tâches du jour et des tâches en retard.\n- Des commentaires et des pièces jointes.\n\nHors périmètre : Gantt, application mobile native.\n\nStack : application web (PWA), SQLite. README : lancement, sauvegarde.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "zammad",
+  "nom": "Zammad",
+  "categorie": "vente-crm",
+  "secteur": "saas",
+  "domaine": "zammad.com",
+  "description": "Système de support libre (AGPL-3.0) avec tickets, base de connaissances et plusieurs canaux. Offres hébergées en Allemagne, par agent et par mois hors taxes : Starter à 7 € en annuel (9 € au mois, 5 agents maximum) avec e-mail, formulaire web, SMS, modèles de texte, macros et déclencheurs ; Professional à 16 € (18 €, 35 agents) avec chat, Telegram, SLA, rôles personnalisés et base de connaissances ; Plus à 25 € (27 €, agents illimités) avec téléphone, Facebook, WhatsApp, workflows avancés et rapports. Fonctions d'IA optionnelles à 0,03 € par appel. L'auto-hébergement passe par des forfaits de support de 2 999 à 9 999 € par an hors taxes. Site en anglais et en allemand, le français n'est pas cité.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Un système de tickets avec e-mail, historique, notes et statuts est la base, et se développe pour une petite équipe. Zammad apporte les SLA, la base de connaissances multilingue et les canaux téléphonie et messageries, qui demandent des connexions maintenues. Pour une équipe qui reçoit des e-mails et un formulaire web, un outil sur mesure ou un helpdesk plus léger (FreeScout) suffit. Le prix d'entrée est correct, mais le logiciel auto-hébergé n'est pas vendu avec un support gratuit : prévoyez la maintenance.",
+  "prix": "à partir de 7 €/mois/utilisateur",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les SLA et les règles d'escalade",
+   "La base de connaissances multilingue",
+   "Les canaux téléphonie, WhatsApp et Facebook",
+   "Les rapports approfondis et l'hébergement géré"
+  ],
+  "alternatives": [
+   {
+    "nom": "FreeScout",
+    "url": "https://github.com/freescout-help-desk/freescout",
+    "type": "open-source",
+    "description": "Boîte e-mail d'équipe libre (AGPL-3.0) avec assignation et notes ; plusieurs modules complémentaires sont payants."
+   }
+  ],
+  "prompt": "Construis un système de tickets avec délais de réponse pour mon équipe, pour remplacer un helpdesk libre.\n\nContexte : un hôtel, 4 agents, demandes par e-mail et formulaire web, environ 40 par jour.\n\nÀ faire :\n- Relève IMAP et formulaire web qui créent des tickets avec numéro, client, sujet, priorité (normale, haute) et statut.\n- Un délai cible de première réponse par priorité (par exemple 4 heures, 1 heure) avec un indicateur visible et une alerte e-mail au responsable en cas de dépassement.\n- Des macros (réponses types avec variables) et des déclencheurs simples (attribuer selon un mot de l'objet).\n- Des notes internes et un historique complet par ticket.\n- Un tableau : tickets ouverts, délai moyen de réponse, respect des délais cibles par semaine.\n\nHors périmètre : téléphonie, WhatsApp, base de connaissances multilingue.\n\nStack : application web, PostgreSQL, tâche planifiée. README : lancement, sauvegarde, durée de conservation (RGPD).",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ }
+]
