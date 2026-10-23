@@ -1,0 +1,758 @@
+[
+ {
+  "slug": "clock-pms",
+  "nom": "Clock PMS",
+  "categorie": "hotellerie",
+  "secteur": "chr",
+  "domaine": "clock-software.com",
+  "description": "Logiciel de gestion hôtelière en ligne de l'éditeur Clock Software : réservations, facturation, réception, housekeeping, tarifs, moteur de réservation, synchronisation avec Booking.com et d'autres agences en ligne, point de vente restaurant, messagerie clients et enregistrement en ligne. Site en français, anglais, allemand et bulgare ; l'éditeur indique des utilisateurs dans plus de 50 pays, dont la France. Tarifs sur page dédiée, non relevés.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Le planning des chambres et la facturation se codent. Le nœud du produit est ailleurs : la synchronisation continue avec Booking.com et les autres agences en ligne, qui exige des connexions agréées et maintenues, et les paiements, qui engagent la responsabilité de l'hôtelier. Pour un petit hôtel qui veut seulement un calendrier et des fiches clients, un outil libre ou un tableur suffit ; dès que l'on vend en ligne, le risque de double réservation est réel et rend le remplacement imprudent.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La synchronisation avec Booking.com et les autres agences en ligne",
+   "Le moteur de réservation et l'encaissement en ligne",
+   "Le point de vente restaurant relié à la note de chambre",
+   "L'enregistrement en ligne et la messagerie avec les clients"
+  ],
+  "alternatives": [
+   {
+    "nom": "QloApps",
+    "url": "https://github.com/Qloapps/QloApps",
+    "type": "open-source",
+    "description": "Système de réservation hôtelière libre (OSL-3.0), bâti sur PrestaShop : moteur de réservation et gestion des chambres ; les connexions aux agences en ligne restent à votre charge."
+   }
+  ],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "oracle-opera-cloud",
+  "nom": "Oracle OPERA Cloud",
+  "categorie": "hotellerie",
+  "secteur": "chr",
+  "domaine": "oracle.com",
+  "description": "Système de gestion hôtelière en ligne d'Oracle Hospitality, utilisé par des hôtels et des chaînes : réservations, séjours, chambres, facturation et exploitation, avec de nombreuses connexions aux logiciels d'autres éditeurs. Tarifs non publics.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "OPERA est le standard de nombreuses chaînes : son intérêt tient aux interfaces (distribution, paiement, fidélité, serrures, téléphonie) que les groupes ont déjà branchées et aux équipes déjà formées. Un développement sur mesure ne reproduit ni ce parc d'interfaces ni cette familiarité. À l'échelle d'un hôtel indépendant, l'outil est surdimensionné : la bonne question est alors de choisir un PMS plus léger, pas de développer le sien.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les interfaces standard avec la distribution, le paiement et la fidélité",
+   "Les fonctions pour plusieurs établissements et les chaînes",
+   "La compatibilité avec les équipes et les prestataires déjà formés à OPERA"
+  ],
+  "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "duetto",
+  "nom": "Duetto",
+  "categorie": "hotellerie",
+  "secteur": "chr",
+  "domaine": "duettocloud.com",
+  "description": "Suite de pilotage des prix et des revenus pour hôtels, casinos et resorts : tarification en temps réel (GameChanger), prévisions et reporting (ScoreBoard), groupes (BlockBuster), signaux de marché et recommandations par IA (Advance), analyse de rentabilité (HotStats). Site disponible en français ; le rachat de FLYR Hospitality est annoncé sur le site. Tarifs non publics.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Un tableau de bord qui compare vos prix et votre taux d'occupation se code. Ce que l'éditeur vend, ce sont des modèles de prévision nourris de données de marché et de demande que vous n'avez pas, et la connexion à votre PMS. Sans ces données, un outil sur mesure se réduit à des règles fixes (majorer le week-end) que vous pouvez déjà appliquer dans votre PMS ou dans un tableur.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les données de marché et de demande",
+   "Les modèles de prévision et les recommandations de prix",
+   "La connexion avec le PMS et les canaux de vente"
+  ],
+  "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "oaky",
+  "nom": "Oaky",
+  "categorie": "hotellerie",
+  "secteur": "chr",
+  "domaine": "oaky.com",
+  "description": "Logiciel de ventes additionnelles pour hôtels : offres avant l'arrivée (Pre-Stay Upsell), à la réception (Front Desk Upsell) et pendant le séjour (In-Stay Upsell, par QR code ou messagerie), avec segmentation des clients, rapports, gestion multi-établissements et une bibliothèque de plus de 100 offres. Connexions bidirectionnelles avec le PMS ; tarifs non publics.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Le cœur est simple : un e-mail envoyé quelques jours avant l'arrivée, avec trois offres (surclassement, petit-déjeuner, départ tardif) et un lien de paiement. Un script alimenté par l'export de vos réservations suffit pour un petit hôtel. Ce qui coûte du travail : lire automatiquement les réservations dans votre PMS, reporter les offres acceptées sur la note du client et encaisser en ligne. Sans cela, quelqu'un ressaisit à la main chaque vente.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La connexion bidirectionnelle avec le PMS",
+   "La segmentation des clients et les rapports",
+   "La bibliothèque de plus de 100 offres prêtes à l'emploi",
+   "La gestion de plusieurs établissements"
+  ],
+  "alternatives": [],
+  "prompt": "Construis un petit outil qui envoie à mes clients, 5 jours avant leur arrivée, un e-mail proposant des extras, pour remplacer un logiciel de ventes additionnelles.\n\nContexte : un hôtel de 20 chambres, je peux exporter mes réservations du PMS en CSV (nom, e-mail, dates, type de chambre, langue).\n\nÀ faire :\n- Lire le CSV et sélectionner les arrivées dans 5 jours ayant une adresse e-mail et un consentement marketing renseigné.\n- Envoyer un e-mail HTML dans la langue du client avec 3 offres que je définis dans un fichier offres.json (nom, prix, texte court, lien de paiement Stripe).\n- Enregistrer chaque envoi dans une base SQLite pour ne jamais écrire deux fois au même client.\n- Lister dans un rapport les offres cliquées, à reporter à la main sur la note.\n- Un lien de désinscription dans chaque e-mail.\n\nHors périmètre : lecture automatique du PMS, report des ventes sur la note, offres pendant le séjour.\n\nStack : Python, SQLite, un envoi SMTP via mon fournisseur (identifiants dans .env, jamais dans le dépôt). README : lancement, format du CSV, rappel de ne jamais écrire aux clients sans consentement.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "trustyou",
+  "nom": "TrustYou",
+  "categorie": "avis",
+  "secteur": "chr",
+  "domaine": "trustyou.com",
+  "description": "Plateforme de gestion de l'expérience client pour hôtels et groupes : collecte et analyse des avis, enquêtes, réponses assistées par IA, comparaison avec les concurrents, profils clients unifiés et assistant IA pour les conversations (site, WhatsApp, e-mail, SMS). Hébergement dans l'Union européenne et gestion des accès pour les grands groupes, selon l'éditeur. Tarifs non publics.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Envoyer un questionnaire de satisfaction après le séjour et regrouper les réponses est simple. Plus difficile : récupérer en continu les avis publiés sur les sites de voyage, qui dépendent de l'accès accordé par chacun, et les comparer à ceux de vos concurrents. Pour un seul établissement, un questionnaire maison et un suivi manuel des avis suffisent ; l'outil se justifie surtout pour un groupe qui compare ses hôtels.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La collecte des avis publiés sur les plateformes de voyage",
+   "La comparaison avec les établissements concurrents",
+   "Les profils clients unifiés",
+   "L'assistant qui répond aux clients sur plusieurs canaux"
+  ],
+  "alternatives": [],
+  "prompt": "Construis un petit outil pour recueillir l'avis de mes clients après leur séjour et suivre leurs commentaires, pour remplacer une plateforme de gestion des avis.\n\nContexte : un hôtel indépendant ; j'envoie un lien par e-mail le lendemain du départ.\n\nÀ faire :\n- Un formulaire web court : note globale sur 10, 4 critères (accueil, propreté, chambre, petit-déjeuner), un commentaire libre, langue détectée.\n- Un envoi automatique du lien le lendemain du départ à partir d'un export CSV de mes départs, avec désinscription.\n- Un tableau de bord : moyenne glissante sur 30 jours, évolution par critère, commentaires classés du plus bas au plus haut.\n- Une alerte e-mail pour toute note inférieure à 6.\n- Un export CSV des réponses.\n\nHors périmètre : récupération des avis publiés sur d'autres sites, comparaison aux concurrents, réponses automatiques par IA.\n\nStack : Python (Flask), SQLite. Aucune note ni aucun avis inventé : seules les réponses réelles sont affichées. README : lancement et rappel de ne pas filtrer les avis négatifs avant publication.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "fooddocs",
+  "nom": "FoodDocs",
+  "categorie": "hygiene",
+  "secteur": "chr",
+  "domaine": "fooddocs.com",
+  "description": "Logiciel de sécurité alimentaire : création d'un plan HACCP guidé (à partir de l'offre Standard), tâches de surveillance préconfigurées, plus de 200 modèles gratuits (affiches, listes de contrôle, registres), relevés de température et capteurs connectables. Page tarifs en anglais, sans mention du français ; offres de 99 $ à 299 $ par mois et par site en facturation mensuelle (79 $ à 250 $ à l'année).",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Des listes de contrôle datées (températures, nettoyage, réception de marchandises) se codent vite, et c'est le plus gros du travail quotidien. L'outil apporte en plus un plan HACCP guidé, que vous devez pouvoir justifier devant un inspecteur : le document est le vôtre, le logiciel ne vous rend pas conforme. Les capteurs de température sont du matériel à acheter et à relier. Gardez un historique exportable et horodaté : c'est la preuve que l'on vous demandera.",
+  "prix": "à partir de 70,39 €/mois (converti de 79 $, facturé à l'année, cours du 2 oct. 2026)",
+  "prix_mensuel": 70.39,
+  "ce_que_vous_perdez": [
+   "Le plan HACCP guidé pas à pas",
+   "Plus de 200 modèles de registres, d'affiches et de listes de contrôle",
+   "Les capteurs de température connectables",
+   "Les rapports prêts pour un contrôle"
+  ],
+  "alternatives": [],
+  "prompt": "Construis un petit registre d'hygiène numérique pour ma cuisine, pour remplacer un logiciel de suivi HACCP.\n\nContexte : un restaurant de 40 couverts, un cuisinier saisit les relevés sur tablette.\n\nÀ faire :\n- Des listes de contrôle quotidiennes que je définis dans un fichier (ouverture, fermeture, réception des marchandises, nettoyage).\n- Des relevés de température (frigos, congélateurs, plats chauds) avec valeur, heure, nom de l'opérateur et seuil d'alerte par appareil.\n- Une alerte visible en cas de température hors seuil, avec une case « action corrective » obligatoire.\n- Des photos optionnelles pour la réception (étiquette, DLC).\n- Un export PDF par jour et par mois, horodaté, non modifiable après clôture de la journée.\n\nHors périmètre : rédaction du plan HACCP lui-même (à faire avec un professionnel), capteurs automatiques.\n\nStack : application web hors ligne (PWA) avec stockage local et synchronisation, SQLite côté serveur. README : sauvegarde, conservation des relevés et rappel que le logiciel ne remplace pas la responsabilité du chef d'établissement.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "mitti",
+  "nom": "Mitti (ex-SafetyCulture)",
+  "categorie": "hygiene",
+  "secteur": "chr",
+  "domaine": "mitti.com",
+  "description": "Plateforme d'inspections et de listes de contrôle pour équipes de terrain (hôtellerie-restauration, entrepôts, commerces), qui s'appelait SafetyCulture avant son changement de nom d'août 2026. Modèles d'inspection, analyses, signalement de problèmes et crédits d'IA. Formule gratuite jusqu'à 10 utilisateurs ; Premium à 24 $ par utilisateur et par mois en annuel (29 $ au mois). Page tarifs en anglais.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Une liste de contrôle remplie sur téléphone, avec photos et horodatage, se développe en quelques jours. L'outil de référence se distingue par sa bibliothèque de modèles, ses analyses multi-sites et ses intégrations, utiles à une chaîne mais rarement à un restaurant seul. Attention : le produit change de nom et d'offre (assurance, matériel) ; vérifiez la formule gratuite avant de comparer.",
+  "prix": "gratuit (plans payants à partir de 21,38 €/mois/utilisateur)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La bibliothèque de modèles d'inspection",
+   "Les analyses et comparaisons entre plusieurs sites",
+   "Les droits d'accès et la connexion unique (SSO)",
+   "Les fonctions d'IA intégrées"
+  ],
+  "alternatives": [],
+  "prompt": "Construis une application de listes de contrôle sur téléphone pour mon établissement, pour remplacer un outil d'inspections.\n\nContexte : un hôtel-restaurant ; le chef de rang et le gouvernant remplissent des inspections à l'ouverture et à la fermeture.\n\nÀ faire :\n- Des modèles de listes (cases à cocher, réponses chiffrées, champ texte, photo) que je crée dans un fichier modeles.json.\n- Le remplissage sur téléphone, y compris sans connexion, avec envoi à la reconnexion.\n- Un signalement de problème rattaché à une ligne de la liste, avec responsable et échéance.\n- Un tableau de bord : listes terminées, problèmes ouverts, taux de conformité par semaine.\n- Un export PDF d'une inspection, horodaté.\n\nHors périmètre : bibliothèque de modèles prêts à l'emploi, analyses multi-sites, intégrations.\n\nStack : PWA, SQLite. README : lancement, sauvegarde et conservation des inspections.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "wifirst",
+  "nom": "Wifirst",
+  "categorie": "reseau",
+  "secteur": "chr",
+  "domaine": "wifirst.com",
+  "description": "Opérateur français de Wi-Fi managé pour hôtels, résidences et sites professionnels : audit, déploiement et supervision 24 h/24, réseaux séparés pour les clients et le personnel, et services associés (fibre professionnelle, téléphonie IP, télévision d'hôtel, affichage dynamique). Pas de grille tarifaire publique : devis selon la taille du site et le périmètre de service.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Ce n'est pas un logiciel : c'est un service de réseau (bornes, liaisons, supervision et dépannage) qu'aucune application ne remplace. Le seul bout logiciel, une page d'accueil de connexion, ne représente qu'une fraction de la valeur. Pour un petit établissement, la vraie alternative est un matériel professionnel acheté et configuré par un installateur, avec un contrat de maintenance.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La supervision 24 h/24 et l'intervention en cas de panne",
+   "Les réseaux séparés pour les clients et pour le personnel",
+   "La fibre professionnelle et la téléphonie IP",
+   "L'audit et le déploiement des bornes"
+  ],
+  "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "extracadabra",
+  "nom": "Extracadabra",
+  "categorie": "autre",
+  "secteur": "chr",
+  "domaine": "extracadabra.com",
+  "description": "Plateforme française de mise en relation entre établissements (restauration, hôtellerie, événementiel, vente, logistique) et extras. La publication d'une mission est gratuite ; l'extra peut être salarié (CDD d'extra) ou indépendant, et la plateforme calcule la paie et gère les déclarations sociales et fiscales, selon l'éditeur. Établissements en Île-de-France et à Lyon ; « plus de 10 000 entreprises » clientes, chiffre de l'éditeur. Pas de grille tarifaire publique.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Le formulaire de demande de mission est trivial. La valeur est ailleurs : un vivier de candidats que vous n'avez pas, et la gestion du contrat et de la paie, qui engage votre responsabilité d'employeur. Aucun outil sur mesure ne crée un réseau de candidats ni ne porte le risque social. Le sujet à traiter est le choix du statut (salarié ou indépendant) et de l'intermédiaire, pas un développement.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le vivier de candidats disponibles",
+   "Le contrat, la paie et les déclarations sociales",
+   "Le remplacement rapide en cas d'absence"
+  ],
+  "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "lyra",
+  "nom": "Lyra",
+  "categorie": "paiement",
+  "secteur": "chr",
+  "domaine": "lyra.com",
+  "description": "Prestataire français de paiement : paiement en ligne (site, application, centre d'appels), paiement en magasin (terminaux, automates, Tap to Pay sur iPhone avec Lyra Nomad), gestion omnicanale et places de marché. Données hébergées en France ; services certifiés chaque année par les organismes de conformité, selon l'éditeur. Tarifs non publiés sur la page d'accueil.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Un outil sur mesure peut afficher un bouton de paiement en appelant l'API d'un prestataire, mais il ne peut pas être ce prestataire : l'acceptation des cartes, la sécurité des données de paiement et les flux d'argent sont encadrés et audités. Ce qui se code, c'est votre page de paiement et votre rapprochement bancaire ; l'encaissement reste confié à un acteur agréé. À comparer sur les frais par transaction, la durée d'engagement et le support.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "L'acceptation des cartes et la conformité aux règles de sécurité des paiements",
+   "Les terminaux de paiement et le Tap to Pay",
+   "La supervision et le rapprochement des transactions"
+  ],
+  "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "mypos",
+  "nom": "myPOS",
+  "categorie": "paiement",
+  "secteur": "chr",
+  "domaine": "mypos.com",
+  "description": "Terminaux de paiement et services d'encaissement pour commerces : myPOS Go 2, Flex, Ultra (Android avec imprimante), Glass (Tap to Pay sur smartphone) et Sigma (automates). Les services de paiement et de monnaie électronique sont fournis par myPOS Ltd, établissement de monnaie électronique agréé en Irlande par la Banque centrale d'Irlande. Paiement à l'usage ou plan mensuel ; tarifs sur page dédiée, non relevés.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Un terminal est un matériel agréé relié à un établissement de paiement : ni l'un ni l'autre ne se développe. Ce qui peut se coder autour, c'est votre suivi des ventes. Notez qu'un terminal encaisse la carte sans tenir à lui seul le registre de vos ventes : si vous enregistrez vos ventes dans un logiciel de caisse, c'est lui qui doit répondre aux règles françaises de conservation et d'inaltérabilité des données. À comparer sur les frais par transaction et le coût du matériel.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le matériel de paiement agréé",
+   "L'acceptation des cartes par un établissement réglementé",
+   "Le Tap to Pay sur smartphone"
+  ],
+  "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "choco",
+  "nom": "Choco",
+  "categorie": "achats",
+  "secteur": "chr",
+  "domaine": "choco.com",
+  "description": "Plateforme de prise de commandes pour distributeurs alimentaires, qui sert aussi les restaurants qui commandent : agent IA qui saisit les commandes reçues par message vocal, e-mail, SMS, WhatsApp ou note manuscrite, boutique en ligne en marque blanche, outils de vente et de marketing, intégration avec plus de 200 logiciels de gestion. Site destiné à la France (également Allemagne, Espagne, États-Unis, Royaume-Uni) ; 500 distributeurs en France et plus d'un million de commandes par mois, chiffres de l'éditeur. Tarifs sur page dédiée, non relevés.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Un bon de commande à envoyer à ses fournisseurs se code en une soirée. La difficulté de Choco est d'être branché aux logiciels de vos fournisseurs : sans ces connexions, il faut convaincre chaque fournisseur d'utiliser votre outil. Si vos fournisseurs sont peu nombreux et acceptent l'e-mail ou WhatsApp, un modèle de commande suffit ; sinon, l'intérêt du réseau l'emporte.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La connexion aux logiciels de gestion des fournisseurs",
+   "La saisie automatique des commandes vocales, écrites ou photographiées",
+   "Des catalogues fournisseurs tenus à jour"
+  ],
+  "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "attio",
+  "nom": "Attio",
+  "categorie": "vente-crm",
+  "secteur": "saas",
+  "domaine": "attio.com",
+  "description": "CRM personnalisable pour équipes commerciales et jeunes entreprises : contacts, entreprises et opportunités, synchronisation des e-mails et des agendas, enrichissement automatique des fiches, rapports. Formule Free (jusqu'à 3 utilisateurs, 200 e-mails par mois), Plus à 31 € par utilisateur et par mois en annuel (39 € au mois), Pro à 74 € en annuel. Prix en euros lus sur la page tarifs.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Un CRM pour une petite équipe tient dans quelques tables : contacts, entreprises, opportunités, notes et rappels. Ce qui coûte du travail, ce sont les automatismes : lire les e-mails et les agendas pour alimenter les fiches, enrichir les contacts avec des données d'entreprise, et envoyer des séquences. Si votre pipeline compte quelques dizaines d'affaires, un outil sur mesure suffit ; l'abonnement se justifie quand toute l'équipe vit dans les e-mails et les agendas synchronisés.",
+  "prix": "gratuit (plans payants à partir de 31 €/mois/utilisateur)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La synchronisation automatique des e-mails et des agendas",
+   "L'enrichissement automatique des fiches contacts et entreprises",
+   "Les séquences d'e-mails et l'analyse d'appels (formule Pro)",
+   "Les rapports avancés et les contrôles d'accès"
+  ],
+  "alternatives": [
+   {
+    "nom": "Twenty",
+    "url": "https://github.com/twentyhq/twenty",
+    "type": "open-source",
+    "description": "CRM moderne avec objets personnalisés, vues et synchronisation de messagerie ; plus jeune que Pipedrive sur le mobile, le reporting et les intégrations."
+   },
+   {
+    "nom": "EspoCRM",
+    "url": "https://github.com/espocrm/espocrm",
+    "type": "open-source",
+    "description": "CRM classique dont on peut adapter le modèle de données ; moins centré sur la vente et moins soigné que Pipedrive."
+   }
+  ],
+  "prompt": "Construis un petit CRM pour mon activité, pour remplacer un abonnement CRM.\n\nContexte : je suis consultant, environ 150 contacts, 20 affaires en cours, 1 utilisateur.\n\nÀ faire :\n- Des fiches Contact et Entreprise (nom, e-mail, téléphone, notes, source).\n- Un pipeline d'affaires en colonnes (Prospect, Rendez-vous, Devis envoyé, Gagné, Perdu) avec montant et date de relance.\n- Une page « À relancer aujourd'hui » classée par date.\n- Un import et un export CSV.\n- L'historique des notes et des rendez-vous sur chaque fiche.\n\nHors périmètre : synchronisation des e-mails et agendas, enrichissement automatique, séquences d'envoi.\n\nStack : Next.js et SQLite, authentification par e-mail pour un seul utilisateur. README : lancement, sauvegarde du fichier SQLite, rappel de ne conserver que les données utiles et de répondre aux demandes de suppression (RGPD).",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "folk",
+  "nom": "folk",
+  "categorie": "vente-crm",
+  "secteur": "saas",
+  "domaine": "folk.app",
+  "description": "CRM léger pour indépendants et petites équipes : pipeline, campagnes d'e-mails, enrichissement des contacts, extension LinkedIn, synchronisation des e-mails, de l'agenda et de WhatsApp. Pas de formule gratuite, essai de deux semaines. Standard à 22 € par membre et par mois en annuel (27 € au mois), Premium à 43 € en annuel.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Un carnet de contacts avec des listes, un pipeline et des rappels se développe vite, et c'est ce qu'une petite structure utilise vraiment. Ce qui est plus lourd : la synchronisation avec les e-mails, l'agenda et WhatsApp, l'extension qui capte un profil LinkedIn et l'enrichissement automatique. Si vous saisissez peu de contacts par semaine, la saisie à la main est supportable ; sinon, ces automatismes sont ce que vous payez.",
+  "prix": "à partir de 22 €/mois/utilisateur",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La synchronisation des e-mails, de l'agenda et de WhatsApp",
+   "L'extension qui capte les profils LinkedIn",
+   "L'enrichissement automatique des contacts",
+   "Les campagnes d'e-mails et les assistants IA"
+  ],
+  "alternatives": [
+   {
+    "nom": "Twenty",
+    "url": "https://github.com/twentyhq/twenty",
+    "type": "open-source",
+    "description": "CRM moderne avec objets personnalisés, vues et synchronisation de messagerie ; plus jeune que Pipedrive sur le mobile, le reporting et les intégrations."
+   },
+   {
+    "nom": "EspoCRM",
+    "url": "https://github.com/espocrm/espocrm",
+    "type": "open-source",
+    "description": "CRM classique dont on peut adapter le modèle de données ; moins centré sur la vente et moins soigné que Pipedrive."
+   }
+  ],
+  "prompt": "Construis un carnet de contacts avec pipeline et rappels, pour remplacer un abonnement CRM léger.\n\nContexte : je suis indépendant, je gère mes prospects et mes partenaires, environ 300 contacts.\n\nÀ faire :\n- Fiches contact avec e-mail, téléphone, entreprise, étiquettes et notes.\n- Des listes dynamiques (par étiquette, par statut, par date de dernier contact).\n- Un pipeline en colonnes avec montant et date de relance.\n- Un rappel quotidien par e-mail des relances du jour.\n- Import et export CSV, déduplication à l'import.\n\nHors périmètre : synchronisation des e-mails et de WhatsApp, extension de navigateur, enrichissement.\n\nStack : application web, SQLite, rappel par SMTP (identifiants dans .env). README : lancement, sauvegarde, suppression d'un contact sur demande (RGPD).",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "help-scout",
+  "nom": "Help Scout",
+  "categorie": "vente-crm",
+  "secteur": "saas",
+  "domaine": "helpscout.com",
+  "description": "Boîte de réception partagée et centre d'aide pour équipes de support : plusieurs boîtes, chat en direct et SMS, WhatsApp, Instagram et Messenger, bases de connaissances, workflows et assistant IA. Formule Free (5 utilisateurs, 1 boîte, 1 site d'aide) ; Standard à 25 $ par utilisateur et par mois (facturation annuelle, remise de 16 % annoncée), Plus à 45 $, Pro à 75 $. Essai de 15 jours.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Le cœur est une boîte e-mail partagée : chaque message devient un ticket attribuable, avec notes internes et réponses types. C'est un projet réaliste pour une petite équipe qui reçoit moins d'une centaine de messages par jour. Ce qui coûte : la réception fiable des e-mails (délivrabilité, pièces jointes, anti-spam), les canaux de messagerie sociale et les statistiques de délai de réponse. Les alternatives libres ci-dessous couvrent déjà ce cœur sans abonnement par agent.",
+  "prix": "à partir de 22,28 €/mois/utilisateur (converti de 25 $, cours du 2 oct. 2026)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les canaux de messagerie (WhatsApp, Instagram, Messenger) et le chat en direct",
+   "La bibliothèque d'aide intégrée et ses statistiques",
+   "Les workflows et l'assistant IA",
+   "Les intégrations avec les outils de vente et de développement"
+  ],
+  "alternatives": [
+   {
+    "nom": "FreeScout",
+    "url": "https://github.com/freescout-help-desk/freescout",
+    "type": "open-source",
+    "description": "Boîte e-mail d'équipe avec assignation, notes et alertes de collision ; plusieurs modules complémentaires sont payants."
+   },
+   {
+    "nom": "Chatwoot",
+    "url": "https://github.com/chatwoot/chatwoot",
+    "type": "open-source",
+    "description": "Boîte de support partagée avec chat, e-mail et centre d'aide ; logiciel libre à héberger soi-même."
+   },
+   {
+    "nom": "Zammad",
+    "url": "https://github.com/zammad/zammad",
+    "type": "open-source",
+    "description": "Gestion de tickets sérieuse avec e-mail, chat, SLA et base de connaissances ; installation plus technique."
+   }
+  ],
+  "prompt": "Construis une boîte de support partagée pour mon équipe, pour remplacer un abonnement de support client.\n\nContexte : une petite entreprise, 3 personnes, une adresse support@ qui reçoit environ 30 messages par jour.\n\nÀ faire :\n- Récupérer les e-mails en IMAP et envoyer les réponses en SMTP depuis la même adresse.\n- Un ticket par conversation, avec statut (ouvert, en attente, résolu), personne assignée et notes internes invisibles du client.\n- Des réponses enregistrées avec variables (prénom, numéro de commande).\n- Une alerte de collision quand deux personnes ouvrent le même ticket.\n- Un tableau simple : tickets ouverts, délai moyen de première réponse, par semaine.\n\nHors périmètre : chat en direct, réseaux sociaux, base de connaissances publique.\n\nStack : application web, PostgreSQL, tâche planifiée pour la relève IMAP. README : lancement, sauvegarde, durée de conservation des messages (RGPD).",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "front",
+  "nom": "Front",
+  "categorie": "communication",
+  "secteur": "saas",
+  "domaine": "front.com",
+  "description": "Boîte de réception collaborative qui réunit e-mails, SMS et autres canaux pour les équipes : boîte partagée, tickets, règles d'automatisation, analyses. Starter à 25 $ par siège et par mois en annuel (jusqu'à 10 sièges), Professional à 65 $ (jusqu'à 50), Enterprise à 105 $ ; assistant Copilot en option à 20 $ par siège. Essai de 14 jours.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Comme pour toute boîte partagée, le cœur (assigner un e-mail, le commenter en privé, y répondre à plusieurs) se développe pour une petite équipe. Ce qui fait la valeur de l'outil, ce sont les canaux supplémentaires, les règles d'automatisation avancées et les analyses. Si votre équipe ne traite que des e-mails, une boîte de support libre suffit ; les alternatives ci-dessous évitent un prix par siège.",
+  "prix": "à partir de 22,28 €/mois/utilisateur (converti de 25 $, facturé à l'année, cours du 2 oct. 2026)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les canaux supplémentaires (SMS, messagerie sociale)",
+   "Les règles d'automatisation et le routage avancés",
+   "Les analyses d'activité et les rapports de qualité",
+   "La connexion unique (SSO) et les rôles personnalisés"
+  ],
+  "alternatives": [
+   {
+    "nom": "FreeScout",
+    "url": "https://github.com/freescout-help-desk/freescout",
+    "type": "open-source",
+    "description": "Boîte e-mail d'équipe avec assignation, notes et alertes de collision ; plusieurs modules complémentaires sont payants."
+   },
+   {
+    "nom": "Chatwoot",
+    "url": "https://github.com/chatwoot/chatwoot",
+    "type": "open-source",
+    "description": "Boîte de support partagée avec chat, e-mail et centre d'aide ; logiciel libre à héberger soi-même."
+   }
+  ],
+  "prompt": "Construis une boîte e-mail partagée pour une petite équipe, pour remplacer un abonnement de messagerie collaborative.\n\nContexte : 4 personnes qui se partagent contact@ et commandes@.\n\nÀ faire :\n- Relève IMAP de plusieurs adresses et envoi SMTP depuis chacune.\n- Assignation d'un message à une personne, commentaires internes, statut résolu.\n- Règles simples : attribuer automatiquement selon l'adresse de réception ou un mot de l'objet.\n- Réponses types et signature par personne.\n- Une vue « mes conversations » et une vue « non attribuées ».\n\nHors périmètre : SMS et réseaux sociaux, analyses avancées, SSO.\n\nStack : application web, PostgreSQL. README : lancement, sauvegarde, conservation des messages (RGPD).",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "gorgias",
+  "nom": "Gorgias",
+  "categorie": "vente-crm",
+  "secteur": "saas",
+  "domaine": "gorgias.com",
+  "description": "Centre d'assistance branché sur les boutiques en ligne : e-mail, chat, SMS, voix, réseaux sociaux, formulaire et TikTok Shop, agent IA, assistant d'achat, règles d'automatisation et plus de 250 intégrations. Starter à 10 $ par mois (50 tickets), Basic à 50 $ par mois en annuel (300 tickets), Pro à 300 $ (2 000 tickets), Advanced à 750 $ (5 000 tickets) ; dépassement de 0,36 $ à 0,40 $ par ticket et agent IA facturé à l'interaction.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Les tickets, les réponses types et un historique client se développent pour une petite boutique. L'intérêt réel de l'outil est d'afficher, à côté de chaque message, la commande du client et de pouvoir la rembourser ou la modifier depuis le ticket, ce qui dépend des connexions avec votre plateforme e-commerce. Pour moins de quelques dizaines de tickets par jour, une boîte de support libre et un lien vers la commande suffisent. Au-delà, le tarif au ticket suit votre volume et devient un vrai poste de coût.",
+  "prix": "à partir de 8,91 €/mois (converti de 10 $, cours du 2 oct. 2026)",
+  "prix_mensuel": 8.91,
+  "ce_que_vous_perdez": [
+   "L'affichage et la modification des commandes depuis le ticket",
+   "Les canaux de contact multiples (chat, SMS, voix, réseaux sociaux)",
+   "L'agent IA et l'assistant d'achat",
+   "Les 250 intégrations et les journaux d'audit"
+  ],
+  "alternatives": [
+   {
+    "nom": "Chatwoot",
+    "url": "https://github.com/chatwoot/chatwoot",
+    "type": "open-source",
+    "description": "Boîte de support partagée avec chat, e-mail et centre d'aide ; logiciel libre à héberger soi-même."
+   },
+   {
+    "nom": "Zammad",
+    "url": "https://github.com/zammad/zammad",
+    "type": "open-source",
+    "description": "Gestion de tickets sérieuse avec e-mail, chat, SLA et base de connaissances ; installation plus technique."
+   }
+  ],
+  "prompt": "Construis un petit centre d'assistance pour ma boutique en ligne, pour remplacer un abonnement de support e-commerce.\n\nContexte : une boutique d'environ 40 commandes par jour, je reçois 20 messages de clients par jour.\n\nÀ faire :\n- Relève IMAP de l'adresse support et envoi SMTP des réponses.\n- Un ticket par conversation avec statut, personne assignée et notes internes.\n- À côté du ticket, la commande du client retrouvée par e-mail via l'API de ma plateforme e-commerce (lecture seule : numéro, articles, statut d'expédition, lien vers la commande).\n- Des réponses types avec variables (prénom, numéro de commande, lien de suivi).\n- Un tableau : tickets ouverts, délai de première réponse.\n\nHors périmètre : remboursement depuis le ticket, chat en direct, réseaux sociaux, agent IA.\n\nStack : application web, PostgreSQL. Clés d'API dans .env, jamais dans le dépôt. README : lancement, sauvegarde et conservation des messages (RGPD).",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "sketch",
+  "nom": "Sketch",
+  "categorie": "design",
+  "secteur": "saas",
+  "domaine": "sketch.com",
+  "description": "Éditeur de design d'interfaces : application native pour Mac, version web et application iPhone et iPad pour consulter les maquettes. Standard à 12 $ par éditeur et par mois en annuel (collaboration en temps réel, documents illimités, lecteurs gratuits illimités, transfert aux développeurs), Professional à 24 $, Enterprise à 44 $, licence Mac seule à 120 $ par siège (paiement unique, un an de mises à jour). Essai de 30 jours.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Un éditeur de graphisme vectoriel est un vrai produit : manipulation de formes, texte, composants réutilisables, export et collaboration en temps réel. Le reproduire demande bien plus qu'une application de formulaires, et le résultat serait moins bon que les outils existants. Pour un besoin ponctuel (maquetter quelques écrans), l'alternative libre ci-dessous est la bonne réponse, pas un développement.",
+  "prix": "à partir de 10,69 €/mois/utilisateur (converti de 12 $, facturé à l'année, cours du 2 oct. 2026)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "L'éditeur vectoriel et les composants réutilisables",
+   "La collaboration en temps réel",
+   "Le transfert aux développeurs et l'historique des versions",
+   "L'application native pour Mac"
+  ],
+  "alternatives": [
+   {
+    "nom": "Penpot",
+    "url": "https://github.com/penpot/penpot",
+    "type": "open-source",
+    "description": "Outil de conception open source (MPL-2.0) avec composants, prototypes et collaboration, utilisable en ligne ou auto-hébergé, moins riche en plugins que Figma."
+   }
+  ],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "procreate",
+  "nom": "Procreate",
+  "categorie": "design",
+  "secteur": "saas",
+  "domaine": "procreate.com",
+  "description": "Application de dessin et de peinture numériques pour iPad : plus de 300 pinceaux personnalisables (Brush Studio), calques avec modes de fusion, déformation, sélections et effets, peinture sur modèles 3D, time-lapse des créations. Achat unique sur l'App Store, sans abonnement ; le prix dépend du pays et n'est pas affiché sur le site de l'éditeur.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Le moteur de peinture (pression du stylet, pinceaux, fluidité à l'écran) est le produit, et c'est précisément ce qu'un développement sur mesure ne reproduit pas. Il n'existe ici rien à remplacer par une application de gestion. Procreate est un achat unique, sans abonnement : la question est plutôt de savoir si un logiciel libre convient à votre usage.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le moteur de pinceaux et la réactivité au stylet",
+   "Les calques, la déformation et les effets",
+   "L'application native pour iPad",
+   "L'enregistrement en time-lapse"
+  ],
+  "alternatives": [
+   {
+    "nom": "Krita",
+    "url": "https://github.com/KDE/krita",
+    "type": "open-source",
+    "description": "Logiciel de peinture numérique libre et gratuit (GPL-3.0) pour ordinateur, avec un moteur de pinceaux complet ; moins adapté au dessin au doigt sur tablette."
+   }
+  ],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "prestashop",
+  "nom": "PrestaShop",
+  "categorie": "ecommerce",
+  "secteur": "saas",
+  "domaine": "prestashop.com",
+  "description": "Plateforme e-commerce open source d'origine française : édition Classic gratuite à installer soi-même, ou offre hébergée gérée par l'éditeur. Marché de modules et de thèmes, paiements intégrés (PrestaShop Checkout, Stripe, Alma, Klarna, Viva.com, Click to Pay). L'éditeur annonce plus de 250 000 marchands, chiffre de l'éditeur ; les prix de l'offre hébergée et des modules ne sont pas relevés ici.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Pour un petit catalogue, une boutique sur mesure (pages produits, panier, paiement par Stripe) est un projet réaliste, et PrestaShop lui-même est libre : le code se lit, se modifie et s'héberge soi-même. Le coût réel n'est pas la licence, qui est gratuite, mais l'hébergement, les mises à jour de sécurité, les modules payants et le temps de paramétrage. Faire sur mesure revient à reprendre à votre charge la TVA par pays, les frais de port, les retours et les mentions légales de la vente à distance.",
+  "prix": "gratuit",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les modules et thèmes du marché, avec des milliers d'options",
+   "Les paiements et la TVA par pays déjà paramétrés",
+   "Les mises à jour de sécurité suivies par l'éditeur",
+   "Les experts et partenaires pour vous accompagner"
+  ],
+  "alternatives": [
+   {
+    "nom": "WooCommerce",
+    "url": "https://github.com/woocommerce/woocommerce",
+    "type": "open-source",
+    "description": "Extension de boutique pour WordPress, qui permet pages, blog, portfolio et vente en ligne sans loyer de plateforme."
+   }
+  ],
+  "prompt": "Construis une petite boutique en ligne sur mesure, pour remplacer une plateforme e-commerce.\n\nContexte : environ 30 produits, vente en France uniquement, paiement par carte.\n\nÀ faire :\n- Un catalogue avec photos, variantes (taille, couleur), stock et prix TTC.\n- Un panier et un tunnel de commande en 3 étapes : adresse, livraison, paiement.\n- Le paiement par Stripe Checkout (clés dans .env), avec confirmation par webhook et e-mail de commande.\n- Un back-office : commandes, statut d'expédition, numéro de suivi, remboursement via Stripe.\n- Les pages obligatoires : mentions légales, conditions générales de vente, politique de confidentialité, droit de rétractation.\n\nHors périmètre : multi-pays et TVA par pays, marketplace, programme de fidélité.\n\nStack : Next.js, PostgreSQL. README : lancement, sauvegarde, mise à jour des dépendances et rappel que le paiement par carte reste confié à Stripe.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "wizishop",
+  "nom": "WiziShop",
+  "categorie": "ecommerce",
+  "secteur": "saas",
+  "domaine": "wizishop.fr",
+  "description": "Plateforme française de création de boutiques en ligne : modèles de pages, référencement, blog, pages libres, plus de 250 applications et intégrations, paiement par carte, Stripe et PayPal, IA illimitée sur toutes les formules. Smart à 24,90 € HT par mois en annuel (34,90 € au mois, commission de 2 %), Business à 99,90 € HT (149,90 € au mois, commission de 1 %), Enterprise à partir de 1 300 €. Nom de domaine personnalisé non inclus ; essai de 7 jours.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Une petite boutique sur mesure est faisable, mais vous reprenez à votre charge le paiement par carte, la TVA, les frais de port, les retours et les mentions légales de la vente à distance. Le tarif de WiziShop n'est pas élevé pour un petit catalogue : la commission s'applique au montant TTC, frais de port compris, ce qui pèse sur un volume important. Le sur-mesure se justifie surtout si votre vente a une particularité (réservation, location, produit configuré) que les boutiques standard gèrent mal.",
+  "prix": "à partir de 24,90 €/mois",
+  "prix_mensuel": 24.9,
+  "ce_que_vous_perdez": [
+   "Les modèles de pages, le référencement et le blog intégrés",
+   "Le paiement par carte, Stripe et PayPal déjà branchés",
+   "Les 250 applications et intégrations",
+   "L'assistance de l'éditeur en français"
+  ],
+  "alternatives": [
+   {
+    "nom": "PrestaShop",
+    "url": "https://github.com/PrestaShop/PrestaShop",
+    "type": "open-source",
+    "description": "Plateforme e-commerce libre d'origine française, à installer soi-même ; modules payants et hébergement à votre charge."
+   },
+   {
+    "nom": "WooCommerce",
+    "url": "https://github.com/woocommerce/woocommerce",
+    "type": "open-source",
+    "description": "Extension de boutique pour WordPress, qui permet pages, blog, portfolio et vente en ligne sans loyer de plateforme."
+   }
+  ],
+  "prompt": "Construis une petite boutique en ligne sur mesure, pour remplacer une plateforme de boutiques par abonnement.\n\nContexte : un artisan, environ 25 produits, vente en France, paiement par carte.\n\nÀ faire :\n- Un catalogue avec photos, variantes et stock.\n- Un panier et une commande en 3 étapes : adresse, livraison, paiement.\n- Le paiement par Stripe Checkout (clés dans .env), confirmation par webhook et e-mail de commande.\n- Un back-office : commandes, expéditions, numéro de suivi, remboursement.\n- Les pages obligatoires : mentions légales, CGV, politique de confidentialité, droit de rétractation.\n- Des pages de contenu et un blog en Markdown pour le référencement.\n\nHors périmètre : TVA multi-pays, marketplace, applications tierces.\n\nStack : Next.js, PostgreSQL. README : lancement, sauvegarde et mise à jour des dépendances.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "legalstart",
+  "nom": "Legalstart",
+  "categorie": "autre",
+  "secteur": "saas",
+  "domaine": "legalstart.fr",
+  "description": "Plateforme française de formalités juridiques en ligne : création d'entreprise (à partir de 0 € selon l'éditeur, devis en ligne pour le détail), modification (à partir de 149 € HT), fermeture (à partir de 199 € HT), comptabilité (à partir de 49 € HT par mois), modèles de documents à partir de 0 € HT et guides pratiques gratuits.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Un formulaire qui génère des statuts ou un modèle de contrat se développe sans difficulté. Mais ce que vous payez, c'est la prise en charge de la procédure (dépôt du dossier, suivi, rectification en cas de rejet) et l'avis d'un juriste. Une erreur dans des statuts ne se voit que des années plus tard. Pour une formalité simple, le guichet unique public fait le même dépôt sans frais de service ; pour un dossier complexe, l'accompagnement humain est le produit.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La prise en charge et le suivi du dossier de formalité",
+   "L'avis d'un juriste sur les statuts et les actes",
+   "Les modèles de documents tenus à jour",
+   "L'abonnement de conseil et de comptabilité"
+  ],
+  "alternatives": [
+   {
+    "nom": "Guichet unique des formalités d'entreprises",
+    "url": "https://formalites.entreprises.gouv.fr/",
+    "type": "gratuit",
+    "description": "Service public où l'on dépose soi-même les formalités de création, de modification et de cessation d'une entreprise ; les frais de greffe ou d'annonce légale restent dus."
+   }
+  ],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "youtrust",
+  "nom": "Youtrust (ex-Yousign)",
+  "categorie": "productivite",
+  "secteur": "saas",
+  "domaine": "youtrust.com",
+  "description": "Plateforme française de signature électronique et de confiance numérique, nouveau nom de Yousign depuis l'été 2026 : Sign (signature électronique), Verify (vérification d'identité et de comptes bancaires) et Seal (cachet électronique). Entreprise fondée à Caen en 2013 ; l'éditeur indique que les abonnements et le support actuels ne changent pas. La page des tarifs n'était pas accessible sous le nouveau nom au moment de la lecture.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Recueillir un tracé de signature sur un PDF avec horodatage et adresse IP se programme, et suffit pour un devis ou un accord interne. Ce qui fait la valeur de l'outil, c'est la valeur juridique de la signature : la signature avancée ou qualifiée au sens du règlement européen eIDAS repose sur une vérification d'identité et un certificat délivrés par un prestataire de confiance, que vous ne pouvez pas devenir. Choisissez le niveau de signature selon le document (contrat de travail, bail, acte important) avant de choisir l'outil.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La signature avancée ou qualifiée reconnue par le règlement eIDAS",
+   "La vérification d'identité des signataires",
+   "Le cachet électronique et l'archivage à valeur probante",
+   "Les connexions avec les outils métiers"
+  ],
+  "alternatives": [
+   {
+    "nom": "Documenso",
+    "url": "https://github.com/documenso/documenso",
+    "type": "open-source",
+    "description": "Signature de documents libre avec modèles, destinataires, vérification et historique d'audit ; l'auto-hébergement demande Postgres, e-mail et HTTPS."
+   }
+  ],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "scaleway",
+  "nom": "Scaleway",
+  "categorie": "reseau",
+  "secteur": "saas",
+  "domaine": "scaleway.com",
+  "description": "Fournisseur de cloud français : instances, stockage, bases de données, conteneurs et serveurs dédiés (Dedibox), avec des centres de données en France et en Europe. Les serveurs privés virtuels Dedibox VPS démarrent à 4,99 € par mois (lu sur la page tarifs) ; les autres produits sont facturés à l'usage selon des grilles par service.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Héberger son application ailleurs est possible, mais un hébergeur n'est pas un logiciel que l'on remplace : ce sont des centres de données, des réseaux et des équipes d'exploitation. Le choix porte sur le pays d'hébergement, le prix, le support et la facilité de sortie, pas sur une construction maison. Pour un site simple, un hébergement mutualisé ou un petit serveur privé suffit ; gardez des sauvegardes hors de l'hébergeur.",
+  "prix": "à partir de 4,99 €/mois",
+  "prix_mensuel": 4.99,
+  "ce_que_vous_perdez": [
+   "Les centres de données et le réseau",
+   "Le stockage et les bases de données gérés",
+   "L'hébergement en France et en Europe",
+   "Le support et l'exploitation de l'infrastructure"
+  ],
+  "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "infomaniak",
+  "nom": "Infomaniak",
+  "categorie": "reseau",
+  "secteur": "saas",
+  "domaine": "infomaniak.com",
+  "description": "Hébergeur suisse : hébergement web, noms de domaine, messagerie professionnelle et services cloud. Les prix varient selon le produit et n'ont pas pu être relevés sur les pages produit au moment de la lecture.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Comme pour tout hébergeur, il n'y a pas de logiciel à reproduire : on achète des serveurs, un réseau, une messagerie qui arrive en boîte de réception et des équipes qui interviennent. Le choix se fait sur le pays d'hébergement des données, le prix, la qualité du support et la facilité à partir avec ses données. Gardez toujours une sauvegarde de vos sites et de vos e-mails hors de l'hébergeur.",
+  "prix": null,
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les serveurs et le réseau",
+   "La messagerie professionnelle et sa délivrabilité",
+   "Les noms de domaine et leur gestion",
+   "Le support et l'exploitation"
+  ],
+  "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "evoliz",
+  "nom": "Evoliz",
+  "categorie": "finance-compta",
+  "secteur": "saas",
+  "domaine": "evoliz.com",
+  "description": "Logiciel français de facturation et de gestion en ligne : devis, factures, acomptes, achats et notes de frais, synchronisation des comptes bancaires, relances automatiques, tableaux de bord. L'éditeur annonce une plateforme agréée incluse pour la réforme de la facturation électronique. Essentielle à 29 € HT par mois (290 € par an) et Avancée à 49 € HT par mois (490 € par an), utilisateur supplémentaire à 9 € HT par mois, essai de 15 jours.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Un devis qui devient une facture numérotée, avec TVA et PDF, est un projet accessible. Mais en France, la facture est un document encadré : numérotation continue, mentions obligatoires, conservation, et bientôt échange par une plateforme agréée dans le cadre de la facturation électronique. Une erreur de numérotation ou une mention absente se paie à un contrôle. Le sur-mesure convient pour des devis et des relances ; pour l'émission légale des factures, un logiciel qui suit la réglementation est plus sûr.",
+  "prix": "à partir de 29 €/mois",
+  "prix_mensuel": 29,
+  "ce_que_vous_perdez": [
+   "La conformité aux règles de facturation et à la réforme de la facturation électronique",
+   "La synchronisation bancaire et le rapprochement avec les factures",
+   "La lecture automatique des factures d'achat (OCR)",
+   "Les relances automatiques des impayés"
+  ],
+  "alternatives": [
+   {
+    "nom": "Dolibarr",
+    "url": "https://www.dolibarr.org/",
+    "type": "open-source",
+    "description": "ERP/CRM open source d'origine française (GPL) : devis, facturation, comptabilité, stocks et achats."
+   },
+   {
+    "nom": "SolidInvoice",
+    "url": "https://github.com/SolidInvoice/SolidInvoice",
+    "type": "open-source",
+    "description": "Facturation et devis libres (MIT) pour petites structures ; la conformité aux règles françaises de facturation reste à vérifier."
+   }
+  ],
+  "prompt": "Construis un petit outil de devis et de relances de factures pour mon activité, pour remplacer une partie d'un logiciel de facturation.\n\nContexte : indépendant, environ 20 devis par mois.\n\nÀ faire :\n- Des clients et des prestations enregistrés (libellé, prix HT, TVA).\n- Un devis numéroté, avec lignes, remise, validité et PDF à mon identité.\n- Un statut (brouillon, envoyé, accepté, refusé) et un envoi par e-mail.\n- Un suivi des échéances et des relances proposées à J+7 et J+15 que je valide avant envoi.\n- Un export CSV pour mon comptable.\n\nHors périmètre : l'émission légale des factures et la facturation électronique, la synchronisation bancaire, l'OCR. Les factures restent émises dans un logiciel qui respecte la réglementation.\n\nStack : application web, SQLite. README : lancement, sauvegarde, et rappel de ne pas émettre de facture légale depuis cet outil.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "libeo",
+  "nom": "Libeo",
+  "categorie": "finance-compta",
+  "secteur": "saas",
+  "domaine": "libeo.io",
+  "description": "Logiciel français de paiement et de gestion des factures fournisseurs : dématérialisation, validation, paiement, cartes, pilotage budgétaire, synchronisation comptable et relance des factures clients. Lit les factures Factur-X et travaille avec SÉRÈS, annoncée par l'éditeur comme plateforme agréée par l'État. Devis gratuit sur rendez-vous, pas de tarif public.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Le circuit de validation des factures d'achat (recevoir, vérifier, faire approuver) se code. Le point dur est le paiement : initier des virements pour le compte d'une entreprise relève d'un prestataire de services de paiement agréé, et la facturation électronique passe par une plateforme agréée. Aucune application sur mesure n'a ce statut. Vous pouvez automatiser la validation, pas le paiement ni l'échange réglementé des factures.",
+  "prix": "sur devis",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le paiement des fournisseurs par un prestataire agréé",
+   "L'échange des factures par une plateforme agréée",
+   "La synchronisation avec la comptabilité",
+   "Les cartes de paiement et le pilotage budgétaire"
+  ],
+  "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "mailmeteor",
+  "nom": "Mailmeteor",
+  "categorie": "marketing",
+  "secteur": "saas",
+  "domaine": "mailmeteor.com",
+  "description": "Publipostage dans Gmail et Google Sheets : envoi d'e-mails personnalisés depuis son propre compte Gmail, planification et suivi des ouvertures. Formule gratuite (500 e-mails par mois, 50 par jour) ; Starter à 5,99 $ par utilisateur et par mois (5 000 par mois, 250 par jour), Premium à 17,99 $ (30 000 par mois), Professional à 35,99 $. Prix affichés en dollars par défaut.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Envoyer un e-mail personnalisé à chaque ligne d'une feuille de calcul est un script de quelques dizaines de lignes avec Google Apps Script, dans votre propre compte. Le suivi des ouvertures et la planification s'ajoutent sans difficulté. Respectez les plafonds d'envoi quotidiens de Gmail et ne contactez que des personnes qui ont accepté ou qui ont un intérêt légitime : le risque n'est pas technique, il est réglementaire. Pour de gros volumes, un outil d'envoi dédié est plus adapté.",
+  "prix": "gratuit (plans payants à partir de 5,34 €/mois)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "L'interface de rédaction dans Gmail",
+   "Le suivi des ouvertures et des clics sans configuration",
+   "La planification des envois et des relances",
+   "La gestion des désinscriptions"
+  ],
+  "alternatives": [
+   {
+    "nom": "Listmonk",
+    "url": "https://github.com/knadh/listmonk",
+    "type": "open-source",
+    "description": "Gestionnaire open source mature de newsletters et de listes de diffusion."
+   }
+  ],
+  "prompt": "Construis un script de publipostage depuis une feuille Google Sheets, pour remplacer un outil de publipostage Gmail.\n\nContexte : j'écris à environ 150 contacts professionnels par mois depuis mon compte Gmail.\n\nÀ faire :\n- Un Google Apps Script lié à la feuille : colonnes e-mail, prénom, entreprise, statut.\n- Un modèle d'e-mail avec variables {{prénom}} et {{entreprise}}, stocké dans la feuille.\n- Un menu « Envoyer » qui n'écrit qu'aux lignes au statut « à envoyer », avec un maximum de 50 e-mails par jour et un délai aléatoire entre deux envois.\n- Le passage du statut à « envoyé » avec la date, et la prise en compte d'une colonne « désinscrit » qui bloque tout envoi.\n- Un lien de désinscription dans chaque e-mail.\n\nHors périmètre : suivi des ouvertures, relances automatiques.\n\nREADME : installation du script, plafonds d'envoi de Gmail, et rappel de n'écrire qu'à des personnes avec une base légale (consentement ou intérêt légitime).",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ }
+]

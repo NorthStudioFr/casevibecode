@@ -3563,5 +3563,356 @@
    "Maintained CMS connections and internal linking handled for you"
   ],
   "prompt": "Build a small tool that writes draft blog articles from a keyword list, to replace an AI SEO subscription.\n\nNever publish directly: every article goes out as a draft for me to review.\n\nTo do:\n- A keywords.csv file (keyword, search intent, page to link).\n- For each keyword, a Markdown draft generated through a language model API, with outline, headings, an FAQ and internal links to the pages I list.\n- An instruction that forbids inventing figures, quotes or sources: any data point must come from a link I provide, otherwise the sentence is left out.\n- Sending the draft (status draft) to my WordPress through the REST API with an application password, kept in .env, never in the repository.\n- A cap of 10 articles per week and a log of the drafts created.\n\nOut of scope: backlinks, tracking visibility in AI engines, automatic publishing.\n\nREADME: how to run it, mandatory review before publishing, and a reminder that content produced in bulk without review can be penalised by Google."
+ },
+ "clock-pms": {
+  "description": "Online hotel management software from Clock Software: reservations, invoicing, front desk, housekeeping, rates, booking engine, synchronisation with Booking.com and other online agencies, restaurant point of sale, guest messaging and online check-in. Site in French, English, German and Bulgarian; the vendor reports users in more than 50 countries, including France. Pricing is on a separate page, not recorded.",
+  "justification": "Room planning and invoicing can be coded. The heart of the product is elsewhere: continuous synchronisation with Booking.com and the other online agencies, which requires approved and maintained connections, and payments, which engage the hotelier's responsibility. For a small hotel that only wants a calendar and guest records, a free tool or a spreadsheet is enough; as soon as you sell online, the risk of double bookings is real and makes replacing it unwise.",
+  "perdez": [
+   "Synchronisation with Booking.com and the other online agencies.",
+   "The booking engine and online payment.",
+   "The restaurant point of sale linked to the room bill.",
+   "Online check-in and messaging with guests."
+  ],
+  "alternatives": [
+   "Open-source hotel booking system (OSL-3.0) built on PrestaShop: booking engine and room management; connections to online travel agencies are up to you."
+  ]
+ },
+ "oracle-opera-cloud": {
+  "description": "Cloud hotel management system from Oracle Hospitality, used by hotels and chains: reservations, stays, rooms, invoicing and operations, with many connections to other vendors' software. Pricing is not public.",
+  "justification": "OPERA is the standard in many chains: its value lies in the interfaces (distribution, payment, loyalty, door locks, telephony) that groups have already plugged in, and in teams already trained on it. A custom build reproduces neither that set of interfaces nor that familiarity. For an independent hotel the tool is oversized: the right question is then to choose a lighter PMS, not to build your own.",
+  "perdez": [
+   "Standard interfaces with distribution, payment and loyalty.",
+   "Features for several properties and chains.",
+   "Compatibility with teams and providers already trained on OPERA."
+  ],
+  "alternatives": []
+ },
+ "duetto": {
+  "description": "Pricing and revenue management suite for hotels, casinos and resorts: real-time pricing (GameChanger), forecasting and reporting (ScoreBoard), groups (BlockBuster), market signals and AI recommendations (Advance), profitability analysis (HotStats). The site is available in French; the acquisition of FLYR Hospitality is announced on the site. Pricing is not public.",
+  "justification": "A dashboard that compares your prices and occupancy can be coded. What the vendor sells is forecasting models fed by market and demand data you do not have, and the connection to your PMS. Without that data, a custom tool boils down to fixed rules (raise the weekend rate) that you can already apply in your PMS or a spreadsheet.",
+  "perdez": [
+   "Market and demand data.",
+   "Forecasting models and price recommendations.",
+   "The connection with the PMS and sales channels."
+  ],
+  "alternatives": []
+ },
+ "oaky": {
+  "description": "Upselling software for hotels: offers before arrival (Pre-Stay Upsell), at the front desk (Front Desk Upsell) and during the stay (In-Stay Upsell, by QR code or messaging), with guest segmentation, reports, multi-property management and a library of more than 100 offers. Two-way connections with the PMS; pricing is not public.",
+  "justification": "The core is simple: an email sent a few days before arrival, with three offers (room upgrade, breakfast, late checkout) and a payment link. A script fed by an export of your reservations is enough for a small hotel. What takes work: reading reservations automatically from your PMS, posting accepted offers to the guest's bill and taking payment online. Without that, someone re-keys each sale by hand.",
+  "perdez": [
+   "The two-way connection with the PMS.",
+   "Guest segmentation and reports.",
+   "The library of more than 100 ready-to-use offers.",
+   "Management of several properties."
+  ],
+  "alternatives": [],
+  "prompt": "Build a small tool that emails my guests 5 days before arrival to offer extras, replacing an upselling software.\n\nContext: a 20-room hotel; I can export my reservations from the PMS as CSV (name, email, dates, room type, language).\n\nTo do:\n- Read the CSV and select arrivals in 5 days that have an email address and a recorded marketing consent.\n- Send an HTML email in the guest's language with 3 offers I define in an offres.json file (name, price, short text, Stripe payment link).\n- Log every send in a SQLite database so the same guest is never emailed twice.\n- List the clicked offers in a report, to post by hand on the bill.\n- An unsubscribe link in every email.\n\nOut of scope: automatic PMS reading, posting sales to the bill, offers during the stay.\n\nStack: Python, SQLite, sending through my provider's SMTP (credentials in .env, never in the repository). README: how to run, CSV format, and a reminder never to email guests without consent."
+ },
+ "trustyou": {
+  "description": "Guest experience management platform for hotels and groups: review collection and analysis, surveys, AI-assisted replies, competitor benchmarking, unified guest profiles and an AI assistant for conversations (website, WhatsApp, email, SMS). Hosting in the European Union and access controls for large groups, according to the vendor. Pricing is not public.",
+  "justification": "Sending a satisfaction survey after the stay and collecting the answers is simple. Harder: continuously pulling the reviews published on travel sites, which depend on the access each one grants, and comparing them with your competitors'. For a single property, an in-house survey and manual review tracking are enough; the tool mostly makes sense for a group comparing its hotels.",
+  "perdez": [
+   "Collection of reviews published on travel platforms.",
+   "Benchmarking against competing properties.",
+   "Unified guest profiles.",
+   "The assistant that answers guests across several channels."
+  ],
+  "alternatives": [],
+  "prompt": "Build a small tool to collect my guests' feedback after their stay and track their comments, replacing a review management platform.\n\nContext: an independent hotel; I send a link by email the day after departure.\n\nTo do:\n- A short web form: overall score out of 10, 4 criteria (welcome, cleanliness, room, breakfast), a free comment, detected language.\n- An automatic send of the link the day after departure from a CSV export of my departures, with an unsubscribe option.\n- A dashboard: 30-day rolling average, trend per criterion, comments sorted from lowest to highest score.\n- An email alert for any score below 6.\n- A CSV export of the answers.\n\nOut of scope: pulling reviews published on other sites, competitor benchmarking, automatic AI replies.\n\nStack: Python (Flask), SQLite. No made-up score or review: only real answers are shown. README: how to run, and a reminder not to filter negative reviews before publishing them."
+ },
+ "fooddocs": {
+  "description": "Food safety software: a guided HACCP plan (from the Standard plan), preconfigured monitoring tasks, more than 200 free templates (posters, checklists, logs), temperature readings and connectable sensors. The pricing page is in English with no mention of French; plans from $99 to $299 per month per site billed monthly ($79 to $250 billed annually).",
+  "justification": "Dated checklists (temperatures, cleaning, goods receipt) can be coded quickly, and that is most of the daily work. The tool also provides a guided HACCP plan, which you must be able to justify in front of an inspector: the document is yours, the software does not make you compliant. Temperature sensors are hardware to buy and connect. Keep an exportable, time-stamped history: it is the proof you will be asked for.",
+  "perdez": [
+   "The step-by-step guided HACCP plan.",
+   "More than 200 templates for logs, posters and checklists.",
+   "Connectable temperature sensors.",
+   "Reports ready for an inspection."
+  ],
+  "alternatives": [],
+  "prompt": "Build a small digital hygiene log for my kitchen, replacing HACCP tracking software.\n\nContext: a 40-seat restaurant; a cook enters the readings on a tablet.\n\nTo do:\n- Daily checklists that I define in a file (opening, closing, goods receipt, cleaning).\n- Temperature readings (fridges, freezers, hot dishes) with value, time, operator name and an alert threshold per appliance.\n- A visible alert when a temperature is out of range, with a mandatory «corrective action» field.\n- Optional photos for goods receipt (label, use-by date).\n- A time-stamped PDF export per day and per month, locked once the day is closed.\n\nOut of scope: writing the HACCP plan itself (to be done with a professional), automatic sensors.\n\nStack: offline-capable web app (PWA) with local storage and sync, SQLite on the server. README: backup, how long to keep the logs, and a reminder that the software does not replace the manager's responsibility."
+ },
+ "mitti": {
+  "description": "Inspection and checklist platform for frontline teams (hospitality, warehouses, retail), which was called SafetyCulture before its August 2026 rename. Inspection templates, analytics, issue reporting and AI credits. Free plan for up to 10 users; Premium at $24 per user per month billed annually ($29 monthly). The pricing page is in English.",
+  "justification": "A checklist filled in on a phone, with photos and time stamps, can be built in a few days. The reference tool stands out through its template library, multi-site analytics and integrations, useful to a chain but rarely to a single restaurant. Note that the product is changing name and offer (insurance, hardware); check the free plan before comparing.",
+  "perdez": [
+   "The library of inspection templates.",
+   "Analytics and comparisons across several sites.",
+   "Access rights and single sign-on (SSO).",
+   "The built-in AI features."
+  ],
+  "alternatives": [],
+  "prompt": "Build a checklist app for phones for my property, replacing an inspection tool.\n\nContext: a hotel-restaurant; the head waiter and the housekeeper fill in inspections at opening and closing.\n\nTo do:\n- Checklist templates (checkboxes, numeric answers, text field, photo) that I create in a modeles.json file.\n- Filling in on a phone, including offline, with sync on reconnection.\n- An issue report attached to a line of the checklist, with an owner and a due date.\n- A dashboard: completed checklists, open issues, compliance rate per week.\n- A time-stamped PDF export of an inspection.\n\nOut of scope: ready-made template library, multi-site analytics, integrations.\n\nStack: PWA, SQLite. README: how to run, backup and how long to keep the inspections."
+ },
+ "wifirst": {
+  "description": "French managed Wi-Fi operator for hotels, residences and business sites: audit, deployment and 24/7 monitoring, separate networks for guests and staff, and related services (business fibre, IP telephony, hotel TV, digital signage). No public price list: quote depending on the size of the site and the scope of service.",
+  "justification": "It is not software: it is a network service (access points, links, monitoring and repairs) that no application replaces. The only software part, a login landing page, is a fraction of the value. For a small property, the real alternative is professional equipment bought and configured by an installer, with a maintenance contract.",
+  "perdez": [
+   "24/7 monitoring and call-outs when something breaks.",
+   "Separate networks for guests and staff.",
+   "Business fibre and IP telephony.",
+   "Audit and deployment of the access points."
+  ],
+  "alternatives": []
+ },
+ "extracadabra": {
+  "description": "French platform matching venues (restaurants, hotels, events, retail, logistics) with temporary staff. Posting a shift is free; the worker can be an employee (extra-shift fixed-term contract) or self-employed, and the platform calculates pay and handles social and tax filings, according to the vendor. Venues in Île-de-France and Lyon; «more than 10,000 companies» as clients, a vendor figure. No public price list.",
+  "justification": "The shift request form is trivial. The value is elsewhere: a pool of candidates you do not have, and the handling of the contract and pay, which engage your responsibility as an employer. No custom tool creates a pool of candidates or carries the social-security risk. The question to settle is the status (employee or self-employed) and the intermediary, not a build.",
+  "perdez": [
+   "The pool of available candidates.",
+   "The contract, pay and social filings.",
+   "Fast replacement when someone is absent."
+  ],
+  "alternatives": []
+ },
+ "lyra": {
+  "description": "French payment provider: online payment (website, app, call centre), in-store payment (terminals, kiosks, Tap to Pay on iPhone with Lyra Nomad), omnichannel management and marketplaces. Data hosted in France; services certified every year by the compliance bodies, according to the vendor. Pricing is not shown on the home page.",
+  "justification": "A custom tool can show a payment button by calling a provider's API, but it cannot be that provider: card acceptance, payment data security and money flows are regulated and audited. What can be coded is your payment page and your bank reconciliation; taking the money stays with an approved player. Compare on per-transaction fees, contract length and support.",
+  "perdez": [
+   "Card acceptance and compliance with payment security rules.",
+   "Payment terminals and Tap to Pay.",
+   "Transaction monitoring and reconciliation."
+  ],
+  "alternatives": []
+ },
+ "mypos": {
+  "description": "Payment terminals and collection services for businesses: myPOS Go 2, Flex, Ultra (Android with printer), Glass (Tap to Pay on a smartphone) and Sigma (kiosks). Payment and e-money services are provided by myPOS Ltd, an e-money institution licensed in Ireland and regulated by the Central Bank of Ireland. Pay-as-you-go or monthly plan; pricing is on a dedicated page, not recorded.",
+  "justification": "A terminal is approved hardware tied to a payment institution: neither can be built. What can be coded around it is your sales tracking. Note that a terminal takes the card without keeping your sales register on its own: if you record your sales in point-of-sale software, that software is what must meet the French rules on retention and tamper-proofing of data. Compare on per-transaction fees and hardware cost.",
+  "perdez": [
+   "Approved payment hardware.",
+   "Card acceptance by a regulated institution.",
+   "Tap to Pay on a smartphone."
+  ],
+  "alternatives": []
+ },
+ "choco": {
+  "description": "Order-taking platform for food distributors, which also serves the restaurants that order from them: an AI agent that enters orders received by voice message, email, SMS, WhatsApp or handwritten note, a white-label online shop, sales and marketing tools, integration with more than 200 management systems. Site aimed at France (also Germany, Spain, the United States, the United Kingdom); 500 distributors in France and more than a million orders a month, vendor figures. Pricing is on a dedicated page, not recorded.",
+  "justification": "An order form to send to your suppliers can be coded in an evening. Choco's difficulty is being plugged into your suppliers' systems: without those connections, you have to convince each supplier to use your tool. If you have few suppliers and they accept email or WhatsApp, an order template is enough; otherwise the value of the network wins.",
+  "perdez": [
+   "The connection to suppliers' management systems.",
+   "Automatic entry of orders sent by voice, text or photo.",
+   "Supplier catalogues kept up to date."
+  ],
+  "alternatives": []
+ },
+ "attio": {
+  "description": "Customisable CRM for sales teams and young companies: contacts, companies and deals, email and calendar sync, automatic record enrichment, reports. Free plan (up to 3 users, 200 emails a month), Plus at €31 per user per month billed annually (€39 monthly), Pro at €74 billed annually. Euro prices read from the pricing page.",
+  "justification": "A CRM for a small team fits in a few tables: contacts, companies, deals, notes and reminders. The costly part is the automation: reading emails and calendars to fill in records, enriching contacts with company data, and sending sequences. If your pipeline has a few dozen deals, a custom tool is enough; the subscription makes sense when the whole team lives in synchronised emails and calendars.",
+  "perdez": [
+   "Automatic synchronisation of emails and calendars.",
+   "Automatic enrichment of contact and company records.",
+   "Email sequences and call analysis (Pro plan).",
+   "Advanced reports and access controls."
+  ],
+  "alternatives": [
+   "Modern CRM with custom objects, views and mailbox sync; younger than Pipedrive on mobile, reporting and integrations.",
+   "Classic CRM whose data model you can adapt; less sales-focused and less polished than Pipedrive."
+  ],
+  "prompt": "Build a small CRM for my business, replacing a CRM subscription.\n\nContext: I am a consultant, about 150 contacts, 20 open deals, 1 user.\n\nTo do:\n- Contact and Company records (name, email, phone, notes, source).\n- A deal pipeline in columns (Prospect, Meeting, Quote sent, Won, Lost) with amount and follow-up date.\n- A «Follow up today» page sorted by date.\n- CSV import and export.\n- The history of notes and meetings on each record.\n\nOut of scope: email and calendar sync, automatic enrichment, sending sequences.\n\nStack: Next.js and SQLite, email login for a single user. README: how to run, backing up the SQLite file, and a reminder to keep only useful data and honour deletion requests (GDPR)."
+ },
+ "folk": {
+  "description": "Light CRM for freelancers and small teams: pipeline, email campaigns, contact enrichment, LinkedIn extension, email, calendar and WhatsApp sync. No free plan, two-week trial. Standard at €22 per member per month billed annually (€27 monthly), Premium at €43 billed annually.",
+  "justification": "A contact book with lists, a pipeline and reminders is quick to build, and it is what a small business actually uses. Heavier: syncing with email, calendar and WhatsApp, the extension that captures a LinkedIn profile, and automatic enrichment. If you add few contacts a week, typing them in by hand is bearable; otherwise those automations are what you are paying for.",
+  "perdez": [
+   "Email, calendar and WhatsApp sync.",
+   "The extension that captures LinkedIn profiles.",
+   "Automatic contact enrichment.",
+   "Email campaigns and AI assistants."
+  ],
+  "alternatives": [
+   "Modern CRM with custom objects, views and mailbox sync; younger than Pipedrive on mobile, reporting and integrations.",
+   "Classic CRM whose data model you can adapt; less sales-focused and less polished than Pipedrive."
+  ],
+  "prompt": "Build a contact book with a pipeline and reminders, replacing a light CRM subscription.\n\nContext: I am a freelancer managing my prospects and partners, about 300 contacts.\n\nTo do:\n- Contact records with email, phone, company, tags and notes.\n- Dynamic lists (by tag, by status, by last-contact date).\n- A pipeline in columns with amount and follow-up date.\n- A daily email reminder of the day's follow-ups.\n- CSV import and export, deduplication on import.\n\nOut of scope: email and WhatsApp sync, browser extension, enrichment.\n\nStack: web app, SQLite, reminders through SMTP (credentials in .env). README: how to run, backup, deleting a contact on request (GDPR)."
+ },
+ "help-scout": {
+  "description": "Shared inbox and help centre for support teams: several inboxes, live chat and SMS, WhatsApp, Instagram and Messenger, knowledge bases, workflows and an AI assistant. Free plan (5 users, 1 inbox, 1 help site); Standard at $25 per user per month (annual billing, 16% discount advertised), Plus at $45, Pro at $75. 15-day trial.",
+  "justification": "The core is a shared email inbox: each message becomes an assignable ticket, with internal notes and canned replies. It is a realistic project for a small team receiving fewer than a hundred messages a day. What costs: reliable email reception (deliverability, attachments, spam filtering), social messaging channels and response-time statistics. The free alternatives below already cover this core without a per-agent subscription.",
+  "perdez": [
+   "Messaging channels (WhatsApp, Instagram, Messenger) and live chat.",
+   "The built-in help centre and its statistics.",
+   "Workflows and the AI assistant.",
+   "Integrations with sales and development tools."
+  ],
+  "alternatives": [
+   "Team mailbox with assignment, notes and collision alerts; several add-on modules are paid.",
+   "Shared support inbox with chat, email and help centre; free software to host yourself.",
+   "Serious ticketing with email, chat, SLAs and knowledge base; more technical installation."
+  ],
+  "prompt": "Build a shared support inbox for my team, replacing a customer support subscription.\n\nContext: a small business, 3 people, a support@ address receiving about 30 messages a day.\n\nTo do:\n- Fetch emails over IMAP and send replies over SMTP from the same address.\n- One ticket per conversation, with a status (open, pending, resolved), an assignee and internal notes the customer cannot see.\n- Saved replies with variables (first name, order number).\n- A collision alert when two people open the same ticket.\n- A simple table: open tickets, average first-response time, per week.\n\nOut of scope: live chat, social networks, public knowledge base.\n\nStack: web app, PostgreSQL, a scheduled job for IMAP polling. README: how to run, backup, how long to keep messages (GDPR)."
+ },
+ "front": {
+  "description": "Collaborative inbox that brings together email, SMS and other channels for teams: shared inbox, tickets, automation rules, analytics. Starter at $25 per seat per month billed annually (up to 10 seats), Professional at $65 (up to 50), Enterprise at $105; Copilot assistant optional at $20 per seat. 14-day trial.",
+  "justification": "As with any shared inbox, the core (assigning an email, commenting on it privately, replying as a group) can be built for a small team. What gives the tool its value is the extra channels, the advanced automation rules and the analytics. If your team only handles email, a free support inbox is enough; the alternatives below avoid a per-seat price.",
+  "perdez": [
+   "The extra channels (SMS, social messaging).",
+   "Advanced automation rules and routing.",
+   "Activity analytics and quality reports.",
+   "Single sign-on (SSO) and custom roles."
+  ],
+  "alternatives": [
+   "Team mailbox with assignment, notes and collision alerts; several add-on modules are paid.",
+   "Shared support inbox with chat, email and help centre; free software to host yourself."
+  ],
+  "prompt": "Build a shared email inbox for a small team, replacing a collaborative messaging subscription.\n\nContext: 4 people sharing contact@ and orders@.\n\nTo do:\n- IMAP polling of several addresses and SMTP sending from each.\n- Assigning a message to a person, internal comments, resolved status.\n- Simple rules: assign automatically based on the receiving address or a word in the subject.\n- Canned replies and a signature per person.\n- A «my conversations» view and an «unassigned» view.\n\nOut of scope: SMS and social networks, advanced analytics, SSO.\n\nStack: web app, PostgreSQL. README: how to run, backup, how long to keep messages (GDPR)."
+ },
+ "gorgias": {
+  "description": "Help desk connected to online shops: email, chat, SMS, voice, social networks, contact form and TikTok Shop, AI agent, shopping assistant, automation rules and more than 250 integrations. Starter at $10 a month (50 tickets), Basic at $50 a month billed annually (300 tickets), Pro at $300 (2,000 tickets), Advanced at $750 (5,000 tickets); overage of $0.36 to $0.40 per ticket and the AI agent billed per interaction.",
+  "justification": "Tickets, canned replies and a customer history can be built for a small shop. The tool's real value is showing the customer's order next to each message and being able to refund or edit it from the ticket, which depends on the connections to your e-commerce platform. Under a few dozen tickets a day, a free support inbox and a link to the order are enough. Beyond that, per-ticket pricing follows your volume and becomes a real cost line.",
+  "perdez": [
+   "Viewing and editing orders from the ticket.",
+   "Multiple contact channels (chat, SMS, voice, social networks).",
+   "The AI agent and shopping assistant.",
+   "The 250 integrations and audit logs."
+  ],
+  "alternatives": [
+   "Shared support inbox with chat, email and help centre; free software to host yourself.",
+   "Serious ticketing with email, chat, SLAs and knowledge base; more technical installation."
+  ],
+  "prompt": "Build a small help desk for my online shop, replacing an e-commerce support subscription.\n\nContext: a shop with about 40 orders a day, I receive 20 customer messages a day.\n\nTo do:\n- IMAP polling of the support address and SMTP sending of replies.\n- One ticket per conversation with a status, an assignee and internal notes.\n- Next to the ticket, the customer's order found by email through my e-commerce platform's API (read-only: number, items, shipping status, link to the order).\n- Canned replies with variables (first name, order number, tracking link).\n- A table: open tickets, first-response time.\n\nOut of scope: refunds from the ticket, live chat, social networks, AI agent.\n\nStack: web app, PostgreSQL. API keys in .env, never in the repository. README: how to run, backup and how long to keep messages (GDPR)."
+ },
+ "sketch": {
+  "description": "Interface design editor: native Mac app, web version and an iPhone and iPad app to view mockups. Standard at $12 per editor per month billed annually (real-time collaboration, unlimited documents, free unlimited viewers, developer handoff), Professional at $24, Enterprise at $44, Mac-only licence at $120 per seat (one-off payment, one year of updates). 30-day trial.",
+  "justification": "A vector graphics editor is a real product: shape manipulation, text, reusable components, export and real-time collaboration. Reproducing it takes far more than a forms application, and the result would be worse than existing tools. For an occasional need (mocking up a few screens), the free alternative below is the right answer, not a build.",
+  "perdez": [
+   "The vector editor and reusable components.",
+   "Real-time collaboration.",
+   "Developer handoff and version history.",
+   "The native Mac app."
+  ],
+  "alternatives": [
+   "Open-source design tool (MPL-2.0) with components, prototypes and collaboration, usable online or self-hosted, with fewer plugins than Figma."
+  ]
+ },
+ "procreate": {
+  "description": "Digital drawing and painting app for iPad: more than 300 customisable brushes (Brush Studio), layers with blend modes, warp, selections and effects, painting on 3D models, time-lapse of creations. One-off purchase on the App Store, no subscription; the price depends on the country and is not shown on the vendor's site.",
+  "justification": "The painting engine (pen pressure, brushes, on-screen fluidity) is the product, and that is precisely what a custom build does not reproduce. There is nothing here to replace with a business application. Procreate is a one-off purchase with no subscription: the question is rather whether free software suits your use.",
+  "perdez": [
+   "The brush engine and responsiveness to the pen.",
+   "Layers, warp and effects.",
+   "The native iPad app.",
+   "Time-lapse recording."
+  ],
+  "alternatives": [
+   "Free and open-source digital painting software (GPL-3.0) for desktop, with a full brush engine; less suited to drawing by finger on a tablet."
+  ]
+ },
+ "prestashop": {
+  "description": "Open-source e-commerce platform of French origin: free Classic edition to install yourself, or a hosted offer managed by the vendor. Marketplace of modules and themes, built-in payments (PrestaShop Checkout, Stripe, Alma, Klarna, Viva.com, Click to Pay). The vendor claims more than 250,000 merchants, a vendor figure; prices of the hosted offer and of modules are not recorded here.",
+  "justification": "For a small catalogue, a custom shop (product pages, cart, payment through Stripe) is a realistic project, and PrestaShop itself is open source: the code can be read, modified and self-hosted. The real cost is not the licence, which is free, but hosting, security updates, paid modules and configuration time. Building your own means taking on VAT by country, shipping costs, returns and the legal notices of distance selling yourself.",
+  "perdez": [
+   "The marketplace of modules and themes, with thousands of options.",
+   "Payments and VAT by country already configured.",
+   "Security updates tracked by the vendor.",
+   "Experts and partners to help you."
+  ],
+  "alternatives": [
+   "Shop extension for WordPress, allowing pages, blog, portfolio and online selling without platform fees."
+  ],
+  "prompt": "Build a small custom online shop, replacing an e-commerce platform.\n\nContext: about 30 products, selling in France only, card payment.\n\nTo do:\n- A catalogue with photos, variants (size, colour), stock and VAT-inclusive prices.\n- A cart and a 3-step checkout: address, delivery, payment.\n- Payment through Stripe Checkout (keys in .env), with confirmation by webhook and an order email.\n- A back-office: orders, shipping status, tracking number, refunds through Stripe.\n- The mandatory pages: legal notice, terms of sale, privacy policy, right of withdrawal.\n\nOut of scope: multi-country and VAT by country, marketplace, loyalty programme.\n\nStack: Next.js, PostgreSQL. README: how to run, backup, updating dependencies, and a reminder that card payment stays with Stripe."
+ },
+ "wizishop": {
+  "description": "French online shop builder: page templates, SEO, blog, free pages, more than 250 apps and integrations, card payment, Stripe and PayPal, unlimited AI on every plan. Smart at €24.90 excl. VAT per month billed annually (€34.90 monthly, 2% commission), Business at €99.90 excl. VAT (€149.90 monthly, 1% commission), Enterprise from €1,300. Custom domain name not included; 7-day trial.",
+  "justification": "A small custom shop is feasible, but you take on card payment, VAT, shipping, returns and the legal notices of distance selling yourself. WiziShop's price is not high for a small catalogue: the commission applies to the VAT-inclusive amount, shipping included, which weighs on larger volumes. Custom makes sense mostly if your sale has a particularity (booking, rental, configured product) that standard shops handle badly.",
+  "perdez": [
+   "Built-in page templates, SEO and blog.",
+   "Card payment, Stripe and PayPal already connected.",
+   "The 250 apps and integrations.",
+   "Support from the vendor in French."
+  ],
+  "alternatives": [
+   "Open-source e-commerce platform of French origin, to install yourself; paid modules and hosting are up to you.",
+   "Shop extension for WordPress, allowing pages, blog, portfolio and online selling without platform fees."
+  ],
+  "prompt": "Build a small custom online shop, replacing a subscription shop builder.\n\nContext: a craftsperson, about 25 products, selling in France, card payment.\n\nTo do:\n- A catalogue with photos, variants and stock.\n- A cart and a 3-step checkout: address, delivery, payment.\n- Payment through Stripe Checkout (keys in .env), confirmation by webhook and an order email.\n- A back-office: orders, shipments, tracking number, refunds.\n- The mandatory pages: legal notice, terms of sale, privacy policy, right of withdrawal.\n- Content pages and a Markdown blog for SEO.\n\nOut of scope: multi-country VAT, marketplace, third-party apps.\n\nStack: Next.js, PostgreSQL. README: how to run, backup and updating dependencies."
+ },
+ "legalstart": {
+  "description": "French online legal formalities platform: company formation (from €0 according to the vendor, online quote for details), amendments (from €149 excl. VAT), closure (from €199 excl. VAT), accounting (from €49 excl. VAT per month), document templates from €0 excl. VAT and free practical guides.",
+  "justification": "A form that generates articles of association or a contract template is easy to build. But what you pay for is the handling of the procedure (filing, follow-up, correction if rejected) and a lawyer's opinion. A mistake in articles of association only shows years later. For a simple formality, the public one-stop shop makes the same filing without a service fee; for a complex case, human support is the product.",
+  "perdez": [
+   "Handling and follow-up of the formality file.",
+   "A lawyer's opinion on articles and acts.",
+   "Document templates kept up to date.",
+   "The advice and accounting subscription."
+  ],
+  "alternatives": [
+   "Public service where you file company formation, change and closure formalities yourself; registry or legal notice fees remain payable."
+  ]
+ },
+ "youtrust": {
+  "description": "French electronic signature and digital trust platform, the new name of Yousign since summer 2026: Sign (electronic signature), Verify (identity and bank account checks) and Seal (electronic seal). Company founded in Caen in 2013; the vendor says current subscriptions and support do not change. The pricing page was not reachable under the new name when read.",
+  "justification": "Capturing a signature stroke on a PDF with a time stamp and IP address can be programmed, and is enough for a quote or an internal agreement. The tool's value is the legal weight of the signature: an advanced or qualified signature under the European eIDAS regulation relies on an identity check and a certificate issued by a trust service provider, which you cannot become. Choose the signature level according to the document (employment contract, lease, important deed) before choosing the tool.",
+  "perdez": [
+   "Advanced or qualified signatures recognised under the eIDAS regulation.",
+   "Identity verification of signers.",
+   "The electronic seal and evidential archiving.",
+   "Connections with business tools."
+  ],
+  "alternatives": [
+   "Free document signing with templates, recipients, verification and audit history; self-hosting needs Postgres, email and HTTPS."
+  ]
+ },
+ "scaleway": {
+  "description": "French cloud provider: instances, storage, databases, containers and dedicated servers (Dedibox), with data centres in France and Europe. Dedibox virtual private servers start at €4.99 per month (read on the pricing page); other products are billed by usage on per-service price lists.",
+  "justification": "Hosting your application elsewhere is possible, but a host is not software you replace: it is data centres, networks and operations teams. The choice is about the country of hosting, price, support and ease of leaving, not about an in-house build. For a simple site, shared hosting or a small private server is enough; keep backups outside the host.",
+  "perdez": [
+   "The data centres and the network.",
+   "Managed storage and databases.",
+   "Hosting in France and Europe.",
+   "Support and operation of the infrastructure."
+  ],
+  "alternatives": []
+ },
+ "infomaniak": {
+  "description": "Swiss host: web hosting, domain names, professional email and cloud services. Prices vary by product and could not be recorded from the product pages when read.",
+  "justification": "As with any host, there is no software to reproduce: you buy servers, a network, email that reaches the inbox and teams that intervene. The choice is made on the country where data is hosted, price, support quality and how easy it is to leave with your data. Always keep a backup of your sites and emails outside the host.",
+  "perdez": [
+   "Servers and network.",
+   "Professional email and its deliverability.",
+   "Domain names and their management.",
+   "Support and operations."
+  ],
+  "alternatives": []
+ },
+ "evoliz": {
+  "description": "French online invoicing and management software: quotes, invoices, deposits, purchases and expense reports, bank account sync, automatic reminders, dashboards. The vendor says an approved platform is included for the e-invoicing reform. Essentielle at €29 excl. VAT per month (€290 a year) and Avancée at €49 excl. VAT per month (€490 a year), extra user at €9 excl. VAT per month, 15-day trial.",
+  "justification": "A quote that becomes a numbered invoice, with VAT and a PDF, is an accessible project. But in France an invoice is a regulated document: continuous numbering, mandatory mentions, retention, and soon exchange through an approved platform under e-invoicing. A numbering mistake or a missing mention costs you in an inspection. Custom suits quotes and reminders; for the legal issuing of invoices, software that follows the regulation is safer.",
+  "perdez": [
+   "Compliance with invoicing rules and the e-invoicing reform.",
+   "Bank sync and matching with invoices.",
+   "Automatic reading of purchase invoices (OCR).",
+   "Automatic reminders for unpaid invoices."
+  ],
+  "alternatives": [
+   "Open-source ERP/CRM of French origin (GPL): quotes, invoicing, accounting, stock and purchasing.",
+   "Open-source invoicing and quotes (MIT) for small businesses; compliance with French invoicing rules remains to be checked."
+  ],
+  "prompt": "Build a small tool for quotes and invoice reminders for my business, replacing part of an invoicing software.\n\nContext: freelancer, about 20 quotes a month.\n\nTo do:\n- Clients and services stored (label, price excl. VAT, VAT rate).\n- A numbered quote with lines, discount, validity and a PDF in my branding.\n- A status (draft, sent, accepted, declined) and sending by email.\n- Tracking of due dates and reminders suggested at D+7 and D+15 that I approve before sending.\n- A CSV export for my accountant.\n\nOut of scope: the legal issuing of invoices and e-invoicing, bank sync, OCR. Invoices are still issued in software that complies with the regulation.\n\nStack: web app, SQLite. README: how to run, backup, and a reminder not to issue legal invoices from this tool."
+ },
+ "libeo": {
+  "description": "French software for paying and managing supplier invoices: dematerialisation, approval, payment, cards, budget tracking, accounting sync and chasing of customer invoices. Reads Factur-X invoices and works with SÉRÈS, which the vendor describes as a platform approved by the State. Free quote by appointment, no public price.",
+  "justification": "The approval circuit for purchase invoices (receive, check, get approved) can be coded. The hard point is payment: initiating transfers on behalf of a company is the business of a licensed payment service provider, and e-invoicing goes through an approved platform. No custom application has that status. You can automate approval, not payment or the regulated exchange of invoices.",
+  "perdez": [
+   "Paying suppliers through a licensed provider.",
+   "Exchanging invoices through an approved platform.",
+   "Synchronisation with accounting.",
+   "Payment cards and budget tracking."
+  ],
+  "alternatives": []
+ },
+ "mailmeteor": {
+  "description": "Mail merge in Gmail and Google Sheets: personalised emails sent from your own Gmail account, scheduling and open tracking. Free plan (500 emails a month, 50 a day); Starter at $5.99 per user per month (5,000 a month, 250 a day), Premium at $17.99 (30,000 a month), Professional at $35.99. Prices shown in dollars by default.",
+  "justification": "Sending a personalised email to each row of a spreadsheet is a script of a few dozen lines with Google Apps Script, inside your own account. Open tracking and scheduling are easy to add. Respect Gmail's daily sending limits and only contact people who have agreed or who have a legitimate interest: the risk is not technical, it is regulatory. For large volumes, a dedicated sending tool is more suitable.",
+  "perdez": [
+   "The writing interface inside Gmail.",
+   "Open and click tracking with no setup.",
+   "Scheduling of sends and follow-ups.",
+   "Management of unsubscribes."
+  ],
+  "alternatives": [
+   "Mature open-source newsletter and mailing-list manager."
+  ],
+  "prompt": "Build a mail-merge script from a Google Sheets sheet, replacing a Gmail mail-merge tool.\n\nContext: I write to about 150 business contacts a month from my Gmail account.\n\nTo do:\n- A Google Apps Script bound to the sheet: columns email, first name, company, status.\n- An email template with {{first_name}} and {{company}} variables, stored in the sheet.\n- A «Send» menu that only writes to rows with status «to send», with a maximum of 50 emails a day and a random delay between sends.\n- Switching the status to «sent» with the date, and honouring an «unsubscribed» column that blocks any send.\n- An unsubscribe link in every email.\n\nOut of scope: open tracking, automatic follow-ups.\n\nREADME: installing the script, Gmail's sending limits, and a reminder to write only to people with a legal basis (consent or legitimate interest)."
  }
 }
