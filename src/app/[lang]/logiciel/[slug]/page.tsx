@@ -75,9 +75,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Les faits utiles (prix, verdict, nombre d'alternatives) passent en dernier mais ne sont jamais
   // coupés : c'est la description de l'outil qu'on raccourcit pour tenir sous ~155 caractères.
   // Sans la note de conversion de devise (« converti de 25 $, cours du… »), trop longue pour une meta description.
-  const faits = t.fiche.metaFacts({ prix: formatPrixCourt(logiciel.prix, lang), verdict: t.verdict[verdict], nbAlternatives: logiciel.alternatives?.length ?? 0 });
+  const factsAvec = (avecPrix: boolean) =>
+    t.fiche.metaFacts({ prix: avecPrix ? formatPrixCourt(logiciel.prix, lang) : undefined, verdict: t.verdict[verdict], nbAlternatives: logiciel.alternatives?.length ?? 0 });
+  // Un prix long (« gratuit (plans payants à partir de 12,90 €/mois/utilisateur) ») ne doit pas chasser la description : au-delà de 110 caractères de faits, on l'omet de la meta (il reste sur la page).
+  const faits = factsAvec(true).length > 110 ? factsAvec(false) : factsAvec(true);
   const texte = logiciel.description || logiciel.justificationEditeur;
-  const description = texte ? `${tronquer(texte, Math.max(60, 155 - faits.length - 1))} ${faits}` : t.fiche.fallbackDescription(logiciel.nom);
+  const description = texte ? `${tronquer(texte, Math.max(40, 155 - faits.length - 1))} ${faits}` : t.fiche.fallbackDescription(logiciel.nom);
   return {
     title,
     description,

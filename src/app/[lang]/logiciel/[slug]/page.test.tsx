@@ -38,6 +38,7 @@ describe('Fiche logiciel generateMetadata', () => {
     expect((metadata.description as string).length).toBeLessThanOrEqual(160);
     expect(metadata.description).toContain('Verdict casevibecode');
     expect(metadata.description).not.toContain('converti de');
+    expect((metadata.description as string).length).toBeLessThanOrEqual(160);
   });
 
   it("builds a per-fiche title and description from the logiciel's name and description", async () => {
