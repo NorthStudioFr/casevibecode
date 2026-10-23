@@ -3,6 +3,11 @@ import type { Lang } from './config';
 
 const plur = (n: number, un: string, plusieurs: string) => (n > 1 ? plusieurs : un);
 
+// Titre de fiche : la plus complète des formulations qui tient, avec le suffixe « | casevibecode », en
+// 60 caractères (au-delà, Google tronque). Un nom long passe à une formulation plus courte.
+const SUFFIXE_TITRE = ' | casevibecode';
+const titreAjuste = (candidats: string[]) => candidats.find((c) => c.length + SUFFIXE_TITRE.length <= 60) ?? candidats[candidats.length - 1];
+
 export const fr = {
   site: {
     titleDefault: 'casevibecode : vos logiciels sont-ils remplaçables ?',
@@ -119,7 +124,7 @@ export const fr = {
     officialSite: 'Site officiel',
     notFound: 'Logiciel introuvable',
     titleSuffix: (nom: string) => `${nom} : remplaçable ou pas ?`,
-    title: (nom: string, prixConnu: boolean) => (prixConnu ? `${nom} : prix, alternatives et verdict` : `${nom} : alternatives et verdict`),
+    title: (nom: string, prixConnu: boolean) => titreAjuste([...(prixConnu ? [`${nom} : prix, alternatives et verdict`] : []), `${nom} : alternatives et verdict`, `${nom} : verdict`]),
     metaFacts: (p: { prix?: string; verdict: string; nbAlternatives: number }) =>
       [p.prix ? `Prix : ${p.prix}.` : '', `Verdict casevibecode : ${p.verdict}.`, p.nbAlternatives > 0 ? `${p.nbAlternatives} alternative${p.nbAlternatives > 1 ? 's' : ''}.` : ''].filter(Boolean).join(' '),
     fallbackDescription: (nom: string) =>
@@ -516,7 +521,7 @@ export const en: Dict = {
     officialSite: 'Official website',
     notFound: 'Tool not found',
     titleSuffix: (nom: string) => `${nom}: replaceable or not?`,
-    title: (nom: string, prixConnu: boolean) => (prixConnu ? `${nom}: pricing, alternatives & verdict` : `${nom}: alternatives & verdict`),
+    title: (nom: string, prixConnu: boolean) => titreAjuste([...(prixConnu ? [`${nom}: pricing, alternatives & verdict`] : []), `${nom}: alternatives & verdict`, `${nom}: verdict`]),
     metaFacts: (p: { prix?: string; verdict: string; nbAlternatives: number }) =>
       [p.prix ? `Price: ${p.prix}.` : '', `casevibecode verdict: ${p.verdict}.`, p.nbAlternatives > 0 ? `${p.nbAlternatives} alternative${p.nbAlternatives > 1 ? 's' : ''}.` : ''].filter(Boolean).join(' '),
     fallbackDescription: (nom: string) =>
