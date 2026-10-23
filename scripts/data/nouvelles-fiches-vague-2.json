@@ -1,0 +1,321 @@
+[
+ {
+  "slug": "backbar",
+  "nom": "Backbar",
+  "categorie": "stocks",
+  "secteur": "chr",
+  "domaine": "getbackbar.com",
+  "description": "Application d'inventaire pour bars et restaurants : comptage des bouteilles, recettes de cocktails et de plats, calcul des coûts et des prix de vente, commandes fournisseurs. Formule Basic gratuite (un seul établissement, 10 recettes, 6 mois d'historique) ; Essential à 79 $ par mois et par établissement en annuel (99 $ au mois), Professional à 129 $ en annuel (149 $ au mois) avec bons de commande, saisie des factures par photo et alertes de variation de coût. Essai d'un mois. Interface en anglais, langues non indiquées.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Compter les bouteilles par zone, rapprocher les ventes de la consommation et calculer un coût par cocktail sont des opérations arithmétiques sur une base de données simple : c'est le cas d'école du sur-mesure pour un bar indépendant. La difficulté commence quand on veut importer automatiquement les ventes de la caisse, lire les factures fournisseurs par photo et suivre les variations de prix : c'est ce que vend la formule Professional. Si votre caisse sait exporter ses ventes en CSV, un outil maison tient dans une feuille de calcul puis dans une petite application.",
+  "prix": "gratuit (plans payants à partir de 70,39 €/mois)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La saisie automatique des factures fournisseurs par photo (formule Professional)",
+   "L'envoi des bons de commande aux fournisseurs",
+   "Les alertes de variation de coût matière",
+   "L'application mobile de comptage pensée pour le service"
+  ],
+  "alternatives": [
+   {
+    "nom": "Bar-Assistant",
+    "url": "https://github.com/karlomikus/bar-assistant",
+    "type": "open-source",
+    "description": "Gestion de bar libre (MIT) : inventaire des bouteilles, recettes de cocktails et listes de courses, à héberger soi-même."
+   },
+   {
+    "nom": "Grocy",
+    "url": "https://github.com/grocy/grocy",
+    "type": "open-source",
+    "description": "Gestion de stock libre (MIT) avec dates limites, codes-barres et alertes de réapprovisionnement, pensée pour la maison ; à adapter pour un bar."
+   }
+  ],
+  "prompt": "Construis un petit outil d'inventaire et de coût matière pour mon bar, pour remplacer un abonnement de gestion de bar.\n\nContexte : un bar de 60 places, environ 150 références (spiritueux, vins, bières, softs), 25 cocktails à la carte, comptage hebdomadaire.\n\nÀ faire :\n- Un catalogue de références avec prix d'achat, volume de la bouteille, fournisseur, zone de stockage.\n- Un écran de comptage sur téléphone par zone (saisie en bouteilles entières et fraction), avec historique.\n- Des fiches de recettes (références, doses en cl) et le calcul automatique du coût par cocktail et de la marge selon le prix de vente.\n- Un rapport hebdomadaire : consommation théorique (ventes importées d'un CSV de la caisse × doses) contre consommation réelle (stock initial + achats − stock final), avec les écarts classés.\n- Un bon de commande suggéré selon un niveau minimum par référence, exportable en PDF ou en e-mail.\n\nHors périmètre : lecture automatique des factures par photo, connexion directe à la caisse.\n\nStack : application web mobile (PWA), SQLite. README : lancement, format du CSV de ventes, sauvegarde.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "tastyigniter",
+  "nom": "TastyIgniter",
+  "categorie": "commande",
+  "secteur": "chr",
+  "domaine": "tastyigniter.com",
+  "description": "Logiciel libre à héberger soi-même pour que les restaurants prennent des commandes directement sur leur site, sans commission sur chaque commande ; paiements directs, extensions essentielles incluses, extensions payantes optionnelles. Le cœur est gratuit ; le support premium (installation, migration, aide prioritaire) est sur devis. Page en anglais ; pays de l'équipe et langues non précisés sur la page.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "C'est le cas où le logiciel libre est lui-même le meilleur point de départ : une carte, un panier, un tunnel de commande, un choix retrait ou livraison et un back-office se reproduisent pour un seul restaurant, et le code de TastyIgniter est un modèle lisible. Ce qui reste hors de portée d'un développement maison : les passerelles de paiement (à brancher), la gestion d'une flotte de livraison et l'impression automatique des tickets. Le vrai coût n'est pas la licence mais l'hébergement, les mises à jour de sécurité et le temps de paramétrage. Si vous venez des plateformes qui prennent une commission, c'est une sortie crédible.",
+  "prix": "gratuit",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "L'hébergement, les sauvegardes et les mises à jour de sécurité tenus par vous",
+   "Les passerelles de paiement déjà prévues dans les extensions",
+   "Le support de l'éditeur pour l'installation et la migration (sur devis)",
+   "Les extensions maintenues par la communauté"
+  ],
+  "alternatives": [],
+  "prompt": "Construis un petit site de commande en ligne pour mon restaurant, pour remplacer une plateforme de commande avec commission.\n\nContexte : un restaurant de 40 couverts, vente à emporter uniquement, 30 commandes par jour.\n\nÀ faire :\n- La carte en base de données (catégories, plats, options comme cuisson et accompagnements, prix TTC, disponibilité).\n- Un panier et une commande en 3 étapes : créneau de retrait, coordonnées, paiement.\n- Le paiement par Stripe Checkout (clés dans .env) avec confirmation par webhook, et un e-mail de confirmation au client.\n- Un back-office : liste des commandes du jour avec changement de statut (reçue, en préparation, prête), temps de préparation, alerte sonore à l'arrivée d'une commande.\n- Des créneaux limités par plage horaire pour ne pas dépasser la capacité de la cuisine.\n- Les pages obligatoires : mentions légales, conditions de vente, allergènes, politique de confidentialité.\n\nHors périmètre : livraison par coursier, fidélité, application mobile.\n\nStack : Next.js, PostgreSQL. README : lancement, sauvegarde, mise à jour des dépendances, et rappel que le paiement par carte reste confié à Stripe.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "sirvoy",
+  "nom": "Sirvoy",
+  "categorie": "hotellerie",
+  "secteur": "chr",
+  "domaine": "sirvoy.com",
+  "description": "Système de gestion hôtelière suédois pour hôtels indépendants, gîtes et maisons d'hôtes : moteur de réservation à 0 % de commission, site d'une page sans code, facturation et comptabilité de base, SMS automatiques, et channel manager (Booking.com, Expedia, Airbnb, Agoda, Hostelworld) dans la formule Pro. Gratuit pour un hébergement avec une chambre et jusqu'à 5 extras ; Starter à 11 € par mois en annuel (12 € au mois), Pro à 41 € en annuel (44 € au mois). Essai de 14 jours. Moteur de réservation en plus de 20 langues ; version française du site.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Le calendrier d'occupation des chambres, les tarifs, la facturation et un formulaire de réservation direct se développent pour un petit établissement, et c'est la partie que Sirvoy facture peu. L'écart tient au channel manager : synchroniser en continu les disponibilités avec Booking.com, Expedia ou Airbnb passe par des connexions agréées que chaque plateforme réserve à des partenaires. Si vous ne vendez qu'en direct, un outil sur mesure suffit ; dès que vous vendez par agences en ligne, un PMS comme Sirvoy évite le risque de double réservation.",
+  "prix": "gratuit (plans payants à partir de 11 €/mois)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le channel manager relié à Booking.com, Expedia, Airbnb, Agoda et Hostelworld",
+   "Le moteur de réservation en plus de 20 langues",
+   "Les SMS automatiques aux clients",
+   "L'assistance 24 h/24 de l'éditeur"
+  ],
+  "alternatives": [
+   {
+    "nom": "QloApps",
+    "url": "https://github.com/Qloapps/QloApps",
+    "type": "open-source",
+    "description": "Système de réservation hôtelière libre (OSL-3.0), bâti sur PrestaShop : moteur de réservation et gestion des chambres ; les connexions aux agences en ligne restent à votre charge."
+   }
+  ],
+  "prompt": "Construis un petit système de réservation directe pour ma maison d'hôtes, pour remplacer un logiciel de gestion hôtelière.\n\nContexte : 6 chambres, je vends uniquement en direct (téléphone, e-mail, site), pas via des agences en ligne.\n\nÀ faire :\n- Chambres et types de chambres avec tarifs par saison et nombre de personnes.\n- Un calendrier visuel des réservations par chambre, avec détection des conflits et blocage de dates.\n- Un formulaire de demande de réservation sur mon site (dates, personnes, coordonnées) qui crée une demande à valider, puis un e-mail de confirmation en français et en anglais.\n- Une facture PDF à la sortie avec taxe de séjour calculée par personne et par nuit.\n- Un fichier clients et un rappel d'arrivée la veille par e-mail.\n\nHors périmètre : synchronisation avec Booking.com, Airbnb et autres agences, paiement en ligne.\n\nStack : application web, PostgreSQL. README : lancement, sauvegarde, rappel de déclarer la taxe de séjour et de tenir la fiche de police pour les voyageurs étrangers.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "xibo",
+  "nom": "Xibo",
+  "categorie": "autre",
+  "secteur": "chr",
+  "domaine": "xibosignage.com",
+  "description": "Système d'affichage dynamique (CMS) pour programmer des contenus sur des écrans, notamment des menus et des horaires, en version hébergée par l'éditeur ou à installer soi-même (code libre sous licence AGPL). Lecteurs pour Windows, Android, LG webOS et Samsung Tizen : le lecteur Windows est gratuit, les autres sont vendus en licence perpétuelle ; en auto-hébergement, les mises à jour majeures sont payantes. Essai de 14 jours. La page ne donne ni prix par écran ni langues ; l'éditeur indique lui-même que l'auto-hébergement coûte en général plus cher qu'un forfait.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Afficher une page web en plein écran sur un téléviseur relié à un micro-ordinateur, avec une carte du jour qui change selon l'heure du service, est un projet de quelques heures. Ce qui rend Xibo utile à plus grande échelle : piloter à distance plusieurs écrans dans plusieurs lieux, prévoir un affichage de secours hors connexion et gérer les droits. Pour un restaurant avec un ou deux écrans, une page web programmée suffit ; l'outil libre se justifie dès que l'on gère une dizaine d'écrans ou plusieurs établissements.",
+  "prix": "gratuit",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le pilotage à distance d'un parc d'écrans",
+   "Les lecteurs prêts à l'emploi pour Windows, Android, LG et Samsung",
+   "La mise en cache hors connexion",
+   "Les mises à jour et le support de l'éditeur"
+  ],
+  "alternatives": [
+   {
+    "nom": "Anthias",
+    "url": "https://github.com/Screenly/Anthias",
+    "type": "open-source",
+    "description": "Affichage dynamique libre (GPL-2.0, double licence avec une version commerciale), conçu pour un Raspberry Pi relié à un écran."
+   },
+   {
+    "nom": "PiSignage",
+    "url": "https://github.com/colloqi/pisignage-server",
+    "type": "open-source",
+    "description": "Serveur d'affichage dynamique libre pour des lecteurs sur Raspberry Pi, avec listes de lecture et planification."
+   }
+  ],
+  "prompt": "Construis un affichage de menu sur un écran de salle, pour remplacer un logiciel d'affichage dynamique.\n\nContexte : un restaurant avec un téléviseur au-dessus du comptoir, un mini-ordinateur branché dessus, 3 services par jour.\n\nÀ faire :\n- Une page web plein écran qui affiche la carte du jour (plats, prix, allergènes) à partir d'un fichier carte.json.\n- Un changement automatique selon l'heure : petit-déjeuner, déjeuner, dîner, avec une page d'accueil entre les services.\n- Une rotation des pages toutes les 15 secondes quand le contenu dépasse l'écran.\n- Une page d'administration protégée par mot de passe pour modifier les plats, les prix et marquer un plat « épuisé ».\n- Un rechargement automatique de la page quand le fichier change, et un affichage de secours si le réseau est coupé.\n\nHors périmètre : pilotage de plusieurs écrans, vidéos.\n\nStack : une page HTML/JavaScript servie par un petit serveur Node, lancée en mode plein écran au démarrage. README : installation sur le mini-ordinateur, démarrage automatique, sauvegarde de carte.json.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "bookstack",
+  "nom": "BookStack",
+  "categorie": "notes",
+  "secteur": "saas",
+  "domaine": "bookstackapp.com",
+  "description": "Wiki libre (licence MIT) à héberger soi-même pour organiser et stocker des informations : contenu en livres, chapitres et pages, recherche globale, éditeur visuel et éditeur Markdown avec aperçu, diagrammes diagrams.net, historique des révisions, gestion des images et système complet de rôles et de permissions. Construit avec PHP, Laravel et MySQL, il tourne sur un petit serveur. Interface disponible en français, anglais, allemand, espagnol, italien, japonais, néerlandais, polonais et russe, entre autres. Créé par Dan Brown ; le code est hébergé sur Codeberg.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Une documentation interne (procédures, fiches de poste, recettes, mots de passe exclus) avec une hiérarchie à trois niveaux, un éditeur, une recherche et des droits de lecture est un cas d'école du développement web, et c'est exactement ce que fait BookStack. L'intérêt de l'utiliser plutôt que de le reconstruire est qu'il est gratuit, simple et déjà traduit en français. Ce qui coûte : l'hébergement, les sauvegardes et les mises à jour de sécurité PHP, que vous devez suivre vous-même. Pour moins d'une trentaine de pages, un dossier de fichiers Markdown suffit.",
+  "prix": "gratuit",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La recherche globale et le moteur de droits déjà finis",
+   "Les deux éditeurs (visuel et Markdown) et les diagrammes intégrés",
+   "L'historique des révisions",
+   "L'interface déjà traduite en français"
+  ],
+  "alternatives": [
+   {
+    "nom": "Wiki.js",
+    "url": "https://github.com/requarks/wiki",
+    "type": "open-source",
+    "description": "Wiki libre (AGPL-3.0) moderne avec Markdown, droits d'accès et plusieurs espaces, à héberger soi-même."
+   },
+   {
+    "nom": "Docmost",
+    "url": "https://github.com/docmost/docmost",
+    "type": "open-source",
+    "description": "Wiki collaboratif libre (AGPL-3.0) organisé en espaces documentaires, pour petites équipes."
+   }
+  ],
+  "prompt": "Construis un wiki interne pour mon équipe, pour remplacer un outil de documentation.\n\nContexte : une petite entreprise de 8 personnes, une quarantaine de procédures à documenter, rédigées en Markdown.\n\nÀ faire :\n- Des pages organisées en livres et chapitres, avec un éditeur Markdown et un aperçu.\n- Une recherche plein texte sur les titres et les contenus.\n- Des rôles : lecteur, éditeur, administrateur, avec des droits par livre.\n- Un historique des modifications avec retour à une version antérieure.\n- Des pièces jointes et des images avec une taille maximale.\n- Un export d'un livre en PDF.\n\nHors périmètre : édition collaborative en temps réel, diagrammes.\n\nStack : application web, SQLite ou PostgreSQL. README : lancement, sauvegarde du fichier de base et des pièces jointes, et rappel de ne pas stocker de mots de passe dans les pages.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "espocrm",
+  "nom": "EspoCRM",
+  "categorie": "vente-crm",
+  "secteur": "saas",
+  "domaine": "espocrm.com",
+  "description": "CRM libre (AGPL-3.0) à héberger soi-même ou en version hébergée : comptes, contacts, leads, opportunités, pipelines, tâches, réunions et appels, devis, commandes, factures, stocks, projets, base de connaissances, emailing, créateur d'entités, rôles et permissions, API REST. Téléchargement gratuit en auto-hébergement ; cloud à 12,90 € par utilisateur et par mois (minimum 3 utilisateurs), Enterprise à 22 € (minimum 5), Ultimate à 59 € (minimum 10). Extensions officielles incluses dans le cloud. L'interface est multilingue ; la page tarifs ne cite pas le français.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Un CRM de petite structure (contacts, entreprises, opportunités, notes, relances) se développe, et c'est même plus pertinent que de payer un abonnement par utilisateur. EspoCRM va bien au-delà : devis, commandes, stocks, projets, base de connaissances et processus BPMN. Reproduire tout cela sur mesure est un chantier ; reproduire le tiers qui vous sert vraiment est réaliste. L'auto-hébergement est gratuit mais, d'après la page tarifs, les extensions sont à acheter une fois sorti du cloud : vérifiez celles dont vous avez besoin.",
+  "prix": "gratuit (plans payants à partir de 12,90 €/mois/utilisateur)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le créateur d'entités et les mises en page sans code",
+   "Les devis, commandes, stocks et factures reliés au CRM",
+   "Les workflows et les processus BPMN",
+   "Les extensions officielles incluses dans l'offre cloud"
+  ],
+  "alternatives": [
+   {
+    "nom": "Twenty",
+    "url": "https://github.com/twentyhq/twenty",
+    "type": "open-source",
+    "description": "CRM libre (AGPL-3.0 pour l'essentiel ; certains modules sont sous licence commerciale), à héberger soi-même ou en version hébergée."
+   },
+   {
+    "nom": "SuiteCRM",
+    "url": "https://github.com/salesagility/SuiteCRM",
+    "type": "open-source",
+    "description": "CRM libre (AGPL-3.0) très complet : prospection, catalogue de prix, contrats et service client ; plutôt lourd à installer et à maintenir."
+   }
+  ],
+  "prompt": "Construis un CRM sur mesure pour mon activité, pour remplacer un CRM libre trop large.\n\nContexte : une petite entreprise de services, 3 commerciaux, environ 400 contacts, 40 affaires en cours.\n\nÀ faire :\n- Des fiches Entreprise et Contact avec historique des échanges et notes.\n- Un pipeline d'affaires par étapes avec montant, probabilité et date de clôture prévue.\n- Des tâches et des rappels attribués à une personne, avec un tableau « mes tâches du jour ».\n- Un devis simple (lignes, remise, validité) généré en PDF depuis l'affaire.\n- Des rôles : commercial (ses affaires), responsable (toutes les affaires).\n- Un import et un export CSV, et un tableau de bord : affaires par étape, montant pondéré, taux de gain.\n\nHors périmètre : emailing de masse, stocks, projets, processus BPMN.\n\nStack : application web, PostgreSQL. README : lancement, sauvegarde, suppression d'un contact sur demande (RGPD).",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "invoice-ninja",
+  "nom": "Invoice Ninja",
+  "categorie": "finance-compta",
+  "secteur": "saas",
+  "domaine": "invoiceninja.com",
+  "description": "Outil de facturation en ligne : devis, factures récurrentes, portail client où l'on consulte et paie ses factures, relances automatiques, rapports, modèles personnalisables et accès API dans les formules payantes. Gratuit jusqu'à 5 clients avec factures illimitées ; Pro à 14 $ par mois (140 $ par an), Enterprise de 18 $ à 300 $ par mois selon le nombre d'utilisateurs. Le code est public mais sous Elastic License 2.0 (source disponible, pas une licence libre au sens de l'OSI) ; l'auto-hébergement est possible. Prix affichés en dollars.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Un devis qui devient une facture récurrente avec un lien de paiement et un portail de consultation est un projet accessible. Mais en France, l'émission de factures est encadrée : numérotation continue, mentions obligatoires, conservation, et bientôt échange par une plateforme agréée. Invoice Ninja est conçu pour un marché international et ne garantit pas à lui seul ces règles. Vérifiez la conformité de vos modèles avant de l'utiliser comme outil d'émission légale. Attention aussi à la licence : le code est lisible, mais ce n'est pas du logiciel libre.",
+  "prix": "gratuit (plans payants à partir de 12,47 €/mois)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le portail client avec paiement en ligne",
+   "Les relances automatiques et les factures récurrentes",
+   "Les rapports et l'accès API (formules payantes)",
+   "L'application et les intégrations de paiement déjà branchées"
+  ],
+  "alternatives": [
+   {
+    "nom": "Dolibarr",
+    "url": "https://github.com/Dolibarr/dolibarr",
+    "type": "open-source",
+    "description": "ERP et CRM libres d'origine française (GPL-3.0) : devis, factures, clients, produits et stocks, à héberger soi-même."
+   },
+   {
+    "nom": "SolidInvoice",
+    "url": "https://github.com/SolidInvoice/SolidInvoice",
+    "type": "open-source",
+    "description": "Facturation et devis libres (MIT) pour petites structures ; la conformité aux règles françaises de facturation reste à vérifier."
+   }
+  ],
+  "prompt": "Construis un petit outil de devis, de factures récurrentes et de relances pour mon activité, pour remplacer un abonnement de facturation.\n\nContexte : un indépendant avec 15 clients, dont 6 en abonnement mensuel.\n\nÀ faire :\n- Des clients et des prestations enregistrés (libellé, prix HT, TVA).\n- Des devis numérotés avec statut (brouillon, envoyé, accepté, refusé) et PDF à mon identité.\n- Des abonnements mensuels qui génèrent des brouillons de factures à valider chaque mois.\n- Un portail en lecture seule par lien sécurisé où le client consulte ses documents.\n- Des relances proposées à J+7 et J+15 que je valide avant envoi.\n- Un export CSV pour mon comptable.\n\nHors périmètre : l'émission légale des factures et la facturation électronique, le paiement en ligne. Les factures légales restent émises dans un logiciel conforme.\n\nStack : application web, SQLite. README : lancement, sauvegarde, rappel de ne pas émettre de facture légale depuis cet outil.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "kimai",
+  "nom": "Kimai",
+  "categorie": "productivite",
+  "secteur": "saas",
+  "domaine": "kimai.org",
+  "description": "Suivi du temps libre (AGPL-3.0) pour équipes qui travaillent par projet : clients, projets, équipes, rôles, rapports et analyses, facturation avec modèles PDF et DOCX, exports XLSX, PDF, CSV et HTML, mode pointeuse, portail client, plugins (notes de frais, facturation électronique), API JSON, connexion LDAP et SAML, double authentification. Auto-hébergement gratuit (Docker ou installation manuelle) ou cloud géré en Europe : Standard à 2,99 € et Professional à 3,99 € par utilisateur et par mois en annuel (3,99 € et 4,99 € au mois), essai de 30 jours. Plus de 30 langues ; l'éditeur annonce plus de 7 500 entreprises.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Enregistrer un horodatage de début et de fin sur un client et un projet, appliquer un taux horaire et sortir un total mensuel est l'une des applications les plus simples à programmer. Kimai le fait déjà, gratuitement et traduit : le reproduire n'a de sens que pour un besoin très particulier. Ce qui demande plus d'effort : le mode pointeuse pour une équipe, les modèles de facture, la connexion SAML. Pour un indépendant, un tableur ou une version auto-hébergée suffisent ; ne facturez pas depuis un outil de temps sans vérifier les mentions légales de vos factures.",
+  "prix": "gratuit (plans payants à partir de 2,99 €/mois/utilisateur)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les rapports et les exports prêts à l'emploi",
+   "Les modèles de facture PDF et DOCX",
+   "Le mode pointeuse et le portail client",
+   "La connexion LDAP et SAML et la double authentification"
+  ],
+  "alternatives": [
+   {
+    "nom": "Super Productivity",
+    "url": "https://github.com/johannesjo/super-productivity",
+    "type": "open-source",
+    "description": "Gestionnaire de tâches libre (MIT) avec suivi du temps et planification quotidienne, sans compte obligatoire ; moins adapté à la facturation par client."
+   },
+   {
+    "nom": "ActivityWatch",
+    "url": "https://github.com/ActivityWatch/activitywatch",
+    "type": "open-source",
+    "description": "Suivi automatique libre (MPL-2.0) du temps passé sur chaque application et chaque site, enregistré en local."
+   }
+  ],
+  "prompt": "Construis un petit suivi du temps pour mon activité, pour remplacer un abonnement de feuilles de temps.\n\nContexte : indépendant, 8 clients, 15 projets, je facture à l'heure ou au forfait.\n\nÀ faire :\n- Des clients, des projets et des activités avec un taux horaire par client.\n- Un chronomètre démarrer/arrêter avec saisie manuelle possible, rattaché à un projet et à une activité.\n- Une vue hebdomadaire par jour et par projet, modifiable.\n- Des rapports par client et par mois : heures, montant, comparaison avec le forfait prévu.\n- Un export CSV pour préparer la facture.\n- Un verrouillage des heures déjà facturées.\n\nHors périmètre : facturation légale, équipes, connexion SAML.\n\nStack : application web, SQLite. README : lancement, sauvegarde.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "formbricks",
+  "nom": "Formbricks",
+  "categorie": "productivite",
+  "secteur": "saas",
+  "domaine": "formbricks.com",
+  "description": "Plateforme de sondages et de retours clients, en code ouvert avec une option d'auto-hébergement : sondages par lien et dans une application, tous types de questions, logique conditionnelle, champs cachés, réponses partielles, API complète. Cloud hébergé à Francfort : Hobby gratuit (250 réponses par mois, 1 espace de travail), Pro à 74 $ par mois (2 000 réponses, 3 espaces), Scale à 325 $ (5 000 réponses, 5 espaces), deux mois offerts en annuel. Le dépôt est sous licence mixte (cœur libre, certaines fonctions d'entreprise sous licence commerciale). Prix affichés en dollars.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Un questionnaire avec quelques types de questions, de la logique conditionnelle, un stockage des réponses et un export CSV se développe en un week-end, et c'est suffisant pour un restaurateur ou un indépendant qui veut recueillir un avis après une visite. Formbricks apporte surtout l'intégration à un produit logiciel (sondage qui apparaît dans une application selon le comportement), la segmentation et les intégrations. Si vous sondez des clients par un lien ou un code QR, un outil maison tient. Pour de l'analyse de retours à grande échelle, l'outil se justifie.",
+  "prix": "gratuit (plans payants à partir de 65,93 €/mois)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les sondages affichés dans une application selon le comportement des utilisateurs",
+   "La segmentation des répondants par attributs",
+   "Les intégrations et les webhooks",
+   "Les traductions assistées par IA"
+  ],
+  "alternatives": [
+   {
+    "nom": "LimeSurvey",
+    "url": "https://github.com/LimeSurvey/LimeSurvey",
+    "type": "open-source",
+    "description": "Plateforme d'enquêtes libre depuis 2003 (GPL), avec branchements conditionnels, quotas et statistiques, traduite en français."
+   }
+  ],
+  "prompt": "Construis un petit outil de questionnaires de satisfaction pour mon établissement, pour remplacer un abonnement de sondages.\n\nContexte : un restaurant qui remet un code QR sur la note ; environ 100 réponses par mois.\n\nÀ faire :\n- Un éditeur de questionnaire avec types de questions : note de 1 à 10, choix unique, choix multiples, texte libre.\n- De la logique conditionnelle simple (afficher une question si la note est inférieure à 7).\n- Une page publique légère, adaptée au téléphone, en français et en anglais.\n- Le stockage des réponses sans donnée personnelle obligatoire, et un champ e-mail facultatif avec consentement.\n- Un tableau de résultats : moyenne par question, évolution par semaine, réponses libres classées du plus bas au plus haut.\n- Un export CSV et une alerte e-mail pour toute note inférieure à 6.\n\nHors périmètre : sondages intégrés dans une application, segmentation.\n\nStack : Next.js, SQLite. Aucune réponse inventée : seules les réponses réelles sont affichées. README : lancement, sauvegarde, suppression d'une réponse sur demande (RGPD).",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "limesurvey",
+  "nom": "LimeSurvey",
+  "categorie": "productivite",
+  "secteur": "saas",
+  "domaine": "limesurvey.org",
+  "description": "Plateforme d'enquêtes en ligne libre depuis 2003 : questionnaires à saut de questions, quotas, évaluation graphique rapide, statistiques publiques, exports vers SPSS, R, Stata, CSV, Excel et PDF, plus de 80 langues pour l'administration et les enquêtes, enquêtes multilingues. Version Community gratuite à installer sur son serveur (les données y restent). Cloud, TVA 20 % incluse : Basic à 34 € par mois (1 administrateur, 1 000 réponses par mois), Expert à 29 € par mois facturés 348 € par an (3 administrateurs), Business à 75 € par mois facturés 900 € par an ; Corporate sur devis avec SSO, LDAP et SAML. Site disponible en français.",
+  "verdict_editeur": "YES",
+  "justification_editeur": "Pour la plupart des besoins d'un restaurateur, d'un hôtelier ou d'un indépendant, un questionnaire à quelques pages avec des sauts conditionnels simples et un export CSV se développe facilement, sans la densité de LimeSurvey, conçu à l'origine pour des enquêtes universitaires. Les fonctions qui justifient l'outil : les quotas, les enquêtes multilingues à grande échelle, l'export vers des logiciels statistiques et les nombreux types de questions. Si vous n'avez besoin de rien de tout cela, un outil sur mesure est plus léger à maintenir ; sinon, la version Community gratuite est un excellent point de départ.",
+  "prix": "gratuit (plans payants à partir de 29 €/mois)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Les quotas et les sauts conditionnels avancés",
+   "Les enquêtes multilingues en plus de 80 langues",
+   "Les exports vers des logiciels statistiques",
+   "L'évaluation graphique rapide des réponses"
+  ],
+  "alternatives": [
+   {
+    "nom": "Formbricks",
+    "url": "https://github.com/formbricks/formbricks",
+    "type": "open-source",
+    "description": "Sondages et retours clients en code ouvert (cœur libre, certaines fonctions sous licence commerciale), à héberger soi-même ou en cloud."
+   }
+  ],
+  "prompt": "Construis un petit outil d'enquêtes pour mon activité, pour remplacer une plateforme d'enquêtes en ligne.\n\nContexte : je réalise 3 ou 4 enquêtes par an auprès de 200 à 500 personnes (clients, équipes).\n\nÀ faire :\n- Un éditeur de questionnaire par pages avec types de questions : choix unique, choix multiples, échelle, matrice simple, texte libre.\n- Des sauts conditionnels simples entre pages selon les réponses.\n- Des liens d'invitation individuels à usage unique, pour éviter les doublons.\n- Un suivi du taux de réponse et une relance par e-mail des personnes qui n'ont pas répondu.\n- Des résultats : effectifs, pourcentages, moyennes, croisement de deux questions, graphiques.\n- Un export CSV et Excel.\n\nHors périmètre : quotas, plus de 80 langues, exports vers des logiciels statistiques.\n\nStack : application web, PostgreSQL. README : lancement, sauvegarde, conservation et suppression des réponses (RGPD), anonymisation des résultats.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ }
+]

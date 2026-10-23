@@ -3974,5 +3974,149 @@
   "alternatives": [
    "Open-source hotel booking system (OSL-3.0) built on PrestaShop: booking engine and room management; connections to online travel agencies are up to you."
   ]
+ },
+ "backbar": {
+  "description": "Inventory app for bars and restaurants: bottle counting, cocktail and dish recipes, cost and selling price calculation, supplier orders. Free Basic plan (a single venue, 10 recipes, 6 months of history); Essential at $79 per month per venue billed annually ($99 monthly), Professional at $129 billed annually ($149 monthly) with purchase orders, invoice capture by photo and cost-change alerts. One-month trial. Interface in English, languages not stated.",
+  "justification": "Counting bottles by area, matching sales to consumption and calculating a cost per cocktail are arithmetic operations on a simple database: the textbook case for a custom build in an independent bar. The difficulty starts when you want to import the till's sales automatically, read supplier invoices by photo and track price changes: that is what the Professional plan sells. If your till can export sales as CSV, an in-house tool fits in a spreadsheet and then in a small application.",
+  "perdez": [
+   "Automatic entry of supplier invoices by photo (Professional plan).",
+   "Sending purchase orders to suppliers.",
+   "Alerts on changes in ingredient cost.",
+   "The mobile counting app designed for service."
+  ],
+  "alternatives": [
+   "Open-source bar management (MIT): bottle inventory, cocktail recipes and shopping lists, self-hosted.",
+   "Open-source stock management (MIT) with use-by dates, barcodes and restock alerts, designed for the home; to be adapted for a bar."
+  ],
+  "prompt": "Build a small inventory and ingredient-cost tool for my bar, replacing a bar management subscription.\n\nContext: a 60-seat bar, about 150 items (spirits, wines, beers, soft drinks), 25 cocktails on the menu, weekly count.\n\nTo do:\n- An item catalogue with purchase price, bottle volume, supplier, storage area.\n- A counting screen on a phone per area (entry in whole bottles and fractions), with history.\n- Recipe cards (items, doses in cl) and automatic calculation of cost per cocktail and margin from the selling price.\n- A weekly report: theoretical consumption (sales imported from a till CSV × doses) against actual consumption (opening stock + purchases − closing stock), with the gaps ranked.\n- A suggested purchase order based on a minimum level per item, exportable as PDF or email.\n\nOut of scope: automatic reading of invoices by photo, direct connection to the till.\n\nStack: mobile web app (PWA), SQLite. README: how to run, sales CSV format, backup."
+ },
+ "tastyigniter": {
+  "description": "Open-source software to host yourself so that restaurants take orders directly on their site, with no commission on each order; direct payments, essential extensions included, optional paid extensions. The core is free; premium support (installation, migration, priority help) is on quote. Page in English; team country and languages are not stated on the page.",
+  "justification": "This is the case where the open-source software is itself the best starting point: a menu, a cart, an ordering funnel, a choice of collection or delivery and a back-office can be reproduced for a single restaurant, and TastyIgniter's code is a readable model. What stays out of reach of an in-house build: payment gateways (to be plugged in), managing a delivery fleet and automatic ticket printing. The real cost is not the licence but hosting, security updates and setup time. If you are coming from platforms that take a commission, it is a credible way out.",
+  "perdez": [
+   "Hosting, backups and security updates run by you.",
+   "The payment gateways already provided in the extensions.",
+   "Vendor support for installation and migration (on quote).",
+   "Extensions maintained by the community."
+  ],
+  "alternatives": [],
+  "prompt": "Build a small online ordering site for my restaurant, replacing a commission-based ordering platform.\n\nContext: a 40-seat restaurant, takeaway only, 30 orders a day.\n\nTo do:\n- The menu in a database (categories, dishes, options such as doneness and sides, VAT-inclusive prices, availability).\n- A cart and a 3-step checkout: pickup slot, contact details, payment.\n- Payment through Stripe Checkout (keys in .env) with confirmation by webhook, and a confirmation email to the customer.\n- A back-office: today's orders with status changes (received, preparing, ready), preparation time, a sound alert when an order arrives.\n- Slots capped per time window so the kitchen is not overloaded.\n- The mandatory pages: legal notice, terms of sale, allergens, privacy policy.\n\nOut of scope: courier delivery, loyalty, mobile app.\n\nStack: Next.js, PostgreSQL. README: how to run, backup, updating dependencies, and a reminder that card payment stays with Stripe."
+ },
+ "sirvoy": {
+  "description": "Swedish hotel management system for independent hotels, B&Bs and guesthouses: booking engine with 0% commission, one-page site with no code, invoicing and basic accounting, automatic SMS, and a channel manager (Booking.com, Expedia, Airbnb, Agoda, Hostelworld) in the Pro plan. Free for a property with one room and up to 5 extras; Starter at €11 a month billed annually (€12 monthly), Pro at €41 billed annually (€44 monthly). 14-day trial. Booking engine in more than 20 languages; French version of the site.",
+  "justification": "The room occupancy calendar, rates, invoicing and a direct booking form can be built for a small property, and that is the part Sirvoy charges little for. The gap is the channel manager: continuously synchronising availability with Booking.com, Expedia or Airbnb goes through approved connections that each platform reserves for partners. If you only sell direct, a custom tool is enough; as soon as you sell through online agencies, a PMS like Sirvoy avoids the risk of double bookings.",
+  "perdez": [
+   "The channel manager linked to Booking.com, Expedia, Airbnb, Agoda and Hostelworld.",
+   "The booking engine in more than 20 languages.",
+   "Automatic SMS to guests.",
+   "The vendor's 24/7 support."
+  ],
+  "alternatives": [
+   "Open-source hotel booking system (OSL-3.0) built on PrestaShop: booking engine and room management; connections to online travel agencies are up to you."
+  ],
+  "prompt": "Build a small direct-booking system for my guesthouse, replacing hotel management software.\n\nContext: 6 rooms, I only sell direct (phone, email, website), not through online agencies.\n\nTo do:\n- Rooms and room types with rates by season and number of guests.\n- A visual booking calendar per room, with conflict detection and date blocking.\n- A booking request form on my site (dates, guests, contact details) that creates a request to approve, then a confirmation email in French and English.\n- A PDF invoice at checkout with tourist tax calculated per person and per night.\n- A guest file and an arrival reminder the day before by email.\n\nOut of scope: synchronisation with Booking.com, Airbnb and other agencies, online payment.\n\nStack: web app, PostgreSQL. README: how to run, backup, a reminder to declare the tourist tax and keep the police registration form for foreign travellers."
+ },
+ "xibo": {
+  "description": "Digital signage system (CMS) to schedule content on screens, notably menus and opening hours, hosted by the vendor or installed yourself (open-source code under the AGPL licence). Players for Windows, Android, LG webOS and Samsung Tizen: the Windows player is free, the others are sold under a perpetual licence; when self-hosting, major updates are paid. 14-day trial. The page gives neither a price per screen nor languages; the vendor itself says self-hosting usually costs more than a plan.",
+  "justification": "Showing a web page full-screen on a TV connected to a small computer, with a daily menu that changes with the service time, is a project of a few hours. What makes Xibo useful at larger scale: remotely managing several screens across several sites, planning a fallback display when offline and handling rights. For a restaurant with one or two screens, a scheduled web page is enough; the open-source tool makes sense once you manage around ten screens or several venues.",
+  "perdez": [
+   "Remote management of a fleet of screens.",
+   "Ready-made players for Windows, Android, LG and Samsung.",
+   "Offline caching.",
+   "The vendor's updates and support."
+  ],
+  "alternatives": [
+   "Open-source digital signage (GPL-2.0, dual-licensed with a commercial version), designed for a Raspberry Pi connected to a screen.",
+   "Open-source digital signage server for Raspberry Pi players, with playlists and scheduling."
+  ],
+  "prompt": "Build a menu display for a dining-room screen, replacing digital signage software.\n\nContext: a restaurant with a TV above the counter, a small computer plugged into it, 3 services a day.\n\nTo do:\n- A full-screen web page that shows the daily menu (dishes, prices, allergens) from a carte.json file.\n- An automatic change by time: breakfast, lunch, dinner, with a welcome page between services.\n- Page rotation every 15 seconds when the content is longer than the screen.\n- A password-protected admin page to edit dishes, prices and mark a dish «sold out».\n- Automatic page reload when the file changes, and a fallback display if the network goes down.\n\nOut of scope: managing several screens, videos.\n\nStack: an HTML/JavaScript page served by a small Node server, launched full-screen at startup. README: installation on the small computer, automatic start, backing up carte.json."
+ },
+ "bookstack": {
+  "description": "Open-source wiki (MIT licence) to host yourself to organise and store information: content in books, chapters and pages, global search, visual editor and Markdown editor with preview, diagrams.net diagrams, revision history, image management and a full role and permission system. Built with PHP, Laravel and MySQL, it runs on a small server. Interface available in French, English, German, Spanish, Italian, Japanese, Dutch, Polish and Russian, among others. Created by Dan Brown; the code is hosted on Codeberg.",
+  "justification": "Internal documentation (procedures, job descriptions, recipes, passwords excluded) with a three-level hierarchy, an editor, search and read permissions is a textbook web-development case, and that is exactly what BookStack does. The reason to use it rather than rebuild it is that it is free, simple and already translated into French. What costs: hosting, backups and PHP security updates, which you have to follow yourself. For fewer than thirty pages, a folder of Markdown files is enough.",
+  "perdez": [
+   "Global search and the permission engine, already finished.",
+   "The two editors (visual and Markdown) and built-in diagrams.",
+   "Revision history.",
+   "The interface already translated into French."
+  ],
+  "alternatives": [
+   "Modern open-source wiki (AGPL-3.0) with Markdown, access rights and several spaces, self-hosted.",
+   "Open-source collaborative wiki (AGPL-3.0) organised in document spaces, for small teams."
+  ],
+  "prompt": "Build an internal wiki for my team, replacing a documentation tool.\n\nContext: a small company of 8 people, about forty procedures to document, written in Markdown.\n\nTo do:\n- Pages organised in books and chapters, with a Markdown editor and a preview.\n- Full-text search on titles and contents.\n- Roles: reader, editor, administrator, with rights per book.\n- A change history with rollback to an earlier version.\n- Attachments and images with a maximum size.\n- A PDF export of a book.\n\nOut of scope: real-time collaborative editing, diagrams.\n\nStack: web app, SQLite or PostgreSQL. README: how to run, backing up the database file and attachments, and a reminder not to store passwords in pages."
+ },
+ "espocrm": {
+  "description": "Open-source CRM (AGPL-3.0) to host yourself or as a hosted service: accounts, contacts, leads, opportunities, pipelines, tasks, meetings and calls, quotes, orders, invoices, stock, projects, knowledge base, emailing, entity builder, roles and permissions, REST API. Free download for self-hosting; cloud at €12.90 per user per month (minimum 3 users), Enterprise at €22 (minimum 5), Ultimate at €59 (minimum 10). Official extensions included in the cloud. The interface is multilingual; the pricing page does not name French.",
+  "justification": "A CRM for a small business (contacts, companies, deals, notes, follow-ups) can be built, and it is even more relevant than paying a per-user subscription. EspoCRM goes well beyond that: quotes, orders, stock, projects, knowledge base and BPMN processes. Reproducing all of it custom is a big project; reproducing the third you really use is realistic. Self-hosting is free but, according to the pricing page, extensions have to be bought once you leave the cloud: check which ones you need.",
+  "perdez": [
+   "The entity builder and no-code layouts.",
+   "Quotes, orders, stock and invoices linked to the CRM.",
+   "Workflows and BPMN processes.",
+   "Official extensions included in the cloud plan."
+  ],
+  "alternatives": [
+   "Open-source CRM (AGPL-3.0 for the most part; some modules are under a commercial licence), self-hosted or hosted.",
+   "Very complete open-source CRM (AGPL-3.0): prospecting, price catalogues, contracts and customer service; rather heavy to install and maintain."
+  ],
+  "prompt": "Build a custom CRM for my business, replacing a CRM that is too broad.\n\nContext: a small services company, 3 salespeople, about 400 contacts, 40 open deals.\n\nTo do:\n- Company and Contact records with exchange history and notes.\n- A stage-based deal pipeline with amount, probability and expected close date.\n- Tasks and reminders assigned to a person, with a «my tasks today» board.\n- A simple quote (lines, discount, validity) generated as a PDF from the deal.\n- Roles: salesperson (their deals), manager (all deals).\n- CSV import and export, and a dashboard: deals by stage, weighted amount, win rate.\n\nOut of scope: mass emailing, stock, projects, BPMN processes.\n\nStack: web app, PostgreSQL. README: how to run, backup, deleting a contact on request (GDPR)."
+ },
+ "invoice-ninja": {
+  "description": "Online invoicing tool: quotes, recurring invoices, a client portal where customers view and pay their invoices, automatic reminders, reports, customisable templates and API access in paid plans. Free up to 5 clients with unlimited invoices; Pro at $14 a month ($140 a year), Enterprise from $18 to $300 a month depending on the number of users. The code is public but under the Elastic License 2.0 (source-available, not an open-source licence in the OSI sense); self-hosting is possible. Prices shown in dollars.",
+  "justification": "A quote that becomes a recurring invoice with a payment link and a viewing portal is an accessible project. But in France, issuing invoices is regulated: continuous numbering, mandatory mentions, retention, and soon exchange through an approved platform. Invoice Ninja is designed for an international market and does not guarantee these rules by itself. Check your templates' compliance before using it as a tool for issuing legal invoices. Mind the licence too: the code is readable, but it is not free software.",
+  "perdez": [
+   "The client portal with online payment.",
+   "Automatic reminders and recurring invoices.",
+   "Reports and API access (paid plans).",
+   "The app and payment integrations already connected."
+  ],
+  "alternatives": [
+   "Open-source ERP and CRM of French origin (GPL-3.0): quotes, invoices, customers, products and stock, self-hosted.",
+   "Open-source invoicing and quotes (MIT) for small businesses; compliance with French invoicing rules remains to be checked."
+  ],
+  "prompt": "Build a small tool for quotes, recurring invoices and reminders for my business, replacing an invoicing subscription.\n\nContext: a freelancer with 15 clients, 6 of them on a monthly subscription.\n\nTo do:\n- Clients and services stored (label, price excl. VAT, VAT rate).\n- Numbered quotes with a status (draft, sent, accepted, declined) and a PDF in my branding.\n- Monthly subscriptions that generate invoice drafts to approve each month.\n- A read-only portal through a secure link where the client views their documents.\n- Reminders suggested at D+7 and D+15 that I approve before sending.\n- A CSV export for my accountant.\n\nOut of scope: the legal issuing of invoices and e-invoicing, online payment. Legal invoices are still issued in compliant software.\n\nStack: web app, SQLite. README: how to run, backup, and a reminder not to issue legal invoices from this tool."
+ },
+ "kimai": {
+  "description": "Open-source time tracking (AGPL-3.0) for project-driven teams: customers, projects, teams, roles, reports and analytics, invoicing with PDF and DOCX templates, XLSX, PDF, CSV and HTML exports, time-clock mode, customer portal, plugins (expenses, e-invoicing), JSON API, LDAP and SAML login, two-factor authentication. Free self-hosting (Docker or manual install) or a managed cloud in Europe: Standard at €2.99 and Professional at €3.99 per user per month billed annually (€3.99 and €4.99 monthly), 30-day trial. More than 30 languages; the vendor claims more than 7,500 companies.",
+  "justification": "Recording a start and end time on a customer and a project, applying an hourly rate and producing a monthly total is one of the simplest applications to program. Kimai already does it, for free and translated: reproducing it only makes sense for a very particular need. What takes more effort: the time-clock mode for a team, invoice templates, SAML login. For a freelancer, a spreadsheet or a self-hosted version is enough; do not invoice from a time tool without checking the legal mentions on your invoices.",
+  "perdez": [
+   "Ready-made reports and exports.",
+   "PDF and DOCX invoice templates.",
+   "The time-clock mode and the customer portal.",
+   "LDAP and SAML login and two-factor authentication."
+  ],
+  "alternatives": [
+   "Open-source task manager (MIT) with time tracking and daily planning, no account required; less suited to client billing.",
+   "Open-source automatic tracking (MPL-2.0) of the time spent on each application and site, recorded locally."
+  ],
+  "prompt": "Build a small time tracker for my business, replacing a timesheet subscription.\n\nContext: a freelancer, 8 customers, 15 projects, billing by the hour or at a fixed fee.\n\nTo do:\n- Customers, projects and activities with an hourly rate per customer.\n- A start/stop timer with possible manual entry, attached to a project and an activity.\n- A weekly view by day and by project, editable.\n- Reports per customer and per month: hours, amount, comparison with the planned fee.\n- A CSV export to prepare the invoice.\n- Locking of hours already invoiced.\n\nOut of scope: legal invoicing, teams, SAML login.\n\nStack: web app, SQLite. README: how to run, backup."
+ },
+ "formbricks": {
+  "description": "Survey and customer feedback platform, with open code and a self-hosting option: link and in-app surveys, all question types, conditional logic, hidden fields, partial responses, full API. Cloud hosted in Frankfurt: free Hobby (250 responses a month, 1 workspace), Pro at $74 a month (2,000 responses, 3 workspaces), Scale at $325 (5,000 responses, 5 workspaces), two months free when billed annually. The repository is under a mixed licence (open core, some enterprise features under a commercial licence). Prices shown in dollars.",
+  "justification": "A questionnaire with a few question types, conditional logic, response storage and a CSV export can be built in a weekend, and that is enough for a restaurateur or freelancer who wants to collect feedback after a visit. Formbricks mainly adds integration into a software product (a survey that appears in an app based on behaviour), segmentation and integrations. If you survey customers through a link or a QR code, an in-house tool fits. For feedback analysis at large scale, the tool makes sense.",
+  "perdez": [
+   "Surveys shown inside an app based on user behaviour.",
+   "Segmentation of respondents by attributes.",
+   "Integrations and webhooks.",
+   "AI-assisted translations."
+  ],
+  "alternatives": [
+   "Open-source survey platform since 2003 (GPL), with conditional branching, quotas and statistics, translated into French."
+  ],
+  "prompt": "Build a small satisfaction questionnaire tool for my business, replacing a survey subscription.\n\nContext: a restaurant that hands out a QR code with the bill; about 100 responses a month.\n\nTo do:\n- A questionnaire editor with question types: score from 1 to 10, single choice, multiple choice, free text.\n- Simple conditional logic (show a question if the score is below 7).\n- A light public page, adapted to phones, in French and English.\n- Storage of responses with no mandatory personal data, and an optional email field with consent.\n- A results table: average per question, trend per week, free-text answers sorted from lowest to highest score.\n- A CSV export and an email alert for any score below 6.\n\nOut of scope: in-app surveys, segmentation.\n\nStack: Next.js, SQLite. No made-up response: only real responses are shown. README: how to run, backup, deleting a response on request (GDPR)."
+ },
+ "limesurvey": {
+  "description": "Free and open-source online survey platform since 2003: questionnaires with skip logic, quotas, quick graphical evaluation, public statistics, exports to SPSS, R, Stata, CSV, Excel and PDF, more than 80 languages for administration and surveys, multilingual surveys. Free Community edition to install on your own server (data stays there). Cloud, VAT 20% included: Basic at €34 a month (1 administrator, 1,000 responses a month), Expert at €29 a month billed €348 a year (3 administrators), Business at €75 a month billed €900 a year; Corporate on quote with SSO, LDAP and SAML. Site available in French.",
+  "justification": "For most needs of a restaurateur, hotelier or freelancer, a few-page questionnaire with simple conditional jumps and a CSV export is easy to build, without the density of LimeSurvey, originally designed for academic surveys. The features that justify the tool: quotas, large-scale multilingual surveys, export to statistical software and the many question types. If you need none of that, a custom tool is lighter to maintain; otherwise the free Community edition is an excellent starting point.",
+  "perdez": [
+   "Quotas and advanced conditional jumps.",
+   "Multilingual surveys in more than 80 languages.",
+   "Exports to statistical software.",
+   "Quick graphical evaluation of responses."
+  ],
+  "alternatives": [
+   "Open-source surveys and customer feedback (open core, some features under a commercial licence), self-hosted or cloud."
+  ],
+  "prompt": "Build a small survey tool for my business, replacing an online survey platform.\n\nContext: I run 3 or 4 surveys a year with 200 to 500 people (customers, teams).\n\nTo do:\n- A page-based questionnaire editor with question types: single choice, multiple choice, scale, simple matrix, free text.\n- Simple conditional jumps between pages based on answers.\n- Individual single-use invitation links, to avoid duplicates.\n- Tracking of the response rate and an email reminder to people who have not answered.\n- Results: counts, percentages, averages, cross-tabulation of two questions, charts.\n- A CSV and Excel export.\n\nOut of scope: quotas, more than 80 languages, exports to statistical software.\n\nStack: web app, PostgreSQL. README: how to run, backup, retention and deletion of responses (GDPR), anonymising results."
  }
 }
