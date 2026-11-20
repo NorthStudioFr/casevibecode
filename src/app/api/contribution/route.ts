@@ -45,6 +45,8 @@ export async function POST(request: Request) {
               nom: c.nom,
               url: c.url,
               raison: c.raison,
+              // Colonne ajoutée par la migration du 20 nov. : omise si vide, pour ne rien casser avant son application.
+              ...(c.email ? { contact_email: c.email } : {}),
               langue: c.langue,
               ip_hash: ipHash,
             });

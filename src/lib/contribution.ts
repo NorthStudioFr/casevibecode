@@ -16,6 +16,7 @@ export interface PropositionValide {
   nom: string;
   url: string | null;
   raison: string | null;
+  email: string | null;
   langue: Langue;
 }
 export interface BugValide {
@@ -28,7 +29,7 @@ export type ContributionValide = RetourValide | PropositionValide | BugValide;
 
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
-export const LIMITES = { texteMin: 20, texteMax: 600, nomMin: 2, nomMax: 80, urlMax: 200, raisonMax: 500, bugMin: 15, bugMax: 800, pageMax: 200 } as const;
+export const LIMITES = { texteMin: 20, texteMax: 600, nomMin: 2, nomMax: 80, urlMax: 200, raisonMax: 500, emailMax: 120, bugMin: 15, bugMax: 800, pageMax: 200 } as const;
 
 // Lien facultatif : https uniquement, sans identifiants, sans adresse locale.
 export function lienValide(brut: unknown): string | null | undefined {
@@ -47,6 +48,16 @@ export function lienValide(brut: unknown): string | null | undefined {
   const h = u.hostname.toLowerCase();
   if (h === 'localhost' || h.endsWith('.local') || !h.includes('.') || /^\d+\.\d+\.\d+\.\d+$/.test(h)) return undefined;
   return u.toString();
+}
+
+// E-mail de contact facultatif : forme simple, une seule arobase, 120 caractères au plus.
+export function emailValide(brut: unknown): string | null | undefined {
+  if (brut === undefined || brut === null) return null;
+  if (typeof brut !== 'string') return undefined;
+  const v = brut.trim();
+  if (v === '') return null;
+  if (v.length < 5 || v.length > LIMITES.emailMax || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v) || /[\u0000-\u001f\u007f]/.test(v)) return undefined;
+  return v;
 }
 
 function texte(brut: unknown, min: number, max: number): string | undefined {
@@ -95,7 +106,9 @@ export function validerContribution(corps: unknown): { ok: true; valeur: Contrib
       if (!r) return { ok: false, erreur: 'raison' };
       raison = r;
     }
-    return { ok: true, valeur: { kind: 'proposition', nom, url, raison, langue } };
+    const email = emailValide(c.email);
+    if (email === undefined) return { ok: false, erreur: 'email' };
+    return { ok: true, valeur: { kind: 'proposition', nom, url, raison, email, langue } };
   }
 
   if (c.kind === 'bug') {

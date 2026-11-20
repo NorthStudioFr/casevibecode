@@ -99,6 +99,7 @@ export function ModerationPanel() {
               <p className="font-medium">{p.nom}</p>
               {p.url && <p className="break-all text-xs text-slate-500">{p.url}</p>}
               {p.raison && <p className="mt-1 whitespace-pre-line">{p.raison}</p>}
+              {p.contact_email && <p className="mt-1 break-all text-xs text-slate-600">Contact : {p.contact_email}</p>}
               <p className="mt-1 text-xs text-slate-500">
                 {p.langue} · {new Date(p.created_at).toLocaleString('fr-FR')}
               </p>

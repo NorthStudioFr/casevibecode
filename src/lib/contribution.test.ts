@@ -33,10 +33,17 @@ describe('validerContribution', () => {
   it('valide une proposition, avec lien et raison facultatifs', () => {
     expect(validerContribution({ kind: 'proposition', nom: ' Tilby ', url: 'https://www.tilby.com', raison: '' })).toEqual({
       ok: true,
-      valeur: { kind: 'proposition', nom: 'Tilby', url: 'https://www.tilby.com/', raison: null, langue: 'fr' },
+      valeur: { kind: 'proposition', nom: 'Tilby', url: 'https://www.tilby.com/', raison: null, email: null, langue: 'fr' },
     });
     expect(validerContribution({ kind: 'proposition', nom: 'A' })).toEqual({ ok: false, erreur: 'nom' });
     expect(validerContribution({ kind: 'proposition', nom: 'Outil', raison: 'x'.repeat(501) })).toEqual({ ok: false, erreur: 'raison' });
+  });
+  it('accepte un e-mail de contact facultatif et refuse un e-mail invalide', () => {
+    expect(validerContribution({ kind: 'proposition', nom: 'Tilby', email: ' contact@tilby.com ' })).toMatchObject({ ok: true, valeur: { email: 'contact@tilby.com' } });
+    expect(validerContribution({ kind: 'proposition', nom: 'Tilby', email: '' })).toMatchObject({ ok: true, valeur: { email: null } });
+    expect(validerContribution({ kind: 'proposition', nom: 'Tilby', email: 'pas-un-email' })).toEqual({ ok: false, erreur: 'email' });
+    expect(validerContribution({ kind: 'proposition', nom: 'Tilby', email: 'a@b.fr, c@d.fr' })).toEqual({ ok: false, erreur: 'email' });
+    expect(validerContribution({ kind: 'proposition', nom: 'Tilby', email: 'a@' + 'x'.repeat(120) + '.fr' })).toEqual({ ok: false, erreur: 'email' });
   });
   it('refuse tout le reste', () => {
     expect(validerContribution(null)).toEqual({ ok: false, erreur: 'invalide' });

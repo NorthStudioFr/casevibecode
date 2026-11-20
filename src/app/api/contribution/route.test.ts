@@ -45,6 +45,15 @@ describe('POST /api/contribution', () => {
     expect(insert.mock.calls[0][0]).toMatchObject({ nom: 'Tilby', url: 'https://www.tilby.com/', raison: null });
   });
 
+  it("enregistre l'e-mail de contact d'une proposition, et l'omet quand il est vide", async () => {
+    const res = await post({ kind: 'proposition', nom: 'Tilby', email: 'contact@tilby.com' });
+    expect(res.status).toBe(201);
+    expect(insert.mock.calls[0][0]).toMatchObject({ contact_email: 'contact@tilby.com' });
+    insert.mockClear();
+    await post({ kind: 'proposition', nom: 'Tilby', email: '' });
+    expect(insert.mock.calls[0][0]).not.toHaveProperty('contact_email');
+  });
+
   it('enregistre un signalement de bug', async () => {
     const res = await post({ kind: 'bug', message: 'Le bouton ne répond pas sur mon iPhone.', page: '/logiciel/tally', langue: 'fr' });
     expect(res.status).toBe(201);

@@ -14,6 +14,7 @@ export interface PropositionATraiter {
   nom: string;
   url: string | null;
   raison: string | null;
+  contact_email: string | null;
   langue: 'fr' | 'en';
   created_at: string;
 }
@@ -51,7 +52,7 @@ export async function moderer(id: string, statut: 'publie' | 'refuse'): Promise<
 export async function listerPropositions(): Promise<PropositionATraiter[]> {
   const { data, error } = await getSupabaseBrowser()
     .from('propositions')
-    .select('id, nom, url, raison, langue, created_at')
+    .select('id, nom, url, raison, contact_email, langue, created_at')
     .eq('traitee', false)
     .order('created_at', { ascending: true });
   if (error) throw error;

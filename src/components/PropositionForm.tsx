@@ -11,6 +11,7 @@ export function PropositionForm() {
   const [nom, setNom] = useState('');
   const [url, setUrl] = useState('');
   const [raison, setRaison] = useState('');
+  const [email, setEmail] = useState('');
   const [piege, setPiege] = useState('');
   const [etat, setEtat] = useState<'repos' | 'envoi' | 'ok'>('repos');
   const [erreur, setErreur] = useState<string | null>(null);
@@ -20,7 +21,7 @@ export function PropositionForm() {
     setErreur(null);
     setEtat('envoi');
     try {
-      await envoyerContribution({ kind: 'proposition', nom, url, raison, langue: lang, site: piege });
+      await envoyerContribution({ kind: 'proposition', nom, url, raison, email, langue: lang, site: piege });
       setEtat('ok');
     } catch (err) {
       setEtat('repos');
@@ -55,6 +56,15 @@ export function PropositionForm() {
           {t.proposer.reasonLabel}
         </label>
         <textarea id="prop-raison" value={raison} onChange={(e) => setRaison(e.target.value)} maxLength={500} rows={4} className={CHAMP} />
+      </div>
+      <div>
+        <label htmlFor="prop-email" className="block text-sm text-slate-700">
+          {t.proposer.emailLabel}
+        </label>
+        <input id="prop-email" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} maxLength={120} aria-describedby="prop-email-hint" className={CHAMP} />
+        <p id="prop-email-hint" className="mt-1 text-xs text-slate-500">
+          {t.proposer.emailHint}
+        </p>
       </div>
       <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
         <label>

@@ -21,7 +21,7 @@ const TEXTES = {
     newsletter: "Votre email, si vous vous inscrivez au formulaire de newsletter du site.",
     contribTitre: 'Retours, propositions de logiciels et signalements de bugs',
     contrib:
-      "Si vous envoyez un retour, proposez un logiciel ou signalez un bug : le texte que vous écrivez, le lien ou la page concernée éventuels, la langue de la page et la date. Aucun nom ni e-mail n'est demandé : n'en mettez pas dans votre texte. Un retour n'est publié qu'après relecture, sans nom d'auteur. Une empreinte chiffrée de votre adresse IP est conservée 13 mois contre les abus.",
+      "Si vous envoyez un retour, proposez un logiciel ou signalez un bug : le texte que vous écrivez, le lien ou la page concernée éventuels, la langue de la page et la date. Aucun nom n'est demandé : n'en mettez pas dans votre texte. Seule la proposition de logiciel offre un champ e-mail facultatif, utilisé uniquement pour vous écrire à propos de cette fiche, lisible de l'administrateur seul et supprimé après 13 mois ; sans e-mail, rien ne vous identifie. Un retour n'est publié qu'après relecture, sans nom d'auteur. Une empreinte chiffrée de votre adresse IP est conservée 13 mois contre les abus.",
     auditTitre: 'Mon audit',
     audit: "Le calcul de la page « Mon audit » se fait dans votre navigateur : la sélection n'est ni envoyée ni enregistrée. Le lien de partage contient seulement les noms des outils cochés.",
     baseTitre: 'Pourquoi, et sur quelle base légale',
@@ -65,7 +65,7 @@ const TEXTES = {
     newsletter: 'Your email, if you sign up through the site’s newsletter form.',
     contribTitre: 'Feedback, tool suggestions and bug reports',
     contrib:
-      'If you send feedback, suggest a tool or report a bug: the text you write, the optional link or page concerned, the page language and the date. No name or email is asked: do not put any in your text. Feedback is only published after review, without an author’s name. An encrypted fingerprint of your IP address is kept for 13 months against abuse.',
+      'If you send feedback, suggest a tool or report a bug: the text you write, the optional link or page concerned, the page language and the date. No name is asked: do not put any in your text. Only the tool suggestion form has an optional email field, used only to write to you about that page, readable by the administrator alone and deleted after 13 months; without an email, nothing identifies you. Feedback is only published after review, without an author’s name. An encrypted fingerprint of your IP address is kept for 13 months against abuse.',
     auditTitre: 'My audit',
     audit: 'The calculation on the “My audit” page happens in your browser: the selection is neither sent nor saved. The share link only contains the names of the ticked tools.',
     baseTitre: 'Why, and on what legal basis',
