@@ -1,0 +1,117 @@
+[
+ {
+  "slug": "apero",
+  "nom": "Apero",
+  "categorie": "reservation",
+  "secteur": "chr",
+  "domaine": "aperoreserve.com",
+  "description": "Logiciel de réservation pour restaurants, conçu pour le Québec (Montréal), en français et en anglais : carnet de réservations, réservation en ligne illimitée avec page et widget pour votre site, plan de salle avec attribution automatique des tables, liste d'attente par code QR, confirmations et rappels par texto bidirectionnels, fiches clients et CRM, dépôts et frais d'absence versés sur votre compte Stripe, « Réserver avec Google », plusieurs établissements dans un seul compte. Le forfait Tout inclus ajoute Donna, une réceptionniste IA qui répond au téléphone 24 h sur 24. Aucun frais par réservation ni par couvert. Forfait Standard à 77 $ CA par mois et par établissement (30 jours gratuits) ; Tout inclus à 349 $ CA (taxes en sus, prix mis à jour par l'éditeur le 12 octobre 2026 et relevés le 20 novembre 2026). Série A de 5 M$ annoncée le 7 octobre 2026.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Le carnet de réservations, le plan de salle, la page de réservation et la liste d'attente forment un schéma classique qui se code raisonnablement, et les dépôts passent par Stripe, que vous branchez vous-même. Ce qui est plus difficile à refaire : la réceptionniste IA qui répond au téléphone (téléphonie, qualité de la voix, transferts à l'équipe), les textos bidirectionnels avec un opérateur fiable et le bouton « Réserver avec Google », qui suppose un accord avec Google. Si vous recevez surtout vos réservations par votre site, un outil sur mesure suffit ; si le téléphone est votre problème en plein service, c'est ce module que vous paierez.",
+  "prix": "à partir de 77 $ CA/mois par établissement, taxes en sus (relevé sur aperoreserve.com le 20 nov. 2026)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "La réceptionniste IA qui répond au téléphone 24 h sur 24",
+   "Les textos de confirmation et de rappel bidirectionnels",
+   "Le bouton « Réserver avec Google »",
+   "La migration gratuite de vos clients et de vos réservations à venir"
+  ],
+  "alternatives": [
+   {
+    "nom": "resOS",
+    "url": "https://resos.com",
+    "type": "gratuit",
+    "description": "Logiciel de réservation pour restaurants, gratuit jusqu'à 25 réservations par mois ; plans payants à partir de 45 € par mois."
+   },
+   {
+    "nom": "Easy!Appointments",
+    "url": "https://github.com/alextselegidis/easyappointments",
+    "type": "open-source",
+    "description": "Prise de rendez-vous libre (GPL-3.0) avec créneaux, notifications par e-mail et API ; à adapter pour des tables."
+   }
+  ],
+  "prompt": "Construis un petit système de réservation de tables pour mon restaurant, pour remplacer le carnet et la page de réservation d'un abonnement.\n\nContexte : un restaurant de 40 couverts, deux services (midi, soir), environ 25 réservations par jour.\n\nÀ faire :\n- Des services avec horaires, durée moyenne d'un repas et capacité maximale en couverts par créneau.\n- Un plan de salle simple (tables, nombre de places) et l'attribution d'une table à une réservation.\n- Une page publique de réservation : date, service, nombre de couverts, nom, téléphone, e-mail ; confirmation par e-mail avec un lien d'annulation.\n- Une liste d'attente quand un service est complet.\n- Un dépôt facultatif pour les groupes, via Stripe Checkout (clés dans .env, jamais dans le dépôt).\n- Un fichier client minimal, avec consentement explicite avant tout message promotionnel et suppression sur demande.\n- Un champ piège (honeypot) et une limite de débit par IP.\n\nHors périmètre : réceptionniste téléphonique IA, textos bidirectionnels, bouton « Réserver avec Google », plusieurs établissements.\n\nREADME : lancement, variables d'environnement, sauvegarde de la base.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "finedine-ai",
+  "nom": "FineDine AI",
+  "categorie": "commande",
+  "secteur": "chr",
+  "domaine": "finedinemenu.com",
+  "description": "Plateforme pour restaurants, cafés et bars réunissant menu numérique par QR code, commande et paiement à table, livraison et vente à emporter, réservations, gestion des tables, CRM et fidélité, avec une couche d'IA : gestion du menu, studio de photos et vidéos, site web généré, publications sur les réseaux sociaux et rapports. Menu affiché en plusieurs langues et devises, allergènes et valeurs nutritionnelles, collecte de pourboires. Formules facturées à l'année, relevées le 20 novembre 2026 : Starter 27 € par mois, Growth 65 €, Premium 127 € (réduction de 50 % la première année affichée jusqu'à fin novembre, non retenue ici) ; la plateforme appartient à Bambulabs.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Le menu par QR code, la commande à table et le site vitrine sont des briques que l'on code raisonnablement, séparément, pour un seul établissement. Le tout réuni coûte plus cher à tenir : le paiement en ligne, les allergènes à jour, le CRM avec segmentation et les contenus générés par IA demandent de l'entretien et des fournisseurs tiers. Si vous n'avez besoin que d'une carte consultable et d'un lien de commande, du sur-mesure suffit ; si vous voulez tout dans un seul tableau de bord, la plateforme évite d'assembler cinq outils.",
+  "prix": "à partir de 27 €/mois, facturé à l'année (relevé sur finedinemenu.com le 20 nov. 2026)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le studio d'IA pour photos, vidéos et menus",
+   "Le CRM avec segmentation et les campagnes",
+   "La commande et le paiement à table déjà branchés à un prestataire",
+   "La traduction du menu en plusieurs langues et devises"
+  ],
+  "alternatives": [
+   {
+    "nom": "GloriaFood",
+    "url": "https://www.gloriafood.com",
+    "type": "gratuit",
+    "description": "Plateforme de commande en ligne gratuite (formule freemium), répandue chez les petits indépendants."
+   }
+  ],
+  "prompt": "Construis un menu numérique par QR code avec commande à emporter pour mon restaurant, pour remplacer un abonnement de plateforme restaurant.\n\nContexte : un restaurant, 30 plats, carte en français et en anglais.\n\nÀ faire :\n- Un menu public lu sur un fichier menu.yaml (catégories, plats, prix, allergènes, photo), avec un QR code par table.\n- Un panier et une commande à emporter avec créneau de retrait ; paiement via Stripe Checkout (clés dans .env, jamais dans le dépôt).\n- Une page d'administration protégée par un jeton pour marquer un plat épuisé et voir les commandes du jour.\n- Un e-mail de confirmation et une alerte pour la cuisine.\n- Un champ piège (honeypot) et une limite de débit par IP.\n\nHors périmètre : CRM, fidélité, studio de photos par IA, réseaux sociaux, réservations, plusieurs établissements.\n\nREADME : lancement, génération des QR codes, mise à jour du menu, rappel que les allergènes affichés doivent être vérifiés par le restaurateur.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "deliview",
+  "nom": "Deliview",
+  "categorie": "livraison",
+  "secteur": "chr",
+  "domaine": "deliview.fr",
+  "description": "Service français qui aide les restaurants et commerces à optimiser leurs plateformes de livraison (Uber Eats, Deliveroo, DoorDash), en deux formules par établissement : Copilote, où l'on optimise soi-même avec l'IA (recommandations de prix et d'offres, suivi des stratégies concurrentes, optimisation du catalogue, gestion des litiges clients, suivi des performances) ; et Délégation, où un expert Deliview gère les plateformes (stratégie marketing, account manager disponible 7 jours sur 7, réputation, litiges). Tarifs relevés sur deliview.fr le 20 novembre 2026 : à partir de 69 € HT par mois (Copilote), Délégation à 129 € HT par mois, un mois d'essai gratuit avec la Délégation, sans engagement.",
+  "verdict_editeur": "NOT_REALLY",
+  "justification_editeur": "Une partie du produit est du calcul : comparer vos prix à ceux de la concurrence, proposer une offre, rédiger une description de plat. Mais ce que vous payez surtout, c'est l'accès aux données de vos comptes sur chaque plateforme, qu'elles ouvrent à leur manière et peuvent modifier, et, avec la Délégation, le travail d'un expert qui gère vos litiges et vos campagnes. Un outil sur mesure peut vous aider à analyser vos propres ventes, mais ne remplace pas ce service. Si vous voulez seulement suivre vos prix et vos marges, un tableur alimenté par vos exports suffit ; sinon, ce n'est pas un projet à reconstruire.",
+  "prix": "à partir de 69 € HT/mois par établissement (Copilote), 129 € HT/mois en Délégation (relevé sur deliview.fr le 20 nov. 2026)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Un expert qui gère vos plateformes et vos litiges (formule Délégation)",
+   "Le suivi des offres et des prix de vos concurrents",
+   "Les recommandations de prix et d'offres calculées sur vos ventes",
+   "Le support disponible 7 jours sur 7"
+  ],
+  "alternatives": [],
+  "prompt": null,
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ },
+ {
+  "slug": "smrtroom",
+  "nom": "SMRTROOM",
+  "categorie": "hotellerie",
+  "secteur": "chr",
+  "domaine": "smrtroom.com",
+  "description": "Logiciel de gestion pour petits hôtels, maisons d'hôtes et résidences d'appartements (quelques dizaines de chambres), en accès anticipé, né dans un hôtel de 16 chambres sur la côte du Monténégro : calendrier par glisser-déposer sans double réservation (chaque chambre est verrouillée par nuit), état de ménage par chambre, factures et bons d'hébergement avec numérotation séquentielle et taxe de séjour, rapports de ventes et de dépenses, rôles d'équipe, plusieurs langues, interface de programmation et serveur MCP pour assistants IA. Pas de channel manager ni de synchronisation avec les agences en ligne, pas de paiement en ligne. Essai gratuit de 30 jours ; Starter à 29 € HT par mois (20 chambres, 3 utilisateurs), Pro à 59 € HT par mois (200 chambres, 20 utilisateurs ; interface de programmation et MCP), tarifs relevés sur smrtroom.com le 20 novembre 2026. Le site est en anglais.",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "Le calendrier avec verrou par chambre et par nuit, le suivi du ménage et les rapports sont un projet réaliste pour un petit hôtel, et l'éditeur annonce lui-même ne pas faire de channel manager ni de paiement en ligne, c'est-à-dire les parties difficiles. Ce qui demande de la rigueur : des factures conformes à votre pays (numérotation, mentions, taxe de séjour, facturation électronique), la sauvegarde des données et la protection des fiches clients. Si vous vendez en direct avec peu de chambres, du sur-mesure est possible ; si vos réservations viennent de Booking.com ou d'Airbnb, il vous faudra de toute façon un channel manager.",
+  "prix": "à partir de 29 € HT/mois (Starter), 59 € HT/mois (Pro), essai de 30 jours (relevé sur smrtroom.com le 20 nov. 2026)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Un calendrier déjà éprouvé en conditions réelles dans un hôtel",
+   "Les factures séquentielles et la taxe de séjour automatique",
+   "Les sauvegardes quotidiennes et l'export des données",
+   "L'accès par interface et MCP pour brancher un assistant IA"
+  ],
+  "alternatives": [
+   {
+    "nom": "QloApps",
+    "url": "https://github.com/Qloapps/QloApps",
+    "type": "open-source",
+    "description": "Système de réservation hôtelière libre (OSL-3.0), bâti sur PrestaShop : moteur de réservation et gestion des chambres."
+   }
+  ],
+  "prompt": "Construis un petit système de gestion de chambres pour mon hôtel de 12 chambres, pour remplacer un abonnement de logiciel hôtelier.\n\nContexte : réservations en direct et quelques exports de plateformes saisis à la main.\n\nÀ faire :\n- Des chambres (numéro, type, capacité) et un calendrier par chambre et par nuit, avec déplacement d'un séjour d'une chambre à une autre.\n- Aucune double réservation, garantie par une contrainte en base (chambre + nuit unique), même avec deux utilisateurs en même temps.\n- Un état de ménage par chambre (propre, à nettoyer, hors service), passé à « à nettoyer » au départ du client.\n- Une facture imprimable par réservation avec numérotation séquentielle sans trou, et la taxe de séjour configurable.\n- Des rôles (propriétaire, réception) et un journal des modifications.\n- Une sauvegarde nocturne chiffrée de la base et un export CSV.\n\nHors périmètre : channel manager, paiement en ligne, application mobile.\n\nREADME : lancement, sauvegarde et restauration testée, et rappel que les mentions légales de la facture dépendent de mon pays.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ }
+]

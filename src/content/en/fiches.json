@@ -4454,5 +4454,56 @@
   "alternatives": [
    "Open-source appointment booking (GPL-3.0) with slots, e-mail notifications and an API; to be adapted for tables. Covers neither Google visibility nor AI-assistant tracking."
   ]
+ },
+ "apero": {
+  "description": "Restaurant reservation software built for Québec (Montréal), in French and English: reservation book, unlimited online booking with a page and a widget for your site, floor plan with automatic table assignment, waiting list by QR code, two-way text confirmations and reminders, guest records and CRM, deposits and no-show fees paid into your own Stripe account, “Reserve with Google”, several venues in one account. The All-inclusive plan adds Donna, an AI receptionist that answers the phone around the clock. No fee per booking or per cover. Standard plan at CA$77 a month per venue (30 days free); All-inclusive at CA$349 (taxes extra, prices updated by the vendor on 12 October 2026 and read on 20 November 2026). A US$5M Series A was announced on 7 October 2026.",
+  "justification": "The reservation book, floor plan, booking page and waiting list are a classic schema that can reasonably be built, and deposits go through Stripe, which you can plug in yourself. Harder to redo: the AI receptionist that answers the phone (telephony, voice quality, handing over to staff), reliable two-way text messaging and the “Reserve with Google” button, which needs an agreement with Google. If most of your bookings come through your own site, a custom tool is enough; if the phone is your problem during service, that module is what you will be paying for.",
+  "perdez": [
+   "The AI receptionist that answers the phone around the clock.",
+   "Two-way text confirmations and reminders.",
+   "The “Reserve with Google” button.",
+   "Free migration of your guests and upcoming bookings."
+  ],
+  "alternatives": [
+   "Restaurant reservation software, free up to 25 bookings a month; paid plans from €45 a month.",
+   "Open-source appointment booking (GPL-3.0) with slots, e-mail notifications and an API; to be adapted for tables."
+  ]
+ },
+ "finedine-ai": {
+  "description": "Platform for restaurants, cafés and bars combining a QR-code digital menu, table ordering and payment, delivery and takeaway, reservations, table management, CRM and loyalty, with an AI layer: menu management, photo and video studio, generated website, social media posting and reports. Menu shown in several languages and currencies, allergens and nutrition values, tip collection. Plans billed annually, read on 20 November 2026: Starter €27 a month, Growth €65, Premium €127 (a 50% first-year discount is displayed until the end of November and is not used here); the platform belongs to Bambulabs.",
+  "justification": "The QR-code menu, table ordering and showcase site are building blocks that can reasonably be coded, separately, for a single venue. Having them all together costs more to maintain: online payment, up-to-date allergens, CRM with segmentation and AI-generated content need upkeep and third-party providers. If you only need a browsable menu and an order link, a custom tool is enough; if you want everything in one dashboard, the platform saves you from assembling five tools.",
+  "perdez": [
+   "The AI studio for photos, videos and menus.",
+   "The CRM with segmentation and campaigns.",
+   "Table ordering and payment already wired to a provider.",
+   "Menu translation into several languages and currencies."
+  ],
+  "alternatives": [
+   "Free online ordering platform (freemium plan), widespread among small independents."
+  ]
+ },
+ "deliview": {
+  "description": "French service that helps restaurants and shops optimise their delivery platforms (Uber Eats, Deliveroo, DoorDash), in two plans per venue: Copilot, where you optimise yourself with AI (price and offer recommendations, tracking of competitors’ strategies, catalogue optimisation, customer dispute handling, performance tracking); and Delegation, where a Deliview expert manages the platforms (marketing strategy, account manager available seven days a week, reputation, disputes). Prices read on deliview.fr on 20 November 2026: from €69 excl. VAT a month (Copilot), Delegation at €129 excl. VAT a month, one free trial month with Delegation, no commitment.",
+  "justification": "Part of the product is calculation: comparing your prices with competitors’, suggesting an offer, writing a dish description. But what you mostly pay for is access to the data in your accounts on each platform, which each platform opens in its own way and can change, and, with Delegation, the work of an expert who handles your disputes and campaigns. A custom tool can help you analyse your own sales but does not replace that service. If you only want to track your prices and margins, a spreadsheet fed by your exports is enough; otherwise this is not a project to rebuild.",
+  "perdez": [
+   "An expert who manages your platforms and disputes (Delegation plan).",
+   "Tracking of your competitors’ offers and prices.",
+   "Price and offer recommendations calculated from your sales.",
+   "Support available seven days a week."
+  ],
+  "alternatives": []
+ },
+ "smrtroom": {
+  "description": "Management software for small hotels, guesthouses and apartment buildings (a few dozen rooms), in early access, born in a 16-room hotel on the Montenegrin coast: drag-and-drop calendar with no double booking (each room is locked per night), housekeeping status per room, invoices and accommodation vouchers with sequential numbering and tourist tax, sales and expense reports, team roles, several languages, an API and an MCP server for AI assistants. No channel manager or sync with online travel agencies, no online payments. 30-day free trial; Starter at €29 excl. VAT a month (20 rooms, 3 users), Pro at €59 excl. VAT a month (200 rooms, 20 users; API and MCP), prices read on smrtroom.com on 20 November 2026. The site is in English.",
+  "justification": "The calendar with a lock per room and per night, housekeeping tracking and reports are a realistic project for a small hotel, and the vendor itself says it has no channel manager or online payment, which are the hard parts. What demands rigour: invoices that comply with your country (numbering, mandatory mentions, tourist tax, e-invoicing), data backups and protecting guest records. If you sell direct with few rooms, a custom tool is possible; if your bookings come from Booking.com or Airbnb, you will need a channel manager anyway.",
+  "perdez": [
+   "A calendar already proven in real conditions in a hotel.",
+   "Sequential invoices and automatic tourist tax.",
+   "Daily backups and data export.",
+   "API and MCP access to plug in an AI assistant."
+  ],
+  "alternatives": [
+   "Free open-source hotel booking system (OSL-3.0) built on PrestaShop: booking engine and room management."
+  ]
  }
 }
