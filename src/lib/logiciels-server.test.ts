@@ -48,6 +48,26 @@ describe('logiciels-server', () => {
     }));
   });
 
+  it('relit la table après un délai dépassé passager (57014), puis réussit', async () => {
+    vi.useFakeTimers();
+    orderMock
+      .mockResolvedValueOnce({ data: null, error: { code: '57014', message: 'canceling statement due to statement timeout' } })
+      .mockResolvedValueOnce({ data: [row('zenchef')], error: null });
+    const { getLogiciels } = await import('./logiciels-server');
+    const attente = getLogiciels();
+    await vi.runAllTimersAsync();
+    expect((await attente).map((l) => l.slug)).toEqual(['zenchef']);
+    expect(orderMock).toHaveBeenCalledTimes(2);
+    vi.useRealTimers();
+  });
+
+  it("ne retente pas une erreur définitive (droits refusés) : l'erreur remonte aussitôt", async () => {
+    orderMock.mockResolvedValue({ data: null, error: { code: '42501', message: 'permission denied' } });
+    const { getLogiciels } = await import('./logiciels-server');
+    await expect(getLogiciels()).rejects.toMatchObject({ code: '42501' });
+    expect(orderMock).toHaveBeenCalledTimes(1);
+  });
+
   it("build sans variables : liste vide renvoyée HORS du cache (jamais mémorisée par Next)", async () => {
     buildWithoutSupabase = true;
     const { getLogiciels } = await import('./logiciels-server');

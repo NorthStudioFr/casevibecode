@@ -13,9 +13,26 @@ import { DEFAULT_LANG, type Lang } from './i18n/config';
 // pages) : le quota de calcul Vercel est partagé avec un autre projet, donc on
 // régénère rarement ; une fiche modifiée apparaît dans l'heure (ou au prochain
 // déploiement).
+// Pendant le build, plusieurs processus lisent la base en même temps : une lecture peut dépasser le
+// délai du rôle public (code 57014, « statement timeout ») ou échouer sur le réseau, alors qu'elle
+// réussit une seconde plus tard. On la retente quelques fois avant de faire échouer le build.
+const ERREURS_PASSAGERES = /57014|statement timeout|fetch failed|ECONNRESET|ETIMEDOUT|502|503|504/i;
+
+async function avecReprise<T>(
+  lecture: () => PromiseLike<{ data: T; error: { code?: string; message?: string } | null }>,
+  tentatives = 4,
+): Promise<{ data: T; error: { code?: string; message?: string } | null }> {
+  let dernier = await lecture();
+  for (let i = 1; i < tentatives && dernier.error && ERREURS_PASSAGERES.test(`${dernier.error.code ?? ''} ${dernier.error.message ?? ''}`); i++) {
+    await new Promise((r) => setTimeout(r, 800 * i));
+    dernier = await lecture();
+  }
+  return dernier;
+}
+
 const getLogicielsCached = unstable_cache(
   async (): Promise<Logiciel[]> => {
-    const { data, error } = await getSupabaseServer().from('logiciels').select('*').order('slug');
+    const { data, error } = await avecReprise(() => getSupabaseServer().from('logiciels').select('*').order('slug'));
     if (error) throw error;
     return (data as LogicielRow[]).map(mapLogicielRow);
   },
@@ -36,14 +53,14 @@ export async function getLogiciels(lang: Lang = DEFAULT_LANG): Promise<Logiciel[
 
 export async function getLogicielBySlug(slug: string, lang: Lang = DEFAULT_LANG): Promise<Logiciel | null> {
   if (isBuildWithoutSupabase()) return null;
-  const { data, error } = await getSupabaseServer().from('logiciels').select('*').eq('slug', slug).maybeSingle();
+  const { data, error } = await avecReprise(() => getSupabaseServer().from('logiciels').select('*').eq('slug', slug).maybeSingle());
   if (error) throw error;
   return data ? appliquerTraduction(mapLogicielRow(data as LogicielRow), lang) : null;
 }
 
 export async function getVoteCounts(logicielId: string): Promise<VoteCounts> {
   if (isBuildWithoutSupabase()) return { remplace: 0, pasRemplacable: 0 };
-  const { data, error } = await getSupabaseServer().rpc('vote_counts', { p_slug: logicielId });
+  const { data, error } = await avecReprise(() => getSupabaseServer().rpc('vote_counts', { p_slug: logicielId }));
   if (error) throw error;
   const row = (data as { remplace: number; pas_remplacable: number }[] | null)?.[0];
   return { remplace: row?.remplace ?? 0, pasRemplacable: row?.pas_remplacable ?? 0 };
