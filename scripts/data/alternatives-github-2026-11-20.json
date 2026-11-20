@@ -1,0 +1,2120 @@
+{
+ "karanshukla/openresto": {
+  "depot": "https://github.com/karanshukla/openresto",
+  "etoiles": 105,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v2.7.1",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "karanshukla/openresto"
+ },
+ "tastyigniter/TastyIgniter": {
+  "depot": "https://github.com/tastyigniter/TastyIgniter",
+  "etoiles": 3872,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "v4.5.1",
+   "date": "2026-11-14"
+  },
+  "nom_canonique": "tastyigniter/TastyIgniter"
+ },
+ "Qloapps/QloApps": {
+  "depot": "https://github.com/Qloapps/QloApps",
+  "etoiles": 14499,
+  "licence": "OSL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v1.8.0",
+   "date": "2026-11-06"
+  },
+  "nom_canonique": "Qloapps/QloApps"
+ },
+ "alextselegidis/easyappointments": {
+  "depot": "https://github.com/alextselegidis/easyappointments",
+  "etoiles": 4498,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-18",
+  "derniere_version": {
+   "version": "1.6.1",
+   "date": "2026-10-19"
+  },
+  "nom_canonique": "alextselegidis/easyappointments"
+ },
+ "odoo/odoo": {
+  "depot": "https://github.com/odoo/odoo",
+  "etoiles": 55985,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": null,
+  "nom_canonique": "odoo/odoo"
+ },
+ "OpnForm/OpnForm": {
+  "depot": "https://github.com/OpnForm/OpnForm",
+  "etoiles": 4023,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "v2.8.6",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "OpnForm/OpnForm"
+ },
+ "heyform/heyform": {
+  "depot": "https://github.com/heyform/heyform",
+  "etoiles": 9082,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v3.0.7",
+   "date": "2026-11-16"
+  },
+  "nom_canonique": "heyform/heyform"
+ },
+ "fleetbase/fleetbase": {
+  "depot": "https://github.com/fleetbase/fleetbase",
+  "etoiles": 4670,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v0.8.1",
+   "date": "2026-11-18"
+  },
+  "nom_canonique": "fleetbase/fleetbase"
+ },
+ "Dolibarr/dolibarr": {
+  "depot": "https://github.com/Dolibarr/dolibarr",
+  "etoiles": 7888,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "24.0.3",
+   "date": "2026-11-11"
+  },
+  "nom_canonique": "Dolibarr/dolibarr"
+ },
+ "kimai/kimai": {
+  "depot": "https://github.com/kimai/kimai",
+  "etoiles": 5170,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "2.72.1",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "kimai/kimai"
+ },
+ "actualbudget/actual": {
+  "depot": "https://github.com/actualbudget/actual",
+  "etoiles": 30371,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v26.11.0",
+   "date": "2026-11-02"
+  },
+  "nom_canonique": "actualbudget/actual"
+ },
+ "firefly-iii/firefly-iii": {
+  "depot": "https://github.com/firefly-iii/firefly-iii",
+  "etoiles": 25304,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v6.7.9",
+   "date": "2026-10-11"
+  },
+  "nom_canonique": "firefly-iii/firefly-iii"
+ },
+ "beancount/fava": {
+  "depot": "https://github.com/beancount/fava",
+  "etoiles": 2605,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-15",
+  "derniere_version": null,
+  "nom_canonique": "beancount/fava"
+ },
+ "developeregrem/fewohbee": {
+  "depot": "https://github.com/developeregrem/fewohbee",
+  "etoiles": 65,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v4.14.0",
+   "date": "2026-11-15"
+  },
+  "nom_canonique": "developeregrem/fewohbee"
+ },
+ "satisfecho/pos": {
+  "depot": "https://github.com/satisfecho/pos",
+  "etoiles": 70,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-13",
+  "derniere_version": {
+   "version": "v2.1.193",
+   "date": "2026-11-13"
+  },
+  "nom_canonique": "satisfecho/pos"
+ },
+ "coollabsio/coolify": {
+  "depot": "https://github.com/coollabsio/coolify",
+  "etoiles": 66298,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v4.7.6",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "coollabsio/coolify"
+ },
+ "caprover/caprover": {
+  "depot": "https://github.com/caprover/caprover",
+  "etoiles": 15212,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v1.16.1",
+   "date": "2026-11-18"
+  },
+  "nom_canonique": "caprover/caprover"
+ },
+ "dokku/dokku": {
+  "depot": "https://github.com/dokku/dokku",
+  "etoiles": 32232,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v0.38.34",
+   "date": "2026-10-30"
+  },
+  "nom_canonique": "dokku/dokku"
+ },
+ "polarsource/polar": {
+  "depot": "https://github.com/polarsource/polar",
+  "etoiles": 10500,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "sdk/1.3.2",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "polarsource/polar"
+ },
+ "medusajs/medusa": {
+  "depot": "https://github.com/medusajs/medusa",
+  "etoiles": 37344,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v2.23.0",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "medusajs/medusa"
+ },
+ "bagisto/bagisto": {
+  "depot": "https://github.com/bagisto/bagisto",
+  "etoiles": 28392,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-18",
+  "derniere_version": {
+   "version": "v2.5.2",
+   "date": "2026-11-18"
+  },
+  "nom_canonique": "bagisto/bagisto"
+ },
+ "opencart/opencart": {
+  "depot": "https://github.com/opencart/opencart",
+  "etoiles": 8243,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-18",
+  "derniere_version": {
+   "version": "4.1.0.4",
+   "date": "2026-08-11"
+  },
+  "nom_canonique": "opencart/opencart"
+ },
+ "shopware/shopware": {
+  "depot": "https://github.com/shopware/shopware",
+  "etoiles": 3475,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v6.7.16.1",
+   "date": "2026-11-18"
+  },
+  "nom_canonique": "shopware/shopware"
+ },
+ "magento/magento2": {
+  "depot": "https://github.com/magento/magento2",
+  "etoiles": 12242,
+  "licence": "OSL-3.0",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "2.4.10-alpha1",
+   "date": "2026-10-13"
+  },
+  "nom_canonique": "magento/magento2"
+ },
+ "calcom/cal.com": {
+  "depot": "https://github.com/calcom/cal.diy",
+  "etoiles": 50253,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-13",
+  "derniere_version": {
+   "version": "v6.2.0",
+   "date": "2026-03-01"
+  },
+  "nom_canonique": "calcom/cal.diy"
+ },
+ "lukevella/rallly": {
+  "depot": "https://github.com/lukevella/rallly",
+  "etoiles": 5365,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v4.17.1",
+   "date": "2026-11-17"
+  },
+  "nom_canonique": "lukevella/rallly"
+ },
+ "gitroomhq/postiz-app": {
+  "depot": "https://github.com/gitroomhq/postiz-app",
+  "etoiles": 42049,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v2.26.0",
+   "date": "2026-11-13"
+  },
+  "nom_canonique": "gitroomhq/postiz-app"
+ },
+ "logseq/logseq": {
+  "depot": "https://github.com/logseq/logseq",
+  "etoiles": 45681,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "2.0.2",
+   "date": "2026-10-07"
+  },
+  "nom_canonique": "logseq/logseq"
+ },
+ "siyuan-note/siyuan": {
+  "depot": "https://github.com/siyuan-note/siyuan",
+  "etoiles": 47306,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v3.8.11",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "siyuan-note/siyuan"
+ },
+ "streetwriters/notesnook": {
+  "depot": "https://github.com/streetwriters/notesnook",
+  "etoiles": 14949,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v3.4.13",
+   "date": "2026-11-10"
+  },
+  "nom_canonique": "streetwriters/notesnook"
+ },
+ "TryGhost/Ghost": {
+  "depot": "https://github.com/TryGhost/Ghost",
+  "etoiles": 55870,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v6.78.0",
+   "date": "2026-11-17"
+  },
+  "nom_canonique": "TryGhost/Ghost"
+ },
+ "writefreely/writefreely": {
+  "depot": "https://github.com/writefreely/writefreely",
+  "etoiles": 5293,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-12",
+  "derniere_version": {
+   "version": "v0.17.3",
+   "date": "2026-11-09"
+  },
+  "nom_canonique": "writefreely/writefreely"
+ },
+ "gohugoio/hugo": {
+  "depot": "https://github.com/gohugoio/hugo",
+  "etoiles": 90531,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "v0.170.1",
+   "date": "2026-11-17"
+  },
+  "nom_canonique": "gohugoio/hugo"
+ },
+ "toeverything/AFFiNE": {
+  "depot": "https://github.com/toeverything/AFFiNE",
+  "etoiles": 75634,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v0.27.4",
+   "date": "2026-08-18"
+  },
+  "nom_canonique": "toeverything/AFFiNE"
+ },
+ "cryptpad/cryptpad": {
+  "depot": "https://github.com/cryptpad/cryptpad",
+  "etoiles": 8090,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "2026.10.1",
+   "date": "2026-11-10"
+  },
+  "nom_canonique": "cryptpad/cryptpad"
+ },
+ "excalidraw/excalidraw": {
+  "depot": "https://github.com/excalidraw/excalidraw",
+  "etoiles": 136024,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "v0.18.1",
+   "date": "2026-04-21"
+  },
+  "nom_canonique": "excalidraw/excalidraw"
+ },
+ "lovasoa/whitebophir": {
+  "depot": "https://github.com/lovasoa/whitebophir",
+  "etoiles": 2692,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-18",
+  "derniere_version": {
+   "version": "v2.18.44",
+   "date": "2026-11-18"
+  },
+  "nom_canonique": "lovasoa/whitebophir"
+ },
+ "teableio/teable": {
+  "depot": "https://github.com/teableio/teable",
+  "etoiles": 22003,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "release.2026-11-20T02-10-33Z.3993",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "teableio/teable"
+ },
+ "makeplane/plane": {
+  "depot": "https://github.com/makeplane/plane",
+  "etoiles": 62855,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v1.5.0",
+   "date": "2026-11-16"
+  },
+  "nom_canonique": "makeplane/plane"
+ },
+ "opf/openproject": {
+  "depot": "https://github.com/opf/openproject",
+  "etoiles": 17578,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v17.8.3",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "opf/openproject"
+ },
+ "knadh/listmonk": {
+  "depot": "https://github.com/knadh/listmonk",
+  "etoiles": 24395,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-15",
+  "derniere_version": {
+   "version": "v7.0.0-beta.2",
+   "date": "2026-11-10"
+  },
+  "nom_canonique": "knadh/listmonk"
+ },
+ "LinkStackOrg/LinkStack": {
+  "depot": "https://github.com/LinkStackOrg/LinkStack",
+  "etoiles": 3956,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-10-26",
+  "derniere_version": {
+   "version": "v4.8.8",
+   "date": "2026-10-22"
+  },
+  "nom_canonique": "LinkStackOrg/LinkStack"
+ },
+ "sethcottle/littlelink": {
+  "depot": "https://github.com/sethcottle/littlelink",
+  "etoiles": 3132,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-07-29",
+  "derniere_version": {
+   "version": "v3.11.0",
+   "date": "2026-07-29"
+  },
+  "nom_canonique": "sethcottle/littlelink"
+ },
+ "chatwoot/chatwoot": {
+  "depot": "https://github.com/chatwoot/chatwoot",
+  "etoiles": 40249,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v4.20.1",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "chatwoot/chatwoot"
+ },
+ "zammad/zammad": {
+  "depot": "https://github.com/zammad/zammad",
+  "etoiles": 6132,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": null,
+  "nom_canonique": "zammad/zammad"
+ },
+ "osTicket/osTicket": {
+  "depot": "https://github.com/osTicket/osTicket",
+  "etoiles": 4011,
+  "licence": "GPL-2.0",
+  "archive": false,
+  "pushed": "2026-06-17",
+  "derniere_version": {
+   "version": "v1.18.4",
+   "date": "2026-06-17"
+  },
+  "nom_canonique": "osTicket/osTicket"
+ },
+ "frappe/helpdesk": {
+  "depot": "https://github.com/frappe/helpdesk",
+  "etoiles": 3506,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v16.2.1",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "frappe/helpdesk"
+ },
+ "jitsi/jitsi-meet": {
+  "depot": "https://github.com/jitsi/jitsi-meet",
+  "etoiles": 30276,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "stable/jitsi-meet_11509",
+   "date": "2026-11-16"
+  },
+  "nom_canonique": "jitsi/jitsi-meet"
+ },
+ "miroslavpejic85/mirotalksfu": {
+  "depot": "https://github.com/miroslavpejic85/mirotalksfu",
+  "etoiles": 3162,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": null,
+  "nom_canonique": "miroslavpejic85/mirotalksfu"
+ },
+ "nextcloud/spreed": {
+  "depot": "https://github.com/nextcloud/spreed",
+  "etoiles": 2228,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v25.0.8",
+   "date": "2026-11-12"
+  },
+  "nom_canonique": "nextcloud/spreed"
+ },
+ "frappe/hrms": {
+  "depot": "https://github.com/frappe/hrms",
+  "etoiles": 9088,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v16.60.0",
+   "date": "2026-11-17"
+  },
+  "nom_canonique": "frappe/hrms"
+ },
+ "orangehrm/orangehrm": {
+  "depot": "https://github.com/orangehrm/orangehrm",
+  "etoiles": 1161,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v5.9",
+   "date": "2026-06-28"
+  },
+  "nom_canonique": "orangehrm/orangehrm"
+ },
+ "nextcloud/server": {
+  "depot": "https://github.com/nextcloud/server",
+  "etoiles": 37580,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v35.0.3",
+   "date": "2026-11-12"
+  },
+  "nom_canonique": "nextcloud/server"
+ },
+ "opencloud-eu/opencloud": {
+  "depot": "https://github.com/opencloud-eu/opencloud",
+  "etoiles": 6376,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v9.2.0",
+   "date": "2026-11-17"
+  },
+  "nom_canonique": "opencloud-eu/opencloud"
+ },
+ "haiwen/seafile": {
+  "depot": "https://github.com/haiwen/seafile",
+  "etoiles": 15480,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-11",
+  "derniere_version": {
+   "version": "v9.0.5",
+   "date": "2024-02-27"
+  },
+  "nom_canonique": "haiwen/seafile"
+ },
+ "webstudio-is/webstudio": {
+  "depot": "https://github.com/webstudio-is/webstudio",
+  "etoiles": 9178,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "0.314.0",
+   "date": "2026-11-17"
+  },
+  "nom_canonique": "webstudio-is/webstudio"
+ },
+ "plasmicapp/plasmic": {
+  "depot": "https://github.com/plasmicapp/plasmic",
+  "etoiles": 7172,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": null,
+  "nom_canonique": "plasmicapp/plasmic"
+ },
+ "concretecms/concretecms": {
+  "depot": "https://github.com/concretecms/concretecms",
+  "etoiles": 854,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "9.5.7",
+   "date": "2026-10-20"
+  },
+  "nom_canonique": "concretecms/concretecms"
+ },
+ "microweber/microweber": {
+  "depot": "https://github.com/microweber/microweber",
+  "etoiles": 3441,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "v2.0.21",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "microweber/microweber"
+ },
+ "givanz/Vvveb": {
+  "depot": "https://github.com/givanz/Vvveb",
+  "etoiles": 1322,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-10-29",
+  "derniere_version": {
+   "version": "1.0.9.0",
+   "date": "2026-10-29"
+  },
+  "nom_canonique": "givanz/Vvveb"
+ },
+ "mautic/mautic": {
+  "depot": "https://github.com/mautic/mautic",
+  "etoiles": 11057,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "7.2.2",
+   "date": "2026-10-26"
+  },
+  "nom_canonique": "mautic/mautic"
+ },
+ "twentyhq/twenty": {
+  "depot": "https://github.com/twentyhq/twenty",
+  "etoiles": 61256,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "sdk/v2.59.0",
+   "date": "2026-11-16"
+  },
+  "nom_canonique": "twentyhq/twenty"
+ },
+ "espocrm/espocrm": {
+  "depot": "https://github.com/espocrm/espocrm",
+  "etoiles": 3647,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "10.1.4",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "espocrm/espocrm"
+ },
+ "freescout-help-desk/freescout": {
+  "depot": "https://github.com/freescout-help-desk/freescout",
+  "etoiles": 4674,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "1.8.251",
+   "date": "2026-11-14"
+  },
+  "nom_canonique": "freescout-help-desk/freescout"
+ },
+ "abhinavxd/libredesk": {
+  "depot": "https://github.com/abhinavxd/libredesk",
+  "etoiles": 3182,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-14",
+  "derniere_version": {
+   "version": "v2.9.2",
+   "date": "2026-10-31"
+  },
+  "nom_canonique": "abhinavxd/libredesk"
+ },
+ "matecat/MateCat": {
+  "depot": "https://github.com/matecat/MateCat",
+  "etoiles": 518,
+  "licence": "LGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v5.0.0",
+   "date": "2026-11-10"
+  },
+  "nom_canonique": "matecat/MateCat"
+ },
+ "baserow/baserow": {
+  "depot": "https://github.com/baserow/baserow",
+  "etoiles": 6371,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "2.4.3",
+   "date": "2026-11-14"
+  },
+  "nom_canonique": "baserow/baserow"
+ },
+ "penpot/penpot": {
+  "depot": "https://github.com/penpot/penpot",
+  "etoiles": 62578,
+  "licence": "MPL-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "2.19.3",
+   "date": "2026-11-18"
+  },
+  "nom_canonique": "penpot/penpot"
+ },
+ "KlausSchaefers/quant-ux": {
+  "depot": "https://github.com/KlausSchaefers/quant-ux",
+  "etoiles": 2764,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-03",
+  "derniere_version": null,
+  "nom_canonique": "KlausSchaefers/quant-ux"
+ },
+ "WordPress/wordpress-develop": {
+  "depot": "https://github.com/WordPress/wordpress-develop",
+  "etoiles": 3515,
+  "licence": "GPL-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": null,
+  "nom_canonique": "WordPress/wordpress-develop"
+ },
+ "woocommerce/woocommerce": {
+  "depot": "https://github.com/woocommerce/woocommerce",
+  "etoiles": 10606,
+  "licence": "GPL-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "11.3.1",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "woocommerce/woocommerce"
+ },
+ "ghostfolio/ghostfolio": {
+  "depot": "https://github.com/ghostfolio/ghostfolio",
+  "etoiles": 9744,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "3.100.0",
+   "date": "2026-11-15"
+  },
+  "nom_canonique": "ghostfolio/ghostfolio"
+ },
+ "go-vikunja/vikunja": {
+  "depot": "https://github.com/go-vikunja/vikunja",
+  "etoiles": 6123,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "v2.8.0",
+   "date": "2026-11-05"
+  },
+  "nom_canonique": "go-vikunja/vikunja"
+ },
+ "super-productivity/super-productivity": {
+  "depot": "https://github.com/super-productivity/super-productivity",
+  "etoiles": 23883,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v20.0.0",
+   "date": "2026-11-06"
+  },
+  "nom_canonique": "super-productivity/super-productivity"
+ },
+ "pocketbase/pocketbase": {
+  "depot": "https://github.com/pocketbase/pocketbase",
+  "etoiles": 61577,
+  "licence": "MIT",
+  "archive": true,
+  "pushed": "2026-10-26",
+  "derniere_version": {
+   "version": "v0.40.6",
+   "date": "2026-10-23"
+  },
+  "nom_canonique": "pocketbase/pocketbase"
+ },
+ "supabase/supabase": {
+  "depot": "https://github.com/supabase/supabase",
+  "etoiles": 115200,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v1.26.08",
+   "date": "2026-08-07"
+  },
+  "nom_canonique": "supabase/supabase"
+ },
+ "appwrite/appwrite": {
+  "depot": "https://github.com/appwrite/appwrite",
+  "etoiles": 58434,
+  "licence": "BSD-3-Clause",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "2.7.4",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "appwrite/appwrite"
+ },
+ "dani-garcia/vaultwarden": {
+  "depot": "https://github.com/dani-garcia/vaultwarden",
+  "etoiles": 71070,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "1.37.5",
+   "date": "2026-11-01"
+  },
+  "nom_canonique": "dani-garcia/vaultwarden"
+ },
+ "KeePassXreboot/keepassxc": {
+  "depot": "https://github.com/keepassxreboot/keepassxc",
+  "etoiles": 30075,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-17",
+  "derniere_version": {
+   "version": "2.8.0",
+   "date": "2026-10-21"
+  },
+  "nom_canonique": "keepassxreboot/keepassxc"
+ },
+ "inovector/mixpost": {
+  "depot": "https://github.com/inovector/mixpost",
+  "etoiles": 3950,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-03-16",
+  "derniere_version": {
+   "version": "2.6.0",
+   "date": "2026-03-16"
+  },
+  "nom_canonique": "inovector/mixpost"
+ },
+ "documenso/documenso": {
+  "depot": "https://github.com/documenso/documenso",
+  "etoiles": 15840,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v2.22.0",
+   "date": "2026-11-13"
+  },
+  "nom_canonique": "documenso/documenso"
+ },
+ "docusealco/docuseal": {
+  "depot": "https://github.com/docusealco/docuseal",
+  "etoiles": 19108,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "3.3.8",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "docusealco/docuseal"
+ },
+ "OpenSignLabs/OpenSign": {
+  "depot": "https://github.com/OpenSignLabs/OpenSign",
+  "etoiles": 7315,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v3.2.0",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "OpenSignLabs/OpenSign"
+ },
+ "AppFlowy-IO/AppFlowy": {
+  "depot": "https://github.com/AppFlowy-IO/AppFlowy",
+  "etoiles": 79266,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-15",
+  "derniere_version": {
+   "version": "0.15.1",
+   "date": "2026-11-15"
+  },
+  "nom_canonique": "AppFlowy-IO/AppFlowy"
+ },
+ "garethgeorge/backrest": {
+  "depot": "https://github.com/garethgeorge/backrest",
+  "etoiles": 7946,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v1.14.1",
+   "date": "2026-07-12"
+  },
+  "nom_canonique": "garethgeorge/backrest"
+ },
+ "duplicati/duplicati": {
+  "depot": "https://github.com/duplicati/duplicati",
+  "etoiles": 15217,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v2.4.1.0_stable_2026-10-29",
+   "date": "2026-10-29"
+  },
+  "nom_canonique": "duplicati/duplicati"
+ },
+ "kopia/kopia": {
+  "depot": "https://github.com/kopia/kopia",
+  "etoiles": 14759,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v0.23.1",
+   "date": "2026-06-16"
+  },
+  "nom_canonique": "kopia/kopia"
+ },
+ "Mintplex-Labs/anything-llm": {
+  "depot": "https://github.com/Mintplex-Labs/anything-llm",
+  "etoiles": 68466,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v1.20.0",
+   "date": "2026-11-17"
+  },
+  "nom_canonique": "Mintplex-Labs/anything-llm"
+ },
+ "danny-avila/LibreChat": {
+  "depot": "https://github.com/LibreChat-AI/LibreChat",
+  "etoiles": 47366,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": null,
+  "nom_canonique": "LibreChat-AI/LibreChat"
+ },
+ "janhq/jan": {
+  "depot": "https://github.com/janhq/jan",
+  "etoiles": 45950,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-18",
+  "derniere_version": {
+   "version": "v0.8.8",
+   "date": "2026-10-28"
+  },
+  "nom_canonique": "janhq/jan"
+ },
+ "mattermost/mattermost": {
+  "depot": "https://github.com/mattermost/mattermost",
+  "etoiles": 39678,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v12.1.0",
+   "date": "2026-11-05"
+  },
+  "nom_canonique": "mattermost/mattermost"
+ },
+ "zulip/zulip": {
+  "depot": "https://github.com/zulip/zulip",
+  "etoiles": 26275,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "13.3",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "zulip/zulip"
+ },
+ "RocketChat/Rocket.Chat": {
+  "depot": "https://github.com/RocketChat/Rocket.Chat",
+  "etoiles": 46512,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "9.0.0",
+   "date": "2026-11-10"
+  },
+  "nom_canonique": "RocketChat/Rocket.Chat"
+ },
+ "element-hq/element-web": {
+  "depot": "https://github.com/element-hq/element-web",
+  "etoiles": 13669,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v1.12.35",
+   "date": "2026-11-12"
+  },
+  "nom_canonique": "element-hq/element-web"
+ },
+ "Leantime/leantime": {
+  "depot": "https://github.com/Leantime/leantime",
+  "etoiles": 12129,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-17",
+  "derniere_version": {
+   "version": "v3.15.3",
+   "date": "2026-11-16"
+  },
+  "nom_canonique": "Leantime/leantime"
+ },
+ "brightbeanxyz/brightbean-studio": {
+  "depot": "https://github.com/brightbeanxyz/brightbean-studio",
+  "etoiles": 2661,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-17",
+  "derniere_version": null,
+  "nom_canonique": "brightbeanxyz/brightbean-studio"
+ },
+ "JhumanJ/OpnForm": {
+  "depot": "https://github.com/OpnForm/OpnForm",
+  "etoiles": 4023,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "v2.8.6",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "OpnForm/OpnForm"
+ },
+ "frappe/crm": {
+  "depot": "https://github.com/frappe/crm",
+  "etoiles": 4014,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v16.3.0",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "frappe/crm"
+ },
+ "passbolt/passbolt_api": {
+  "depot": "https://github.com/passbolt/passbolt_api",
+  "etoiles": 6241,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-12",
+  "derniere_version": {
+   "version": "v5.18.0",
+   "date": "2026-11-12"
+  },
+  "nom_canonique": "passbolt/passbolt_api"
+ },
+ "aliasvault/aliasvault": {
+  "depot": "https://github.com/aliasvault/aliasvault",
+  "etoiles": 3555,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "0.31.4",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "aliasvault/aliasvault"
+ },
+ "wekan/wekan": {
+  "depot": "https://github.com/wekan/wekan",
+  "etoiles": 21175,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v13.21",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "wekan/wekan"
+ },
+ "kanboard/kanboard": {
+  "depot": "https://github.com/kanboard/kanboard",
+  "etoiles": 9968,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-16",
+  "derniere_version": {
+   "version": "v1.2.57",
+   "date": "2026-10-31"
+  },
+  "nom_canonique": "kanboard/kanboard"
+ },
+ "taigaio/taiga-back": {
+  "depot": "https://github.com/taigaio/taiga-back",
+  "etoiles": 858,
+  "licence": "MPL-2.0",
+  "archive": false,
+  "pushed": "2026-11-03",
+  "derniere_version": null,
+  "nom_canonique": "taigaio/taiga-back"
+ },
+ "frappe/erpnext": {
+  "depot": "https://github.com/frappe/erpnext",
+  "etoiles": 41474,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v16.60.0",
+   "date": "2026-11-17"
+  },
+  "nom_canonique": "frappe/erpnext"
+ },
+ "languagetool-org/languagetool": {
+  "depot": "https://github.com/languagetool-org/languagetool",
+  "etoiles": 15283,
+  "licence": "LGPL-2.1",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": null,
+  "nom_canonique": "languagetool-org/languagetool"
+ },
+ "Automattic/harper": {
+  "depot": "https://github.com/Automattic/harper",
+  "etoiles": 17873,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v3.3.0",
+   "date": "2026-11-18"
+  },
+  "nom_canonique": "Automattic/harper"
+ },
+ "theJayTea/WritingTools": {
+  "depot": "https://github.com/theJayTea/WritingTools",
+  "etoiles": 2540,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-08-19",
+  "derniere_version": {
+   "version": "Win_v9+mac_OS_v6.1",
+   "date": "2026-05-10"
+  },
+  "nom_canonique": "theJayTea/WritingTools"
+ },
+ "writingtool-org/writingtool": {
+  "depot": "https://github.com/writingtool-org/writingtool",
+  "etoiles": 63,
+  "licence": "LGPL-2.1",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v26.10",
+   "date": "2026-10-21"
+  },
+  "nom_canonique": "writingtool-org/writingtool"
+ },
+ "redmine/redmine": {
+  "depot": "https://github.com/redmine/redmine",
+  "etoiles": 6090,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": null,
+  "nom_canonique": "redmine/redmine"
+ },
+ "useplunk/plunk": {
+  "depot": "https://github.com/useplunk/plunk",
+  "etoiles": 5620,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-17",
+  "derniere_version": {
+   "version": "v0.18.0",
+   "date": "2026-11-01"
+  },
+  "nom_canonique": "useplunk/plunk"
+ },
+ "LiveHelperChat/livehelperchat": {
+  "depot": "https://github.com/LiveHelperChat/livehelperchat",
+  "etoiles": 2257,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "5.01v",
+   "date": "2026-11-16"
+  },
+  "nom_canonique": "LiveHelperChat/livehelperchat"
+ },
+ "KDE/krita": {
+  "depot": "https://github.com/KDE/krita",
+  "etoiles": 10777,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": null,
+  "nom_canonique": "KDE/krita"
+ },
+ "usebruno/bruno": {
+  "depot": "https://github.com/usebruno/bruno",
+  "etoiles": 48485,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v4.3.0",
+   "date": "2026-10-22"
+  },
+  "nom_canonique": "usebruno/bruno"
+ },
+ "hoppscotch/hoppscotch": {
+  "depot": "https://github.com/hoppscotch/hoppscotch",
+  "etoiles": 80856,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "2026.10.1",
+   "date": "2026-11-05"
+  },
+  "nom_canonique": "hoppscotch/hoppscotch"
+ },
+ "Kong/insomnia": {
+  "depot": "https://github.com/Kong/insomnia",
+  "etoiles": 40177,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "core@13.4.0",
+   "date": "2026-10-29"
+  },
+  "nom_canonique": "Kong/insomnia"
+ },
+ "SuiteCRM/SuiteCRM": {
+  "depot": "https://github.com/SuiteCRM/SuiteCRM",
+  "etoiles": 5870,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-04",
+  "derniere_version": {
+   "version": "v7.15.2",
+   "date": "2026-07-31"
+  },
+  "nom_canonique": "SuiteCRM/SuiteCRM"
+ },
+ "PrestaShop/PrestaShop": {
+  "depot": "https://github.com/PrestaShop/PrestaShop",
+  "etoiles": 9258,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "9.2.1",
+   "date": "2026-11-09"
+  },
+  "nom_canonique": "PrestaShop/PrestaShop"
+ },
+ "better-auth/better-auth": {
+  "depot": "https://github.com/better-auth/better-auth",
+  "etoiles": 30798,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v1.7.27",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "better-auth/better-auth"
+ },
+ "typesense/typesense": {
+  "depot": "https://github.com/typesense/typesense",
+  "etoiles": 27163,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v30.2",
+   "date": "2026-04-19"
+  },
+  "nom_canonique": "typesense/typesense"
+ },
+ "manticoresoftware/manticoresearch": {
+  "depot": "https://github.com/manticoresoftware/manticoresearch",
+  "etoiles": 12097,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "release-32.1.3",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "manticoresoftware/manticoresearch"
+ },
+ "oramasearch/orama": {
+  "depot": "https://github.com/oramasearch/orama",
+  "etoiles": 10618,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-10-18",
+  "derniere_version": {
+   "version": "v3.1.18",
+   "date": "2025-12-19"
+  },
+  "nom_canonique": "oramasearch/orama"
+ },
+ "CloudCannon/pagefind": {
+  "depot": "https://github.com/Pagefind/pagefind",
+  "etoiles": 5570,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-18",
+  "derniere_version": {
+   "version": "v1.6.0",
+   "date": "2026-11-01"
+  },
+  "nom_canonique": "Pagefind/pagefind"
+ },
+ "juanfont/headscale": {
+  "depot": "https://github.com/juanfont/headscale",
+  "etoiles": 45918,
+  "licence": "BSD-3-Clause",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v0.29.7",
+   "date": "2026-10-30"
+  },
+  "nom_canonique": "juanfont/headscale"
+ },
+ "netbirdio/netbird": {
+  "depot": "https://github.com/netbirdio/netbird",
+  "etoiles": 31170,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v0.83.1",
+   "date": "2026-11-13"
+  },
+  "nom_canonique": "netbirdio/netbird"
+ },
+ "slackhq/nebula": {
+  "depot": "https://github.com/slackhq/nebula",
+  "etoiles": 18547,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "v1.12.0",
+   "date": "2026-10-29"
+  },
+  "nom_canonique": "slackhq/nebula"
+ },
+ "SolidInvoice/SolidInvoice": {
+  "depot": "https://github.com/SolidInvoice/SolidInvoice",
+  "etoiles": 989,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "3.1.3",
+   "date": "2026-11-10"
+  },
+  "nom_canonique": "SolidInvoice/SolidInvoice"
+ },
+ "solidtime-io/solidtime": {
+  "depot": "https://github.com/solidtime-io/solidtime",
+  "etoiles": 9137,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v0.23.0",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "solidtime-io/solidtime"
+ },
+ "ActivityWatch/activitywatch": {
+  "depot": "https://github.com/ActivityWatch/activitywatch",
+  "etoiles": 19759,
+  "licence": "MPL-2.0",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "v0.14.3",
+   "date": "2026-11-15"
+  },
+  "nom_canonique": "ActivityWatch/activitywatch"
+ },
+ "karlomikus/bar-assistant": {
+  "depot": "https://github.com/karlomikus/bar-assistant",
+  "etoiles": 1117,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v6.12.1",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "karlomikus/bar-assistant"
+ },
+ "grocy/grocy": {
+  "depot": "https://github.com/grocy/grocy",
+  "etoiles": 9696,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-13",
+  "derniere_version": {
+   "version": "v4.7.1",
+   "date": "2026-09-04"
+  },
+  "nom_canonique": "grocy/grocy"
+ },
+ "withastro/astro": {
+  "depot": "https://github.com/withastro/astro",
+  "etoiles": 64092,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "@astrojs/node@11.1.14",
+   "date": "2026-11-18"
+  },
+  "nom_canonique": "withastro/astro"
+ },
+ "Screenly/Anthias": {
+  "depot": "https://github.com/Screenly/Anthias",
+  "etoiles": 3742,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v2026.11.1",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "Screenly/Anthias"
+ },
+ "colloqi/pisignage-server": {
+  "depot": "https://github.com/colloqi/pisignage-server",
+  "etoiles": 449,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-18",
+  "derniere_version": {
+   "version": "3.2.0a",
+   "date": "2025-02-28"
+  },
+  "nom_canonique": "colloqi/pisignage-server"
+ },
+ "prometheus/prometheus": {
+  "depot": "https://github.com/prometheus/prometheus",
+  "etoiles": 67736,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v3.16.0",
+   "date": "2026-11-05"
+  },
+  "nom_canonique": "prometheus/prometheus"
+ },
+ "grafana/grafana": {
+  "depot": "https://github.com/grafana/grafana",
+  "etoiles": 78012,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v13.3.1",
+   "date": "2026-11-10"
+  },
+  "nom_canonique": "grafana/grafana"
+ },
+ "louislam/uptime-kuma": {
+  "depot": "https://github.com/louislam/uptime-kuma",
+  "etoiles": 94704,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "2.5.12",
+   "date": "2026-11-17"
+  },
+  "nom_canonique": "louislam/uptime-kuma"
+ },
+ "containers/podman": {
+  "depot": "https://github.com/podman-container-tools/podman",
+  "etoiles": 33347,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v6.2.0",
+   "date": "2026-11-10"
+  },
+  "nom_canonique": "podman-container-tools/podman"
+ },
+ "abiosoft/colima": {
+  "depot": "https://github.com/abiosoft/colima",
+  "etoiles": 31783,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-10-13",
+  "derniere_version": {
+   "version": "v0.10.3",
+   "date": "2026-06-04"
+  },
+  "nom_canonique": "abiosoft/colima"
+ },
+ "rancher-sandbox/rancher-desktop": {
+  "depot": "https://github.com/rancher-sandbox/rancher-desktop",
+  "etoiles": 7420,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v1.25.0",
+   "date": "2026-11-05"
+  },
+  "nom_canonique": "rancher-sandbox/rancher-desktop"
+ },
+ "requarks/wiki": {
+  "depot": "https://github.com/requarks/wiki",
+  "etoiles": 29342,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "3.5.0",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "requarks/wiki"
+ },
+ "docmost/docmost": {
+  "depot": "https://github.com/docmost/docmost",
+  "etoiles": 22388,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v0.97.0",
+   "date": "2026-10-25"
+  },
+  "nom_canonique": "docmost/docmost"
+ },
+ "postalserver/postal": {
+  "depot": "https://github.com/postalserver/postal",
+  "etoiles": 16968,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "3.5.0",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "postalserver/postal"
+ },
+ "ollama/ollama": {
+  "depot": "https://github.com/ollama/ollama",
+  "etoiles": 187752,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v0.40.16",
+   "date": "2026-11-09"
+  },
+  "nom_canonique": "ollama/ollama"
+ },
+ "ggml-org/llama.cpp": {
+  "depot": "https://github.com/ggml-org/llama.cpp",
+  "etoiles": 135842,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v1.0.0",
+   "date": "2026-11-13"
+  },
+  "nom_canonique": "ggml-org/llama.cpp"
+ },
+ "alfio-event/alf.io": {
+  "depot": "https://github.com/alfio-event/alf.io",
+  "etoiles": 1631,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-18",
+  "derniere_version": {
+   "version": "2.0-M5-2609-2",
+   "date": "2026-11-18"
+  },
+  "nom_canonique": "alfio-event/alf.io"
+ },
+ "appsmithorg/appsmith": {
+  "depot": "https://github.com/appsmithorg/appsmith",
+  "etoiles": 41283,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v2.7.2",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "appsmithorg/appsmith"
+ },
+ "ToolJet/ToolJet": {
+  "depot": "https://github.com/ToolJet/ToolJet",
+  "etoiles": 41264,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v3.20.257-lts",
+   "date": "2026-11-12"
+  },
+  "nom_canonique": "ToolJet/ToolJet"
+ },
+ "nocobase/nocobase": {
+  "depot": "https://github.com/nocobase/nocobase",
+  "etoiles": 24973,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v2.2.49",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "nocobase/nocobase"
+ },
+ "TwiN/gatus": {
+  "depot": "https://github.com/TwiN/gatus",
+  "etoiles": 12846,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "v5.38.0",
+   "date": "2026-10-28"
+  },
+  "nom_canonique": "TwiN/gatus"
+ },
+ "bluewave-labs/Checkmate": {
+  "depot": "https://github.com/bluewave-labs/Checkmate",
+  "etoiles": 11107,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v4.1.0",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "bluewave-labs/Checkmate"
+ },
+ "salesagility/SuiteCRM": {
+  "depot": "https://github.com/SuiteCRM/SuiteCRM",
+  "etoiles": 5870,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-04",
+  "derniere_version": {
+   "version": "v7.15.2",
+   "date": "2026-07-31"
+  },
+  "nom_canonique": "SuiteCRM/SuiteCRM"
+ },
+ "umami-software/umami": {
+  "depot": "https://github.com/umami-software/umami",
+  "etoiles": 40263,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v3.5.0",
+   "date": "2026-11-12"
+  },
+  "nom_canonique": "umami-software/umami"
+ },
+ "matomo-org/matomo": {
+  "depot": "https://github.com/matomo-org/matomo",
+  "etoiles": 22038,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "5.14.3",
+   "date": "2026-11-16"
+  },
+  "nom_canonique": "matomo-org/matomo"
+ },
+ "plausible/analytics": {
+  "depot": "https://github.com/plausible/analytics",
+  "etoiles": 29899,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "v3.2.1",
+   "date": "2026-05-15"
+  },
+  "nom_canonique": "plausible/analytics"
+ },
+ "pentacent/keila": {
+  "depot": "https://github.com/pentacent/keila",
+  "etoiles": 2269,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-17",
+  "derniere_version": {
+   "version": "0.40.2",
+   "date": "2026-11-04"
+  },
+  "nom_canonique": "pentacent/keila"
+ },
+ "shlinkio/shlink": {
+  "depot": "https://github.com/shlinkio/shlink",
+  "etoiles": 5433,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-13",
+  "derniere_version": {
+   "version": "v5.1.8",
+   "date": "2026-10-21"
+  },
+  "nom_canonique": "shlinkio/shlink"
+ },
+ "YOURLS/YOURLS": {
+  "depot": "https://github.com/YOURLS/YOURLS",
+  "etoiles": 12307,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "1.10.6",
+   "date": "2026-08-30"
+  },
+  "nom_canonique": "YOURLS/YOURLS"
+ },
+ "thedevs-network/kutt": {
+  "depot": "https://github.com/thedevs-network/kutt",
+  "etoiles": 11212,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-10-19",
+  "derniere_version": {
+   "version": "v3.2.6",
+   "date": "2026-07-05"
+  },
+  "nom_canonique": "thedevs-network/kutt"
+ },
+ "go-gitea/gitea": {
+  "depot": "https://github.com/go-gitea/gitea",
+  "etoiles": 59190,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v28.4.0",
+   "date": "2026-11-15"
+  },
+  "nom_canonique": "go-gitea/gitea"
+ },
+ "gogs/gogs": {
+  "depot": "https://github.com/gogs/gogs",
+  "etoiles": 47960,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v0.14.4",
+   "date": "2026-11-12"
+  },
+  "nom_canonique": "gogs/gogs"
+ },
+ "theonedev/onedev": {
+  "depot": "https://github.com/theonedev/onedev",
+  "etoiles": 15369,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "v17.2.2",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "theonedev/onedev"
+ },
+ "errbit/errbit": {
+  "depot": "https://github.com/errbit/errbit",
+  "etoiles": 4269,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v0.11.6",
+   "date": "2026-10-20"
+  },
+  "nom_canonique": "errbit/errbit"
+ },
+ "highlight/highlight": {
+  "depot": "https://github.com/highlight/highlight",
+  "etoiles": 9391,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-10-23",
+  "derniere_version": {
+   "version": "docker-v0.5.6",
+   "date": "2025-08-08"
+  },
+  "nom_canonique": "highlight/highlight"
+ },
+ "bugsink/bugsink": {
+  "depot": "https://github.com/bugsink/bugsink",
+  "etoiles": 2199,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "2.6.3",
+   "date": "2026-11-06"
+  },
+  "nom_canonique": "bugsink/bugsink"
+ },
+ "activepieces/activepieces": {
+  "depot": "https://github.com/activepieces/activepieces",
+  "etoiles": 25644,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "0.93.0",
+   "date": "2026-11-08"
+  },
+  "nom_canonique": "activepieces/activepieces"
+ },
+ "huginn/huginn": {
+  "depot": "https://github.com/huginn/huginn",
+  "etoiles": 50598,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v2026.11.19",
+   "date": "2026-11-19"
+  },
+  "nom_canonique": "huginn/huginn"
+ },
+ "leantime/leantime": {
+  "depot": "https://github.com/Leantime/leantime",
+  "etoiles": 12129,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-17",
+  "derniere_version": {
+   "version": "v3.15.3",
+   "date": "2026-11-16"
+  },
+  "nom_canonique": "Leantime/leantime"
+ },
+ "johannesjo/super-productivity": {
+  "depot": "https://github.com/super-productivity/super-productivity",
+  "etoiles": 23883,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v20.0.0",
+   "date": "2026-11-06"
+  },
+  "nom_canonique": "super-productivity/super-productivity"
+ },
+ "LimeSurvey/LimeSurvey": {
+  "depot": "https://github.com/LimeSurvey/LimeSurvey",
+  "etoiles": 3802,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": null,
+  "nom_canonique": "LimeSurvey/LimeSurvey"
+ },
+ "formbricks/formbricks": {
+  "depot": "https://github.com/formbricks/formbricks",
+  "etoiles": 13278,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "6.2.2",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "formbricks/formbricks"
+ },
+ "CapSoftware/Cap": {
+  "depot": "https://github.com/CapSoftware/Cap",
+  "etoiles": 25331,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "cap-v0.6.3",
+   "date": "2026-11-11"
+  },
+  "nom_canonique": "CapSoftware/Cap"
+ },
+ "obsproject/obs-studio": {
+  "depot": "https://github.com/obsproject/obs-studio",
+  "etoiles": 79822,
+  "licence": "GPL-2.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "33.0.2",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "obsproject/obs-studio"
+ },
+ "alyssaxuu/screenity": {
+  "depot": "https://github.com/alyssaxuu/screenity",
+  "etoiles": 19003,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v4.8.0",
+   "date": "2026-11-20"
+  },
+  "nom_canonique": "alyssaxuu/screenity"
+ },
+ "LibreBooking/app": {
+  "depot": "https://github.com/LibreBooking/librebooking",
+  "etoiles": 850,
+  "licence": "GPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v7.2.0",
+   "date": "2026-11-03"
+  },
+  "nom_canonique": "LibreBooking/librebooking"
+ },
+ "inventree/InvenTree": {
+  "depot": "https://github.com/inventree/InvenTree",
+  "etoiles": 7885,
+  "licence": "MIT",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "1.7.3",
+   "date": "2026-11-17"
+  },
+  "nom_canonique": "inventree/InvenTree"
+ },
+ "TandoorRecipes/recipes": {
+  "depot": "https://github.com/TandoorRecipes/recipes",
+  "etoiles": 8745,
+  "licence": "NOASSERTION",
+  "archive": false,
+  "pushed": "2026-11-19",
+  "derniere_version": {
+   "version": "2.7.6",
+   "date": "2026-11-18"
+  },
+  "nom_canonique": "TandoorRecipes/recipes"
+ },
+ "fatedier/frp": {
+  "depot": "https://github.com/fatedier/frp",
+  "etoiles": 110687,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-10",
+  "derniere_version": {
+   "version": "v0.72.0",
+   "date": "2026-11-04"
+  },
+  "nom_canonique": "fatedier/frp"
+ },
+ "cloudflare/cloudflared": {
+  "depot": "https://github.com/cloudflare/cloudflared",
+  "etoiles": 16672,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-11-17",
+  "derniere_version": {
+   "version": "2026.11.1",
+   "date": "2026-11-17"
+  },
+  "nom_canonique": "cloudflare/cloudflared"
+ },
+ "rapiz1/rathole": {
+  "depot": "https://github.com/rathole-org/rathole",
+  "etoiles": 14479,
+  "licence": "Apache-2.0",
+  "archive": false,
+  "pushed": "2026-08-23",
+  "derniere_version": {
+   "version": "v0.5.0",
+   "date": "2023-10-01"
+  },
+  "nom_canonique": "rathole-org/rathole"
+ },
+ "mealie-recipes/mealie": {
+  "depot": "https://github.com/mealie-recipes/mealie",
+  "etoiles": 13958,
+  "licence": "AGPL-3.0",
+  "archive": false,
+  "pushed": "2026-11-20",
+  "derniere_version": {
+   "version": "v3.31.0",
+   "date": "2026-11-13"
+  },
+  "nom_canonique": "mealie-recipes/mealie"
+ }
+}

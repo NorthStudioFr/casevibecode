@@ -10,11 +10,21 @@ export type VerdictEditeur = 'YES' | 'KINDA' | 'NOT_REALLY';
 
 export type TypeAlternative = 'open-source' | 'gratuit' | 'plus-petit' | 'concurrent';
 
+// Modèle d'une alternative libre ou gratuite : tout le code est libre et s'installe chez soi, le code est
+// libre mais l'éditeur vend aussi une version hébergée, ou l'offre est gratuite sans que le code soit libre.
+export type ModeleAlternative = 'libre-auto-heberge' | 'libre-cloud-payant' | 'freemium';
+
 export interface Alternative {
   nom: string;
   url: string;
   type: TypeAlternative;
   description: string;
+  // Faits relevés sur le dépôt ou le site de l'éditeur, toujours datés (facultatifs).
+  licence?: string;
+  depot?: string;
+  etoiles?: { nombre: number; releveLe: string };
+  derniereVersion?: { version: string; date: string };
+  modele?: ModeleAlternative;
 }
 
 export interface Logiciel {

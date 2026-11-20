@@ -158,6 +158,16 @@ export const fr = {
     previewTitle: (nom: string) => `Alternatives à ${nom} qui existent déjà`,
     none: "Aucune alternative libre ou gratuite ne répond pour l'instant à nos critères de contrôle (projet actif sous licence libre, offre gratuite lue chez l'éditeur). Plutôt que d'en inventer, la liste reste vide.",
     seeAll: (n: number) => (n > 1 ? `Voir toutes les ${n} alternatives` : "Voir l'alternative en détail"),
+    facts: {
+      licence: (l: string) => `Licence ${l}`,
+      version: (v: string, date: string) => `version ${v} du ${date}`,
+      etoiles: (n: string, date: string) => `★ ${n} étoiles GitHub (relevé du ${date})`,
+      modele: {
+        'libre-auto-heberge': '100 % libre, à héberger soi-même',
+        'libre-cloud-payant': 'Code libre, avec une offre hébergée payante',
+        freemium: 'Offre gratuite, code non libre',
+      },
+    },
     pageTitle: (nom: string) => `Alternatives à ${nom} : open source, gratuites et plus petites`,
     pageDescription: (nom: string, n: number) =>
       `${n} alternative${n > 1 ? 's' : ''} qui existent déjà à ${nom} : projets open source, outils gratuits ou éditeurs plus petits.`,
@@ -558,6 +568,16 @@ export const en: Dict = {
     previewTitle: (nom: string) => `Existing alternatives to ${nom}`,
     none: 'No free or open-source alternative currently meets our checks (active project under a free licence, free plan read on the vendor’s own site). Rather than invent one, the list stays empty.',
     seeAll: (n: number) => (n > 1 ? `See all ${n} alternatives` : 'See the alternative in detail'),
+    facts: {
+      licence: (l: string) => `${l} licence`,
+      version: (v: string, date: string) => `version ${v} of ${date}`,
+      etoiles: (n: string, date: string) => `★ ${n} GitHub stars (as of ${date})`,
+      modele: {
+        'libre-auto-heberge': '100% open source, self-hosted',
+        'libre-cloud-payant': 'Open-source code, with a paid hosted offer',
+        freemium: 'Free plan, code not open source',
+      },
+    },
     pageTitle: (nom: string) => `Alternatives to ${nom}: open source, free and smaller vendors`,
     pageDescription: (nom: string, n: number) =>
       `${n} existing alternative${n > 1 ? 's' : ''} to ${nom}: open-source projects, free tools or smaller vendors.`,
