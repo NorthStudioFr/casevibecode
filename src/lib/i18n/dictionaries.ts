@@ -167,14 +167,14 @@ export const fr = {
     intro: (n: number) =>
       `${n} option${n > 1 ? 's' : ''} qui existent déjà, à comparer avant de vous lancer dans un développement sur mesure.`,
     checked:
-      "Chaque lien est contrôlé (projet actif et sous licence libre, offre gratuite lue chez l'éditeur, site en ligne). Aucune alternative n'est sponsorisée.",
+      "Chaque lien est contrôlé (projet actif et sous licence libre, offre gratuite lue chez l'éditeur, site en ligne). Aucune alternative listée ici n'est sponsorisée : le classement ne dépend d'aucun paiement.",
     indexTitle: 'Alternatives gratuites aux logiciels payants',
     indexDescription:
       'Pour chaque logiciel payant, les alternatives qui existent déjà : projets open source maintenus, outils gratuits ou éditeurs plus petits.',
     indexHeading: 'Les alternatives',
     indexCount: (a: number, l: number) => `${a} alternative${a > 1 ? 's' : ''} · ${l} logiciel${l > 1 ? 's' : ''}`,
     indexIntro:
-      "Pas envie de tout recoder ? Pour chaque logiciel payant, ce qui existe déjà : projets open source maintenus, outils gratuits ou éditeurs plus petits. Chaque lien est contrôlé (dépôt actif et sous licence libre, offre gratuite lue chez l'éditeur, site en ligne), sans vote et sans lien sponsorisé.",
+      "Pas envie de tout recoder ? Pour chaque logiciel payant, ce qui existe déjà : projets open source maintenus, outils gratuits ou éditeurs plus petits. Chaque lien est contrôlé (dépôt actif et sous licence libre, offre gratuite lue chez l'éditeur, site en ligne), sans vote et sans alternative sponsorisée.",
     searchPlaceholder: 'Rechercher un outil ou une alternative…',
     noResult: 'Aucun résultat.',
     polyTitle: 'Un outil, plusieurs abonnements',
@@ -395,10 +395,10 @@ Contraintes :
     limitsContent:
       'Un verdict est un avis éditorial sur la faisabilité d’un remplacement par un outil sur mesure, pas un audit technique ni un conseil juridique ou fiscal. Il ne garantit aucune économie : le temps de développement, l’hébergement et la maintenance ne sont pas comptés. Pour une obligation légale (certification des caisses, par exemple), vérifiez auprès de l’éditeur ou d’un professionnel.',
     editorCta: 'Proposer une correction',
-    updated: 'Dernière mise à jour de cette page : 21 octobre 2026.',
+    updated: 'Dernière mise à jour de cette page : 20 novembre 2026.',
     linksTitle: 'Liens vers les éditeurs et indépendance',
     linksContent:
-      'Les liens vers les éditeurs pointent directement vers leurs domaines officiels. Aucun lien n’est affilié ni sponsorisé. Si un éditeur choisit de relayer casevibecode, cela ne confère aucun passe-droit sur l’objectivité de son verdict.',
+      'Les liens vers les éditeurs pointent directement vers leurs domaines officiels. Les fiches ajoutées restent gratuites et leur verdict est indépendant : il ne change jamais avec un paiement. Un emplacement distinct, étiqueté « Sponsorisé », peut être acheté ; il est séparé des verdicts et des alternatives, et ne promet ni visites ni ventes. Si un éditeur choisit de relayer casevibecode, cela ne confère aucun passe-droit sur l’objectivité de son verdict.',
   },
   breadcrumbHome: 'Accueil',
 };
@@ -563,14 +563,14 @@ export const en: Dict = {
     heading: (nom: string) => `Alternatives to ${nom}`,
     intro: (n: number) => `${n} existing option${n > 1 ? 's' : ''} to compare before committing to a custom build.`,
     checked:
-      'Every link is checked (active project under a free licence, free plan verified on the vendor’s website, live site). No alternative is sponsored.',
+      'Every link is checked (active project under a free licence, free plan verified on the vendor’s website, live site). No alternative listed here is sponsored: the ranking never depends on a payment.',
     indexTitle: 'Free alternatives to paid software',
     indexDescription:
       'For each paid tool, the alternatives that already exist: maintained open-source projects, free tools or smaller vendors.',
     indexHeading: 'The alternatives',
     indexCount: (a: number, l: number) => `${a} alternative${a > 1 ? 's' : ''} · ${l} tool${l > 1 ? 's' : ''}`,
     indexIntro:
-      'Not keen on rebuilding everything? For each paid tool, what already exists: maintained open-source projects, free tools or smaller vendors. Every link is checked (active repository under a free licence, free plan read on the vendor’s own site, site online), with no voting and no sponsored links.',
+      'Not keen on rebuilding everything? For each paid tool, what already exists: maintained open-source projects, free tools or smaller vendors. Every link is checked (active repository under a free licence, free plan read on the vendor’s own site, site online), with no voting and no sponsored alternatives.',
     searchPlaceholder: 'Search a tool or an alternative…',
     noResult: 'No results.',
     polyTitle: 'One tool, several subscriptions',
@@ -791,10 +791,10 @@ Constraints:
     limitsContent:
       'A verdict is an editorial opinion on how feasible it is to replace a tool with a custom-built one, not a technical audit nor legal or tax advice. It guarantees no savings: development time, hosting and maintenance are not counted. For a legal obligation (cash-register certification, for example), check with the vendor or a professional.',
     editorCta: 'Suggest a correction',
-    updated: 'This page was last updated on 21 October 2026.',
+    updated: 'This page was last updated on 20 November 2026.',
     linksTitle: 'Publisher links and independence',
     linksContent:
-      'Links to software vendors point directly to their official domains. No link is affiliated or sponsored. If a publisher chooses to mention casevibecode, it provides no special privilege regarding the objectivity of its verdict.',
+      'Links to software vendors point directly to their official domains. Listings added to the site stay free and their verdict is independent: it never changes with a payment. A separate slot, labelled “Sponsored”, can be bought; it is kept apart from verdicts and alternatives, and promises neither visits nor sales. If a publisher chooses to mention casevibecode, it provides no special privilege regarding the objectivity of its verdict.',
   },
   breadcrumbHome: 'Home',
 };

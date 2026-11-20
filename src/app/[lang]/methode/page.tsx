@@ -6,7 +6,7 @@ import { VerdictBadge } from '@/components/VerdictBadge';
 import { methodePageJsonLd } from '@/lib/jsonld';
 
 // À mettre à jour avec le texte « Dernière mise à jour » du dictionnaire quand la page change.
-const METHODE_MAJ = '2026-10-21';
+const METHODE_MAJ = '2026-11-20';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang?: string }> }): Promise<Metadata> {
   const lang = langOf(await params);
