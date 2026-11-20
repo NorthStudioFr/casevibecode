@@ -7,6 +7,13 @@ import { NextResponse, type NextRequest } from 'next/server';
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Anciennes adresses mal formées (/en/fr/logiciel/x), encore explorées par Google : 301 vers /en/logiciel/x.
+  if (pathname === '/en/fr' || pathname.startsWith('/en/fr/')) {
+    const url = request.nextUrl.clone();
+    url.pathname = '/en' + (pathname.slice('/en/fr'.length) || '');
+    return NextResponse.redirect(url, 301);
+  }
+
   if (pathname === '/en' || pathname.startsWith('/en/')) return NextResponse.next();
 
   if (pathname === '/fr' || pathname.startsWith('/fr/')) {
