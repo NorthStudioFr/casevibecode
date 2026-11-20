@@ -4,6 +4,7 @@ import { SITE_URL } from '@/lib/site';
 import { localePath } from '@/lib/i18n/config';
 import { traductionDe } from '@/lib/traductions';
 import { SECTEURS, SECTEUR_PAGE } from '@/lib/secteurs';
+import { OFFRE_PUBLIQUE } from '@/lib/sponsors';
 
 type Entree = MetadataRoute.Sitemap[number];
 
@@ -60,6 +61,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...entree('/proposer', { changeFrequency: 'yearly', priority: 0.3 }, true),
     ...entree('/audit', { changeFrequency: 'weekly', priority: 0.6 }, true),
     ...entree('/alternatives', { changeFrequency: 'weekly', priority: 0.6 }, true),
+    ...(OFFRE_PUBLIQUE ? entree('/offre-editeur', { changeFrequency: 'monthly', priority: 0.4 }, true) : []),
     ...entree('/mentions-legales', { changeFrequency: 'yearly', priority: 0.2 }, true),
     ...entree('/confidentialite', { changeFrequency: 'yearly', priority: 0.2 }, true),
   ];

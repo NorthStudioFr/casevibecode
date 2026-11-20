@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { chargerListe } from '@/lib/liste';
 import { SECTEURS, SECTEUR_PAGE } from '@/lib/secteurs';
 import { LogicielGrid } from '@/components/LogicielGrid';
+import { SponsorBlock } from '@/components/SponsorBlock';
 import { NewsletterForm } from '@/components/NewsletterForm';
 import { Ticker } from '@/components/Ticker';
 import { itemListJsonLd } from '@/lib/jsonld';
@@ -48,6 +49,7 @@ export default async function Page({ params }: { params?: Promise<{ lang?: strin
             </Link>
           ))}
         </nav>
+        <SponsorBlock lang={lang} />
         <div className="mt-8">
           <LogicielGrid logiciels={logiciels} />
         </div>
