@@ -4441,5 +4441,18 @@
    "Open-source team email inbox (AGPL-3.0) with assignment and notes; several add-ons are paid."
   ],
   "prompt": "Build a ticketing system with response targets for my team, replacing an open-source helpdesk.\n\nContext: a hotel, 4 agents, requests by email and web form, about 40 a day.\n\nTo do:\n- IMAP polling and a web form that create tickets with number, customer, subject, priority (normal, high) and status.\n- A first-response target per priority (for example 4 hours, 1 hour) with a visible indicator and an email alert to the manager when exceeded.\n- Macros (canned replies with variables) and simple triggers (assign based on a word in the subject).\n- Internal notes and a full history per ticket.\n- A table: open tickets, average response time, target compliance per week.\n\nOut of scope: telephony, WhatsApp, multilingual knowledge base.\n\nStack: web app, PostgreSQL, a scheduled job. README: how to run, backup, retention period (GDPR)."
+ },
+ "klarr": {
+  "description": "Software for independent restaurants, published by EDIREF (Paris), combining commission-free bookings, visibility on Google and in AI assistants, reviews and social media. Bookings module: booking page under your own name, private-room hire, capacity per service, floor plan, waiting list, deposits or card guarantees against no-shows (paid into your own Stripe account), gift vouchers, loyalty card in Apple and Google Wallet, table ordering by QR code and takeaway, iPhone and iPad app. Visibility module: Google profile and review monitoring, suggested review replies, tracking of AI assistants' answers, scheduled posts, Instagram and Messenger messages, listings on twenty platforms. A connector lets you run it from AI assistants such as Claude. Bookings at €29 excl. VAT a month (€34.80 incl. VAT, 30-day trial), Visibility at €37.50 excl. VAT a month (14-day trial), both at €59 excl. VAT a month; no commitment, no per-cover commission (prices read on klarr.net on 20 November 2026).",
+  "justification": "The booking part can reasonably be rebuilt: slots, capacity per service, floor plan and e-mail confirmation are a classic schema, and a deposit goes through Stripe, which you can plug in yourself. The rest of the product is harder to redo: tracking what AI assistants answer, syncing reviews and the Google profile, social media scheduling, the Apple Wallet loyalty card and the mobile app, all of which depend on agreements with those platforms and ongoing upkeep. If you only need a booking book, a custom tool is enough; if online visibility is the reason for the subscription, the tool does real work you will not replace in a weekend. Klarr does not say it is a certified till system: if you take payments, check your till's certification separately.",
+  "perdez": [
+   "Tracking what AI assistants answer when a customer looks for a restaurant.",
+   "Syncing reviews and the Google profile, with suggested replies.",
+   "The Apple Wallet and Google Wallet loyalty card, and the iPhone and iPad app.",
+   "Post scheduling and Instagram and Messenger messages in one place."
+  ],
+  "alternatives": [
+   "Open-source appointment booking (GPL-3.0) with slots, e-mail notifications and an API; to be adapted for tables. Covers neither Google visibility nor AI-assistant tracking."
+  ]
  }
 }

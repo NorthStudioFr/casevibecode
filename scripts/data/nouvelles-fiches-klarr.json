@@ -1,0 +1,31 @@
+[
+ {
+  "slug": "klarr",
+  "nom": "Klarr",
+  "categorie": "reservation",
+  "secteur": "chr",
+  "domaine": "klarr.net",
+  "description": "Logiciel pour restaurants indépendants, édité par EDIREF (Paris), qui réunit réservations sans commission, visibilité dans Google et dans les assistants IA, avis et réseaux sociaux. Module Réservations : page de réservation à votre nom, privatisation d'espaces, jauges par service, plan de salle, liste d'attente, acomptes ou empreinte bancaire contre les no-shows (versés sur votre compte Stripe), bons cadeaux, carte de fidélité Apple et Google Wallet, commande à table par QR code et à emporter, application iPhone et iPad. Module Visibilité : suivi de la fiche Google et des avis, réponses proposées aux avis, suivi des réponses des assistants IA, posts programmés, messages Instagram et Messenger, fiches sur vingt plateformes. Un connecteur permet de le piloter depuis des assistants IA comme Claude. Réservations à 29 € HT par mois (34,80 € TTC, 30 jours d'essai), Visibilité à 37,50 € HT par mois (14 jours d'essai), les deux à 59 € HT par mois ; sans engagement, sans commission par couvert (tarifs relevés sur klarr.net le 20 novembre 2026).",
+  "verdict_editeur": "KINDA",
+  "justification_editeur": "La partie réservation se recode raisonnablement : créneaux, jauge par service, plan de salle et confirmation par e-mail sont un schéma classique, et un acompte passe par Stripe, que vous pouvez brancher vous-même. Ce qui est plus difficile à refaire, c'est le reste du produit : le suivi de ce que répondent les assistants IA, la synchronisation des avis et des fiches Google, la programmation sur les réseaux sociaux, la carte de fidélité dans Apple Wallet et l'application mobile, qui demandent des accords avec ces plateformes et un entretien continu. Si vous ne cherchez qu'un carnet de réservations, du sur-mesure suffit ; si la visibilité en ligne est la raison de l'abonnement, l'outil fait un vrai travail que vous ne remplacerez pas en un week-end. Klarr n'indique pas être un logiciel de caisse certifié : si vous encaissez, vérifiez la certification de votre caisse à part.",
+  "prix": "à partir de 29 € HT/mois (Réservations, 34,80 € TTC) ; 59 € HT/mois avec Visibilité (relevé sur klarr.net le 20 nov. 2026)",
+  "prix_mensuel": null,
+  "ce_que_vous_perdez": [
+   "Le suivi de ce que répondent les assistants IA quand un client cherche un restaurant",
+   "La synchronisation des avis et de la fiche Google, avec réponses proposées",
+   "La carte de fidélité dans Apple Wallet et Google Wallet, et l'application iPhone et iPad",
+   "La programmation des posts et les messages Instagram et Messenger au même endroit"
+  ],
+  "alternatives": [
+   {
+    "nom": "Easy!Appointments",
+    "url": "https://github.com/alextselegidis/easyappointments",
+    "type": "open-source",
+    "description": "Prise de rendez-vous libre (GPL-3.0) avec créneaux, notifications par e-mail et API ; à adapter pour des tables. Ne couvre ni la visibilité Google ni le suivi des assistants IA."
+   }
+  ],
+  "prompt": "Construis un petit système de réservation de tables pour mon restaurant, pour remplacer le module Réservations d'un abonnement.\n\nContexte : un restaurant de 40 couverts, deux services (midi, soir), environ 20 réservations par jour.\n\nÀ faire :\n- Des services avec horaires, durée moyenne d'un repas et capacité maximale en couverts par créneau, plus la possibilité de fermer un service un jour donné.\n- Un plan de salle simple (tables, nombre de places) et le placement d'une réservation sur une table.\n- Une page publique de réservation : date, service, nombre de couverts, nom, téléphone, e-mail ; confirmation par e-mail avec un lien d'annulation.\n- Une liste d'attente quand un service est complet.\n- Un acompte facultatif pour les groupes, via Stripe Checkout (clés dans .env, jamais dans le dépôt).\n- Un fichier client minimal, avec consentement explicite avant tout e-mail promotionnel et suppression sur demande.\n- Un champ piège (honeypot) et une limite de débit par IP.\n\nHors périmètre : suivi de la visibilité dans les assistants IA, synchronisation Google, réseaux sociaux, carte de fidélité Wallet, application mobile, encaissement.\n\nREADME : lancement, variables d'environnement, et rappel que la gestion de la caisse et sa certification restent à part.",
+  "source_verdict": "casevibecode",
+  "verifie_le": null
+ }
+]
